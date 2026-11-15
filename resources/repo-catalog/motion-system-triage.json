@@ -1,0 +1,461 @@
+{
+  "created_utc": "2026-11-15T16:47:29.832082+00:00",
+  "warning": "Read-only pattern inventory; not a security audit, not proof of danger or safety.",
+  "results": [
+    {
+      "repository": "anidoodle",
+      "commit": "4ae27d2c281fcfd01bce87ab13dc5ad4df81a795",
+      "files_scanned": 1685,
+      "files_skipped": 2,
+      "signals": {
+        "process_execution": 93,
+        "network_or_upload": 14,
+        "credential_or_secret_access": 170,
+        "install_or_lifecycle": 51,
+        "dynamic_code": 64
+      },
+      "examples": {
+        "process_execution": [
+          "plugins/anidoodle/skills/anidoodle/engine/tools/analyze-style.mjs:18",
+          "plugins/anidoodle/skills/anidoodle/engine/tools/brand-unit.mjs:6",
+          "plugins/anidoodle/skills/anidoodle/engine/tools/brand-unit.mjs:63",
+          "plugins/anidoodle/skills/anidoodle/engine/tools/compare.mjs:6",
+          "plugins/anidoodle/skills/anidoodle/engine/tools/deadair.mjs:5"
+        ],
+        "network_or_upload": [
+          "plugins/anidoodle/skills/anidoodle/engine/tools/brand.mjs:119",
+          "plugins/anidoodle/skills/anidoodle/engine/tools/brand.mjs:141",
+          "plugins/anidoodle/skills/anidoodle/engine/tools/gate.mjs:52",
+          "plugins/anidoodle/skills/anidoodle/engine/tools/soundfetch.mjs:179",
+          "plugins/anidoodle/skills/anidoodle/engine/tools/soundfetch.mjs:235"
+        ],
+        "credential_or_secret_access": [
+          "plugins/anidoodle/skills/anidoodle/engine/src/canvas-core/adaptAlmond.ts:151",
+          "plugins/anidoodle/skills/anidoodle/engine/src/canvas-core/balloon.ts:44",
+          "plugins/anidoodle/skills/anidoodle/engine/src/canvas-core/balloon.ts:45",
+          "plugins/anidoodle/skills/anidoodle/engine/src/canvas-core/bitRig.ts:196",
+          "plugins/anidoodle/skills/anidoodle/engine/src/canvas-core/blueprintKit.ts:78"
+        ],
+        "install_or_lifecycle": [
+          "README.es-ES.md:240",
+          "README.fr-FR.md:240",
+          "README.ja-JP.md:240",
+          "README.ko-KR.md:240",
+          "README.md:249"
+        ],
+        "dynamic_code": [
+          "plugins/anidoodle/skills/anidoodle/engine/src/canvas-core/launchLook.ts:89",
+          "plugins/anidoodle/skills/anidoodle/engine/src/canvas-core/launchLook.ts:204",
+          "plugins/anidoodle/skills/anidoodle/engine/src/canvas-core/music/compose.ts:167",
+          "plugins/anidoodle/skills/anidoodle/engine/src/canvas-core/music/guards.ts:57",
+          "plugins/anidoodle/skills/anidoodle/engine/src/canvas-core/music/novelty.ts:46"
+        ]
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "anything2explainer",
+      "commit": "0b85f6c7bfc4ef094ee1afb6c68c06fcf329cfab",
+      "files_scanned": 165,
+      "files_skipped": 0,
+      "signals": {
+        "process_execution": 6,
+        "network_or_upload": 0,
+        "credential_or_secret_access": 6,
+        "install_or_lifecycle": 24,
+        "dynamic_code": 1
+      },
+      "examples": {
+        "process_execution": [
+          "template/scripts/motion_check.py:80",
+          "template/scripts/motion_check.py:82",
+          "template/scripts/test_portable_scripts.py:104",
+          "template/scripts/test_portable_scripts.py:117",
+          "template/scripts/test_portable_scripts.py:135"
+        ],
+        "network_or_upload": [],
+        "credential_or_secret_access": [
+          "template/remotion.config.ts:13",
+          "template/remotion.config.ts:16",
+          "template/scripts/test_portable_scripts.py:47",
+          "template/scripts/test_portable_scripts.py:49",
+          "template/scripts/test_portable_scripts.py:106"
+        ],
+        "install_or_lifecycle": [
+          "README.md:63",
+          "README.md:67",
+          "README.md:70",
+          "README.md:94",
+          "README.md:99"
+        ],
+        "dynamic_code": [
+          "template/scripts/test_portable_scripts.py:96"
+        ]
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "bang-motion",
+      "commit": "c1aa65e921c970d858705fcb4a53a8294d1a4131",
+      "files_scanned": 21,
+      "files_skipped": 0,
+      "signals": {
+        "process_execution": 0,
+        "network_or_upload": 1,
+        "credential_or_secret_access": 5,
+        "install_or_lifecycle": 2,
+        "dynamic_code": 0
+      },
+      "examples": {
+        "process_execution": [],
+        "network_or_upload": [
+          "references/architecture.md:177"
+        ],
+        "credential_or_secret_access": [
+          "scripts/export-frames.mjs:20",
+          "scripts/export-frames.mjs:21",
+          "scripts/export-frames.mjs:22",
+          "scripts/export-frames.mjs:23",
+          "scripts/snap.mjs:30"
+        ],
+        "install_or_lifecycle": [
+          "README.md:235",
+          "SKILL.md:33"
+        ],
+        "dynamic_code": []
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "claude-animation-base",
+      "commit": "0ac8bf2b31942376cb6b8c4074715595d512acd2",
+      "files_scanned": 12,
+      "files_skipped": 0,
+      "signals": {
+        "process_execution": 1,
+        "network_or_upload": 0,
+        "credential_or_secret_access": 1,
+        "install_or_lifecycle": 1,
+        "dynamic_code": 0
+      },
+      "examples": {
+        "process_execution": [
+          "render.mjs:19"
+        ],
+        "network_or_upload": [],
+        "credential_or_secret_access": [
+          "render.mjs:26"
+        ],
+        "install_or_lifecycle": [
+          "README.md:22"
+        ],
+        "dynamic_code": []
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "claude-drawing-skill",
+      "commit": "6af36dc717b63d6ddafb54d2eaa120cacd99ab4d",
+      "files_scanned": 180,
+      "files_skipped": 1,
+      "signals": {
+        "process_execution": 0,
+        "network_or_upload": 0,
+        "credential_or_secret_access": 7,
+        "install_or_lifecycle": 3,
+        "dynamic_code": 0
+      },
+      "examples": {
+        "process_execution": [],
+        "network_or_upload": [],
+        "credential_or_secret_access": [
+          "lib/soft3d.py:159",
+          "lib/soft3d.py:764",
+          "lib/soft3d.py:803",
+          "lib/soft3d.py:806",
+          "lib/soft3d.py:811"
+        ],
+        "install_or_lifecycle": [
+          "README.md:38",
+          "docs/USAGE.md:11",
+          "docs/USAGE.md:52"
+        ],
+        "dynamic_code": []
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "claude-motion-styles",
+      "commit": "76e4884ded05afac8d9135d1d96a3baec1c3a2d2",
+      "files_scanned": 1,
+      "files_skipped": 0,
+      "signals": {
+        "process_execution": 0,
+        "network_or_upload": 0,
+        "credential_or_secret_access": 0,
+        "install_or_lifecycle": 0,
+        "dynamic_code": 0
+      },
+      "examples": {
+        "process_execution": [],
+        "network_or_upload": [],
+        "credential_or_secret_access": [],
+        "install_or_lifecycle": [],
+        "dynamic_code": []
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "hand-drawn-explainer",
+      "commit": "3ee5d1c01fe8d34f5162c4aace418753f85bd0d9",
+      "files_scanned": 59,
+      "files_skipped": 0,
+      "signals": {
+        "process_execution": 13,
+        "network_or_upload": 0,
+        "credential_or_secret_access": 6,
+        "install_or_lifecycle": 7,
+        "dynamic_code": 0
+      },
+      "examples": {
+        "process_execution": [
+          "scripts/finalize_stroke_video.py:18",
+          "scripts/preflight.py:34",
+          "scripts/setup_check.py:72",
+          "scripts/stroke_story_preflight.py:48",
+          "scripts/stroke_story_preflight.py:56"
+        ],
+        "network_or_upload": [],
+        "credential_or_secret_access": [
+          "CONTRIBUTING.md:9",
+          "preferences.json:17",
+          "SECURITY.md:5",
+          "references/voiceover.md:22",
+          "scripts/quick_validate.py:31"
+        ],
+        "install_or_lifecycle": [
+          "README.md:76",
+          "docs/INSTALL.md:50",
+          "docs/TROUBLESHOOTING.md:25",
+          "examples/program-animation/skill-demo/README.md:10",
+          "examples/program-animation/skill-demo/README.md:16"
+        ],
+        "dynamic_code": []
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "handdraw-skill",
+      "commit": "d9f137b6072afdb3e3480ca6e47cb1a0362504bb",
+      "files_scanned": 34,
+      "files_skipped": 0,
+      "signals": {
+        "process_execution": 4,
+        "network_or_upload": 0,
+        "credential_or_secret_access": 2,
+        "install_or_lifecycle": 7,
+        "dynamic_code": 0
+      },
+      "examples": {
+        "process_execution": [
+          "packages/audio/src/index.ts:2",
+          "packages/audio/src/index.ts:7",
+          "scripts/check-environment.mjs:2",
+          "scripts/handdraw.mjs:3"
+        ],
+        "network_or_upload": [],
+        "credential_or_secret_access": [
+          "packages/audio/src/index.ts:24",
+          "scripts/handdraw.mjs:14"
+        ],
+        "install_or_lifecycle": [
+          "README.md:7",
+          "README.md:12",
+          "packages/audio/src/index.ts:26",
+          "references/dsl.md:48",
+          "scripts/check-environment.mjs:13"
+        ],
+        "dynamic_code": []
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "huashu-art-motion",
+      "commit": "b7c34521c61bb9359590193c9d1ec95de607a4d1",
+      "files_scanned": 357,
+      "files_skipped": 1,
+      "signals": {
+        "process_execution": 23,
+        "network_or_upload": 2,
+        "credential_or_secret_access": 9,
+        "install_or_lifecycle": 3,
+        "dynamic_code": 1
+      },
+      "examples": {
+        "process_execution": [
+          "scripts/capabilities.py:265",
+          "scripts/capabilities.py:283",
+          "scripts/capabilities.py:324",
+          "scripts/capabilities.py:325",
+          "scripts/capabilities.py:357"
+        ],
+        "network_or_upload": [
+          "scripts/engine/clip.js:36",
+          "scripts/engine/lib/util.js:48"
+        ],
+        "credential_or_secret_access": [
+          "references/capabilities.md:68",
+          "references/\u53e3\u64adAPI.md:18",
+          "scripts/capabilities.py:178",
+          "scripts/capabilities.py:247",
+          "scripts/koubo.py:44"
+        ],
+        "install_or_lifecycle": [
+          "CONTRIBUTING.md:8",
+          ".github/workflows/tests.yml:18",
+          ".github/workflows/tests.yml:33"
+        ],
+        "dynamic_code": [
+          "scripts/engine/lib/util.js:44"
+        ]
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "javascript-animation-skills",
+      "commit": "060f7467a6e5ae5b57c90c9cb1b3508c13b88e49",
+      "files_scanned": 20,
+      "files_skipped": 0,
+      "signals": {
+        "process_execution": 2,
+        "network_or_upload": 0,
+        "credential_or_secret_access": 0,
+        "install_or_lifecycle": 0,
+        "dynamic_code": 0
+      },
+      "examples": {
+        "process_execution": [
+          "skills/javascript-animation/scripts/render.mjs:20",
+          "skills/soundtrack/scripts/sync-check.mjs:10"
+        ],
+        "network_or_upload": [],
+        "credential_or_secret_access": [],
+        "install_or_lifecycle": [],
+        "dynamic_code": []
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "manim-skill",
+      "commit": "cef045011722d285692e3381d12d4d637da56e18",
+      "files_scanned": 148,
+      "files_skipped": 0,
+      "signals": {
+        "process_execution": 3,
+        "network_or_upload": 0,
+        "credential_or_secret_access": 0,
+        "install_or_lifecycle": 7,
+        "dynamic_code": 0
+      },
+      "examples": {
+        "process_execution": [
+          "skills/manimgl-best-practices/templates/3d_scene.py:258",
+          "skills/manimgl-best-practices/templates/basic_scene.py:134",
+          "skills/manimgl-best-practices/templates/math_scene.py:333"
+        ],
+        "network_or_upload": [],
+        "credential_or_secret_access": [],
+        "install_or_lifecycle": [
+          "README.md:84",
+          "README.md:87",
+          "README.md:101",
+          "README.md:104",
+          "skills/manimce-best-practices/SKILL.md:137"
+        ],
+        "dynamic_code": []
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "motion-design-skill",
+      "commit": "f9a8a041b85185ee4881b3471d3415e939aac772",
+      "files_scanned": 18,
+      "files_skipped": 0,
+      "signals": {
+        "process_execution": 0,
+        "network_or_upload": 0,
+        "credential_or_secret_access": 0,
+        "install_or_lifecycle": 0,
+        "dynamic_code": 0
+      },
+      "examples": {
+        "process_execution": [],
+        "network_or_upload": [],
+        "credential_or_secret_access": [],
+        "install_or_lifecycle": [],
+        "dynamic_code": []
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "motion-skill",
+      "commit": "947825034fd38cd3e607ffdd981e86c760152966",
+      "files_scanned": 3,
+      "files_skipped": 0,
+      "signals": {
+        "process_execution": 0,
+        "network_or_upload": 0,
+        "credential_or_secret_access": 0,
+        "install_or_lifecycle": 0,
+        "dynamic_code": 0
+      },
+      "examples": {
+        "process_execution": [],
+        "network_or_upload": [],
+        "credential_or_secret_access": [],
+        "install_or_lifecycle": [],
+        "dynamic_code": []
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "paint-mv-skills",
+      "commit": "ca8f5f75f186d590e687542b106aa73ceff9133c",
+      "files_scanned": 32,
+      "files_skipped": 0,
+      "signals": {
+        "process_execution": 3,
+        "network_or_upload": 0,
+        "credential_or_secret_access": 0,
+        "install_or_lifecycle": 0,
+        "dynamic_code": 0
+      },
+      "examples": {
+        "process_execution": [
+          "skills/paint-mv/scripts/analyze_audio.mjs:6",
+          "skills/paint-mv/scripts/fetch_upstream.mjs:11",
+          "skills/paint-mv/scripts/new_project.mjs:9"
+        ],
+        "network_or_upload": [],
+        "credential_or_secret_access": [],
+        "install_or_lifecycle": [],
+        "dynamic_code": []
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    }
+  ]
+}

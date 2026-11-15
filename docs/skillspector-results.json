@@ -1,0 +1,13 @@
+{
+  "target": "C:\\Users\\Sharafath\\Desktop\\Website\\Master Video Editor\\video\\skills",
+  "status": "scanner_completed",
+  "scanner": "NVIDIA SkillSpector 2.12.0",
+  "no_llm": true,
+  "issues": [],
+  "risk_assessment": {
+    "score": 0,
+    "severity": "LOW",
+    "recommendation": "SAFE",
+    "max_issue_severity": "NONE"
+  }
+}
