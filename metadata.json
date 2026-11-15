@@ -1,0 +1,6 @@
+{
+  "name": "Blank Page",
+  "description": "A simple blank page.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
