@@ -1,0 +1,1237 @@
+{
+  "source": "source-list.txt",
+  "repositories": [
+    {
+      "repository": "666ghj/MiroFish",
+      "url": "https://github.com/666ghj/MiroFish",
+      "github_metadata": {
+        "full_name": "666ghj/MiroFish",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 16817
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- @CROWD gated resource — link — https://github.com/666ghj/MiroFish — via vid_jr_042 https://www.instagram.com/reel/DdriJi7gDwp/ — access: Comment \"CROWD\" on the post to receive via DM (gated by creator)"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "academa-labs/manimgx",
+      "url": "https://github.com/academa-labs/manimgx",
+      "github_metadata": {
+        "full_name": "academa-labs/manimgx",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 159272
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- academa-labs/manimgx — Open-source animation engine (Rust + wgpu) that runs most Manim Community code, built for AI agents — https://github.com/academa-labs/manimgx — via vid_309 https://www.instagram.com/reel/DefTOG7se5T/ — access: Named in the caption (not gated); repo not verified live on this run"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "affaan-m/ECC",
+      "url": "https://github.com/affaan-m/ECC",
+      "github_metadata": {
+        "full_name": "affaan-m/ECC",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 62777
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- @ECC gated resource — 63 AI agents / 249 skills GitHub repo — https://github.com/affaan-m/ECC — via vid_009 https://www.instagram.com/reel/Dc_iv4YKCAh/ — access: Comment \"ECC\" on the post to receive via DM (gated by creator)"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "affaan-m/everything-claude-code",
+      "url": "https://github.com/affaan-m/everything-claude-code",
+      "github_metadata": {
+        "full_name": "affaan-m/ECC",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 62777
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- @STACK gated resource — whole setup — https://github.com/affaan-m/everything-claude-code — via vid_jr_033 https://www.instagram.com/reel/DeKZeRiDQcc/ — access: Comment \"STACK\" on the post to receive via DM (gated by creator)"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "airbnb/lottie-android",
+      "url": "https://github.com/airbnb/lottie-android",
+      "github_metadata": {
+        "full_name": "airbnb/lottie-android",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 137398
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- airbnb/lottie-android (36k) — Render After Effects animations natively on Android and iOS. — https://github.com/airbnb/lottie-android"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "airbnb/lottie-web",
+      "url": "https://github.com/airbnb/lottie-web",
+      "github_metadata": {
+        "full_name": "airbnb/lottie-web",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 358131
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- airbnb/lottie-web (32k) — Render After Effects animations natively on the web. — https://github.com/airbnb/lottie-web"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "bangtutorial/bang-motion",
+      "url": "https://github.com/bangtutorial/bang-motion",
+      "github_metadata": {
+        "full_name": "bangtutorial/bang-motion",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 1925
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- bangtutorial/bang-motion [verified] — Bang Motion: a free Claude Code agent skill (also works in Codex, Cursor, Gemini CLI) that turns your AI coding agent into a motion designer — openers, promos, product demos, kinetic typography and... — video vid_375 by Bibek yadav (ai_motion_graphics): https://www.instagram.com/reel/DfemjTgCQak/ — https://github.com/bangtutorial/bang-motion"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "barckley75/resolve-claude-mcp",
+      "url": "https://github.com/barckley75/resolve-claude-mcp",
+      "github_metadata": {
+        "full_name": "barckley75/resolve-claude-mcp",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 54470
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- barckley75/resolve-claude-mcp (388) — From the reels: connect DaVinci Resolve Studio to Claude via MCP, 52 tools for timelines, colour grading, Fusion and rendering. — https://github.com/barckley75/resolve-claude-mcp",
+        "- barckley75/resolve-claude-mcp [verified] — Edit in DaVinci Resolve by talking to Claude: the MCP server gives Claude 52 Resolve tools for timelines, media, colour, Fusion, Neural Engine features and rendering, so plain-language requests dri... — video vid_289 by Alessio & Bryan | Create Content Club (ai_auto_editing): https://www.instagram.com/p/DbWKOHODT1B/ — https://github.com/barckley75/resolve-claude-mcp",
+        "- barckley75/resolve-claude-mcp — MCP server connecting DaVinci Resolve Studio to Claude: 52 tools for timeline, colour, Fusion, Neural Engine and rendering — https://github.com/barckley75/resolve-claude-mcp — via vid_289 https://www.instagram.com/p/DbWKOHODT1B/ — access: Comment \"EDIT\" on the post to receive via DM (gated by creator)"
+      ],
+      "local_reference": {
+        "path": "resources/concordia/video-motion/resolve-claude-mcp",
+        "original_remote": "https://github.com/barckley75/resolve-claude-mcp.git",
+        "original_head_at_inventory": "939875819224163d5a7472f92385d00c5278ab33",
+        "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+        "security": "not audited"
+      },
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "bilawalsidhu/gods-eye-view",
+      "url": "https://github.com/bilawalsidhu/gods-eye-view",
+      "github_metadata": {
+        "full_name": "bilawalsidhu/gods-eye-view",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 210897
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- gods-eye-view — A spy satellite simulator in your browser, except the data is real. Live open-source spatial intelligence on a photorealistic 3D globe. 64,899 stars; hit #1 on GitHub Trending. Not a video editor, but a live globe is a ready-made source of map/globe visuals for documentaries and explainers. — https://github.com/bilawalsidhu/gods-eye-view — via no video  — access: Flagged directly by Mohamed (Bilawal Sidhu post, screenshot, Nov 15) -- public repo at godseyeview.ai, no gating."
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "blender/blender",
+      "url": "https://github.com/blender/blender",
+      "github_metadata": {
+        "full_name": "blender/blender",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 1449830
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- blender/blender (21k) — Full 3D creation suite for product visuals and animated explainers. — https://github.com/blender/blender"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "BudgetAny/Budget3D",
+      "url": "https://github.com/BudgetAny/Budget3D",
+      "github_metadata": {
+        "full_name": "BudgetAny/Budget3D",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 650
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- BudgetAny/Budget3D [verified] — Budget3D turns one photo into a 3D model with a compute budget you control: cheap preview first, spend more only on the models you keep. — video vid_393 by asharasjad (other_ai_video_tools): https://www.instagram.com/reel/Dfv5EOkNypf/ — https://github.com/BudgetAny/Budget3D"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "calesthio/OpenMontage",
+      "url": "https://github.com/calesthio/OpenMontage",
+      "github_metadata": {
+        "full_name": "OpenMontageInc/OpenMontage",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 78414
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- calesthio/OpenMontage (72k) — Open-source agentic video production system with 12 production pipelines. — https://github.com/calesthio/OpenMontage",
+        "- calesthio/OpenMontage [verified] — A short pitch for OpenMontage: an open-source system that turns your AI coding assistant into a video production studio, handling research, script, footage, voice, music and editing from a plain-la... — video vid_220 by alekseitalksai (other_ai_video_tools): https://www.instagram.com/reel/DeY6hIDRJqN/ — https://github.com/calesthio/OpenMontage",
+        "- calesthio/OpenMontage [verified] — Turn your AI coding assistant into a video production studio: describe the video and OpenMontage handles script, narration, visuals and edit. — video vid_352 by GitHunt - Trending OpenSource Projects (other_ai_video_tools): https://www.instagram.com/reel/DfR45DTAcuM/ — https://github.com/calesthio/OpenMontage"
+      ],
+      "local_reference": {
+        "path": "resources/concordia/video-motion/openmontage",
+        "original_remote": "https://github.com/calesthio/OpenMontage.git",
+        "original_head_at_inventory": "c8066452325cb57c8fc1ba8c2a71b6e8842e6b65",
+        "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+        "security": "not audited"
+      },
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "charlesdove977/advertising-ops",
+      "url": "https://github.com/charlesdove977/advertising-ops",
+      "github_metadata": {
+        "full_name": "charlesdove977/advertising-ops",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 113
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- charlesdove977/advertising-ops [verified] — Creator presents his top 3 newest GitHub repos for Claude Code, all built on Higgsfield MCP: an ad-creative system, a Zillow-to-video-tour system, and a consistent-character UGC ad factory. — video vid_267 by Charles J Dove (higgsfield_cinematic): https://www.instagram.com/reel/DaN9mHnxP8o/ — https://github.com/charlesdove977/advertising-ops"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "charlesdove977/re-walkthrough-pro",
+      "url": "https://github.com/charlesdove977/re-walkthrough-pro",
+      "github_metadata": {
+        "full_name": "charlesdove977/re-walkthrough-pro",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 1847
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- charlesdove977/re-walkthrough-pro (171) — From the reels: any Zillow link into a cinematic room-by-room home tour, no camera. — https://github.com/charlesdove977/re-walkthrough-pro"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "charlesdove977/UGC-Factory",
+      "url": "https://github.com/charlesdove977/UGC-Factory",
+      "github_metadata": {
+        "full_name": "charlesdove977/UGC-Factory",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 2237
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- charlesdove977/UGC-Factory (90) — From the reels: AI UGC video ad factory for Claude Code, same character every time. — https://github.com/charlesdove977/UGC-Factory"
+      ],
+      "local_reference": {
+        "path": "resources/concordia/video-motion/ugc-factory",
+        "original_remote": "https://github.com/charlesdove977/UGC-Factory.git",
+        "original_head_at_inventory": "e5ac1b1a917c3bb3b1ac646eceb740747c7caae7",
+        "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+        "security": "not audited"
+      },
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "cloudflare/security-audit-skill",
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "github_metadata": {
+        "full_name": "cloudflare/security-audit-skill",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 143
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- cloudflare/security-audit-skill — Open-source security-audit skill for coding agents, from Cloudflare's own bug-hunting system — https://github.com/cloudflare/security-audit-skill — via vid_304 https://www.instagram.com/reel/DfBhycVhejg/ — access: Named in the caption (not gated); repo not verified live on this run"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "debpalash/VoiceStudio",
+      "url": "https://github.com/debpalash/VoiceStudio",
+      "github_metadata": {
+        "full_name": "debpalash/VoiceStudio",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 218758
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- debpalash/VoiceStudio (87k) — Tunde pick: fully local ElevenLabs alternative, voice cloning, dubbing and dictation in 646 languages. — https://github.com/debpalash/VoiceStudio"
+      ],
+      "local_reference": {
+        "path": "resources/concordia/video-motion/voicestudio",
+        "original_remote": "https://github.com/debpalash/VoiceStudio.git",
+        "original_head_at_inventory": "beeaae08204f0de5f49d4a087ef2b0ea8fecfcb9",
+        "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+        "security": "not audited"
+      },
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "deepseek-ai/deepseek-harness",
+      "url": "https://github.com/deepseek-ai/deepseek-harness",
+      "github_metadata": {
+        "full_name": "deepseek-ai/deepseek-harness",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 389740
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- @HARNESS gated resource — full video walkthrough — https://github.com/deepseek-ai/deepseek-harness — via vid_jr_014 https://www.instagram.com/p/Dcv1MQdloZM/ — access: Comment \"HARNESS\" on the post to receive via DM (gated by creator)"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "dozentwelve/papermorph",
+      "url": "https://github.com/dozentwelve/papermorph",
+      "github_metadata": {
+        "full_name": "DozenTwelve/Papermorph",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 840969
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- dozentwelve/papermorph — AI skill that turns static PDFs into living, narrated web experiences — https://github.com/dozentwelve/papermorph — via vid_310 https://www.instagram.com/reel/DeGtjz6kV5N/ — access: Named in the caption (not gated); repo not verified live on this run"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "FFmpeg/FFmpeg",
+      "url": "https://github.com/FFmpeg/FFmpeg",
+      "github_metadata": {
+        "full_name": "FFmpeg/FFmpeg",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 508195
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- FFmpeg/FFmpeg (66k) — The universal video/audio converter every video pipeline runs on. — https://github.com/FFmpeg/FFmpeg"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "ffmpegwasm/ffmpeg.wasm",
+      "url": "https://github.com/ffmpegwasm/ffmpeg.wasm",
+      "github_metadata": {
+        "full_name": "ffmpegwasm/ffmpeg.wasm",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 17934
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- ffmpegwasm/ffmpeg.wasm (18k) — FFmpeg in the browser; client-side video conversion on a website. — https://github.com/ffmpegwasm/ffmpeg.wasm"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "godotengine/godot",
+      "url": "https://github.com/godotengine/godot",
+      "github_metadata": {
+        "full_name": "godotengine/godot",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 1951744
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- godotengine/godot (119k) — Multi-platform 2D and 3D game engine; free for interactive demos and animations. — https://github.com/godotengine/godot"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "GraphiteEditor/Graphite",
+      "url": "https://github.com/GraphiteEditor/Graphite",
+      "github_metadata": {
+        "full_name": "GraphiteEditor/Graphite",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 63960
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- GraphiteEditor/Graphite (28k) — Community-built 2D content app for graphic design and digital art. — https://github.com/GraphiteEditor/Graphite"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "greensock/GSAP",
+      "url": "https://github.com/greensock/GSAP",
+      "github_metadata": {
+        "full_name": "greensock/GSAP",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 14943
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- greensock/GSAP (30k) — The pro JavaScript animation library; butter-smooth motion for client sites and video overlays. — https://github.com/greensock/GSAP"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "HandBrake/HandBrake",
+      "url": "https://github.com/HandBrake/HandBrake",
+      "github_metadata": {
+        "full_name": "HandBrake/HandBrake",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 125686
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- HandBrake/HandBrake (25k) — Free video transcoder; compress lessons and reels for fast loading. — https://github.com/HandBrake/HandBrake"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "HKUDS/DeepTutor",
+      "url": "https://github.com/HKUDS/DeepTutor",
+      "github_metadata": {
+        "full_name": "HKUDS/DeepTutor",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 258519
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- HKUDS/DeepTutor — Open-source AI learning workspace — textbooks supply the context for tutoring, quizzes and problem-solving — https://github.com/HKUDS/DeepTutor — via vid_311 https://www.instagram.com/reel/DfImx2hsIRm/ — access: Named in the caption (not gated); repo not verified live on this run"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "iamtechartist/every-joule-lesson1",
+      "url": "https://github.com/iamtechartist/every-joule-lesson1",
+      "github_metadata": {
+        "full_name": "iamtechartist/every-joule-lesson1",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 1297
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- iamtechartist/every-joule-lesson1 — Every Joule Lesson 1: Energy stores, interactive 3D physics lesson — https://github.com/iamtechartist/every-joule-lesson1 — via vid_302 https://www.instagram.com/reel/De-5udqBo8s/ — access: Public GitHub repo"
+      ],
+      "local_reference": {
+        "path": "resources/concordia/video-motion/every-joule-lesson1",
+        "original_remote": "https://github.com/iamtechartist/every-joule-lesson1.git",
+        "original_head_at_inventory": "48591ddc5f0a22e6eb2a5a41c424a426599061ca",
+        "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+        "security": "not audited"
+      },
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "JDhruv14/line-art-animation",
+      "url": "https://github.com/JDhruv14/line-art-animation",
+      "github_metadata": {
+        "full_name": "JDhruv14/line-art-animation",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 7308
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- JDhruv14/line-art-animation [verified] — line-art-animation is a Claude skill and TypeScript library for hand-inked line-art SVG animations: walking figures, day-to-night scenes, rendered as video. — video vid_398 by asharasjad (ai_motion_graphics): https://www.instagram.com/reel/DfqePrdBGNy/ — https://github.com/JDhruv14/line-art-animation"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "juliangarnier/anime",
+      "url": "https://github.com/juliangarnier/anime",
+      "github_metadata": {
+        "full_name": "juliangarnier/anime",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 185735
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- juliangarnier/anime (74k) — JavaScript animation engine for slick web and video motion. — https://github.com/juliangarnier/anime"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "JuneYaooo/rea-video",
+      "url": "https://github.com/JuneYaooo/rea-video",
+      "github_metadata": {
+        "full_name": "JuneYaooo/rea-video",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 157070
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- JuneYaooo/rea-video [verified] — rea-video reverse-engineers any video shot by shot -- filmed, AI or coded -- and hands you a plan to remake it. — video vid_409 by asharasjad (ai_auto_editing): https://www.instagram.com/reel/DfdWNveOCr1/ — https://github.com/JuneYaooo/rea-video"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "KDE/kdenlive",
+      "url": "https://github.com/KDE/kdenlive",
+      "github_metadata": {
+        "full_name": "KDE/kdenlive",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 5274810
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- KDE/kdenlive (6k) — Free multi-track video editor built on the MLT framework. — https://github.com/KDE/kdenlive"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "konvajs/konva",
+      "url": "https://github.com/konvajs/konva",
+      "github_metadata": {
+        "full_name": "konvajs/konva",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 23555
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- konvajs/konva (15k) — HTML5 canvas framework for interactive graphics, whiteboards, and diagrams. — https://github.com/konvajs/konva"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "latent-spaces/brag",
+      "url": "https://github.com/latent-spaces/brag",
+      "github_metadata": {
+        "full_name": "latent-spaces/brag",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 50222
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- latent-spaces/brag [verified] — Jack Roberts pitches /brag as the fix for finished products stuck without a launch video. It's a Claude skill, open source on GitHub, that reads your actual site/code, plans a trailer-style video m... — video vid_jr_043 by jackroberts___ (ai_motion_graphics): https://www.instagram.com/reel/DdrNk5kFBFv/ — https://github.com/latent-spaces/brag"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "ManimCommunity/manim",
+      "url": "https://github.com/ManimCommunity/manim",
+      "github_metadata": {
+        "full_name": "ManimCommunity/manim",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 48339
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- ManimCommunity/manim (42k) — Python framework for explanatory math animations; perfect for ENGR 213 and MIAE 221 concepts. — https://github.com/ManimCommunity/manim"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "mengto/skills",
+      "url": "https://github.com/mengto/skills",
+      "github_metadata": {
+        "full_name": "MengTo/Skills",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 84315
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- mengto/skills [verified] — Meng To's curated skills for making insane demos: dream-loop for 3D visuals with Blender plus a critic agent, Hairline for isometric line drawings, Emil Kowalski's design skills, and more. — video vid_394 by asharasjad (ai_design_tools): https://www.instagram.com/reel/DfvyO7TAkYB/ — https://github.com/mengto/skills"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "meshy-dev/ThreeRT",
+      "url": "https://github.com/meshy-dev/ThreeRT",
+      "github_metadata": {
+        "full_name": "meshy-dev/ThreeRT",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 94161
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- meshy-dev/ThreeRT [verified] — ThreeRT is Meshy's hardware ray-traced three.js: a real-time path tracer that simulates light bounces for movie-quality shadows and reflections on the web. — video vid_395 by asharasjad (other_ai_video_tools): https://www.instagram.com/reel/Dfutd4mROBz/ — https://github.com/meshy-dev/ThreeRT"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "meta/astryx",
+      "url": "https://github.com/meta/astryx",
+      "github_metadata": {
+        "full_name": "meta/astryx",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 1377674
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- meta/astryx [verified] — Meta open-sourced Astryx, its design system behind 13,000 apps: 150+ accessible components, dark-mode templates and a CLI, built so both people and AI agents use it correctly. — video vid_390 by asharasjad (ai_design_tools): https://www.instagram.com/reel/DfhSEGnORnz/ — https://github.com/meta/astryx"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "mltframework/shotcut",
+      "url": "https://github.com/mltframework/shotcut",
+      "github_metadata": {
+        "full_name": "mltframework/shotcut",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 162757
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- mltframework/shotcut (16k) — Cross-platform open-source video editor for cutting reels and lessons. — https://github.com/mltframework/shotcut"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "Moh4696/cinematic-skill",
+      "url": "https://github.com/Moh4696/cinematic-skill",
+      "github_metadata": {
+        "full_name": "Moh4696/cinematic-skill",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 1989
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- Moh4696/cinematic-skill [verified] — cinematic-skill lets a coding agent make a full 90-second narrated documentary with no video model: script, voiceover, licensed photos, one continuous camera move, every frame drawn in code. — video vid_399 by asharasjad (other_ai_video_tools): https://www.instagram.com/reel/DfqRZ1RvFp7/ — https://github.com/Moh4696/cinematic-skill"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "mojs/mojs",
+      "url": "https://github.com/mojs/mojs",
+      "github_metadata": {
+        "full_name": "mojs/mojs",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 140750
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- mojs/mojs (19k) — The motion graphics toolbelt for the web; playful animated bursts and icons. — https://github.com/mojs/mojs"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "motiondivision/motion",
+      "url": "https://github.com/motiondivision/motion",
+      "github_metadata": {
+        "full_name": "motiondivision/motion",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 1668024
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- motiondivision/motion (35k) — Modern animation library for React and JavaScript; successor to Framer Motion. — https://github.com/motiondivision/motion"
+      ],
+      "local_reference": {
+        "path": "resources/concordia/motion-library",
+        "original_remote": "https://github.com/motiondivision/motion.git",
+        "original_head_at_inventory": "99e7f5aa31e5f55e024b6553cbb3906248eac8de",
+        "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+        "security": "not audited"
+      },
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "mrdoob/three.js",
+      "url": "https://github.com/mrdoob/three.js",
+      "github_metadata": {
+        "full_name": "mrdoob/three.js",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "dev",
+        "git_size_kb": 1703005
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- mrdoob/three.js (117k) — JavaScript 3D library; interactive 3D product and concept visuals. — https://github.com/mrdoob/three.js"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "nexu-io/openmotion",
+      "url": "https://github.com/nexu-io/openmotion",
+      "github_metadata": {
+        "full_name": "nexu-io/openmotion",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 635025
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- nexu-io/openmotion [repo named] — OpenMotion: the first full-stack agentic video generator -- reverse-engineer any video, then recreate, edit and render high-quality motion content using HTML and TypeScript, with an agentic workflo... — video vid_387 by FondPeace Crazy ⚡ Dev & AI (other_ai_video_tools): https://www.instagram.com/reel/DfnFD2bkTM0/ — https://github.com/nexu-io/openmotion"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "obsproject/obs-studio",
+      "url": "https://github.com/obsproject/obs-studio",
+      "github_metadata": {
+        "full_name": "obsproject/obs-studio",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 87968
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- obsproject/obs-studio (78k) — Free screen recording and livestreaming studio; record study lessons and client demos. — https://github.com/obsproject/obs-studio"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "openqodex/openqodex",
+      "url": "https://github.com/openqodex/openqodex",
+      "github_metadata": {
+        "full_name": "openqodex/openqodex",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 14280
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- openqodex/openqodex — Open-source AI code reviewer that runs locally, checking every unpushed change with scanners and Claude/Codex reviewers — https://github.com/openqodex/openqodex — via vid_296 https://www.instagram.com/reel/DfEUOC0jtKq/ — access: Comment \"link\" on the post to receive via DM (gated by creator)"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "opentoonz/opentoonz",
+      "url": "https://github.com/opentoonz/opentoonz",
+      "github_metadata": {
+        "full_name": "opentoonz/opentoonz",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 128998
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- opentoonz/opentoonz (8k) — Full-featured open-source 2D animation software; hand-drawn cartoon lessons. — https://github.com/opentoonz/opentoonz"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "paulirish/chrome-capture",
+      "url": "https://github.com/paulirish/chrome-capture",
+      "github_metadata": {
+        "full_name": "paulirish/chrome-capture",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 310
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- paulirish/chrome-capture [verified] — chrome-capture records any Chrome tab at 60-120fps up to 4K with audio, straight to MP4, with one command. — video vid_403 by asharasjad (ai_auto_editing): https://www.instagram.com/reel/DfofO8Oum_p/ — https://github.com/paulirish/chrome-capture"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "pbakaus/impeccable",
+      "url": "https://github.com/pbakaus/impeccable",
+      "github_metadata": {
+        "full_name": "pbakaus/impeccable",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 906948
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- pbakaus/impeccable [verified] — impeccable gives your coding agent a design vocabulary: polish, bolder, critique, audit -- to catch AI slop before shipping. — video vid_411 by asharasjad (ai_design_tools): https://www.instagram.com/reel/DfaeCBbOiM1/ — https://github.com/pbakaus/impeccable"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "pixijs/pixijs",
+      "url": "https://github.com/pixijs/pixijs",
+      "github_metadata": {
+        "full_name": "pixijs/pixijs",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "dev",
+        "git_size_kb": 138105
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- pixijs/pixijs (48k) — Fast, flexible 2D WebGL renderer for interactive web content. — https://github.com/pixijs/pixijs"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "remotion-dev/remotion",
+      "url": "https://github.com/remotion-dev/remotion",
+      "github_metadata": {
+        "full_name": "remotion-dev/remotion",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 4472327
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- remotion-dev/remotion (68k) — Make videos programmatically with React; ideal for templated study videos. — https://github.com/remotion-dev/remotion"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "Sandflow-ai/sand3d",
+      "url": "https://github.com/Sandflow-ai/sand3d",
+      "github_metadata": {
+        "full_name": "Sandflow-ai/sand3d",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 7699
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- Sandflow-ai/sand3d [verified] — Sand3D is a Python 3D-modeling library built for LLMs: describe a shape in words and the model writes the code that builds it. — video vid_391 by asharasjad (other_ai_video_tools): https://www.instagram.com/reel/DffWZuZu0Lo/ — https://github.com/Sandflow-ai/sand3d"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "shinyobjectz/raea",
+      "url": "https://github.com/shinyobjectz/raea",
+      "github_metadata": {
+        "full_name": "shinyobjectz/raea",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 95215
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- shinyobjectz/raea [repo named] — Raea: a free open-source creative engine (Rust, Bevy, Dioxus) that lets AI agents build, edit, animate and render videos, motion graphics, 3D scenes, shaders and games programmatically on your own ... — video vid_385 by Shane Murphy | Building Raea 🐈‍⬛ Render Anything ✨ (other_ai_video_tools): https://www.instagram.com/reel/DfgQMGEKGJG/ — https://github.com/shinyobjectz/raea"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "storytold/filmcraft",
+      "url": "https://github.com/storytold/filmcraft",
+      "github_metadata": {
+        "full_name": "storytold/filmcraft",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 41593
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- storytold/filmcraft (16k) — Open-source non-linear video editor written from scratch in Rust. — https://github.com/storytold/filmcraft"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "Tejashmakwana/motionmaxxing",
+      "url": "https://github.com/Tejashmakwana/motionmaxxing",
+      "github_metadata": {
+        "full_name": "Tejashmakwana/motionmaxxing",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 21795
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- Tejashmakwana/motionmaxxing [repo named] — motionmaxxing: an agent skill that rebuilds flat AI-generated videos as polished motion-designer films, rendered locally from plain HTML. — video vid_327 by Dail Finds Dev | Repos, Tools, Sites (ai_motion_graphics): https://www.instagram.com/reel/DfJJGp2j0H-/ — https://github.com/Tejashmakwana/motionmaxxing"
+      ],
+      "local_reference": {
+        "path": "resources/concordia/video-motion/motionmaxxing",
+        "original_remote": "https://github.com/Tejashmakwana/motionmaxxing.git",
+        "original_head_at_inventory": "8c8ec0f2a6f6c9a0da15cd24f7b1298ab298368c",
+        "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+        "security": "not audited"
+      },
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "tokio-rs/topcoat",
+      "url": "https://github.com/tokio-rs/topcoat",
+      "github_metadata": {
+        "full_name": "tokio-rs/topcoat",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 8358
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- tokio-rs/topcoat [verified] — Topcoat is the Tokio team's batteries-included Rust web framework, shipping with an LLMs.txt so coding agents know how to use it. — video vid_392 by asharasjad (vibecoding): https://www.instagram.com/reel/Dflkt5HOzL1/ — https://github.com/tokio-rs/topcoat"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "tweenjs/tween.js",
+      "url": "https://github.com/tweenjs/tween.js",
+      "github_metadata": {
+        "full_name": "tweenjs/tween.js",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 18433
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- tweenjs/tween.js (10k) — Simple JavaScript tweening engine for UI and video animation. — https://github.com/tweenjs/tween.js"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "Vibha-Ramprakash/claude-video-effects",
+      "url": "https://github.com/Vibha-Ramprakash/claude-video-effects",
+      "github_metadata": {
+        "full_name": "Vibha-Ramprakash/claude-video-effects",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 2981
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- Vibha-Ramprakash/claude-video-effects (227) — From the reels: Claude Code skill with 45 talking-head effects, face tracking, layers kept behind your head. — https://github.com/Vibha-Ramprakash/claude-video-effects",
+        "- Vibha-Ramprakash/claude-video-effects — Claude Code skill: 45 talking-head video effects with face tracking, layers placed behind the head — https://github.com/Vibha-Ramprakash/claude-video-effects — via vid_289 https://www.instagram.com/p/DbWKOHODT1B/ — access: Shown in the screenshots sent with the EDIT reel; repo is public on GitHub"
+      ],
+      "local_reference": {
+        "path": "resources/concordia/video-motion/claude-video-effects",
+        "original_remote": "https://github.com/Vibha-Ramprakash/claude-video-effects.git",
+        "original_head_at_inventory": "99c9a3393ee14d39bea155a05c73dc069f02f16f",
+        "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+        "security": "not audited"
+      },
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "videojs/video.js",
+      "url": "https://github.com/videojs/video.js",
+      "github_metadata": {
+        "full_name": "videojs/video.js",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 265819
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- videojs/video.js (40k) — Open-source HTML video player framework; embed lessons and reels on any site. — https://github.com/videojs/video.js"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "Vincentwei1021/anything2explainer",
+      "url": "https://github.com/Vincentwei1021/anything2explainer",
+      "github_metadata": {
+        "full_name": "Vincentwei1021/anything2explainer",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 15252
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- Vincentwei1021/anything2explainer (2.8k) — Jack pick: topic in, narrated motion-graphics explainer video out, every frame drawn in code with Remotion. — https://github.com/Vincentwei1021/anything2explainer",
+        "- @LEARN gated resource — link — https://github.com/Vincentwei1021/anything2explainer — via vid_jr_056 https://www.instagram.com/reel/Ddg27jalH1i/ — access: Comment \"LEARN\" on the post to receive via DM (gated by creator)"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "wulkano/Kap",
+      "url": "https://github.com/wulkano/Kap",
+      "github_metadata": {
+        "full_name": "wulkano/Kap",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 24623
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- wulkano/Kap (19k) — Open-source screen recorder built with web tech; capture tutorials fast. — https://github.com/wulkano/Kap"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "xai-org/grok-build",
+      "url": "https://github.com/xai-org/grok-build",
+      "github_metadata": {
+        "full_name": "xai-org/grok-build",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 62238
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- @GROK gated resource — setup — https://github.com/xai-org/grok-build — via vid_jr_068 https://www.instagram.com/reel/Ddbp884DtvY/ — access: Comment \"GROK\" on the post to receive via DM (gated by creator)"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "NVIDIA/SkillSpector",
+      "url": "https://github.com/NVIDIA/SkillSpector",
+      "github_metadata": {
+        "full_name": "NVIDIA/SkillSpector",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 15160
+      },
+      "metadata_error": null,
+      "mentions": [
+        "- NVIDIA/SkillSpector - additional repository supplied by the user: https://github.com/NVIDIA/SkillSpector"
+      ],
+      "local_reference": null,
+      "audit_status": "not_audited",
+      "execution_status": "not_approved",
+      "note": "Repository metadata and local presence are not a security verdict."
+    }
+  ]
+}

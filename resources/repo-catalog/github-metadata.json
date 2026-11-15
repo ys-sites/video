@@ -1,0 +1,688 @@
+{
+  "checked_at": "2026-11-15",
+  "method": "GitHub connector repository metadata; identity and visibility only; no security audit or source integrity check",
+  "repositories": [
+    {
+      "requested": "666ghj/MiroFish",
+      "metadata": {
+        "full_name": "666ghj/MiroFish",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 16817
+      },
+      "error": null
+    },
+    {
+      "requested": "academa-labs/manimgx",
+      "metadata": {
+        "full_name": "academa-labs/manimgx",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 159272
+      },
+      "error": null
+    },
+    {
+      "requested": "affaan-m/ECC",
+      "metadata": {
+        "full_name": "affaan-m/ECC",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 62777
+      },
+      "error": null
+    },
+    {
+      "requested": "affaan-m/everything-claude-code",
+      "metadata": {
+        "full_name": "affaan-m/ECC",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 62777
+      },
+      "error": null
+    },
+    {
+      "requested": "airbnb/lottie-android",
+      "metadata": {
+        "full_name": "airbnb/lottie-android",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 137398
+      },
+      "error": null
+    },
+    {
+      "requested": "airbnb/lottie-web",
+      "metadata": {
+        "full_name": "airbnb/lottie-web",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 358131
+      },
+      "error": null
+    },
+    {
+      "requested": "bangtutorial/bang-motion",
+      "metadata": {
+        "full_name": "bangtutorial/bang-motion",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 1925
+      },
+      "error": null
+    },
+    {
+      "requested": "barckley75/resolve-claude-mcp",
+      "metadata": {
+        "full_name": "barckley75/resolve-claude-mcp",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 54470
+      },
+      "error": null
+    },
+    {
+      "requested": "bilawalsidhu/gods-eye-view",
+      "metadata": {
+        "full_name": "bilawalsidhu/gods-eye-view",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 210897
+      },
+      "error": null
+    },
+    {
+      "requested": "blender/blender",
+      "metadata": {
+        "full_name": "blender/blender",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 1449830
+      },
+      "error": null
+    },
+    {
+      "requested": "BudgetAny/Budget3D",
+      "metadata": {
+        "full_name": "BudgetAny/Budget3D",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 650
+      },
+      "error": null
+    },
+    {
+      "requested": "calesthio/OpenMontage",
+      "metadata": {
+        "full_name": "OpenMontageInc/OpenMontage",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 78414
+      },
+      "error": null
+    },
+    {
+      "requested": "charlesdove977/advertising-ops",
+      "metadata": {
+        "full_name": "charlesdove977/advertising-ops",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 113
+      },
+      "error": null
+    },
+    {
+      "requested": "charlesdove977/re-walkthrough-pro",
+      "metadata": {
+        "full_name": "charlesdove977/re-walkthrough-pro",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 1847
+      },
+      "error": null
+    },
+    {
+      "requested": "charlesdove977/UGC-Factory",
+      "metadata": {
+        "full_name": "charlesdove977/UGC-Factory",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 2237
+      },
+      "error": null
+    },
+    {
+      "requested": "cloudflare/security-audit-skill",
+      "metadata": {
+        "full_name": "cloudflare/security-audit-skill",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 143
+      },
+      "error": null
+    },
+    {
+      "requested": "debpalash/VoiceStudio",
+      "metadata": {
+        "full_name": "debpalash/VoiceStudio",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 218758
+      },
+      "error": null
+    },
+    {
+      "requested": "deepseek-ai/deepseek-harness",
+      "metadata": {
+        "full_name": "deepseek-ai/deepseek-harness",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 389740
+      },
+      "error": null
+    },
+    {
+      "requested": "dozentwelve/papermorph",
+      "metadata": {
+        "full_name": "DozenTwelve/Papermorph",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 840969
+      },
+      "error": null
+    },
+    {
+      "requested": "FFmpeg/FFmpeg",
+      "metadata": {
+        "full_name": "FFmpeg/FFmpeg",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 508195
+      },
+      "error": null
+    },
+    {
+      "requested": "ffmpegwasm/ffmpeg.wasm",
+      "metadata": {
+        "full_name": "ffmpegwasm/ffmpeg.wasm",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 17934
+      },
+      "error": null
+    },
+    {
+      "requested": "godotengine/godot",
+      "metadata": {
+        "full_name": "godotengine/godot",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 1951744
+      },
+      "error": null
+    },
+    {
+      "requested": "GraphiteEditor/Graphite",
+      "metadata": {
+        "full_name": "GraphiteEditor/Graphite",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 63960
+      },
+      "error": null
+    },
+    {
+      "requested": "greensock/GSAP",
+      "metadata": {
+        "full_name": "greensock/GSAP",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 14943
+      },
+      "error": null
+    },
+    {
+      "requested": "HandBrake/HandBrake",
+      "metadata": {
+        "full_name": "HandBrake/HandBrake",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 125686
+      },
+      "error": null
+    },
+    {
+      "requested": "HKUDS/DeepTutor",
+      "metadata": {
+        "full_name": "HKUDS/DeepTutor",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 258519
+      },
+      "error": null
+    },
+    {
+      "requested": "iamtechartist/every-joule-lesson1",
+      "metadata": {
+        "full_name": "iamtechartist/every-joule-lesson1",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 1297
+      },
+      "error": null
+    },
+    {
+      "requested": "JDhruv14/line-art-animation",
+      "metadata": {
+        "full_name": "JDhruv14/line-art-animation",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 7308
+      },
+      "error": null
+    },
+    {
+      "requested": "juliangarnier/anime",
+      "metadata": {
+        "full_name": "juliangarnier/anime",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 185735
+      },
+      "error": null
+    },
+    {
+      "requested": "JuneYaooo/rea-video",
+      "metadata": {
+        "full_name": "JuneYaooo/rea-video",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 157070
+      },
+      "error": null
+    },
+    {
+      "requested": "KDE/kdenlive",
+      "metadata": {
+        "full_name": "KDE/kdenlive",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 5274810
+      },
+      "error": null
+    },
+    {
+      "requested": "konvajs/konva",
+      "metadata": {
+        "full_name": "konvajs/konva",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 23555
+      },
+      "error": null
+    },
+    {
+      "requested": "latent-spaces/brag",
+      "metadata": {
+        "full_name": "latent-spaces/brag",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 50222
+      },
+      "error": null
+    },
+    {
+      "requested": "ManimCommunity/manim",
+      "metadata": {
+        "full_name": "ManimCommunity/manim",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 48339
+      },
+      "error": null
+    },
+    {
+      "requested": "mengto/skills",
+      "metadata": {
+        "full_name": "MengTo/Skills",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 84315
+      },
+      "error": null
+    },
+    {
+      "requested": "meshy-dev/ThreeRT",
+      "metadata": {
+        "full_name": "meshy-dev/ThreeRT",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 94161
+      },
+      "error": null
+    },
+    {
+      "requested": "meta/astryx",
+      "metadata": {
+        "full_name": "meta/astryx",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 1377674
+      },
+      "error": null
+    },
+    {
+      "requested": "mltframework/shotcut",
+      "metadata": {
+        "full_name": "mltframework/shotcut",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 162757
+      },
+      "error": null
+    },
+    {
+      "requested": "Moh4696/cinematic-skill",
+      "metadata": {
+        "full_name": "Moh4696/cinematic-skill",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 1989
+      },
+      "error": null
+    },
+    {
+      "requested": "mojs/mojs",
+      "metadata": {
+        "full_name": "mojs/mojs",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 140750
+      },
+      "error": null
+    },
+    {
+      "requested": "motiondivision/motion",
+      "metadata": {
+        "full_name": "motiondivision/motion",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 1668024
+      },
+      "error": null
+    },
+    {
+      "requested": "mrdoob/three.js",
+      "metadata": {
+        "full_name": "mrdoob/three.js",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "dev",
+        "git_size_kb": 1703005
+      },
+      "error": null
+    },
+    {
+      "requested": "nexu-io/openmotion",
+      "metadata": {
+        "full_name": "nexu-io/openmotion",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 635025
+      },
+      "error": null
+    },
+    {
+      "requested": "obsproject/obs-studio",
+      "metadata": {
+        "full_name": "obsproject/obs-studio",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 87968
+      },
+      "error": null
+    },
+    {
+      "requested": "openqodex/openqodex",
+      "metadata": {
+        "full_name": "openqodex/openqodex",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 14280
+      },
+      "error": null
+    },
+    {
+      "requested": "opentoonz/opentoonz",
+      "metadata": {
+        "full_name": "opentoonz/opentoonz",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "master",
+        "git_size_kb": 128998
+      },
+      "error": null
+    },
+    {
+      "requested": "paulirish/chrome-capture",
+      "metadata": {
+        "full_name": "paulirish/chrome-capture",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 310
+      },
+      "error": null
+    },
+    {
+      "requested": "pbakaus/impeccable",
+      "metadata": {
+        "full_name": "pbakaus/impeccable",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 906948
+      },
+      "error": null
+    },
+    {
+      "requested": "pixijs/pixijs",
+      "metadata": {
+        "full_name": "pixijs/pixijs",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "dev",
+        "git_size_kb": 138105
+      },
+      "error": null
+    },
+    {
+      "requested": "remotion-dev/remotion",
+      "metadata": {
+        "full_name": "remotion-dev/remotion",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 4472327
+      },
+      "error": null
+    },
+    {
+      "requested": "Sandflow-ai/sand3d",
+      "metadata": {
+        "full_name": "Sandflow-ai/sand3d",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 7699
+      },
+      "error": null
+    },
+    {
+      "requested": "shinyobjectz/raea",
+      "metadata": {
+        "full_name": "shinyobjectz/raea",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 95215
+      },
+      "error": null
+    },
+    {
+      "requested": "storytold/filmcraft",
+      "metadata": {
+        "full_name": "storytold/filmcraft",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 41593
+      },
+      "error": null
+    },
+    {
+      "requested": "Tejashmakwana/motionmaxxing",
+      "metadata": {
+        "full_name": "Tejashmakwana/motionmaxxing",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 21795
+      },
+      "error": null
+    },
+    {
+      "requested": "tokio-rs/topcoat",
+      "metadata": {
+        "full_name": "tokio-rs/topcoat",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 8358
+      },
+      "error": null
+    },
+    {
+      "requested": "tweenjs/tween.js",
+      "metadata": {
+        "full_name": "tweenjs/tween.js",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 18433
+      },
+      "error": null
+    },
+    {
+      "requested": "Vibha-Ramprakash/claude-video-effects",
+      "metadata": {
+        "full_name": "Vibha-Ramprakash/claude-video-effects",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 2981
+      },
+      "error": null
+    },
+    {
+      "requested": "videojs/video.js",
+      "metadata": {
+        "full_name": "videojs/video.js",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 265819
+      },
+      "error": null
+    },
+    {
+      "requested": "Vincentwei1021/anything2explainer",
+      "metadata": {
+        "full_name": "Vincentwei1021/anything2explainer",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 15252
+      },
+      "error": null
+    },
+    {
+      "requested": "wulkano/Kap",
+      "metadata": {
+        "full_name": "wulkano/Kap",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 24623
+      },
+      "error": null
+    },
+    {
+      "requested": "xai-org/grok-build",
+      "metadata": {
+        "full_name": "xai-org/grok-build",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 62238
+      },
+      "error": null
+    },
+    {
+      "requested": "NVIDIA/SkillSpector",
+      "metadata": {
+        "full_name": "NVIDIA/SkillSpector",
+        "visibility": "public",
+        "archived": false,
+        "default_branch": "main",
+        "git_size_kb": 15160
+      },
+      "error": null
+    }
+  ]
+}

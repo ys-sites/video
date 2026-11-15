@@ -6,3 +6,11 @@ coverage/
 *.log
 .env*
 !.env.example
+.vercel
+captions-skill/
+video-projects/
+Kenyset preset pack/
+Creator style kelssie3/
+talking-head-reels/
+voiceover-glass-reel/
+

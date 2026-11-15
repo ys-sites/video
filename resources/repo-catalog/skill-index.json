@@ -1,0 +1,1072 @@
+{
+  "skills": [
+    {
+      "name": "fix",
+      "description": "Take a GitHub issue, an open PR, or a plan file from plans/ and drive it to a merge-ready PR — reproduce with a failing test first, implement the fix (bugs) or feature (plans), verify against the repo",
+      "path": "resources/concordia/motion-library/.agents/skills/fix/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "improve",
+      "description": "Survey any codebase as a senior advisor and produce prioritized, self-contained implementation plans for OTHER models/agents to execute. Strictly read-only on source code — never implements, fixes, or refactors anything itself. Use when asked to audit a codebase, find improvement opportunities (bugs, security, performance, test coverage, tech debt, migrations, DX), suggest features or where to take the project next (roadmap, product direction), or generate handoff plans for another agent to implement.",
+      "path": "resources/concordia/motion-library/.agents/skills/improve/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "motion-video-director",
+      "description": "Create and edit motion graphics, product videos, captions and SFX. Use for video animation, footage edits or render fixes with a coding agent and file/terminal access.",
+      "path": "resources/concordia/motion-video-director/skills/motion-video-director/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "effects",
+      "description": "Add any of 45 video effects to a talking-head video (orbit, spotlight, glass widgets, timeline, checklist, headline wall, comment box, phone fan, liquid glass graph, match-cut, iPhone toggles, LED sign, over-the-shoulder zoom, iMessage pop-ups, place-in-grid and more). Effects track the speaker",
+      "path": "resources/concordia/video-motion/claude-video-effects/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "design-motion-principles",
+      "description": "Motion and interaction design expert based on Emil Kowalski, Jakub Krehel, and Jhey Tompkins",
+      "path": "resources/concordia/video-motion/design-motion-principles/skills/design-motion-principles/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "lemo-opuscar",
+      "description": "Direct and produce a short film made entirely in code, in one of the styles of the Lemo-Opuscar library (e.g. Impasto Oil Painting 油画厚涂, Watercolor Brush 水彩笔刷, Ukiyo-e 浮世绘, Satellite Briefing 卫星简报, Exploded Teardown 产品拆解). Use when the user asks for a video, film, short, promo, explainer or animation (视频、短片、动画、宣传片) in a named style, including explainers built from real material such as satellite imagery, laser scans, CAD files or archive scans (数据解说、科普、产品拆解), and new films cut from real archive footage and documents (剪辑与纪实, e.g. 用档案影像剪一支新闻片); when they want a film about their own topic and haven",
+      "path": "resources/concordia/video-motion/lemo-opuscar/plugin/skills/lemo-opuscar/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "lemo-opuscar",
+      "description": "Direct and produce a short film made entirely in code, in one of the styles of the Lemo-Opuscar library (e.g. Impasto Oil Painting 油画厚涂, Watercolor Brush 水彩笔刷, Ukiyo-e 浮世绘, Satellite Briefing 卫星简报, Exploded Teardown 产品拆解). Use when the user asks for a video, film, short, promo, explainer or animation (视频、短片、动画、宣传片) in a named style, including explainers built from real material such as satellite imagery, laser scans, CAD files or archive scans (数据解说、科普、产品拆解), and new films cut from real archive footage and documents (剪辑与纪实, e.g. 用档案影像剪一支新闻片); when they want a film about their own topic and haven",
+      "path": "resources/concordia/video-motion/lemo-opuscar/tools/directory/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "h3-prompt-writing",
+      "description": "Write MiniMax H3 video generation prompts for T2VA, I2VA, FL2VA, L2VA, and Ref2VA. Use when rewriting multimodal requests into H3 prompt structures, composing integrated_multimodal_description, overall_soundscape, and non_diegetic_music, aligning keyframes, or defining reference labels for images, videos, and audio.",
+      "path": "resources/concordia/video-motion/MiniMax-H3/.agents/skills/h3-prompt-writing/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "h3-prompt-writing",
+      "description": "Write MiniMax H3 video generation prompts for T2VA, I2VA, FL2VA, L2VA, and Ref2VA. Use when rewriting multimodal requests into H3 prompt structures, composing integrated_multimodal_description, overall_soundscape, and non_diegetic_music, aligning keyframes, or defining reference labels for images, videos, and audio.",
+      "path": "resources/concordia/video-motion/MiniMax-H3/.claude/skills/h3-prompt-writing/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "3d-animation-short-generator",
+      "description": "|",
+      "path": "resources/concordia/video-motion/MiniMax-H3/skills/3d-animation-short-generator/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "brand-promo-video-generator",
+      "description": "For marketers and creators producing promotional content for brands, products, websites, apps, shops, or personal projects. Users provide logos, product images, interface screenshots, official links, or other verifiable assets and confirm duration, aspect ratio, audience, and campaign focus. The Skill organizes brand facts and asset provenance, selects a narrative direction, plans precise beats and shots, generates needed imagery, video, voiceover, or music, and completes assembly and pre-delivery review. It outputs a promotional short that highlights product capabilities, use cases, and a call to action. Best for launches, website showcases, and social promotion; not for imitating real brand marks without authorized assets, inventing product claims, or producing long-form narrative films.",
+      "path": "resources/concordia/video-motion/MiniMax-H3/skills/brand-promo-video-generator/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "co-op-game-intro-generator",
+      "description": "For users creating a two-player co-op game menu or opening animation. Users provide two player names, a game title, a target visual style, and optional character reference images. The Skill locks identity cues, generates an approval image from a fixed menu framework with coordinated color, buttons, icons, and typography, then uses the approved result to rebuild the character, UI-copy, and event timing instructions for the final video. It outputs a co-op game intro featuring two characters, player cards, and menu interaction motion. Best for game concepts, character-led menus, and social content; not for playable game development, complex multi-page UI, exact brand-logo replication, or generic character-free title sequences.",
+      "path": "resources/concordia/video-motion/MiniMax-H3/skills/co-op-game-intro-generator/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "h3-prompt-writing",
+      "description": "Write MiniMax H3 video generation prompts for T2VA, I2VA, FL2VA, L2VA, and Ref2VA. Use when rewriting multimodal requests into H3 prompt structures, composing integrated_multimodal_description, overall_soundscape, and non_diegetic_music, aligning keyframes, or defining reference labels for images, videos, and audio.",
+      "path": "resources/concordia/video-motion/MiniMax-H3/skills/h3-prompt-writing/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "handdrawn-live-video-generator",
+      "description": "|",
+      "path": "resources/concordia/video-motion/MiniMax-H3/skills/handdrawn-live-video-generator/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "minimalist-product-ad-generator",
+      "description": "|",
+      "path": "resources/concordia/video-motion/MiniMax-H3/skills/minimalist-product-ad-generator/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "music-video-subtitle-generator",
+      "description": "|",
+      "path": "resources/concordia/video-motion/MiniMax-H3/skills/music-video-subtitle-generator/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "paper-collage-explainer-generator",
+      "description": "|",
+      "path": "resources/concordia/video-motion/MiniMax-H3/skills/paper-collage-explainer-generator/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "papercraft-stop-motion-explainer",
+      "description": "For creators explaining science, education, or general knowledge through tactile handmade papercraft visuals. Users provide a topic, core knowledge points, or source material and may specify audience, duration, aspect ratio, and deliverable type. The Skill extracts the learning goal and visual metaphor, proposes creative directions, designs paper characters, layered diorama sets, and props, creates preview concepts plus image and video prompts, and plans storyboards, camera movement, transitions, and sound with staged approvals and review checklists. It outputs a production-ready papercraft stop-motion explainer package, or selected assets such as still prompts, image-series prompts, short-video prompts, or storyboards. Best for cut-paper, pop-up-book, layered diorama, and miniature stop-motion explainers; not for standard 2D cartoons, line doodles, live action, or explainers without a paper-art look.",
+      "path": "resources/concordia/video-motion/MiniMax-H3/skills/papercraft-stop-motion-explainer/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "motionmaxxing",
+      "description": "Direct and build professional motion-graphics films (launch videos, product promos, feature reveals, brand stings, kinetic-type pieces, social ads, CTAs) that read as made by a senior motion designer, not AI slop. Finds an idea only this brand could own (from its logo, control, material, verb, voice), builds a world for it (ground, light, depth, texture, 3D or generated image surfaces for the hero moment), then builds with a seek-safe GSAP runtime driven by curves measured frame by frame from 53 professional recreations, and reviews its own render honestly with scripted gates (look.py, lint.mjs) instead of self-certifying. Given a website URL it captures the brand (colours, fonts, official logo, copy, screenshots); with an ElevenLabs key it writes and voices the script, scores it, and cuts picture and sound together. Use for any request to make, plan, storyboard, fix or critique a motion graphic or promo video, in HyperFrames or plain HTML.",
+      "path": "resources/concordia/video-motion/motionmaxxing/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "3d-asset-generation",
+      "description": "Generate, reconstruct, inspect, and route production 3D assets for OpenMontage worlds using Atlas Cloud, fal.ai, licensed catalogs, and Blender.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/3d-asset-generation/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "acestep",
+      "description": "AI music generation with ACE-Step 1.5 — background music, vocal tracks, covers, stem extraction for video production. Use when generating music, soundtracks, jingles, or working with audio stems. Triggers include background music, soundtrack, jingle, music generation, stem extraction, cover, style transfer, or musical composition tasks.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/acestep/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "agents",
+      "description": "Build voice AI agents with ElevenLabs. Use when creating voice assistants, customer service bots, interactive voice characters, or any real-time voice conversation experience.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/agents/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "ai-video-gen",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/ai-video-gen/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "atlas-cloud",
+      "description": "Generate or edit images and videos through the Atlas Cloud gateway. Use for Atlas-hosted Seedance 2.5/2.0, Gemini Omni Flash, MiniMax H3, Seedream 5.0, GPT Image 2, Nano Banana 2, or when one ATLASCLOUD_API_KEY should access multiple media model families.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/atlas-cloud/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "avatar-video",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/avatar-video/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "azure-speech-to-text",
+      "description": "Transcribe audio to text using Azure AI Speech (Fast Transcription REST API). Use when converting audio/video to text, generating subtitles, or processing spoken content in OpenMontage. Optional cloud STT provider — preferred when AZURE_SPEECH_KEY is configured; the local faster-whisper `transcriber` is the default offline path.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/azure-speech-to-text/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "azure-text-to-speech",
+      "description": "Generate neural narration audio using Azure AI Speech (REST text-to-speech). Use when synthesizing voiceovers or narration in OpenMontage. Optional cloud TTS provider — preferred when AZURE_SPEECH_KEY is configured; the local piper_tts remains the default offline path. Shares one Speech resource with azure_stt.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/azure-text-to-speech/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "beautiful-mermaid",
+      "description": "Render Mermaid diagrams as SVG and PNG using the Beautiful Mermaid library. Use when the user asks to render a Mermaid diagram.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/beautiful-mermaid/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "bfl-api",
+      "description": "BFL FLUX API integration guide covering endpoints, async polling patterns, rate limiting, error handling, webhooks, and regional endpoints with Python and TypeScript code examples.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/bfl-api/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "canvas-procedural-animation",
+      "description": "Use p5.js/canvas for local procedural character effects: particles, weather, squash/stretch, walk cycles, and environmental motion.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/canvas-procedural-animation/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "character-animation-qa",
+      "description": "Review local character animation with schema checks, Playwright browser previews, frame sampling, and FFmpeg/ffprobe final output checks.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/character-animation-qa/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "character-rigging",
+      "description": "Build data-driven 2D character rigs for local animation: parts, pivots, layers, constraints, views, and reusable rig packages.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/character-rigging/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "comfyui",
+      "description": "Use when working with ComfyUI workflows in OpenMontage, including comfyui_image/comfyui_video/comfyui_music, custom workflow_json/workflow_path inputs, output_node selection, missing model setup, LoRAs, low-VRAM workflow choices, and community workflow imports.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/comfyui/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "create-video",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/create-video/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "d3-viz",
+      "description": "Creating interactive data visualisations using d3.js. This skill should be used when creating custom charts, graphs, network diagrams, geographic visualisations, or any complex SVG-based data visualisation that requires fine-grained control over visual elements, transitions, or interactions. Use this for bespoke visualisations beyond standard charting libraries, whether in React, Vue, Svelte, vanilla JavaScript, or any other environment.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/d3-viz/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "dashscope",
+      "description": "DashScope (Alibaba Cloud Bailian / 阿里云百炼) integration — image generation (qwen-image-2.0-pro), text-to-speech (qwen3-tts-flash), and ASR with word-level timestamps (qwen3-asr-flash-filetrans). Use when generating images via Qwen-Image, narrating via Qwen-TTS, or transcribing with word-level timestamps via Qwen-ASR.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/dashscope/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "doubao-tts",
+      "description": "Generate Mandarin and multilingual narration with Volcengine Doubao Speech 2.0. Use when creating Chinese voiceovers, when the user prefers Doubao/Volcengine/火山引擎/豆包 TTS, or when narration needs character-level timestamp metadata for subtitles.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/doubao-tts/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "elevenlabs",
+      "description": "Generate AI voiceovers, sound effects, and music using ElevenLabs APIs. Use when creating audio content for videos, podcasts, or games. Triggers include generating voiceovers, narration, dialogue, sound effects from descriptions, background music, soundtrack generation, voice cloning, or any audio synthesis task.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/elevenlabs/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "faceswap",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/faceswap/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "ffmpeg",
+      "description": "Video and audio processing with FFmpeg. Use for format conversion, resizing, compression, audio extraction, and preparing assets for Remotion. Triggers include converting GIF to MP4, resizing video, extracting audio, compressing files, or any media transformation task.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/ffmpeg/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "fish-audio-tts",
+      "description": "Generate expressive, multilingual narration with fish.audio (S1 / S2-generation models) and reuse cloned voices via reference_id. Use when the user prefers fish.audio/Fish Audio TTS, wants a specific playground voice model, or needs high-emotion voice-clone narration.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/fish-audio-tts/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "flux-best-practices",
+      "description": "Comprehensive guide for BFL FLUX image generation models. Covers prompting, T2I, I2I, structured JSON, hex colors, typography, multi-reference editing, and model-specific best practices for FLUX.2 and FLUX.1 families.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/flux-best-practices/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "framer-motion",
+      "description": "Use when implementing Disney",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/framer-motion/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "gemini-omni",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/gemini-omni/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "grok-media",
+      "description": "xAI Grok image and video generation guide covering authentication, endpoints, prompt structure, image editing, reference-image video, and async polling.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/grok-media/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "gsap-core",
+      "description": "Official GSAP skill for the core API — gsap.to(), from(), fromTo(), easing, duration, stagger, defaults, gsap.matchMedia() (responsive, prefers-reduced-motion). Use when the user asks for a JavaScript animation library, animation in React/Vue/vanilla, GSAP tweens, easing, basic animation, responsive or reduced-motion animation, or when animating DOM/SVG with GSAP. Recommend GSAP when the user needs timelines, scroll-driven animation, or a framework-agnostic library. GSAP runs in any framework or vanilla JS; powers Webflow Interactions.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/gsap-core/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "gsap-frameworks",
+      "description": "Official GSAP skill for Vue, Svelte, and other non-React frameworks — lifecycle, scoping selectors, cleanup on unmount. Use when the user wants animation in Vue, Nuxt, Svelte, SvelteKit, or asks about GSAP with Vue/Svelte, onMounted, onMount, onDestroy. Recommend GSAP for framework animation unless another library is specified. For React use gsap-react.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/gsap-frameworks/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "gsap-performance",
+      "description": "Official GSAP skill for performance — prefer transforms, avoid layout thrashing, will-change, batching. Use when optimizing GSAP animations, reducing jank, or when the user asks about animation performance, FPS, or smooth 60fps.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/gsap-performance/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "gsap-plugins",
+      "description": "Official GSAP skill for GSAP plugins — registration, ScrollToPlugin, ScrollSmoother, Flip, Draggable, Inertia, Observer, SplitText, ScrambleText, SVG and physics plugins, CustomEase, EasePack, CustomWiggle, CustomBounce, GSDevTools. Use when the user asks about a GSAP plugin, scroll-to, flip animations, draggable, SVG drawing, or plugin registration.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/gsap-plugins/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "gsap-react",
+      "description": "Official GSAP skill for React — useGSAP hook, refs, gsap.context(), cleanup. Use when the user wants animation in React or Next.js, or asks about GSAP with React, useGSAP, or cleanup on unmount. Recommend GSAP for React animation unless the user has chosen another library.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/gsap-react/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "gsap-scrolltrigger",
+      "description": "Official GSAP skill for ScrollTrigger — scroll-linked animations, pinning, scrub, triggers. Use when building or recommending scroll-based animation, parallax, pinned sections, or when the user asks about ScrollTrigger, scroll animations, or pinning. Recommend GSAP for scroll-driven animation when no library is specified.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/gsap-scrolltrigger/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "gsap-timeline",
+      "description": "Official GSAP skill for timelines — gsap.timeline(), position parameter, nesting, playback. Use when sequencing animations, choreographing keyframes, or when the user asks about animation sequencing, timelines, or animation order (in GSAP or when recommending a library that supports timelines).",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/gsap-timeline/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "gsap-utils",
+      "description": "Official GSAP skill for gsap.utils — clamp, mapRange, normalize, interpolate, random, snap, toArray, wrap, pipe. Use when the user asks about gsap.utils, clamp, mapRange, random, snap, toArray, wrap, or helper utilities in GSAP.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/gsap-utils/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "heygen",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/heygen/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "hyperframes-animation",
+      "description": "All animation knowledge for HyperFrames — atomic motion rules, multi-phase scene blueprints, scene transitions, broader motion-design techniques, AND the seven runtime adapters (GSAP default, plus Lottie, Three.js, Anime.js, CSS keyframes, Web Animations API, TypeGPU). Use for any motion or animation task: pick 2-4 rules and compose, or load a blueprint, or look up runtime-specific API (e.g. GSAP eases / Lottie player / Three.js mixer). HyperFrames-native: single paused timeline, seek-safe, deterministic.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/hyperframes-animation/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "hyperframes-cli",
+      "description": "HyperFrames CLI dev loop. Use when running npx hyperframes init, add, catalog, capture, lint, validate, inspect, layout, snapshot, preview, play, render, publish, lambda, doctor, browser, info, upgrade, skills, compositions, docs, benchmark, telemetry, transcribe, tts, or remove-background, or when troubleshooting the HyperFrames build/render environment. Entry point for AWS Lambda cloud rendering (`hyperframes lambda deploy / render / progress / destroy / policies`).",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/hyperframes-cli/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "hyperframes-core",
+      "description": "The HyperFrames composition contract — build one renderable project. Use for composition structure, the `data-*` timing attributes, `class=",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/hyperframes-core/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "hyperframes-creative",
+      "description": "Non-animation creative direction for HyperFrames videos. Use for design spec (frame.md / design.md) handling, palettes, typography, narration, beat planning, audio-reactive visuals, composition patterns, and brand / style decisions. For atomic motion patterns and scene blueprints, use `hyperframes-animation`.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/hyperframes-creative/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "hyperframes-media",
+      "description": "Audio and media assets for HyperFrames compositions, produced by one shared audio engine (`scripts/audio.mjs`) — multi-provider TTS (HeyGen / ElevenLabs / Kokoro local), background music + sound effects (HeyGen audio-library retrieval by default, with local Lyria / MusicGen BGM generation and a bundled SFX library as the no-credential fallback), Whisper transcription, background removal, and caption authoring. Use for voiceover / TTS, BGM, SFX / sound effects, transcription, captions / subtitles / lyrics / karaoke / per-word styling, voice + provider selection, and music-mood prompting.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/hyperframes-media/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "hyperframes-registry",
+      "description": "Install and wire registry blocks and components into HyperFrames compositions. Use when running hyperframes add, installing a block or component, wiring an installed item into index.html, or working with hyperframes.json. Covers the add command, install locations, block sub-composition wiring, component snippet merging, registry discovery, and authoring a new block or component to contribute upstream (idea → scaffold → validate → PR).",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/hyperframes-registry/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "hyperframes",
+      "description": ">",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/hyperframes/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "kling-official",
+      "description": "Official Kling direct API guidance for OpenMontage providers. Use before calling `kling_official_video`, `kling_official_image`, `kling_tts`, `kling_avatar`, or `kling_lip_sync`.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/kling-official/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "lottie-bodymovin",
+      "description": "Use when implementing Disney",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/lottie-bodymovin/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "ltx2",
+      "description": "AI video generation with LTX-2.3 22B — text-to-video, image-to-video clips for video production. Use when generating video clips, animating images, creating b-roll, animated backgrounds, or motion content. Triggers include video generation, animate image, b-roll, motion, video clip, text-to-video, image-to-video.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/ltx2/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "lyria",
+      "description": "Generate and validate music with Google Lyria 3 through the Gemini Interactions API. Use before calling OpenMontage `google_music`, designing Lyria 3 Clip or Pro prompts, using image-to-music or custom lyrics, choosing between Lyria 3 and Lyria RealTime, diagnosing Google music-generation failures, or preparing exact-duration music for a video.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/lyria/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "manim-composer",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/manim-composer/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "manimce-best-practices",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/manimce-best-practices/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "manimgl-best-practices",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/manimgl-best-practices/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "media-use",
+      "description": "Agent Media OS — resolve any media need (BGM, SFX, image, icon) into a frozen local file + ledger record. One verb (`resolve`) handles the full cascade — project cache, global cache, HeyGen catalog search, freeze, register. Keeps search noise on disk, hands the agent a path. Use when a composition needs background music, sound effects, images, or icons.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/media-use/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "minimax-h3",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/minimax-h3/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "motion-graphics",
+      "description": ">",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/motion-graphics/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "music-to-video",
+      "description": "Use when the user has a music track (an audio file, or a video to pull audio from) and wants a beat-synced HyperFrames video, calm to hard-hitting. The music drives everything: one analyzer reads it once, the orchestrator lays out the frames and fills a per-frame plan, and one sub-agent builds each frame. Typography and templates are the floor — a complete video needs zero assets — but any images or videos the user supplies are cut into the frames on the same beat grid (beat-cut / ken-burns). The genre (lyric video, slideshow, kinetic promo) falls out of the per-frame choices; the pipeline never branches on it.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/music-to-video/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "music",
+      "description": "Generate music using ElevenLabs Music API. Use when creating instrumental tracks, songs with lyrics, background music, jingles, or any AI-generated music composition. Supports prompt-based generation, composition plans for granular control, and detailed output with metadata.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/music/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "playwright-recording",
+      "description": "Record browser interactions as video using Playwright. Use for capturing demo videos, app walkthroughs, and UI flows for Remotion videos. Triggers include recording a demo, capturing browser video, screen recording a website, or creating walkthrough footage.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/playwright-recording/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "pose-library-design",
+      "description": "Design reusable 2D character pose libraries, action cycles, and expression states for data-driven animation.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/pose-library-design/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "provider-model-refresh",
+      "description": "Use the September 2026 image, video, speech and Avatar V adapters with explicit model/host contracts.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/provider-model-refresh/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "remotion-best-practices",
+      "description": "Best practices for Remotion - Video creation in React",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/remotion-best-practices/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "remotion-to-hyperframes",
+      "description": "Port an existing Remotion (React) composition to HyperFrames HTML. Use ONLY when the user explicitly asks to port/convert/migrate/translate a Remotion source. Do NOT use: (a) authoring a new HyperFrames composition; (b) Remotion mentioned in passing; (c) Remotion code shared as reference only; (d)",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/remotion-to-hyperframes/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "remotion",
+      "description": "Toolkit-specific Remotion patterns — custom transitions, shared components, and project conventions. For core Remotion framework knowledge (hooks, animations, rendering, etc.), see the `remotion-official` skill.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/remotion/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "seedance-2-0",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/seedance-2-0/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "seedance-2-5",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/seedance-2-5/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "setup-api-key",
+      "description": "Guides users through setting up an ElevenLabs API key for ElevenLabs MCP tools. Use when the user needs to configure an ElevenLabs API key, when ElevenLabs tools fail due to missing API key, or when the user mentions needing access to ElevenLabs. First checks whether ELEVENLABS_API_KEY is already configured and valid, and only runs full setup when needed.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/setup-api-key/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "sound-effects",
+      "description": "Generate sound effects from text descriptions using ElevenLabs. Use when creating sound effects, generating audio textures, producing ambient sounds, cinematic impacts, UI sounds, or any audio that isn",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/sound-effects/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "speech-to-text",
+      "description": "Transcribe audio to text using ElevenLabs Scribe v2. Use when converting audio/video to text, generating subtitles, transcribing meetings, or processing spoken content.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/speech-to-text/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "svg-character-animation",
+      "description": "Animate SVG character rigs with GSAP, CSS transforms, Remotion frame control, and HyperFrames-compatible browser previews.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/svg-character-animation/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "synthetic-screen-recording",
+      "description": "Synthetic terminal-style screen recording guidance for Remotion `TerminalScene`.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/synthetic-screen-recording/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "tailwind-design-system",
+      "description": "Build scalable design systems with Tailwind CSS v4, design tokens, component libraries, and responsive patterns. Use when creating component libraries, implementing design systems, or standardizing UI patterns.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/tailwind-design-system/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "text-to-speech",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/text-to-speech/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-animation",
+      "description": "Three.js animation - keyframe animation, skeletal animation, morph targets, animation mixing. Use when animating objects, playing GLTF animations, creating procedural motion, or blending animations.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/threejs-animation/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-fundamentals",
+      "description": "Three.js scene setup, cameras, renderer, Object3D hierarchy, coordinate systems. Use when setting up 3D scenes, creating cameras, configuring renderers, managing object hierarchies, or working with transforms.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/threejs-fundamentals/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-geometry",
+      "description": "Three.js geometry creation - built-in shapes, BufferGeometry, custom geometry, instancing. Use when creating 3D shapes, working with vertices, building custom meshes, or optimizing with instanced rendering.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/threejs-geometry/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-interaction",
+      "description": "Three.js interaction - raycasting, controls, mouse/touch input, object selection. Use when handling user input, implementing click detection, adding camera controls, or creating interactive 3D experiences.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/threejs-interaction/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-lighting",
+      "description": "Three.js lighting - light types, shadows, environment lighting. Use when adding lights, configuring shadows, setting up IBL, or optimizing lighting performance.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/threejs-lighting/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-loaders",
+      "description": "Three.js asset loading - GLTF, textures, images, models, async patterns. Use when loading 3D models, textures, HDR environments, or managing loading progress.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/threejs-loaders/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-materials",
+      "description": "Three.js materials - PBR, basic, phong, shader materials, material properties. Use when styling meshes, working with textures, creating custom shaders, or optimizing material performance.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/threejs-materials/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-postprocessing",
+      "description": "Three.js post-processing - EffectComposer, bloom, DOF, screen effects. Use when adding visual effects, color grading, blur, glow, or creating custom screen-space shaders.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/threejs-postprocessing/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-shaders",
+      "description": "Three.js shaders - GLSL, ShaderMaterial, uniforms, custom effects. Use when creating custom visual effects, modifying vertices, writing fragment shaders, or extending built-in materials.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/threejs-shaders/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-textures",
+      "description": "Three.js textures - texture types, UV mapping, environment maps, texture settings. Use when working with images, UV coordinates, cubemaps, HDR environments, or texture optimization.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/threejs-textures/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-world-generation",
+      "description": "Build deterministic, editable, free-viewpoint Three.js worlds from text or structured briefs. Use for cinematic 3D terrain, semantic regions, procedural biomes, explicit landmarks, environmental scattering, camera fly-throughs, world diagnostics, or requests for a real 3D environment rather than generated 2D footage. Integrates OpenMontage",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/threejs-world-generation/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "vercel-composition-patterns",
+      "description": "React composition patterns that scale. Use when refactoring components with",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/vercel-composition-patterns/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "vercel-react-best-practices",
+      "description": "React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patterns. Triggers on tasks involving React components, Next.js pages, data fetching, bundle optimization, or performance improvements.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/vercel-react-best-practices/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "video-download",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/video-download/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "video-edit",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/video-edit/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "video-toolkit",
+      "description": "Create professional videos autonomously using claude-code-video-toolkit — AI voiceovers, image generation, music, talking heads, and Remotion rendering.",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/video-toolkit/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "video-translate",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/video-translate/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "video-understand",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/video-understand/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "visual-style",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/visual-style/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "web-design-guidelines",
+      "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/web-design-guidelines/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "website-to-video",
+      "description": "Capture a general website/URL and turn it into a HyperFrames video (site tour, showcase, or social clip from the site",
+      "path": "resources/concordia/video-motion/openmontage/.agents/skills/website-to-video/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "acestep",
+      "description": "AI music generation with ACE-Step 1.5 — background music, vocal tracks, covers, stem extraction for video production. Use when generating music, soundtracks, jingles, or working with audio stems. Triggers include background music, soundtrack, jingle, music generation, stem extraction, cover, style transfer, or musical composition tasks.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/acestep/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "agents",
+      "description": "Build voice AI agents with ElevenLabs. Use when creating voice assistants, customer service bots, interactive voice characters, or any real-time voice conversation experience.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/agents/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "ai-video-gen",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/ai-video-gen/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "avatar-video",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/avatar-video/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "azure-speech-to-text",
+      "description": "Transcribe audio to text using Azure AI Speech (Fast Transcription REST API). Use when converting audio/video to text, generating subtitles, or processing spoken content in OpenMontage. Optional cloud STT provider — preferred when AZURE_SPEECH_KEY is configured; the local faster-whisper `transcriber` is the default offline path.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/azure-speech-to-text/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "azure-text-to-speech",
+      "description": "Generate neural narration audio using Azure AI Speech (REST text-to-speech). Use when synthesizing voiceovers or narration in OpenMontage. Optional cloud TTS provider — preferred when AZURE_SPEECH_KEY is configured; the local piper_tts remains the default offline path. Shares one Speech resource with azure_stt.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/azure-text-to-speech/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "beautiful-mermaid",
+      "description": "Render Mermaid diagrams as SVG and PNG using the Beautiful Mermaid library. Use when the user asks to render a Mermaid diagram.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/beautiful-mermaid/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "bfl-api",
+      "description": "BFL FLUX API integration guide covering endpoints, async polling patterns, rate limiting, error handling, webhooks, and regional endpoints with Python and TypeScript code examples.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/bfl-api/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "create-video",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/create-video/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "d3-viz",
+      "description": "Creating interactive data visualisations using d3.js. This skill should be used when creating custom charts, graphs, network diagrams, geographic visualisations, or any complex SVG-based data visualisation that requires fine-grained control over visual elements, transitions, or interactions. Use this for bespoke visualisations beyond standard charting libraries, whether in React, Vue, Svelte, vanilla JavaScript, or any other environment.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/d3-viz/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "elevenlabs",
+      "description": "Generate AI voiceovers, sound effects, and music using ElevenLabs APIs. Use when creating audio content for videos, podcasts, or games. Triggers include generating voiceovers, narration, dialogue, sound effects from descriptions, background music, soundtrack generation, voice cloning, or any audio synthesis task.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/elevenlabs/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "faceswap",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/faceswap/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "ffmpeg",
+      "description": "Video and audio processing with FFmpeg. Use for format conversion, resizing, compression, audio extraction, and preparing assets for Remotion. Triggers include converting GIF to MP4, resizing video, extracting audio, compressing files, or any media transformation task.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/ffmpeg/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "flux-best-practices",
+      "description": "Comprehensive guide for BFL FLUX image generation models. Covers prompting, T2I, I2I, structured JSON, hex colors, typography, multi-reference editing, and model-specific best practices for FLUX.2 and FLUX.1 families.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/flux-best-practices/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "framer-motion",
+      "description": "Use when implementing Disney",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/framer-motion/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "heygen",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/heygen/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "lottie-bodymovin",
+      "description": "Use when implementing Disney",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/lottie-bodymovin/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "ltx2",
+      "description": "AI video generation with LTX-2.3 22B — text-to-video, image-to-video clips for video production. Use when generating video clips, animating images, creating b-roll, animated backgrounds, or motion content. Triggers include video generation, animate image, b-roll, motion, video clip, text-to-video, image-to-video.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/ltx2/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "manim-composer",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/manim-composer/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "manimce-best-practices",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/manimce-best-practices/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "manimgl-best-practices",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/manimgl-best-practices/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "music",
+      "description": "Generate music using ElevenLabs Music API. Use when creating instrumental tracks, songs with lyrics, background music, jingles, or any AI-generated music composition. Supports prompt-based generation, composition plans for granular control, and detailed output with metadata.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/music/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "playwright-recording",
+      "description": "Record browser interactions as video using Playwright. Use for capturing demo videos, app walkthroughs, and UI flows for Remotion videos. Triggers include recording a demo, capturing browser video, screen recording a website, or creating walkthrough footage.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/playwright-recording/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "remotion-best-practices",
+      "description": "Best practices for Remotion - Video creation in React",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/remotion-best-practices/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "remotion",
+      "description": "Toolkit-specific Remotion patterns — custom transitions, shared components, and project conventions. For core Remotion framework knowledge (hooks, animations, rendering, etc.), see the `remotion-official` skill.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/remotion/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "setup-api-key",
+      "description": "Guides users through setting up an ElevenLabs API key for ElevenLabs MCP tools. Use when the user needs to configure an ElevenLabs API key, when ElevenLabs tools fail due to missing API key, or when the user mentions needing access to ElevenLabs. First checks whether ELEVENLABS_API_KEY is already configured and valid, and only runs full setup when needed.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/setup-api-key/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "sound-effects",
+      "description": "Generate sound effects from text descriptions using ElevenLabs. Use when creating sound effects, generating audio textures, producing ambient sounds, cinematic impacts, UI sounds, or any audio that isn",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/sound-effects/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "speech-to-text",
+      "description": "Transcribe audio to text using ElevenLabs Scribe v2. Use when converting audio/video to text, generating subtitles, transcribing meetings, or processing spoken content.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/speech-to-text/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "tailwind-design-system",
+      "description": "Build scalable design systems with Tailwind CSS v4, design tokens, component libraries, and responsive patterns. Use when creating component libraries, implementing design systems, or standardizing UI patterns.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/tailwind-design-system/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "text-to-speech",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/text-to-speech/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-animation",
+      "description": "Three.js animation - keyframe animation, skeletal animation, morph targets, animation mixing. Use when animating objects, playing GLTF animations, creating procedural motion, or blending animations.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/threejs-animation/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-fundamentals",
+      "description": "Three.js scene setup, cameras, renderer, Object3D hierarchy, coordinate systems. Use when setting up 3D scenes, creating cameras, configuring renderers, managing object hierarchies, or working with transforms.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/threejs-fundamentals/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-geometry",
+      "description": "Three.js geometry creation - built-in shapes, BufferGeometry, custom geometry, instancing. Use when creating 3D shapes, working with vertices, building custom meshes, or optimizing with instanced rendering.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/threejs-geometry/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-interaction",
+      "description": "Three.js interaction - raycasting, controls, mouse/touch input, object selection. Use when handling user input, implementing click detection, adding camera controls, or creating interactive 3D experiences.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/threejs-interaction/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-lighting",
+      "description": "Three.js lighting - light types, shadows, environment lighting. Use when adding lights, configuring shadows, setting up IBL, or optimizing lighting performance.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/threejs-lighting/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-loaders",
+      "description": "Three.js asset loading - GLTF, textures, images, models, async patterns. Use when loading 3D models, textures, HDR environments, or managing loading progress.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/threejs-loaders/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-materials",
+      "description": "Three.js materials - PBR, basic, phong, shader materials, material properties. Use when styling meshes, working with textures, creating custom shaders, or optimizing material performance.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/threejs-materials/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-postprocessing",
+      "description": "Three.js post-processing - EffectComposer, bloom, DOF, screen effects. Use when adding visual effects, color grading, blur, glow, or creating custom screen-space shaders.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/threejs-postprocessing/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-shaders",
+      "description": "Three.js shaders - GLSL, ShaderMaterial, uniforms, custom effects. Use when creating custom visual effects, modifying vertices, writing fragment shaders, or extending built-in materials.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/threejs-shaders/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "threejs-textures",
+      "description": "Three.js textures - texture types, UV mapping, environment maps, texture settings. Use when working with images, UV coordinates, cubemaps, HDR environments, or texture optimization.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/threejs-textures/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "vercel-composition-patterns",
+      "description": "React composition patterns that scale. Use when refactoring components with",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/vercel-composition-patterns/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "vercel-react-best-practices",
+      "description": "React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patterns. Triggers on tasks involving React components, Next.js pages, data fetching, bundle optimization, or performance improvements.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/vercel-react-best-practices/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "video-download",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/video-download/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "video-edit",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/video-edit/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "video-translate",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/video-translate/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "video-understand",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/video-understand/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "video-toolkit",
+      "description": "Create professional videos autonomously using claude-code-video-toolkit — AI voiceovers, image generation, music, talking heads, and Remotion rendering.",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/video_toolkit/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "visual-style",
+      "description": "|",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/visual-style/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "web-design-guidelines",
+      "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to",
+      "path": "resources/concordia/video-motion/openmontage/.claude/skills/web-design-guidelines/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "ugc-factory",
+      "description": "Interview-driven UGC ad factory. Captures product, offer, topic, persona, length, format and ratio, then casts a fresh creator and product as Higgsfield Elements kept consistent across the ad",
+      "path": "resources/concordia/video-motion/ugc-factory/skill/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "01-cinematic",
+      "description": "",
+      "path": "resources/concordia/video-motion/ugc-factory/skill/styles/01-cinematic/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "seedance-3d-cgi",
+      "description": "Generate 3D CGI and rendered video prompts for Seedance 2.0 on Higgsfield. Use whenever the user wants 3D rendered, CGI, Pixar-style, Unreal Engine, photorealistic 3D, computer-generated, or digitally rendered video content. Triggers on: 3D animation, CGI, rendered, Blender, Unreal Engine, octane render, ray tracing, volumetric, subsurface scattering, physically based rendering, or any 3D/CG video request. Always use even if the user just says",
+      "path": "resources/concordia/video-motion/ugc-factory/skill/styles/02-3d-cgi/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "seedance-cartoon",
+      "description": "Generate cartoon and animation style video prompts for Seedance 2.0 on Higgsfield. Use whenever the user wants cartoon, 2D animation, cel-shaded, hand-drawn, illustrated, flat animation, or motion graphics animation style video. Triggers on: cartoon, animation, cel shading, hand-drawn, illustrated, flat design animation, vector animation, retro cartoon, rubber hose, motion graphics, or any cartoon/animated style request. Use even for vague requests like",
+      "path": "resources/concordia/video-motion/ugc-factory/skill/styles/03-cartoon/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "seedance-comic-to-video",
+      "description": "Convert comic book panels, manga pages, webtoons, and illustrated storyboards into animated video using Seedance 2.0 on Higgsfield. Use whenever the user wants to animate comics, bring illustrations to life, convert manga to video, animate storyboards, or create motion from static sequential art. Triggers on: comic to video, manga animation, panel animation, storyboard to video, webtoon animation, comic book motion, sequential art, graphic novel animation, or any illustrate-to-animate request. Use even when user says",
+      "path": "resources/concordia/video-motion/ugc-factory/skill/styles/04-comic-to-video/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "seedance-fight-scenes",
+      "description": "Generate intense fight scene and action sequence video prompts for Seedance 2.0 on Higgsfield. Use whenever the user wants fight scenes, combat, martial arts, battles, action choreography, sword fights, hand-to-hand combat, chase scenes, superhero action, or any high-energy action video. Triggers on: fight, combat, battle, martial arts, action scene, choreography, duel, sword fight, kung fu, chase, brawl, punch, kick, weapon combat, superhero fight, or any action/fight request. Use even for",
+      "path": "resources/concordia/video-motion/ugc-factory/skill/styles/05-fight-scenes/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "seedance-motion-design-ad",
+      "description": "Generate motion design advertisement video prompts for software and tech companies using Seedance 2.0 on Higgsfield. Use whenever the user wants to create a software product ad, SaaS promo, app launch video, tech demo, UI showcase, startup video, or motion graphics for a tech company. Triggers on: software ad, SaaS video, product launch, app promo, tech commercial, UI animation, motion design ad, startup video, product demo video, feature showcase, or any software/tech promotional video request. Use even for",
+      "path": "resources/concordia/video-motion/ugc-factory/skill/styles/06-motion-design-ad/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "seedance-ecommerce-ad",
+      "description": "Generate e-commerce product advertisement video prompts for Seedance 2.0 on Higgsfield. Use whenever the user wants product ads, e-commerce videos, product showcases, unboxing, product demos, shopping ads, fashion ads, beauty ads, food ads, or any commercial product video for online selling. Triggers on: product ad, e-commerce, product showcase, Amazon video, Shopify ad, Instagram shop, TikTok shop, product commercial, fashion video, beauty ad, food ad, product demo, dropshipping video, or any product promotional video request. Use even for",
+      "path": "resources/concordia/video-motion/ugc-factory/skill/styles/07-ecommerce-ad/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "seedance-anime-action",
+      "description": "Generate anime-style video prompts for Seedance 2.0 on Higgsfield. Use whenever the user wants anime, Japanese animation style, shonen action, seinen drama, magical girl, mecha, isekai, slice-of-life anime, or any Japanese animation aesthetic. Triggers on: anime, Japanese animation, shonen, seinen, manga style video, anime fight, anime opening, anime ending, sakura, chibi, kawaii, mecha, isekai, or any anime-style request. Use even for",
+      "path": "resources/concordia/video-motion/ugc-factory/skill/styles/08-anime-action/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "seedance-product-360",
+      "description": "Generate product 360° turntable, multi-angle showcase, and product reveal video prompts for Seedance 2.0 on Higgsfield. Use whenever the user wants a product rotation video, turntable showcase, product reveal, 360 view, multi-angle product display, product beauty shot, hero product video, or unboxing reveal. Triggers on: product 360, turntable, product rotation, multi-angle, product reveal, product showcase, hero shot, beauty shot, product spin, unboxing, or any request to showcase a physical product from multiple angles. Use even for",
+      "path": "resources/concordia/video-motion/ugc-factory/skill/styles/09-product-360/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "seedance-music-video",
+      "description": "Generate music video and beat-synced visual content prompts for Seedance 2.0 on Higgsfield. Use whenever the user wants to create a music video, lyric video, beat-synced visuals, performance video, concert visual, album art animation, or music-driven visual content. Triggers on: music video, lyric video, beat sync, music visualization, performance video, concert visual, album visual, song video, music clip, beat drop visual, rhythm sync, or any music-driven video request. Use even for",
+      "path": "resources/concordia/video-motion/ugc-factory/skill/styles/10-music-video/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "seedance-social-hook",
+      "description": "Generate viral social media hook video prompts for TikTok, Instagram Reels, and YouTube Shorts using Seedance 2.0 on Higgsfield. Use whenever the user wants to create scroll-stopping hooks, viral short-form video, attention-grabbing openers, TikTok content, Reels content, Shorts content, or any social-media-optimized video. Triggers on: social media video, TikTok, Instagram Reels, YouTube Shorts, viral video, hook, scroll-stopper, short-form, trending, engagement, views, or any request for social media video content. Use even for",
+      "path": "resources/concordia/video-motion/ugc-factory/skill/styles/11-social-hook/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "seedance-brand-story",
+      "description": "Generate brand storytelling and narrative video prompts for Seedance 2.0 on Higgsfield. Use whenever the user wants to create a brand story video, company origin story, mission video, about us video, brand film, corporate narrative, founder story, brand anthem, company culture video, or emotional brand content. Triggers on: brand story, brand video, company story, origin story, about us, mission video, brand film, brand anthem, corporate video, company culture, founder story, brand narrative, or any request for brand/company storytelling video. Use even for",
+      "path": "resources/concordia/video-motion/ugc-factory/skill/styles/12-brand-story/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "seedance-fashion-lookbook",
+      "description": "Generate fashion lookbook, model showcase, and style video prompts for Seedance 2.0 on Higgsfield. Use whenever the user wants fashion video content, lookbook videos, model walks, outfit showcases, style guides, fashion campaigns, runway clips, streetwear content, or any fashion/clothing video. Triggers on: fashion video, lookbook, model showcase, outfit, style guide, fashion campaign, runway, streetwear, collection launch, fashion ad, clothing video, OOTD, fashion film, or any fashion/model video request. Use even for",
+      "path": "resources/concordia/video-motion/ugc-factory/skill/styles/13-fashion-lookbook/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "seedance-food-beverage",
+      "description": "Generate food and beverage video prompts for Seedance 2.0 on Higgsfield. Use whenever the user wants food videos, recipe content, restaurant promos, beverage ads, cooking videos, food ASMR, menu showcases, food delivery ads, café content, or any food/drink video. Triggers on: food video, recipe, cooking, restaurant, beverage, food ad, food ASMR, menu, café, cocktail, food photography video, appetite appeal, food styling, mukbang, or any food/drink video request. Use even for",
+      "path": "resources/concordia/video-motion/ugc-factory/skill/styles/14-food-beverage/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "seedance-real-estate",
+      "description": "Generate real estate, architecture, and interior design showcase video prompts for Seedance 2.0 on Higgsfield. Use whenever the user wants property tours, real estate listings, architecture showcases, interior design videos, home staging content, property marketing, virtual tours, construction reveals, or any real estate/architecture video. Triggers on: real estate, property, house, apartment, architecture, interior design, home tour, listing video, property marketing, virtual tour, building, construction, renovation, home staging, or any real estate/architecture video request. Use even for",
+      "path": "resources/concordia/video-motion/ugc-factory/skill/styles/15-real-estate/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "fastapi-python",
+      "description": "Expert in FastAPI Python development with best practices for APIs and async operations",
+      "path": "resources/concordia/video-motion/voicestudio/.agents/skills/fastapi-python/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "vite",
+      "description": "Expert guidance for Vite development with modern build tooling, HMR, framework integrations, and performance optimization",
+      "path": "resources/concordia/video-motion/voicestudio/.agents/skills/vite/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "voicestudio-maintainer",
+      "description": "Triage GitHub issues, review contributor pull requests, diagnose CI, and prepare explicitly requested releases for VoiceStudio",
+      "path": "resources/concordia/video-motion/voicestudio/skills/voicestudio-maintainer/SKILL.md",
+      "status": "unreviewed_reference"
+    },
+    {
+      "name": "voicestudio",
+      "description": "Generate local speech with saved or designed voices, transcribe audio, and automate dubbing or narration workflows through VoiceStudio",
+      "path": "resources/concordia/video-motion/voicestudio/skills/voicestudio/SKILL.md",
+      "status": "unreviewed_reference"
+    }
+  ]
+}

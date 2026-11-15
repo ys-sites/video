@@ -1,0 +1,16 @@
+# Local third-party reference library; keep the index in version control.
+concordia/*
+!concordia/README.md
+# Staged external source is unreviewed and may be large.
+repo-quarantine/
+# User footage and third-party creator references stay local.
+creator-styles/
+# Locally cloned third-party motion tools; review before running.
+motion-systems/
+# Local SkillSpector installation and upstream checkout.
+skillspector-source/
+skillspector-venv/
+# User-provided MotionSmith research notes remain local.
+motionsmith-research/
+# Optional third-party provider-specific reference material.
+higgsfield-reference/

@@ -1,0 +1,198 @@
+{
+  "facebookresearch/audiocraft": {
+    "path": "resources/concordia/video-motion/audiocraft",
+    "original_remote": "https://github.com/facebookresearch/audiocraft.git",
+    "original_head_at_inventory": "896ec7c47f5e5d1e5aa1e4b260c4405328bf009d",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "vibha-ramprakash/claude-video-effects": {
+    "path": "resources/concordia/video-motion/claude-video-effects",
+    "original_remote": "https://github.com/Vibha-Ramprakash/claude-video-effects.git",
+    "original_head_at_inventory": "99c9a3393ee14d39bea155a05c73dc069f02f16f",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "coqui-ai/tts": {
+    "path": "resources/concordia/video-motion/coqui-tts",
+    "original_remote": "https://github.com/coqui-ai/TTS.git",
+    "original_head_at_inventory": "dbf1a08a0d4e47fdad6172e433eeb34bc6b13b4e",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "hiteshk03/davinci-resolve-mcp": {
+    "path": "resources/concordia/video-motion/davinci-resolve-mcp",
+    "original_remote": "https://github.com/hiteshK03/davinci-resolve-mcp.git",
+    "original_head_at_inventory": "f812df7ab5d376592a24fb94611473fdf3a1acb2",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "kylezantos/design-motion-principles": {
+    "path": "resources/concordia/video-motion/design-motion-principles",
+    "original_remote": "https://github.com/kylezantos/design-motion-principles.git",
+    "original_head_at_inventory": "4a9ca879f24a361f4dca4174fe2da0f67b5ddee3",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "pmndrs/drei": {
+    "path": "resources/concordia/video-motion/drei",
+    "original_remote": "https://github.com/pmndrs/drei.git",
+    "original_head_at_inventory": "bf6f4addf47467d3885de272d94ca5127f6ef68f",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "iamtechartist/every-joule-lesson1": {
+    "path": "resources/concordia/video-motion/every-joule-lesson1",
+    "original_remote": "https://github.com/iamtechartist/every-joule-lesson1.git",
+    "original_head_at_inventory": "48591ddc5f0a22e6eb2a5a41c424a426599061ca",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "leaferjs/leaferjs": {
+    "path": "resources/concordia/video-motion/leaferjs",
+    "original_remote": "https://github.com/leaferjs/leaferjs.git",
+    "original_head_at_inventory": "3480a444e449237f7edc059c349023f58de92f94",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "lemomo-ai/lemo-opuscar": {
+    "path": "resources/concordia/video-motion/lemo-opuscar",
+    "original_remote": "https://github.com/lemomo-ai/lemo-opuscar.git",
+    "original_head_at_inventory": "bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "minimax-ai/minimax-h3": {
+    "path": "resources/concordia/video-motion/MiniMax-H3",
+    "original_remote": "https://github.com/MiniMax-AI/MiniMax-H3.git",
+    "original_head_at_inventory": "199b7d0e1fd95e7b3eafa8c15eca692534142427",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "molstar/molstar": {
+    "path": "resources/concordia/video-motion/molstar",
+    "original_remote": "https://github.com/molstar/molstar.git",
+    "original_head_at_inventory": "fe1ac1555001d1acb023077cd4dc6ca1d06870f8",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "tejashmakwana/motionmaxxing": {
+    "path": "resources/concordia/video-motion/motionmaxxing",
+    "original_remote": "https://github.com/Tejashmakwana/motionmaxxing.git",
+    "original_head_at_inventory": "8c8ec0f2a6f6c9a0da15cd24f7b1298ab298368c",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "calesthio/openmontage": {
+    "path": "resources/concordia/video-motion/openmontage",
+    "original_remote": "https://github.com/calesthio/OpenMontage.git",
+    "original_head_at_inventory": "c8066452325cb57c8fc1ba8c2a71b6e8842e6b65",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "processing/p5.js": {
+    "path": "resources/concordia/video-motion/p5.js",
+    "original_remote": "https://github.com/processing/p5.js.git",
+    "original_head_at_inventory": "255fbb5e78866839ac88818d6d6709365133a0a3",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "paperjs/paper.js": {
+    "path": "resources/concordia/video-motion/paper.js",
+    "original_remote": "https://github.com/paperjs/paper.js.git",
+    "original_head_at_inventory": "87503af5809fb186b73c5e8c3d5b5b13722bc270",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "rhasspy/piper": {
+    "path": "resources/concordia/video-motion/piper",
+    "original_remote": "https://github.com/rhasspy/piper.git",
+    "original_head_at_inventory": "73c04d81d5590ecc46e522de3601ce7fb29fc2be",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "plotly/plotly.js": {
+    "path": "resources/concordia/video-motion/plotly.js",
+    "original_remote": "https://github.com/plotly/plotly.js.git",
+    "original_head_at_inventory": "8c66898bb9c3d7d120697153c459808da526001d",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "splinetool/react-spline": {
+    "path": "resources/concordia/video-motion/react-spline",
+    "original_remote": "https://github.com/splinetool/react-spline.git",
+    "original_head_at_inventory": "931c11fa298cc8b70edf4fe657c80b81ac637fec",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "pmndrs/react-three-fiber": {
+    "path": "resources/concordia/video-motion/react-three-fiber",
+    "original_remote": "https://github.com/pmndrs/react-three-fiber.git",
+    "original_head_at_inventory": "d74622ea8ed717f7212d7e19d65ff3e325508389",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "barckley75/resolve-claude-mcp": {
+    "path": "resources/concordia/video-motion/resolve-claude-mcp",
+    "original_remote": "https://github.com/barckley75/resolve-claude-mcp.git",
+    "original_head_at_inventory": "939875819224163d5a7472f92385d00c5278ab33",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "libsdl-org/sdl": {
+    "path": "resources/concordia/video-motion/sdl",
+    "original_remote": "https://github.com/libsdl-org/SDL.git",
+    "original_head_at_inventory": "bd0c0a9ce14dec4097dabdaad226a7c9447bdae5",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "theatre-js/theatre": {
+    "path": "resources/concordia/video-motion/theatre",
+    "original_remote": "https://github.com/theatre-js/theatre.git",
+    "original_head_at_inventory": "6ea82b938ea49609489f6377ded693ccc6ee8f5b",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "charlesdove977/ugc-factory": {
+    "path": "resources/concordia/video-motion/ugc-factory",
+    "original_remote": "https://github.com/charlesdove977/UGC-Factory.git",
+    "original_head_at_inventory": "e5ac1b1a917c3bb3b1ac646eceb740747c7caae7",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "debpalash/voicestudio": {
+    "path": "resources/concordia/video-motion/voicestudio",
+    "original_remote": "https://github.com/debpalash/VoiceStudio.git",
+    "original_head_at_inventory": "beeaae08204f0de5f49d4a087ef2b0ea8fecfcb9",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "openai/whisper": {
+    "path": "resources/concordia/video-motion/whisper",
+    "original_remote": "https://github.com/openai/whisper.git",
+    "original_head_at_inventory": "86098128c0b4f24f0e2aa2994de830614b474227",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "ggerganov/whisper.cpp": {
+    "path": "resources/concordia/video-motion/whisper-cpp",
+    "original_remote": "https://github.com/ggerganov/whisper.cpp.git",
+    "original_head_at_inventory": "231638a0717b7822784297e5980965ffcec05810",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "m-bain/whisperx": {
+    "path": "resources/concordia/video-motion/whisperx",
+    "original_remote": "https://github.com/m-bain/whisperX.git",
+    "original_head_at_inventory": "5d3678b8535698a2826a5db9eb3e4105aef85dd9",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  },
+  "motiondivision/motion": {
+    "path": "resources/concordia/motion-library",
+    "original_remote": "https://github.com/motiondivision/motion.git",
+    "original_head_at_inventory": "99e7f5aa31e5f55e024b6553cbb3906248eac8de",
+    "snapshot_integrity": "not verified; dependency/build directories and Git metadata omitted",
+    "security": "not audited"
+  }
+}

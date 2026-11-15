@@ -1,0 +1,3501 @@
+{
+  "repository": "NVIDIA/SkillSpector",
+  "commit": "c81615007d40e86051a302a3cf897f8a05264928",
+  "tree": "120703539d7b754bf3f2d1588494b99ebf7759a6",
+  "method": "GitHub connector, partial text snapshot",
+  "tree_truncated": false,
+  "files": [
+    {
+      "path": ".dockerignore",
+      "sha": "5cca68360655ab5447f3aad939ac5d6e0f3df5cc",
+      "size": 181,
+      "mode": "100644"
+    },
+    {
+      "path": ".env.example",
+      "sha": "02124606f0f6c1f7f92df22c85528d763d15d807",
+      "size": 6393,
+      "mode": "100644"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha": "b33956d43cdd4f3a875dadf6a65135a967987416",
+      "size": 6397,
+      "mode": "100644"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "sha": "0a7087e7af25a69ec6ea622849f766613bf1da15",
+      "size": 1884,
+      "mode": "100644"
+    },
+    {
+      "path": ".github/workflows/scorecard.yml",
+      "sha": "ec2812988d51d6b4ab716b222e6aab0bf5286b29",
+      "size": 3432,
+      "mode": "100644"
+    },
+    {
+      "path": ".github/workflows/update-pr-branches.yml",
+      "sha": "b376397d1d9cdd754075abc67fab808accf5372d",
+      "size": 3561,
+      "mode": "100644"
+    },
+    {
+      "path": ".gitignore",
+      "sha": "09f3ce2a214e3969f9768913bff187dc82c8ee72",
+      "size": 1232,
+      "mode": "100644"
+    },
+    {
+      "path": ".opencode/commands/skillspector.md",
+      "sha": "05da86df6e3320c7ef6a232ffac57a2129ddf1e9",
+      "size": 407,
+      "mode": "100644"
+    },
+    {
+      "path": ".opencode/tools/skillspector_scan.ts",
+      "sha": "ad465da5bcb72ae467ea27e0d4bf24620e963c5b",
+      "size": 1205,
+      "mode": "100644"
+    },
+    {
+      "path": ".opencode/tools/skillspector_scan_lib.ts",
+      "sha": "ed58b40cdffaf7e228779ba8979903fb66c45218",
+      "size": 21534,
+      "mode": "100644"
+    },
+    {
+      "path": ".pre-commit-config.yaml",
+      "sha": "56eadb3a192d06166a2e334e082c77fd66b7705f",
+      "size": 243,
+      "mode": "100644"
+    },
+    {
+      "path": ".skillspector-baseline.example.yaml",
+      "sha": "37ab9b4c04e443a40f7773f6d97fcb2524934f65",
+      "size": 1711,
+      "mode": "100644"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha": "a1e58110c786bde38d80206d9dd155c53563b980",
+      "size": 36653,
+      "mode": "100644"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha": "f409e83b3587c4a59ca2aac547ea86f7a2d168db",
+      "size": 3718,
+      "mode": "100644"
+    },
+    {
+      "path": "Dockerfile",
+      "sha": "e185f8825f86f3a5a862a8266e759657d7598935",
+      "size": 596,
+      "mode": "100644"
+    },
+    {
+      "path": "LICENSE",
+      "sha": "48afca9e235dc4e1c05cf1aca7b111328ce6fa86",
+      "size": 10782,
+      "mode": "100644"
+    },
+    {
+      "path": "Makefile",
+      "sha": "326a426baef8f3a18c3686c6a88458edbc071075",
+      "size": 5977,
+      "mode": "100644"
+    },
+    {
+      "path": "README.md",
+      "sha": "6d48df00ac42b744a0786049d5d7f3908209ec33",
+      "size": 68268,
+      "mode": "100644"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha": "9000efe9886413e0bbc258e5bdabd2938a8a9a0a",
+      "size": 1906,
+      "mode": "100644"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha": "229d6d7c95ba2342e26b51b8131344f9da65f0de",
+      "size": 4651,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/.env.example",
+      "sha": "7817a71ded9a29555371129739fee96dd87f8ee9",
+      "size": 1008,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/CONTRIBUTING.md",
+      "sha": "01415c700d1284cfe3d54a494e19a717d765d907",
+      "size": 5992,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/__init__.py",
+      "sha": "74fe1e59f9ed3aaf12de7a89480fc171e93701f3",
+      "size": 2415,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/annotation.py",
+      "sha": "183f947a8b17da5d608ebe34342ab569d2b9d081",
+      "size": 3603,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/api_pool.py",
+      "sha": "b068f8b06bdd500120adb5408dd0ef9a254665c6",
+      "size": 25345,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/batch_scan.py",
+      "sha": "3bce84c8d3082aa2c603187bf518a606a521f895",
+      "size": 20478,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/detection.py",
+      "sha": "c3df99676af4c15a193ceac2557ee04b8b7f8089",
+      "size": 3195,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/discovery.py",
+      "sha": "c89d6cb9deb90ce343516bc36f9757b396ca5669",
+      "size": 1424,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/docs/DESIGN.md",
+      "sha": "2cdd8d4642f8bd46dda68bfd1d36b59cdcde7cfc",
+      "size": 15114,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/docs/README.md",
+      "sha": "8f0ddad5a59aa81c3437cc20ab7e00e305c4d8fe",
+      "size": 18560,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/docs/REVIEW_RESPONSE.md",
+      "sha": "13674cf26274c36639fc5b3267014c0d773ad410",
+      "size": 8585,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/docs/archive/ARCHITECTURE_DEEP_DIVE.md",
+      "sha": "81b3af13bfb1f37c6bbff3f7c8b021bafb40daf9",
+      "size": 13790,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/docs/archive/DESIGN_HISTORY.md",
+      "sha": "84b39c3669f45097be2674502d772ff4c4e9ae65",
+      "size": 6778,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/docs/archive/FLOW_DIAGRAM.md",
+      "sha": "29ccb7dec4a438333efc3efba879880f2c846d74",
+      "size": 12149,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/docs/archive/FUTURE_WORK.md",
+      "sha": "e94d7dd5b89d5b0ee98da32a518539923ad78aba",
+      "size": 7458,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/docs/archive/PITFALLS.md",
+      "sha": "20ad24b20387eddc133c2c9603737b27de0a730c",
+      "size": 8776,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/gap_fill.py",
+      "sha": "6d19536b455c11c27357e4003aaaf67252c16706",
+      "size": 14291,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/reports.py",
+      "sha": "cb6de30fdc502a5f300f45f4f6b4a024e4ef078f",
+      "size": 21476,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/runner.py",
+      "sha": "8050534a50e825bb32f65cefc16e9e2dcd599667",
+      "size": 35919,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/tests/conftest.py",
+      "sha": "a40b7c36cf3d82f4bdd1eb1f0e0c136b7674da4a",
+      "size": 1053,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/tests/docs/BUGS_FOUND.md",
+      "sha": "39b575444a47231b320951c8db1a9b8aa216062f",
+      "size": 6674,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/tests/docs/TEST_DESIGN.md",
+      "sha": "e01d31170baab40528b3ac803c97135d16764060",
+      "size": 11598,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/tests/docs/TEST_GUIDE.md",
+      "sha": "9cf78790abe7587f6d8a4db04730130e40c3c181",
+      "size": 10099,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/tests/test_inspection_reporting.py",
+      "sha": "db3da0ac78d975276625986750bc06dfbef5b3e6",
+      "size": 2581,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/tests/test_monkeypatch_fragility.py",
+      "sha": "77cc337443bcfa0c72cbc43c2b35eaf7491aaf1f",
+      "size": 24061,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/tests/test_monkeypatch_invasiveness.py",
+      "sha": "ab1fa7b4f21b62fd6dc51ff03cf26165e737a0eb",
+      "size": 19916,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/tests/test_pool_wiring.py",
+      "sha": "1e07df950b620c4b4677144b374f8b23225f2d56",
+      "size": 4264,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/tests/tests-pro/__init__.py",
+      "sha": "7e3adab0dc239c7e36745a3d4eb105b4708c9608",
+      "size": 808,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/tests/tests-pro/mutation_max.py",
+      "sha": "e846df461b5352fbae9a8165a8a322b46c0ca1b4",
+      "size": 31879,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/tests/tests-pro/random_numbered.py",
+      "sha": "a17605932b2047b58c00887467b23f74f071f206",
+      "size": 2030,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/tests/tests-pro/test_annotation.py",
+      "sha": "3a74ef325c768d2ec757b6295f3fafae71e126cc",
+      "size": 5230,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/tests/tests-pro/test_api_pool.py",
+      "sha": "1081f462cc69573cc5aab17aabf7b6dcf5f567fe",
+      "size": 18905,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/tests/tests-pro/test_gap_fill.py",
+      "sha": "505a17055d4fa8e4c4a84ca71a37602d32162af3",
+      "size": 16838,
+      "mode": "100644"
+    },
+    {
+      "path": "contrib/batch_scan/tests/tests-pro/test_runner_patches.py",
+      "sha": "af3b5712c1b17811d717f29c37d1cae19b72327b",
+      "size": 31292,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/ANALYSIS_RESOURCE_BOUNDS.md",
+      "sha": "4e953dea0bc2ebb88a4a419a9eeabc4f4ae7092b",
+      "size": 33744,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/AS3_SELF_REFERENCES.md",
+      "sha": "1d0b9f64aba5fab0b307d535ad469b6ffeb6d1c5",
+      "size": 1958,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/B.3.1-mcp-least-privilege.md",
+      "sha": "7e487e1b817ffe8842fba9e75494be57fa8ada8f",
+      "size": 11620,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/B.3.2-mcp-tool-poisoning.md",
+      "sha": "51eac0a1e3bb03a76f921531b50242d29740d29c",
+      "size": 15173,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/DEPENDENCY_CONTENT_INSPECTION.md",
+      "sha": "64fb60188ada31c69c196e1d226d3b2b5012804a",
+      "size": 8060,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/DEPENDENCY_SOURCE_REDIRECTION.md",
+      "sha": "5734b64495fb0b092b4d6a881d793748fab89391",
+      "size": 2362,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/DEVELOPMENT.md",
+      "sha": "2fe2fe69da9529b040b86e483cb6d22e3090f398",
+      "size": 33723,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/EVAL_DATASETS.md",
+      "sha": "123378082309533c38e54a13cb73834b8f321e9b",
+      "size": 699,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/INFERENCE_USAGE.md",
+      "sha": "9dbfc48793af144b30c1251205dd151dc9ac600c",
+      "size": 7810,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/LLM_ANALYZER_BASE_GUIDE.md",
+      "sha": "9742341d30123ef04a15724e2ba01aed36641be7",
+      "size": 21887,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/NESTED_ARTIFACT_INSPECTION.md",
+      "sha": "ea65688bffe78b46097879194d68d4782a7bfbe0",
+      "size": 7252,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/OPENCODE_EXTENSION.md",
+      "sha": "da5e411f792b3a0754b03bd2f7bc484652b73a35",
+      "size": 3412,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/PI_EXTENSION.md",
+      "sha": "3388b0017e84d67ee2089f0ba84188051ee51d51",
+      "size": 2417,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/SC4-osv-live-vulnerability-lookups.md",
+      "sha": "c38778688ee91fc4d89a1ae5264ca813bd84ecd4",
+      "size": 7800,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/SUPPRESSION.md",
+      "sha": "3745e3ceaa5d1da96b9fbd97d2c78dae66964dc8",
+      "size": 11505,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/passive-documentation-images.md",
+      "sha": "cd7327d5b588d085902d040547e2f0e9001a256f",
+      "size": 2940,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/json-quote-ownership-migration.md",
+      "sha": "2e073e80a816f3d547ee56eb2bd44078b6b7178a",
+      "size": 1771,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.10.0.md",
+      "sha": "f3d008f7768c1087a19e9bde00126a682f1185af",
+      "size": 8184,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.11.0.md",
+      "sha": "b03cedec776e418b1c949926c5d03ff25050d539",
+      "size": 5691,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.11.1.md",
+      "sha": "f275a59921c763e30e31f7795c29ba97e473fe86",
+      "size": 4031,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.11.2.md",
+      "sha": "a9e4000d74990f4e2dd34c2073ec1af790641865",
+      "size": 2849,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.12.0.md",
+      "sha": "f87be8c13ddb706b71ca76516ab6e71d15bbe26c",
+      "size": 41338,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.5.0.md",
+      "sha": "9a30175ce0ef88f0d75aece226965f0cc6976ff3",
+      "size": 2885,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.5.1.md",
+      "sha": "a820cefcb417ee226b88f9d273ca60540c5f9b6d",
+      "size": 1826,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.5.2.md",
+      "sha": "9be1333e79e5d707d37ca3985db10b842929fee6",
+      "size": 2157,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.5.3.md",
+      "sha": "4eb7f659ac24a4c9a3f7f190b4a4f579f5e501ff",
+      "size": 1430,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.6.0.md",
+      "sha": "57215ed96278f074852655dcbb0e6b2e6ddd449f",
+      "size": 749,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.7.0.md",
+      "sha": "a4ba0924ad7dcb9e80b034f0c63de31cccbe4057",
+      "size": 617,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.7.2.md",
+      "sha": "6ca44df38c3aebdc2021a508f70ba859e4f0bdbb",
+      "size": 651,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.8.0.md",
+      "sha": "e02203465de1cf8fc758680e769dd23a33e68d4b",
+      "size": 615,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.8.1.md",
+      "sha": "ed0c0d956c884fcd4280b1145e152a69bbdb632e",
+      "size": 629,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.8.2.md",
+      "sha": "540905d329595f77fb53ded60fa4c533d4a823eb",
+      "size": 976,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.9.0.md",
+      "sha": "708e0d6b96b578df411988e7391bccc7e0584f9b",
+      "size": 821,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.9.1.md",
+      "sha": "e48704299aa5421cbfe409643591b74712b7863a",
+      "size": 1342,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.9.2.md",
+      "sha": "27090d4549e3c5468027b7882517d693317f6c4a",
+      "size": 1101,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.9.3.md",
+      "sha": "921a77dd7ceacf5d31a2075348687e21bd2d1652",
+      "size": 1321,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.9.4.md",
+      "sha": "df8c668935397192b79ffc59d59583a190336104",
+      "size": 2310,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.9.5.md",
+      "sha": "5e64f2f635b5a1506d4d82a59f2ff36f4dc63114",
+      "size": 2803,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/release/skillspector-2.9.6.md",
+      "sha": "9b4cd81b77666dace63cf51e29cd260bf556d4c4",
+      "size": 2226,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/scan-completeness.md",
+      "sha": "d7e68ef256c7446e908a434beb35bb9b16d6ad5b",
+      "size": 20625,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/validation/CONTRIBUTOR_ONBOARDING.md",
+      "sha": "00aca4cb4ae23a733dc4c19f5a888c830358ec64",
+      "size": 5338,
+      "mode": "100644"
+    },
+    {
+      "path": "docs/validation/contributor-onboarding-2026-11-06.md",
+      "sha": "767f1e7994ed1bdf50f740fe86cd8627c00e7e5c",
+      "size": 12054,
+      "mode": "100644"
+    },
+    {
+      "path": "extensions/skillspector.ts",
+      "sha": "04b43be60b2499c3459aa7f3643849e45667dd41",
+      "size": 12012,
+      "mode": "100644"
+    },
+    {
+      "path": "langgraph.json",
+      "sha": "57de67ae98a430229fe43b33d4f628713a2eb7d1",
+      "size": 153,
+      "mode": "100644"
+    },
+    {
+      "path": "model_registry.yaml",
+      "sha": "82267736bb30599c0401baa3cdb7214974220a68",
+      "size": 2076,
+      "mode": "100644"
+    },
+    {
+      "path": "package.json",
+      "sha": "ef32eb189a3d6ada2267f4b9b234f9e2f951b6df",
+      "size": 447,
+      "mode": "100644"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha": "a52dd97462355d0ac15e6c345d36ecf9135b4b84",
+      "size": 3544,
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/compare_scan_accuracy.py",
+      "sha": "50e1b569e80bb2b82df89d5a2abf6f595a57b3be",
+      "size": 78292,
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/generate_unicode_confusables.py",
+      "sha": "a5826e7c4353cfa7546cdf78ad3c5d005fcb5889",
+      "size": 2802,
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/release/public/create_github_release.py",
+      "sha": "79f4a663c50813003dd383bb0b83e280cb749b44",
+      "size": 8925,
+      "mode": "100644"
+    },
+    {
+      "path": "skills/skill-inspector/SKILL.md",
+      "sha": "a968a585f321674581d691f8a5b030be211c926a",
+      "size": 7559,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/__init__.py",
+      "sha": "3ed4f8f82646449aa6ab7e6cd0e835e5b476b7a3",
+      "size": 1398,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/_workflow_warnings.py",
+      "sha": "363bb33ea3c31a86782443ad4d2ddf06841b17da",
+      "size": 587,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/allowed_tools.py",
+      "sha": "6ce752a70901e4c165af522f933d165c62b53b79",
+      "size": 5445,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/artifacts.py",
+      "sha": "e448bc3d78e21dc83e91af7fbdff80aab4059800",
+      "size": 102513,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/baseline_tokens.py",
+      "sha": "f0b9737fcbfdf011b93f7d11277abf54ddb8acaf",
+      "size": 3827,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/cleanup.py",
+      "sha": "b4b72b8b89042695beb8270153f55a2785ae1ca5",
+      "size": 4651,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/cli.py",
+      "sha": "a68b14a8f6b37f7b2735144e04f9f16894cec472",
+      "size": 148188,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/cli_entry.py",
+      "sha": "5f0f0f9100d177a4f8cd5e23b7a3f1b5d82f335c",
+      "size": 3088,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/constants.py",
+      "sha": "06871548f58facbad7154737e753c8d4e711b688",
+      "size": 5501,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/dependency_downloader.py",
+      "sha": "f2f562ff9f06234c2c7c6aead218ab0548fa474b",
+      "size": 1094,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/dependency_inspection.py",
+      "sha": "b77b88c25996371d839d77b4e81ce741f7fd03e4",
+      "size": 32409,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/dependency_sandbox.py",
+      "sha": "09f4944080624a9cf62527df3a291e93bf71a809",
+      "size": 3425,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/dependency_sources.py",
+      "sha": "82490db4cb55cd65677d76ec954385b2e977e78c",
+      "size": 81940,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/dependency_worker.py",
+      "sha": "246f4e937b52061bb32142edae50c6e114f13cfc",
+      "size": 14005,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/file_output.py",
+      "sha": "507bab413273bf959e0f7ac7a62911776d18e297",
+      "size": 7504,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/graph.py",
+      "sha": "b36707152b2bc9cd6df83a9109ed4ca623f3e351",
+      "size": 4896,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/graph_proxy.py",
+      "sha": "35f9d8ecc3bb595117b8444a915e5c6c408b0edf",
+      "size": 2362,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/inference_usage.py",
+      "sha": "2aff55cac8d04452b57cac22ae689203c492d495",
+      "size": 24753,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/input_handler.py",
+      "sha": "6038b757b2fba90f65f27b7703079a7fa372af10",
+      "size": 75289,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/inspection_ledger.py",
+      "sha": "f73a6883a807b3fde9db05f6b5d2dcd6cb329d6b",
+      "size": 76873,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/javascript_ast.py",
+      "sha": "4e1e4e7c3484dff08aa8efeb610ca25a87387f0a",
+      "size": 6635,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/javascript_tokens.py",
+      "sha": "2d82579f63b2dac4fbf38a8c5fb521b655ae18e0",
+      "size": 100886,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/json_tokens.py",
+      "sha": "4348e5353a06574614fa8cdd1f2695e9d26d3065",
+      "size": 12407,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/llm_analyzer_base.py",
+      "sha": "15d3a47b2283a94a578bff368d5f9503d8bef311",
+      "size": 134489,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/llm_provenance.py",
+      "sha": "3a9c8279c017675e1ac5a41d16f4c3b8b59d5e4e",
+      "size": 25508,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/llm_utils.py",
+      "sha": "1368453cac7b5b9547b06cb0851b07fedffebb7b",
+      "size": 40308,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/logging_config.py",
+      "sha": "464a7cc3c2965746048c26f5318b362a4aef53ab",
+      "size": 2546,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/markdown_tokens.py",
+      "sha": "fe0757f49f6bf29fb20679734c9aaeb20e4be28d",
+      "size": 5855,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/mcp_registry.py",
+      "sha": "6f5409b66370c44a6580637355c5fcb03b8fc83c",
+      "size": 23226,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/mcp_server.py",
+      "sha": "8c37be02f8c93006af3de57c022b50b0a906f6b2",
+      "size": 14643,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/model_info.py",
+      "sha": "49f3b8417b5a6fbfa44e352c5b4514dcf810ca9d",
+      "size": 2617,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/models.py",
+      "sha": "0c3b6e512b6d313dacd10c4b00467ed42af0bbd2",
+      "size": 13274,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/multi_skill.py",
+      "sha": "c8ecaaa2e7894afb76fd243df33f403775c92f5d",
+      "size": 24520,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nested_artifacts.py",
+      "sha": "de5f840d77b27a2b7759636c840aad4624e42076",
+      "size": 77518,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/__init__.py",
+      "sha": "1d4a3d006d66e5f1297eb90c54d1d27df4ae234c",
+      "size": 774,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/__init__.py",
+      "sha": "c56ea01b634b05c55e114630d619e9bc0d60c9ba",
+      "size": 2273,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/artifact_integrity.py",
+      "sha": "d29cf8fa08605dbf6e2c5c2c72fde00f295e45fd",
+      "size": 42376,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/behavioral_ast.py",
+      "sha": "1aaef4c881e3405cbb68fd2cfa3e3139bc0fb56d",
+      "size": 35648,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/behavioral_taint_tracking.py",
+      "sha": "2aa42739a34ac66070af525f0e06d7cbcd665172",
+      "size": 100160,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/bundled_execution_surface.py",
+      "sha": "fad1ebbf75f1836d6e4a2043c0896f893670885a",
+      "size": 73922,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/canonical_sink.py",
+      "sha": "dedf39793e5059cd1223e36ed7e3719edcf5cf05",
+      "size": 15336,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/common.py",
+      "sha": "877a8abfdd0bad780d17e3b701941d19a2f1da9f",
+      "size": 17497,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/mcp_least_privilege.py",
+      "sha": "d793b0a0914cb70c14ab19fa9a4163d15898e0bd",
+      "size": 29686,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/mcp_rug_pull.py",
+      "sha": "ed067f5a1f9ead5f3708532badac364e9f55394d",
+      "size": 38789,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/mcp_tool_poisoning.py",
+      "sha": "c46ce7573edd4134481d2140852fd89812f02e02",
+      "size": 78292,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/osv_client.py",
+      "sha": "b0ae4957d90b88801ba55f49fe4d1eb087efc948",
+      "size": 33655,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/pattern_defaults.py",
+      "sha": "6255b91c004124b01d73eab078b0c987eeaae2ff",
+      "size": 44289,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/prohibition_context.py",
+      "sha": "9e69a5a7df97d771e3f579dbd59095172cfb000b",
+      "size": 10179,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/semantic_developer_intent.py",
+      "sha": "b2486c08950e18b282b0b4b9f60ccc39ee86a38e",
+      "size": 14049,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/semantic_quality_policy.py",
+      "sha": "22d461d6a6ae87f93bceeafc8493920cb31053cb",
+      "size": 12534,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/semantic_security_discovery.py",
+      "sha": "a8381123057354dec241ee1824a143907018737e",
+      "size": 13723,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/sql_parameter_binding.py",
+      "sha": "f4b732fd6e15122cb806704bca6ea66d5f7b3a7b",
+      "size": 15023,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/static_patterns_agent_snooping.py",
+      "sha": "2728e03eacd6d85bfe61bc923682076ef1a5f891",
+      "size": 13265,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/static_patterns_anti_refusal.py",
+      "sha": "870878826ae7b93d3f8ac72712b5eee2321a6210",
+      "size": 28941,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/static_patterns_data_exfiltration.py",
+      "sha": "1a855102ed5f907173a31febedf4bdb44d672434",
+      "size": 74086,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/static_patterns_deserialization.py",
+      "sha": "8db706fc1dfd32266856ec54054be67f52258b22",
+      "size": 5604,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/static_patterns_excessive_agency.py",
+      "sha": "51086c0ac029d5aa97ca212e4bb08b21a7efb0e5",
+      "size": 22561,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/static_patterns_harmful_content.py",
+      "sha": "6e5b9ca92fd3236db67fa587736335f6879d3f57",
+      "size": 6784,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/static_patterns_memory_poisoning.py",
+      "sha": "2e392a8608c89192ffd4ec0153a1ccbcd01b945c",
+      "size": 42012,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/static_patterns_output_handling.py",
+      "sha": "54957ccbfe515559518da87e216615a6fc7d57ac",
+      "size": 29183,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/static_patterns_privilege_escalation.py",
+      "sha": "2cc012a400b964f2936c05992f5cbb3224fc1565",
+      "size": 66211,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/static_patterns_prompt_injection.py",
+      "sha": "3bb127d6cecdd20463cc252b78e791c77487b3c7",
+      "size": 49661,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/static_patterns_rogue_agent.py",
+      "sha": "051621dcd7f2a893ce67ad14088b413944ff0d7c",
+      "size": 27183,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/static_patterns_ssrf.py",
+      "sha": "c9d131cab02ff5fcd5bcef7edbc2e9b62c0eea10",
+      "size": 6309,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/static_patterns_supply_chain.py",
+      "sha": "c2b5f1d2eff5fb533a5aa48a1ac45be22d98bb6d",
+      "size": 179815,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/static_patterns_system_prompt_leakage.py",
+      "sha": "110fb6d5580bfd52ef6202598ab7a2c19762e179",
+      "size": 74460,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/static_patterns_tool_misuse.py",
+      "sha": "9cfe6861b4ca333e78c7c03a4a24ac44e0a9198e",
+      "size": 627685,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/static_python_shell_truthiness.py",
+      "sha": "e6ccdba0586420abca880a09d0ae0c64840becaf",
+      "size": 99038,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/static_runner.py",
+      "sha": "64defe54d11d0254682defe9e8419191f34cb5a4",
+      "size": 209780,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/static_yara.py",
+      "sha": "e698807c2306e2a95266400664f4ab35a4aab465",
+      "size": 65257,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/structured_skill_roles.py",
+      "sha": "b1f70a1f6b0a59772461115f87c8c3518a77ae3c",
+      "size": 2468,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/analyzers/whitespace_padding.py",
+      "sha": "ee29f617c784ca436a4a486fcb735ee64350bbef",
+      "size": 23497,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/build_context.py",
+      "sha": "4a139e47eae9853173ec953beedc4b2d0d9b6dde",
+      "size": 161961,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/deduplicate.py",
+      "sha": "761bd771f4fabbebf902e153303e09e1bc9bc644",
+      "size": 11734,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/finalize_inspection_ledger.py",
+      "sha": "33dccc09713807a8aeb320b560c02bb0afcf914a",
+      "size": 55741,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/meta_analyzer.py",
+      "sha": "04eb8f5c5d29ada3f66b9f8fefdcb22fca2a5cc3",
+      "size": 46832,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/report.py",
+      "sha": "8eed4ca2ffb3b46f27285a865fe92835230249cb",
+      "size": 97448,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/nodes/resolve_input.py",
+      "sha": "2239805066b7d5fee09e771a0f3046d0dbd323ee",
+      "size": 5802,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/oms.py",
+      "sha": "98e53bc1e10e9a7b67c8d717056fe15ed35235bd",
+      "size": 9541,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/passive_bmp.py",
+      "sha": "a2eb2db7b6ef3e1eba293596ebdb8f5b8f5940b8",
+      "size": 3393,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/passive_jpeg.py",
+      "sha": "a888997635714c58a65840ea564cd862e9c8ec9b",
+      "size": 11234,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/passive_svg.py",
+      "sha": "f05f7be70e23c6096db539a79ff88fa1bd19f108",
+      "size": 11424,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/powershell_tokens.py",
+      "sha": "ad867377273e1370ecbb9eebfab7619572e36b8f",
+      "size": 18592,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/__init__.py",
+      "sha": "a26fcda58994a16c1bef9289f42dc3c6bbd2db96",
+      "size": 12649,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/_agent_cli.py",
+      "sha": "25d968ab595a9d9d603c3999b91563afa0b68e4d",
+      "size": 54477,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/_agent_cli_base.py",
+      "sha": "f10468498ee50c35783237b04ce0e1b4925abe0f",
+      "size": 5390,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/anthropic/__init__.py",
+      "sha": "7e59c7ce462c8b80ee4627f85e641b2042ca33e8",
+      "size": 901,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/anthropic/model_registry.yaml",
+      "sha": "fd332d1184e47929adc5d42a27608d13443ca758",
+      "size": 1790,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/anthropic/provider.py",
+      "sha": "dc38262da98f885b690c32b2c75e39ea96f2d5f5",
+      "size": 5903,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/anthropic_proxy/__init__.py",
+      "sha": "b8850cf77f86291165ef39b25c1d7ba5d41ebdb3",
+      "size": 873,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/anthropic_proxy/model_registry.yaml",
+      "sha": "0e038270280d2226378567f0141982405d76732b",
+      "size": 1279,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/anthropic_proxy/provider.py",
+      "sha": "f9ad1bdf0b75f05c557a065c24302e978f55ded1",
+      "size": 10444,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/antigravity_cli/__init__.py",
+      "sha": "c957a4399e641f1706de5e2e7e1c9f41b17c17c8",
+      "size": 886,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/antigravity_cli/provider.py",
+      "sha": "faee57ac55e28de5fd9353d7da25f2d479743494",
+      "size": 2056,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/azure_openai/__init__.py",
+      "sha": "02c9b92e34671feed66e8d4f40a150e12ebe0463",
+      "size": 861,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/azure_openai/model_registry.yaml",
+      "sha": "c028a2e7438bdbdebff946ec4bcc551b213ad6f3",
+      "size": 3175,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/azure_openai/provider.py",
+      "sha": "73182b05b60d6bd1eb096de2c667498c65861c25",
+      "size": 4374,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/base.py",
+      "sha": "8f5c28a13b3c3bbc0aa9f3dc39b60078e8e1d38b",
+      "size": 4728,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/bedrock/__init__.py",
+      "sha": "d42fc7ed03b21a4a1cf0ac6d37386112863da8f9",
+      "size": 1079,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/bedrock/model_registry.yaml",
+      "sha": "70e8d5d26ddf836ba967750cb41ee510ccb2eb08",
+      "size": 3547,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/bedrock/provider.py",
+      "sha": "fa8cc91c2a382efd6f0e9668aebe59b28393cc1a",
+      "size": 8233,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/chat_models.py",
+      "sha": "16ceb9f6a020bb33de5c544128c6a9369d2dba25",
+      "size": 9859,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/claude_cli/__init__.py",
+      "sha": "371aa787ea339ce4e25f4f81d062bf981865fd57",
+      "size": 1007,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/claude_cli/provider.py",
+      "sha": "c8651426c885fd044c27b89da9d525576c063020",
+      "size": 1733,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/codex_cli/__init__.py",
+      "sha": "6495d702c1500a021e629492ec3499ba3211612d",
+      "size": 1031,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/codex_cli/provider.py",
+      "sha": "0668daa3f151333bc28a87d9c186b1f621d055d5",
+      "size": 1288,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/gemini/__init__.py",
+      "sha": "1fa29777bc48dc33e49c0649edd7700daf5b6aa3",
+      "size": 827,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/gemini/model_registry.yaml",
+      "sha": "6a55edc380b46136cf9ba8a50aaba0ef9bdf2a93",
+      "size": 1099,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/gemini/provider.py",
+      "sha": "3b94758d4226d55fb9e89405bfd510eb2d988cda",
+      "size": 12699,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/gemini_cli/__init__.py",
+      "sha": "0fa01025329e81819471b93dc6d2be6976549ecd",
+      "size": 858,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/gemini_cli/provider.py",
+      "sha": "7d99494c32be0349cfb8ebf6dc8c958248dff8ff",
+      "size": 1475,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/minimax/__init__.py",
+      "sha": "c363cabac23f3117d8167cf8788e8006b3db3562",
+      "size": 950,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/minimax/chat_model.py",
+      "sha": "502081a12c8bec9fe138ef78503b7a08d8cd9aff",
+      "size": 3062,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/minimax/model_registry.yaml",
+      "sha": "ed87e07c239a9e1eb27bf884a1084cbb9deb07d1",
+      "size": 344,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/minimax/provider.py",
+      "sha": "8a8d4b2c21c4dc6d929cc9e87bd137acf49d2ad1",
+      "size": 4422,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/nv_build/__init__.py",
+      "sha": "395a922d6ea4f5e28f2ae1f65d4b8d6daaf6efce",
+      "size": 857,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/nv_build/model_registry.yaml",
+      "sha": "c99d66e0c96658b0f8f094fa07133956e328bb0b",
+      "size": 2243,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/nv_build/provider.py",
+      "sha": "b4d270151a0b78686d3a5643bacd76c0af1693ba",
+      "size": 4062,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/ollama/__init__.py",
+      "sha": "c3aa978183a662a3d8415896789aacfc24a3433d",
+      "size": 910,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/ollama/model_registry.yaml",
+      "sha": "90e86939a002930a020561cb6841c832bdbe0920",
+      "size": 807,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/ollama/provider.py",
+      "sha": "753b17d3f5624a4eae9b0ce582b6033ecc075c84",
+      "size": 3280,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/openai/__init__.py",
+      "sha": "a40c45c9669e540ba14a8bdb7b7b841096e94734",
+      "size": 914,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/openai/model_registry.yaml",
+      "sha": "607b17bf490d366f7f5eaedf57b72e2ed9203e08",
+      "size": 3531,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/openai/provider.py",
+      "sha": "c7a62c885a85d0d9f148b5cd03053e9711d6a70e",
+      "size": 4167,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/openai_compatible/__init__.py",
+      "sha": "7571e2ee185a0fc12833c76e9b3cf4a65bcc233d",
+      "size": 885,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/openai_compatible/model_registry.yaml",
+      "sha": "3d128157aa22fbc7ba52aba5fd8184df6351c9b6",
+      "size": 1547,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/openai_compatible/provider.py",
+      "sha": "c182da4e2ac47269e10635418472ceb9a742976e",
+      "size": 5416,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/opencode_cli/__init__.py",
+      "sha": "915cfab0722f3cbe4b6bb3b2958104bf4936ae0c",
+      "size": 1183,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/opencode_cli/provider.py",
+      "sha": "989a810256a7ec31d2bd615337be0419dfaee5c0",
+      "size": 1707,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/registry.py",
+      "sha": "48c770b116f7545966fa27f21e24516337517935",
+      "size": 4379,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/providers/structured_output.py",
+      "sha": "0c35e8e9d7b722679965a47f9108bee821bda2fb",
+      "size": 6625,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/python_ast.py",
+      "sha": "f4acc6521b3351bc86938311da9541299594c389",
+      "size": 89098,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/python_import_bounds.py",
+      "sha": "32650f8fae1ea7f31dd76690687de4e1613c0501",
+      "size": 20617,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/python_string_constants.py",
+      "sha": "c8502f20645d3e1889dfc23d57975b3cf3fd5974",
+      "size": 19468,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/python_tokens.py",
+      "sha": "7e1e1b127203e30197880efe1f240d7fe323d714",
+      "size": 48336,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/references.py",
+      "sha": "6d7184558bb61809a73add9b8fe70827be0f351a",
+      "size": 30888,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/resource_limits.py",
+      "sha": "a18aaecb6616709fc0af49bf27bbd519aca04206",
+      "size": 857,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/response_recovery.py",
+      "sha": "a8c7ff764b14b5ad28518ab66c23105efef3d366",
+      "size": 5672,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/sarif_models.py",
+      "sha": "366ff2c6133191658de5b0f6b6ba19d5ce379a86",
+      "size": 6370,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/security_reconstruction.py",
+      "sha": "60763799a50f2c1451411536b173a48d5c557c8e",
+      "size": 104527,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/semantic_runtime.py",
+      "sha": "51211e0a77155ba13d136aa37785ce1c58efabe0",
+      "size": 24095,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/semgrep_tokens.py",
+      "sha": "384cb15e320b849eb9db5eeaadd7a9f10b1c1d52",
+      "size": 9370,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/shell_artifact_effects.py",
+      "sha": "8741f25705ba377e4785da23a5aead4ba7abe349",
+      "size": 35358,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/shell_artifact_flow.py",
+      "sha": "4ff1fe399454e35ec96f06d57e32fca9a962751c",
+      "size": 40874,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/shell_artifacts.py",
+      "sha": "ff656d0ea0f715bcd1cd8d79ce645edea8ef6a7f",
+      "size": 20134,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/shell_helper_argv.py",
+      "sha": "9b306c2e9360fdb60abccad5612c99ec4bfb514d",
+      "size": 39360,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/shell_source_effects.py",
+      "sha": "a00aab41a3e71164ed3a628a566d10a889098e2b",
+      "size": 89299,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/shell_sources.py",
+      "sha": "d273de571ca8f5509c04a6d62d61c6cadd5eb90c",
+      "size": 87017,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/shell_tokens.py",
+      "sha": "25908a676564ec68741a856d32282634a3cd98cb",
+      "size": 4480,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/state.py",
+      "sha": "58acc8d800819a69e6393328f0557b587c8e6677",
+      "size": 21373,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/structured_response.py",
+      "sha": "831265ffc3349f9e49df9aab20cff260073d3b52",
+      "size": 16018,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/structured_skill.py",
+      "sha": "b793fdfd0d6fd3406aafac123074a62e0a7bf08a",
+      "size": 29643,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/suppression.py",
+      "sha": "698359298597f604c6ff57c8460cd29aa757fff4",
+      "size": 35914,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/surface.py",
+      "sha": "174300644d583bf761e5ac6e274c0c75dd1af1c2",
+      "size": 8849,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/terminal_text.py",
+      "sha": "b8eda9421cc8da0010192c059251b659debcafad",
+      "size": 1321,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/transitive.py",
+      "sha": "b3408755a3acc0f7bf1a6a86f4b0c5e380ecb27a",
+      "size": 30772,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/unicode_confusables.py",
+      "sha": "4fd0f036c8086bbd626175ec747b9cdd020bbccb",
+      "size": 27342,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/yaml_tokens.py",
+      "sha": "a0263cd2dff1a0b9404cadf67a18a645ab4c74f0",
+      "size": 4867,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/yara_rules/agent_skills.yar",
+      "sha": "bd9f0064fdfb9906824a98419c43c334a86540b4",
+      "size": 7296,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/yara_rules/cryptominers.yar",
+      "sha": "fbefe1517d3b12192ab4bd46969f3bfcf53a5711",
+      "size": 3646,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/yara_rules/hacktools.yar",
+      "sha": "ec77021a6cf9eac11e310c5652f55187260503c0",
+      "size": 3959,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/yara_rules/malware.yar.b64",
+      "sha": "ba26a9c4d775c221520c5a35e3c3aca0b23c77e1",
+      "size": 12649,
+      "mode": "100644"
+    },
+    {
+      "path": "src/skillspector/yara_rules/webshells.yar",
+      "sha": "2ebff2341927a70ed442e40d5b9c1ed563a1c10d",
+      "size": 4649,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/__init__.py",
+      "sha": "8e915f1bea77eddf00226dba2f18bc2eabf9d962",
+      "size": 714,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha": "04041faabb9fd61d6f6938f05a6b32d46729c251",
+      "size": 2546,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/docker/smoke.sh",
+      "sha": "512240ca26b86708fef8ab60a9d194c859213de5",
+      "size": 2248,
+      "mode": "100755"
+    },
+    {
+      "path": "tests/evasion_corpus/__init__.py",
+      "sha": "467079831e16b82ab14d173aa9f6b5fe840fd5ed",
+      "size": 679,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/evasion_corpus/corpus.py",
+      "sha": "b2292e68fa61cf2485524279060205dc4543fac6",
+      "size": 7850,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/evasion_corpus/test_canonical_sink_fitness.py",
+      "sha": "aae7f28afeb03097e2a05765251bf7c8e79c72cf",
+      "size": 11245,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/as3_self_reference/README.md",
+      "sha": "51b6f5fc3d8bdec13d76e288d34cffc2d62a85e3",
+      "size": 113,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/as3_self_reference/SKILL.md",
+      "sha": "8676b52edae4b03a4e24b6669bd755fd0b916b2f",
+      "size": 185,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/e2_shell_env_harvest/SKILL.md",
+      "sha": "40e43aab954bfe8c5a350862b0e167a44b362b1f",
+      "size": 189,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/malicious_skill/SKILL.md",
+      "sha": "6125363ed8a36d935e92c022919cc8e7e2dde31f",
+      "size": 1330,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/malicious_skill/scripts/helper.py",
+      "sha": "9054380b8839f3644b7c8dd1eaa3540a91d712e5",
+      "size": 676,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/mcp_clean_skill/SKILL.md",
+      "sha": "7c89c02aad733be50fd5391a2b94573366e3eccf",
+      "size": 234,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/mcp_clean_skill/scripts/format.py",
+      "sha": "a7b3873300e451b57c13b6e66ef0aaefa0d08a62",
+      "size": 467,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/mcp_mismatched_skill/SKILL.md",
+      "sha": "c2221ed4adce2fb4965ee7c1d8eb1829d2b9f71e",
+      "size": 220,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/mcp_mismatched_skill/scripts/greet.py",
+      "sha": "a54b19cfb99efd39c6d38ed8529b3fc6339c3b48",
+      "size": 410,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/mcp_overprivileged_skill/SKILL.md",
+      "sha": "6bcf9f86fe9da15916d775b575783e341ed25143",
+      "size": 252,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/mcp_overprivileged_skill/scripts/helper.py",
+      "sha": "8ee71553a840a18cec66da8f02dae368298c7eb0",
+      "size": 144,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/mcp_poisoned_tool/SKILL.md",
+      "sha": "3fbf532759a12b4310e0547e3be8ac7d9a189888",
+      "size": 444,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/mcp_poisoned_tool/scripts/reader.py",
+      "sha": "bbebe6676d236e6715db3a4ca359bb41a5ecac18",
+      "size": 164,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/mcp_registry/malformed.json",
+      "sha": "d443d55edbed715ab7d385ad15dc0d1b73a79212",
+      "size": 34,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/mcp_registry/mcp_registry.json",
+      "sha": "3d6097c68eab7e2e54d3497fbc83ff0ee845231b",
+      "size": 1995,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/mcp_underdeclared_skill/SKILL.md",
+      "sha": "c20c7ba8c6159ede6830af554f36149036377238",
+      "size": 164,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/mcp_underdeclared_skill/scripts/agent.py",
+      "sha": "53acde713547a31f975cdad94b89be5aef94b27b",
+      "size": 391,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/oms/mcore-split-pr.skill.oms.sig",
+      "sha": "74630cc1f8f6e1d375bec0b599c29c6af6d9e7e2",
+      "size": 4582,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/pe3_bare_keyring/SKILL.md",
+      "sha": "77d41c5215e1205bdd58663967231c0fa659a2d2",
+      "size": 136,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/pe3_bare_keyring/issue-396-keyring.md",
+      "sha": "d6fa9c232569149f8a2c9e63482c7d91b7ae52a0",
+      "size": 8,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/safe_skill/SKILL.md",
+      "sha": "fadeebde755d0d2d267123e28206e57b27d03a6d",
+      "size": 510,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sdi/sdi1_mismatch/SKILL.md",
+      "sha": "051cc45ec76bb081f4cb0e72991c5de6301a848b",
+      "size": 335,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sdi/sdi1_mismatch/summarizer.py",
+      "sha": "803b0fdf2e0d6c3f55240f036665290edc4039f2",
+      "size": 391,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sdi/sdi2_inappropriate/SKILL.md",
+      "sha": "4a638ef8d91722cf639da56fc90b08d92f5ec95f",
+      "size": 315,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sdi/sdi2_inappropriate/formatter.py",
+      "sha": "87f4b8579f5cefec172bb2cc8317803a90287c8a",
+      "size": 325,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sdi/sdi3_scope_creep/SKILL.md",
+      "sha": "2ff099ed251f6dd7c6239ae3b876a2dbe78cd683",
+      "size": 296,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sdi/sdi3_scope_creep/config_reader.py",
+      "sha": "3bac5bca99bf282afbef588f69eb1482e21bb564",
+      "size": 841,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sdi/sdi4_divergence/SKILL.md",
+      "sha": "cb686b005e9e478a6c920cf930a6c37f4088977d",
+      "size": 314,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sdi/sdi4_divergence/processor.py",
+      "sha": "37717a7c93f44c54d526b6724f93179b127a241a",
+      "size": 700,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sdi/sdi_clean/SKILL.md",
+      "sha": "c1c96f9187c32301ad5486dba358ac6a6e265761",
+      "size": 443,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sdi/sdi_clean/indexer.py",
+      "sha": "e62bc22b8658732b26ac21d69d34131579a35ecd",
+      "size": 926,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sqp/sqp1_clean/SKILL.md",
+      "sha": "ca077e9f11bbb4863e2596cd04b28553c948a007",
+      "size": 774,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sqp/sqp1_vague_triggers/SKILL.md",
+      "sha": "63a421eb18a618fb5ca15e7dd9a300a4c2bcd8ee",
+      "size": 370,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sqp/sqp2_clean/SKILL.md",
+      "sha": "742ee86926de6380ae236d7c30f1e310769e7e65",
+      "size": 554,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sqp/sqp2_clean/deploy.py",
+      "sha": "4b3d474719403067eb3f18d599b6ba1d91ab3b57",
+      "size": 677,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sqp/sqp2_missing_warnings/SKILL.md",
+      "sha": "aa35761bf23616c10e98ad99f60354ee869c505e",
+      "size": 256,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sqp/sqp2_missing_warnings/organizer.py",
+      "sha": "51cfea60e1682f4e71738e009f29d8c6f29b3937",
+      "size": 970,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sqp/sqp2_tool_catalog_clean/SKILL.md",
+      "sha": "8ac5609ec586cd2647cc66d4ea73aef7a57f4507",
+      "size": 573,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sqp/sqp2_tool_descriptive_step/SKILL.md",
+      "sha": "8b0ac5162b4f5e09a689275c941171a28bd7e964",
+      "size": 571,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sqp/sqp2_tool_instructed/SKILL.md",
+      "sha": "c31815f393c514e4d962a78d1085eb560f77558e",
+      "size": 592,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sqp/sqp3_clean/SKILL.md",
+      "sha": "e477b4112697a6f47c0e2dcb235d114078758a4f",
+      "size": 645,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sqp/sqp3_clean/config.yaml",
+      "sha": "e2b527fd62fb4128238bcbae53ab56db9360454f",
+      "size": 231,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sqp/sqp3_forced_language/SKILL.md",
+      "sha": "c6572143bb76f551eb24ec916c8845f66440b882",
+      "size": 401,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sqp/sqp3_locale_forcing/SKILL.md",
+      "sha": "570086b5c6e6023161723f4a1914035c2aacae48",
+      "size": 250,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sqp/sqp3_locale_forcing/config.yaml",
+      "sha": "d45de3ffae3de0fb3fd353c77025d6067d9d09c7",
+      "size": 244,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sqp/sqp3_plain_english_clean/SKILL.md",
+      "sha": "46ad4824a22b0fa7ef090171424c4377700e69c8",
+      "size": 391,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/sqp/sqp3_plain_english_override/SKILL.md",
+      "sha": "b34dbd23a31cd288ca8757d475f602b5b04d8b25",
+      "size": 408,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/ssd/ssd1_semantic_injection/SKILL.md",
+      "sha": "821dad9729cf055e9a191509fa74a466b6b964c3",
+      "size": 852,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/ssd/ssd2_novel_phrasing/SKILL.md",
+      "sha": "c616158fce4efe7a74ee2f5335ab5de0c5fb5149",
+      "size": 972,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/ssd/ssd3_nl_exfiltration/SKILL.md",
+      "sha": "c6232be6bc1dbbc072710e8102ff760889ff1f7e",
+      "size": 922,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/ssd/ssd4_narrative_deception/SKILL.md",
+      "sha": "426a2f68b60d42a1f112615a1073296d5b3b98e4",
+      "size": 1100,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/ssd/ssd_clean/SKILL.md",
+      "sha": "221f3f0bff28ee7e9b8b47e3360fb330b8465432",
+      "size": 813,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/tp4_markdown_fenced_code/SKILL.md",
+      "sha": "4e8029f2826f64eb1def6560a81713a40b729933",
+      "size": 290,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/integration/__init__.py",
+      "sha": "1275d78dff50fedb6c882661d6287a6c3406af0d",
+      "size": 680,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/integration/conftest.py",
+      "sha": "5af7058e9d6f0c7e15fa951f48cf3f754a2020d0",
+      "size": 965,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/integration/test_agent_cli_live.py",
+      "sha": "976e773e9ddc96e99c3beb40c11051167df53cd8",
+      "size": 6071,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/integration/test_graph.py",
+      "sha": "6c93f3d66d96b4436b3884f65a6d540276d8ad61",
+      "size": 9417,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/integration/test_graph_scanner.py",
+      "sha": "361bc152558b69aa6104e207c63215f70f0e6c41",
+      "size": 4748,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/integration/test_linked_zip_coverage.py",
+      "sha": "24a972859cdfd44649a23eeb8cb18af012531e5f",
+      "size": 3684,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/integration/test_meta_analyzer_use_llm.py",
+      "sha": "2fc44095bba725405126b78df80eb7a803c1eab5",
+      "size": 2976,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/integration/test_opaque_reference_reporting.py",
+      "sha": "54133880b20cf231324ffd99d6369b228dd8c225",
+      "size": 23049,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/integration/test_ransomware_rule.py",
+      "sha": "af7ed2bc0fda8243bf519783dddcfa10f0128a1c",
+      "size": 9982,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/integration/test_stream_invoke_parity.py",
+      "sha": "b675d84ef89de0f3d80840c8bcf27a009be3d89c",
+      "size": 3040,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/__init__.py",
+      "sha": "4dbf25ca6c6929078e5e37c7a320dec375470e62",
+      "size": 716,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/conftest.py",
+      "sha": "288a7e4099a2aaa21512fd66d22c508245fdfa72",
+      "size": 1252,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_artifact_integrity_bounds.py",
+      "sha": "debe772dea5b652ca5c17e95adc61b94a1d92834",
+      "size": 3455,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_baseline_scalar_ownership.py",
+      "sha": "b4cc4479913a16a397aad46db1ad68aa9f693a3a",
+      "size": 7365,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_behavioral_ast.py",
+      "sha": "05c0b416f002f9a857ee9337a61b3045ffe55012",
+      "size": 37263,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_behavioral_taint_tracking.py",
+      "sha": "1afa94dd770a6953021386b5a31c4e9a5a42ae24",
+      "size": 184295,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_binary_and_pe3_filtering.py",
+      "sha": "4f713fd9327c896bceb062ecf050f119bc48bae1",
+      "size": 17842,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_bounded_parser_regressions.py",
+      "sha": "30b6df009dad744df2989c406b82a654cf78c6d6",
+      "size": 31374,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_bundled_execution_surface.py",
+      "sha": "ed1baedd3a56ff8bfe7945240ad7fd422d20e037",
+      "size": 77252,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_chmod_regex_backtracking.py",
+      "sha": "db941ce638044cdf16c0b75cf8a8ace67de7865b",
+      "size": 4844,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_cli_companion_documentation.py",
+      "sha": "18f999240fa4d3d6644215ef8216b63865a515b9",
+      "size": 25715,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_cloud_download_direction.py",
+      "sha": "b5fc5cbed3bfb9dd42a82e1c2863c8f9f879da4c",
+      "size": 17994,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_command_wrapper_without_command.py",
+      "sha": "6de8d460b01edd5e94bfdd33085ef5a9e6c92314",
+      "size": 8927,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_common.py",
+      "sha": "9a60ecda809f8edbb0a16ae81eb81b58cda7c264",
+      "size": 2810,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_dependency_source_budget_behavior.py",
+      "sha": "61a63aff4b027ec72f61923eaba0a108e984d54d",
+      "size": 5376,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_dependency_source_budget_configuration.py",
+      "sha": "5dcac9434ce97e09d59033fb23c26a5ec77f27a2",
+      "size": 2695,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_dependency_source_review_regressions.py",
+      "sha": "c0cf4aa6de0464c2f53282156b268c8b4141ed6d",
+      "size": 12183,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_dependency_sources.py",
+      "sha": "46999ec3a23a88c93a04eea8b7b82874cee8c2d9",
+      "size": 61568,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_documentation_reconstruction.py",
+      "sha": "04bedd61d38f0683189619beb427ec81f12fd4a3",
+      "size": 29227,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_e1_command_boundaries.py",
+      "sha": "e531b14548805fe7cbf8de4bf08481db6209acc9",
+      "size": 17022,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_ea1_wildcard_line_boundary.py",
+      "sha": "72397b6e435c679acc905e9913e7889a1265d7b0",
+      "size": 15385,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_eval_command_strings.py",
+      "sha": "ba82847e82ee481bc58fccf92cc15dea4cc5bed1",
+      "size": 8152,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_excessive_agency_prohibitions.py",
+      "sha": "d333079921e76f7a5ac146151dd7cd83936860a1",
+      "size": 2818,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_host_language_shell_ownership.py",
+      "sha": "cb06469df8b8603b2b7bf4bc848a65f29cc24978",
+      "size": 77597,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_javascript_template_ownership.py",
+      "sha": "9f091b96b06b1ff3b46e73eb04717dcecf37b164",
+      "size": 57286,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_json_capacity_diagnostics.py",
+      "sha": "edb719b038d47afe5931ce0be9568d086b382d05",
+      "size": 15517,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_json_container_indentation.py",
+      "sha": "315f43c393011a0bdf5ac37a13175ea7dca5ddb1",
+      "size": 25147,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_json_container_ownership.py",
+      "sha": "62d51f58e690289ca3e576717a1c4ff6ad76b707",
+      "size": 10988,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_json_decoded_views.py",
+      "sha": "b47e4f7fb2b33d6fab943ad6207873bc1c5793b4",
+      "size": 16142,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_json_host_syntax.py",
+      "sha": "7c04bb8feb28724e1bb2a4909febd57dcf1a05a6",
+      "size": 25707,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_json_iterative_validation.py",
+      "sha": "6472ce7e5c529d687a7bc78afc8cd57af2b6130a",
+      "size": 13943,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_json_owned_runtime_bounds.py",
+      "sha": "8fba43cb080850f5fcf7ed54ce83a658b3e3dc1d",
+      "size": 8980,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_json_quote_scan_runtime.py",
+      "sha": "ccb1833e3d06f953d28114133b056e82368ec7fc",
+      "size": 8260,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_json_recovery_context.py",
+      "sha": "9882606e8cb8d69f8ed8f1d06b6ba474184ce561",
+      "size": 5032,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_json_wrapper_names.py",
+      "sha": "2207d0a606c8e8b5255bbe7c6ab46d21141d5a46",
+      "size": 5420,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_make_documentation_reconstruction.py",
+      "sha": "038325e26d861ee60fd5135174540c214745c511",
+      "size": 8435,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_markdown_list_continuation_coverage.py",
+      "sha": "f109495449eefa8d14a4f67fa6de7b0aadea885d",
+      "size": 8748,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_markdown_owned_commands.py",
+      "sha": "224fbeec509ffd50c3ca6ff7e62bfc40cb0bba0c",
+      "size": 33515,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_markdown_ownership_composition.py",
+      "sha": "b9a9b5181a8f147454fd55ff760c5d3372299f26",
+      "size": 6089,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_markdown_split_commands.py",
+      "sha": "3bf5819a815681f0cc221a08edb2b5e82400a634",
+      "size": 16203,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_markdown_table_boundaries.py",
+      "sha": "7d75dacac43c2065beab9cdc014a211976ec3fd9",
+      "size": 22630,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_markdown_table_separator_rows.py",
+      "sha": "1b4812dce14332d5d95eca4e7de45a46a56dc94b",
+      "size": 7978,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_mcp_rug_pull.py",
+      "sha": "a9f5b2f14022d4109fb8eaeacd59781fbec7d5d0",
+      "size": 16486,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_mdc_classification.py",
+      "sha": "4a3c9141b4cd0837767b2d26fd448013bac2d1f8",
+      "size": 6294,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_mdc_supply_chain_coverage.py",
+      "sha": "cc4918703220515fa453a210c624e5c7ba3e3ca3",
+      "size": 2898,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_mp2_markdown_tables.py",
+      "sha": "abfcfc2f3476491c66f9e79ff68dba0cf68b72e7",
+      "size": 4779,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_mp2_regex_backtracking.py",
+      "sha": "6dbd744c3816cb16036bbf70f558b37a763e805e",
+      "size": 4659,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_mp3_hardware_state.py",
+      "sha": "b172b5303e952a39dadd486ba04a23b24e74b29e",
+      "size": 15055,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_mp3_memory_file_write.py",
+      "sha": "92911d467d3e0c7dc2ba90544d0f3ada385ec375",
+      "size": 6018,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_mp3_timestamp_context.py",
+      "sha": "fd7628af7395e9fe3481843b6da94e350d162f84",
+      "size": 11607,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_mp3_whole_words.py",
+      "sha": "8522b65556d570a9dd7e2052908a87824aa04531",
+      "size": 4903,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_multiline_prompt_spacing.py",
+      "sha": "492e55b5b506b0c274ff706e0f285c82a3fea166",
+      "size": 20730,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_multiline_word_shadow.py",
+      "sha": "f30e6b09f4573580e293acd0396e981a2aeab80a",
+      "size": 4107,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_oms_projected_file_type.py",
+      "sha": "8eefe1bf414ad83e8bd3f138dc7e724266fa48d6",
+      "size": 2312,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_p2_reference_comments.py",
+      "sha": "a408099d419821de8bcf01724fe457415c710f17",
+      "size": 11629,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_p2_structural_benign.py",
+      "sha": "c82f9b8206a899fe63fee764615cb33fc2b6d268",
+      "size": 23442,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_p6_identifier_boundaries.py",
+      "sha": "c57a86dd11e7478cf5962787bca5e70f9c80e23d",
+      "size": 23442,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_p6_local_return_values.py",
+      "sha": "8061ce24f9092cea3e98d7c300ccdb53a4a99b69",
+      "size": 21914,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_parameter_expansion_reconstruction.py",
+      "sha": "98e312405b6b7fde6ba6fa7054cdae5230d05dfe",
+      "size": 8234,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_pe3_credential_type_label.py",
+      "sha": "4433674cf268890616fa2e53e6cb547ba2bb515d",
+      "size": 12956,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_pe3_ignore_file_entries.py",
+      "sha": "cd30ec558d43f08367dd1637296e0f923f46e029",
+      "size": 12751,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_pe3_python_setting_literal.py",
+      "sha": "3b1695febb0d00a3056465ba5b34cd327533eeee",
+      "size": 4006,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_perl_print_ownership.py",
+      "sha": "2aced45f861bcd93b22db11af5b1738ef5aacb2d",
+      "size": 12724,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_powershell_embedded_completeness.py",
+      "sha": "b225275341ea54dc83d134ddf9da10a8c9f843c2",
+      "size": 5999,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_powershell_generic_coverage.py",
+      "sha": "9ff5a0bccedc4067c7403594dfe057a9a2ce8f32",
+      "size": 2520,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_powershell_shell_ownership.py",
+      "sha": "8bf59c5f9d27c4db574ef56d28dc9eb32424b474",
+      "size": 8095,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_powershell_source_ownership.py",
+      "sha": "a1f839d9d6b6a7dacb1ce3cb941b29b0301201e2",
+      "size": 20037,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_prohibition_review_regressions.py",
+      "sha": "751325549ad698b396756f25ea559522c1305f9f",
+      "size": 6926,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_prose_shell_context.py",
+      "sha": "301a18a6bf96152a4b3bd7ed61cb55988f02d1b6",
+      "size": 37353,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_python_ast_columns.py",
+      "sha": "fe9bc719b769a11493b9e257ec460eae6023443d",
+      "size": 9533,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_python_host_word_bounds.py",
+      "sha": "fb4e4c11eacb7793f5130048a2a44bd410376931",
+      "size": 4025,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_python_shell_cached_imports.py",
+      "sha": "52f0d008cba66fa696e67e042240fc7973456cb6",
+      "size": 11652,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_python_string_marker_ownership.py",
+      "sha": "91475ae160da7e0f1a14f33461437fca9c6c6351",
+      "size": 24401,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_registry.py",
+      "sha": "586dbcb784b7dadc18c66b73121e939d3a70eda6",
+      "size": 2803,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_rogue_agent_negated_recommendation.py",
+      "sha": "fbcd6805b6b0a3421b322639a5563aa29b54ca57",
+      "size": 3045,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_runtime_brace_limits.py",
+      "sha": "8a947b85bb031c47d23d1eff9578f2eb630717e0",
+      "size": 5044,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_runtime_reconstruction_workflow.py",
+      "sha": "dd9fd40345b1bcb604cb152c518f341afd30e07d",
+      "size": 4148,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_sc2_command_boundaries.py",
+      "sha": "40f68be8d5ce8373fde5afa06d2a953e7e4370e3",
+      "size": 14062,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_sc4_reporting.py",
+      "sha": "2564f476be828936b423020fd61a2f77d34df943",
+      "size": 17395,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_sc8_shipped_bytecode.py",
+      "sha": "336f75a288e86411001c6c6ff3d0faf9519ea6a0",
+      "size": 15326,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_security_character_folding.py",
+      "sha": "6db852345cd5738465110eb9045facb0a73d18fb",
+      "size": 6369,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_security_reconstruction.py",
+      "sha": "9b2d71b66a37f6473a532c6ac4e9429eb28e459a",
+      "size": 133970,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_security_text_predicate_cache.py",
+      "sha": "453c2970385ae13877dab670e4b59d1150c780d2",
+      "size": 5145,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_security_word_run_skipping.py",
+      "sha": "277915a58e2464ec3af569707a03cda89e0a9fcd",
+      "size": 6204,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_semantic_developer_intent.py",
+      "sha": "8190b82ac09f5e9fe9010851f294e46fac4664db",
+      "size": 21645,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_semantic_security_discovery.py",
+      "sha": "ba8a6f0c360450b30b0b9a2efc02ff096004923f",
+      "size": 38194,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_semgrep_advanced_queries.py",
+      "sha": "941c9eecb106b39ea55ee4c9f989b1f89971780e",
+      "size": 8465,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_semgrep_inline_messages.py",
+      "sha": "d8eb26ee30cd18d31feec2defa7fd64d3f2ebc45",
+      "size": 19146,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_semgrep_rule_ownership.py",
+      "sha": "88f1ea1d445d867aa90d4dfcbbc7a84226132fa1",
+      "size": 9280,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_shared_python_ast.py",
+      "sha": "25625640c2d136f17c071695fc4d9a78ada22932",
+      "size": 25198,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_shell_artifact_effects.py",
+      "sha": "ff52a5abace0e80012bb7a772d28fa6b072a8fe2",
+      "size": 31527,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_shell_artifacts.py",
+      "sha": "ccafbba55a2dec027c3cb918a8ca0140172f94bc",
+      "size": 49865,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_shell_assignment_quotes.py",
+      "sha": "ef664f9b8921d65d3e4b08da801f7aa11cd5667f",
+      "size": 5666,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_shell_generated_sources.py",
+      "sha": "b961f39cd6d7e53b190d2af2553d1ec4c5b50643",
+      "size": 40534,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_shell_marker_ownership.py",
+      "sha": "148c74c27c39043a4801f7f7b315048ac42d864c",
+      "size": 6612,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_shell_quote_ownership.py",
+      "sha": "41fe93ca829bb9dec8b850e8a8be0ce334533d57",
+      "size": 68432,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_shell_source_effects.py",
+      "sha": "550f6d28c2e493fb390b45f3b854e704ac03155d",
+      "size": 18615,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_shell_source_effects_calls.py",
+      "sha": "c463bd1482b7a8ffbf8604068c0b487337fcd4f4",
+      "size": 59000,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_shell_string_marker_ownership.py",
+      "sha": "2b2d5d20883c9905e39550c626dceb14d753dd31",
+      "size": 12361,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_skill_installation_patterns.py",
+      "sha": "15c8546c1e36e458f9f91dea18a594ca22dccbc8",
+      "size": 13238,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_static_budget_configuration.py",
+      "sha": "555626b37c3d04744cf687520b85ba1fc55f4d0e",
+      "size": 6001,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_static_code_blank_lines.py",
+      "sha": "21e100bf81c55fcde44f6a33c5f8b103d37b191f",
+      "size": 3930,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_static_false_positive_controls.py",
+      "sha": "f7f4c8ee71a561813669a56b5eb862889ce01c69",
+      "size": 5313,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_static_parse_limit_issue_901.py",
+      "sha": "508dc4fdd5a6d53ef92321a7e62425a6d28f256f",
+      "size": 9747,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_static_parse_limit_literals.py",
+      "sha": "57efe32368ad7649ce97b2d3dc29b822cc5df74b",
+      "size": 8380,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_static_patterns.py",
+      "sha": "cc488752f6d5050bb0bca8b0b4d0af97fbb523f6",
+      "size": 192846,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_static_patterns_anti_refusal.py",
+      "sha": "bd788b5e87a74be4a71060fc2513f1149619a6e0",
+      "size": 27738,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_static_patterns_deserialization.py",
+      "sha": "70c39528af5fbefa77781ea2e31a42987b9bc82d",
+      "size": 5481,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_static_patterns_supply_chain_lockfiles.py",
+      "sha": "4d9dc662d958e855443975da445358d1459815fc",
+      "size": 29341,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_static_patterns_supply_chain_pipenv.py",
+      "sha": "1ab93b85e5242b97b287ab854c4a2c86250c20a2",
+      "size": 25175,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_static_runner_filtering.py",
+      "sha": "aa738750bb80473a3520b74cee6e97ffaf7adc8d",
+      "size": 67084,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_static_yara.py",
+      "sha": "0e32ff348cfb0d0526eaf8ac897a9b3df7aab952",
+      "size": 160690,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_structured_marker_ownership.py",
+      "sha": "01c8233dfc73b849388b840f756a694d9e660198",
+      "size": 11097,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_structured_skill_roles.py",
+      "sha": "7974b71de8c5e1528803d1dbe575a3c830774933",
+      "size": 3727,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_tm1_assignment_final_state.py",
+      "sha": "e63871acfe205aeb040624d9c90dc79cc0798d55",
+      "size": 5901,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_tm1_command_boundaries.py",
+      "sha": "008fdd46294b6a03e550bcbe12067339dfb28397",
+      "size": 17041,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_tm1_lexical_abstention.py",
+      "sha": "35b9fa268378e72cf2c0ef744e41c247e274e19b",
+      "size": 23300,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_tm1_window_identity.py",
+      "sha": "a25797c0f66ddb956280175e3a58bc1823666882",
+      "size": 17258,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_token_gap_fast_paths.py",
+      "sha": "022ccfd8f2fab57aa6d038ab80026bc059d7987f",
+      "size": 12690,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_tool_misuse_python_ast.py",
+      "sha": "52bccdcba2e88e917c487c54ea2696feda1cea5a",
+      "size": 50256,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_whitespace_padding.py",
+      "sha": "7d28614f59e75823454b192c699c8b2a9397eb97",
+      "size": 20715,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_yaml_scalar_ownership.py",
+      "sha": "57d161e336a0488a3f8256188cd68029e6fb7a07",
+      "size": 11064,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/analyzers/test_yara_prompt_prohibitions.py",
+      "sha": "e877cc29ee1b5faf8ec2861f67d64a7d7261c236",
+      "size": 5760,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_analysis_completeness.py",
+      "sha": "fe32e22d1b25638491e034797476a1b7fa749a04",
+      "size": 4372,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_as3_source_identity.py",
+      "sha": "fa510373b6347193aed3a2c70b1dbfdd4017fe58",
+      "size": 9762,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_build_context.py",
+      "sha": "39cde240a038f371b0ca0f271cc6eca8a8aefaca",
+      "size": 104812,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_deduplicate.py",
+      "sha": "cbe31d24b7e3baa1964cb35e5f3de49b51bc2f65",
+      "size": 20565,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_explicit_exclusions.py",
+      "sha": "7cab542a505d72700e2580a1e110051ff26e9814",
+      "size": 10092,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_finalize_inspection_ledger.py",
+      "sha": "325cb0ce1bb221aa9c681c67d6e9b82bc9d40ba9",
+      "size": 102168,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_fragment_terminal_ledger.py",
+      "sha": "2bbf7f06dd0888a41d55f5c4c4a2fe71890c5956",
+      "size": 16983,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_inspection_notices.py",
+      "sha": "2bff30e12032ef7ec6051af2318e3bfa924f39db",
+      "size": 5282,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_json_capacity_scan.py",
+      "sha": "e9c4b70108c843b2f2841ac9b40bd15564a58e2f",
+      "size": 5983,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_json_capacity_upgrade.py",
+      "sha": "6e434f95ad0da4c626cc704787ed743726fe1b76",
+      "size": 13019,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_json_quote_scan_end_to_end.py",
+      "sha": "386c51eec7adc350df5d55e62316f97e1d110a49",
+      "size": 5882,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_llm_analyzer_base.py",
+      "sha": "0436908299d55573be878b80f54012e959eacb12",
+      "size": 198647,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_llm_failed_request_diagnostics.py",
+      "sha": "dd3c21f64e7de3bc3e26c3dff1dbbefbb68856c4",
+      "size": 7196,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_llm_prompt_budget.py",
+      "sha": "cbc5b47a62b6b599ff72f547598a00adb5ba5f98",
+      "size": 19224,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_llm_source_fragments.py",
+      "sha": "94804b6c701c3452cd224b72891b3c542f26e113",
+      "size": 9110,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_meta_analyzer.py",
+      "sha": "7216c92a91b9873f81d34fee3bdb4ffc629a5fc8",
+      "size": 49653,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_meta_analyzer_fallback.py",
+      "sha": "f8db58a121858dc934a95bc46e05ad769b73d942",
+      "size": 10575,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_meta_source_fragments.py",
+      "sha": "ad815f510c2abea0d25d5d43493fa630ddbd946d",
+      "size": 7430,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_nested_artifacts.py",
+      "sha": "18a4bdc5fa89dfc0b77612a822919bfc53f20f59",
+      "size": 114171,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_oms.py",
+      "sha": "0ec27210c6b3ba572689a03332967b908e899c36",
+      "size": 14820,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_passive_documentation_images.py",
+      "sha": "564f347a9e3ee2f628a7b0f238b94aa18c756d44",
+      "size": 2875,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_provider_failure_coverage.py",
+      "sha": "f39853eb4e59ff6261d296a97d8b72cba2f4a076",
+      "size": 12784,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_python_execution_surface_end_to_end.py",
+      "sha": "8ce19360ce6755ec3e66873532c990b8f9644a94",
+      "size": 15593,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_report.py",
+      "sha": "83f3b01827a12c6295d69646d6681d0297728253",
+      "size": 131217,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_report_archive_provenance.py",
+      "sha": "8be36d8a1402d871312a461b12211f6d022c5b34",
+      "size": 7255,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_report_occurrence_columns.py",
+      "sha": "09a13aabede0d41b9a39687cacf2294fc015230c",
+      "size": 12167,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_report_provenance_boundary.py",
+      "sha": "307b3000d3b247eb5ec732c0249ed6c05fb223f1",
+      "size": 10853,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_report_sanitizer.py",
+      "sha": "96a3c2bedee276dc85e2fdd256b4adef6e0f0ab3",
+      "size": 19406,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_resolve_input.py",
+      "sha": "c41ccf1e164aa29c13614d828820e251355739a0",
+      "size": 16209,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_sarif_rules_and_empty_findings.py",
+      "sha": "11f71bf26131bc5057f29e800c7c33a7bfb12faf",
+      "size": 17504,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_sarif_security_severity.py",
+      "sha": "0549b253c3be542a04443727a75bb58f4d994377",
+      "size": 5444,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_security_end_to_end.py",
+      "sha": "c5cd1a5b3ec130df6614b0a6538c7bba85449beb",
+      "size": 77065,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_security_remediation.py",
+      "sha": "d7e184570fdb2243bd2290b896e23e94ea2b2428",
+      "size": 162674,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_semantic_quality_policy.py",
+      "sha": "a785cfa0a844c7f327decb1592b186bf2c761d2e",
+      "size": 43143,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/nodes/test_transitive_analyzer_deadlines.py",
+      "sha": "512d0a5dc7ca2e6877bc6902249f8fcb288d31e4",
+      "size": 14224,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/opencode/skillspector_scan_lib.test.ts",
+      "sha": "897449fbee5d04ae433fe2799096f1e29407c566",
+      "size": 28037,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/provider/__init__.py",
+      "sha": "52a7a9daf028f654d6a02f65c99cc609a57b492f",
+      "size": 137,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/provider/test_opencode_cli.py",
+      "sha": "bac48e159fe29a03071c19fc36640f15a9923437",
+      "size": 30242,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/provider/test_provider_endpoint.py",
+      "sha": "5ff4e4433cabf21642b03e7c1f11857a650e5783",
+      "size": 6292,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/provider/test_semantic_developer_intent_context.py",
+      "sha": "baa19ab277d8309bf2db99d4efd5d6087d343c40",
+      "size": 5647,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_batch_scan_pool_cleanup.py",
+      "sha": "d25501e7370ef96ab939e3025f495ff3d5868b26",
+      "size": 3631,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_batch_scan_reports.py",
+      "sha": "d76d64fe9f8364c68492b6b7b0a5b49ffcf3c9b9",
+      "size": 11705,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_batch_scan_security.py",
+      "sha": "f819efe026001dc7eafae3cf3911ab5ac818b3cf",
+      "size": 46230,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_bundled_execution_surface_acceptance.py",
+      "sha": "b6bbab104a057165365a733d9798a336fe80be7e",
+      "size": 12239,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_documentation_image_references.py",
+      "sha": "b85c0dd9bf0b480b68a3b0e505093df9086962f1",
+      "size": 12655,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_finding_surface.py",
+      "sha": "f43df2405f8696e5c5e86e39af378ae8a041fb13",
+      "size": 10562,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_inspection_ledger.py",
+      "sha": "27beea09291eb51c415b034df7101007bfa2bdab",
+      "size": 17959,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_json_version_references.py",
+      "sha": "2358af52fd12848c8a8f7616d831ca7160362e7b",
+      "size": 4490,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_mcp_least_privilege.py",
+      "sha": "d2dc5aad1911b340fddc685cd051983fee83da34",
+      "size": 37246,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_mcp_rug_pull.py",
+      "sha": "5376e62d188f6231b734cad20db3cac2bdf1a446",
+      "size": 31465,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_mcp_tool_poisoning.py",
+      "sha": "67b8d7ad148f81545de54d1054cc04e672535b42",
+      "size": 113695,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_models.py",
+      "sha": "88a5dbc70199f9e03d270462a67b715936b3587c",
+      "size": 2723,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_multi_skill.py",
+      "sha": "f9b6a2809ed32c6302cbdd82fc393a7bb5f7ab7d",
+      "size": 30044,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_passive_jpeg.py",
+      "sha": "b0285d905dbbd0cd99394074399cb2e6b4f34b69",
+      "size": 12353,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_primary_input_completeness.py",
+      "sha": "a7f6ee8bf8d105eca3fa4aead40d11bac3c8cd70",
+      "size": 17142,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_prompt_leakage_context_regressions.py",
+      "sha": "fee210895742320e044f7221d116b3bcc2fc7534",
+      "size": 6658,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_prompt_leakage_headings.py",
+      "sha": "91b5909c5b0d0eff00bdfb0d2997e27d0681cdb4",
+      "size": 3053,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_python_ast.py",
+      "sha": "28a23e3d66015999c2acabdd5115751157cb4454",
+      "size": 70740,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_reference_destination_kinds.py",
+      "sha": "745c65d46e5ad8cdfe3f282c07205c4b01864843",
+      "size": 8616,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_reference_destinations.py",
+      "sha": "8887670865586010b9985a2c859296c7ed8b5f12",
+      "size": 16465,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_resource_capacity_configuration.py",
+      "sha": "c7cb314add53bbb375693698a11ab820ec980f95",
+      "size": 8764,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_semantic_runtime.py",
+      "sha": "40d503dd46811732afa2fafbe91520e4c88083f2",
+      "size": 26978,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_structured_skill.py",
+      "sha": "9cd54c87cb831e4fa959dc6414179f6d41814d0c",
+      "size": 11283,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/__init__.py",
+      "sha": "1275d78dff50fedb6c882661d6287a6c3406af0d",
+      "size": 680,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_agent_cli.py",
+      "sha": "53caf01877437fe662924eb46e46634d297b1e71",
+      "size": 37882,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_anthropic_provider.py",
+      "sha": "fabf7a309b089353b9bb739caccb71f7cbfd42d5",
+      "size": 6429,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_anthropic_proxy_provider.py",
+      "sha": "ac917c8afb7ee24696d1a50f7faac00b117e3dd7",
+      "size": 14933,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_baseline_coverage.py",
+      "sha": "5d1e7030cab2760d3d7c33068839d5e7d863b3c0",
+      "size": 13750,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_baseline_mcp.py",
+      "sha": "4b07b20389f9e96a15f344146574b12fa5073249",
+      "size": 7929,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_bedrock_provider.py",
+      "sha": "99cd69d57866566bab5840843dfbf21de51a02b2",
+      "size": 22604,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_cleanup.py",
+      "sha": "3611435c34dcce64c7d940c9c83fa09f61298db4",
+      "size": 9832,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_cli.py",
+      "sha": "3d0a2e18ff12dab09f7d76db521cbff34aa6fbfc",
+      "size": 314779,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_cli_entry.py",
+      "sha": "c650126b334b8db61a150c37514e932b8656a998",
+      "size": 5108,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_cli_subprocess.py",
+      "sha": "0613466ff1bf7196557fa7db2ceacac2cfc61a4c",
+      "size": 13486,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_compare_scan_accuracy.py",
+      "sha": "81ee3d50b07f1244814d885455463068fcbc2f8e",
+      "size": 46934,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_constants.py",
+      "sha": "02fe5f0d6596ad5b8c78a0c4ab3ffff6f5c5727b",
+      "size": 10638,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_create_github_release.py",
+      "sha": "13f1e50a6e5ca4bee7affaaae50508f99d1b80e9",
+      "size": 10324,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_defensive_language_reporting.py",
+      "sha": "59fd8207ca5c1dfc90a18aad4af8f4b84b35aee9",
+      "size": 15757,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_dependency_inspection.py",
+      "sha": "c079f2aad2c87a13966aa70ec809aa44fa26e884",
+      "size": 42763,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_gemini_provider.py",
+      "sha": "4d506976d816cb05c13fab942fb1be15523712b0",
+      "size": 27838,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_github_release_workflow.py",
+      "sha": "ae4d7d6e1e017d6a8c88a78e50c9ace3c4fdb4b9",
+      "size": 3075,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_graph_proxy.py",
+      "sha": "be97fe570a7c6f9feef2fca4de297aba4404dcde",
+      "size": 3938,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_inference_usage.py",
+      "sha": "2500bc42499b63b87bd4ee4db3c4d52229e7f6cf",
+      "size": 15470,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_input_handler.py",
+      "sha": "18315b1e17c6ef95140cd57709bcee46b888f8f7",
+      "size": 36765,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_input_handler_bounds.py",
+      "sha": "cafc46f1e6dd05e76c543dd40fb0d4f3286d7faa",
+      "size": 43457,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_input_handler_ssrf.py",
+      "sha": "9dd6118dec8476b543f24a07d0fa579b5d26fdd9",
+      "size": 9065,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_lazy_workflow_imports.py",
+      "sha": "3f65bcb66e1591de1e7f5a47968d80d6deb72be9",
+      "size": 3503,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_llm_provenance.py",
+      "sha": "b7be5954400160b6f783d731109d4bd6998afa09",
+      "size": 27594,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_llm_utils.py",
+      "sha": "5cceb31f1d00bb309a9593ab2192ff790c7ddff7",
+      "size": 45429,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_mcp_registry.py",
+      "sha": "323bba4bf33ef1fadd42c9ee42394349b12584b6",
+      "size": 34344,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_mcp_server.py",
+      "sha": "fd1f801f800af40892d8bcaf90b084dd813e4994",
+      "size": 66166,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_minimax_provider.py",
+      "sha": "bd13ad2c3e41efd76a2000ca6bc6679fada43df3",
+      "size": 14441,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_model_capabilities.py",
+      "sha": "f7c75b70f02fb2abc4378a7101f685a0d73921f4",
+      "size": 31634,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_model_info.py",
+      "sha": "1ddf1c2c06837a813a7e7437f827ba4120b8e18a",
+      "size": 13418,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_new_providers.py",
+      "sha": "c6d7f2896d341770ae0889fef867753dd7e2366a",
+      "size": 22247,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_osv_client.py",
+      "sha": "5890144e112ef8cd6ce1a1662af44b429eeea409",
+      "size": 30386,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_patterns.py",
+      "sha": "c5ad68218d09dd6f2e8dedf0ea24bb8d123362da",
+      "size": 87513,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_patterns_new.py",
+      "sha": "1d3a3c3e73de81f80e67881515cac4508f47ad75",
+      "size": 200857,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_pi_extension.mjs",
+      "sha": "764dffc490b7e1d2ca78e90d015219b1780ef0b7",
+      "size": 22248,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_prohibition_context.py",
+      "sha": "35b96253f518a3d54b065baaceaa02766ec33d67",
+      "size": 14082,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_prompt_leakage_context_regressions.py",
+      "sha": "f0f45b3a5e15a3c7a8108c6ae3113e7c976a26e6",
+      "size": 19641,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_prompt_leakage_headings.py",
+      "sha": "81f3b1e655436b11444052d1066435123021d41c",
+      "size": 6484,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_prompt_leakage_independent_controls.py",
+      "sha": "149014089abe98447aae8d6fb6ccbb9c781f105f",
+      "size": 2171,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_prompt_leakage_prepared_review.py",
+      "sha": "fb31373cc046a2ad0fa97f5d5720d03e529dc63d",
+      "size": 7044,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_prompt_leakage_target_qualifiers.py",
+      "sha": "926002e559ba3d3ab1352493bc03091fb84bdb9a",
+      "size": 3531,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_provider_imports.py",
+      "sha": "4aaadb228b0f68168e80a19b1b35e68a09109a94",
+      "size": 2470,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_providers.py",
+      "sha": "33b1d6f55e85cfae348e20cdb7e7925dc85f9541",
+      "size": 62082,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_registry_settings.py",
+      "sha": "7d22bfd64f39c509a83bcac48f22535647e709d8",
+      "size": 4561,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_reviewer_nits.py",
+      "sha": "e8bdb7357cabf7b63e87a57fb9f19b4384f2c3d5",
+      "size": 4600,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_sarif.py",
+      "sha": "d93142fd02625a9e0b574d2d97ef693b583b0c36",
+      "size": 6637,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_sql_parameter_binding.py",
+      "sha": "a7cd696f98ae1aafb58ab84ce5957ef95b1bc170",
+      "size": 10489,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_static_runner_prepared_context.py",
+      "sha": "33e1a5d9a70207d204265980213f6b77b0b720a9",
+      "size": 10162,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_static_scan_credentials.py",
+      "sha": "7b987ab9145cc4d352a2bfd8d2cbf6e94b568c85",
+      "size": 5185,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_structured_output_fallback.py",
+      "sha": "dfa3d7f72d6965b9f5bc41f5109747b472fdc66d",
+      "size": 24960,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_structured_response.py",
+      "sha": "8080177dc893bfd8c390a68f2163ef985b2cfdd0",
+      "size": 60427,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_suppression.py",
+      "sha": "d3cb9582ea355a26433ce7eee3942781eea2d0b8",
+      "size": 56595,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_tp4_openai_http.py",
+      "sha": "2ee5711fea95616ef447db16cd95d90f2a115122",
+      "size": 16066,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_transitive.py",
+      "sha": "f37f9217f0e3f3b3fbeeb86ad75246b259d80cf4",
+      "size": 27008,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_wheel_contents.py",
+      "sha": "81e0761c9fa7f7952f7f190e22781a58b1b53033",
+      "size": 1266,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_yara_nmap_token.py",
+      "sha": "1e4f247d14507c55ca55faaa7fce6733b4312b7b",
+      "size": 6128,
+      "mode": "100644"
+    },
+    {
+      "path": "tests/unit/test_yara_rop_chain.py",
+      "sha": "ebfb34b6b2ec5197b31fd1498f401da0dd995ed2",
+      "size": 2822,
+      "mode": "100644"
+    },
+    {
+      "path": "uv.lock",
+      "sha": "bcfbc474925853c0e51fa292808fca516f344dc9",
+      "size": 625402,
+      "mode": "100644"
+    }
+  ]
+}

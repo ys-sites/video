@@ -1,0 +1,30 @@
+---
+name: creator-video
+description: Build or edit short creator videos from supplied local footage or references. Use for "vlog implementation", "creator style", "Instagram-worthy creator content", a Torsten-inspired editor workflow, or the Kelsey/kelssie3 reference style. Do not use for unrelated website work.
+---
+
+# Creator video production
+
+The current workspace is the user's video project. Preserve existing content and outputs; use a new source package and a new edit project rather than replacing earlier work. User-supplied locations are sources to ingest and analyze, not just links to list. For a local file or folder, use `python tools/ingest_video_reference.py "<source>" --name <new-name>`; it copies and SHA-256 verifies into `resources/creator-styles/sources/`, keeps originals and refuses an existing destination. Review what was copied. When a location is a web URL, use a supported, authorized download route and record source and rights; do not assume every webpage is directly downloadable. If it cannot be obtained, explain the precise limitation.
+
+For a new creator edit, `python tools/video_workflow.py init <project-name>` creates a separate project with editable starter rule books, positive/negative reference folders, notes and output folders. Read the project's seven rule books and its explicitly approved taste decisions before editing. They are independently authored starting points, not Torsten Roscoe's paid materials or established preferences. The user's specific brief and reference take priority. Inspect good and bad examples before drawing conclusions; record only decisions actually approved for this project.
+
+## Route by style
+
+- **"vlog implementation" / "vlog style"**: create a creator-led vlog from the user's footage. Follow the real story, important moments and intended audience; pick an appropriate pace, short-form framing and readable captions. This is a broad category, not a claim that the user supplied one universal vlog reference. Analyze any newly supplied examples before treating their aesthetic as the user's preference.
+- **"creator style" / Instagram-worthy**: produce polished short-form creator content adapted to the brief. Select visuals, edit rhythm and sound from the supplied references and subject, rather than assuming a particular creator or a generic promotional template.
+- **Kelsey / `kelssie3`**: read [Kelsey reference](references/kelssie3.md) and the local teardown under `resources/creator-styles/sources/kelssie3-teardown/`. Preserve its distinction between the six talking-to-camera videos and the excluded montage/tour examples. Do not conflate this set with the separately retained legacy `_k.elsie` reference unless the user confirms they should be treated together.
+- **Kenyset presets / `@kenyset`**: consult `docs/kenyset-presets.md` and the local manifest. The 42 numbered `.ffx` files are After Effects presets whose effects and dependencies have not been previewed; do not guess a preset's appearance or claim it works in another editor. Check rights and compatibility, preview on disposable test layers, and record verified results before applying to a project.
+- **Talking-head reels / `talking-head-skill`** and **voiceover glass reel / `voiceover-glass-reel`**: use the distinct workflows in `docs/local-first-reel-workflows.md`. Favor local editing, real or licensed media, and available local motion tools. Higgsfield is an optional separately stored reference, not a dependency or default provider. The supplied upstream scripts are unreviewed and their macOS assumptions do not establish Windows compatibility.
+- **SaaS launch / MotionSmith-style product promo**: read `docs/motionsmith-workflow.md`. Use actual product footage, a reference-led storyboard, editable UI motion, privacy checks and versioned previews. Treat MotionSmith as a paid third-party product, not an installed engine; check current access and use an available tool or connector only when actually present. Follow a motion-first, sound-after-review sequence when requested.
+
+## Work loop
+
+1. Locate the requested input and inspect representative video frames, audio, timings and any matching metadata/transcripts. Confirm a transcript against the actual speech; existing automatic transcriptions and prior performance comparisons can be inaccurate.
+2. Determine story, destination/aspect ratio, duration, selected source footage and style from the brief and files. When enough is known, proceed to an actual editable cut and local preview using an available tool; do not stop at a generic prompt or invent an editor integration. Keep narration, licensed audio, reference footage and original media separate, and use creator footage as reference unless reuse is authorized.
+3. Create an edit plan with source clip/time ranges, transcript or narration, caption timing, transitions, overlays, sounds, and a record of the chosen reference. Match emphasis to the words and preserve room for mobile-safe captions. Use only the user's real proof, or an appropriately labeled illustration; do not invent claims.
+4. Build using the current project's suitable editing workflow and available tools. Keep the project/layers editable when the tool supports it. Review actual frames and sound and verify output duration, aspect ratio and sync; mark unavailable checks clearly. Preserve source and versions and do not publish unless requested.
+
+For requested multiple-style comparisons, use the same approved source and cut structure where practical, but plan distinct compositions and style treatments. `python tools/video_workflow.py variants <project-name> --styles <style> ...` creates separate planning records without rendering or publishing. Verify each result visually and audibly. Do not assume that stylistic changes guarantee reach or avoid a platform's duplicate detection.
+
+The reference graph, when present, is under `resources/creator-styles/graphify-out/`. It is an index of the analyzed corpus, not proof that every source video or audio track was fully analyzed. Consult the linked original files for evidence.

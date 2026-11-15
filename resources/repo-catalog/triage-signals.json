@@ -1,0 +1,591 @@
+{
+  "created_utc": "2026-11-15T05:50:59.901704+00:00",
+  "warning": "Text matches are leads for review only; they are not confirmed vulnerabilities or proof of safety.",
+  "results": [
+    {
+      "repository": "666ghj/MiroFish",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "academa-labs/manimgx",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "affaan-m/ECC",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "affaan-m/everything-claude-code",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "airbnb/lottie-android",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "airbnb/lottie-web",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "bangtutorial/bang-motion",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "barckley75/resolve-claude-mcp",
+      "local_path": "resources/concordia/video-motion/resolve-claude-mcp",
+      "files_scanned": 8,
+      "files_skipped": 0,
+      "signals": {
+        "process_execution": 3,
+        "network_or_upload": 0,
+        "credential_or_secret_access": 0,
+        "install_or_lifecycle": 6,
+        "dynamic_code": 1
+      },
+      "examples": {
+        "process_execution": [
+          "src/resolve_claude_mcp/server.py:1348",
+          "src/resolve_claude_mcp/server.py:1353",
+          "src/resolve_claude_mcp/transcription.py:73"
+        ],
+        "network_or_upload": [],
+        "credential_or_secret_access": [],
+        "install_or_lifecycle": [
+          "README.md:110",
+          "src/resolve_claude_mcp/server.py:1540",
+          "src/resolve_claude_mcp/server.py:1541",
+          "src/resolve_claude_mcp/server.py:1605",
+          "src/resolve_claude_mcp/server.py:1652"
+        ],
+        "dynamic_code": [
+          "src/resolve_claude_mcp/connection.py:239"
+        ]
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "bilawalsidhu/gods-eye-view",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "blender/blender",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "BudgetAny/Budget3D",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "calesthio/OpenMontage",
+      "local_path": "resources/concordia/video-motion/openmontage",
+      "files_scanned": 1755,
+      "files_skipped": 2,
+      "signals": {
+        "process_execution": 84,
+        "network_or_upload": 586,
+        "credential_or_secret_access": 1075,
+        "install_or_lifecycle": 182,
+        "dynamic_code": 16
+      },
+      "examples": {
+        "process_execution": [
+          "render_demo.py:63",
+          "render_demo.py:87",
+          ".agents/skills/beautiful-mermaid/scripts/render.ts:149",
+          ".agents/skills/hyperframes-animation/scripts/package-loader.mjs:1",
+          ".agents/skills/hyperframes-creative/scripts/extract-audio-data.py:52"
+        ],
+        "network_or_upload": [
+          ".agents/skills/agents/references/widget-embedding.md:200",
+          ".agents/skills/ai-video-gen/SKILL.md:133",
+          ".agents/skills/ai-video-gen/SKILL.md:177",
+          ".agents/skills/ai-video-gen/SKILL.md:245",
+          ".agents/skills/avatar-video/references/assets.md:76"
+        ],
+        "credential_or_secret_access": [
+          "AGENT_GUIDE.md:685",
+          "AGENT_GUIDE.md:714",
+          ".agents/skills/agents/SKILL.md:87",
+          ".agents/skills/agents/SKILL.md:221",
+          ".agents/skills/agents/references/agent-configuration.md:220"
+        ],
+        "install_or_lifecycle": [
+          "README.md:196",
+          "README.md:198",
+          "README.md:200",
+          "README_zh-CN.md:144",
+          "README_zh-CN.md:146"
+        ],
+        "dynamic_code": [
+          ".agents/skills/hyperframes-media/scripts/lib/bgm.mjs:210",
+          ".agents/skills/music-to-video/references/motion-primitives/assets/gsap.min.js:10",
+          ".agents/skills/music-to-video/scripts/validate-plan.mjs:111",
+          ".agents/skills/music-to-video/scripts/lib/storyboard.mjs:107",
+          ".agents/skills/music-to-video/scripts/lib/storyboard.mjs:115"
+        ]
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "charlesdove977/advertising-ops",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "charlesdove977/re-walkthrough-pro",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "charlesdove977/UGC-Factory",
+      "local_path": "resources/concordia/video-motion/ugc-factory",
+      "files_scanned": 26,
+      "files_skipped": 0,
+      "signals": {
+        "process_execution": 0,
+        "network_or_upload": 0,
+        "credential_or_secret_access": 0,
+        "install_or_lifecycle": 1,
+        "dynamic_code": 0
+      },
+      "examples": {
+        "process_execution": [],
+        "network_or_upload": [],
+        "credential_or_secret_access": [],
+        "install_or_lifecycle": [
+          "README.md:49"
+        ],
+        "dynamic_code": []
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "cloudflare/security-audit-skill",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "debpalash/VoiceStudio",
+      "local_path": "resources/concordia/video-motion/voicestudio",
+      "files_scanned": 2456,
+      "files_skipped": 0,
+      "signals": {
+        "process_execution": 235,
+        "network_or_upload": 161,
+        "credential_or_secret_access": 1066,
+        "install_or_lifecycle": 209,
+        "dynamic_code": 54
+      },
+      "examples": {
+        "process_execution": [
+          ".github/scripts/gallery_pin.py:24",
+          ".github/scripts/identity_check.py:54",
+          ".github/scripts/identity_check.py:62",
+          ".github/workflows/electron-build.yml:91",
+          ".github/workflows/electron-release.yml:159"
+        ],
+        "network_or_upload": [
+          "CHANGELOG.md:2359",
+          "CHANGELOG.md:3029",
+          "pyproject.toml:176",
+          "backend/mcp_server.py:492",
+          "backend/mcp_server.py:493"
+        ],
+        "credential_or_secret_access": [
+          "AGENTS.md:55",
+          "CHANGELOG.md:299",
+          "CHANGELOG.md:327",
+          "CHANGELOG.md:516",
+          "CHANGELOG.md:547"
+        ],
+        "install_or_lifecycle": [
+          "CHANGELOG.md:1737",
+          "CHANGELOG.md:1983",
+          "CHANGELOG.md:2359",
+          "CHANGELOG.md:2503",
+          "CHANGELOG.md:2585"
+        ],
+        "dynamic_code": [
+          "backend/engines/moss_tts_v15/main.py:281",
+          "backend/engines/omnivoice_gguf/backend.py:939",
+          "backend/services/watermark.py:224",
+          "backend/services/watermark.py:240",
+          "docs/ROADMAP.md:253"
+        ]
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "deepseek-ai/deepseek-harness",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "dozentwelve/papermorph",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "FFmpeg/FFmpeg",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "ffmpegwasm/ffmpeg.wasm",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "godotengine/godot",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "GraphiteEditor/Graphite",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "greensock/GSAP",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "HandBrake/HandBrake",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "HKUDS/DeepTutor",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "iamtechartist/every-joule-lesson1",
+      "local_path": "resources/concordia/video-motion/every-joule-lesson1",
+      "files_scanned": 12,
+      "files_skipped": 1,
+      "signals": {
+        "process_execution": 0,
+        "network_or_upload": 2,
+        "credential_or_secret_access": 1,
+        "install_or_lifecycle": 0,
+        "dynamic_code": 1
+      },
+      "examples": {
+        "process_execution": [],
+        "network_or_upload": [
+          "assets/index-Bb-Nc_xU.js:1",
+          "assets/sound-vOpPkm07.js:1"
+        ],
+        "credential_or_secret_access": [
+          "assets/index-Bb-Nc_xU.js:1"
+        ],
+        "install_or_lifecycle": [],
+        "dynamic_code": [
+          "assets/main-BSpvVzGs.js:363"
+        ]
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "JDhruv14/line-art-animation",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "juliangarnier/anime",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "JuneYaooo/rea-video",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "KDE/kdenlive",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "konvajs/konva",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "latent-spaces/brag",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "ManimCommunity/manim",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "mengto/skills",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "meshy-dev/ThreeRT",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "meta/astryx",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "mltframework/shotcut",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "Moh4696/cinematic-skill",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "mojs/mojs",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "motiondivision/motion",
+      "local_path": "resources/concordia/motion-library",
+      "files_scanned": 1330,
+      "files_skipped": 1,
+      "signals": {
+        "process_execution": 1,
+        "network_or_upload": 1,
+        "credential_or_secret_access": 97,
+        "install_or_lifecycle": 6,
+        "dynamic_code": 10
+      },
+      "examples": {
+        "process_execution": [
+          "packages/motion/src/__tests__/react-animate-view.test.ts:2"
+        ],
+        "network_or_upload": [
+          "scripts/notify-slack.js:109"
+        ],
+        "credential_or_secret_access": [
+          "CHANGELOG.md:3437",
+          "CHANGELOG.md:3974",
+          "playwright.config.ts:21",
+          "playwright.config.ts:22",
+          "playwright.config.ts:23"
+        ],
+        "install_or_lifecycle": [
+          "CLAUDE.md:36",
+          "README.md:16",
+          "README.md:19",
+          "packages/framer-motion/README.md:15",
+          "packages/motion/README.md:16"
+        ],
+        "dynamic_code": [
+          "packages/framer-motion/src/animation/animators/waapi/__tests__/polyfill.js:148",
+          "packages/framer-motion/src/animation/animators/waapi/__tests__/polyfill.js:150",
+          "packages/framer-motion/src/animation/animators/waapi/__tests__/polyfill.js:152",
+          "packages/framer-motion/src/animation/animators/waapi/__tests__/polyfill.js:2326",
+          "packages/framer-motion/src/animation/animators/waapi/__tests__/polyfill.js:2696"
+        ]
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "mrdoob/three.js",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "nexu-io/openmotion",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "obsproject/obs-studio",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "openqodex/openqodex",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "opentoonz/opentoonz",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "paulirish/chrome-capture",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "pbakaus/impeccable",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "pixijs/pixijs",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "remotion-dev/remotion",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "Sandflow-ai/sand3d",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "shinyobjectz/raea",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "storytold/filmcraft",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "Tejashmakwana/motionmaxxing",
+      "local_path": "resources/concordia/video-motion/motionmaxxing",
+      "files_scanned": 68,
+      "files_skipped": 2,
+      "signals": {
+        "process_execution": 22,
+        "network_or_upload": 3,
+        "credential_or_secret_access": 9,
+        "install_or_lifecycle": 1,
+        "dynamic_code": 47
+      },
+      "examples": {
+        "process_execution": [
+          "scripts/blind_review.py:277",
+          "scripts/imagegen.py:146",
+          "scripts/imagegen.py:191",
+          "scripts/imagegen.py:200",
+          "scripts/imagegen.py:207"
+        ],
+        "network_or_upload": [
+          "scripts/brand.mjs:440",
+          "scripts/fetch_logo.mjs:34",
+          "scripts/sync.mjs:14"
+        ],
+        "credential_or_secret_access": [
+          "references/director.md:37",
+          "runtime/hero3d/vendor/opentype.module.js:8929",
+          "runtime/hero3d/vendor/opentype.module.js:9811",
+          "runtime/hero3d/vendor/addons/loaders/GLTFLoader.js:2670",
+          "scripts/brand.mjs:526"
+        ],
+        "install_or_lifecycle": [
+          "runtime/hero3d/tools/fontconv.py:11"
+        ],
+        "dynamic_code": [
+          "runtime/hero3d/vendor/opentype.module.js:1228",
+          "runtime/hero3d/vendor/opentype.module.js:3462",
+          "runtime/hero3d/vendor/opentype.module.js:8986",
+          "runtime/hero3d/vendor/opentype.module.js:9024",
+          "runtime/hero3d/vendor/opentype.module.js:9124"
+        ]
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "tokio-rs/topcoat",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "tweenjs/tween.js",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "Vibha-Ramprakash/claude-video-effects",
+      "local_path": "resources/concordia/video-motion/claude-video-effects",
+      "files_scanned": 6,
+      "files_skipped": 0,
+      "signals": {
+        "process_execution": 5,
+        "network_or_upload": 0,
+        "credential_or_secret_access": 0,
+        "install_or_lifecycle": 3,
+        "dynamic_code": 1
+      },
+      "examples": {
+        "process_execution": [
+          "scripts/fx.py:2071",
+          "scripts/fx.py:2074",
+          "scripts/fx.py:2080",
+          "scripts/fx.py:2215",
+          "scripts/words.py:21"
+        ],
+        "network_or_upload": [],
+        "credential_or_secret_access": [],
+        "install_or_lifecycle": [
+          "scripts/setup.sh:18",
+          "scripts/setup.sh:19",
+          "scripts/setup.sh:22"
+        ],
+        "dynamic_code": [
+          "scripts/fx.py:2066"
+        ]
+      },
+      "scope": "bounded filename/text signal scan; tests, dependencies, build outputs and large files excluded",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "videojs/video.js",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "Vincentwei1021/anything2explainer",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "wulkano/Kap",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "xai-org/grok-build",
+      "status": "source_not_available_in_copied_library",
+      "audit_status": "not_audited"
+    },
+    {
+      "repository": "NVIDIA/SkillSpector",
+      "status": "partial_upstream_source_only_not_scanned",
+      "audit_status": "not_audited"
+    }
+  ]
+}
