@@ -15,4 +15,6 @@ talking-head-reels/
 voiceover-glass-reel/
 tmp/
 __MACOSX/
+__pycache__/
+*.pyc
 
