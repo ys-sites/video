@@ -1,0 +1,1536 @@
+{
+  "field_notes": {
+    "creator": "Instagram handle of the reel's creator, without the @ (e.g. \"melissaortarealtor\").",
+    "id": "Unique reel id, e.g. \"vid_001\".",
+    "notes": "Short note on what the reel shows and why it was harvested \u2014 which effect or move it demonstrates.",
+    "style_tags": "List of style slugs from data/styles.json that this reel demonstrates (e.g. [\"kelsie-flythrough\", \"melissa-vision-pitch\"]).",
+    "url": "Full Instagram reel URL, e.g. \"https://www.instagram.com/reel/DfkBM9XuE_L/\"."
+  },
+  "fields": [
+    "id",
+    "url",
+    "creator",
+    "style_tags",
+    "notes"
+  ],
+  "harvest_plan": "Harvest 1,000+ real-estate-style reels with strong graphics. Primary pool: the mt1jay For You feed, collected in batches by scrolling the logged-in browser session (Instagram API does not expose the For You page or watch history). Fallback pool: mt1jay + akhisharafath saved posts and followed creators. Each harvested reel is studied (what the edit does, which style tags apply) and appended here.",
+  "harvest_status": "Harvest 1 (2026-11-17): mt1jay saved posts (103 scanned) + DMs on both accounts back to Nov 1, 2026 (84 threads, 66 URLs). 35 reels kept, 55 dropped. FYP harvest (1,000 target) still pending on the mt1jay browser login.",
+  "reels": [
+    {
+      "id": "vid_m001",
+      "url": "https://www.instagram.com/reel/Df2FOWBhCrR",
+      "creator": "gp__multimedia",
+      "style_tags": [
+        "realtor-reels"
+      ],
+      "notes": "GP Multimedia pitch to Minnesota realtors: video is a specialty, not a photo add-on. Talking head walking downtown, on-screen text + graphics contrasting photo-first providers with video-first."
+    },
+    {
+      "id": "vid_m002",
+      "url": "https://www.instagram.com/reel/Df0CJt9SN8Y",
+      "creator": "squarefoothomes",
+      "style_tags": [
+        "realtor-reels"
+      ],
+      "notes": "Square Foot Homes launch pitch: team does not just list on the MLS, it launches the home with pro photography, social content and a 3,000-buyer database. Sunny upscale neighborhood, direct to camera."
+    },
+    {
+      "id": "vid_m003",
+      "url": "https://www.instagram.com/reel/DfpMAuHuAi7",
+      "creator": "melissaortarealtor",
+      "style_tags": [
+        "kelsie-listing-tour",
+        "realtor-reels"
+      ],
+      "notes": "Melissa Orta in Spanish, seated in a modern living room, pitching new-construction homes in Lehigh Acres, then interior tour (living room, dining, bedrooms, bath) with price points from $260k."
+    },
+    {
+      "id": "vid_m004",
+      "url": "https://www.instagram.com/reel/DfaHdixTWUY",
+      "creator": "barsolmedia",
+      "style_tags": [
+        "kelsie-listing-tour",
+        "realtor-reels"
+      ],
+      "notes": "Barsol Media: a cliche billionaire pitch gets interrupted and coached into a real hook (\"five homes on this street, only one available\"), then a minimalist mansion tour. Hook-coaching format."
+    },
+    {
+      "id": "vid_m005",
+      "url": "https://www.instagram.com/reel/DfYbJx2RKRb",
+      "creator": "eucamilalorena_",
+      "style_tags": [
+        "romina-5-edits",
+        "ai-motion-graphics"
+      ],
+      "notes": "Camila Lorena (Portuguese): 3 editing ideas to escape the obvious, including captions with blurred backgrounds. Talking head with a fork-microphone prop."
+    },
+    {
+      "id": "vid_m006",
+      "url": "https://www.instagram.com/reel/DfS3bYHBzQf",
+      "creator": "cliffsidecuts",
+      "style_tags": [
+        "cinematic-ai-video",
+        "realtor-reels"
+      ],
+      "notes": "Cliffside Cuts: cinematic luxury Vegas home, sweeping drone shots of a modernist black-clad/glass house perched on a ridge. Drone-led luxury showcase."
+    },
+    {
+      "id": "vid_m007",
+      "url": "https://www.instagram.com/reel/DfS19jhuUWr",
+      "creator": "michaelaziz.vs",
+      "style_tags": [
+        "kelsie-listing-tour",
+        "realtor-reels"
+      ],
+      "notes": "Michael Aziz walks down the ramp of a modern two-story home in Rolling Hills, day and night showcase of the property. Listing tour, presenter-led."
+    },
+    {
+      "id": "vid_m008",
+      "url": "https://www.instagram.com/reel/DfSU1lKPC2w",
+      "creator": "bellucciproduction",
+      "style_tags": [
+        "sumit",
+        "ai-motion-graphics"
+      ],
+      "notes": "Bellucci Production: rapid-fire brand pitch in a park, large on-screen text over a talking head. Big kinetic text is the style."
+    },
+    {
+      "id": "vid_m009",
+      "url": "https://www.instagram.com/reel/DfCVmowg8jy",
+      "creator": "courtneywalshbaisa",
+      "style_tags": [
+        "realtor-reels"
+      ],
+      "notes": "Courtney Walsh Baisa: sunny plaza promo asking what if investing in real estate was as easy as stating your goals. Collaborative investment pitch."
+    },
+    {
+      "id": "vid_m010",
+      "url": "https://www.instagram.com/reel/DfAZMAjseOQ",
+      "creator": "liveairprod",
+      "style_tags": [
+        "ai-motion-graphics"
+      ],
+      "notes": "Live Air Prod: how to make invisible cuts like in the movies, from a desk setup. Cut-technique demo."
+    },
+    {
+      "id": "vid_m011",
+      "url": "https://www.instagram.com/reel/De2LWQwomXm",
+      "creator": "pires.visuals",
+      "style_tags": [
+        "ai-motion-graphics",
+        "kelsie-flythrough"
+      ],
+      "notes": "Pires Visuals: \"You need to learn this transition\" \u2014 white courtyard transitions into a living room, split-screen breakdown. Room-to-room transition demo."
+    },
+    {
+      "id": "vid_m012",
+      "url": "https://www.instagram.com/reel/DerRQWgo8yn",
+      "creator": "caitlinoconnorrealestate",
+      "style_tags": [
+        "realtor-reels"
+      ],
+      "notes": "Caitlin O'Connor, waterfront: \"Before you hire a listing agent, ask ONE question \u2014 can I trust this agent?\" Sequential on-screen text as she speaks."
+    },
+    {
+      "id": "vid_m013",
+      "url": "https://www.instagram.com/reel/DehWYGXgW-O",
+      "creator": "harry__allsop",
+      "style_tags": [
+        "sumit",
+        "romina-5-edits"
+      ],
+      "notes": "Harry Allsop: five viral hooks demoed in a home gym, each labelled with on-screen text. Hook-format style demo."
+    },
+    {
+      "id": "vid_m014",
+      "url": "https://www.instagram.com/reel/DeZLJV0K-_-",
+      "creator": "yourrealtorinfloridaa",
+      "style_tags": [
+        "realtor-reels",
+        "ai-motion-graphics"
+      ],
+      "notes": "Your Realtor in Florida: black-and-white phone-call open that flips to color as \"Z Brothers is officially Windermere\" is announced. B&W-to-color transition brand reel."
+    },
+    {
+      "id": "vid_m015",
+      "url": "https://www.instagram.com/reel/DeOPjoFR-a7",
+      "creator": "joshiscohen",
+      "style_tags": [
+        "realtor-reels"
+      ],
+      "notes": "Josh Cohen walking a palm-lined sidewalk: agents did not get into the business to do admin \u2014 sales pitch for his system. Realtor-coach talking head."
+    },
+    {
+      "id": "vid_m016",
+      "url": "https://www.instagram.com/reel/Dd-P0XFhiA9",
+      "creator": "elbeezus",
+      "style_tags": [
+        "sumit",
+        "ai-motion-graphics"
+      ],
+      "notes": "Elbeezus (Spanish): recreating a viral real-estate text effect in CapCut, showing luxury-home example clips first. Viral text-effect demo."
+    },
+    {
+      "id": "vid_m017",
+      "url": "https://www.instagram.com/reel/Dd76h-2RpSv",
+      "creator": "joshiscohen",
+      "style_tags": [
+        "realtor-reels"
+      ],
+      "notes": "Josh Cohen walking talking head: the income ceiling for real-estate media makers who stay behind the camera. On-screen text reinforces the pitch."
+    },
+    {
+      "id": "vid_m018",
+      "url": "https://www.instagram.com/reel/Dd1DbV6uyGF",
+      "creator": "antonellacariboni",
+      "style_tags": [
+        "kelsie-listing-tour",
+        "realtor-reels"
+      ],
+      "notes": "Antonella Cariboni (Portuguese): luxury home in Jardim Acapulco, Guaruj\u00e1, opened with a R$100k hook. Listing tour."
+    },
+    {
+      "id": "vid_m019",
+      "url": "https://www.instagram.com/reel/Ddkl1qDIlCH",
+      "creator": "caitlinoconnorrealestate",
+      "style_tags": [
+        "realtor-reels"
+      ],
+      "notes": "Caitlin O'Connor walking a riverside path: listing tip with sequential on-screen text. Realtor advice reel."
+    },
+    {
+      "id": "vid_m020",
+      "url": "https://www.instagram.com/reel/DdHYthaIq_9",
+      "creator": "pires.visuals",
+      "style_tags": [
+        "kelsie-flythrough",
+        "cinematic-ai-video"
+      ],
+      "notes": "Pires Visuals: \"How to make a house appear behind you in 30 seconds\" \u2014 AI-generated house placed behind the presenter on an empty road. AI house-appear effect."
+    },
+    {
+      "id": "vid_m021",
+      "url": "https://www.instagram.com/reel/DdGs8HcRd6j",
+      "creator": "_k.elsie",
+      "style_tags": [
+        "kelsie-listing-tour",
+        "realtor-reels"
+      ],
+      "notes": "Kelsie Blevins: new-construction home in Mooresville NC, outside then kitchen/living room, \"every new build has instant equity\" angle. Listing tour."
+    },
+    {
+      "id": "vid_m022",
+      "url": "https://www.instagram.com/reel/DdCn6koh6es",
+      "creator": "bluesprucemedia",
+      "style_tags": [
+        "cinematic-ai-video",
+        "realtor-reels"
+      ],
+      "notes": "Blue Spruce Media: \"The Shooter\" \u2014 videographer with gimbal, then a modern luxury showcase. Shooter-intro + property showcase."
+    },
+    {
+      "id": "vid_m023",
+      "url": "https://www.instagram.com/reel/DcvtZegCKr_",
+      "creator": "javierfiguerroa",
+      "style_tags": [
+        "realtor-reels"
+      ],
+      "notes": "Javier Figuerroa: five-step first-home strategy for couples on a suburban sidewalk. Realtor advice reel."
+    },
+    {
+      "id": "vid_m024",
+      "url": "https://www.instagram.com/reel/Dcs_d-LRaRK",
+      "creator": "renataostasrealtor",
+      "style_tags": [
+        "realtor-reels"
+      ],
+      "notes": "Renata Ostas (Keller Williams, Charlotte): educational promo filmed on sunny Matthews sidewalks and patios. Realtor reel."
+    },
+    {
+      "id": "vid_m025",
+      "url": "https://www.instagram.com/reel/DcpZfvURcr3",
+      "creator": "charlieplourde_",
+      "style_tags": [
+        "sumit",
+        "ai-motion-graphics"
+      ],
+      "notes": "Charlie Plourde on a balcony: calm talking head with huge red text overlays (\"FRIENDS WON'T TELL YOU BROKE\") and black-screen cuts. Bold-overlay talking head."
+    },
+    {
+      "id": "vid_m026",
+      "url": "https://www.instagram.com/reel/DcghbiIRccM",
+      "creator": "invistacompriscila",
+      "style_tags": [
+        "kelsie-listing-tour",
+        "realtor-reels"
+      ],
+      "notes": "Priscila Pereira: NEX ONE CAIUBI development promo in Perdizes, S\u00e3o Paulo \u2014 presenter walking the project. Development listing reel."
+    },
+    {
+      "id": "vid_m027",
+      "url": "https://www.instagram.com/reel/DaxRn6Nykxi",
+      "creator": "l17.marketing",
+      "style_tags": [
+        "kelsie-listing-tour",
+        "realtor-reels"
+      ],
+      "notes": "L17 Marketing: Trinity Nordic Residences, Seri Kembangan \u2014 most duplexes over RM1.5M, this one is not. Luxury listing ad."
+    },
+    {
+      "id": "vid_m028",
+      "url": "https://www.instagram.com/reel/DaNYpI2xw1M",
+      "creator": "_k.elsie",
+      "style_tags": [
+        "kelsie-listing-tour",
+        "realtor-reels"
+      ],
+      "notes": "Kelsie Blevins: single-level estate in Statesville NC, kitchen-first tour with white cabinets, island and pendants. Listing tour."
+    },
+    {
+      "id": "vid_m029",
+      "url": "https://www.instagram.com/reel/DZXzWSPuqqj",
+      "creator": "jonidahaliliyyc",
+      "style_tags": [
+        "realtor-reels",
+        "ai-motion-graphics"
+      ],
+      "notes": "Joni Dahl: walking talking head on luxury \u2014 \"most people think luxury means a high price tag. It doesn't.\" On-screen text reinforces the message."
+    },
+    {
+      "id": "vid_m030",
+      "url": "https://www.instagram.com/reel/DZDQ1NAPoY4",
+      "creator": "wolfeofrealestate",
+      "style_tags": [
+        "realtor-reels"
+      ],
+      "notes": "Erica (Wolfe Team) by the FOR SALE sign, playful open holding a teammate's ankles. Realtor team reel."
+    },
+    {
+      "id": "vid_m031",
+      "url": "https://www.instagram.com/reel/Dfzlf6PudPi",
+      "creator": "melissaortarealtor",
+      "style_tags": [
+        "kelsie-listing-tour",
+        "realtor-reels"
+      ],
+      "notes": "Melissa Orta: modern luxury home in Lehigh Acres ($449,000) \u2014 fountain at the front door, outdoor kitchen out back. Walkthrough listing tour."
+    },
+    {
+      "id": "vid_m032",
+      "url": "https://www.instagram.com/reel/DeZOgPZxrlq",
+      "creator": "reesekiselakrealtor",
+      "style_tags": [
+        "cinematic-ai-video",
+        "realtor-reels"
+      ],
+      "notes": "Reese Kisela: polished luxury-agent promo at a waterfront property, pool and lake behind her. Luxury showcase."
+    },
+    {
+      "id": "vid_m033",
+      "url": "https://www.instagram.com/reel/DdkOWmphatA",
+      "creator": "joshiscohen",
+      "style_tags": [
+        "realtor-reels"
+      ],
+      "notes": "Josh Cohen walking a park path in South Florida: direct-to-camera sales pitch. Realtor-coach talking head."
+    },
+    {
+      "id": "vid_m034",
+      "url": "https://www.instagram.com/reel/DcI2sUKxktO",
+      "creator": "_k.elsie",
+      "style_tags": [
+        "realtor-reels"
+      ],
+      "notes": "Kelsie Blevins by a lake: 50+ homes sold in 2026, over half under contract in two weeks \u2014 \"it comes down to pricing and presentation,\" with house graphics. Authority reel."
+    },
+    {
+      "id": "vid_m035",
+      "url": "https://www.instagram.com/reel/DafU-rnRiEx",
+      "creator": "_k.elsie",
+      "style_tags": [
+        "realtor-reels"
+      ],
+      "notes": "Kelsie Blevins, Homes.com testimonial at a modern white lakeside home with pool: listings seen 16x more than average after joining. Testimonial reel with on-screen graphics."
+    },
+    {
+      "id": "vid_m036",
+      "url": "https://www.instagram.com/reel/DaDc23rRD3A",
+      "creator": "claudiorivera.910",
+      "style_tags": [
+        "realtor-reels"
+      ],
+      "notes": "The creator asks what top realtors have in common: over 100 families helped (@_k.elsie), a $12M home sold from a reel (@shawnelliottrealestate), and $100M sold in one year from reels (@robthomsonwaterfront). The common factor: they show up \u2026"
+    },
+    {
+      "id": "vid_m037",
+      "url": "https://www.instagram.com/reel/DfmoSUpsDUx",
+      "creator": "withian.t",
+      "style_tags": [
+        "ai-auto-editing"
+      ],
+      "notes": "Ian Tang (@withian.t) shows an 'Editable CLAUDE Storyboard' workflow: a Figma-style canvas where Claude turns a photo reference into a storyboard with three editable keyframes per shot (start, change, end). He edits on the canvas, comments \u2026"
+    },
+    {
+      "id": "vid_m038",
+      "url": "https://www.instagram.com/reel/DfAr4ldgD7G",
+      "creator": "Carrington Pierre",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "Set up a 24/7 AI agent: comment 'AGENT' for the free setup guide that gets an AI agent running around the clock."
+    },
+    {
+      "id": "vid_m039",
+      "url": "https://www.instagram.com/reel/DezeMvbTjl4",
+      "creator": "corbinsylk",
+      "style_tags": [
+        "ai-auto-editing"
+      ],
+      "notes": "Short reel from AI-effects educator Corbin Sylk promoting Claude-powered premium video effects \u2014 gated prompts (\u201cSTACK\u201d comment) for ready-made premium effects that carry a true brand signature on every video, per caption. Same gated-prompt\u2026"
+    },
+    {
+      "id": "vid_m040",
+      "url": "https://www.instagram.com/reel/DeuZvcPqAGV",
+      "creator": "Torsten Roscoe",
+      "style_tags": [
+        "ai-auto-editing"
+      ],
+      "notes": "Make Claude AI edits 10X better: have Claude break the video into scenes, animations and timestamps before you ask for changes, so you can direct each edit exactly."
+    },
+    {
+      "id": "vid_m041",
+      "url": "https://www.instagram.com/reel/DePX9XMgDXx",
+      "creator": "miftahul_islam_efaz",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "The creator distinguishes his offer from the viral Claude prompt everyone is posting: it is a reusable Claude Code skill that acts as a video production team and made the entire 56-second SaaS ad with zero After Effects and zero editors. Ac\u2026"
+    },
+    {
+      "id": "vid_m042",
+      "url": "https://www.instagram.com/reel/DbpEea6kqnZ",
+      "creator": "buildingwiththane",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "Short vibecoding showcase of aesthetic websites built with Manus, posted as a Manus partner ad, with the assets offered via a 'CRUMB' comment."
+    },
+    {
+      "id": "vid_m043",
+      "url": "https://www.instagram.com/reel/DYW8bZds8Jy",
+      "creator": "horyx.studio",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "Horyx Studio claims 'I didn't write a single line of code\u2026 Antigravity did everything' for a website build, tagged #antigravity #claude #claudedesign #website. Comment 'Flow' receives the prompt. Note: chunk pricing lists Manus, which does \u2026"
+    },
+    {
+      "id": "vid_m044",
+      "url": "https://www.instagram.com/reel/DX1z5eXN39o",
+      "creator": "drcintas",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "'Claude just killed interior design': drcintas shows redesigning any space with Claude Code via the banana skill. Install the skill, connect a Google AI Studio API key, upload a photo of your room, type /banana and ask for a redesign \u2014 it g\u2026"
+    },
+    {
+      "id": "vid_m045",
+      "url": "https://www.instagram.com/reel/Dfx64zuCose/",
+      "creator": "nocodealex",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "Papermorph: a free open-source Claude Code skill that turns a textbook PDF into a narrated, interactive web lesson with quizzes and MP4 export."
+    },
+    {
+      "id": "vid_m046",
+      "url": "https://www.instagram.com/reel/DfxaESCvEKM/",
+      "creator": "alex_prompter",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "Coucou: a free open-source Mac notch companion (Mochi) that watches Claude Code / Codex / Cursor sessions live and lets you approve permissions from the notch or your iPhone Lock Screen."
+    },
+    {
+      "id": "vid_m047",
+      "url": "https://www.instagram.com/reel/Dfu8kZ7zue0/",
+      "creator": "buildwithneej",
+      "style_tags": [
+        "ai-auto-editing"
+      ],
+      "notes": "An open-source Claude Code / Codex workflow that reverse-engineers a viral video shot by shot (cut detection, audio separation, filmed/AI/code labelling) and writes a remake plan."
+    },
+    {
+      "id": "vid_m048",
+      "url": "https://www.instagram.com/p/Dfsaf2Dyaod/",
+      "creator": "data_science_geek_learning",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "A ranked list of 12 GitHub repos for auditing and securing AI-written code: vulnerability scanning, secret scanning, agent-skill scanning and LLM red-teaming."
+    },
+    {
+      "id": "vid_m049",
+      "url": "https://www.instagram.com/reel/Dcd3eY1iOMA/",
+      "creator": "itstundeanthony",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "Fact or Hype? @alassafi.ai"
+    },
+    {
+      "id": "vid_m050",
+      "url": "https://www.instagram.com/p/DfPGypijw2f/",
+      "creator": "okaashish",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "Comment \"animate\" and I'll send all the free claude skills with you! #claudeskills #claude #claudevideo #claudevideoediting #ai"
+    },
+    {
+      "id": "vid_m051",
+      "url": "https://www.instagram.com/reel/Dfphrw3griE/",
+      "creator": "alextsoi_ai",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "follow for part 2 of things I built with Claude Code Part 1: Agent Huddle 1. A little widget in the corner shows every Claude Code agent I've got running 2. Click one to see exactly what it's doing, step by step 3. Allow permissions and ans\u2026"
+    },
+    {
+      "id": "vid_m052",
+      "url": "https://www.instagram.com/reel/DfvyO7TAkYB/",
+      "creator": "asharasjad",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "Meng To's curated skills for making insane demos: dream-loop for 3D visuals with Blender plus a critic agent, Hairline for isometric line drawings, Emil Kowalski's design skills, and more."
+    },
+    {
+      "id": "vid_m053",
+      "url": "https://www.instagram.com/reel/Dfutd4mROBz/",
+      "creator": "asharasjad",
+      "style_tags": [
+        "cinematic-ai-video"
+      ],
+      "notes": "ThreeRT is Meshy's hardware ray-traced three.js: a real-time path tracer that simulates light bounces for movie-quality shadows and reflections on the web."
+    },
+    {
+      "id": "vid_m054",
+      "url": "https://www.instagram.com/p/DfjvOWBj9aC/",
+      "creator": "okaashish",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "Comment \"video\" and I'll send all the links! #claude #claudevideoediting #claudevideo #claudeskills #claudeplugins"
+    },
+    {
+      "id": "vid_m055",
+      "url": "https://www.instagram.com/reel/DfsIhjsChH5/",
+      "creator": "marketerhub.ai",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "Comment \u00abClaude\u00bb and I\u2019ll send you the GitHub link and setup guide. \ud83d\udce9 Ever wish Claude remembered where you left off when you started a new coding session? ECC adds skills for carrying context across sessions, running security checks, and l\u2026"
+    },
+    {
+      "id": "vid_m056",
+      "url": "https://www.instagram.com/reel/DfsEIwDFKSD/",
+      "creator": "Jack Roberts",
+      "style_tags": [
+        "cinematic-ai-video"
+      ],
+      "notes": "Lemo gives Claude 66 film styles to make explainer videos: pick a style, describe your idea in one sentence, and Claude writes the story, adds voiceover and music, then animates every frame in code -- done in about ten minutes."
+    },
+    {
+      "id": "vid_m057",
+      "url": "https://www.instagram.com/reel/DffhT_iRb6z/",
+      "creator": "Tom",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "Nine Claude-powered AI agents run the online side of a trades business: AI Receptionist answers calls, Manager Agent handles quotes, Follow-Up Agent chases leads, SEO Agent improves Google ranking, Analytics Agent tracks performance, Ad Cre\u2026"
+    },
+    {
+      "id": "vid_m058",
+      "url": "https://www.instagram.com/reel/DfpjVfvxxBD/",
+      "creator": "Denis Holc | AI & Automation",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "Claude Code + custom 3d-animator skill: generate a cinematic 20-second 3D animation (a sunlit desk with a typewriter) without Blender -- drag the skill into Claude Code and prompt it."
+    },
+    {
+      "id": "vid_m059",
+      "url": "https://www.instagram.com/reel/DfX2jqyh4K6/",
+      "creator": "Shubham \u2022 AI, Code & Business",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "Automate Instagram's Edits app with Claude: post directly from your desktop to public and trial reels."
+    },
+    {
+      "id": "vid_m060",
+      "url": "https://www.instagram.com/reel/Dew85IgsLQg",
+      "creator": "aslaniedits",
+      "style_tags": [
+        "ai-motion-graphics"
+      ],
+      "notes": "What it is: Off-topic \u2014 promo pitch for manual After Effects editing services ('Need edits like these?'); manual editing excluded per his rule and not AI-teaching. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m061",
+      "url": "https://www.instagram.com/reel/DZWLhE3uEhO",
+      "creator": "raelynn_wetzel_hibbert",
+      "style_tags": [
+        "realtor-reels"
+      ],
+      "notes": "What it is: Off-topic \u2014 Utah Realtor homebuyer negotiation tips, not an AI-teaching video."
+    },
+    {
+      "id": "vid_m062",
+      "url": "https://www.instagram.com/reel/DfOOGuzJHmf",
+      "creator": "v.motionsss",
+      "style_tags": [
+        "ai-motion-graphics"
+      ],
+      "notes": "What it is: Manual editing/showcase \u2014 'only game I play' After Effects motion-graphics clip; no AI tool named. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m063",
+      "url": "https://www.instagram.com/reel/DeqaiWNAAFA",
+      "creator": "Justin",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic \u2014 job-market meme ('Why am I just finding this out?! #unemployed #jobsearch'); not AI-teaching. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m064",
+      "url": "https://www.instagram.com/reel/DeOan0hvOol",
+      "creator": "a1tkid",
+      "style_tags": [
+        "ai-motion-graphics"
+      ],
+      "notes": "What it is: Entertainment/showcase \u2014 Sol launch film portfolio piece (motion design/After Effects); no AI tool or technique is taught. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m065",
+      "url": "https://www.instagram.com/reel/DcOIGDdss_L",
+      "creator": "ahmedsami94",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic/manual \u2014 2026 motion-design showreel, captioned '100% Craft 0% AI'; explicitly no AI tool or technique. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m066",
+      "url": "https://www.instagram.com/reel/DZahfU1OMDs",
+      "creator": "michael_warship",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Entertainment/showcase \u2014 animated commercials compilation for inspiration; no tutorial, tool or technique is taught. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m067",
+      "url": "https://www.instagram.com/reel/DfxkViByU_6/",
+      "creator": "salt.sheikh",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic \u2014 10-minute chilli oil garlic noodles recipe, food content, not an AI-teaching video. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m068",
+      "url": "https://www.instagram.com/reel/DbNANsqxWmL/",
+      "creator": "rahuliyer.ai",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Dropped \u2014 open-source AI-tools listicle with no tools/repos named in the caption (gated 'LINK'); unverifiable per Mohamed's rule."
+    },
+    {
+      "id": "vid_m069",
+      "url": "https://www.instagram.com/reel/DfspVxZsClx/",
+      "creator": "coursecreator360",
+      "style_tags": [
+        "ai-auto-editing"
+      ],
+      "notes": "What it is: Dropped \u2014 sponsored lead-gen promo ('AI edits every video I make, tap for the full training'); thin caption, no technique taught."
+    },
+    {
+      "id": "vid_m070",
+      "url": "https://www.instagram.com/reel/DfyxXc5tCPW/",
+      "creator": "decode.dani",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "What it is: Dropped \u2014 animated promo for 'Zero Tutors', a free AI study platform; no replicable technique or repo taught (verified via browser page summary). Platform ad, not a tutorial."
+    },
+    {
+      "id": "vid_m071",
+      "url": "https://www.instagram.com/reel/DePsbjbslnS/",
+      "creator": "ohnepixeldeluxe661",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic \u2014 browser gaming clip ('you can play anything in browser'), not an AI-teaching video. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m072",
+      "url": "https://www.instagram.com/reel/DflLmkkBgNF/",
+      "creator": "lilsipper",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic \u2014 4-ingredient low-carb cheesecake recipe, food content, not an AI-teaching video. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m073",
+      "url": "https://www.instagram.com/reel/DfioOp2OFbW/",
+      "creator": "nvision.media",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic -- Yosemite nature video ('grass = touched'), no AI tool or technique. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m074",
+      "url": "https://www.instagram.com/reel/DfXmu2avknd/",
+      "creator": "tobi.the.og",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "What it is: Not AI-teaching -- 'how to become insanely cracked at organic marketing'; a marketing how-to with no AI tool or technique taught. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m075",
+      "url": "https://www.instagram.com/reel/DfIM7fyIZXI/",
+      "creator": "itstundeanthony",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Unverifiable thin caption \u2014 only 'Comment \"handy\" for the setup guide'; no tool or technique is named and nothing beyond the caption could be verified (no media-understanding calls this run). Dropped per Mohamed's vet-before-adding filter; \u2026"
+    },
+    {
+      "id": "vid_m076",
+      "url": "https://www.instagram.com/reel/DfuY44OAPyO/",
+      "creator": "madharelo",
+      "style_tags": [
+        "ai-auto-editing"
+      ],
+      "notes": "What it is: Promo with no replicable technique -- staged reaction video claiming 'Claude' auto-edited 165 clips into 6 reels; no tool named, no steps shown, comment-gated ('Comment EDITING and I'll send it over'), and commenters question whether the de\u2026"
+    },
+    {
+      "id": "vid_m077",
+      "url": "https://www.instagram.com/reel/DflVdVaAZ3g/",
+      "creator": "the.sweetagain__",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "What it is: Off-topic -- digital cookbook promo (200+ flour-free, sugar-free recipes, link in bio). Not an AI-teaching video. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m078",
+      "url": "https://www.instagram.com/reel/DfsBbiwonsX/",
+      "creator": "Tunde Alao",
+      "style_tags": [
+        "ai-auto-editing"
+      ],
+      "notes": "What it is: Not AI-teaching -- promo for 'Kozy', the creator's own unreleased AI video-editing app (waitlist-only, launches next week, comment 'waitlist' for access). Media-understanding verified (reel watched via browser summary): the app learns a cre\u2026"
+    },
+    {
+      "id": "vid_m079",
+      "url": "https://www.instagram.com/reel/DeU1g1zBmkX/",
+      "creator": "Dany | Professora & Criadora de Conte\u00fado",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic -- Portuguese post about children being traumatised by prank videos. Not an AI-teaching video. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m080",
+      "url": "https://www.instagram.com/reel/Dfn19GGhMq2/",
+      "creator": "studio.nutty",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Not AI-teaching -- Adobe MAX 2026 Sneaks demo of Project Deep Brush (Preview): AI brushes that paint in perspective, wrap text onto fabric, do face-aware lighting and recolor crowds. Media-understanding verified (reel watched via browser su\u2026"
+    },
+    {
+      "id": "vid_m081",
+      "url": "https://www.instagram.com/reel/Dfks1Guuzhj/",
+      "creator": "Visually",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "What it is: Not AI-teaching -- promo for an unnamed AI video tool ('Stop using Claude for your videos', made an Upwork-style explainer ad in 5 minutes with one prompt, comment PROMPT for access). Media-understanding verified (reel watched via browser s\u2026"
+    },
+    {
+      "id": "vid_m082",
+      "url": "https://www.instagram.com/reel/De2ZY-7RFhZ/",
+      "creator": "Josh New",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic -- food recipe (high-protein banana pudding). Same precedent as the Nov 10 recipe drops."
+    },
+    {
+      "id": "vid_m083",
+      "url": "https://www.instagram.com/reel/DenJzDzjhrg/",
+      "creator": "Trending OpenSource Projects",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "What it is: Not AI-teaching -- promo for 'Turnitout', a rule-based tool that strips hidden AI watermarks/metadata from academic papers and code to evade AI detection ('Plagiarism & AI Footprint Removal Engine'). Media-understanding verified (reel watch\u2026"
+    },
+    {
+      "id": "vid_m084",
+      "url": "https://www.instagram.com/reel/DfXZfpvvT91/",
+      "creator": "Anastasia Klohn | Nutrition Coach & Educator",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic -- food recipe (banana pudding / Greek yogurt dessert). Same precedent as the Nov 10 recipe drops."
+    },
+    {
+      "id": "vid_m085",
+      "url": "https://www.instagram.com/reel/DcBoAPIhQqC/",
+      "creator": "August Axtman",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic -- food recipe (Greek yogurt cheesecake dessert). Same precedent as the Nov 10 recipe drops."
+    },
+    {
+      "id": "vid_m086",
+      "url": "https://www.instagram.com/reel/DbGpvMzpPZH/",
+      "creator": "Broji",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic -- food recipe (Greek yogurt + cherry pie filling). Same precedent as the Nov 10 recipe drops."
+    },
+    {
+      "id": "vid_m087",
+      "url": "https://www.instagram.com/reel/DfoJqInFS11/",
+      "creator": "Nick Kazamias",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic -- food recipe (low-calorie high-protein Nutella spread). Same precedent as the Nov 10 recipe drops."
+    },
+    {
+      "id": "vid_m088",
+      "url": "https://www.instagram.com/reel/Da3IFwjPy2m/",
+      "creator": "Jen Dreger | Easy, Healthy Recipes",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic -- food recipe (protein chocolate mousse with cottage cheese). Same precedent as the Nov 10 recipe drops."
+    },
+    {
+      "id": "vid_m089",
+      "url": "https://www.instagram.com/reel/DfmN79uN6t6/",
+      "creator": "Liz Douglas",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic -- food recipe (chocolate mousse, 'comment SAVE and I'll DM you a link'). Same precedent as the Nov 10 recipe drops."
+    },
+    {
+      "id": "vid_m090",
+      "url": "https://www.instagram.com/reel/DfoNErRCHJk/",
+      "creator": "Paulina | Study & Life",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic -- study-tips reel ('comment PLAN and I'll send you the link', textbook plan / study hacks). Not an AI-teaching video. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m091",
+      "url": "https://www.instagram.com/reel/DaqOpxvPJQn/",
+      "creator": "orbismedia_",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Unverifiable thin caption \u2014 claims a cheaper alternative to some API ('you are paying almost 3x on API costs') with a setup-tutorial link, but no tool, API or system is named and nothing beyond the caption could be verified (no media-unders\u2026"
+    },
+    {
+      "id": "vid_m092",
+      "url": "https://www.instagram.com/reel/DfXTN99ttWo/",
+      "creator": "dallasdavidsonmarketing",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Unverifiable thin caption \u2014 only \"Comment 'pixel' and I'll send you a better pixel option\"; no tool or technique is named and nothing beyond the caption could be verified (no media-understanding calls this run). Dropped per Mohamed's vet-be\u2026"
+    },
+    {
+      "id": "vid_m093",
+      "url": "https://www.instagram.com/reel/DdpOHjTJb7F/",
+      "creator": "matt.heywood47",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic \u2014 differential equations lesson (grill chicken cooking time); engineering/math education, not AI. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m094",
+      "url": "https://www.instagram.com/reel/Dfxx-orp0Lm/",
+      "creator": "matt.heywood47",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic \u2014 differential equations lesson (cooling a can of pop in the fridge); engineering/math education, not AI. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m095",
+      "url": "https://www.instagram.com/reel/DfuwNzliQL8/",
+      "creator": "qinacademy",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "What it is: Not AI-teaching -- Qin Academy promo for the free ENGR 213 Midterm 2 review (Sat Nov 14, 6-8 PM, downtown Montreal). Shared by Mohamed to the Engr 213 group, Moussa Ghanem and jiamn.lx. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m096",
+      "url": "https://www.instagram.com/p/DfksJrPkgT2/",
+      "creator": "jmcconline",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "What it is: Off-topic -- Step Into Case competition promo from JMCC (case competition for beginners, no experience needed). Shared by Mohamed to both the Engr 213 and Indu 211 class groups. Not an AI-teaching video. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m097",
+      "url": "https://www.instagram.com/reel/DflJS_nvzw9/",
+      "creator": "juiceditup",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic \u2014 university/midterms meme ('everythings falling apart rn'). Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m098",
+      "url": "https://www.instagram.com/reel/DfoHRc-ItPQ/",
+      "creator": "Dhriti Jotwani",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic -- meme/comedy about Jensen Huang and the AI bubble ('The last one'). Entertainment, not an AI-teaching video. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m099",
+      "url": "https://www.instagram.com/p/Dfhy5vikejR/",
+      "creator": "luizfernandoroxo",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic -- Portuguese satirical meme carousel mocking NVIDIA CEO Jensen Huang over an alleged affair (distracted-boyfriend format, stock plunge jokes). Resolved via browser.open page summary (instagram-cli returned no posts for this /p/ U\u2026"
+    },
+    {
+      "id": "vid_m100",
+      "url": "https://www.instagram.com/reel/DfUgrGiSsSR/",
+      "creator": "borderfallmaps",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic \u2014 Battle of Mu'tah Islamic history explainer, not an AI-teaching video. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m101",
+      "url": "https://www.instagram.com/p/DfVPCZvmPaR/",
+      "creator": "pathradecha",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic \u2014 fitness-coach motivational quote carousel ('keep showing up'); not an AI-teaching video. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m102",
+      "url": "https://www.instagram.com/reel/DfR_jI9hOZ8/",
+      "creator": "gautham.govindan",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic \u2014 standup comedy clip. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m103",
+      "url": "https://www.instagram.com/reel/DfubobCR0zT/",
+      "creator": "patsunrick",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic \u2014 hand-controlled drone hardware demo; no AI tool or technique named. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m104",
+      "url": "https://www.instagram.com/reel/DfqfM1ksAFX/",
+      "creator": "virangini",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic -- study/calculus clip ('my fav part', #math #studytok #calculus #uoft #student), shared by Mohamed to the Goodnotes thread. Not an AI-teaching video. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m105",
+      "url": "https://www.instagram.com/reel/DfmsfikpY_T/",
+      "creator": "Younus Ahmed",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic -- comedy sketch (perfumer meeting). Entertainment, not an AI-teaching video. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m106",
+      "url": "https://www.instagram.com/p/DfqFaB-RJ4k/",
+      "creator": "masjidmakkahhalaqa",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic -- Masjid Makkah Halaqa flyer image (weekly halaqa with Maulana Omar Multani, Fri Nov 13 after Maghrib). Resolved via browser.open page summary (instagram-cli returned no posts for this /p/ URL). Not an AI-teaching video. Dropped \u2026"
+    },
+    {
+      "id": "vid_m107",
+      "url": "https://www.instagram.com/reel/DflNeY9BppU/",
+      "creator": "adrian__peru",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic -- comedy sketch about interview nerves / medication. Entertainment, not an AI-teaching video. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m108",
+      "url": "https://www.instagram.com/reel/Dd153srGS-3/",
+      "creator": "radi_amine",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic -- French comedy sketch ('Il decouvre le best de sa copine en direct'). Entertainment, not an AI-teaching video. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m109",
+      "url": "https://www.instagram.com/p/Dfc-1uAtGtx/",
+      "creator": "Muslim Student Association at Concordia University",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic \u2014 MSA Concordia Brothers' MMA session announcement (Sat Nov 14, Unicity Gym, $10), not an AI-teaching video. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m110",
+      "url": "https://www.instagram.com/p/DfUv-Ghm_54/",
+      "creator": "iccbrothershalaqa",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic \u2014 ICC Brossard career orientation fair announcement (Jan 23, 2027), shared by Nour Sultani; not an AI-teaching video. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m111",
+      "url": "https://www.instagram.com/reel/DfR4ZcpBXve/",
+      "creator": "vt_msa",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "What it is: Off-topic \u2014 MSA Roblox event recap, not an AI-teaching video. Dropped per Mohamed's filter."
+    },
+    {
+      "id": "vid_m112",
+      "url": "https://www.instagram.com/reel/DeeqATHB7jf",
+      "creator": "jamieegabrielle",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "A woman with long dark hair wearing a navy pinstripe blazer sits at a desk holding a patterned mug and speaks directly to camera about 'HOW TO: consistency.' She outlines her five-step process for staying consistent while building a visible\u2026"
+    },
+    {
+      "id": "vid_m113",
+      "url": "https://www.instagram.com/reel/DdpbF8uCMyq",
+      "creator": "esenciadental.clinic",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "A female dentist in light green scrubs sits in a dental office under an exam light and presents a 'Ranking de redflags en una primera cita' focused on oral hygiene. Speaking to the camera in Spanish, she rates seven scenarios on a 1-to-10 s\u2026"
+    },
+    {
+      "id": "vid_m114",
+      "url": "https://www.instagram.com/reel/Ddewmw8PGtf",
+      "creator": "wolfofwallst",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "A man in a white shirt sits at a desk with a microphone, speaking directly to camera against a backdrop of windows showing greenery. He delivers a sales lesson stating that 'people only spend money on three things.' First is SOLUTIONS \u2014 peo\u2026"
+    },
+    {
+      "id": "vid_m115",
+      "url": "https://www.instagram.com/reel/Dc9eLjnt223",
+      "creator": "mariadonofrio_",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "Creator Maria D'Onofrio (@mariadonofrio_) lies in grass surrounded by fallen apples while speaking directly to camera about her experience building content. She explains that posting made her feel like becoming a different person each time,\u2026"
+    },
+    {
+      "id": "vid_m116",
+      "url": "https://www.instagram.com/reel/DfN_Zw2iQtY",
+      "creator": "avigrondin",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "A bearded man in a cap speaks to camera while holding a microphone, explaining 'Parasite SEO' \u2014 defined as 'Borrowed Authority' \u2014 as a method to rank on Google's first page within two weeks without editing your own site. He illustrates the \u2026"
+    },
+    {
+      "id": "vid_m117",
+      "url": "https://www.instagram.com/reel/DfKmIL6C5vq",
+      "creator": "poninstudio",
+      "style_tags": [
+        "ai-motion-graphics"
+      ],
+      "notes": "This is a polished promotional video for 'Ponin Studio,' a motion design company. The video opens with minimalist text on a textured off-white background stating, 'You built something brilliant.' It transitions through colorful abstract 3D \u2026"
+    },
+    {
+      "id": "vid_m118",
+      "url": "https://www.instagram.com/reel/De_MJ_oIfyY",
+      "creator": "vibha.in.progress",
+      "style_tags": [
+        "ai-auto-editing"
+      ],
+      "notes": "A woman with long dark hair wearing a pale yellow long-sleeve top and black pants sits indoors and presents a tutorial showcasing 24 distinct video effects. Throughout the video, she holds a small microphone and speaks directly to camera wh\u2026"
+    },
+    {
+      "id": "vid_m119",
+      "url": "https://www.instagram.com/reel/DeqbgAYthQw",
+      "creator": "sulansart",
+      "style_tags": [
+        "ai-auto-editing"
+      ],
+      "notes": "The video opens with a young woman looking at her phone while two others stand behind her, with on-screen text reading 'deleting capcut after this,' setting up a humorous premise about AI editing. The view then shifts to a screen recording \u2026"
+    },
+    {
+      "id": "vid_m120",
+      "url": "https://www.instagram.com/reel/DeqYGbWC_tR",
+      "creator": "legmaxxing",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "A young Black man presents himself as proof that adults can grow taller, stating he went from 5'11\" to 6'4\" at age 25 using 'scientifically proven workouts.' The video is structured as a split-screen vlog with him speaking in the corner whi\u2026"
+    },
+    {
+      "id": "vid_m121",
+      "url": "https://www.instagram.com/reel/DebcjHSqdnJ",
+      "creator": "infinitemindsai",
+      "style_tags": [
+        "cinematic-ai-video"
+      ],
+      "notes": "This AI-generated short presents the 2026 Ballon d'Or ceremony as a full heist-movie parody set in London. After arriving on the red carpet, football stars attend the gala where the presenter announces the winner. Mid-ceremony, the trophy v\u2026"
+    },
+    {
+      "id": "vid_m122",
+      "url": "https://www.instagram.com/reel/DeT-EekJfWe",
+      "creator": "madebyprabhat",
+      "style_tags": [
+        "realtor-reels"
+      ],
+      "notes": "The video is a Hindi-language promotional tutorial for an AI-powered real estate video editing tool. It opens with a three-panel montage of women in stylish outfits (one on a balcony labeled 'Ludhiana', one by a pool with text 'If your man \u2026"
+    },
+    {
+      "id": "vid_m123",
+      "url": "https://www.instagram.com/reel/DeRdWfBj34D",
+      "creator": "brochbuilds",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "A man speaks directly to camera while holding a small microphone, demonstrating a lead-generation workflow combining 'Claude Code' and 'Jev'. On-screen graphics show a map of Texas with pins appearing as the tool finds dentists. He states t\u2026"
+    },
+    {
+      "id": "vid_m124",
+      "url": "https://www.instagram.com/reel/DeMmnl5sLVC",
+      "creator": "kreatively.ke",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "The video is a short promotional/tutorial clip advocating for consolidating AI workflows into Invideo's MCP (Model Context Protocol) system. It opens with text 'Stop Using Different Applications!' alongside icons for ChatGPT, Claude, Invide\u2026"
+    },
+    {
+      "id": "vid_m125",
+      "url": "https://www.instagram.com/reel/DeHfH82IKRR",
+      "creator": "sharksteam.sc",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "This is a high-production campaign video for the 'Honorable Student Council' at Central Asian University (CAU). It opens with seven students in matching dark blazers walking away from the camera, followed by title cards identifying the grou\u2026"
+    },
+    {
+      "id": "vid_m126",
+      "url": "https://www.instagram.com/reel/DeDw9oGgvnK",
+      "creator": "mimi.mosaic",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "A woman lying in bed with dark circles under her eyes introduces a tutorial with on-screen text 'MOTION editors are cooked.' She then demonstrates on her laptop how to integrate the AI assistant Claude with the Motion platform. Using a styl\u2026"
+    },
+    {
+      "id": "vid_m127",
+      "url": "https://www.instagram.com/reel/Dd9gL55jiCM",
+      "creator": "programmergrind",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "The video opens with a brief clip of a man throwing a basketball indoors toward a balcony. It then cuts to a man named Danny in a bedroom, wearing headphones and sitting at a desk. On screen, a visualization shows six AI agents (claude-1 to\u2026"
+    },
+    {
+      "id": "vid_m128",
+      "url": "https://www.instagram.com/reel/Dd9ACeIhpaf",
+      "creator": "cgsfx3d",
+      "style_tags": [
+        "cinematic-ai-video"
+      ],
+      "notes": "This is a Woolmark advertisement presented as a cinematic short film. From the viewpoint of passengers on a city bus and in a car, discarded synthetic clothing on a sidewalk suddenly animates and runs through urban streets as a human-shaped\u2026"
+    },
+    {
+      "id": "vid_m129",
+      "url": "https://www.instagram.com/reel/DdxFWm0vaRn",
+      "creator": "lovingsia_",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "A woman wearing a yellow fleece jacket speaks directly to camera, offering '3 of the BEST conversation starters (MEN- STEAL THESE!)' for dating apps. She explains these are real openers she received and immediately replied to because they c\u2026"
+    },
+    {
+      "id": "vid_m130",
+      "url": "https://www.instagram.com/reel/Ddtt8NFCUSp",
+      "creator": "itstundeanthony",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "A male creator presents a 'Fact or Hype?' review of an AI tool called MiroFish. The video opens with clips of another presenter promoting the tool as able to 'predict anything before it happens' by using hundreds of simulated AI personas. T\u2026"
+    },
+    {
+      "id": "vid_m131",
+      "url": "https://www.instagram.com/reel/Ddp3-dTuaqj",
+      "creator": "mmaximus.soares",
+      "style_tags": [
+        "ai-motion-graphics"
+      ],
+      "notes": "A creator films himself at home showing a laptop screen to demonstrate that AI can now fully edit YouTube videos. On-screen text reads 'AI can edit full YT videos \ud83d\ude31'. He plays back a first example where he speaks into a microphone, pointing\u2026"
+    },
+    {
+      "id": "vid_m132",
+      "url": "https://www.instagram.com/reel/DdR32Wpy4mg",
+      "creator": "lightyear.residency",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "This is a promotional video for Lightyear Residency, a San Francisco-based program for startup founders. It opens in black-and-white with the text 'LIGHTYEAR RESIDENCY' over the Golden Gate Bridge, followed by archival-style footage of Stev\u2026"
+    },
+    {
+      "id": "vid_m133",
+      "url": "https://www.instagram.com/reel/DdEoGT7xnn_",
+      "creator": "_royulz_productionz",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "At night on a city street corner, a young man films himself approaching a group of young women. He focuses on a curly-haired woman in a black top, asking her name, where she's from, and if she goes to school nearby. He delivers flirtatious \u2026"
+    },
+    {
+      "id": "vid_m134",
+      "url": "https://www.instagram.com/reel/DdB74B4zxq7",
+      "creator": "androguruji",
+      "style_tags": [
+        "cinematic-ai-video"
+      ],
+      "notes": "The video is a promotional tutorial in Hindi showcasing how to create real-estate social media videos using the AI platform Moonshot (makemoonshot.co). It opens with clips of presenters \u2014 a woman in Ludhiana and a man in front of a modern h\u2026"
+    },
+    {
+      "id": "vid_m135",
+      "url": "https://www.instagram.com/reel/Dc_IYkpNeRe",
+      "creator": "amir.deleon",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "Presenter Amir De Leon reviews the all-new XPENG GX SUV in Dubai, opening with the line that he used to think no car could have it all until the GX arrived. The video showcases the vehicle as ultra-luxurious, highlighting automated features\u2026"
+    },
+    {
+      "id": "vid_m136",
+      "url": "https://www.instagram.com/reel/Dc0Py_FE8j3",
+      "creator": "createcontent.club",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "A young male creator wearing a black cap and glasses sits at a desk with a microphone and demonstrates 'Editing with Claude.' He shows DaVinci Resolve on screen and explains that installing the open-source 'resolve-claude-mcp' extension fro\u2026"
+    },
+    {
+      "id": "vid_m137",
+      "url": "https://www.instagram.com/reel/Dcy7M-KORPt",
+      "creator": "calshrimp",
+      "style_tags": [
+        "ai-motion-graphics"
+      ],
+      "notes": "The video is a split-screen recording from the Monkey.app video chat platform. The top panel shows a young woman (username celestixll, United States) reacting, while the bottom panel shows a young man with curly hair in a blue shirt. He sur\u2026"
+    },
+    {
+      "id": "vid_m138",
+      "url": "https://www.instagram.com/p/Dcvt-6hlfNL",
+      "creator": "jmu_lsa",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "What it is: org carousel promo [Media analysis returned empty \u2014 pending re-study.]"
+    },
+    {
+      "id": "vid_m139",
+      "url": "https://www.instagram.com/reel/DcvVp-Qof2x",
+      "creator": "arsacre5",
+      "style_tags": [
+        "melissa-vision-pitch",
+        "realtor-reels"
+      ],
+      "notes": "This is a high-energy, stylized 3D animated advertisement for 'SoaSWAVE,' a motion graphics course. The video opens on a purple-themed desk with a smartphone showing the time 9:41 and incoming messages asking when the course will launch. An\u2026"
+    },
+    {
+      "id": "vid_m140",
+      "url": "https://www.instagram.com/reel/DcmjJqHOYZ4",
+      "creator": "harryisfr",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "The video shows a split-screen Omegle-style interaction. A blonde woman in a room with pink LED lights tells a young man wearing headphones, 'Wait, I think I saw you on Spotify.' When he asks 'I'm Spotify?', she replies, 'Yeah, you were lis\u2026"
+    },
+    {
+      "id": "vid_m141",
+      "url": "https://www.instagram.com/reel/DcMId2mSGfT",
+      "creator": "designwithcharly",
+      "style_tags": [
+        "ai-auto-editing"
+      ],
+      "notes": "A young woman with long dark hair sits at a desk typing on a MacBook Air. On-screen text reads \"I use capcut to edit my videos\" with nauseated-face emojis, and she reacts with wide-eyed shock and disgust, establishing a comedic premise that\u2026"
+    },
+    {
+      "id": "vid_m142",
+      "url": "https://www.instagram.com/reel/DcEkzOsurjk",
+      "creator": "lauspenha",
+      "style_tags": [
+        "ai-motion-graphics"
+      ],
+      "notes": "A young woman with dark curly hair, wearing a light blue t-shirt and hoop earrings, is filmed in a dimly lit indoor setting with a staircase railing visible in the background. She holds a blue and silver beverage can (appearing to be an ene\u2026"
+    },
+    {
+      "id": "vid_m143",
+      "url": "https://www.instagram.com/reel/DZWQLaksluN",
+      "creator": "amandafromtoast",
+      "style_tags": [
+        "cinematic-ai-video"
+      ],
+      "notes": "The video opens with an extreme close-up of gloved hands precisely slicing a white onion on a cutting board. The camera slowly pulls back to reveal a Black male chef wearing a white shirt, dark apron, black gloves, glasses, and an orange be\u2026"
+    },
+    {
+      "id": "vid_m144",
+      "url": "https://www.instagram.com/reel/DYgukfFNZD5",
+      "creator": "eddynthings",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "The video is a short-form educational piece about AI application security, framed with a comedic skit. It starts with text 'POV: your startup gets hacked' while a person lies on a couch hugging a large plush bear, with captions explaining s\u2026"
+    },
+    {
+      "id": "vid_m145",
+      "url": "https://www.instagram.com/reel/DXBBVSVjoSy",
+      "creator": "justinudo999",
+      "style_tags": [
+        "ai-motion-graphics"
+      ],
+      "notes": "This is a social media reel posted April 11, 2026 by creator Justin Udo (@justinudo999), reposting content from @msixtv at The University of Alabama. The video opens on a sunny campus sidewalk with the text overlay 'Asking Girls to REJECT M\u2026"
+    },
+    {
+      "id": "vid_m146",
+      "url": "https://www.instagram.com/reel/DWxIAsIisLw",
+      "creator": "jade.nyasia",
+      "style_tags": [
+        "ai-motion-graphics"
+      ],
+      "notes": "A woman speaks directly to the camera from what appears to be her living room, with the on-screen text 'shooting your shot 101: gyms' displayed throughout. She delivers dating advice specifically for meeting people at the gym, emphasizing r\u2026"
+    },
+    {
+      "id": "vid_m147",
+      "url": "https://www.instagram.com/reel/DYVIxyBJCWr",
+      "creator": "claudia_coulombe",
+      "style_tags": [
+        "ai-motion-graphics"
+      ],
+      "notes": "The video presents a serene outdoor scene at a park in Qu\u00e9bec. It opens with a high-angle view looking down a wooden staircase toward a strikingly turquoise lake surrounded by dense green trees under a partly cloudy sky. On-screen text read\u2026"
+    },
+    {
+      "id": "vid_m148",
+      "url": "https://www.instagram.com/reel/De7kF6FqtIc/",
+      "creator": "Sobhi Hodhod",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "The video is shot from the perspective of a student in a university lecture hall, looking toward the front where a projector screen displays a colorful image of a cat wearing glasses. Overlaid white text reads, 'When your professor tries to\u2026"
+    },
+    {
+      "id": "vid_m149",
+      "url": "https://www.instagram.com/reel/DfSsEJhSFWb/",
+      "creator": "Moussa Ghanem",
+      "style_tags": [
+        "ai-motion-graphics"
+      ],
+      "notes": "The video takes place in a busy commercial gym. A young man in a blue t-shirt and light sweatpants picks up two very large dumbbells from a rack. On-screen text reads, 'When you grab weights that are too heavy and the dude next to you start\u2026"
+    },
+    {
+      "id": "vid_m150",
+      "url": "https://www.instagram.com/p/DfQXEgZRDLd/",
+      "creator": "Georges Nahra",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "The image is a vertical promotional poster for an \"INTRODUCTORY CASE COMPETITION\" presented by Scotiabank. At the top, white text reads \"PRESENTED BY Scotiabank\" with the bank's logo. The central visual shows a Black man in a maroon suit, w\u2026"
+    },
+    {
+      "id": "vid_m151",
+      "url": "https://www.instagram.com/reel/DcOmE4_xHiC",
+      "creator": "abigaildaniellla",
+      "style_tags": [
+        "ai-motion-graphics"
+      ],
+      "notes": "A woman with curly hair speaks directly to camera, holding a microphone, explaining that most people don't have time to edit talking-head videos but want them to look engaging. She demonstrates the process using the AI tool 'Opus Producer,'\u2026"
+    },
+    {
+      "id": "vid_m152",
+      "url": "https://www.instagram.com/p/DdhwpZlCvcD",
+      "creator": "firetungtung",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "What it is: carousel, not a video (artist promo) [Media analysis returned empty \u2014 pending re-study.]"
+    },
+    {
+      "id": "vid_m153",
+      "url": "https://www.instagram.com/reel/DZYVT8hRwSv",
+      "creator": "davidatpgp",
+      "style_tags": [
+        "ai-auto-editing"
+      ],
+      "notes": "A young man wearing headphones speaks directly to camera while screen-sharing his computer. He explains a tactic for when a LinkedIn message to a target contact at a dream company goes unanswered. He shows a LinkedIn profile for Kristin Poh\u2026"
+    },
+    {
+      "id": "vid_m154",
+      "url": "https://www.instagram.com/p/Df2WoCiAjft",
+      "creator": "blackmedia.ve",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "What it is: no analysis returned; editing-service promo, unverifiable style [Media analysis returned empty \u2014 pending re-study.]"
+    },
+    {
+      "id": "vid_m155",
+      "url": "https://www.instagram.com/reel/DfYUg5GMn71",
+      "creator": "jacklaydenn",
+      "style_tags": [
+        "ai-motion-graphics"
+      ],
+      "notes": "A young man in all-black clothing sits on a green park bench holding a small microphone and speaks directly to camera. He claims this is 'exactly how you're going to gain thousands of followers in the next 90 days' and says he will test fiv\u2026"
+    },
+    {
+      "id": "vid_m156",
+      "url": "https://www.instagram.com/reel/DfP57_npU3i",
+      "creator": "prime_animator",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "A woman with long blonde hair wearing a brown New York Yankees cap and a dark denim jacket speaks directly to the camera from an office setting. She delivers a message about content marketing, stating that if prospects need to meet you to u\u2026"
+    },
+    {
+      "id": "vid_m157",
+      "url": "https://www.instagram.com/reel/DfAm33Yv2HY",
+      "creator": "ritaylasmariposas",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "The video introduces Rita, a curly-haired woman with glasses, who three months ago decided to start creating content. Despite her efforts, Instagram Insights shown on her phone reveal 75,800 views but a net loss of 4 followers. In a video c\u2026"
+    },
+    {
+      "id": "vid_m158",
+      "url": "https://www.instagram.com/reel/DewsMDNiRVV",
+      "creator": "yana.kunayeva",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "A woman with short dark hair, wearing sunglasses, a light blue blazer, white top, and white trousers, performs a lip-sync parody of 'Call Me Maybe' inside a bright, modern luxury living room with large windows. From a first-person perspecti\u2026"
+    },
+    {
+      "id": "vid_m159",
+      "url": "https://www.instagram.com/reel/DekZINYPpXw",
+      "creator": "bellucciproduction",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "A young man in a light blue button-down shirt and white pants delivers a direct-to-camera pitch for Bellucci Production, aimed at West Palm Beach entrepreneurs and business owners. Walking down a palm-lined street and later standing by a ma\u2026"
+    },
+    {
+      "id": "vid_m160",
+      "url": "https://www.instagram.com/reel/DeOkA2WDCQ0",
+      "creator": "aaun.ceo",
+      "style_tags": [
+        "realtor-reels"
+      ],
+      "notes": "A male creator wearing sunglasses and a red-and-black polo shirt speaks directly to camera in Hindi/Urdu, promoting himself as teaching real estate video editing in CapCut PC (Day 11). The top half of the screen shows stock real estate foot\u2026"
+    },
+    {
+      "id": "vid_m161",
+      "url": "https://www.instagram.com/reel/DdRhI_9v5Tu",
+      "creator": "ghina.fleyfel",
+      "style_tags": [
+        "other-ai-video-tools"
+      ],
+      "notes": "A woman in a white one-shoulder dress sits in a studio with professional lighting and speaks directly to camera in Arabic, addressing doctors who are posting videos online. She explains that many doctor videos fail because viewers scroll pa\u2026"
+    },
+    {
+      "id": "vid_m162",
+      "url": "https://www.instagram.com/reel/DdQVTFRJHUX",
+      "creator": "trebledsolutions",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "A young woman with glasses, wearing a light green sleeveless crop polo and wide-leg jeans, stands outdoors on a tiled patio with flowering bushes behind her to deliver a social media marketing lesson. Posted by @trebledsolutions on Septembe\u2026"
+    },
+    {
+      "id": "vid_m163",
+      "url": "https://www.instagram.com/reel/DcjMOwoPtgC",
+      "creator": "ghina.fleyfel",
+      "style_tags": [
+        "ai-ad-creation"
+      ],
+      "notes": "A female presenter, identified in the post as Ghina Fleyfel, a photographer/videographer who helps doctors build personal brands, delivers an instructional Reel in Arabic about creating viral content. Seated in an elegant room wearing a lig\u2026"
+    },
+    {
+      "id": "vid_m164",
+      "url": "https://www.instagram.com/reel/DcebGmDhJbj",
+      "creator": "joseoliveirafilms",
+      "style_tags": [
+        "realtor-reels"
+      ],
+      "notes": "A man in a blue checkered shirt watches and reacts to a series of viral real-estate marketing videos featuring women posing at luxury properties. The clips display on-screen text such as 'Ladies, if your man can't afford this home you need \u2026"
+    },
+    {
+      "id": "vid_m165",
+      "url": "https://www.instagram.com/reel/DaLdv8hx87v",
+      "creator": "claudiorivera.910",
+      "style_tags": [
+        "realtor-reels"
+      ],
+      "notes": "The video is a short-form marketing piece aimed at videographers, featuring two speakers in a bright, modern home interior. A blonde woman in a black top and white pants introduces herself as a realtor, stating she appears on camera every w\u2026"
+    },
+    {
+      "id": "vid_m166",
+      "url": "https://www.instagram.com/reel/DfNdPp5S_Fx",
+      "creator": "aimortal.ig",
+      "style_tags": [
+        "ai-motion-graphics"
+      ],
+      "notes": "This is an animated promotional video for a software tool called ECC (Everything Claude Code). Presented in a blocky, Minecraft-style 3D animation, the narrator explains that one developer created an AI system equivalent to a whole engineer\u2026"
+    }
+  ]
+}

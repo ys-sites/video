@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master Video Styles — every video style, mastered</title>
+<meta name="description" content="Video editing styles as reusable playbooks: what each style looks like, when to use it, and the step-by-step instructions to make one.">
+<style>
+:root{--bg:#0c0c12;--panel:#15151d;--panel2:#1b1b26;--line:#262633;--text:#f5f2ea;--muted:#a7a7b8;--faint:#7c7c8f;--pink:#ff5da2;--amber:#ffb020;--violet:#8b7cff;--cyan:#22d3ee;--green:#34d399;--orange:#f97316;--yellow:#facc15;--red:#ff6b6b}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1020px;margin:0 auto;padding:0 20px}
+header{padding:28px 0 8px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.logo{font-weight:800;font-size:19px;letter-spacing:-.02em}
+.logo span{color:var(--pink)}
+nav a{color:var(--muted);text-decoration:none;font-size:14px;margin-left:20px}
+nav a:hover{color:var(--text)}
+.hero{padding:56px 0 40px}
+.hero h1{font-size:clamp(38px,7vw,64px);line-height:1.05;letter-spacing:-.03em;font-weight:800}
+.hero h1 em{font-style:normal;color:var(--pink)}
+.hero p{font-size:19px;color:var(--muted);max-width:640px;margin-top:18px}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;color:var(--muted)}
+.stat b{color:var(--text);font-size:16px}
+.search{margin:8px 0 0}
+.search input{width:100%;max-width:520px;background:var(--panel);border:1px solid var(--line);border-radius:999px;color:var(--text);font-size:15px;padding:12px 18px;outline:none}
+.search input:focus{border-color:var(--pink)}
+section{padding:44px 0}
+h2{font-size:30px;letter-spacing:-.02em;line-height:1.15;margin-bottom:8px}
+.sub{color:var(--muted);font-size:17px;max-width:680px;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:820px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent,var(--pink))}
+.card .num{font-size:13px;color:var(--faint);font-weight:700}
+.card h3{font-size:19px;margin:6px 0 4px}
+.card h3 a{text-decoration:none}
+.card h3 a:hover{color:var(--accent,var(--pink))}
+.card .who{color:var(--muted);font-size:13.5px}
+.card p{font-size:14.5px;color:var(--muted);margin-top:10px;flex:1}
+.card .go{margin-top:14px;font-size:14px;font-weight:700;color:var(--accent,var(--pink));text-decoration:none}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent,var(--pink));background:color-mix(in srgb,var(--accent,var(--pink)) 12%,transparent);padding:5px 10px;border-radius:999px}
+.detail{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:28px;margin-bottom:18px;position:relative;overflow:hidden}
+.detail::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent,var(--pink))}
+.detail h3{font-size:24px;letter-spacing:-.01em;margin:10px 0 4px}
+.detail .who{color:var(--muted);font-size:14px}
+.detail p{color:#d6d3dc;font-size:15.5px;margin-top:12px}
+.detail p b{color:var(--text)}
+.detail ul{margin:14px 0 0 18px;color:#d6d3dc;font-size:15px}
+.detail li{margin-bottom:6px}
+.detail li b{color:var(--text)}
+.steps{counter-reset:step;display:grid;gap:12px;margin-top:16px}
+.step{display:flex;gap:16px;background:var(--panel2);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.step .n{flex:0 0 34px;height:34px;border-radius:50%;background:var(--accent,var(--pink));color:#111;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px}
+.step h4{font-size:16.5px}
+.step p{font-size:14.5px;color:var(--muted);margin-top:2px}
+.step .days{font-size:12.5px;color:var(--faint);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13.5px;color:#d6d3dc}
+.reel-link{display:inline-block;margin-top:18px;font-size:14.5px;font-weight:700;color:var(--accent,var(--pink));text-decoration:none;border:1px solid color-mix(in srgb,var(--accent,var(--pink)) 45%,transparent);padding:9px 16px;border-radius:999px}
+.reel-link:hover{background:color-mix(in srgb,var(--accent,var(--pink)) 12%,transparent)}
+.prompt-box{background:#0a0a0f;border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:20px}
+.prompt-box pre{white-space:pre-wrap;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;color:#cfcbd8;line-height:1.55;margin-top:8px}
+button.copy{background:var(--pink);color:#111;border:none;font-weight:800;font-size:14px;padding:10px 20px;border-radius:999px;cursor:pointer;margin-top:12px}
+button.copy:hover{opacity:.9}
+.moves{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.moves{grid-template-columns:1fr}}
+.move{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.move b{font-size:15.5px}
+.move p{font-size:14px;color:var(--muted);margin-top:4px}
+.move .src{font-size:12.5px;color:var(--faint);margin-top:6px}
+.move .src a{color:var(--cyan);text-decoration:none}
+.tools-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.tools-list{grid-template-columns:1fr}}
+.tool{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.tool b{font-size:15.5px}
+.tool .price{float:right;font-size:12.5px;color:var(--faint);font-weight:600}
+.tool p{font-size:14px;color:var(--muted);margin-top:4px}
+.tool a{font-size:13.5px;color:var(--cyan);text-decoration:none}
+.howto{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:720px){.howto{grid-template-columns:1fr}}
+.how{background:var(--panel2);border:1px solid var(--line);border-radius:18px;padding:22px}
+.how .big{font-size:30px;font-weight:800;color:var(--pink)}
+.how h4{font-size:17px;margin:6px 0 4px}
+.how p{font-size:14.5px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:16px;overflow:hidden;font-size:15px}
+th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--panel2);font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+tr:last-child td{border-bottom:none}
+td:first-child{color:var(--muted);font-weight:600;white-space:nowrap}
+footer{padding:36px 0 60px;color:var(--faint);font-size:14px;border-top:1px solid var(--line);margin-top:20px}
+footer a{color:var(--muted)}
+.note{background:var(--panel);border:1px dashed var(--line);border-radius:16px;padding:20px;color:var(--muted);font-size:15px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="logo">Master Video <span>Styles</span></div>
+  <nav>
+    <a href="#styles">Styles</a>
+    <a href="#moves">Moves</a>
+    <a href="#tools">Tools</a>
+    <a href="#use">Use it</a>
+    <a href="#reels">Reels</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Every video style,<br><em>mastered.</em></h1>
+  <p>Every video style, mastered — pick a style, post your raw footage, get a video back. Each style is a playbook: what it looks like, when to use it, and the steps to make one — with a copy-paste prompt for Claude.</p>
+  <div class="stats">
+    <div class="stat"><b>17</b> styles explained</div>
+    <div class="stat"><b>12</b> motion moves</div>
+    <div class="stat"><b>18</b> tools</div>
+    <div class="stat"><b>166</b> reels catalogued · 1,000+ coming</div>
+  </div>
+  <div class="search"><input id="filter" type="text" placeholder="Search styles — try “real estate”, “captions”, “drone”…"></div>
+</div>
+
+<section id="styles">
+  <h2>Every style</h2>
+  <p class="sub">Start with the mastered ones at the top. The library categories at the bottom are ready to study the same way — send a reel and it gets a playbook here.</p>
+  <div class="grid" id="cards">
+<article class="card" style="--accent:#ff5da2" data-search="the sumit style documentary explainer sumit @sumit.visions the speaker stays on camera the whole time. every idea they speak gets a visual: a keyword in big animated text plus a simple illustration of the metaphor. one colour runs through the whole video — pink in the reference reel. fast and clean, never boring.">
+      <span class="num">Style 1</span>
+      <span class="tag">Documentary explainer</span>
+      <h3><a href="#style-sumit">The Sumit Style</a></h3>
+      <div class="who">Sumit @sumit.visions</div>
+      <p>The speaker stays on camera the whole time. Every idea they speak gets a visual: a keyword in big animated text plus a simple illustration of the metaphor. One colour runs through the whole video — pink in the reference reel. Fast and clean, never boring.</p>
+      <a class="go" href="#style-sumit">Read the playbook →</a>
+    </article>
+<article class="card" style="--accent:#ffb020" data-search="the kelsie listicle 30-second listicle kelsie blevins @_k.elsie a numbered list, fired fast. a promise plus a visible clock: &quot;everything you need to know in under 30 seconds&quot; with a ticking countdown timer on screen the whole time. twelve tips in about 35 seconds, one big keyword flashing per tip.">
+      <span class="num">Style 2</span>
+      <span class="tag">30-second listicle</span>
+      <h3><a href="#style-kelsie-listicle">The Kelsie Listicle</a></h3>
+      <div class="who">Kelsie Blevins @_k.elsie</div>
+      <p>A numbered list, fired fast. A promise plus a visible clock: &quot;everything you need to know in under 30 seconds&quot; with a ticking countdown timer on screen the whole time. Twelve tips in about 35 seconds, one big keyword flashing per tip.</p>
+      <a class="go" href="#style-kelsie-listicle">Read the playbook →</a>
+    </article>
+<article class="card" style="--accent:#ffb020" data-search="kelsie listing tour — the wilmore format home tour kelsie blevins @_k.elsie a lifestyle-first home tour: sell where you live before what you buy. one unbroken camera flight from the street into the rooms, an aerial of the neighbourhood, then room by room — one selling point each, no lingering — and an ai clip where the house turns and changes its look.">
+      <span class="num">Style 3</span>
+      <span class="tag">Home tour</span>
+      <h3><a href="#style-kelsie-listing-tour">Kelsie Listing Tour — The Wilmore Format</a></h3>
+      <div class="who">Kelsie Blevins @_k.elsie</div>
+      <p>A lifestyle-first home tour: sell where you live before what you buy. One unbroken camera flight from the street into the rooms, an aerial of the neighbourhood, then room by room — one selling point each, no lingering — and an AI clip where the house turns and changes its look.</p>
+      <a class="go" href="#style-kelsie-listing-tour">Read the playbook →</a>
+    </article>
+<article class="card" style="--accent:#8b7cff" data-search="cinematic ai listing tour — the kelsie fly-through cinematic tour technique kelsie blevins @_k.elsie two signature moves that make a listing tour feel cinematic: one unbroken camera flight from the street into the rooms, and an ai clip where the house turns and changes its look.">
+      <span class="num">Style 4</span>
+      <span class="tag">Cinematic tour technique</span>
+      <h3><a href="#style-kelsie-flythrough">Cinematic AI Listing Tour — The Kelsie Fly-Through</a></h3>
+      <div class="who">Kelsie Blevins @_k.elsie</div>
+      <p>Two signature moves that make a listing tour feel cinematic: one unbroken camera flight from the street into the rooms, and an AI clip where the house turns and changes its look.</p>
+      <a class="go" href="#style-kelsie-flythrough">Read the playbook →</a>
+    </article>
+<article class="card" style="--accent:#22d3ee" data-search="the melissa vision pitch redevelopment pitch melissa orta @melissaortarealtor the agent stands on the site itself and pitches what it could become. drone footage shows the empty lot as it is today; ai renders laid over the aerial show the future complex. the video ends by asking viewers what they would want to see there.">
+      <span class="num">Style 5</span>
+      <span class="tag">Redevelopment pitch</span>
+      <h3><a href="#style-melissa-vision-pitch">The Melissa Vision Pitch</a></h3>
+      <div class="who">Melissa Orta @melissaortarealtor</div>
+      <p>The agent stands on the site itself and pitches what it could become. Drone footage shows the empty lot as it is today; AI renders laid over the aerial show the future complex. The video ends by asking viewers what they would want to see there.</p>
+      <a class="go" href="#style-melissa-vision-pitch">Read the playbook →</a>
+    </article>
+<article class="card" style="--accent:#34d399" data-search="romina&#x27;s 5 easy edits quick wins romina aminian @romina.aminian five small, intentional choices that make a video clearer and easier to follow. try one or two per video rather than all five at full intensity — the goal is to support what you&#x27;re saying, not distract from it.">
+      <span class="num">Style 6</span>
+      <span class="tag">Quick wins</span>
+      <h3><a href="#style-romina-5-edits">Romina&#x27;s 5 Easy Edits</a></h3>
+      <div class="who">Romina Aminian @romina.aminian</div>
+      <p>Five small, intentional choices that make a video clearer and easier to follow. Try one or two per video rather than all five at full intensity — the goal is to support what you&#x27;re saying, not distract from it.</p>
+      <a class="go" href="#style-romina-5-edits">Read the playbook →</a>
+    </article>
+<article class="card" style="--accent:#f97316" data-search="the overstimulated mind process 6-step build process overstimulated mind edit process the real production process behind a polished talking-head edit: hook and setup, masking and roto, b-roll collages, kinetic type, sound and colour polish, review and export. seven days, start to finish. this is what &quot;mastering a style&quot; actually means.">
+      <span class="num">Style 7</span>
+      <span class="tag">6-step build process</span>
+      <h3><a href="#style-overstimulated-mind">The Overstimulated Mind Process</a></h3>
+      <div class="who">Overstimulated Mind edit process</div>
+      <p>The real production process behind a polished talking-head edit: hook and setup, masking and roto, B-roll collages, kinetic type, sound and colour polish, review and export. Seven days, start to finish. This is what &quot;mastering a style&quot; actually means.</p>
+      <a class="go" href="#style-overstimulated-mind">Read the playbook →</a>
+    </article>
+<article class="card" style="--accent:#ff6b6b" data-search="motionsmith — saas launch motion graphics skill motionsmith @miftahul (creator: miftahul islam efaz) one accent colour, neutral grotesk type, ui pieces that morph into each other, a camera that rides one continuous space, and sound effects only — no music. built from 17 analysed reference reels.">
+      <span class="num">Style 8</span>
+      <span class="tag">Motion graphics skill</span>
+      <h3><a href="#style-motionsmith-saas-launch">MotionSmith — SaaS Launch</a></h3>
+      <div class="who">MotionSmith @miftahul (creator: Miftahul Islam Efaz)</div>
+      <p>One accent colour, neutral grotesk type, UI pieces that morph into each other, a camera that rides one continuous space, and sound effects only — no music. Built from 17 analysed reference reels.</p>
+      <a class="go" href="#style-motionsmith-saas-launch">Read the playbook →</a>
+    </article>
+<article class="card" style="--accent:#facc15" data-search="motionsmith — vox explainer motion graphics skill motionsmith @miftahul (creator: miftahul islam efaz) paper and print collage, archival photos, charts and tags as physical objects on a desk, highlighter marks on the point, shape-chained transitions and a documentary camera over flat layers, animated partly on 2s. sound effects only, no music. built from 6 analysed reference reels.">
+      <span class="num">Style 9</span>
+      <span class="tag">Motion graphics skill</span>
+      <h3><a href="#style-motionsmith-vox">MotionSmith — Vox Explainer</a></h3>
+      <div class="who">MotionSmith @miftahul (creator: Miftahul Islam Efaz)</div>
+      <p>Paper and print collage, archival photos, charts and tags as physical objects on a desk, highlighter marks on the point, shape-chained transitions and a documentary camera over flat layers, animated partly on 2s. Sound effects only, no music. Built from 6 analysed reference reels.</p>
+      <a class="go" href="#style-motionsmith-vox">Read the playbook →</a>
+    </article>
+<article class="card" style="--accent:#8b7cff" data-search="paper-cutout collage — invideo + claude collage explainer invideo + claude a documentary-style collage explainer with layered paper textures, cutout characters, newspaper clippings and subtle shadows — built without manually animating every frame. the project stays an editable timeline in invideo.">
+      <span class="num">Style 10</span>
+      <span class="tag">Collage explainer</span>
+      <h3><a href="#style-invideo-paper-cutout">Paper-Cutout Collage — InVideo + Claude</a></h3>
+      <div class="who">InVideo + Claude</div>
+      <p>A documentary-style collage explainer with layered paper textures, cutout characters, newspaper clippings and subtle shadows — built without manually animating every frame. The project stays an editable timeline in InVideo.</p>
+      <a class="go" href="#style-invideo-paper-cutout">Read the playbook →</a>
+    </article>
+<article class="card" style="--accent:#22d3ee" data-search="after effects + claude workflow / tooling community bridges (no official adobe mcp) claude talks directly to after effects on your computer and builds the edit — layers, keyframes, effects and text — all editable afterwards. there is no official adobe after effects mcp; every live route is a community bridge, and claude must run on the same machine as after effects. claude on the web cannot reach desktop after effects.">
+      <span class="num">Style 11</span>
+      <span class="tag">Workflow / tooling</span>
+      <h3><a href="#style-ae-claude-mcp">After Effects + Claude</a></h3>
+      <div class="who">Community bridges (no official Adobe MCP)</div>
+      <p>Claude talks directly to After Effects on your computer and builds the edit — layers, keyframes, effects and text — all editable afterwards. There is no official Adobe After Effects MCP; every live route is a community bridge, and Claude must run on the same machine as After Effects. Claude on the web cannot reach desktop After Effects.</p>
+      <a class="go" href="#style-ae-claude-mcp">Read the playbook →</a>
+    </article>
+<article class="card" style="--accent:#8b7cff" data-search="ai motion graphics library category library category — 23 videos animated graphics built from a prompt — kinetic text, product intros, charts that draw themselves. no camera needed.">
+      <span class="num">Style 12</span>
+      <span class="tag">Library category</span>
+      <h3><a href="#style-ai-motion-graphics">AI Motion Graphics</a></h3>
+      <div class="who">Library category — 23 videos</div>
+      <p>Animated graphics built from a prompt — kinetic text, product intros, charts that draw themselves. No camera needed.</p>
+      <a class="go" href="#style-ai-motion-graphics">Read the playbook →</a>
+    </article>
+<article class="card" style="--accent:#22d3ee" data-search="ai auto-editing library category library category — 36 videos you film, ai cuts. claude takes raw footage and does the timeline: cuts silences, adds captions, sound effects and motion — in your style.">
+      <span class="num">Style 13</span>
+      <span class="tag">Library category</span>
+      <h3><a href="#style-ai-auto-editing">AI Auto-Editing</a></h3>
+      <div class="who">Library category — 36 videos</div>
+      <p>You film, AI cuts. Claude takes raw footage and does the timeline: cuts silences, adds captions, sound effects and motion — in your style.</p>
+      <a class="go" href="#style-ai-auto-editing">Read the playbook →</a>
+    </article>
+<article class="card" style="--accent:#34d399" data-search="ai ad creation library category library category — 5 videos short ads that sell a product — saas launch videos, ugc-style ads, app promos. script, visuals and voice, made by ai.">
+      <span class="num">Style 14</span>
+      <span class="tag">Library category</span>
+      <h3><a href="#style-ai-ad-creation">AI Ad Creation</a></h3>
+      <div class="who">Library category — 5 videos</div>
+      <p>Short ads that sell a product — SaaS launch videos, UGC-style ads, app promos. Script, visuals and voice, made by AI.</p>
+      <a class="go" href="#style-ai-ad-creation">Read the playbook →</a>
+    </article>
+<article class="card" style="--accent:#f97316" data-search="cinematic ai video library category library category — 15 videos movie-looking clips made by ai video generators — camera moves, lighting, drama. the &quot;wow&quot; style.">
+      <span class="num">Style 15</span>
+      <span class="tag">Library category</span>
+      <h3><a href="#style-cinematic-ai-video">Cinematic AI Video</a></h3>
+      <div class="who">Library category — 15 videos</div>
+      <p>Movie-looking clips made by AI video generators — camera moves, lighting, drama. The &quot;wow&quot; style.</p>
+      <a class="go" href="#style-cinematic-ai-video">Read the playbook →</a>
+    </article>
+<article class="card" style="--accent:#ff6b6b" data-search="other ai video tools library category library category — 46 videos more generators and experiments — face swaps, style transfers, image-to-video. new tools land here first.">
+      <span class="num">Style 16</span>
+      <span class="tag">Library category</span>
+      <h3><a href="#style-other-ai-video-tools">Other AI Video Tools</a></h3>
+      <div class="who">Library category — 46 videos</div>
+      <p>More generators and experiments — face swaps, style transfers, image-to-video. New tools land here first.</p>
+      <a class="go" href="#style-other-ai-video-tools">Read the playbook →</a>
+    </article>
+<article class="card" style="--accent:#facc15" data-search="realtor reels library category library category — 8 videos videos that sell homes and win clients — home tours, seller tips, listing promos. the kelsie and melissa styles live here.">
+      <span class="num">Style 17</span>
+      <span class="tag">Library category</span>
+      <h3><a href="#style-realtor-reels">Realtor Reels</a></h3>
+      <div class="who">Library category — 8 videos</div>
+      <p>Videos that sell homes and win clients — home tours, seller tips, listing promos. The Kelsie and Melissa styles live here.</p>
+      <a class="go" href="#style-realtor-reels">Read the playbook →</a>
+    </article>
+  </div>
+</section>
+
+<section id="details">
+  <h2>The playbooks</h2>
+  <p class="sub">The full instructions for each style. Copy the prompt, paste it into Claude with your raw footage.</p>
+<article class="detail" id="style-sumit" style="--accent:#ff5da2">
+<span class="tag">Documentary explainer</span>
+<h3>Style 1 — The Sumit Style</h3>
+<div class="who">Sumit · Video editor</div>
+<p><b>What it looks like:</b> The speaker stays on camera the whole time. Every idea they speak gets a visual: a keyword in big animated text plus a simple illustration of the metaphor. One colour runs through the whole video — pink in the reference reel. Fast and clean, never boring.</p>
+<p><b>Best for:</b> Explainers, lessons, talking-head teaching videos — anything that teaches one idea well.</p>
+<ul><li>Speaker stays on screen. Graphics support them, they never replace them.</li><li>One colour theme per video. Backgrounds, text, icons and illustrations all live in that one palette.</li><li>One visual per spoken beat. Every idea gets a kinetic-text keyword plus a simple icon of the metaphor (brain = overthinking, shield = protection, compass or target = goals). No visual without a spoken reason behind it.</li><li>Fast, clean pacing. A new visual on nearly every beat. No dead air, no empty talking-head stretches.</li><li>Real photos only when they prove something — a diploma, a book cover, a result.</li><li>Keywords big, bold, animated in exactly on the beat of the word being spoken.</li><li>Documentary tone: clear, confident, educational. Never cheesy, never cluttered.</li></ul>
+<div class="steps">
+<div class="step" style="--accent:#ff5da2"><div class="n">1</div><div><span class="days">Day 0–1</span><h4>Hook &amp; setup</h4><p>Study the raw talking head, write the opening hook, sync the speaking audio, pick the emphasis words, and set the theme: one glow colour, scattered typography, stark grayscale background shifts.</p><p>Tools: Premiere Pro, Notion, Google Docs</p></div></div>
+<div class="step" style="--accent:#ff5da2"><div class="n">2</div><div><span class="days">Day 1–2</span><h4>Masking &amp; roto</h4><p>Cut the speaker out of the background with Roto Brush. Add an animated neon outline in the theme colour around their exact silhouette. Keyframe the background from the natural room to stark white or grayscale. Clean mask edges around hair and hands.</p><p>Tools: After Effects, Photoshop</p></div></div>
+<div class="step" style="--accent:#ff5da2"><div class="n">3</div><div><span class="days">Day 2–3</span><h4>B-roll &amp; picture-in-picture</h4><p>Secondary footage for multi-cam sequences (driving, lounging, walking outdoors). Picture-in-picture collages with drop shadows, several clips on screen at once. Prep 3D assets for metaphor cues (e.g. a dartboard icon for discipline).</p><p>Tools: Premiere Pro, After Effects</p></div></div>
+<div class="step" style="--accent:#ff5da2"><div class="n">4</div><div><span class="days">Day 3–5</span><h4>Kinetic typography</h4><p>Bold text popping word by word, synced to the speaker&#x27;s pacing. Scattered-text effect for key phrases, words placed randomly across the screen. Mixed fonts: serif for accents, clean sans-serif for subtitles. Alternate theme colour and white. Scale bounces and rotational keyframes for energy.</p><p>Tools: After Effects</p></div></div>
+<div class="step" style="--accent:#ff5da2"><div class="n">5</div><div><span class="days">Day 5–6</span><h4>Sound &amp; colour polish</h4><p>Whooshes for collage slide-ins, a pop or click on every kinetic word reveal. Balance voiceover EQ so sound effects never overpower speech. Warm colour grade in the theme colour, natural skin tones kept.</p><p>Tools: Audition, After Effects, Premiere Pro</p></div></div>
+<div class="step" style="--accent:#ff5da2"><div class="n">6</div><div><span class="days">Day 6–7</span><h4>Review &amp; export</h4><p>Final playback check that text and collages are perfectly timed. Apply revisions. Export H.264 MP4 optimised for social. Back up project files to the cloud.</p><p>Tools: Media Encoder, Frame.io, Google Drive</p></div></div>
+</div>
+<div class="chips"><span class="chip">After Effects</span><span class="chip">Premiere Pro</span><span class="chip">Audition</span><span class="chip">Photoshop</span><span class="chip">MotionSmith</span><span class="chip">Claude Code + After Effects MCP</span></div>
+<p style="font-size:14px;color:var(--muted)">&quot;Claude vs Human Creativity&quot; — the same talking-head clip edited three ways. The human edit is the target; the Claude edit in the same reel is what NOT to copy.</p>
+<a class="reel-link" href="https://www.instagram.com/reel/DfRAkn4xIZy/" target="_blank" rel="noopener">Watch the example reel →</a>
+<div class="prompt-box"><h4 style="font-size:17px">Copy-paste prompt</h4>
+<pre id="prompt-sumit">Edit this footage in the Sumit style: the speaker stays on screen the whole time, one colour theme for the whole video, one visual per spoken beat (a kinetic-text keyword plus a simple icon of the metaphor), fast clean pacing with no dead air, keywords big and bold animated exactly on the beat.</pre>
+<button class="copy" data-target="prompt-sumit">Copy the prompt</button></div>
+</article>
+<article class="detail" id="style-kelsie-listicle" style="--accent:#ffb020">
+<span class="tag">30-second listicle</span>
+<h3>Style 2 — The Kelsie Listicle</h3>
+<div class="who">Kelsie Blevins · Top 1% realtor, North Carolina</div>
+<p><b>What it looks like:</b> A numbered list, fired fast. A promise plus a visible clock: &quot;everything you need to know in under 30 seconds&quot; with a ticking countdown timer on screen the whole time. Twelve tips in about 35 seconds, one big keyword flashing per tip.</p>
+<p><b>Best for:</b> Tips lists, checklists, real estate, any &quot;X things to know&quot; video.</p>
+<ul><li>The hook is a promise plus a visible clock. Open with &quot;everything you need to know in under 30 seconds&quot; and keep a countdown timer on screen the whole video — the ticking clock is the pressure that keeps people watching.</li><li>Numbered rapid-fire list. 12 tips in about 35 seconds, roughly 3 seconds per tip. One numbered badge per tip, counting up on screen as the list runs.</li><li>Animated keyword text overlays on every tip. Short phrases only (&quot;Don&#x27;t overprice&quot;, &quot;Marketing Plan&quot;, &quot;Strategy&quot;) — big, bold, popping in on the beat. Never full sentences on screen.</li><li>Seated talking head, direct to camera, bright clean interior. The speaker is the authority — confident, instructional, promotional.</li><li>One idea per tip, no rambling. Cut ruthlessly: if a tip takes more than one sentence to say, it is two tips or it gets cut.</li><li>End card with two calls to action: &quot;Save this for later&quot; and the contact CTA (DM / call). The save prompt is the point — it is what makes the reel spread.</li><li>Caption carries the full numbered list so the video works even on mute and people save it as a checklist.</li></ul>
+<div class="steps">
+<div class="step" style="--accent:#ffb020"><div class="n">1</div><div><h4>Write the list</h4><p>Pick 12 tips. One sentence each, one idea each. If a tip needs two sentences, split it or cut it.</p></div></div>
+<div class="step" style="--accent:#ffb020"><div class="n">2</div><div><h4>Set the clock</h4><p>Put a visible 30-second countdown timer on screen for the whole video. It is the hook.</p></div></div>
+<div class="step" style="--accent:#ffb020"><div class="n">3</div><div><h4>Film seated, direct to camera</h4><p>Bright, clean interior. Confident delivery, about 3 seconds per tip.</p></div></div>
+<div class="step" style="--accent:#ffb020"><div class="n">4</div><div><h4>Add numbered badges and keywords</h4><p>A counting badge per tip, plus one big animated keyword phrase per tip — short phrases only.</p></div></div>
+<div class="step" style="--accent:#ffb020"><div class="n">5</div><div><h4>End card and caption</h4><p>End card: &quot;Save this for later&quot; plus the contact CTA. Write the full numbered list into the caption as a checklist.</p></div></div>
+</div>
+<div class="chips"><span class="chip">Any editor + captions</span><span class="chip">The format is the tool</span></div>
+<p style="font-size:14px;color:var(--muted)">&quot;Thinking about selling? Here&#x27;s everything you need to know in under 30 seconds.&quot; 12 seller tips, seated talking head, visible countdown timer.</p>
+<a class="reel-link" href="https://www.instagram.com/reel/DewTzCzxR9q/" target="_blank" rel="noopener">Watch the example reel →</a>
+<div class="prompt-box"><h4 style="font-size:17px">Copy-paste prompt</h4>
+<pre id="prompt-kelsie-listicle">Edit this footage in the Kelsie listicle style: a numbered rapid-fire list with a visible 30-second countdown timer on screen the whole time, about 3 seconds per tip, one big animated keyword phrase per tip (short phrases only, never full sentences), ending with a &quot;Save this for later&quot; card plus a contact call to action. Also write the full numbered-list caption.</pre>
+<button class="copy" data-target="prompt-kelsie-listicle">Copy the prompt</button></div>
+</article>
+<article class="detail" id="style-kelsie-listing-tour" style="--accent:#ffb020">
+<span class="tag">Home tour</span>
+<h3>Style 3 — Kelsie Listing Tour — The Wilmore Format</h3>
+<div class="who">Kelsie Blevins · Top 1% realtor, North Carolina</div>
+<p><b>What it looks like:</b> A lifestyle-first home tour: sell where you live before what you buy. One unbroken camera flight from the street into the rooms, an aerial of the neighbourhood, then room by room — one selling point each, no lingering — and an AI clip where the house turns and changes its look.</p>
+<p><b>Best for:</b> Selling a home, listing tours, property walkthroughs.</p>
+<div class="steps">
+<div class="step" style="--accent:#ffb020"><div class="n">1</div><div><h4>Hook on lifestyle first, not the house</h4><p>Open walking through the neighbourhood (market, coffee in hand): &quot;What if this? and this? minutes from your door.&quot; Sell where you live before what you buy.</p></div></div>
+<div class="step" style="--accent:#ffb020"><div class="n">2</div><div><h4>Fly-through push-in zoom</h4><p>The camera zooms from the exterior straight into the interior in one continuous move — street to front door to rooms, no cut. That single unbroken push is what makes the house feel big and the tour feel premium. Recreate with a drone or gimbal push-in, or a zoom transition in the edit.</p><p>Tools: Drone / gimbal, Zoom transition</p></div></div>
+<div class="step" style="--accent:#ffb020"><div class="n">3</div><div><h4>Aerial skyline shot</h4><p>One wide drone shot over the area (skyline, trees, streets) right after the hook, before the house itself.</p><p>Tools: Drone</p></div></div>
+<div class="step" style="--accent:#ffb020"><div class="n">4</div><div><h4>Room-by-room tour</h4><p>Best feature per room, no lingering. Porch piece-to-camera (&quot;this is where you want to be&quot;), kitchen, open living and dining, bedrooms, then backyard + deck + fire pit. One selling point per room, then move on.</p></div></div>
+<div class="step" style="--accent:#ffb020"><div class="n">5</div><div><h4>AI home transformation clip</h4><p>An AI-generated shot where the house turns and rotates while its look changes — a restyle or renovation morph. Generate with an AI video tool (Runway, Kling, Higgsfield, Luma): image-to-video turntable of the house, then morph its style or era. It is the &quot;wow&quot; beat of the tour.</p><p>Tools: Runway, Kling, Higgsfield, Luma</p></div></div>
+<div class="step" style="--accent:#ffb020"><div class="n">6</div><div><h4>Close with the investment line</h4><p>Close seated inside the home: &quot;If location is everything in real estate, this one is a smart investment&quot; — plus a comment-word CTA (&quot;Comment WILMORE for more info&quot;).</p></div></div>
+</div>
+<div class="chips"><span class="chip">Drone / gimbal</span><span class="chip">AI video generator (Runway, Kling, Higgsfield, Luma)</span><span class="chip">Any editor</span></div>
+<p style="font-size:14px;color:var(--muted)">2232 Wilmore Dr, Charlotte — $649,950 all-brick bungalow, 3 bed / 2 bath / 1,504 sqft. 53-second listing tour (Nov 16, 2026).</p>
+<a class="reel-link" href="https://www.instagram.com/reel/DfzaFE1xv02/" target="_blank" rel="noopener">Watch the example reel →</a>
+<div class="prompt-box"><h4 style="font-size:17px">Copy-paste prompt</h4>
+<pre id="prompt-kelsie-listing-tour">Edit this listing tour in the Kelsie Wilmore format: lifestyle hook in the neighbourhood first, then one unbroken fly-through push-in zoom from the exterior into the interior, an aerial skyline shot, room by room with one selling point each, an AI home-transformation clip where the house turns and changes look, and close seated inside with the investment line plus a comment-word call to action.</pre>
+<button class="copy" data-target="prompt-kelsie-listing-tour">Copy the prompt</button></div>
+</article>
+<article class="detail" id="style-kelsie-flythrough" style="--accent:#8b7cff">
+<span class="tag">Cinematic tour technique</span>
+<h3>Style 4 — Cinematic AI Listing Tour — The Kelsie Fly-Through</h3>
+<div class="who">Kelsie Blevins · Top 1% realtor, North Carolina</div>
+<p><b>What it looks like:</b> Two signature moves that make a listing tour feel cinematic: one unbroken camera flight from the street into the rooms, and an AI clip where the house turns and changes its look.</p>
+<p><b>Best for:</b> Making any listing tour feel like a film; the &quot;wow&quot; beat of a property video.</p>
+<div class="steps">
+<div class="step" style="--accent:#8b7cff"><div class="n">1</div><div><h4>Fly-through push-in zoom</h4><p>The camera flies from the exterior through the front door into the interior in one unbroken shot, AI-generated between an exterior first frame and an interior last frame — or shot for real with a drone or gimbal push-in. No cuts. The continuous move is what makes the house feel big.</p><p>Tools: Drone / gimbal, AI video generator</p></div></div>
+<div class="step" style="--accent:#8b7cff"><div class="n">2</div><div><h4>AI transformation morph</h4><p>An AI-generated clip where the house turns and rotates while its look changes — a restyle or renovation morph. Start from a still of the house, generate an image-to-video turntable, then morph its style or era. Use it as the single &quot;wow&quot; beat, once per tour.</p><p>Tools: Runway, Kling, Higgsfield, Luma</p></div></div>
+</div>
+<div class="chips"><span class="chip">Drone / gimbal</span><span class="chip">AI video generator (Runway, Kling, Higgsfield, Luma)</span></div>
+<p style="font-size:14px;color:var(--muted)">The two signature effects from the 2232 Wilmore Dr tour — the continuous push-in and the AI transformation clip.</p>
+<a class="reel-link" href="https://www.instagram.com/reel/DfzaFE1xv02/" target="_blank" rel="noopener">Watch the example reel →</a>
+<div class="prompt-box"><h4 style="font-size:17px">Copy-paste prompt</h4>
+<pre id="prompt-kelsie-flythrough">Make a cinematic AI listing tour in the Kelsie fly-through style: one unbroken fly-through push-in zoom from the exterior into the interior, plus one AI transformation morph where the house turns and changes its look.</pre>
+<button class="copy" data-target="prompt-kelsie-flythrough">Copy the prompt</button></div>
+</article>
+<article class="detail" id="style-melissa-vision-pitch" style="--accent:#22d3ee">
+<span class="tag">Redevelopment pitch</span>
+<h3>Style 5 — The Melissa Vision Pitch</h3>
+<div class="who">Melissa Orta · Broker Associate, Marzucco Real Estate — Lehigh Acres, FL</div>
+<p><b>What it looks like:</b> The agent stands on the site itself and pitches what it could become. Drone footage shows the empty lot as it is today; AI renders laid over the aerial show the future complex. The video ends by asking viewers what they would want to see there.</p>
+<p><b>Best for:</b> Pitching a vision for a property or place; redevelopment ideas; getting a community talking about what a site could become.</p>
+<div class="steps">
+<div class="step" style="--accent:#22d3ee"><div class="n">1</div><div><h4>Hook on location, direct to camera</h4><p>Stand on the site itself and open with the &quot;if this were mine&quot; line (&quot;If this were my property, I&#x27;d knock it down and start over&quot;). The speaker is the vision, not a narrator.</p></div></div>
+<div class="step" style="--accent:#22d3ee"><div class="n">2</div><div><h4>Drone aerial of the current site — the before</h4><p>Wide shot of the empty or vacant property (industrial buildings, cracked lots) so the viewer feels the wasted potential.</p><p>Tools: Drone</p></div></div>
+<div class="step" style="--accent:#22d3ee"><div class="n">3</div><div><h4>AI-render overlay on the aerial — the after</h4><p>AI-generated visuals laid over the drone shot showing the transformed complex: a coffee shop with big windows and outdoor seating, a brunch spot next door, an Italian restaurant for date night. The render is the wow beat — the same trick as the Kelsie AI home transformation, applied to a whole development instead of one house.</p><p>Tools: AI image / video generator</p></div></div>
+<div class="step" style="--accent:#22d3ee"><div class="n">4</div><div><h4>Name each concept on screen</h4><p>One short label per idea, appearing on the beat you say it — never a paragraph on screen.</p></div></div>
+<div class="step" style="--accent:#22d3ee"><div class="n">5</div><div><h4>Return to the ground and ask the question</h4><p>Gesture at the open space and ask viewers what they would want to see there. The question is the engagement engine — it turns a pitch into a conversation in the comments.</p></div></div>
+<div class="step" style="--accent:#22d3ee"><div class="n">6</div><div><h4>Close with the branding logo</h4><p>No hard sell, no phone number on screen — the authority and the question do the work.</p></div></div>
+</div>
+<div class="chips"><span class="chip">Drone</span><span class="chip">AI image / video generator</span><span class="chip">Any editor</span></div>
+<p style="font-size:14px;color:var(--muted)">&quot;If this were my property&quot; — 27-second pitch for a vacant Lehigh Acres property (Nov 10, 2026).</p>
+<a class="reel-link" href="https://www.instagram.com/reel/DfkBM9XuE_L/" target="_blank" rel="noopener">Watch the example reel →</a>
+<div class="prompt-box"><h4 style="font-size:17px">Copy-paste prompt</h4>
+<pre id="prompt-melissa-vision-pitch">Edit this footage in the Melissa vision-pitch style: open on location direct to camera with the &quot;if this were my property&quot; hook, cut to a drone aerial of the current site as the before, overlay AI renders on the aerial showing the envisioned transformation as the after, name each concept with one short on-screen label, then return to the ground and ask viewers what they would want to see there, and close with the branding logo.</pre>
+<button class="copy" data-target="prompt-melissa-vision-pitch">Copy the prompt</button></div>
+</article>
+<article class="detail" id="style-romina-5-edits" style="--accent:#34d399">
+<span class="tag">Quick wins</span>
+<h3>Style 6 — Romina&#x27;s 5 Easy Edits</h3>
+<div class="who">Romina Aminian · Brand &amp; content strategist</div>
+<p><b>What it looks like:</b> Five small, intentional choices that make a video clearer and easier to follow. Try one or two per video rather than all five at full intensity — the goal is to support what you&#x27;re saying, not distract from it.</p>
+<p><b>Best for:</b> Making any talking-head reel more watchable, fast — five small changes, no reshoot.</p>
+<div class="steps">
+<div class="step" style="--accent:#34d399"><div class="n">1</div><div><h4>Font pairing &amp; placement</h4><p>Use two complementary fonts with distinct roles: a bold display font for important words, a clean readable font for smaller explanations. Treat text like a graphic — place it where it works with the shot (beside your face, near the object, in negative space). Keep essential text away from Instagram&#x27;s interface areas.</p></div></div>
+<div class="step" style="--accent:#34d399"><div class="n">2</div><div><h4>Blank colour screen</h4><p>Instead of cutting straight from one talking-head shot to another, insert a full-screen solid colour with a short line of text. A brief visual reset that helps a key sentence land.</p></div></div>
+<div class="step" style="--accent:#34d399"><div class="n">3</div><div><h4>Music that matches the energy</h4><p>Pick music that fits the video&#x27;s energy — the track should carry the same feeling as the message, not fight it.</p></div></div>
+<div class="step" style="--accent:#34d399"><div class="n">4</div><div><h4>Sound effects, sparingly</h4><p>Add SFX on transitions, text reveals and key movements — but don&#x27;t overdo it. A few well-placed sounds beat a noisy edit.</p></div></div>
+<div class="step" style="--accent:#34d399"><div class="n">5</div><div><h4>Simple zooms &amp; animations</h4><p>Simple zooms, text animations and subtle transitions. Small movement keeps the eye engaged without a full rebuild of the edit.</p></div></div>
+</div>
+<div class="chips"><span class="chip">Any editor</span><span class="chip">Companion guide: https://valley-saxophone-02f.notion.site/The-Reels-Editing-Style-Swipe-File-417f701fb114819f8512ef7947d0206e?pvs=149</span></div>
+<p style="font-size:14px;color:var(--muted)">&quot;5 easy edits for instant engagement&quot; — 43-second talking-head tutorial with on-screen numbered graphics (Nov 15, 2026). Companion Notion guide: The Reels Editing Style Swipe File.</p>
+<a class="reel-link" href="https://www.instagram.com/reel/DfyeGBQzjfm/" target="_blank" rel="noopener">Watch the example reel →</a>
+<div class="prompt-box"><h4 style="font-size:17px">Copy-paste prompt</h4>
+<pre id="prompt-romina-5-edits">Apply Romina&#x27;s 5 easy edits to this reel: pair two complementary fonts and treat text like a graphic, insert a blank colour screen between clips as a visual reset, match the music to the video&#x27;s energy, add sound effects on transitions and key movements sparingly, and layer simple zooms and text animations.</pre>
+<button class="copy" data-target="prompt-romina-5-edits">Copy the prompt</button></div>
+</article>
+<article class="detail" id="style-overstimulated-mind" style="--accent:#f97316">
+<span class="tag">6-step build process</span>
+<h3>Style 7 — The Overstimulated Mind Process</h3>
+<div class="who">Overstimulated Mind edit process · 6 steps, 7 days — the build process behind the Sumit style</div>
+<p><b>What it looks like:</b> The real production process behind a polished talking-head edit: hook and setup, masking and roto, B-roll collages, kinetic type, sound and colour polish, review and export. Seven days, start to finish. This is what &quot;mastering a style&quot; actually means.</p>
+<p><b>Best for:</b> Anyone mastering a style end to end — the full 7-day production plan behind a Sumit-style edit.</p>
+<div class="steps">
+<div class="step" style="--accent:#f97316"><div class="n">1</div><div><span class="days">Day 0–1</span><h4>Hook &amp; setup</h4><p>Analyse the raw talking-head footage to craft the opening hook. Set up the timeline and frame rate, sync the original speaking audio. Identify the emphasis words in the script. Establish the visual theme: one glow colour, scattered typography, stark grayscale background shifts.</p><p>Tools: Premiere Pro, Notion, Google Docs</p></div></div>
+<div class="step" style="--accent:#f97316"><div class="n">2</div><div><span class="days">Day 1–2</span><h4>Masking &amp; roto</h4><p>Isolate the speaker from the background with Roto Brush. Apply the signature animated neon outline around the exact silhouette. Keyframe the background from the natural room to stark white or grayscale. Clean mask edges around hair and hands during fast movements.</p><p>Tools: After Effects, Photoshop</p></div></div>
+<div class="step" style="--accent:#f97316"><div class="n">3</div><div><span class="days">Day 2–3</span><h4>B-roll &amp; PiP collages</h4><p>Gather and trim secondary footage (driving, lounging, walking outdoors) for multi-cam sequences. Design picture-in-picture collages: several clips on screen at once, with drop shadows. Extract and prep 3D assets for metaphor cues (e.g. a dartboard icon for discipline).</p><p>Tools: Premiere Pro, After Effects</p></div></div>
+<div class="step" style="--accent:#f97316"><div class="n">4</div><div><span class="days">Day 3–5</span><h4>Kinetic typography</h4><p>Animate bold text popping up word by word, synced to the speaker&#x27;s pacing. Scattered-text effect for key phrases, words placed randomly across the screen. Varied fonts: serif for accents, clean sans-serif for subtitles. Alternate theme colour and white. Scale bounces and rotational keyframes for energy.</p><p>Tools: After Effects</p></div></div>
+<div class="step" style="--accent:#f97316"><div class="n">5</div><div><span class="days">Day 5–6</span><h4>SFX &amp; colour polish</h4><p>Whooshes for collage slide-ins, distinct pops and clicks for every kinetic word reveal. Balance voiceover EQ with the sound design — SFX never overpower speech. Warm colour grade, natural skin tones kept.</p><p>Tools: Audition, After Effects, Premiere Pro</p></div></div>
+<div class="step" style="--accent:#f97316"><div class="n">6</div><div><span class="days">Day 6–7</span><h4>Review &amp; export</h4><p>Final playback review: rapid text animations and PiP collages perfectly timed. Apply revisions. Export H.264 MP4 optimised for social. Organise project files and back up to the cloud.</p><p>Tools: Media Encoder, Frame.io, Google Drive</p></div></div>
+</div>
+<div class="chips"><span class="chip">Premiere Pro</span><span class="chip">After Effects</span><span class="chip">Audition</span><span class="chip">Photoshop</span><span class="chip">Media Encoder</span></div>
+<p style="font-size:14px;color:var(--muted)">Process source: the Overstimulated Mind edit process (Veronika talking head — laziness, discipline, phone, overstimulated mind).</p>
+<div class="prompt-box"><h4 style="font-size:17px">Copy-paste prompt</h4>
+<pre id="prompt-overstimulated-mind">Plan this video with the Overstimulated Mind 6-step process: hook and setup on day 0–1, masking and roto on day 1–2, B-roll and picture-in-picture collages on day 2–3, kinetic typography on day 3–5, sound and colour polish on day 5–6, review and export on day 6–7.</pre>
+<button class="copy" data-target="prompt-overstimulated-mind">Copy the prompt</button></div>
+</article>
+<article class="detail" id="style-motionsmith-saas-launch" style="--accent:#ff6b6b">
+<span class="tag">Motion graphics skill</span>
+<h3>Style 8 — MotionSmith — SaaS Launch</h3>
+<div class="who">MotionSmith · AI motion design MCP + Claude Code skill</div>
+<p><b>What it looks like:</b> One accent colour, neutral grotesk type, UI pieces that morph into each other, a camera that rides one continuous space, and sound effects only — no music. Built from 17 analysed reference reels.</p>
+<p><b>Best for:</b> Launch reels for software and AI products; app promos; product demos.</p>
+<ul><li>Give Claude a reference video plus screen recordings of the product; it breaks the reference down frame by frame and writes a storyboard for approval before building.</li><li>Motion design first, sound effects after approval — get the movement right, then add SFX.</li><li>Never overwrite a rendered version — notes become the next version, the final goes in a separate folder.</li><li>SFX sit 8–15 dB under the voice; mix around -13 LUFS for social.</li></ul>
+<div class="steps">
+<div class="step" style="--accent:#ff6b6b"><div class="n">1</div><div><h4>Plan: reference + storyboard</h4><p>Hand Claude the reference video, screen recordings of the product, and your prompt. It studies the reference frame by frame and writes a storyboard (around 10 beats) for you to approve.</p><p>Tools: Claude Code, MotionSmith skill</p></div></div>
+<div class="step" style="--accent:#ff6b6b"><div class="n">2</div><div><h4>Assets: images, voice, timings</h4><p>Generate the images and voice-over (ElevenLabs), save them with exact file names. Transcribe the voice-over with Whisper for word timings so animations land on the spoken words.</p><p>Tools: ElevenLabs, Whisper, GPT Image / Nano Banana</p></div></div>
+<div class="step" style="--accent:#ff6b6b"><div class="n">3</div><div><h4>Build: scenes as code, render</h4><p>Claude writes the scenes as code (shared helpers, then one file per beat) and renders with a headless browser. Motion first; sound design only after you approve the motion.</p><p>Tools: Playwright, Node.js, ffmpeg, Python</p></div></div>
+<div class="step" style="--accent:#ff6b6b"><div class="n">4</div><div><h4>Review loop</h4><p>Watch the preview, give notes on timing, words and sounds. Notes become the next version. Final render goes in a separate folder.</p></div></div>
+</div>
+<div class="chips"><span class="chip">MotionSmith ($5.96–$9.96/mo)</span><span class="chip">Claude Code</span><span class="chip">ElevenLabs</span><span class="chip">ffmpeg</span></div>
+<p style="font-size:14px;color:var(--muted)">MotionSmith SaaS Launch style — one of two complete looks in the MotionSmith style library. Site: motionsmith.miftahul.com.</p>
+<a class="reel-link" href="https://motionsmith.miftahul.com/" target="_blank" rel="noopener">Source →</a>
+<div class="prompt-box"><h4 style="font-size:17px">Copy-paste prompt</h4>
+<pre id="prompt-motionsmith-saas-launch">Use MotionSmith to make my video in the &quot;saas-launch&quot; style.</pre>
+<button class="copy" data-target="prompt-motionsmith-saas-launch">Copy the prompt</button></div>
+</article>
+<article class="detail" id="style-motionsmith-vox" style="--accent:#facc15">
+<span class="tag">Motion graphics skill</span>
+<h3>Style 9 — MotionSmith — Vox Explainer</h3>
+<div class="who">MotionSmith · AI motion design MCP + Claude Code skill</div>
+<p><b>What it looks like:</b> Paper and print collage, archival photos, charts and tags as physical objects on a desk, highlighter marks on the point, shape-chained transitions and a documentary camera over flat layers, animated partly on 2s. Sound effects only, no music. Built from 6 analysed reference reels.</p>
+<p><b>Best for:</b> Voice-led editorial explainers; history and data stories; documentary-style explainers.</p>
+<ul><li>Lead with the voice — the narration drives every visual choice.</li><li>Treat charts and tags as physical objects on a desk; the camera moves over flat layers.</li><li>Sound effects only, no music.</li></ul>
+<div class="steps">
+<div class="step" style="--accent:#facc15"><div class="n">1</div><div><h4>Same workflow, different look</h4><p>Same MotionSmith workflow as SaaS Launch: reference + recordings in, storyboard out for approval, assets generated, scenes built as code, rendered in the browser.</p><p>Tools: Claude Code, MotionSmith skill</p></div></div>
+<div class="step" style="--accent:#facc15"><div class="n">2</div><div><h4>Collage the desk</h4><p>Collage the paper and print textures, archival photos and charts as physical objects. Highlight the point like a marker on paper.</p></div></div>
+<div class="step" style="--accent:#facc15"><div class="n">3</div><div><h4>Transitions and camera</h4><p>Shape-chained transitions between beats; documentary camera over the flat layers; animate partly on 2s for a hand-made feel.</p></div></div>
+</div>
+<div class="chips"><span class="chip">MotionSmith ($5.96–$9.96/mo)</span><span class="chip">Claude Code</span><span class="chip">ElevenLabs</span><span class="chip">ffmpeg</span></div>
+<p style="font-size:14px;color:var(--muted)">MotionSmith Vox Explainer style — the second complete look in the MotionSmith style library.</p>
+<a class="reel-link" href="https://motionsmith.miftahul.com/" target="_blank" rel="noopener">Source →</a>
+<div class="prompt-box"><h4 style="font-size:17px">Copy-paste prompt</h4>
+<pre id="prompt-motionsmith-vox">Use MotionSmith to make my video in the &quot;vox&quot; style.</pre>
+<button class="copy" data-target="prompt-motionsmith-vox">Copy the prompt</button></div>
+</article>
+<article class="detail" id="style-invideo-paper-cutout" style="--accent:#8b7cff">
+<span class="tag">Collage explainer</span>
+<h3>Style 10 — Paper-Cutout Collage — InVideo + Claude</h3>
+<div class="who">InVideo + Claude · InVideo MCP workflow</div>
+<p><b>What it looks like:</b> A documentary-style collage explainer with layered paper textures, cutout characters, newspaper clippings and subtle shadows — built without manually animating every frame. The project stays an editable timeline in InVideo.</p>
+<p><b>Best for:</b> Documentary-style collage explainers; layered paper-look videos without hand-animating every frame.</p>
+<ul><li>Gather paper textures, cutout characters, newspaper clippings and backgrounds first — tell Claude which references matter most.</li><li>Ask Claude to outline the scenes before it builds anything.</li><li>Check scene order, timing, text, visual consistency, voiceover, music and transitions before exporting.</li></ul>
+<div class="steps">
+<div class="step" style="--accent:#8b7cff"><div class="n">1</div><div><h4>Open the InVideo MCP</h4><p>Go to invideo.io, find the MCP / integrations page, look for the Claude connection option and review the setup instructions.</p><p>Tools: InVideo</p></div></div>
+<div class="step" style="--accent:#8b7cff"><div class="n">2</div><div><h4>Connect Claude</h4><p>Choose Claude, click Connect, sign in if prompted, review the requested permissions and approve only if comfortable.</p></div></div>
+<div class="step" style="--accent:#8b7cff"><div class="n">3</div><div><h4>Copy the agent setup prompt</h4><p>Copy the setup prompt from the InVideo MCP page, paste it into Claude, and follow the instructions to complete setup.</p></div></div>
+<div class="step" style="--accent:#8b7cff"><div class="n">4</div><div><h4>Prepare references</h4><p>Gather paper textures, cutout characters, newspaper clippings, backgrounds and examples of the look you want. Tell Claude which references matter most.</p></div></div>
+<div class="step" style="--accent:#8b7cff"><div class="n">5</div><div><h4>Ask Claude to build the video</h4><p>Use the copy-paste prompt (above), replacing [YOUR TOPIC]. Specify story, visual style, aspect ratio, duration, narration and music.</p></div></div>
+<div class="step" style="--accent:#8b7cff"><div class="n">6</div><div><h4>Generate and review</h4><p>Let Claude attempt the workflow and answer its clarifications. Generation may take time and may use account credits or plan limits.</p></div></div>
+<div class="step" style="--accent:#8b7cff"><div class="n">7</div><div><h4>Edit and export</h4><p>Open the project or editor link, check scene order, timing, text, visual consistency, voiceover, music and transitions before exporting.</p></div></div>
+</div>
+<div class="chips"><span class="chip">InVideo MCP</span><span class="chip">Claude</span><span class="chip">Suggested: 30 seconds, 9:16, documentary narration</span></div>
+<p style="font-size:14px;color:var(--muted)">Workflow source: InVideo + Claude paper-cutout guide (Nov 17, 2026). Note: InVideo Plus subscription status is unconfirmed — do not rely on InVideo as the primary tool.</p>
+<a class="reel-link" href="https://invideo.io/" target="_blank" rel="noopener">Source →</a>
+<div class="prompt-box"><h4 style="font-size:17px">Copy-paste prompt</h4>
+<pre id="prompt-invideo-paper-cutout">Create a cinematic paper-cutout collage explainer video about [YOUR TOPIC]. Use my reference images to match the visual style: layered paper textures, cutout characters, subtle shadows, and smooth collage-style animation. Build the project in InVideo Editor as an editable timeline where supported, with separate visual layers, text, transitions, and audio. Keep the pacing engaging, the visuals consistent, and the storytelling clear. First outline the scenes, then create the video project and provide the editor link if the workflow supports it. Suggested format: 30 seconds, 9:16 vertical, documentary narration, and subtle cinematic background music.</pre>
+<button class="copy" data-target="prompt-invideo-paper-cutout">Copy the prompt</button></div>
+</article>
+<article class="detail" id="style-ae-claude-mcp" style="--accent:#22d3ee">
+<span class="tag">Workflow / tooling</span>
+<h3>Style 11 — After Effects + Claude</h3>
+<div class="who">Community bridges (no official Adobe MCP) · Claude Code / Claude Desktop, local only</div>
+<p><b>What it looks like:</b> Claude talks directly to After Effects on your computer and builds the edit — layers, keyframes, effects and text — all editable afterwards. There is no official Adobe After Effects MCP; every live route is a community bridge, and Claude must run on the same machine as After Effects. Claude on the web cannot reach desktop After Effects.</p>
+<p><b>Best for:</b> Building the Sumit style (roto, kinetic type, PiP collages) with Claude doing the After Effects work.</p>
+<ul><li>Claude must run on the same computer as After Effects (Claude Code or Claude Desktop locally).</li><li>Turn on After Effects preference &quot;Allow Scripts to Write Files and Access Network&quot; where required.</li><li>MotionSmith does NOT use After Effects — it renders in the browser. It is a separate route.</li><li>InVideo MCP only drives InVideo&#x27;s editor, not After Effects.</li></ul>
+<div class="steps">
+<div class="step" style="--accent:#22d3ee"><div class="n">1</div><div><h4>Engine Room MCP — easiest install (free)</h4><p>Claude Code plugin or standalone MCP. Builds layers, keyframes, easing, effects, expressions and text — all editable afterwards. After Effects 2022+. Needs Node 22+. No render queue tools.</p><p>Tools: @engine-room/after-effects-mcp</p></div></div>
+<div class="step" style="--accent:#22d3ee"><div class="n">2</div><div><h4>Kumo MCP (free)</h4><p>Inspect and edit the open composition, preview changes, save an editable .aep. Read-only switch available. After Effects 2024–2026, Node 24+.</p><p>Tools: @kumoproductions/mcp-aftereffects</p></div></div>
+<div class="step" style="--accent:#22d3ee"><div class="n">3</div><div><h4>Higgsfield bridge (paid)</h4><p>Claude generates images and video, then builds and renders the After Effects composition. Also drives Premiere Pro and Blender. Requires a paid Higgsfield subscription; After Effects 2025+.</p><p>Tools: bridge.higgsfield.ai</p></div></div>
+<div class="step" style="--accent:#22d3ee"><div class="n">4</div><div><h4>AE GPT</h4><p>Claude Code running inside After Effects. Saved in the library as vid_291.</p></div></div>
+</div>
+<div class="chips"><span class="chip">Engine Room MCP (free)</span><span class="chip">Kumo MCP (free)</span><span class="chip">Higgsfield bridge (paid)</span><span class="chip">AE GPT</span></div>
+<p style="font-size:14px;color:var(--muted)">Researched Nov 17, 2026. Adobe previewed native local MCP for After Effects (Nov 10, 2026) but it is private beta planned for early 2027 and not publicly installable.</p>
+<div class="prompt-box"><h4 style="font-size:17px">Copy-paste prompt</h4>
+<pre id="prompt-ae-claude-mcp">Use the After Effects MCP with Claude Code to build this edit in After Effects: layers, keyframes, easing, effects and text, all editable afterwards. If the MCP is not connected, tell me which one to connect instead of guessing or silently switching tools.</pre>
+<button class="copy" data-target="prompt-ae-claude-mcp">Copy the prompt</button></div>
+</article>
+<article class="detail" id="style-ai-motion-graphics" style="--accent:#8b7cff">
+<span class="tag">Library category</span>
+<h3>Style 12 — AI Motion Graphics</h3>
+<div class="who">Library category — 23 videos</div>
+<p><b>What it looks like:</b> Animated graphics built from a prompt — kinetic text, product intros, charts that draw themselves. No camera needed.</p>
+<p><b>Best for:</b> Kinetic text, product intros, charts that draw themselves — anything that needs motion but no camera.</p>
+<div class="chips"><span class="chip">Claude</span><span class="chip">Higgsfield</span><span class="chip">MotionSmith</span><span class="chip">Bang Motion</span><span class="chip">motionmaxxing</span><span class="chip">After Effects</span></div>
+</article>
+<article class="detail" id="style-ai-auto-editing" style="--accent:#22d3ee">
+<span class="tag">Library category</span>
+<h3>Style 13 — AI Auto-Editing</h3>
+<div class="who">Library category — 36 videos</div>
+<p><b>What it looks like:</b> You film, AI cuts. Claude takes raw footage and does the timeline: cuts silences, adds captions, sound effects and motion — in your style.</p>
+<p><b>Best for:</b> Turning raw footage into a finished edit in your style, without cutting it yourself.</p>
+<div class="chips"><span class="chip">Claude Code</span><span class="chip">AutoEdit (Premiere)</span><span class="chip">Tesseract</span><span class="chip">Cardboard</span><span class="chip">DaVinci Resolve MCP</span></div>
+</article>
+<article class="detail" id="style-ai-ad-creation" style="--accent:#34d399">
+<span class="tag">Library category</span>
+<h3>Style 14 — AI Ad Creation</h3>
+<div class="who">Library category — 5 videos</div>
+<p><b>What it looks like:</b> Short ads that sell a product — SaaS launch videos, UGC-style ads, app promos. Script, visuals and voice, made by AI.</p>
+<p><b>Best for:</b> SaaS launch videos, UGC-style ads, app promos — short ads that sell.</p>
+<div class="chips"><span class="chip">MotionSmith</span><span class="chip">InVideo MCP</span><span class="chip">UGC-Factory</span><span class="chip">Treg</span></div>
+</article>
+<article class="detail" id="style-cinematic-ai-video" style="--accent:#f97316">
+<span class="tag">Library category</span>
+<h3>Style 15 — Cinematic AI Video</h3>
+<div class="who">Library category — 15 videos</div>
+<p><b>What it looks like:</b> Movie-looking clips made by AI video generators — camera moves, lighting, drama. The &quot;wow&quot; style.</p>
+<p><b>Best for:</b> The &quot;wow&quot; clip — movie-looking footage for intros, reveals and showcases.</p>
+<div class="chips"><span class="chip">Higgsfield</span><span class="chip">Kling</span><span class="chip">Seedance</span><span class="chip">Runway-style generators</span></div>
+</article>
+<article class="detail" id="style-other-ai-video-tools" style="--accent:#ff6b6b">
+<span class="tag">Library category</span>
+<h3>Style 16 — Other AI Video Tools</h3>
+<div class="who">Library category — 46 videos</div>
+<p><b>What it looks like:</b> More generators and experiments — face swaps, style transfers, image-to-video. New tools land here first.</p>
+<p><b>Best for:</b> Trying the newest generators and experiments first.</p>
+<div class="chips"><span class="chip">Assorted AI video apps, updated as they appear</span></div>
+</article>
+<article class="detail" id="style-realtor-reels" style="--accent:#facc15">
+<span class="tag">Library category</span>
+<h3>Style 17 — Realtor Reels</h3>
+<div class="who">Library category — 8 videos</div>
+<p><b>What it looks like:</b> Videos that sell homes and win clients — home tours, seller tips, listing promos. The Kelsie and Melissa styles live here.</p>
+<p><b>Best for:</b> Selling homes and winning clients — tours, tips, listing promos.</p>
+<div class="chips"><span class="chip">Kelsie listicle format</span><span class="chip">Home-tour prompts</span><span class="chip">Captions</span></div>
+</article>
+</section>
+
+<section id="moves">
+  <h2>Motion dictionary</h2>
+  <p class="sub">The individual moves that make the styles work. Steal one move at a time — you don't need the whole style.</p>
+  <div class="moves">
+<div class="move"><b>Fly-through push-in zoom</b><p>The camera flies from the exterior through the front door into the interior in one unbroken shot.</p><div class="src">From: <a href="#style-kelsie-flythrough">kelsie-flythrough</a></div></div>
+<div class="move"><b>AI transformation morph</b><p>The subject turns or rotates while its look changes — a restyle or renovation morph.</p><div class="src">From: <a href="#style-kelsie-flythrough">kelsie-flythrough</a></div></div>
+<div class="move"><b>Kinetic typography</b><p>Bold words popping up word by word, exactly on the beat of the spoken word.</p><div class="src">From: <a href="#style-sumit">sumit</a></div></div>
+<div class="move"><b>Scattered text</b><p>Key phrases with words placed randomly across the screen for energy.</p><div class="src">From: <a href="#style-overstimulated-mind">overstimulated-mind</a></div></div>
+<div class="move"><b>Neon outline / roto mask</b><p>The speaker cut out of the background with an animated glowing outline around their silhouette.</p><div class="src">From: <a href="#style-sumit">sumit</a></div></div>
+<div class="move"><b>Picture-in-picture collages</b><p>Several clips on screen at once, in small framed panels with drop shadows.</p><div class="src">From: <a href="#style-overstimulated-mind">overstimulated-mind</a></div></div>
+<div class="move"><b>Blank colour screen</b><p>A full-screen solid colour with one short line of text between clips — a visual reset that makes the next point land.</p><div class="src">From: <a href="#style-romina-5-edits">romina-5-edits</a></div></div>
+<div class="move"><b>SFX on transitions</b><p>A whoosh, pop or click on every transition, text reveal or key movement — sparingly, never overpowering the voice.</p><div class="src">From: <a href="#style-romina-5-edits">romina-5-edits</a></div></div>
+<div class="move"><b>Countdown timer</b><p>A visible ticking clock on screen the whole video — the pressure that keeps people watching.</p><div class="src">From: <a href="#style-kelsie-listicle">kelsie-listicle</a></div></div>
+<div class="move"><b>Numbered badges</b><p>A counting badge per point, ticking up on screen as the list runs.</p><div class="src">From: <a href="#style-kelsie-listicle">kelsie-listicle</a></div></div>
+<div class="move"><b>Blob reveal</b><p>A soft round blob opens to reveal the next scene — used to unfold an app window out of a dot.</p><div class="src">From: <a href="#style-motionsmith-saas-launch">motionsmith-saas-launch</a></div></div>
+<div class="move"><b>Pixel reveal / depth scan</b><p>A scene builds in pixel by pixel, like a scan, with a depth-scan feel.</p><div class="src">From: <a href="#style-motionsmith-saas-launch">motionsmith-saas-launch</a></div></div>
+  </div>
+</section>
+
+<section id="tools">
+  <h2>The tools, grouped by what they do</h2>
+  <p class="sub">You don't need all of these. Each style needs one or two. Pick the style first, then the tool.</p>
+  <div class="tools-list">
+<div class="tool"><b>Engine Room MCP</b><span class="price">Free · easiest install</span><p>Claude Code plugin. Builds layers, keyframes, easing, effects and text. After Effects 2022+.</p><a href="https://www.npmjs.com/package/@engine-room/after-effects-mcp" target="_blank" rel="noopener">Link →</a></div>
+<div class="tool"><b>Kumo MCP</b><span class="price">Free</span><p>Inspect and edit the open composition, preview changes, save an editable .aep. After Effects 2024–2026, Node 24+.</p><a href="https://www.npmjs.com/package/@kumoproductions/mcp-aftereffects" target="_blank" rel="noopener">Link →</a></div>
+<div class="tool"><b>Higgsfield bridge</b><span class="price">Paid subscription</span><p>Claude generates images and video, then builds and renders the After Effects composition. Also drives Premiere Pro and Blender. After Effects 2025+.</p><a href="https://bridge.higgsfield.ai/mcp" target="_blank" rel="noopener">Link →</a></div>
+<div class="tool"><b>AE GPT</b><span class="price">—</span><p>Claude Code running inside After Effects. Saved in the library as vid_291.</p></div>
+<div class="tool"><b>MotionSmith</b><span class="price">$5.96–$9.96/mo</span><p>Motion-graphics videos in two styles: SaaS Launch and Vox Explainer. Renders in the browser, not in After Effects.</p><a href="https://motionsmith.miftahul.com" target="_blank" rel="noopener">Link →</a></div>
+<div class="tool"><b>Bang Motion</b><span class="price">Free</span><p>Turns Claude Code into a motion designer — openers, promos, product demos, kinetic typography.</p><a href="https://github.com/bangtutorial/bang-motion" target="_blank" rel="noopener">Link →</a></div>
+<div class="tool"><b>motionmaxxing</b><span class="price">Free</span><p>Rebuilds flat AI videos as polished motion-designer films, rendered locally from plain HTML.</p><a href="https://github.com/Tejashmakwana/motionmaxxing" target="_blank" rel="noopener">Link →</a></div>
+<div class="tool"><b>line-art-animation</b><span class="price">Free</span><p>Hand-inked line-art SVG animations — walking figures, day-to-night scenes — rendered as video.</p><a href="https://github.com/JDhruv14/line-art-animation" target="_blank" rel="noopener">Link →</a></div>
+<div class="tool"><b>Vibha caption styles</b><span class="price">Free (7 styles)</span><p>Animated captions timed to your voice, burned into the video. Pop Sticker, Paper Plane, Smoke Exit and 4 more.</p><a href="https://github.com/Vibha-Ramprakash/claude-caption-styles" target="_blank" rel="noopener">Link →</a></div>
+<div class="tool"><b>claude-video-effects</b><span class="price">Free</span><p>45 talking-head effects in Claude Code — face tracking, layers kept behind your head.</p><a href="https://github.com/Vibha-Ramprakash/claude-video-effects" target="_blank" rel="noopener">Link →</a></div>
+<div class="tool"><b>AutoEdit (Premiere Pro)</b><span class="price">—</span><p>Voice mode in Claude × Premiere Pro. Cuts bad takes, removes silences, builds rough cuts in seconds.</p></div>
+<div class="tool"><b>DaVinci Resolve MCP</b><span class="price">Free</span><p>Connects DaVinci Resolve Studio to Claude: 52 tools for timelines, colour grading, Fusion and rendering.</p><a href="https://github.com/barckley75/resolve-claude-mcp" target="_blank" rel="noopener">Link →</a></div>
+<div class="tool"><b>Tesseract</b><span class="price">—</span><p>Edits the real project, not a re-generated clip — change the captions and only the captions change.</p></div>
+<div class="tool"><b>InVideo MCP</b><span class="price">Subscription</span><p>Claude drives InVideo&#x27;s editor: describe the ad and it builds it. Paper-cutout collage workflow included in the playbooks.</p></div>
+<div class="tool"><b>Remotion / HyperFrames</b><span class="price">Free</span><p>Make videos with React code. Perfect for templated videos that change text each time.</p><a href="https://github.com/remotion-dev/remotion" target="_blank" rel="noopener">Link →</a></div>
+<div class="tool"><b>ffmpeg</b><span class="price">Free</span><p>The universal video converter. Every pipeline here ends with ffmpeg.</p><a href="https://github.com/FFmpeg/FFmpeg" target="_blank" rel="noopener">Link →</a></div>
+<div class="tool"><b>Manim</b><span class="price">Free</span><p>Python animations for explaining maths and engineering — made for study videos.</p><a href="https://github.com/ManimCommunity/manim" target="_blank" rel="noopener">Link →</a></div>
+<div class="tool"><b>Blender</b><span class="price">Free</span><p>Full 3D suite for product visuals and animated explainers.</p><a href="https://github.com/blender/blender" target="_blank" rel="noopener">Link →</a></div>
+  </div>
+</section>
+
+<section id="use">
+  <h2>Use it yourself</h2>
+  <p class="sub">Three steps. That's the whole workflow.</p>
+  <div class="howto">
+    <div class="how"><div class="big">1</div><h4>Pick a style</h4><p>Explainer? Sumit. Tips list? Kelsie. Selling a home? Kelsie tour or the Melissa vision pitch. Product launch? MotionSmith SaaS Launch.</p></div>
+    <div class="how"><div class="big">2</div><h4>Post your raw footage</h4><p>Send the video file and say the style name — “Sumit style” or “Kelsie style” — plus the platform (Reels / TikTok / Shorts).</p></div>
+    <div class="how"><div class="big">3</div><h4>Get the video back</h4><p>Claude storyboards it first, builds it in After Effects (or MotionSmith), and hands back the finished 9:16 video.</p></div>
+  </div>
+</section>
+
+<section id="reels">
+  <h2>Reel catalog</h2>
+  <p class="sub">The harvested reels live here. Each one is studied and tagged with the styles it demonstrates, so you can see every style in the wild.</p>
+  <div class="note"><b>166 reels catalogued so far.</b> Harvest 1,000+ real-estate-style reels with strong graphics. Primary pool: the mt1jay For You feed, collected in batches by scrolling the logged-in browser session (Instagram API does not expose the For You page or watch history). Fallback pool: mt1jay + akhisharafath saved posts and followed creators. Each harvested reel is studied (what the edit does, which style tags apply) and appended here.</div>
+  <div style="height:18px"></div>
+  <div class="search"><input id="reel-filter" type="text" placeholder="Search reels — try a creator, a style, or a word…"></div>
+  <div style="height:14px"></div>
+  <table id="reel-table">
+    <tr><th>Reel</th><th>Creator</th><th>Style tags</th><th>What it shows</th></tr>
+<tr><td><a href="https://www.instagram.com/reel/Df2FOWBhCrR" target="_blank" rel="noopener">vid_m001</a></td><td>gp__multimedia</td><td><span class="chip">realtor-reels</span></td><td>GP Multimedia pitch to Minnesota realtors: video is a specialty, not a photo add-on. Talking head walking downtown, on-screen text + graphics contrasting photo-first providers with video-first.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Df0CJt9SN8Y" target="_blank" rel="noopener">vid_m002</a></td><td>squarefoothomes</td><td><span class="chip">realtor-reels</span></td><td>Square Foot Homes launch pitch: team does not just list on the MLS, it launches the home with pro photography, social content and a 3,000-buyer database. Sunny upscale neighborhood, direct to camera.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfpMAuHuAi7" target="_blank" rel="noopener">vid_m003</a></td><td>melissaortarealtor</td><td><span class="chip">kelsie-listing-tour</span> <span class="chip">realtor-reels</span></td><td>Melissa Orta in Spanish, seated in a modern living room, pitching new-construction homes in Lehigh Acres, then interior tour (living room, dining, bedrooms, bath) with price points from $260k.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfaHdixTWUY" target="_blank" rel="noopener">vid_m004</a></td><td>barsolmedia</td><td><span class="chip">kelsie-listing-tour</span> <span class="chip">realtor-reels</span></td><td>Barsol Media: a cliche billionaire pitch gets interrupted and coached into a real hook (&quot;five homes on this street, only one available&quot;), then a minimalist mansion tour. Hook-coaching format.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfYbJx2RKRb" target="_blank" rel="noopener">vid_m005</a></td><td>eucamilalorena_</td><td><span class="chip">romina-5-edits</span> <span class="chip">ai-motion-graphics</span></td><td>Camila Lorena (Portuguese): 3 editing ideas to escape the obvious, including captions with blurred backgrounds. Talking head with a fork-microphone prop.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfS3bYHBzQf" target="_blank" rel="noopener">vid_m006</a></td><td>cliffsidecuts</td><td><span class="chip">cinematic-ai-video</span> <span class="chip">realtor-reels</span></td><td>Cliffside Cuts: cinematic luxury Vegas home, sweeping drone shots of a modernist black-clad/glass house perched on a ridge. Drone-led luxury showcase.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfS19jhuUWr" target="_blank" rel="noopener">vid_m007</a></td><td>michaelaziz.vs</td><td><span class="chip">kelsie-listing-tour</span> <span class="chip">realtor-reels</span></td><td>Michael Aziz walks down the ramp of a modern two-story home in Rolling Hills, day and night showcase of the property. Listing tour, presenter-led.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfSU1lKPC2w" target="_blank" rel="noopener">vid_m008</a></td><td>bellucciproduction</td><td><span class="chip">sumit</span> <span class="chip">ai-motion-graphics</span></td><td>Bellucci Production: rapid-fire brand pitch in a park, large on-screen text over a talking head. Big kinetic text is the style.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfCVmowg8jy" target="_blank" rel="noopener">vid_m009</a></td><td>courtneywalshbaisa</td><td><span class="chip">realtor-reels</span></td><td>Courtney Walsh Baisa: sunny plaza promo asking what if investing in real estate was as easy as stating your goals. Collaborative investment pitch.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfAZMAjseOQ" target="_blank" rel="noopener">vid_m010</a></td><td>liveairprod</td><td><span class="chip">ai-motion-graphics</span></td><td>Live Air Prod: how to make invisible cuts like in the movies, from a desk setup. Cut-technique demo.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/De2LWQwomXm" target="_blank" rel="noopener">vid_m011</a></td><td>pires.visuals</td><td><span class="chip">ai-motion-graphics</span> <span class="chip">kelsie-flythrough</span></td><td>Pires Visuals: &quot;You need to learn this transition&quot; — white courtyard transitions into a living room, split-screen breakdown. Room-to-room transition demo.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DerRQWgo8yn" target="_blank" rel="noopener">vid_m012</a></td><td>caitlinoconnorrealestate</td><td><span class="chip">realtor-reels</span></td><td>Caitlin O&#x27;Connor, waterfront: &quot;Before you hire a listing agent, ask ONE question — can I trust this agent?&quot; Sequential on-screen text as she speaks.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DehWYGXgW-O" target="_blank" rel="noopener">vid_m013</a></td><td>harry__allsop</td><td><span class="chip">sumit</span> <span class="chip">romina-5-edits</span></td><td>Harry Allsop: five viral hooks demoed in a home gym, each labelled with on-screen text. Hook-format style demo.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DeZLJV0K-_-" target="_blank" rel="noopener">vid_m014</a></td><td>yourrealtorinfloridaa</td><td><span class="chip">realtor-reels</span> <span class="chip">ai-motion-graphics</span></td><td>Your Realtor in Florida: black-and-white phone-call open that flips to color as &quot;Z Brothers is officially Windermere&quot; is announced. B&amp;W-to-color transition brand reel.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DeOPjoFR-a7" target="_blank" rel="noopener">vid_m015</a></td><td>joshiscohen</td><td><span class="chip">realtor-reels</span></td><td>Josh Cohen walking a palm-lined sidewalk: agents did not get into the business to do admin — sales pitch for his system. Realtor-coach talking head.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dd-P0XFhiA9" target="_blank" rel="noopener">vid_m016</a></td><td>elbeezus</td><td><span class="chip">sumit</span> <span class="chip">ai-motion-graphics</span></td><td>Elbeezus (Spanish): recreating a viral real-estate text effect in CapCut, showing luxury-home example clips first. Viral text-effect demo.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dd76h-2RpSv" target="_blank" rel="noopener">vid_m017</a></td><td>joshiscohen</td><td><span class="chip">realtor-reels</span></td><td>Josh Cohen walking talking head: the income ceiling for real-estate media makers who stay behind the camera. On-screen text reinforces the pitch.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dd1DbV6uyGF" target="_blank" rel="noopener">vid_m018</a></td><td>antonellacariboni</td><td><span class="chip">kelsie-listing-tour</span> <span class="chip">realtor-reels</span></td><td>Antonella Cariboni (Portuguese): luxury home in Jardim Acapulco, Guarujá, opened with a R$100k hook. Listing tour.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Ddkl1qDIlCH" target="_blank" rel="noopener">vid_m019</a></td><td>caitlinoconnorrealestate</td><td><span class="chip">realtor-reels</span></td><td>Caitlin O&#x27;Connor walking a riverside path: listing tip with sequential on-screen text. Realtor advice reel.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DdHYthaIq_9" target="_blank" rel="noopener">vid_m020</a></td><td>pires.visuals</td><td><span class="chip">kelsie-flythrough</span> <span class="chip">cinematic-ai-video</span></td><td>Pires Visuals: &quot;How to make a house appear behind you in 30 seconds&quot; — AI-generated house placed behind the presenter on an empty road. AI house-appear effect.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DdGs8HcRd6j" target="_blank" rel="noopener">vid_m021</a></td><td>_k.elsie</td><td><span class="chip">kelsie-listing-tour</span> <span class="chip">realtor-reels</span></td><td>Kelsie Blevins: new-construction home in Mooresville NC, outside then kitchen/living room, &quot;every new build has instant equity&quot; angle. Listing tour.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DdCn6koh6es" target="_blank" rel="noopener">vid_m022</a></td><td>bluesprucemedia</td><td><span class="chip">cinematic-ai-video</span> <span class="chip">realtor-reels</span></td><td>Blue Spruce Media: &quot;The Shooter&quot; — videographer with gimbal, then a modern luxury showcase. Shooter-intro + property showcase.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DcvtZegCKr_" target="_blank" rel="noopener">vid_m023</a></td><td>javierfiguerroa</td><td><span class="chip">realtor-reels</span></td><td>Javier Figuerroa: five-step first-home strategy for couples on a suburban sidewalk. Realtor advice reel.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dcs_d-LRaRK" target="_blank" rel="noopener">vid_m024</a></td><td>renataostasrealtor</td><td><span class="chip">realtor-reels</span></td><td>Renata Ostas (Keller Williams, Charlotte): educational promo filmed on sunny Matthews sidewalks and patios. Realtor reel.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DcpZfvURcr3" target="_blank" rel="noopener">vid_m025</a></td><td>charlieplourde_</td><td><span class="chip">sumit</span> <span class="chip">ai-motion-graphics</span></td><td>Charlie Plourde on a balcony: calm talking head with huge red text overlays (&quot;FRIENDS WON&#x27;T TELL YOU BROKE&quot;) and black-screen cuts. Bold-overlay talking head.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DcghbiIRccM" target="_blank" rel="noopener">vid_m026</a></td><td>invistacompriscila</td><td><span class="chip">kelsie-listing-tour</span> <span class="chip">realtor-reels</span></td><td>Priscila Pereira: NEX ONE CAIUBI development promo in Perdizes, São Paulo — presenter walking the project. Development listing reel.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DaxRn6Nykxi" target="_blank" rel="noopener">vid_m027</a></td><td>l17.marketing</td><td><span class="chip">kelsie-listing-tour</span> <span class="chip">realtor-reels</span></td><td>L17 Marketing: Trinity Nordic Residences, Seri Kembangan — most duplexes over RM1.5M, this one is not. Luxury listing ad.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DaNYpI2xw1M" target="_blank" rel="noopener">vid_m028</a></td><td>_k.elsie</td><td><span class="chip">kelsie-listing-tour</span> <span class="chip">realtor-reels</span></td><td>Kelsie Blevins: single-level estate in Statesville NC, kitchen-first tour with white cabinets, island and pendants. Listing tour.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DZXzWSPuqqj" target="_blank" rel="noopener">vid_m029</a></td><td>jonidahaliliyyc</td><td><span class="chip">realtor-reels</span> <span class="chip">ai-motion-graphics</span></td><td>Joni Dahl: walking talking head on luxury — &quot;most people think luxury means a high price tag. It doesn&#x27;t.&quot; On-screen text reinforces the message.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DZDQ1NAPoY4" target="_blank" rel="noopener">vid_m030</a></td><td>wolfeofrealestate</td><td><span class="chip">realtor-reels</span></td><td>Erica (Wolfe Team) by the FOR SALE sign, playful open holding a teammate&#x27;s ankles. Realtor team reel.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dfzlf6PudPi" target="_blank" rel="noopener">vid_m031</a></td><td>melissaortarealtor</td><td><span class="chip">kelsie-listing-tour</span> <span class="chip">realtor-reels</span></td><td>Melissa Orta: modern luxury home in Lehigh Acres ($449,000) — fountain at the front door, outdoor kitchen out back. Walkthrough listing tour.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DeZOgPZxrlq" target="_blank" rel="noopener">vid_m032</a></td><td>reesekiselakrealtor</td><td><span class="chip">cinematic-ai-video</span> <span class="chip">realtor-reels</span></td><td>Reese Kisela: polished luxury-agent promo at a waterfront property, pool and lake behind her. Luxury showcase.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DdkOWmphatA" target="_blank" rel="noopener">vid_m033</a></td><td>joshiscohen</td><td><span class="chip">realtor-reels</span></td><td>Josh Cohen walking a park path in South Florida: direct-to-camera sales pitch. Realtor-coach talking head.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DcI2sUKxktO" target="_blank" rel="noopener">vid_m034</a></td><td>_k.elsie</td><td><span class="chip">realtor-reels</span></td><td>Kelsie Blevins by a lake: 50+ homes sold in 2026, over half under contract in two weeks — &quot;it comes down to pricing and presentation,&quot; with house graphics. Authority reel.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DafU-rnRiEx" target="_blank" rel="noopener">vid_m035</a></td><td>_k.elsie</td><td><span class="chip">realtor-reels</span></td><td>Kelsie Blevins, Homes.com testimonial at a modern white lakeside home with pool: listings seen 16x more than average after joining. Testimonial reel with on-screen graphics.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DaDc23rRD3A" target="_blank" rel="noopener">vid_m036</a></td><td>claudiorivera.910</td><td><span class="chip">realtor-reels</span></td><td>The creator asks what top realtors have in common: over 100 families helped (@_k.elsie), a $12M home sold from a reel (@shawnelliottrealestate), and $100M sold in one year from reels (@robthomsonwaterfront). The common factor: they show up …</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfmoSUpsDUx" target="_blank" rel="noopener">vid_m037</a></td><td>withian.t</td><td><span class="chip">ai-auto-editing</span></td><td>Ian Tang (@withian.t) shows an &#x27;Editable CLAUDE Storyboard&#x27; workflow: a Figma-style canvas where Claude turns a photo reference into a storyboard with three editable keyframes per shot (start, change, end). He edits on the canvas, comments …</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfAr4ldgD7G" target="_blank" rel="noopener">vid_m038</a></td><td>Carrington Pierre</td><td><span class="chip">other-ai-video-tools</span></td><td>Set up a 24/7 AI agent: comment &#x27;AGENT&#x27; for the free setup guide that gets an AI agent running around the clock.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DezeMvbTjl4" target="_blank" rel="noopener">vid_m039</a></td><td>corbinsylk</td><td><span class="chip">ai-auto-editing</span></td><td>Short reel from AI-effects educator Corbin Sylk promoting Claude-powered premium video effects — gated prompts (“STACK” comment) for ready-made premium effects that carry a true brand signature on every video, per caption. Same gated-prompt…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DeuZvcPqAGV" target="_blank" rel="noopener">vid_m040</a></td><td>Torsten Roscoe</td><td><span class="chip">ai-auto-editing</span></td><td>Make Claude AI edits 10X better: have Claude break the video into scenes, animations and timestamps before you ask for changes, so you can direct each edit exactly.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DePX9XMgDXx" target="_blank" rel="noopener">vid_m041</a></td><td>miftahul_islam_efaz</td><td><span class="chip">ai-ad-creation</span></td><td>The creator distinguishes his offer from the viral Claude prompt everyone is posting: it is a reusable Claude Code skill that acts as a video production team and made the entire 56-second SaaS ad with zero After Effects and zero editors. Ac…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DbpEea6kqnZ" target="_blank" rel="noopener">vid_m042</a></td><td>buildingwiththane</td><td><span class="chip">other-ai-video-tools</span></td><td>Short vibecoding showcase of aesthetic websites built with Manus, posted as a Manus partner ad, with the assets offered via a &#x27;CRUMB&#x27; comment.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DYW8bZds8Jy" target="_blank" rel="noopener">vid_m043</a></td><td>horyx.studio</td><td><span class="chip">other-ai-video-tools</span></td><td>Horyx Studio claims &#x27;I didn&#x27;t write a single line of code… Antigravity did everything&#x27; for a website build, tagged #antigravity #claude #claudedesign #website. Comment &#x27;Flow&#x27; receives the prompt. Note: chunk pricing lists Manus, which does …</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DX1z5eXN39o" target="_blank" rel="noopener">vid_m044</a></td><td>drcintas</td><td><span class="chip">other-ai-video-tools</span></td><td>&#x27;Claude just killed interior design&#x27;: drcintas shows redesigning any space with Claude Code via the banana skill. Install the skill, connect a Google AI Studio API key, upload a photo of your room, type /banana and ask for a redesign — it g…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dfx64zuCose/" target="_blank" rel="noopener">vid_m045</a></td><td>nocodealex</td><td><span class="chip">other-ai-video-tools</span></td><td>Papermorph: a free open-source Claude Code skill that turns a textbook PDF into a narrated, interactive web lesson with quizzes and MP4 export.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfxaESCvEKM/" target="_blank" rel="noopener">vid_m046</a></td><td>alex_prompter</td><td><span class="chip">other-ai-video-tools</span></td><td>Coucou: a free open-source Mac notch companion (Mochi) that watches Claude Code / Codex / Cursor sessions live and lets you approve permissions from the notch or your iPhone Lock Screen.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dfu8kZ7zue0/" target="_blank" rel="noopener">vid_m047</a></td><td>buildwithneej</td><td><span class="chip">ai-auto-editing</span></td><td>An open-source Claude Code / Codex workflow that reverse-engineers a viral video shot by shot (cut detection, audio separation, filmed/AI/code labelling) and writes a remake plan.</td></tr>
+<tr><td><a href="https://www.instagram.com/p/Dfsaf2Dyaod/" target="_blank" rel="noopener">vid_m048</a></td><td>data_science_geek_learning</td><td><span class="chip">other-ai-video-tools</span></td><td>A ranked list of 12 GitHub repos for auditing and securing AI-written code: vulnerability scanning, secret scanning, agent-skill scanning and LLM red-teaming.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dcd3eY1iOMA/" target="_blank" rel="noopener">vid_m049</a></td><td>itstundeanthony</td><td><span class="chip">other-ai-video-tools</span></td><td>Fact or Hype? @alassafi.ai</td></tr>
+<tr><td><a href="https://www.instagram.com/p/DfPGypijw2f/" target="_blank" rel="noopener">vid_m050</a></td><td>okaashish</td><td><span class="chip">other-ai-video-tools</span></td><td>Comment &quot;animate&quot; and I&#x27;ll send all the free claude skills with you! #claudeskills #claude #claudevideo #claudevideoediting #ai</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dfphrw3griE/" target="_blank" rel="noopener">vid_m051</a></td><td>alextsoi_ai</td><td><span class="chip">other-ai-video-tools</span></td><td>follow for part 2 of things I built with Claude Code Part 1: Agent Huddle 1. A little widget in the corner shows every Claude Code agent I&#x27;ve got running 2. Click one to see exactly what it&#x27;s doing, step by step 3. Allow permissions and ans…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfvyO7TAkYB/" target="_blank" rel="noopener">vid_m052</a></td><td>asharasjad</td><td><span class="chip">other-ai-video-tools</span></td><td>Meng To&#x27;s curated skills for making insane demos: dream-loop for 3D visuals with Blender plus a critic agent, Hairline for isometric line drawings, Emil Kowalski&#x27;s design skills, and more.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dfutd4mROBz/" target="_blank" rel="noopener">vid_m053</a></td><td>asharasjad</td><td><span class="chip">cinematic-ai-video</span></td><td>ThreeRT is Meshy&#x27;s hardware ray-traced three.js: a real-time path tracer that simulates light bounces for movie-quality shadows and reflections on the web.</td></tr>
+<tr><td><a href="https://www.instagram.com/p/DfjvOWBj9aC/" target="_blank" rel="noopener">vid_m054</a></td><td>okaashish</td><td><span class="chip">other-ai-video-tools</span></td><td>Comment &quot;video&quot; and I&#x27;ll send all the links! #claude #claudevideoediting #claudevideo #claudeskills #claudeplugins</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfsIhjsChH5/" target="_blank" rel="noopener">vid_m055</a></td><td>marketerhub.ai</td><td><span class="chip">other-ai-video-tools</span></td><td>Comment «Claude» and I’ll send you the GitHub link and setup guide. 📩 Ever wish Claude remembered where you left off when you started a new coding session? ECC adds skills for carrying context across sessions, running security checks, and l…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfsEIwDFKSD/" target="_blank" rel="noopener">vid_m056</a></td><td>Jack Roberts</td><td><span class="chip">cinematic-ai-video</span></td><td>Lemo gives Claude 66 film styles to make explainer videos: pick a style, describe your idea in one sentence, and Claude writes the story, adds voiceover and music, then animates every frame in code -- done in about ten minutes.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DffhT_iRb6z/" target="_blank" rel="noopener">vid_m057</a></td><td>Tom</td><td><span class="chip">other-ai-video-tools</span></td><td>Nine Claude-powered AI agents run the online side of a trades business: AI Receptionist answers calls, Manager Agent handles quotes, Follow-Up Agent chases leads, SEO Agent improves Google ranking, Analytics Agent tracks performance, Ad Cre…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfpjVfvxxBD/" target="_blank" rel="noopener">vid_m058</a></td><td>Denis Holc | AI &amp; Automation</td><td><span class="chip">other-ai-video-tools</span></td><td>Claude Code + custom 3d-animator skill: generate a cinematic 20-second 3D animation (a sunlit desk with a typewriter) without Blender -- drag the skill into Claude Code and prompt it.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfX2jqyh4K6/" target="_blank" rel="noopener">vid_m059</a></td><td>Shubham • AI, Code &amp; Business</td><td><span class="chip">other-ai-video-tools</span></td><td>Automate Instagram&#x27;s Edits app with Claude: post directly from your desktop to public and trial reels.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dew85IgsLQg" target="_blank" rel="noopener">vid_m060</a></td><td>aslaniedits</td><td><span class="chip">ai-motion-graphics</span></td><td>What it is: Off-topic — promo pitch for manual After Effects editing services (&#x27;Need edits like these?&#x27;); manual editing excluded per his rule and not AI-teaching. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DZWLhE3uEhO" target="_blank" rel="noopener">vid_m061</a></td><td>raelynn_wetzel_hibbert</td><td><span class="chip">realtor-reels</span></td><td>What it is: Off-topic — Utah Realtor homebuyer negotiation tips, not an AI-teaching video.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfOOGuzJHmf" target="_blank" rel="noopener">vid_m062</a></td><td>v.motionsss</td><td><span class="chip">ai-motion-graphics</span></td><td>What it is: Manual editing/showcase — &#x27;only game I play&#x27; After Effects motion-graphics clip; no AI tool named. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DeqaiWNAAFA" target="_blank" rel="noopener">vid_m063</a></td><td>Justin</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic — job-market meme (&#x27;Why am I just finding this out?! #unemployed #jobsearch&#x27;); not AI-teaching. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DeOan0hvOol" target="_blank" rel="noopener">vid_m064</a></td><td>a1tkid</td><td><span class="chip">ai-motion-graphics</span></td><td>What it is: Entertainment/showcase — Sol launch film portfolio piece (motion design/After Effects); no AI tool or technique is taught. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DcOIGDdss_L" target="_blank" rel="noopener">vid_m065</a></td><td>ahmedsami94</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic/manual — 2026 motion-design showreel, captioned &#x27;100% Craft 0% AI&#x27;; explicitly no AI tool or technique. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DZahfU1OMDs" target="_blank" rel="noopener">vid_m066</a></td><td>michael_warship</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Entertainment/showcase — animated commercials compilation for inspiration; no tutorial, tool or technique is taught. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfxkViByU_6/" target="_blank" rel="noopener">vid_m067</a></td><td>salt.sheikh</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic — 10-minute chilli oil garlic noodles recipe, food content, not an AI-teaching video. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DbNANsqxWmL/" target="_blank" rel="noopener">vid_m068</a></td><td>rahuliyer.ai</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Dropped — open-source AI-tools listicle with no tools/repos named in the caption (gated &#x27;LINK&#x27;); unverifiable per Mohamed&#x27;s rule.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfspVxZsClx/" target="_blank" rel="noopener">vid_m069</a></td><td>coursecreator360</td><td><span class="chip">ai-auto-editing</span></td><td>What it is: Dropped — sponsored lead-gen promo (&#x27;AI edits every video I make, tap for the full training&#x27;); thin caption, no technique taught.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfyxXc5tCPW/" target="_blank" rel="noopener">vid_m070</a></td><td>decode.dani</td><td><span class="chip">ai-ad-creation</span></td><td>What it is: Dropped — animated promo for &#x27;Zero Tutors&#x27;, a free AI study platform; no replicable technique or repo taught (verified via browser page summary). Platform ad, not a tutorial.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DePsbjbslnS/" target="_blank" rel="noopener">vid_m071</a></td><td>ohnepixeldeluxe661</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic — browser gaming clip (&#x27;you can play anything in browser&#x27;), not an AI-teaching video. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DflLmkkBgNF/" target="_blank" rel="noopener">vid_m072</a></td><td>lilsipper</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic — 4-ingredient low-carb cheesecake recipe, food content, not an AI-teaching video. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfioOp2OFbW/" target="_blank" rel="noopener">vid_m073</a></td><td>nvision.media</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic -- Yosemite nature video (&#x27;grass = touched&#x27;), no AI tool or technique. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfXmu2avknd/" target="_blank" rel="noopener">vid_m074</a></td><td>tobi.the.og</td><td><span class="chip">ai-ad-creation</span></td><td>What it is: Not AI-teaching -- &#x27;how to become insanely cracked at organic marketing&#x27;; a marketing how-to with no AI tool or technique taught. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfIM7fyIZXI/" target="_blank" rel="noopener">vid_m075</a></td><td>itstundeanthony</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Unverifiable thin caption — only &#x27;Comment &quot;handy&quot; for the setup guide&#x27;; no tool or technique is named and nothing beyond the caption could be verified (no media-understanding calls this run). Dropped per Mohamed&#x27;s vet-before-adding filter; …</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfuY44OAPyO/" target="_blank" rel="noopener">vid_m076</a></td><td>madharelo</td><td><span class="chip">ai-auto-editing</span></td><td>What it is: Promo with no replicable technique -- staged reaction video claiming &#x27;Claude&#x27; auto-edited 165 clips into 6 reels; no tool named, no steps shown, comment-gated (&#x27;Comment EDITING and I&#x27;ll send it over&#x27;), and commenters question whether the de…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DflVdVaAZ3g/" target="_blank" rel="noopener">vid_m077</a></td><td>the.sweetagain__</td><td><span class="chip">ai-ad-creation</span></td><td>What it is: Off-topic -- digital cookbook promo (200+ flour-free, sugar-free recipes, link in bio). Not an AI-teaching video. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfsBbiwonsX/" target="_blank" rel="noopener">vid_m078</a></td><td>Tunde Alao</td><td><span class="chip">ai-auto-editing</span></td><td>What it is: Not AI-teaching -- promo for &#x27;Kozy&#x27;, the creator&#x27;s own unreleased AI video-editing app (waitlist-only, launches next week, comment &#x27;waitlist&#x27; for access). Media-understanding verified (reel watched via browser summary): the app learns a cre…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DeU1g1zBmkX/" target="_blank" rel="noopener">vid_m079</a></td><td>Dany | Professora &amp; Criadora de Conteúdo</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic -- Portuguese post about children being traumatised by prank videos. Not an AI-teaching video. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dfn19GGhMq2/" target="_blank" rel="noopener">vid_m080</a></td><td>studio.nutty</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Not AI-teaching -- Adobe MAX 2026 Sneaks demo of Project Deep Brush (Preview): AI brushes that paint in perspective, wrap text onto fabric, do face-aware lighting and recolor crowds. Media-understanding verified (reel watched via browser su…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dfks1Guuzhj/" target="_blank" rel="noopener">vid_m081</a></td><td>Visually</td><td><span class="chip">ai-ad-creation</span></td><td>What it is: Not AI-teaching -- promo for an unnamed AI video tool (&#x27;Stop using Claude for your videos&#x27;, made an Upwork-style explainer ad in 5 minutes with one prompt, comment PROMPT for access). Media-understanding verified (reel watched via browser s…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/De2ZY-7RFhZ/" target="_blank" rel="noopener">vid_m082</a></td><td>Josh New</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic -- food recipe (high-protein banana pudding). Same precedent as the Nov 10 recipe drops.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DenJzDzjhrg/" target="_blank" rel="noopener">vid_m083</a></td><td>Trending OpenSource Projects</td><td><span class="chip">ai-ad-creation</span></td><td>What it is: Not AI-teaching -- promo for &#x27;Turnitout&#x27;, a rule-based tool that strips hidden AI watermarks/metadata from academic papers and code to evade AI detection (&#x27;Plagiarism &amp; AI Footprint Removal Engine&#x27;). Media-understanding verified (reel watch…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfXZfpvvT91/" target="_blank" rel="noopener">vid_m084</a></td><td>Anastasia Klohn | Nutrition Coach &amp; Educator</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic -- food recipe (banana pudding / Greek yogurt dessert). Same precedent as the Nov 10 recipe drops.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DcBoAPIhQqC/" target="_blank" rel="noopener">vid_m085</a></td><td>August Axtman</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic -- food recipe (Greek yogurt cheesecake dessert). Same precedent as the Nov 10 recipe drops.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DbGpvMzpPZH/" target="_blank" rel="noopener">vid_m086</a></td><td>Broji</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic -- food recipe (Greek yogurt + cherry pie filling). Same precedent as the Nov 10 recipe drops.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfoJqInFS11/" target="_blank" rel="noopener">vid_m087</a></td><td>Nick Kazamias</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic -- food recipe (low-calorie high-protein Nutella spread). Same precedent as the Nov 10 recipe drops.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Da3IFwjPy2m/" target="_blank" rel="noopener">vid_m088</a></td><td>Jen Dreger | Easy, Healthy Recipes</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic -- food recipe (protein chocolate mousse with cottage cheese). Same precedent as the Nov 10 recipe drops.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfmN79uN6t6/" target="_blank" rel="noopener">vid_m089</a></td><td>Liz Douglas</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic -- food recipe (chocolate mousse, &#x27;comment SAVE and I&#x27;ll DM you a link&#x27;). Same precedent as the Nov 10 recipe drops.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfoNErRCHJk/" target="_blank" rel="noopener">vid_m090</a></td><td>Paulina | Study &amp; Life</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic -- study-tips reel (&#x27;comment PLAN and I&#x27;ll send you the link&#x27;, textbook plan / study hacks). Not an AI-teaching video. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DaqOpxvPJQn/" target="_blank" rel="noopener">vid_m091</a></td><td>orbismedia_</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Unverifiable thin caption — claims a cheaper alternative to some API (&#x27;you are paying almost 3x on API costs&#x27;) with a setup-tutorial link, but no tool, API or system is named and nothing beyond the caption could be verified (no media-unders…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfXTN99ttWo/" target="_blank" rel="noopener">vid_m092</a></td><td>dallasdavidsonmarketing</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Unverifiable thin caption — only &quot;Comment &#x27;pixel&#x27; and I&#x27;ll send you a better pixel option&quot;; no tool or technique is named and nothing beyond the caption could be verified (no media-understanding calls this run). Dropped per Mohamed&#x27;s vet-be…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DdpOHjTJb7F/" target="_blank" rel="noopener">vid_m093</a></td><td>matt.heywood47</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic — differential equations lesson (grill chicken cooking time); engineering/math education, not AI. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dfxx-orp0Lm/" target="_blank" rel="noopener">vid_m094</a></td><td>matt.heywood47</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic — differential equations lesson (cooling a can of pop in the fridge); engineering/math education, not AI. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfuwNzliQL8/" target="_blank" rel="noopener">vid_m095</a></td><td>qinacademy</td><td><span class="chip">ai-ad-creation</span></td><td>What it is: Not AI-teaching -- Qin Academy promo for the free ENGR 213 Midterm 2 review (Sat Nov 14, 6-8 PM, downtown Montreal). Shared by Mohamed to the Engr 213 group, Moussa Ghanem and jiamn.lx. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/p/DfksJrPkgT2/" target="_blank" rel="noopener">vid_m096</a></td><td>jmcconline</td><td><span class="chip">ai-ad-creation</span></td><td>What it is: Off-topic -- Step Into Case competition promo from JMCC (case competition for beginners, no experience needed). Shared by Mohamed to both the Engr 213 and Indu 211 class groups. Not an AI-teaching video. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DflJS_nvzw9/" target="_blank" rel="noopener">vid_m097</a></td><td>juiceditup</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic — university/midterms meme (&#x27;everythings falling apart rn&#x27;). Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfoHRc-ItPQ/" target="_blank" rel="noopener">vid_m098</a></td><td>Dhriti Jotwani</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic -- meme/comedy about Jensen Huang and the AI bubble (&#x27;The last one&#x27;). Entertainment, not an AI-teaching video. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/p/Dfhy5vikejR/" target="_blank" rel="noopener">vid_m099</a></td><td>luizfernandoroxo</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic -- Portuguese satirical meme carousel mocking NVIDIA CEO Jensen Huang over an alleged affair (distracted-boyfriend format, stock plunge jokes). Resolved via browser.open page summary (instagram-cli returned no posts for this /p/ U…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfUgrGiSsSR/" target="_blank" rel="noopener">vid_m100</a></td><td>borderfallmaps</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic — Battle of Mu&#x27;tah Islamic history explainer, not an AI-teaching video. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/p/DfVPCZvmPaR/" target="_blank" rel="noopener">vid_m101</a></td><td>pathradecha</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic — fitness-coach motivational quote carousel (&#x27;keep showing up&#x27;); not an AI-teaching video. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfR_jI9hOZ8/" target="_blank" rel="noopener">vid_m102</a></td><td>gautham.govindan</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic — standup comedy clip. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfubobCR0zT/" target="_blank" rel="noopener">vid_m103</a></td><td>patsunrick</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic — hand-controlled drone hardware demo; no AI tool or technique named. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfqfM1ksAFX/" target="_blank" rel="noopener">vid_m104</a></td><td>virangini</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic -- study/calculus clip (&#x27;my fav part&#x27;, #math #studytok #calculus #uoft #student), shared by Mohamed to the Goodnotes thread. Not an AI-teaching video. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfmsfikpY_T/" target="_blank" rel="noopener">vid_m105</a></td><td>Younus Ahmed</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic -- comedy sketch (perfumer meeting). Entertainment, not an AI-teaching video. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/p/DfqFaB-RJ4k/" target="_blank" rel="noopener">vid_m106</a></td><td>masjidmakkahhalaqa</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic -- Masjid Makkah Halaqa flyer image (weekly halaqa with Maulana Omar Multani, Fri Nov 13 after Maghrib). Resolved via browser.open page summary (instagram-cli returned no posts for this /p/ URL). Not an AI-teaching video. Dropped …</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DflNeY9BppU/" target="_blank" rel="noopener">vid_m107</a></td><td>adrian__peru</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic -- comedy sketch about interview nerves / medication. Entertainment, not an AI-teaching video. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dd153srGS-3/" target="_blank" rel="noopener">vid_m108</a></td><td>radi_amine</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic -- French comedy sketch (&#x27;Il decouvre le best de sa copine en direct&#x27;). Entertainment, not an AI-teaching video. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/p/Dfc-1uAtGtx/" target="_blank" rel="noopener">vid_m109</a></td><td>Muslim Student Association at Concordia University</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic — MSA Concordia Brothers&#x27; MMA session announcement (Sat Nov 14, Unicity Gym, $10), not an AI-teaching video. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/p/DfUv-Ghm_54/" target="_blank" rel="noopener">vid_m110</a></td><td>iccbrothershalaqa</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic — ICC Brossard career orientation fair announcement (Jan 23, 2027), shared by Nour Sultani; not an AI-teaching video. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfR4ZcpBXve/" target="_blank" rel="noopener">vid_m111</a></td><td>vt_msa</td><td><span class="chip">other-ai-video-tools</span></td><td>What it is: Off-topic — MSA Roblox event recap, not an AI-teaching video. Dropped per Mohamed&#x27;s filter.</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DeeqATHB7jf" target="_blank" rel="noopener">vid_m112</a></td><td>jamieegabrielle</td><td><span class="chip">ai-ad-creation</span></td><td>A woman with long dark hair wearing a navy pinstripe blazer sits at a desk holding a patterned mug and speaks directly to camera about &#x27;HOW TO: consistency.&#x27; She outlines her five-step process for staying consistent while building a visible…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DdpbF8uCMyq" target="_blank" rel="noopener">vid_m113</a></td><td>esenciadental.clinic</td><td><span class="chip">ai-ad-creation</span></td><td>A female dentist in light green scrubs sits in a dental office under an exam light and presents a &#x27;Ranking de redflags en una primera cita&#x27; focused on oral hygiene. Speaking to the camera in Spanish, she rates seven scenarios on a 1-to-10 s…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Ddewmw8PGtf" target="_blank" rel="noopener">vid_m114</a></td><td>wolfofwallst</td><td><span class="chip">other-ai-video-tools</span></td><td>A man in a white shirt sits at a desk with a microphone, speaking directly to camera against a backdrop of windows showing greenery. He delivers a sales lesson stating that &#x27;people only spend money on three things.&#x27; First is SOLUTIONS — peo…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dc9eLjnt223" target="_blank" rel="noopener">vid_m115</a></td><td>mariadonofrio_</td><td><span class="chip">ai-ad-creation</span></td><td>Creator Maria D&#x27;Onofrio (@mariadonofrio_) lies in grass surrounded by fallen apples while speaking directly to camera about her experience building content. She explains that posting made her feel like becoming a different person each time,…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfN_Zw2iQtY" target="_blank" rel="noopener">vid_m116</a></td><td>avigrondin</td><td><span class="chip">ai-ad-creation</span></td><td>A bearded man in a cap speaks to camera while holding a microphone, explaining &#x27;Parasite SEO&#x27; — defined as &#x27;Borrowed Authority&#x27; — as a method to rank on Google&#x27;s first page within two weeks without editing your own site. He illustrates the …</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfKmIL6C5vq" target="_blank" rel="noopener">vid_m117</a></td><td>poninstudio</td><td><span class="chip">ai-motion-graphics</span></td><td>This is a polished promotional video for &#x27;Ponin Studio,&#x27; a motion design company. The video opens with minimalist text on a textured off-white background stating, &#x27;You built something brilliant.&#x27; It transitions through colorful abstract 3D …</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/De_MJ_oIfyY" target="_blank" rel="noopener">vid_m118</a></td><td>vibha.in.progress</td><td><span class="chip">ai-auto-editing</span></td><td>A woman with long dark hair wearing a pale yellow long-sleeve top and black pants sits indoors and presents a tutorial showcasing 24 distinct video effects. Throughout the video, she holds a small microphone and speaks directly to camera wh…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DeqbgAYthQw" target="_blank" rel="noopener">vid_m119</a></td><td>sulansart</td><td><span class="chip">ai-auto-editing</span></td><td>The video opens with a young woman looking at her phone while two others stand behind her, with on-screen text reading &#x27;deleting capcut after this,&#x27; setting up a humorous premise about AI editing. The view then shifts to a screen recording …</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DeqYGbWC_tR" target="_blank" rel="noopener">vid_m120</a></td><td>legmaxxing</td><td><span class="chip">ai-ad-creation</span></td><td>A young Black man presents himself as proof that adults can grow taller, stating he went from 5&#x27;11&quot; to 6&#x27;4&quot; at age 25 using &#x27;scientifically proven workouts.&#x27; The video is structured as a split-screen vlog with him speaking in the corner whi…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DebcjHSqdnJ" target="_blank" rel="noopener">vid_m121</a></td><td>infinitemindsai</td><td><span class="chip">cinematic-ai-video</span></td><td>This AI-generated short presents the 2026 Ballon d&#x27;Or ceremony as a full heist-movie parody set in London. After arriving on the red carpet, football stars attend the gala where the presenter announces the winner. Mid-ceremony, the trophy v…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DeT-EekJfWe" target="_blank" rel="noopener">vid_m122</a></td><td>madebyprabhat</td><td><span class="chip">realtor-reels</span></td><td>The video is a Hindi-language promotional tutorial for an AI-powered real estate video editing tool. It opens with a three-panel montage of women in stylish outfits (one on a balcony labeled &#x27;Ludhiana&#x27;, one by a pool with text &#x27;If your man …</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DeRdWfBj34D" target="_blank" rel="noopener">vid_m123</a></td><td>brochbuilds</td><td><span class="chip">ai-ad-creation</span></td><td>A man speaks directly to camera while holding a small microphone, demonstrating a lead-generation workflow combining &#x27;Claude Code&#x27; and &#x27;Jev&#x27;. On-screen graphics show a map of Texas with pins appearing as the tool finds dentists. He states t…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DeMmnl5sLVC" target="_blank" rel="noopener">vid_m124</a></td><td>kreatively.ke</td><td><span class="chip">ai-ad-creation</span></td><td>The video is a short promotional/tutorial clip advocating for consolidating AI workflows into Invideo&#x27;s MCP (Model Context Protocol) system. It opens with text &#x27;Stop Using Different Applications!&#x27; alongside icons for ChatGPT, Claude, Invide…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DeHfH82IKRR" target="_blank" rel="noopener">vid_m125</a></td><td>sharksteam.sc</td><td><span class="chip">other-ai-video-tools</span></td><td>This is a high-production campaign video for the &#x27;Honorable Student Council&#x27; at Central Asian University (CAU). It opens with seven students in matching dark blazers walking away from the camera, followed by title cards identifying the grou…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DeDw9oGgvnK" target="_blank" rel="noopener">vid_m126</a></td><td>mimi.mosaic</td><td><span class="chip">ai-ad-creation</span></td><td>A woman lying in bed with dark circles under her eyes introduces a tutorial with on-screen text &#x27;MOTION editors are cooked.&#x27; She then demonstrates on her laptop how to integrate the AI assistant Claude with the Motion platform. Using a styl…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dd9gL55jiCM" target="_blank" rel="noopener">vid_m127</a></td><td>programmergrind</td><td><span class="chip">other-ai-video-tools</span></td><td>The video opens with a brief clip of a man throwing a basketball indoors toward a balcony. It then cuts to a man named Danny in a bedroom, wearing headphones and sitting at a desk. On screen, a visualization shows six AI agents (claude-1 to…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dd9ACeIhpaf" target="_blank" rel="noopener">vid_m128</a></td><td>cgsfx3d</td><td><span class="chip">cinematic-ai-video</span></td><td>This is a Woolmark advertisement presented as a cinematic short film. From the viewpoint of passengers on a city bus and in a car, discarded synthetic clothing on a sidewalk suddenly animates and runs through urban streets as a human-shaped…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DdxFWm0vaRn" target="_blank" rel="noopener">vid_m129</a></td><td>lovingsia_</td><td><span class="chip">other-ai-video-tools</span></td><td>A woman wearing a yellow fleece jacket speaks directly to camera, offering &#x27;3 of the BEST conversation starters (MEN- STEAL THESE!)&#x27; for dating apps. She explains these are real openers she received and immediately replied to because they c…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Ddtt8NFCUSp" target="_blank" rel="noopener">vid_m130</a></td><td>itstundeanthony</td><td><span class="chip">ai-ad-creation</span></td><td>A male creator presents a &#x27;Fact or Hype?&#x27; review of an AI tool called MiroFish. The video opens with clips of another presenter promoting the tool as able to &#x27;predict anything before it happens&#x27; by using hundreds of simulated AI personas. T…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Ddp3-dTuaqj" target="_blank" rel="noopener">vid_m131</a></td><td>mmaximus.soares</td><td><span class="chip">ai-motion-graphics</span></td><td>A creator films himself at home showing a laptop screen to demonstrate that AI can now fully edit YouTube videos. On-screen text reads &#x27;AI can edit full YT videos 😱&#x27;. He plays back a first example where he speaks into a microphone, pointing…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DdR32Wpy4mg" target="_blank" rel="noopener">vid_m132</a></td><td>lightyear.residency</td><td><span class="chip">ai-ad-creation</span></td><td>This is a promotional video for Lightyear Residency, a San Francisco-based program for startup founders. It opens in black-and-white with the text &#x27;LIGHTYEAR RESIDENCY&#x27; over the Golden Gate Bridge, followed by archival-style footage of Stev…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DdEoGT7xnn_" target="_blank" rel="noopener">vid_m133</a></td><td>_royulz_productionz</td><td><span class="chip">other-ai-video-tools</span></td><td>At night on a city street corner, a young man films himself approaching a group of young women. He focuses on a curly-haired woman in a black top, asking her name, where she&#x27;s from, and if she goes to school nearby. He delivers flirtatious …</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DdB74B4zxq7" target="_blank" rel="noopener">vid_m134</a></td><td>androguruji</td><td><span class="chip">cinematic-ai-video</span></td><td>The video is a promotional tutorial in Hindi showcasing how to create real-estate social media videos using the AI platform Moonshot (makemoonshot.co). It opens with clips of presenters — a woman in Ludhiana and a man in front of a modern h…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dc_IYkpNeRe" target="_blank" rel="noopener">vid_m135</a></td><td>amir.deleon</td><td><span class="chip">ai-ad-creation</span></td><td>Presenter Amir De Leon reviews the all-new XPENG GX SUV in Dubai, opening with the line that he used to think no car could have it all until the GX arrived. The video showcases the vehicle as ultra-luxurious, highlighting automated features…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dc0Py_FE8j3" target="_blank" rel="noopener">vid_m136</a></td><td>createcontent.club</td><td><span class="chip">ai-ad-creation</span></td><td>A young male creator wearing a black cap and glasses sits at a desk with a microphone and demonstrates &#x27;Editing with Claude.&#x27; He shows DaVinci Resolve on screen and explains that installing the open-source &#x27;resolve-claude-mcp&#x27; extension fro…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/Dcy7M-KORPt" target="_blank" rel="noopener">vid_m137</a></td><td>calshrimp</td><td><span class="chip">ai-motion-graphics</span></td><td>The video is a split-screen recording from the Monkey.app video chat platform. The top panel shows a young woman (username celestixll, United States) reacting, while the bottom panel shows a young man with curly hair in a blue shirt. He sur…</td></tr>
+<tr><td><a href="https://www.instagram.com/p/Dcvt-6hlfNL" target="_blank" rel="noopener">vid_m138</a></td><td>jmu_lsa</td><td><span class="chip">ai-ad-creation</span></td><td>What it is: org carousel promo [Media analysis returned empty — pending re-study.]</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DcvVp-Qof2x" target="_blank" rel="noopener">vid_m139</a></td><td>arsacre5</td><td><span class="chip">melissa-vision-pitch</span> <span class="chip">realtor-reels</span></td><td>This is a high-energy, stylized 3D animated advertisement for &#x27;SoaSWAVE,&#x27; a motion graphics course. The video opens on a purple-themed desk with a smartphone showing the time 9:41 and incoming messages asking when the course will launch. An…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DcmjJqHOYZ4" target="_blank" rel="noopener">vid_m140</a></td><td>harryisfr</td><td><span class="chip">other-ai-video-tools</span></td><td>The video shows a split-screen Omegle-style interaction. A blonde woman in a room with pink LED lights tells a young man wearing headphones, &#x27;Wait, I think I saw you on Spotify.&#x27; When he asks &#x27;I&#x27;m Spotify?&#x27;, she replies, &#x27;Yeah, you were lis…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DcMId2mSGfT" target="_blank" rel="noopener">vid_m141</a></td><td>designwithcharly</td><td><span class="chip">ai-auto-editing</span></td><td>A young woman with long dark hair sits at a desk typing on a MacBook Air. On-screen text reads &quot;I use capcut to edit my videos&quot; with nauseated-face emojis, and she reacts with wide-eyed shock and disgust, establishing a comedic premise that…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DcEkzOsurjk" target="_blank" rel="noopener">vid_m142</a></td><td>lauspenha</td><td><span class="chip">ai-motion-graphics</span></td><td>A young woman with dark curly hair, wearing a light blue t-shirt and hoop earrings, is filmed in a dimly lit indoor setting with a staircase railing visible in the background. She holds a blue and silver beverage can (appearing to be an ene…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DZWQLaksluN" target="_blank" rel="noopener">vid_m143</a></td><td>amandafromtoast</td><td><span class="chip">cinematic-ai-video</span></td><td>The video opens with an extreme close-up of gloved hands precisely slicing a white onion on a cutting board. The camera slowly pulls back to reveal a Black male chef wearing a white shirt, dark apron, black gloves, glasses, and an orange be…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DYgukfFNZD5" target="_blank" rel="noopener">vid_m144</a></td><td>eddynthings</td><td><span class="chip">other-ai-video-tools</span></td><td>The video is a short-form educational piece about AI application security, framed with a comedic skit. It starts with text &#x27;POV: your startup gets hacked&#x27; while a person lies on a couch hugging a large plush bear, with captions explaining s…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DXBBVSVjoSy" target="_blank" rel="noopener">vid_m145</a></td><td>justinudo999</td><td><span class="chip">ai-motion-graphics</span></td><td>This is a social media reel posted April 11, 2026 by creator Justin Udo (@justinudo999), reposting content from @msixtv at The University of Alabama. The video opens on a sunny campus sidewalk with the text overlay &#x27;Asking Girls to REJECT M…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DWxIAsIisLw" target="_blank" rel="noopener">vid_m146</a></td><td>jade.nyasia</td><td><span class="chip">ai-motion-graphics</span></td><td>A woman speaks directly to the camera from what appears to be her living room, with the on-screen text &#x27;shooting your shot 101: gyms&#x27; displayed throughout. She delivers dating advice specifically for meeting people at the gym, emphasizing r…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DYVIxyBJCWr" target="_blank" rel="noopener">vid_m147</a></td><td>claudia_coulombe</td><td><span class="chip">ai-motion-graphics</span></td><td>The video presents a serene outdoor scene at a park in Québec. It opens with a high-angle view looking down a wooden staircase toward a strikingly turquoise lake surrounded by dense green trees under a partly cloudy sky. On-screen text read…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/De7kF6FqtIc/" target="_blank" rel="noopener">vid_m148</a></td><td>Sobhi Hodhod</td><td><span class="chip">other-ai-video-tools</span></td><td>The video is shot from the perspective of a student in a university lecture hall, looking toward the front where a projector screen displays a colorful image of a cat wearing glasses. Overlaid white text reads, &#x27;When your professor tries to…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfSsEJhSFWb/" target="_blank" rel="noopener">vid_m149</a></td><td>Moussa Ghanem</td><td><span class="chip">ai-motion-graphics</span></td><td>The video takes place in a busy commercial gym. A young man in a blue t-shirt and light sweatpants picks up two very large dumbbells from a rack. On-screen text reads, &#x27;When you grab weights that are too heavy and the dude next to you start…</td></tr>
+<tr><td><a href="https://www.instagram.com/p/DfQXEgZRDLd/" target="_blank" rel="noopener">vid_m150</a></td><td>Georges Nahra</td><td><span class="chip">ai-ad-creation</span></td><td>The image is a vertical promotional poster for an &quot;INTRODUCTORY CASE COMPETITION&quot; presented by Scotiabank. At the top, white text reads &quot;PRESENTED BY Scotiabank&quot; with the bank&#x27;s logo. The central visual shows a Black man in a maroon suit, w…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DcOmE4_xHiC" target="_blank" rel="noopener">vid_m151</a></td><td>abigaildaniellla</td><td><span class="chip">ai-motion-graphics</span></td><td>A woman with curly hair speaks directly to camera, holding a microphone, explaining that most people don&#x27;t have time to edit talking-head videos but want them to look engaging. She demonstrates the process using the AI tool &#x27;Opus Producer,&#x27;…</td></tr>
+<tr><td><a href="https://www.instagram.com/p/DdhwpZlCvcD" target="_blank" rel="noopener">vid_m152</a></td><td>firetungtung</td><td><span class="chip">ai-ad-creation</span></td><td>What it is: carousel, not a video (artist promo) [Media analysis returned empty — pending re-study.]</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DZYVT8hRwSv" target="_blank" rel="noopener">vid_m153</a></td><td>davidatpgp</td><td><span class="chip">ai-auto-editing</span></td><td>A young man wearing headphones speaks directly to camera while screen-sharing his computer. He explains a tactic for when a LinkedIn message to a target contact at a dream company goes unanswered. He shows a LinkedIn profile for Kristin Poh…</td></tr>
+<tr><td><a href="https://www.instagram.com/p/Df2WoCiAjft" target="_blank" rel="noopener">vid_m154</a></td><td>blackmedia.ve</td><td><span class="chip">ai-ad-creation</span></td><td>What it is: no analysis returned; editing-service promo, unverifiable style [Media analysis returned empty — pending re-study.]</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfYUg5GMn71" target="_blank" rel="noopener">vid_m155</a></td><td>jacklaydenn</td><td><span class="chip">ai-motion-graphics</span></td><td>A young man in all-black clothing sits on a green park bench holding a small microphone and speaks directly to camera. He claims this is &#x27;exactly how you&#x27;re going to gain thousands of followers in the next 90 days&#x27; and says he will test fiv…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfP57_npU3i" target="_blank" rel="noopener">vid_m156</a></td><td>prime_animator</td><td><span class="chip">ai-ad-creation</span></td><td>A woman with long blonde hair wearing a brown New York Yankees cap and a dark denim jacket speaks directly to the camera from an office setting. She delivers a message about content marketing, stating that if prospects need to meet you to u…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfAm33Yv2HY" target="_blank" rel="noopener">vid_m157</a></td><td>ritaylasmariposas</td><td><span class="chip">other-ai-video-tools</span></td><td>The video introduces Rita, a curly-haired woman with glasses, who three months ago decided to start creating content. Despite her efforts, Instagram Insights shown on her phone reveal 75,800 views but a net loss of 4 followers. In a video c…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DewsMDNiRVV" target="_blank" rel="noopener">vid_m158</a></td><td>yana.kunayeva</td><td><span class="chip">ai-ad-creation</span></td><td>A woman with short dark hair, wearing sunglasses, a light blue blazer, white top, and white trousers, performs a lip-sync parody of &#x27;Call Me Maybe&#x27; inside a bright, modern luxury living room with large windows. From a first-person perspecti…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DekZINYPpXw" target="_blank" rel="noopener">vid_m159</a></td><td>bellucciproduction</td><td><span class="chip">ai-ad-creation</span></td><td>A young man in a light blue button-down shirt and white pants delivers a direct-to-camera pitch for Bellucci Production, aimed at West Palm Beach entrepreneurs and business owners. Walking down a palm-lined street and later standing by a ma…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DeOkA2WDCQ0" target="_blank" rel="noopener">vid_m160</a></td><td>aaun.ceo</td><td><span class="chip">realtor-reels</span></td><td>A male creator wearing sunglasses and a red-and-black polo shirt speaks directly to camera in Hindi/Urdu, promoting himself as teaching real estate video editing in CapCut PC (Day 11). The top half of the screen shows stock real estate foot…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DdRhI_9v5Tu" target="_blank" rel="noopener">vid_m161</a></td><td>ghina.fleyfel</td><td><span class="chip">other-ai-video-tools</span></td><td>A woman in a white one-shoulder dress sits in a studio with professional lighting and speaks directly to camera in Arabic, addressing doctors who are posting videos online. She explains that many doctor videos fail because viewers scroll pa…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DdQVTFRJHUX" target="_blank" rel="noopener">vid_m162</a></td><td>trebledsolutions</td><td><span class="chip">ai-ad-creation</span></td><td>A young woman with glasses, wearing a light green sleeveless crop polo and wide-leg jeans, stands outdoors on a tiled patio with flowering bushes behind her to deliver a social media marketing lesson. Posted by @trebledsolutions on Septembe…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DcjMOwoPtgC" target="_blank" rel="noopener">vid_m163</a></td><td>ghina.fleyfel</td><td><span class="chip">ai-ad-creation</span></td><td>A female presenter, identified in the post as Ghina Fleyfel, a photographer/videographer who helps doctors build personal brands, delivers an instructional Reel in Arabic about creating viral content. Seated in an elegant room wearing a lig…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DcebGmDhJbj" target="_blank" rel="noopener">vid_m164</a></td><td>joseoliveirafilms</td><td><span class="chip">realtor-reels</span></td><td>A man in a blue checkered shirt watches and reacts to a series of viral real-estate marketing videos featuring women posing at luxury properties. The clips display on-screen text such as &#x27;Ladies, if your man can&#x27;t afford this home you need …</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DaLdv8hx87v" target="_blank" rel="noopener">vid_m165</a></td><td>claudiorivera.910</td><td><span class="chip">realtor-reels</span></td><td>The video is a short-form marketing piece aimed at videographers, featuring two speakers in a bright, modern home interior. A blonde woman in a black top and white pants introduces herself as a realtor, stating she appears on camera every w…</td></tr>
+<tr><td><a href="https://www.instagram.com/reel/DfNdPp5S_Fx" target="_blank" rel="noopener">vid_m166</a></td><td>aimortal.ig</td><td><span class="chip">ai-motion-graphics</span></td><td>This is an animated promotional video for a software tool called ECC (Everything Claude Code). Presented in a blocky, Minecraft-style 3D animation, the narrator explains that one developer created an AI system equivalent to a whole engineer…</td></tr>
+  </table>
+  <div style="height:18px"></div>
+  <table>
+    <tr><th>Field</th><th>What it holds</th></tr>
+<tr><td>id</td><td>Unique reel id, e.g. &quot;vid_001&quot;.</td></tr><tr><td>url</td><td>Full Instagram reel URL, e.g. &quot;https://www.instagram.com/reel/DfkBM9XuE_L/&quot;.</td></tr><tr><td>creator</td><td>Instagram handle of the reel&#x27;s creator, without the @ (e.g. &quot;melissaortarealtor&quot;).</td></tr><tr><td>style_tags</td><td>List of style slugs from data/styles.json that this reel demonstrates (e.g. [&quot;kelsie-flythrough&quot;, &quot;melissa-vision-pitch&quot;]).</td></tr><tr><td>notes</td><td>Short note on what the reel shows and why it was harvested — which effect or move it demonstrates.</td></tr>
+  </table>
+</section>
+
+<footer>
+  Master Video Styles — built from the video style library. Data lives in <code>data/styles.json</code> and <code>data/reels.json</code>; this page is generated by <code>scripts/build.py</code>.<br>
+  Sumit reel: <a href="https://www.instagram.com/reel/DfRAkn4xIZy/" target="_blank" rel="noopener">instagram.com/reel/DfRAkn4xIZy</a> ·
+  Kelsie reel: <a href="https://www.instagram.com/reel/DewTzCzxR9q/" target="_blank" rel="noopener">instagram.com/reel/DewTzCzxR9q</a> ·
+  Wilmore tour: <a href="https://www.instagram.com/reel/DfzaFE1xv02/" target="_blank" rel="noopener">instagram.com/reel/DfzaFE1xv02</a> ·
+  Melissa pitch: <a href="https://www.instagram.com/reel/DfkBM9XuE_L/" target="_blank" rel="noopener">instagram.com/reel/DfkBM9XuE_L</a><br>
+  Updated Nov 17, 2026.
+</footer>
+
+</div>
+<script>
+document.getElementById('filter').addEventListener('input', function(e){
+  var q = e.target.value.trim().toLowerCase();
+  document.querySelectorAll('#cards .card').forEach(function(c){
+    c.style.display = (!q || c.dataset.search.indexOf(q) !== -1) ? '' : 'none';
+  });
+});
+var rf = document.getElementById('reel-filter');
+if (rf) rf.addEventListener('input', function(e){
+  var q = e.target.value.trim().toLowerCase();
+  document.querySelectorAll('#reel-table tr').forEach(function(row, i){
+    if (i === 0) return;
+    row.style.display = (!q || row.textContent.toLowerCase().indexOf(q) !== -1) ? '' : 'none';
+  });
+});
+document.querySelectorAll('button.copy').forEach(function(b){
+  b.addEventListener('click', function(){
+    var t = document.getElementById(b.dataset.target).innerText;
+    navigator.clipboard.writeText(t).then(function(){
+      b.textContent = 'Copied ✓';
+      setTimeout(function(){ b.textContent = 'Copy the prompt'; }, 2000);
+    });
+  });
+});
+</script>
+</body>
+</html>
