@@ -209,7 +209,16 @@ export default function App() {
       </div>
 
       <div className="relative z-10 shell max-w-[1700px] mx-auto px-4 sm:px-8 py-6">
-        {/* Navigation Bar */}
+        {/* Navigation Bar: slim on the AI Editor, full studio tabs elsewhere */}
+        {activeTab === 'editor' ? (
+          <header className="mb-4 flex items-center justify-between gap-3 py-1 text-sm">
+            <a href="/" className="flex items-center gap-2 font-semibold text-white no-underline">
+              <span className="grid h-7 w-7 place-items-center rounded-lg bg-[#fafafa] text-[#09090b]"><Clapperboard size={15} /></span>
+              Master Video Styles
+            </a>
+            <button onClick={() => setActiveTab('director')} className="rounded-lg px-3 py-1.5 text-xs text-[#a1a1aa] hover:bg-white/5 hover:text-white">Studio tools</button>
+          </header>
+        ) : (
         <header className="flex flex-wrap items-center justify-between gap-4 py-4 px-6 rounded-2xl bg-[#111113]/80 backdrop-blur-md border border-white/10 shadow-2xl mb-8">
           <a href="/" className="flex items-center gap-3 no-underline" aria-label="Master Video Styles home">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#27272a] to-[#3f3f46] border border-white/20 flex items-center justify-center text-white shadow-lg">
@@ -231,7 +240,7 @@ export default function App() {
             <button
               onClick={() => setActiveTab('editor')}
               className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all flex items-center gap-2 ${
-                activeTab === 'editor' ? 'bg-[#27272a] text-white shadow-md' : 'text-[#a1a1aa] hover:text-white'
+                'text-[#a1a1aa] hover:text-white'
               }`}
             >
               <Wand2 size={14} /> AI Editor
@@ -276,6 +285,7 @@ export default function App() {
             <span>{state.profiles.length} Styles · {studiedReels.length} Studied Reels</span>
           </div>
         </header>
+        )}
 
         {activeTab === 'editor' && <AIEditorStudio />}
 
