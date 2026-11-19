@@ -211,7 +211,7 @@ export default function App() {
       <div className="relative z-10 shell max-w-[1700px] mx-auto px-4 sm:px-8 py-6">
         {/* Navigation Bar */}
         <header className="flex flex-wrap items-center justify-between gap-4 py-4 px-6 rounded-2xl bg-[#141815]/80 backdrop-blur-md border border-white/10 shadow-2xl mb-8">
-          <div className="flex items-center gap-3">
+          <a href="/" className="flex items-center gap-3 no-underline" aria-label="Master Video Styles home">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#263e34] to-[#456b5b] border border-white/20 flex items-center justify-center text-white shadow-lg">
               <Clapperboard size={20} />
             </div>
@@ -222,9 +222,9 @@ export default function App() {
                   Studio Pro
                 </span>
               </div>
-              <p className="text-[11px] text-[#8e988f]">Next-Gen Visual Motion & Video Architecture</p>
+              <p className="text-[11px] text-[#8e988f]">← Back to Master Video Styles</p>
             </div>
-          </div>
+          </a>
 
           {/* Navigation Pills */}
           <nav className="flex flex-wrap items-center gap-2 bg-[#0e1210]/90 p-1.5 rounded-xl border border-white/5">

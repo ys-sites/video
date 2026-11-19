@@ -31,9 +31,16 @@ Website teardown with the REA MCP (`capture_browser_scenario`, Chrome launch, ac
 | Recreate a reference reel | `JuneYaooo/rea-video` skill (staged, not approved to run) → Remotion | Pending approval |
 | Chat-to-edit in your agent | Claude Code + this repo's skills (the page exports the brief) | Ready |
 
-## APIs that would close the gaps (optional, user decides)
+## Free first (the user's rule: no paid tool where a local one will do)
 
-- **Pexels API key** (free): automatic stock B-roll search for the B-roll track.
-- **Voice isolation** (e.g. ElevenLabs or Auphonic, paid): studio-grade denoise beyond ffmpeg.
-- **Cloud GPU by the hour** (paid): eye contact, large video models, heavy matting (MASTER-ROUTER §3).
-- Not needed: an LLM API — Claude Code does the planning and editing.
+| Need | Free route in this workspace | Paid fallback only |
+|---|---|---|
+| Voice-over, cloning (consent only) | OmniVoice (`AI-Local`), Piper or Coqui (`resources/concordia/video-motion/`) | fish audio (replaces ElevenLabs) |
+| Transcripts and word timings | Whisper in the captions-skill venv; whisper.cpp / WhisperX copies | ElevenLabs Scribe, Azure STT |
+| Music beds and SFX | Code synth (`video-projects/creator-style-explainer/scripts/make_music.py`, soundtrack skill); AudioCraft/MusicGen small on CPU | ElevenLabs music/SFX, Lyria |
+| Denoise and loudness | ffmpeg `afftdn` / `arnndn` + `loudnorm` | Voice-isolation services |
+| B-roll | Your own clips; ComfyUI LTX/Wan inserts; Pexels (free key) | Seedance, Kling and other video APIs |
+| Character swap | None that fits this PC | Genjutsu (Enhancor), or a GPU rented by the hour |
+| Eye contact | Record with the script next to the lens | GPU-only tools |
+
+The site's skill stack (`master-video-styles/data/skills.json`, shown at /skills.html) lists every skill with its status and free route.

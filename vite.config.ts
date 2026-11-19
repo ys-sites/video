@@ -1,15 +1,16 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import {defineConfig, loadEnv} from 'vite';
+import {defineConfig} from 'vite';
 
 export default defineConfig(({mode}) => {
-  const env = loadEnv(mode, '.', '');
   return {
     plugins: [react(), tailwindcss()],
-    define: {
-      'process.env.GEMINI_API_KEY': JSON.stringify(process.env.GEMINI_API_KEY || env.GEMINI_API_KEY || ''),
-      'process.env.APP_URL': JSON.stringify(process.env.APP_URL || env.APP_URL || ''),
+    // The live site already serves /videos, so the editor build skips public/.
+    build: {
+      copyPublicDir: mode !== 'live',
+      // Libraries in their own chunk keep the app chunk under the 500 kB warning.
+      rolldownOptions: {output: {advancedChunks: {groups: [{name: 'vendor', test: /node_modules/}]}}},
     },
     resolve: {
       alias: {

@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
-"""Render index.html for Master Video Styles from data/styles.json + data/reels.json.
+"""Render the Master Video Styles site from the data files.
 
-Static output only: run `python3 scripts/build.py` from the project root after
-editing the data files. The deployed site needs no build step — index.html is
-plain static HTML/CSS/JS.
+Pages: index.html (home), styles.html (styles, playbooks, moves, tools),
+skills.html (skill stack) and reels.html (reel catalog). The AI Editor lives in
+editor/ and is built from the Vite app with `npm run build:live`.
+
+Run `python scripts/build.py` from master-video-styles/ after editing
+data/styles.json, data/reels.json or data/skills.json. The deployed site needs
+no build step: every page is plain static HTML/CSS/JS.
+
+The home page follows the section order of opus.pro/ai-video-editor (studied
+with the REA MCP, see docs/ai-editor-research.md); all copy is our own.
 """
 import html
 import json
@@ -12,42 +19,157 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 STYLES = json.loads((ROOT / "data" / "styles.json").read_text(encoding="utf-8"))
 REELS = json.loads((ROOT / "data" / "reels.json").read_text(encoding="utf-8"))
+SKILLS = json.loads((ROOT / "data" / "skills.json").read_text(encoding="utf-8"))
+UPDATED = "Nov 19, 2026"
+
 
 def esc(s):
     return html.escape(str(s or ""), quote=True)
 
+
 def esc_text(s):
     return html.escape(str(s or ""))
 
+
 CSS = """
-:root{--bg:#0c0c12;--panel:#15151d;--panel2:#1b1b26;--line:#262633;--text:#f5f2ea;--muted:#a7a7b8;--faint:#7c7c8f;--pink:#ff5da2;--amber:#ffb020;--violet:#8b7cff;--cyan:#22d3ee;--green:#34d399;--orange:#f97316;--yellow:#facc15;--red:#ff6b6b}
+:root{--bg:#0b0b0c;--panel:#161618;--panel2:#1e1e21;--line:#2a2a2e;--text:#f4f4f5;--muted:#a1a1aa;--faint:#8a8a93;--brand:#facc15;--pink:#ff5da2;--amber:#ffb020;--violet:#8b7cff;--cyan:#22d3ee;--green:#34d399;--orange:#f97316;--yellow:#facc15;--red:#ff6b6b;--radius:20px}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-wrap:break-word}
+img,video{max-width:100%;display:block}
 a{color:inherit}
-.wrap{max-width:1020px;margin:0 auto;padding:0 20px}
-header{padding:28px 0 8px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.logo{font-weight:800;font-size:19px;letter-spacing:-.02em}
-.logo span{color:var(--pink)}
-nav a{color:var(--muted);text-decoration:none;font-size:14px;margin-left:20px}
-nav a:hover{color:var(--text)}
-.hero{padding:56px 0 40px}
-.hero h1{font-size:clamp(38px,7vw,64px);line-height:1.05;letter-spacing:-.03em;font-weight:800}
-.hero h1 em{font-style:normal;color:var(--pink)}
-.hero p{font-size:19px;color:var(--muted);max-width:640px;margin-top:18px}
-.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
-.stat{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;color:var(--muted)}
-.stat b{color:var(--text);font-size:16px}
-.search{margin:8px 0 0}
-.search input{width:100%;max-width:520px;background:var(--panel);border:1px solid var(--line);border-radius:999px;color:var(--text);font-size:15px;padding:12px 18px;outline:none}
-.search input:focus{border-color:var(--pink)}
-section{padding:44px 0}
-h2{font-size:30px;letter-spacing:-.02em;line-height:1.15;margin-bottom:8px}
-.sub{color:var(--muted);font-size:17px;max-width:680px;margin-bottom:28px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-@media(max-width:820px){.grid{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.grid{grid-template-columns:1fr}}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:6px}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+.announce{display:block;text-align:center;font-size:14px;font-weight:600;padding:12px 16px;text-decoration:none;background:linear-gradient(90deg,#1a1708,#26210a 50%,#1a1708);border-bottom:1px solid #3a3210}
+.announce span{color:var(--brand)}
+header.top{position:sticky;top:0;z-index:20;background:rgba(11,11,12,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #18181b}
+header.top .wrap{display:flex;align-items:center;gap:20px;min-height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.02em;text-decoration:none;white-space:nowrap}
+.logo i{width:30px;height:30px;border-radius:9px;background:var(--brand);color:#111;display:grid;place-items:center;font-style:normal;font-size:15px}
+.menu{display:flex;gap:4px;margin:0 auto}
+.menu a{color:var(--muted);text-decoration:none;font-size:15px;font-weight:600;padding:8px 12px;border-radius:10px;white-space:nowrap}
+.menu a:hover,.menu a[aria-current]{color:var(--text);background:#18181b}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:15px;padding:12px 22px;border-radius:999px;text-decoration:none;border:1px solid transparent;white-space:nowrap;cursor:pointer;font-family:inherit}
+.btn.light{background:#fff;color:#111}
+.btn.light:hover{background:#e4e4e7}
+.btn.brand{background:var(--brand);color:#111}
+.btn.ghost{border-color:var(--line);color:var(--text);background:transparent}
+.btn.ghost:hover{background:#18181b}
+.btn.sm{padding:9px 16px;font-size:14px}
+.hero{text-align:center;padding:88px 0 40px;position:relative}
+.hero::before{content:"";position:absolute;inset:-60px 0 auto;height:420px;background:radial-gradient(ellipse at 50% 0,rgba(250,204,21,.13),transparent 65%);pointer-events:none}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--text)}
+.hero h1{font-size:clamp(40px,7.4vw,84px);line-height:1.02;letter-spacing:-.045em;font-weight:800;margin:18px auto 0;max-width:900px}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero .lede{font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:640px;margin:20px auto 0}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:52px;text-align:center}
+.path{background:var(--panel);border:1px solid #202024;border-radius:var(--radius);padding:36px 28px;display:flex;flex-direction:column;align-items:center;gap:14px;text-decoration:none;transition:border-color .2s,transform .2s}
+.path:hover{border-color:#3f3f46;transform:translateY(-2px)}
+.path .kicker{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.path h2{font-size:clamp(21px,2.4vw,26px);line-height:1.2;letter-spacing:-.02em;max-width:360px}
+.path .btn{margin-top:8px}
+.mini{width:100%;max-width:300px;height:96px;border-radius:14px;background:#0f0f11;border:1px solid var(--line);position:relative;overflow:hidden}
+.mini .tr{position:absolute;left:12px;right:12px;height:10px;border-radius:4px}
+.mini .tr b{position:absolute;top:0;bottom:0;border-radius:4px}
+.mini .ph{position:absolute;top:8px;bottom:8px;width:2px;background:var(--brand);left:58%;animation:scan 4s linear infinite}
+@keyframes scan{from{left:8%}to{left:92%}}
+.chipwall{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;max-width:320px;min-height:96px;align-content:center}
+.chipwall span{font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px;background:color-mix(in srgb,var(--c) 16%,transparent);color:var(--c)}
+section{padding:72px 0}
+.center{text-align:center}
+h2.big{font-size:clamp(30px,4.4vw,48px);letter-spacing:-.035em;line-height:1.08;font-weight:800}
+.sub{color:var(--muted);font-size:clamp(16px,1.7vw,18px);max-width:700px;margin-top:14px}
+.center .sub{margin-left:auto;margin-right:auto}
+.numbers{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:32px}
+.numbers div{background:var(--panel);border:1px solid #202024;border-radius:16px;padding:20px 12px;text-align:center}
+.numbers b{display:block;font-size:clamp(26px,3vw,34px);letter-spacing:-.03em}
+.numbers span{font-size:13px;color:var(--muted)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
+.shot{background:var(--panel);border:1px solid #202024;border-radius:var(--radius);padding:28px 28px 0;display:flex;flex-direction:column;overflow:hidden}
+.shot .kicker{font-size:13px;font-weight:700;color:var(--faint)}
+.shot h3{font-size:clamp(22px,2.4vw,28px);letter-spacing:-.02em;margin-top:6px}
+.shot p{color:var(--muted);margin-top:10px;font-size:15.5px}
+.shot img{margin-top:24px;border-radius:14px 14px 0 0;border:1px solid var(--line);border-bottom:0;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:top left}
+.explainer{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:center;background:var(--panel);border:1px solid #202024;border-radius:24px;padding:32px;margin-top:36px;text-align:left}
+.ex-video video{width:100%;aspect-ratio:9/16;border-radius:22px;background:#000;border:1px solid var(--line)}
+.ex-meta{font-size:12.5px;color:var(--faint);text-align:center;margin-top:8px}
+.ex-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+.ex-stat{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.ex-stat b{display:block;font-size:24px;color:var(--brand);letter-spacing:-.02em}
+.ex-stat span{font-size:12.5px;color:var(--muted)}
+.ex-steps{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ex-steps li{display:flex;gap:12px;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:14px;color:var(--muted)}
+.ex-steps .n{flex:0 0 26px;height:26px;border-radius:50%;background:#2e2e33;color:var(--text);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+.ex-steps li.you .n{background:var(--brand);color:#111}
+.ex-steps li b{color:var(--text);display:block}
+.ex-say{margin-top:16px;padding:14px 16px;border:1px dashed var(--line);border-radius:14px;font-size:14.5px;color:#d4d4d8}
+.feature{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;align-items:center;margin-top:56px}
+.feature .label{font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--brand)}
+.feature h3{font-size:clamp(24px,3vw,34px);letter-spacing:-.03em;line-height:1.12;margin-top:8px}
+.tabs{display:flex;flex-direction:column;gap:8px;margin-top:22px}
+.tabs button{all:unset;cursor:pointer;display:block;padding:14px 18px;border-radius:14px;border:1px solid transparent;color:var(--muted);font-weight:700;font-size:16px}
+.tabs button[aria-selected=true]{background:var(--panel);border-color:#2a2a2e;color:var(--text)}
+.tabs button:focus-visible{outline:3px solid var(--brand)}
+.tabs button span{display:none;font-weight:400;font-size:14.5px;color:var(--muted);margin-top:6px}
+.tabs button[aria-selected=true] span{display:block}
+.panel{background:var(--panel);border:1px solid #202024;border-radius:var(--radius);padding:28px;min-height:300px;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.panel[hidden]{display:none}
+.panel .huge{font-size:clamp(48px,7vw,80px);font-weight:800;letter-spacing:-.05em;line-height:1;color:var(--brand)}
+.panel p{color:var(--muted)}
+.panel .rows{display:grid;gap:8px}
+.panel .rows div{background:#0f0f11;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:14px;color:#d4d4d8;display:flex;justify-content:space-between;gap:12px}
+.panel .rows div b{color:var(--text)}
+.four{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;list-style:none;text-align:left}
+.four li{background:var(--panel);border:1px solid #202024;border-radius:18px;padding:24px}
+.ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--c,var(--brand)) 15%,transparent);color:var(--c,var(--brand));font-size:22px;font-weight:800}
+.four h3{font-size:18px;margin-top:16px}
+.four p{color:var(--muted);font-size:14.5px;margin-top:6px}
+.eight{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;list-style:none;text-align:left}
+.eight a{display:block;height:100%;background:var(--panel);border:1px solid #202024;border-radius:18px;padding:22px;text-decoration:none;transition:border-color .2s}
+.eight a:hover{border-color:#3f3f46}
+.eight h3{font-size:17px;margin-top:14px}
+.eight p{color:var(--muted);font-size:14px;margin-top:4px}
+.which{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px;text-align:left}
+.which>div{background:var(--panel);border:1px solid #202024;border-radius:var(--radius);padding:30px;display:flex;flex-direction:column}
+.which .kicker{font-size:12.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--brand)}
+.which h3{font-size:24px;margin-top:6px}
+.which>div>p{color:var(--muted);margin-top:6px}
+.which ul{list-style:none;margin:18px 0 24px;display:grid;gap:10px;flex:1}
+.which li{padding-left:28px;position:relative;color:#d4d4d8;font-size:15px}
+.which li::before{content:"✓";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:#123524;color:var(--green);font-size:12px;font-weight:800;display:grid;place-items:center}
+.which .btn{align-self:flex-start}
+.agent{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px;text-align:left}
+.agent>div{background:var(--panel);border:1px solid #202024;border-radius:var(--radius);padding:28px}
+.agent h3{font-size:22px}
+.agent p{color:var(--muted);margin-top:8px}
+.agent pre{margin-top:16px;background:#0a0a0b;border:1px solid var(--line);border-radius:12px;padding:14px;font-size:13px;color:#d4d4d8;white-space:pre-wrap;font-family:ui-monospace,Menlo,Consolas,monospace}
+.faq{max-width:820px;margin:36px auto 0;text-align:left;display:grid;gap:10px}
+.faq details{background:var(--panel);border:1px solid #202024;border-radius:16px;padding:0 22px}
+.faq summary{cursor:pointer;list-style:none;font-weight:700;font-size:17px;padding:20px 30px 20px 0;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:0;top:16px;font-size:24px;color:var(--muted);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--muted);padding-bottom:20px}
+.final{text-align:center;padding:84px 24px;border-radius:28px;background:radial-gradient(ellipse at 50% 120%,rgba(250,204,21,.18),transparent 60%),var(--panel);border:1px solid #202024}
+.final p{color:var(--muted);margin-top:12px;font-size:14px}
+.final .btn{margin-top:26px}
+footer.foot{border-top:1px solid #18181b;margin-top:72px;padding:48px 0 56px;color:var(--muted);font-size:14.5px}
+.cols{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:28px}
+.cols h4{color:var(--text);font-size:14px;margin-bottom:12px}
+.cols a{display:block;text-decoration:none;padding:4px 0}
+.cols a:hover{color:var(--text)}
+.legal{margin-top:36px;font-size:13px;color:var(--faint)}
+/* inner pages */
+.page-head{padding:64px 0 8px}
+.page-head h1{font-size:clamp(34px,5.4vw,58px);letter-spacing:-.04em;line-height:1.05;font-weight:800}
+.page-head .sub{margin-top:12px}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.search input{width:100%;max-width:520px;background:var(--panel);border:1px solid var(--line);border-radius:999px;color:var(--text);font-size:16px;padding:12px 18px;outline:none;font-family:inherit}
+.search input:focus{border-color:var(--brand)}
+h2.sec{font-size:clamp(26px,3.4vw,34px);letter-spacing:-.025em;line-height:1.15}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:24px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px;position:relative;overflow:hidden;display:flex;flex-direction:column}
-.card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent,var(--pink))}
+.card::before,.detail::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent,var(--pink))}
 .card .num{font-size:13px;color:var(--faint);font-weight:700}
 .card h3{font-size:19px;margin:6px 0 4px}
 .card h3 a{text-decoration:none}
@@ -55,89 +177,201 @@ h2{font-size:30px;letter-spacing:-.02em;line-height:1.15;margin-bottom:8px}
 .card .who{color:var(--muted);font-size:13.5px}
 .card p{font-size:14.5px;color:var(--muted);margin-top:10px;flex:1}
 .card .go{margin-top:14px;font-size:14px;font-weight:700;color:var(--accent,var(--pink));text-decoration:none}
-.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent,var(--pink));background:color-mix(in srgb,var(--accent,var(--pink)) 12%,transparent);padding:5px 10px;border-radius:999px}
-.detail{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:28px;margin-bottom:18px;position:relative;overflow:hidden}
-.detail::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent,var(--pink))}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent,var(--pink));background:color-mix(in srgb,var(--accent,var(--pink)) 12%,transparent);padding:5px 10px;border-radius:999px;align-self:flex-start}
+.detail{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:28px;margin-top:18px;position:relative;overflow:hidden;scroll-margin-top:90px}
 .detail h3{font-size:24px;letter-spacing:-.01em;margin:10px 0 4px}
 .detail .who{color:var(--muted);font-size:14px}
-.detail p{color:#d6d3dc;font-size:15.5px;margin-top:12px}
+.detail p{color:#d4d4d8;font-size:15.5px;margin-top:12px}
 .detail p b{color:var(--text)}
-.detail ul{margin:14px 0 0 18px;color:#d6d3dc;font-size:15px}
+.detail ul{margin:14px 0 0 18px;color:#d4d4d8;font-size:15px}
 .detail li{margin-bottom:6px}
-.detail li b{color:var(--text)}
-.steps{counter-reset:step;display:grid;gap:12px;margin-top:16px}
+.steps{display:grid;gap:12px;margin-top:16px}
 .step{display:flex;gap:16px;background:var(--panel2);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
 .step .n{flex:0 0 34px;height:34px;border-radius:50%;background:var(--accent,var(--pink));color:#111;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px}
 .step h4{font-size:16.5px}
 .step p{font-size:14.5px;color:var(--muted);margin-top:2px}
 .step .days{font-size:12.5px;color:var(--faint);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-.chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13.5px;color:#d6d3dc}
+.chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13px;color:#d4d4d8;display:inline-block}
 .reel-link{display:inline-block;margin-top:18px;font-size:14.5px;font-weight:700;color:var(--accent,var(--pink));text-decoration:none;border:1px solid color-mix(in srgb,var(--accent,var(--pink)) 45%,transparent);padding:9px 16px;border-radius:999px}
-.reel-link:hover{background:color-mix(in srgb,var(--accent,var(--pink)) 12%,transparent)}
-.prompt-box{background:#0a0a0f;border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:20px}
-.prompt-box pre{white-space:pre-wrap;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;color:#cfcbd8;line-height:1.55;margin-top:8px}
-button.copy{background:var(--pink);color:#111;border:none;font-weight:800;font-size:14px;padding:10px 20px;border-radius:999px;cursor:pointer;margin-top:12px}
-button.copy:hover{opacity:.9}
-.moves{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(max-width:640px){.moves{grid-template-columns:1fr}}
-.move{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
-.move b{font-size:15.5px}
-.move p{font-size:14px;color:var(--muted);margin-top:4px}
+.prompt-box{background:#0a0a0b;border:1px solid var(--line);border-radius:16px;padding:20px;margin-top:20px}
+.prompt-box pre{white-space:pre-wrap;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;color:#d4d4d8;line-height:1.55;margin-top:8px}
+button.copy{background:var(--brand);color:#111;border:none;font-weight:800;font-size:14px;padding:10px 20px;border-radius:999px;cursor:pointer;margin-top:12px;font-family:inherit}
+.pairs{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin-top:24px}
+.move,.tool{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.move b,.tool b{font-size:15.5px}
+.move p,.tool p{font-size:14px;color:var(--muted);margin-top:4px}
 .move .src{font-size:12.5px;color:var(--faint);margin-top:6px}
-.move .src a{color:var(--cyan);text-decoration:none}
-.tools-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(max-width:640px){.tools-list{grid-template-columns:1fr}}
-.tool{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
-.tool b{font-size:15.5px}
-.tool .price{float:right;font-size:12.5px;color:var(--faint);font-weight:600}
-.tool p{font-size:14px;color:var(--muted);margin-top:4px}
-.tool a{font-size:13.5px;color:var(--cyan);text-decoration:none}
-.howto{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-@media(max-width:720px){.howto{grid-template-columns:1fr}}
-.how{background:var(--panel2);border:1px solid var(--line);border-radius:18px;padding:22px}
-.how .big{font-size:30px;font-weight:800;color:var(--pink)}
-.how h4{font-size:17px;margin:6px 0 4px}
-.how p{font-size:14.5px;color:var(--muted)}
-table{width:100%;border-collapse:collapse;background:var(--panel);border-radius:16px;overflow:hidden;font-size:15px}
-th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
-th{background:var(--panel2);font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.move .src a,.tool a{color:var(--cyan);text-decoration:none;font-size:13.5px}
+.tool .price{float:right;font-size:12.5px;color:var(--faint);font-weight:600;margin-left:8px}
+.skill-group{margin-top:40px}
+.skill-group h2{display:flex;align-items:center;gap:12px}
+.skill-group h2::before{content:"";flex:0 0 12px;height:12px;border-radius:50%;background:var(--accent)}
+.skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;margin-top:16px}
+.skill{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.skill b{font-size:15.5px}
+.skill p{font-size:14px;color:var(--muted)}
+.skill .where{font-size:12px;color:var(--faint);font-family:ui-monospace,Menlo,Consolas,monospace;overflow-wrap:anywhere;margin-top:auto;padding-top:4px}
+.skill .alt{font-size:13px;color:var(--green);font-weight:600}
+.badges{display:flex;gap:6px;flex-wrap:wrap}
+.badge{font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:var(--panel2);color:var(--muted)}
+.badge.ready{background:#123524;color:var(--green)}.badge.setup{background:#352a10;color:var(--amber)}.badge.reference{background:#1f1d33;color:#c4bfff}.badge.paid{background:#3a1616;color:var(--red)}.badge.free{background:#0f2f30;color:var(--cyan)}
+.note{background:var(--panel);border:1px dashed var(--line);border-radius:16px;padding:18px 20px;color:var(--muted);font-size:15px;overflow-wrap:anywhere;margin-top:20px}
+.table-box{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:16px;border:1px solid var(--line);margin-top:16px}
+table{width:100%;border-collapse:collapse;background:var(--panel);font-size:15px}
+th,td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--panel2);font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
 tr:last-child td{border-bottom:none}
-td:first-child{color:var(--muted);font-weight:600;white-space:nowrap}
-footer{padding:36px 0 60px;color:var(--faint);font-size:14px;border-top:1px solid var(--line);margin-top:20px}
-footer a{color:var(--muted)}
-.note{background:var(--panel);border:1px dashed var(--line);border-radius:16px;padding:20px;color:var(--muted);font-size:15px}
-.explainer{display:grid;grid-template-columns:300px 1fr;gap:36px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:28px}
-@media(max-width:760px){.explainer{grid-template-columns:1fr;padding:20px}.ex-video{max-width:320px;width:100%;margin:0 auto}}
-.ex-video video{width:100%;aspect-ratio:9/16;border-radius:22px;background:#000;display:block;border:1px solid var(--line)}
-.ex-meta{font-size:12.5px;color:var(--faint);text-align:center;margin-top:8px}
-.explainer h2{margin-top:12px}
-.ex-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:4px 0 20px}
-@media(max-width:520px){.ex-stats{grid-template-columns:1fr 1fr}}
-.ex-stat{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
-.ex-stat b{display:block;font-size:24px;color:var(--yellow);letter-spacing:-.02em}
-.ex-stat span{font-size:12.5px;color:var(--muted)}
-.ex-steps{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-@media(max-width:520px){.ex-steps{grid-template-columns:1fr}}
-.ex-steps li{display:flex;gap:12px;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:14px;color:var(--muted)}
-.ex-steps .n{flex:0 0 26px;height:26px;border-radius:50%;background:#2a2a38;color:var(--text);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
-.ex-steps li.you .n{background:var(--yellow);color:#111}
-.ex-steps li b{color:var(--text);display:block}
-.ex-say{margin-top:18px;padding:14px 16px;border:1px dashed var(--line);border-radius:14px;font-size:14.5px;color:#d6d3dc}
+td:first-child{font-weight:600;white-space:nowrap}
+td a{color:var(--cyan)}
+/* responsive: tablets, phones, landscape phones, ultrawide */
+@media(min-width:1700px){.wrap{max-width:1320px}}
+@media(max-width:1024px){
+  .numbers{grid-template-columns:repeat(3,1fr)}
+  .four,.eight{grid-template-columns:1fr 1fr}
+  .feature{grid-template-columns:1fr;gap:24px}
+  .cols{grid-template-columns:1fr 1fr}
+}
+@media(max-width:860px){
+  header.top .wrap{flex-wrap:wrap;gap:0 12px;padding-top:10px}
+  .logo{flex:1}
+  .menu{order:3;width:100%;margin:6px 0 0;overflow-x:auto;scrollbar-width:none;padding-bottom:8px}
+  .menu::-webkit-scrollbar{display:none}
+  .paths,.duo,.which,.agent{grid-template-columns:1fr}
+  .explainer{grid-template-columns:1fr;padding:22px}
+  .ex-video{max-width:300px;width:100%;margin:0 auto}
+  section{padding:56px 0}
+  .hero{padding:56px 0 28px}
+}
+@media(max-width:560px){
+  .numbers{grid-template-columns:1fr 1fr}
+  .numbers div:last-child{grid-column:1/-1}
+  .four,.eight{grid-template-columns:1fr}
+  .ex-stats{grid-template-columns:1fr 1fr}
+  .ex-steps{grid-template-columns:1fr}
+  .path{padding:28px 20px}
+  .shot{padding:22px 20px 0}
+  .which>div,.agent>div,.panel{padding:22px}
+  .detail{padding:20px}
+  .step{padding:14px}
+  .cols{grid-template-columns:1fr 1fr}
+  .final{padding:56px 20px}
+  .btn{white-space:normal;text-align:center}
+  #reel-table,#reel-table tbody,#reel-table tr,#reel-table td{display:block;width:100%}
+  #reel-table tr:first-child{display:none}
+  #reel-table tr{border-bottom:1px solid var(--line);padding:10px 0}
+  #reel-table td{border:none;padding:3px 16px;white-space:normal}
+  #reel-table td:first-child a{font-weight:800;color:var(--text)}
+}
+@media(max-width:360px){.cols{grid-template-columns:1fr}.logo{font-size:16px}}
+@media(orientation:landscape) and (max-height:520px){
+  header.top{position:static}
+  .hero{padding:32px 0 20px}
+  .explainer{grid-template-columns:190px 1fr}
+  .ex-video{max-width:190px}
+  .panel{min-height:0}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 """
+
+SCRIPT = """
+document.querySelectorAll('[data-filter]').forEach(function(input){
+  var items = document.querySelectorAll(input.dataset.filter);
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    items.forEach(function(el){
+      var text = (el.dataset.search || el.textContent).toLowerCase();
+      el.style.display = (!q || text.indexOf(q) !== -1) ? '' : 'none';
+    });
+  });
+});
+document.querySelectorAll('[role=tablist]').forEach(function(list){
+  var tabs = list.querySelectorAll('[role=tab]');
+  function show(tab){
+    tabs.forEach(function(t){
+      var on = t === tab;
+      t.setAttribute('aria-selected', on);
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ show(t); });
+    t.addEventListener('keydown', function(e){
+      var d = (e.key === 'ArrowDown' || e.key === 'ArrowRight') ? 1 : (e.key === 'ArrowUp' || e.key === 'ArrowLeft') ? -1 : 0;
+      if (d) { e.preventDefault(); var n = tabs[(i + d + tabs.length) % tabs.length]; show(n); n.focus(); }
+    });
+  });
+});
+document.querySelectorAll('button.copy').forEach(function(b){
+  b.addEventListener('click', function(){
+    var t = document.getElementById(b.dataset.target).innerText;
+    navigator.clipboard.writeText(t).then(function(){
+      b.textContent = 'Copied ✓';
+      setTimeout(function(){ b.textContent = 'Copy the prompt'; }, 2000);
+    }, function(){ b.textContent = 'Select the text to copy'; });
+  });
+});
+"""
+
+NAV = [("editor/", "AI Editor", "editor"), ("styles.html", "Styles", "styles"), ("skills.html", "Skills", "skills"),
+       ("reels.html", "Reels", "reels"), ("index.html#how", "How it works", "how")]
+
+
+def shell(page, title, description, body):
+    current = ' aria-current="page"'
+    links = "".join(f'<a href="{href}"{current if key == page else ""}>{label}</a>' for href, label, key in NAV)
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{esc_text(title)}</title>
+<meta name="description" content="{esc(description)}">
+<meta name="theme-color" content="#0b0b0c">
+<style>{CSS}</style>
+</head>
+<body>
+<a class="announce" href="editor/">New: <span>the AI Editor</span> — describe the edit, keep the final cut. Try it free →</a>
+<header class="top"><div class="wrap">
+  <a class="logo" href="index.html"><i>▶</i>Master Video Styles</a>
+  <nav class="menu" aria-label="Main">{links}</nav>
+  <a class="btn light sm" href="editor/">Open editor</a>
+</div></header>
+<main class="wrap">
+{body}
+</main>
+<footer class="foot"><div class="wrap">
+  <div class="cols">
+    <div><a class="logo" href="index.html"><i>▶</i>Master Video Styles</a><p style="margin-top:12px;max-width:300px">Every video style as a playbook, an AI editor that plans the cut, and a free-first skill stack to render it.</p></div>
+    <div><h4>Studio</h4><a href="editor/">AI Editor</a><a href="index.html#how">How it works</a><a href="index.html#faq">FAQ</a></div>
+    <div><h4>Library</h4><a href="styles.html">Styles and playbooks</a><a href="styles.html#moves">Motion dictionary</a><a href="styles.html#tools">Tools</a></div>
+    <div><h4>Resources</h4><a href="skills.html">Skill stack</a><a href="reels.html">Reel catalog</a><a href="styles.html#details">Copy-paste prompts</a></div>
+  </div>
+  <p class="legal">Techniques are studied from public reels and sites; their footage, voices, text and branding are never copied. Updated {UPDATED}.</p>
+</div></footer>
+<script>{SCRIPT}</script>
+</body>
+</html>
+"""
+
+
+# ---------- library pieces ----------
 
 def card(s):
     who = esc_text(s.get("creator") or s.get("creator_role") or "")
     handle = esc_text(s.get("creator_handle") or "")
     who_line = f"{who} {handle}".strip()
-    return f"""<article class="card" style="--accent:{esc(s['accent'])}" data-search="{esc((s['title'] + ' ' + s.get('tag','') + ' ' + who_line + ' ' + s.get('look','')).lower())}">
+    search = esc((s['title'] + ' ' + s.get('tag', '') + ' ' + who_line + ' ' + s.get('look', '')).lower())
+    return f"""<article class="card" style="--accent:{esc(s['accent'])}" data-search="{search}">
       <span class="num">Style {s['number']}</span>
-      <span class="tag">{esc_text(s.get('tag',''))}</span>
+      <span class="tag">{esc_text(s.get('tag', ''))}</span>
       <h3><a href="#style-{esc(s['slug'])}">{esc_text(s['title'])}</a></h3>
       <div class="who">{esc_text(who_line)}</div>
-      <p>{esc_text(s.get('look',''))}</p>
+      <p>{esc_text(s.get('look', ''))}</p>
       <a class="go" href="#style-{esc(s['slug'])}">Read the playbook →</a>
     </article>"""
+
 
 def detail(s):
     who = esc_text(s.get("creator") or s.get("creator_role") or "")
@@ -146,7 +380,7 @@ def detail(s):
     if s.get("creator_role") and s.get("creator"):
         who_line = f"{who} · {esc_text(s['creator_role'])}"
     parts = [f'<article class="detail" id="style-{esc(s["slug"])}" style="--accent:{esc(s["accent"])}">']
-    parts.append(f'<span class="tag">{esc_text(s.get("tag",""))}</span>')
+    parts.append(f'<span class="tag">{esc_text(s.get("tag", ""))}</span>')
     parts.append(f'<h3>Style {s["number"]} — {esc_text(s["title"])}</h3>')
     if who_line:
         parts.append(f'<div class="who">{who_line}</div>')
@@ -177,71 +411,123 @@ def detail(s):
     parts.append('</article>')
     return '\n'.join(parts)
 
+
 def move_card(m):
     return f'''<div class="move"><b>{esc_text(m["name"])}</b><p>{esc_text(m["demo"])}</p><div class="src">From: <a href="#style-{esc(m["source_style"])}">{esc_text(m["source_style"])}</a></div></div>'''
 
+
 def tool_card(t):
     link = f'<a href="{esc(t["link"])}" target="_blank" rel="noopener">Link →</a>' if t.get("link") else ''
-    return f'''<div class="tool"><b>{esc_text(t["name"])}</b><span class="price">{esc_text(t.get("price",""))}</span><p>{esc_text(t["notes"])}</p>{link}</div>'''
+    return f'''<div class="tool"><b>{esc_text(t["name"])}</b><span class="price">{esc_text(t.get("price", ""))}</span><p>{esc_text(t["notes"])}</p>{link}</div>'''
+
 
 def reel_row(r):
     tags = ' '.join(f'<span class="chip">{esc_text(t)}</span>' for t in r.get("style_tags", []))
     return (f'<tr><td><a href="{esc(r["url"])}" target="_blank" rel="noopener">{esc_text(r["id"])}</a></td>'
             f'<td>{esc_text(r.get("creator", ""))}</td><td>{tags}</td><td>{esc_text(r.get("notes", ""))}</td></tr>')
 
-def main():
-    styles = STYLES["styles"]
-    moves = STYLES["motion_dictionary"]
-    tools = STYLES["tools"]
-    reels = REELS.get("reels", [])
-    n_reels = len(reels)
 
-    cards = '\n'.join(card(s) for s in styles)
-    details = '\n'.join(detail(s) for s in styles)
-    moves_html = '\n'.join(move_card(m) for m in moves)
-    tools_html = '\n'.join(tool_card(t) for t in tools)
-    fields_rows = ''.join(
-        f'<tr><td>{esc(f)}</td><td>{esc_text(REELS["field_notes"].get(f, ""))}</td></tr>'
-        for f in REELS["fields"])
-    reel_rows = '\n'.join(reel_row(r) for r in reels)
+def skill_card(k):
+    alt = f'<div class="alt">Free route: {esc_text(k["free_alt"])}</div>' if k.get("free_alt") else ""
+    search = esc(" ".join([k["name"], k["does"], k["status"], k["cost"], k.get("free_alt", "")]).lower())
+    return (f'<div class="skill" data-search="{search}"><div class="badges"><span class="badge {esc(k["status"])}">{esc_text(k["status"])}</span>'
+            f'<span class="badge {esc(k["cost"])}">{esc_text(k["cost"])}</span></div><b>{esc_text(k["name"])}</b>'
+            f'<p>{esc_text(k["does"])}</p>{alt}<div class="where">{esc_text(k["where"])}</div></div>')
 
-    doc = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Master Video Styles — every video style, mastered</title>
-<meta name="description" content="Video editing styles as reusable playbooks: what each style looks like, when to use it, and the step-by-step instructions to make one.">
-<style>{CSS}</style>
-</head>
-<body>
-<div class="wrap">
 
-<header>
-  <div class="logo">Master Video <span>Styles</span></div>
-  <nav>
-    <a href="#how">How it works</a>
-    <a href="#styles">Styles</a>
-    <a href="#moves">Moves</a>
-    <a href="#tools">Tools</a>
-    <a href="#use">Use it</a>
-    <a href="#reels">Reels</a>
-  </nav>
-</header>
+# ---------- pages ----------
 
-<div class="hero">
+def home(n_styles, n_moves, n_skills, n_free):
+    chips = "".join(f'<span style="--c:{c}">{t}</span>' for t, c in [
+        ("Sumit", "#ff5da2"), ("Kelsie listicle", "#ffb020"), ("Fly-through", "#8b7cff"), ("Vision pitch", "#22d3ee"),
+        ("Paper cut-out", "#8b7cff"), ("SaaS launch", "#ff6b6b"), ("Vox", "#facc15"), ("Realtor reels", "#34d399")])
+    tracks = "".join(
+        f'<div class="tr" style="top:{12 + i * 16}px">' + "".join(
+            f'<b style="left:{l}%;width:{w}%;background:{c}"></b>' for l, w in spans) + '</div>'
+        for i, (c, spans) in enumerate([
+            ("#facc15", [(0, 14), (80, 20)]), ("#e4e4e7", [(0, 100)]),
+            ("#4f8a72", [(0, 18), (20, 16), (38, 22), (62, 16), (80, 20)]), ("#b06ad6", [(0, 100)])]))
+    tabs = [
+        ("speed", "Speed", "Edit in minutes, not hours", [
+            ("Describe the edit", "Type it in plain words or tap a quick prompt. The plan lands on six tracks with a reason for each change.",
+             "6", "tracks: motion, captions, video, B-roll, music, sound"),
+            ("Fix it by hand", "Click any block to rename, move, stretch or remove it. Undo and redo every step.",
+             "∞", "undo — nothing is final until you approve"),
+            ("One-tap fixes", "Trim fillers, clean the voice, add zooms, swap the background, even out the look.",
+             "5", "free local fixes, each naming the tool that does it")]),
+        ("style", "Style", "Every style, already worked out", [
+            ("Proven formats", "Nine reel types measured from 136 real reels: real lengths, shot timing and talking speed.",
+             "136", "reels measured frame by frame"),
+            ("Playbooks", f"{n_styles} styles, each with what it looks like, when to use it, the steps and a copy-paste prompt.",
+             str(n_styles), "styles with step-by-step playbooks"),
+            ("Motion moves", "Steal one move at a time — punch-ins, fly-throughs, kinetic keywords — without the whole style.",
+             str(n_moves), "moves in the motion dictionary")]),
+        ("ai", "AI", "AI that runs on your own machine", [
+            ("Captions", "Word-timed captions in seven styles, checked on three frames before the full render.",
+             "7", "caption styles, rendered locally"),
+            ("Face-tracked effects", "Spotlight, orbit, glass widgets and punch-ins that follow the speaker.",
+             "45", "effects that track the face"),
+            ("Free-first voice and music", "Local voices and transcription, code-made music. Paid services are fallbacks only.",
+             str(n_free), f"of {n_skills} skills are free")]),
+    ]
+    feature_html = []
+    for key, label, title, items in tabs:
+        buttons, panels = [], []
+        for i, (name, text, big, cap) in enumerate(items):
+            pid = f"{key}-{i}"
+            on = i == 0
+            buttons.append(f'<button role="tab" id="t-{pid}" aria-controls="p-{pid}" aria-selected="{str(on).lower()}" tabindex="{0 if on else -1}">{name}<span>{text}</span></button>')
+            panels.append(f'<div class="panel" role="tabpanel" id="p-{pid}" aria-labelledby="t-{pid}"{"" if on else " hidden"}><div class="huge">{big}</div><p>{cap}</p></div>')
+        feature_html.append(f'''<div class="feature">
+  <div><div class="label">{label}</div><h3>{title}</h3><div class="tabs" role="tablist" aria-label="{label}">{"".join(buttons)}</div></div>
+  <div>{"".join(panels)}</div>
+</div>''')
+
+    return f"""
+<section class="hero">
+  <p class="eyebrow">The creator video studio</p>
   <h1>Every video style,<br><em>mastered.</em></h1>
-  <p>{esc_text(STYLES["site"]["tagline"])} Each style is a playbook: what it looks like, when to use it, and the steps to make one — with a copy-paste prompt for Claude.</p>
-  <div class="stats">
-    <div class="stat"><b>{len(styles)}</b> styles explained</div>
-    <div class="stat"><b>{len(moves)}</b> motion moves</div>
-    <div class="stat"><b>{len(tools)}</b> tools</div>
-    <div class="stat"><b>{n_reels}</b> reels catalogued · 1,000+ coming</div>
+  <p class="lede">Two ways to start. Edit your own footage just by describing it, or pick a proven style and follow its playbook.</p>
+  <div class="paths">
+    <a class="path" href="editor/">
+      <div class="mini" aria-hidden="true">{tracks}<div class="ph"></div></div>
+      <span class="kicker">Raw footage → finished video</span>
+      <h2>Edit like a pro just by chatting</h2>
+      <span class="btn light">Open the AI Editor</span>
+    </a>
+    <a class="path" href="styles.html">
+      <div class="chipwall" aria-hidden="true">{chips}</div>
+      <span class="kicker">Pick a style → get the playbook</span>
+      <h2>{n_styles} styles, each with steps and a prompt</h2>
+      <span class="btn light">Browse styles</span>
+    </a>
   </div>
-  <div class="search"><input id="filter" type="text" placeholder="Search styles — try “real estate”, “captions”, “drone”…"></div>
-</div>
+</section>
 
-<section id="how">
+<section class="center" style="padding-top:24px">
+  <h2 class="big" style="font-size:clamp(22px,2.6vw,28px)">Built on research, not guesswork</h2>
+  <div class="numbers">
+    <div><b>136</b><span>reels measured</span></div>
+    <div><b>{n_styles}</b><span>style playbooks</span></div>
+    <div><b>{n_moves}</b><span>motion moves</span></div>
+    <div><b>45</b><span>face-tracked effects</span></div>
+    <div><b>{n_skills}</b><span>skills, {n_free} free</span></div>
+  </div>
+</section>
+
+<section class="center">
+  <h2 class="big">Meet the AI Editor</h2>
+  <p class="sub">Your real footage in, a finished edit plan out. It makes every decision visible, explains why, and lets you change any of it before a single frame renders.</p>
+  <a class="btn light" href="editor/" style="margin-top:24px">Try the AI Editor</a>
+  <div class="duo" style="text-align:left">
+    <div class="shot"><span class="kicker">AI Editor</span><h3>The AI makes the edit</h3><p>One pass plans cuts, captions, motion, B-roll, music and sound, with an edit log that says what changed and why.</p><img src="img/editor-plan.jpg" alt="The AI Editor: a chat request on the left, the edit log and a six-track timeline on the right" width="1200" height="675" loading="lazy"></div>
+    <div class="shot"><span class="kicker">AI Editor</span><h3>You keep the last word</h3><p>Pick any block and rename it, nudge it or remove it. Undo every step. Chat for intent, timeline for precision.</p><img src="img/editor-hand.jpg" alt="A selected timeline block with controls to rename, move or remove it" width="1200" height="675" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="center" id="how">
+  <h2 class="big">How the creator style works</h2>
+  <p class="sub">An 84-second tour of the system behind every edit.</p>
   <div class="explainer">
     <div class="ex-video">
       <video src="videos/creator-style-explainer.mp4" poster="videos/creator-style-explainer-poster.jpg" controls playsinline preload="metadata">
@@ -250,9 +536,8 @@ def main():
       <div class="ex-meta">84 s · 9:16 · made with Remotion</div>
     </div>
     <div>
-      <span class="tag" style="--accent:var(--yellow)">How the creator-style system works</span>
-      <h2>Every creator-style edit starts from 136 studied reels.</h2>
-      <p class="sub">Each real-estate creator reel was measured for cuts, shot length and loudness, transcribed word by word, and sorted into one of 12 types. Ask for an edit “in creator style” and your footage is matched to a type; that type's measured rules set the length, pace, text and ending.</p>
+      <span class="tag" style="--accent:var(--brand)">136 reels studied</span>
+      <h3 style="font-size:clamp(22px,2.6vw,28px);margin-top:12px;letter-spacing:-.02em">Every creator-style edit starts from measured reels.</h3>
       <div class="ex-stats">
         <div class="ex-stat"><b>136</b><span>reels studied</span></div>
         <div class="ex-stat"><b>12</b><span>reel types</span></div>
@@ -260,118 +545,209 @@ def main():
         <div class="ex-stat"><b>0.5 s</b><span>to the first word</span></div>
       </div>
       <ol class="ex-steps">
-        <li><span class="n">1</span><div><b>Transcribe</b>Every word of your clip, with timings.</div></li>
-        <li><span class="n">2</span><div><b>Pick the type</b>Your footage decides it, e.g. walk-and-talk.</div></li>
-        <li class="you"><span class="n">3</span><div><b>Storyboard</b>Beat by beat. You approve before anything renders.</div></li>
-        <li><span class="n">4</span><div><b>Build</b>Remotion, captions and face-tracked effects.</div></li>
+        <li><span class="n">1</span><div><b>Transcribe</b>Every word, with timings.</div></li>
+        <li><span class="n">2</span><div><b>Pick the type</b>Your footage decides it.</div></li>
+        <li class="you"><span class="n">3</span><div><b>Storyboard</b>You approve before rendering.</div></li>
+        <li><span class="n">4</span><div><b>Build</b>Remotion, captions, effects.</div></li>
         <li><span class="n">5</span><div><b>Render</b>1080×1920, 30 fps, −14 LUFS.</div></li>
-        <li><span class="n">6</span><div><b>Checklist</b>Hook, pace, one clear ask, rights.</div></li>
+        <li><span class="n">6</span><div><b>Checklist</b>Hook, pace, one clear ask.</div></li>
       </ol>
-      <p class="ex-say">To use it, send your clip and say <b>“edit this in creator style”</b>. It copies the creators' techniques, never their footage, voice or branding.</p>
+      <p class="ex-say">Send your clip and say <b>“edit this in creator style”</b>. It copies techniques, never footage, voices or branding.</p>
     </div>
   </div>
 </section>
 
-<section id="styles">
-  <h2>Every style</h2>
-  <p class="sub">Start with the mastered ones at the top. The library categories at the bottom are ready to study the same way — send a reel and it gets a playbook here.</p>
+<section class="center">
+  <h2 class="big">Take full control when you want it</h2>
+  <p class="sub">Automatic when speed matters, hands-on when precision does.</p>
+  <a class="btn light" href="editor/" style="margin-top:24px">Open the editor</a>
+  <div style="text-align:left">{"".join(feature_html)}</div>
+</section>
+
+<section class="center">
+  <h2 class="big">No editing experience required</h2>
+  <ul class="four">
+    <li><div class="ico">✎</div><h3>Easy for everyone</h3><p>Describe the edit in your own words. Quick prompts cover the common asks.</p></li>
+    <li><div class="ico" style="--c:var(--cyan)">⤢</div><h3>Every screen</h3><p>Plan for 9:16, 1:1 or 16:9 with captions kept in the safe zone.</p></li>
+    <li><div class="ico" style="--c:var(--pink)">★</div><h3>Hooks that hold</h3><p>First word inside half a second and one clear ask at the end — the measured norm.</p></li>
+    <li><div class="ico" style="--c:var(--green)">€0</div><h3>Free first</h3><p>Every paid tool has a free local route. Your footage never leaves your device.</p></li>
+  </ul>
+</section>
+
+<section class="center">
+  <h2 class="big">Plan, style, render. All in one place.</h2>
+  <p class="sub">Stop juggling tabs. Everything the workflow needs is one click away.</p>
+  <ul class="eight">
+    <li><a href="editor/"><div class="ico">▶</div><h3>AI Editor</h3><p>Chat-to-edit planner with a real timeline.</p></a></li>
+    <li><a href="styles.html"><div class="ico" style="--c:var(--pink)">◆</div><h3>Style playbooks</h3><p>{n_styles} styles with steps and prompts.</p></a></li>
+    <li><a href="styles.html#moves"><div class="ico" style="--c:var(--violet)">↯</div><h3>Motion dictionary</h3><p>{n_moves} moves you can borrow one at a time.</p></a></li>
+    <li><a href="styles.html#tools"><div class="ico" style="--c:var(--cyan)">⚙</div><h3>Tools map</h3><p>What each tool does and what it costs.</p></a></li>
+    <li><a href="skills.html"><div class="ico" style="--c:var(--green)">✦</div><h3>Skill stack</h3><p>{n_skills} skills grouped by job, free first.</p></a></li>
+    <li><a href="reels.html"><div class="ico" style="--c:var(--amber)">▦</div><h3>Reel catalog</h3><p>Every studied reel, tagged by style.</p></a></li>
+    <li><a href="index.html#how"><div class="ico" style="--c:var(--orange)">◎</div><h3>Creator study</h3><p>136 reels, 12 types, measured rules.</p></a></li>
+    <li><a href="skills.html#voice-over-and-transcription"><div class="ico" style="--c:var(--red)">♪</div><h3>Free voice and music</h3><p>Local voices, transcripts and code-made music.</p></a></li>
+  </ul>
+</section>
+
+<section class="center">
+  <h2 class="big">Which do I need?</h2>
+  <p class="sub">Both are free and work together. Pick what fits the job.</p>
+  <div class="which">
+    <div><span class="kicker">Editing agent</span><h3>AI Editor</h3><p>Start with raw footage. Finish with a post-ready edit plan.</p>
+      <ul><li>Your real footage — no avatars or fake speakers</li><li>Cuts, captions, motion, B-roll, music and sound in one pass</li><li>Every decision explained; you approve the changes</li></ul>
+      <a class="btn light" href="editor/">Use the AI Editor</a></div>
+    <div><span class="kicker">Style library</span><h3>Style playbooks</h3><p>Start with a look you love. Get the exact steps to make it.</p>
+      <ul><li>{n_styles} styles from real creators, broken into steps</li><li>A copy-paste prompt for Claude with each one</li><li>Motion moves and tools you can mix and match</li></ul>
+      <a class="btn light" href="styles.html">Browse the styles</a></div>
+  </div>
+</section>
+
+<section class="center">
+  <h2 class="big">Also works inside your agent</h2>
+  <div class="agent">
+    <div><h3>Claude Code</h3><p>Copy the brief from the AI Editor and paste it into Claude Code. It follows the master router to the right skills and builds an editable project.</p>
+      <pre>&gt; [paste brief]
+→ docs/MASTER-ROUTER.md
+→ creator-video · remotion · captions · effects
+✓ preview first, render on approval</pre></div>
+    <div><h3>Skills and MCP</h3><p>REA dissects reference sites and apps; the skill stack covers captions, motion, voice, music and footage — free routes first.</p>
+      <a class="btn ghost sm" href="skills.html" style="margin-top:18px">See the skill stack</a></div>
+  </div>
+</section>
+
+<section class="center" id="faq">
+  <h2 class="big">Got questions?</h2>
+  <div class="faq">
+    <details><summary>What is the AI Editor?</summary><p>A chat-to-edit planner. You describe the edit, it plans cuts, captions, motion, B-roll, music and sound on a six-track timeline and explains each decision. You adjust anything by hand, then copy the brief into Claude Code to render it.</p></details>
+    <details><summary>Does my footage get uploaded?</summary><p>No. The clip plays in your browser only. Nothing is sent to a server.</p></details>
+    <details><summary>Does it render the video in the browser?</summary><p>Not yet. The browser plans the edit; the render happens on your machine with Remotion and the free skills, so you keep full quality and editable layers.</p></details>
+    <details><summary>Do I need paid tools?</summary><p>No. Every paid service on the skill stack lists a free local route: OmniVoice or Piper for voice, Whisper for transcripts, code-made or open-source music, ComfyUI for footage.</p></details>
+    <details><summary>Where do the styles come from?</summary><p>From public creator reels studied frame by frame. Techniques are copied; footage, voices, text and branding never are.</p></details>
+    <details><summary>Does it make deepfakes or fake speakers?</summary><p>No. It edits your real footage. Voice cloning and character swaps stay off unless the person has agreed to it.</p></details>
+    <details><summary>Which formats does it support?</summary><p>Vertical 9:16 for Reels, TikTok and Shorts, square 1:1 and widescreen 16:9.</p></details>
+  </div>
+</section>
+
+<section>
+  <div class="final">
+    <h2 class="big">Edit your next video by describing it</h2>
+    <a class="btn brand" href="editor/">Open the AI Editor</a>
+    <p>Free. No account. Your footage stays on your device.</p>
+  </div>
+</section>
+"""
+
+
+def styles_page(styles, moves, tools):
+    cards = '\n'.join(card(s) for s in styles)
+    details = '\n'.join(detail(s) for s in styles)
+    return f"""
+<div class="page-head">
+  <p class="eyebrow">Style library</p>
+  <h1>Every style, as a playbook.</h1>
+  <p class="sub">What each style looks like, when to use it, the steps to make one and a copy-paste prompt for Claude.</p>
+  <div class="jump"><a class="btn ghost sm" href="#details">Playbooks</a><a class="btn ghost sm" href="#moves">Motion dictionary</a><a class="btn ghost sm" href="#tools">Tools</a><a class="btn light sm" href="editor/">Edit in a style →</a></div>
+</div>
+<section style="padding-top:36px">
+  <div class="search"><input type="text" data-filter="#cards .card" placeholder="Search styles — try “real estate”, “captions”, “drone”…" aria-label="Search styles"></div>
   <div class="grid" id="cards">
 {cards}
   </div>
 </section>
-
 <section id="details">
-  <h2>The playbooks</h2>
-  <p class="sub">The full instructions for each style. Copy the prompt, paste it into Claude with your raw footage.</p>
+  <h2 class="sec">The playbooks</h2>
+  <p class="sub">The full instructions for each style. Copy the prompt and paste it into Claude with your raw footage.</p>
 {details}
 </section>
-
 <section id="moves">
-  <h2>Motion dictionary</h2>
-  <p class="sub">The individual moves that make the styles work. Steal one move at a time — you don't need the whole style.</p>
-  <div class="moves">
-{moves_html}
+  <h2 class="sec">Motion dictionary</h2>
+  <p class="sub">The individual moves that make the styles work. Borrow one at a time.</p>
+  <div class="pairs">
+{''.join(move_card(m) for m in moves)}
   </div>
 </section>
-
 <section id="tools">
-  <h2>The tools, grouped by what they do</h2>
-  <p class="sub">You don't need all of these. Each style needs one or two. Pick the style first, then the tool.</p>
-  <div class="tools-list">
-{tools_html}
+  <h2 class="sec">The tools, grouped by what they do</h2>
+  <p class="sub">Each style needs one or two. Pick the style first, then the tool. Free routes are on the <a href="skills.html" style="color:var(--brand)">skill stack</a>.</p>
+  <div class="pairs">
+{''.join(tool_card(t) for t in tools)}
   </div>
 </section>
-
-<section id="use">
-  <h2>Use it yourself</h2>
-  <p class="sub">Three steps. That's the whole workflow.</p>
-  <div class="howto">
-    <div class="how"><div class="big">1</div><h4>Pick a style</h4><p>Explainer? Sumit. Tips list? Kelsie. Selling a home? Kelsie tour or the Melissa vision pitch. Product launch? MotionSmith SaaS Launch.</p></div>
-    <div class="how"><div class="big">2</div><h4>Post your raw footage</h4><p>Send the video file and say the style name — “Sumit style” or “Kelsie style” — plus the platform (Reels / TikTok / Shorts).</p></div>
-    <div class="how"><div class="big">3</div><h4>Get the video back</h4><p>Claude storyboards it first, builds it in After Effects (or MotionSmith), and hands back the finished 9:16 video.</p></div>
-  </div>
-</section>
-
-<section id="reels">
-  <h2>Reel catalog</h2>
-  <p class="sub">The harvested reels live here. Each one is studied and tagged with the styles it demonstrates, so you can see every style in the wild.</p>
-  <div class="note"><b>{n_reels} reels catalogued so far.</b> {esc_text(REELS.get("harvest_plan", ""))}</div>
-  <div style="height:18px"></div>
-  <div class="search"><input id="reel-filter" type="text" placeholder="Search reels — try a creator, a style, or a word…"></div>
-  <div style="height:14px"></div>
-  <table id="reel-table">
-    <tr><th>Reel</th><th>Creator</th><th>Style tags</th><th>What it shows</th></tr>
-{reel_rows}
-  </table>
-  <div style="height:18px"></div>
-  <table>
-    <tr><th>Field</th><th>What it holds</th></tr>
-{fields_rows}
-  </table>
-</section>
-
-<footer>
-  Master Video Styles — built from the video style library. Data lives in <code>data/styles.json</code> and <code>data/reels.json</code>; this page is generated by <code>scripts/build.py</code>.<br>
-  Sumit reel: <a href="https://www.instagram.com/reel/DfRAkn4xIZy/" target="_blank" rel="noopener">instagram.com/reel/DfRAkn4xIZy</a> ·
-  Kelsie reel: <a href="https://www.instagram.com/reel/DewTzCzxR9q/" target="_blank" rel="noopener">instagram.com/reel/DewTzCzxR9q</a> ·
-  Wilmore tour: <a href="https://www.instagram.com/reel/DfzaFE1xv02/" target="_blank" rel="noopener">instagram.com/reel/DfzaFE1xv02</a> ·
-  Melissa pitch: <a href="https://www.instagram.com/reel/DfkBM9XuE_L/" target="_blank" rel="noopener">instagram.com/reel/DfkBM9XuE_L</a><br>
-  Updated Nov 19, 2026.
-</footer>
-
-</div>
-<script>
-document.getElementById('filter').addEventListener('input', function(e){{
-  var q = e.target.value.trim().toLowerCase();
-  document.querySelectorAll('#cards .card').forEach(function(c){{
-    c.style.display = (!q || c.dataset.search.indexOf(q) !== -1) ? '' : 'none';
-  }});
-}});
-var rf = document.getElementById('reel-filter');
-if (rf) rf.addEventListener('input', function(e){{
-  var q = e.target.value.trim().toLowerCase();
-  document.querySelectorAll('#reel-table tr').forEach(function(row, i){{
-    if (i === 0) return;
-    row.style.display = (!q || row.textContent.toLowerCase().indexOf(q) !== -1) ? '' : 'none';
-  }});
-}});
-document.querySelectorAll('button.copy').forEach(function(b){{
-  b.addEventListener('click', function(){{
-    var t = document.getElementById(b.dataset.target).innerText;
-    navigator.clipboard.writeText(t).then(function(){{
-      b.textContent = 'Copied ✓';
-      setTimeout(function(){{ b.textContent = 'Copy the prompt'; }}, 2000);
-    }});
-  }});
-}});
-</script>
-</body>
-</html>
 """
-    out = ROOT / "index.html"
-    out.write_text(doc, encoding="utf-8", newline="\n")
-    print(f"Wrote {out} ({len(doc)} bytes)")
-    print(f"Styles: {len(styles)}, moves: {len(moves)}, tools: {len(tools)}, reels: {n_reels}")
+
+
+def skills_page(n_skills, n_free):
+    groups = []
+    for g in SKILLS["groups"]:
+        gid = "".join(c if c.isalnum() else "-" for c in g["job"].lower()).strip("-")
+        while "--" in gid:
+            gid = gid.replace("--", "-")
+        cards = "\n".join(skill_card(k) for k in g["skills"])
+        groups.append(f'<div class="skill-group" id="{gid}" style="--accent:var(--{esc(g["accent"])})"><h2 class="sec">{esc_text(g["job"])}</h2><div class="skills">{cards}</div></div>')
+    return f"""
+<div class="page-head">
+  <p class="eyebrow">Skill stack</p>
+  <h1>{n_skills} skills. {n_free} free.</h1>
+  <p class="sub">Every creator-video skill and tool in the workspace, grouped by job. Free routes come first; each paid one names its free alternative.</p>
+  <div class="note"><span class="badge ready">ready</span> works now · <span class="badge setup">setup</span> one setup step left · <span class="badge reference">reference</span> local copy, not yet installed or security-reviewed · <span class="badge paid">paid</span> needs credits — use the free route</div>
+</div>
+<section style="padding-top:28px">
+  <div class="search"><input type="text" data-filter=".skill" placeholder="Search skills — try “voice”, “captions”, “free”…" aria-label="Search skills"></div>
+{''.join(groups)}
+</section>
+"""
+
+
+def reels_page(reels):
+    rows = '\n'.join(reel_row(r) for r in reels)
+    fields = ''.join(f'<tr><td>{esc(f)}</td><td>{esc_text(REELS["field_notes"].get(f, ""))}</td></tr>' for f in REELS["fields"])
+    return f"""
+<div class="page-head">
+  <p class="eyebrow">Reel catalog</p>
+  <h1>{len(reels)} reels, tagged by style.</h1>
+  <p class="sub">Every reel studied so far, with the styles it shows, so you can see each style in the wild.</p>
+  <div class="note">{esc_text(REELS.get("harvest_plan", ""))}</div>
+</div>
+<section style="padding-top:28px">
+  <div class="search"><input type="text" data-filter="#reel-table tr:not(:first-child)" placeholder="Search reels — try a creator, a style, or a word…" aria-label="Search reels"></div>
+  <div class="table-box"><table id="reel-table">
+    <tr><th>Reel</th><th>Creator</th><th>Style tags</th><th>What it shows</th></tr>
+{rows}
+  </table></div>
+  <h2 class="sec" style="margin-top:48px">What each field holds</h2>
+  <div class="table-box"><table>
+    <tr><th>Field</th><th>What it holds</th></tr>
+{fields}
+  </table></div>
+</section>
+"""
+
+
+def main():
+    styles = STYLES["styles"]
+    moves = STYLES["motion_dictionary"]
+    tools = STYLES["tools"]
+    reels = REELS.get("reels", [])
+    n_skills = sum(len(g["skills"]) for g in SKILLS["groups"])
+    n_free = sum(1 for g in SKILLS["groups"] for k in g["skills"] if k["cost"] == "free")
+    pages = {
+        "index.html": shell("home", "Master Video Styles — every video style, mastered",
+                            "Edit your footage by describing it, or pick a proven style and follow its playbook.",
+                            home(len(styles), len(moves), n_skills, n_free)),
+        "styles.html": shell("styles", "Styles and playbooks — Master Video Styles",
+                             "Every video style as a playbook: what it looks like, when to use it, the steps and a prompt.",
+                             styles_page(styles, moves, tools)),
+        "skills.html": shell("skills", "Skill stack — Master Video Styles",
+                             "Every creator-video skill in the workspace, grouped by job, free routes first.",
+                             skills_page(n_skills, n_free)),
+        "reels.html": shell("reels", "Reel catalog — Master Video Styles",
+                            "Every studied reel, tagged with the styles it demonstrates.", reels_page(reels)),
+    }
+    for name, doc in pages.items():
+        (ROOT / name).write_text(doc, encoding="utf-8", newline="\n")
+        print(f"Wrote {name} ({len(doc)} bytes)")
+    print(f"Styles: {len(styles)}, moves: {len(moves)}, tools: {len(tools)}, reels: {len(reels)}, skills: {n_skills} ({n_free} free)")
+
 
 if __name__ == "__main__":
     main()
