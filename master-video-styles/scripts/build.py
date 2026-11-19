@@ -422,6 +422,15 @@ h2.big{letter-spacing:-.04em}
 .three h3{font-size:19px;margin-top:16px}
 .three p{color:var(--muted);margin-top:6px;font-size:15px}
 @media(max-width:760px){.three{grid-template-columns:1fr}}
+
+.showcase{margin:44px auto 0;max-width:1080px;position:relative}
+.showcase img{width:100%;height:auto;border-radius:24px;box-shadow:0 40px 100px rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.08)}
+figcaption{position:absolute;right:14px;bottom:12px;font-size:11px;color:rgba(255,255,255,.75);background:rgba(9,9,11,.55);padding:3px 8px;border-radius:999px}
+.steps-wrap{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:28px;align-items:center;margin-top:36px;text-align:left}
+.steps-wrap .tall{position:relative;margin:0}
+.steps-wrap .tall img{width:100%;height:auto;max-height:620px;object-fit:cover;border-radius:24px}
+.steps-wrap .three{grid-template-columns:1fr;margin-top:0}
+@media(max-width:760px){.steps-wrap{grid-template-columns:1fr}.steps-wrap .tall img{max-height:420px}}
 /* responsive: tablets, phones, landscape phones, ultrawide */
 @media(min-width:1700px){.wrap{max-width:1320px}}
 @media(max-width:1024px){
@@ -808,6 +817,10 @@ def home(n_styles, n_moves, n_skills, n_free):
     </a>
   </div>
   <p class="proof">Built from 136 real creator reels · 17 proven styles · free to use</p>
+  <figure class="showcase">
+    <img src="img/creator-desk.jpg" alt="A creator editing a vertical video on a large monitor with a timeline" width="1600" height="900" fetchpriority="high">
+    <figcaption>AI-generated illustration</figcaption>
+  </figure>
 </section>
 
 <section class="center">
@@ -893,11 +906,14 @@ def home(n_styles, n_moves, n_skills, n_free):
 
 <section class="center">
   <h2 class="big">Three steps. That's it.</h2>
+  <div class="steps-wrap">
+  <figure class="tall"><img src="img/creator-vertical.jpg" alt="A creator at a desk editing their reel on the timeline" width="900" height="1600" loading="lazy"><figcaption>AI-generated illustration</figcaption></figure>
   <ol class="three">
     <li><span>1</span><h3>Add your video</h3><p>It stays on your device.</p></li>
     <li><span>2</span><h3>Say what you want</h3><p>“Make it punchy”, “add captions”, “cut it like a listing tour”.</p></li>
     <li><span>3</span><h3>Adjust and export</h3><p>Change anything on the timeline, then export.</p></li>
   </ol>
+  </div>
   <a class="btn light" href="editor/" style="margin-top:32px">Start editing — free</a>
 </section>
 <section class="center" id="how">
