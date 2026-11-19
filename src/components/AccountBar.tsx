@@ -4,7 +4,7 @@ import {
   accountsReady, enabledProviders, sendMagicLink, signInWithGoogle, sessionFromUrl, getSession, signOut,
   listPlans, savePlan, deletePlan, type Session, type SavedPlan,
 } from '../lib/supabase';
-import { videosReady, listVideos, uploadVideo, deleteVideo, fetchVideo, type StoredVideo } from '../lib/videos';
+import { cloudVideos, listVideos, uploadVideo, deleteVideo, fetchVideo, type StoredVideo } from '../lib/videos';
 
 type Props = {
   /** Current editor state to save. */
@@ -41,7 +41,7 @@ export default function AccountBar({ getPlan, title, onLoad, onOpenVideo }: Prop
 
   useEffect(() => {
     if (session) listPlans().then(setPlans).catch(e => setMsg(e.message));
-    if (session && videosReady) listVideos().then(setVideos).catch(e => setMsg(e.message));
+    if (session && cloudVideos) listVideos().then(setVideos).catch(e => setMsg(e.message));
   }, [session]);
 
   const run = async (fn: () => Promise<void>) => {
@@ -117,7 +117,7 @@ export default function AccountBar({ getPlan, title, onLoad, onOpenVideo }: Prop
           <button disabled={busy} onClick={save} className="flex items-center gap-1.5 rounded-lg bg-[#fafafa] px-3 py-1.5 font-semibold text-[#09090b] disabled:opacity-50">
             <Save size={13} /> {openId ? 'Save changes' : 'Save plan'}
           </button>
-          {videosReady && (
+          {cloudVideos && (
             <button onClick={() => { setShowVideos(v => !v); setShowList(false); }} aria-expanded={showVideos} className="flex items-center gap-1.5 rounded-lg border border-white/10 px-3 py-1.5 font-semibold text-[#fafafa]">
               <Film size={13} /> My videos ({videos.length})
             </button>
