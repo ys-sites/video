@@ -190,13 +190,16 @@ export default function AIEditorStudio() {
     setCursor(h.length);
   };
 
-  const pickFile = (e: ChangeEvent<HTMLInputElement>) => {
-    const f = e.target.files?.[0];
-    e.target.value = '';
-    if (!f) return;
+  const openFile = (f: File) => {
     if (!f.type.startsWith('video/')) return flash('Pick a video file.');
     setFile({ name: f.name, url: URL.createObjectURL(f) });
     setTime(0);
+  };
+
+  const pickFile = (e: ChangeEvent<HTMLInputElement>) => {
+    const f = e.target.files?.[0];
+    e.target.value = '';
+    if (f) openFile(f);
   };
 
   const stepsFor = (plan: Op[], r: typeof recipe): AgentStep[] => {
@@ -338,7 +341,7 @@ export default function AIEditorStudio() {
 
   return (
     <div className="ai-editor pb-6">
-      <AccountBar getPlan={planData} title={projectTitle.slice(0, 120)} onLoad={loadPlan} />
+      <AccountBar getPlan={planData} title={projectTitle.slice(0, 120)} onLoad={loadPlan} onOpenVideo={openFile} />
 
       <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#111113] shadow-2xl">
         {/* Top bar */}

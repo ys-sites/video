@@ -1,9 +1,10 @@
-import { useEffect, useState, type FormEvent } from 'react';
-import { Cloud, LogOut, Mail, Save, Trash2, FolderOpen } from 'lucide-react';
+import { useEffect, useState, type ChangeEvent, type FormEvent } from 'react';
+import { Cloud, LogOut, Mail, Save, Trash2, FolderOpen, Film, Upload } from 'lucide-react';
 import {
   accountsReady, sendMagicLink, signInWithGoogle, sessionFromUrl, getSession, signOut,
   listPlans, savePlan, deletePlan, type Session, type SavedPlan,
 } from '../lib/supabase';
+import { videosReady, listVideos, uploadVideo, deleteVideo, fetchVideo, type StoredVideo } from '../lib/videos';
 
 type Props = {
   /** Current editor state to save. */
@@ -12,14 +13,19 @@ type Props = {
   title: string;
   /** Put a saved plan back into the editor. */
   onLoad: (plan: Record<string, unknown>) => void;
+  /** Open a stored video in the editor. */
+  onOpenVideo: (file: File) => void;
 };
 
-export default function AccountBar({ getPlan, title, onLoad }: Props) {
+export default function AccountBar({ getPlan, title, onLoad, onOpenVideo }: Props) {
   const [session, setSession] = useState<Session | null>(null);
   const [email, setEmail] = useState('');
   const [plans, setPlans] = useState<SavedPlan[]>([]);
   const [openId, setOpenId] = useState<string | null>(null);
   const [showList, setShowList] = useState(false);
+  const [videos, setVideos] = useState<StoredVideo[]>([]);
+  const [showVideos, setShowVideos] = useState(false);
+  const [progress, setProgress] = useState<number | null>(null);
   const [msg, setMsg] = useState('');
   const [busy, setBusy] = useState(false);
 
@@ -35,6 +41,7 @@ export default function AccountBar({ getPlan, title, onLoad }: Props) {
 
   useEffect(() => {
     if (session) listPlans().then(setPlans).catch(e => setMsg(e.message));
+    if (session && videosReady) listVideos().then(setVideos).catch(e => setMsg(e.message));
   }, [session]);
 
   const run = async (fn: () => Promise<void>) => {
@@ -97,6 +104,28 @@ export default function AccountBar({ getPlan, title, onLoad }: Props) {
     setMsg('Saved to your account.');
   });
 
+  const upload = (e: ChangeEvent<HTMLInputElement>) => {
+    const f = e.target.files?.[0];
+    e.target.value = '';
+    if (!f) return;
+    run(async () => {
+      setProgress(0);
+      try {
+        await uploadVideo(f, setProgress);
+      } finally {
+        setProgress(null);
+      }
+      setVideos(await listVideos());
+      setMsg(`Uploaded “${f.name}”.`);
+    });
+  };
+
+  const openVideo = (v: StoredVideo) => run(async () => {
+    onOpenVideo(await fetchVideo(v));
+    setShowVideos(false);
+    setMsg(`Opened “${v.name}”.`);
+  });
+
   return (
     <div className="mb-4 rounded-xl border border-white/10 bg-[#111113] px-4 py-2.5 text-xs text-[#a1a1aa]">
       <div className="flex flex-wrap items-center gap-2">
@@ -106,7 +135,12 @@ export default function AccountBar({ getPlan, title, onLoad }: Props) {
           <button disabled={busy} onClick={save} className="flex items-center gap-1.5 rounded-lg bg-[#fafafa] px-3 py-1.5 font-semibold text-[#09090b] disabled:opacity-50">
             <Save size={13} /> {openId ? 'Save changes' : 'Save plan'}
           </button>
-          <button onClick={() => setShowList(v => !v)} aria-expanded={showList} className="flex items-center gap-1.5 rounded-lg border border-white/10 px-3 py-1.5 font-semibold text-[#fafafa]">
+          {videosReady && (
+            <button onClick={() => { setShowVideos(v => !v); setShowList(false); }} aria-expanded={showVideos} className="flex items-center gap-1.5 rounded-lg border border-white/10 px-3 py-1.5 font-semibold text-[#fafafa]">
+              <Film size={13} /> My videos ({videos.length})
+            </button>
+          )}
+          <button onClick={() => { setShowList(v => !v); setShowVideos(false); }} aria-expanded={showList} className="flex items-center gap-1.5 rounded-lg border border-white/10 px-3 py-1.5 font-semibold text-[#fafafa]">
             <FolderOpen size={13} /> My plans ({plans.length})
           </button>
           <button onClick={() => run(async () => { await signOut(); setSession(null); setPlans([]); setOpenId(null); })} className="flex items-center gap-1.5 rounded-lg px-2 py-1.5 hover:text-white" aria-label="Sign out">
@@ -115,6 +149,26 @@ export default function AccountBar({ getPlan, title, onLoad }: Props) {
         </span>
       </div>
       {msg && <p className="mt-2 text-[#c5f04a]" role="status">{msg}</p>}
+      {showVideos && (
+        <div className="mt-3 grid gap-1.5">
+          <label className={`flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-dashed border-white/20 px-3 py-2.5 text-sm text-white hover:bg-white/5 ${busy ? 'pointer-events-none opacity-50' : ''}`}>
+            <Upload size={14} /> {progress === null ? 'Upload a video (under 95 MB, private to you)' : `Uploading… ${progress}%`}
+            <input type="file" accept="video/*" hidden onChange={upload} disabled={busy} />
+          </label>
+          {videos.length === 0 && <p className="text-[#8b8b94]">No videos yet.</p>}
+          {videos.map(v => (
+            <div key={v.id} className="flex items-center gap-2 rounded-lg bg-[#18181b] px-3 py-2">
+              <button disabled={busy} className="min-w-0 flex-1 truncate text-left text-sm text-white disabled:opacity-50" onClick={() => openVideo(v)}>
+                {v.name}
+              </button>
+              <span className="shrink-0 text-[#71717a]">{(v.size / 1048576).toFixed(1)} MB</span>
+              <button aria-label={`Delete ${v.name}`} disabled={busy} onClick={() => run(async () => { await deleteVideo(v.id); setVideos(await listVideos()); })} className="shrink-0 rounded p-1 text-[#ffb4b4] hover:bg-[#4a1f1f]">
+                <Trash2 size={13} />
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
       {showList && (
         <ul className="mt-3 grid gap-1.5">
           {plans.length === 0 && <li className="text-[#8b8b94]">No saved plans yet.</li>}
