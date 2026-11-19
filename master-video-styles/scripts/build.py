@@ -10,8 +10,8 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-STYLES = json.loads((ROOT / "data" / "styles.json").read_text())
-REELS = json.loads((ROOT / "data" / "reels.json").read_text())
+STYLES = json.loads((ROOT / "data" / "styles.json").read_text(encoding="utf-8"))
+REELS = json.loads((ROOT / "data" / "reels.json").read_text(encoding="utf-8"))
 
 def esc(s):
     return html.escape(str(s or ""), quote=True)
@@ -107,6 +107,23 @@ td:first-child{color:var(--muted);font-weight:600;white-space:nowrap}
 footer{padding:36px 0 60px;color:var(--faint);font-size:14px;border-top:1px solid var(--line);margin-top:20px}
 footer a{color:var(--muted)}
 .note{background:var(--panel);border:1px dashed var(--line);border-radius:16px;padding:20px;color:var(--muted);font-size:15px}
+.explainer{display:grid;grid-template-columns:300px 1fr;gap:36px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:28px}
+@media(max-width:760px){.explainer{grid-template-columns:1fr;padding:20px}.ex-video{max-width:320px;width:100%;margin:0 auto}}
+.ex-video video{width:100%;aspect-ratio:9/16;border-radius:22px;background:#000;display:block;border:1px solid var(--line)}
+.ex-meta{font-size:12.5px;color:var(--faint);text-align:center;margin-top:8px}
+.explainer h2{margin-top:12px}
+.ex-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:4px 0 20px}
+@media(max-width:520px){.ex-stats{grid-template-columns:1fr 1fr}}
+.ex-stat{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.ex-stat b{display:block;font-size:24px;color:var(--yellow);letter-spacing:-.02em}
+.ex-stat span{font-size:12.5px;color:var(--muted)}
+.ex-steps{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:520px){.ex-steps{grid-template-columns:1fr}}
+.ex-steps li{display:flex;gap:12px;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:14px;color:var(--muted)}
+.ex-steps .n{flex:0 0 26px;height:26px;border-radius:50%;background:#2a2a38;color:var(--text);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+.ex-steps li.you .n{background:var(--yellow);color:#111}
+.ex-steps li b{color:var(--text);display:block}
+.ex-say{margin-top:18px;padding:14px 16px;border:1px dashed var(--line);border-radius:14px;font-size:14.5px;color:#d6d3dc}
 """
 
 def card(s):
@@ -203,6 +220,7 @@ def main():
 <header>
   <div class="logo">Master Video <span>Styles</span></div>
   <nav>
+    <a href="#how">How it works</a>
     <a href="#styles">Styles</a>
     <a href="#moves">Moves</a>
     <a href="#tools">Tools</a>
@@ -222,6 +240,37 @@ def main():
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Search styles — try “real estate”, “captions”, “drone”…"></div>
 </div>
+
+<section id="how">
+  <div class="explainer">
+    <div class="ex-video">
+      <video src="videos/creator-style-explainer.mp4" poster="videos/creator-style-explainer-poster.jpg" controls playsinline preload="metadata">
+        Your browser can't play this video. <a href="videos/creator-style-explainer.mp4">Download it</a>.
+      </video>
+      <div class="ex-meta">84 s · 9:16 · made with Remotion</div>
+    </div>
+    <div>
+      <span class="tag" style="--accent:var(--yellow)">How the creator-style system works</span>
+      <h2>Every creator-style edit starts from 136 studied reels.</h2>
+      <p class="sub">Each real-estate creator reel was measured for cuts, shot length and loudness, transcribed word by word, and sorted into one of 12 types. Ask for an edit “in creator style” and your footage is matched to a type; that type's measured rules set the length, pace, text and ending.</p>
+      <div class="ex-stats">
+        <div class="ex-stat"><b>136</b><span>reels studied</span></div>
+        <div class="ex-stat"><b>12</b><span>reel types</span></div>
+        <div class="ex-stat"><b>1.4 s</b><span>median shot</span></div>
+        <div class="ex-stat"><b>0.5 s</b><span>to the first word</span></div>
+      </div>
+      <ol class="ex-steps">
+        <li><span class="n">1</span><div><b>Transcribe</b>Every word of your clip, with timings.</div></li>
+        <li><span class="n">2</span><div><b>Pick the type</b>Your footage decides it, e.g. walk-and-talk.</div></li>
+        <li class="you"><span class="n">3</span><div><b>Storyboard</b>Beat by beat. You approve before anything renders.</div></li>
+        <li><span class="n">4</span><div><b>Build</b>Remotion, captions and face-tracked effects.</div></li>
+        <li><span class="n">5</span><div><b>Render</b>1080×1920, 30 fps, −14 LUFS.</div></li>
+        <li><span class="n">6</span><div><b>Checklist</b>Hook, pace, one clear ask, rights.</div></li>
+      </ol>
+      <p class="ex-say">To use it, send your clip and say <b>“edit this in creator style”</b>. It copies the creators' techniques, never their footage, voice or branding.</p>
+    </div>
+  </div>
+</section>
 
 <section id="styles">
   <h2>Every style</h2>
@@ -287,7 +336,7 @@ def main():
   Kelsie reel: <a href="https://www.instagram.com/reel/DewTzCzxR9q/" target="_blank" rel="noopener">instagram.com/reel/DewTzCzxR9q</a> ·
   Wilmore tour: <a href="https://www.instagram.com/reel/DfzaFE1xv02/" target="_blank" rel="noopener">instagram.com/reel/DfzaFE1xv02</a> ·
   Melissa pitch: <a href="https://www.instagram.com/reel/DfkBM9XuE_L/" target="_blank" rel="noopener">instagram.com/reel/DfkBM9XuE_L</a><br>
-  Updated Nov 17, 2026.
+  Updated Nov 19, 2026.
 </footer>
 
 </div>
@@ -320,7 +369,7 @@ document.querySelectorAll('button.copy').forEach(function(b){{
 </html>
 """
     out = ROOT / "index.html"
-    out.write_text(doc)
+    out.write_text(doc, encoding="utf-8", newline="\n")
     print(f"Wrote {out} ({len(doc)} bytes)")
     print(f"Styles: {len(styles)}, moves: {len(moves)}, tools: {len(tools)}, reels: {n_reels}")
 
