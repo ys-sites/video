@@ -32,10 +32,10 @@ def esc_text(s):
 
 
 CSS = """
-:root{--bg:#0b0b0c;--panel:#161618;--panel2:#1e1e21;--line:#2a2a2e;--text:#f4f4f5;--muted:#a1a1aa;--faint:#8a8a93;--brand:#facc15;--pink:#ff5da2;--amber:#ffb020;--violet:#8b7cff;--cyan:#22d3ee;--green:#34d399;--orange:#f97316;--yellow:#facc15;--red:#ff6b6b;--radius:20px}
+:root{--bg:#09090b;--panel:#171718;--panel2:#1f1f22;--line:#27272a;--text:#fafafa;--muted:#a1a1aa;--faint:#8b8b94;--brand:#c5f04a;--pink:#ff5da2;--amber:#ffb020;--violet:#8b7cff;--cyan:#22d3ee;--green:#34d399;--orange:#f97316;--yellow:#facc15;--red:#ff6b6b;--radius:20px}
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-wrap:break-word}
+body{background:var(--bg);color:var(--text);font-family:Geist,"Geist Fallback",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-wrap:break-word}
 img,video{max-width:100%;display:block}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:6px}
@@ -224,6 +224,67 @@ th{background:var(--panel2);font-size:12.5px;text-transform:uppercase;letter-spa
 tr:last-child td{border-bottom:none}
 td:first-child{font-weight:600;white-space:nowrap}
 td a{color:var(--cyan)}
+/* Opus design system: weight 600 headings, tight tracking, borderless cards */
+h1,h2,h3,.hero h1,h2.big,.path h2,.page-head h1{font-weight:600}
+.hero h1{letter-spacing:-.045em}
+h2.big{letter-spacing:-.04em}
+.announce{background:linear-gradient(90deg,#070a12,#18213a 50%,#070a12);border-bottom:0;color:#fafafa}
+.announce span{color:#fafafa;text-decoration:underline;text-underline-offset:3px}
+.hero::before{background:radial-gradient(ellipse at 50% 0,rgba(120,140,255,.10),transparent 65%)}
+.hero h1 em{color:var(--text)}
+.logo i{background:#fafafa;color:#09090b}
+.path,.shot,.numbers div,.four li,.eight a,.which>div,.agent>div,.faq details,.panel,.explainer{border-color:transparent;background:var(--panel)}
+.path:hover,.eight a:hover{border-color:#3f3f46}
+.label{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--brand);letter-spacing:0;text-transform:none}
+.label svg{width:16px;height:16px}
+.stage{position:relative;margin-top:40px;border-radius:var(--radius);overflow:hidden;background:linear-gradient(160deg,#2b3a55,#4a6283 45%,#7d93ad);padding:clamp(18px,4vw,48px) clamp(14px,5vw,72px) 0}
+.stage img{border-radius:14px 14px 0 0;box-shadow:0 30px 80px rgba(0,0,0,.45);width:100%;height:auto}
+.bubble{position:absolute;left:50%;bottom:clamp(16px,4vw,40px);transform:translateX(-50%);width:min(560px,86%);background:rgba(255,255,255,.18);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.28);border-radius:22px;padding:18px 64px 18px 22px;text-align:left;font-size:clamp(15px,1.7vw,20px);line-height:1.35;color:#fff}
+.bubble i{position:absolute;right:14px;bottom:14px;width:36px;height:36px;border-radius:50%;background:#fff;color:#111;display:grid;place-items:center;font-style:normal;font-weight:700}
+.row{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(24px,5vw,72px);align-items:center;text-align:left;margin-top:96px}
+.row.boxed{background:var(--panel);border-radius:24px;padding:clamp(24px,5vw,72px)}
+.row h3{font-size:clamp(26px,3vw,36px);letter-spacing:-.03em;line-height:1.12;margin-top:10px}
+.row p{color:var(--muted);margin-top:12px;font-size:16px;max-width:460px}
+.row img{border-radius:16px;width:100%;height:auto}
+.log{background:#0f0f11;border:1px solid var(--line);border-radius:18px;padding:20px;display:grid;gap:10px}
+.log .ask{justify-self:end;background:#27272a;border-radius:14px 14px 4px 14px;padding:10px 14px;font-size:14px;max-width:85%}
+.log .done{font-size:13px;color:var(--brand);font-weight:600}
+.log li{list-style:none;font-size:14px;color:#d4d4d8;padding:8px 12px;border-radius:10px;background:#18181b}
+.log li b{color:#fafafa}
+.ctl{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(24px,5vw,72px);align-items:center;text-align:left;margin-top:96px}
+.ctl h3{font-size:clamp(26px,3vw,36px);letter-spacing:-.03em;line-height:1.12;margin-top:10px;max-width:440px}
+.ctl .tabs{display:block;margin-top:24px;max-width:420px}
+.ctl .tabs button{display:block;width:100%;padding:14px 0;border-radius:0;border:0;border-bottom:1px solid var(--line);background:none;color:var(--faint);font-size:15px;font-weight:500}
+.ctl .tabs button[aria-selected=true]{background:none;color:var(--text);border-color:#52525b}
+.ctl .tabs button span{display:none}
+.ctl .panel{background:none;padding:0;min-height:0;gap:18px;align-items:center}
+.ctl .cap{color:var(--muted);font-size:14.5px;text-align:center;max-width:420px}
+.ui{width:100%;max-width:480px;background:#111113;border:1px solid var(--line);border-radius:20px;padding:20px;display:grid;gap:10px}
+.ui .t{font-size:13px;color:var(--faint);font-weight:600}
+.ui .r{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#18181b;border-radius:10px;padding:10px 14px;font-size:14px;color:#e4e4e7}
+.ui .r em{font-style:normal;font-size:12px;font-weight:700;color:var(--brand)}
+.ui .r.on{outline:1.5px solid #fafafa}
+.ui .chips{margin:0}
+.ui .big{font-size:clamp(40px,6vw,64px);font-weight:700;letter-spacing:-.04em;line-height:1}
+.ui .cap-demo{background:#000;border-radius:12px;aspect-ratio:16/9;display:grid;place-items:center;font-weight:800;font-size:clamp(20px,3vw,30px)}
+.ui .cap-demo span{background:#000;padding:4px 10px}
+.ui .cap-demo b{color:var(--brand)}
+.ui img{border-radius:12px}
+.four li{padding:0;overflow:hidden}
+.four .vis{height:150px;background:#111113;display:grid;place-items:center;border-bottom:1px solid #1f1f22}
+.four .txt{padding:20px 22px 24px}
+.four h3{margin-top:0}
+.aspects{display:flex;gap:10px;align-items:flex-end}
+.aspects span{border:2px solid #52525b;border-radius:6px;display:grid;place-items:center;font-size:11px;color:var(--muted);font-weight:700}
+.pill-demo{background:#27272a;border-radius:999px;padding:10px 16px;font-size:13px;color:#e4e4e7}
+.vis .big{font-size:44px;font-weight:700;letter-spacing:-.04em}
+.btn.light{background:#fafafa;color:#09090b}
+.btn.brand{background:#fafafa;color:#09090b}
+.final{background:radial-gradient(ellipse at 50% 130%,rgba(120,140,255,.22),transparent 60%),var(--panel);border-color:transparent}
+.ex-stat b,.ex-steps li.you .n{color:var(--brand)}
+.ex-steps li.you .n{background:var(--brand);color:#111}
+.tag{background:#27272a}
+@media(max-width:860px){.row,.ctl{grid-template-columns:1fr;margin-top:64px}.row .vis-first{order:-1}.bubble{position:static;transform:none;width:auto;margin:16px 0 18px}.stage{padding-bottom:0}}
 /* responsive: tablets, phones, landscape phones, ultrawide */
 @media(min-width:1700px){.wrap{max-width:1320px}}
 @media(max-width:1024px){
@@ -328,7 +389,10 @@ def shell(page, title, description, body):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{esc_text(title)}</title>
 <meta name="description" content="{esc(description)}">
-<meta name="theme-color" content="#0b0b0c">
+<meta name="theme-color" content="#09090b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>{CSS}</style>
 </head>
 <body>
@@ -437,6 +501,16 @@ def skill_card(k):
 
 # ---------- pages ----------
 
+SPARK = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>'
+BOLT = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>'
+PEN = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 17.2V21h3.8L17.8 10 14 6.2zM20.7 7a1 1 0 000-1.4l-2.3-2.3a1 1 0 00-1.4 0L15.2 5 19 8.8z"/></svg>'
+
+
+def ui(title, rows):
+    body = "".join(f'<div class="r{" on" if on else ""}">{name}<em>{tag}</em></div>' for name, tag, on in rows)
+    return f'<div class="ui"><div class="t">{title}</div>{body}</div>'
+
+
 def home(n_styles, n_moves, n_skills, n_free):
     chips = "".join(f'<span style="--c:{c}">{t}</span>' for t, c in [
         ("Sumit", "#ff5da2"), ("Kelsie listicle", "#ffb020"), ("Fly-through", "#8b7cff"), ("Vision pitch", "#22d3ee"),
@@ -445,67 +519,65 @@ def home(n_styles, n_moves, n_skills, n_free):
         f'<div class="tr" style="top:{12 + i * 16}px">' + "".join(
             f'<b style="left:{l}%;width:{w}%;background:{c}"></b>' for l, w in spans) + '</div>'
         for i, (c, spans) in enumerate([
-            ("#facc15", [(0, 14), (80, 20)]), ("#e4e4e7", [(0, 100)]),
-            ("#4f8a72", [(0, 18), (20, 16), (38, 22), (62, 16), (80, 20)]), ("#b06ad6", [(0, 100)])]))
-    tabs = [
-        ("speed", "Speed", "Edit in minutes, not hours", [
-            ("Describe the edit", "Type it in plain words or tap a quick prompt. The plan lands on six tracks with a reason for each change.",
-             "6", "tracks: motion, captions, video, B-roll, music, sound"),
-            ("Fix it by hand", "Click any block to rename, move, stretch or remove it. Undo and redo every step.",
-             "∞", "undo — nothing is final until you approve"),
-            ("One-tap fixes", "Trim fillers, clean the voice, add zooms, swap the background, even out the look.",
-             "5", "free local fixes, each naming the tool that does it")]),
-        ("style", "Style", "Every style, already worked out", [
-            ("Proven formats", "Nine reel types measured from 136 real reels: real lengths, shot timing and talking speed.",
-             "136", "reels measured frame by frame"),
-            ("Playbooks", f"{n_styles} styles, each with what it looks like, when to use it, the steps and a copy-paste prompt.",
-             str(n_styles), "styles with step-by-step playbooks"),
-            ("Motion moves", "Steal one move at a time — punch-ins, fly-throughs, kinetic keywords — without the whole style.",
-             str(n_moves), "moves in the motion dictionary")]),
-        ("ai", "AI", "AI that runs on your own machine", [
-            ("Captions", "Word-timed captions in seven styles, checked on three frames before the full render.",
-             "7", "caption styles, rendered locally"),
-            ("Face-tracked effects", "Spotlight, orbit, glass widgets and punch-ins that follow the speaker.",
-             "45", "effects that track the face"),
-            ("Free-first voice and music", "Local voices and transcription, code-made music. Paid services are fallbacks only.",
-             str(n_free), f"of {n_skills} skills are free")]),
+            ("#c5f04a", [(0, 14), (80, 20)]), ("#e4e4e7", [(0, 100)]),
+            ("#71717a", [(0, 18), (20, 16), (38, 22), (62, 16), (80, 20)]), ("#8b7cff", [(0, 100)])]))
+    groups = [
+        ("speed", BOLT, "Speed", "Edit in minutes with chat, timeline and one-tap fixes", [
+            ("Describe the edit", ui("Edit agent", [("Make it punchy", "chip", True), ("Add captions", "chip", False), ("Open on the strongest moment", "chip", False), ("Add music under my voice", "chip", False)]),
+             "Type the edit in plain words or tap a quick prompt. The plan lands on six tracks, each change with a reason."),
+            ("Fix it by hand", '<div class="ui"><img src="img/editor-hand.jpg" alt="Selected timeline block with rename, move and remove controls" width="1200" height="675" loading="lazy"></div>',
+             "Click any block to rename, move, stretch or remove it. Undo and redo every step."),
+            ("One-tap fixes", ui("Quick fixes", [("Trim fillers and pauses", "ON", True), ("Clean audio to −14 LUFS", "ON", True), ("Punch-in zooms", "ON", False), ("Background", "OFF", False)]),
+             "Each fix joins the next edit and names the free local tool that does the work.")]),
+        ("style", PEN, "Style", "Start from a style that already works", [
+            ("Proven formats", ui("Walk-and-talk · 25 reels", [("Length", "34 s", False), ("Per shot", "2.8 s", True), ("Talking speed", "209 wpm", False), ("First word", "0.0 s", False)]),
+             "Nine reel types measured from 136 real reels: real lengths, shot timing and talking speed."),
+            ("Playbooks", ui(f"{n_styles} playbooks", [("What it looks like", "1", False), ("When to use it", "2", False), ("Step-by-step build", "3", True), ("Copy-paste prompt", "4", False)]),
+             f"{n_styles} styles, each with what it looks like, when to use it, the steps and a prompt for Claude."),
+            ("Motion moves", ui(f"{n_moves} moves", [("Punch-in on the keyword", "move", True), ("Fly-through push-in", "move", False), ("Kinetic keyword", "move", False), ("Before / after wipe", "move", False)]),
+             "Borrow one move at a time without taking on a whole style.")]),
+        ("ai", SPARK, "AI", "AI that runs on your own machine", [
+            ("Captions", '<div class="ui"><div class="t">Word-by-word captions</div><div class="cap-demo"><span>your <b>words</b> here</span></div></div>',
+             "Seven caption styles from word timings, checked on three frames before the full render."),
+            ("Face-tracked effects", ui("45 effects", [("Spotlight", "face", True), ("Orbit", "face", False), ("Glass widgets", "face", False), ("iMessage pop-ups", "face", False)]),
+             "Effects that follow the speaker and can sit behind them."),
+            ("Free voice and music", ui(f"{n_free} of {n_skills} skills free", [("Voice: OmniVoice, Piper", "free", True), ("Transcripts: Whisper", "free", False), ("Music: code synth, MusicGen", "free", False), ("Paid services", "fallback", False)]),
+             "Local voices, transcripts and code-made music. Paid services are fallbacks only.")]),
     ]
-    feature_html = []
-    for key, label, title, items in tabs:
+    ctl = []
+    for key, icon, label, title, items in groups:
         buttons, panels = [], []
-        for i, (name, text, big, cap) in enumerate(items):
+        for i, (name, visual, cap) in enumerate(items):
             pid = f"{key}-{i}"
             on = i == 0
-            buttons.append(f'<button role="tab" id="t-{pid}" aria-controls="p-{pid}" aria-selected="{str(on).lower()}" tabindex="{0 if on else -1}">{name}<span>{text}</span></button>')
-            panels.append(f'<div class="panel" role="tabpanel" id="p-{pid}" aria-labelledby="t-{pid}"{"" if on else " hidden"}><div class="huge">{big}</div><p>{cap}</p></div>')
-        feature_html.append(f'''<div class="feature">
-  <div><div class="label">{label}</div><h3>{title}</h3><div class="tabs" role="tablist" aria-label="{label}">{"".join(buttons)}</div></div>
-  <div>{"".join(panels)}</div>
-</div>''')
+            buttons.append(f'<button role="tab" id="t-{pid}" aria-controls="p-{pid}" aria-selected="{str(on).lower()}" tabindex="{0 if on else -1}">{name}</button>')
+            panels.append(f'<div class="panel" role="tabpanel" id="p-{pid}" aria-labelledby="t-{pid}"{"" if on else " hidden"}>{visual}<p class="cap">{cap}</p></div>')
+        ctl.append(f'<div class="ctl"><div><span class="label">{icon}{label}</span><h3>{title}</h3>'
+                   f'<div class="tabs" role="tablist" aria-label="{label}">{"".join(buttons)}</div></div><div>{"".join(panels)}</div></div>')
 
     return f"""
 <section class="hero">
   <p class="eyebrow">The creator video studio</p>
-  <h1>Every video style,<br><em>mastered.</em></h1>
+  <h1>Every video style,<br>mastered</h1>
   <p class="lede">Two ways to start. Edit your own footage just by describing it, or pick a proven style and follow its playbook.</p>
   <div class="paths">
     <a class="path" href="editor/">
       <div class="mini" aria-hidden="true">{tracks}<div class="ph"></div></div>
-      <span class="kicker">Raw footage → finished video</span>
+      <span class="kicker">Raw footage to finished video</span>
       <h2>Edit like a pro just by chatting</h2>
       <span class="btn light">Open the AI Editor</span>
     </a>
     <a class="path" href="styles.html">
       <div class="chipwall" aria-hidden="true">{chips}</div>
-      <span class="kicker">Pick a style → get the playbook</span>
+      <span class="kicker">Pick a style, get the playbook</span>
       <h2>{n_styles} styles, each with steps and a prompt</h2>
       <span class="btn light">Browse styles</span>
     </a>
   </div>
 </section>
 
-<section class="center" style="padding-top:24px">
-  <h2 class="big" style="font-size:clamp(22px,2.6vw,28px)">Built on research, not guesswork</h2>
+<section class="center" style="padding-top:16px">
+  <p style="color:var(--muted);font-size:14px">Built on research, not guesswork</p>
   <div class="numbers">
     <div><b>136</b><span>reels measured</span></div>
     <div><b>{n_styles}</b><span>style playbooks</span></div>
@@ -516,17 +588,54 @@ def home(n_styles, n_moves, n_skills, n_free):
 </section>
 
 <section class="center">
-  <h2 class="big">Meet the AI Editor</h2>
-  <p class="sub">Your real footage in, a finished edit plan out. It makes every decision visible, explains why, and lets you change any of it before a single frame renders.</p>
+  <h2 class="big">Meet the AI Editor:<br>your chat-to-edit studio</h2>
+  <p class="sub">Your real footage in, a finished edit plan out. No avatars, no generated speakers. It makes every decision visible and explains it; you direct the changes.</p>
   <a class="btn light" href="editor/" style="margin-top:24px">Try the AI Editor</a>
-  <div class="duo" style="text-align:left">
-    <div class="shot"><span class="kicker">AI Editor</span><h3>The AI makes the edit</h3><p>One pass plans cuts, captions, motion, B-roll, music and sound, with an edit log that says what changed and why.</p><img src="img/editor-plan.jpg" alt="The AI Editor: a chat request on the left, the edit log and a six-track timeline on the right" width="1200" height="675" loading="lazy"></div>
-    <div class="shot"><span class="kicker">AI Editor</span><h3>You keep the last word</h3><p>Pick any block and rename it, nudge it or remove it. Undo every step. Chat for intent, timeline for precision.</p><img src="img/editor-hand.jpg" alt="A selected timeline block with controls to rename, move or remove it" width="1200" height="675" loading="lazy"></div>
+  <div class="stage">
+    <img src="img/editor-plan.jpg" alt="The AI Editor with a chat request, an edit log and a six-track timeline" width="1200" height="669" loading="lazy">
+    <div class="bubble">Make it punchy, add captions with keyword pops, zooms and a clear ask<i>↑</i></div>
+  </div>
+
+  <div class="row">
+    <div><span class="label">{SPARK}AI Editor</span><h3>The AI makes the edit</h3><p>One pass plans cuts, captions, motion, B-roll, music and sound, with an edit log that says what changed and why. Ask for a change in plain words and it changes that, not the whole video.</p></div>
+    <div class="log">
+      <div class="ask">Turn this into a reel with a clear ask at the end</div>
+      <div class="done">✓ Edit ready — here's what changed and why</div>
+      <ul style="display:grid;gap:8px">
+        <li><b>12 tight takes</b> — pauses and fillers cut</li>
+        <li><b>Hook title</b> — strongest line first, inside 0.5 s</li>
+        <li><b>Word-by-word captions</b> — in the mobile safe zone</li>
+        <li><b>Music bed</b> — ducked under the voice</li>
+        <li><b>One clear ask</b> — follow, comment or book</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row boxed">
+    <div><span class="label">{SPARK}AI Editor</span><h3>You keep the last word</h3><p>A real timeline for the last mile: block-level selection, undo, restore and targeted changes. Chat for intent, timeline for precision.</p></div>
+    <img src="img/editor-hand.jpg" alt="A selected timeline block with controls to rename, move or remove it" width="1200" height="675" loading="lazy">
   </div>
 </section>
 
+<section class="center">
+  <h2 class="big">Take full control when you want it</h2>
+  <p class="sub">A complete creator studio. Automatic when speed matters, hands-on when precision does.</p>
+  <a class="btn light" href="editor/" style="margin-top:24px">Open the editor</a>
+  {"".join(ctl)}
+</section>
+
+<section class="center">
+  <h2 class="big">The easiest creator studio.<br>No editing skills required</h2>
+  <ul class="four">
+    <li><div class="vis"><span class="pill-demo">Make it punchy ✦</span></div><div class="txt"><h3>Easy for everyone</h3><p>Describe the edit in your own words. Quick prompts cover the common asks.</p></div></li>
+    <li><div class="vis"><div class="aspects"><span style="width:36px;height:64px">9:16</span><span style="width:52px;height:52px">1:1</span><span style="width:80px;height:45px">16:9</span></div></div><div class="txt"><h3>Every screen</h3><p>Plan for Reels, TikTok, Shorts or YouTube with captions kept in the safe zone.</p></div></li>
+    <li><div class="vis"><span class="big">0.5 s</span></div><div class="txt"><h3>Hooks that hold</h3><p>First word inside half a second and one clear ask at the end — the measured norm.</p></div></li>
+    <li><div class="vis"><span class="big" style="color:var(--brand)">Free</span></div><div class="txt"><h3>Free first</h3><p>Every paid tool has a free local route. Your footage never leaves your device.</p></div></li>
+  </ul>
+</section>
+
 <section class="center" id="how">
-  <h2 class="big">How the creator style works</h2>
+  <h2 class="big">See how the creator style works</h2>
   <p class="sub">An 84-second tour of the system behind every edit.</p>
   <div class="explainer">
     <div class="ex-video">
@@ -536,8 +645,8 @@ def home(n_styles, n_moves, n_skills, n_free):
       <div class="ex-meta">84 s · 9:16 · made with Remotion</div>
     </div>
     <div>
-      <span class="tag" style="--accent:var(--brand)">136 reels studied</span>
-      <h3 style="font-size:clamp(22px,2.6vw,28px);margin-top:12px;letter-spacing:-.02em">Every creator-style edit starts from measured reels.</h3>
+      <span class="label">{SPARK}136 reels studied</span>
+      <h3 style="font-size:clamp(22px,2.6vw,30px);margin-top:10px;letter-spacing:-.03em">Every creator-style edit starts from measured reels.</h3>
       <div class="ex-stats">
         <div class="ex-stat"><b>136</b><span>reels studied</span></div>
         <div class="ex-stat"><b>12</b><span>reel types</span></div>
@@ -552,35 +661,17 @@ def home(n_styles, n_moves, n_skills, n_free):
         <li><span class="n">5</span><div><b>Render</b>1080×1920, 30 fps, −14 LUFS.</div></li>
         <li><span class="n">6</span><div><b>Checklist</b>Hook, pace, one clear ask.</div></li>
       </ol>
-      <p class="ex-say">Send your clip and say <b>“edit this in creator style”</b>. It copies techniques, never footage, voices or branding.</p>
     </div>
   </div>
 </section>
 
 <section class="center">
-  <h2 class="big">Take full control when you want it</h2>
-  <p class="sub">Automatic when speed matters, hands-on when precision does.</p>
-  <a class="btn light" href="editor/" style="margin-top:24px">Open the editor</a>
-  <div style="text-align:left">{"".join(feature_html)}</div>
-</section>
-
-<section class="center">
-  <h2 class="big">No editing experience required</h2>
-  <ul class="four">
-    <li><div class="ico">✎</div><h3>Easy for everyone</h3><p>Describe the edit in your own words. Quick prompts cover the common asks.</p></li>
-    <li><div class="ico" style="--c:var(--cyan)">⤢</div><h3>Every screen</h3><p>Plan for 9:16, 1:1 or 16:9 with captions kept in the safe zone.</p></li>
-    <li><div class="ico" style="--c:var(--pink)">★</div><h3>Hooks that hold</h3><p>First word inside half a second and one clear ask at the end — the measured norm.</p></li>
-    <li><div class="ico" style="--c:var(--green)">€0</div><h3>Free first</h3><p>Every paid tool has a free local route. Your footage never leaves your device.</p></li>
-  </ul>
-</section>
-
-<section class="center">
-  <h2 class="big">Plan, style, render. All in one place.</h2>
+  <h2 class="big">Plan, style, render. All-in-one creator studio</h2>
   <p class="sub">Stop juggling tabs. Everything the workflow needs is one click away.</p>
   <ul class="eight">
     <li><a href="editor/"><div class="ico">▶</div><h3>AI Editor</h3><p>Chat-to-edit planner with a real timeline.</p></a></li>
     <li><a href="styles.html"><div class="ico" style="--c:var(--pink)">◆</div><h3>Style playbooks</h3><p>{n_styles} styles with steps and prompts.</p></a></li>
-    <li><a href="styles.html#moves"><div class="ico" style="--c:var(--violet)">↯</div><h3>Motion dictionary</h3><p>{n_moves} moves you can borrow one at a time.</p></a></li>
+    <li><a href="styles.html#moves"><div class="ico" style="--c:var(--violet)">↯</div><h3>Motion dictionary</h3><p>{n_moves} moves to borrow one at a time.</p></a></li>
     <li><a href="styles.html#tools"><div class="ico" style="--c:var(--cyan)">⚙</div><h3>Tools map</h3><p>What each tool does and what it costs.</p></a></li>
     <li><a href="skills.html"><div class="ico" style="--c:var(--green)">✦</div><h3>Skill stack</h3><p>{n_skills} skills grouped by job, free first.</p></a></li>
     <li><a href="reels.html"><div class="ico" style="--c:var(--amber)">▦</div><h3>Reel catalog</h3><p>Every studied reel, tagged by style.</p></a></li>
@@ -591,7 +682,7 @@ def home(n_styles, n_moves, n_skills, n_free):
 
 <section class="center">
   <h2 class="big">Which do I need?</h2>
-  <p class="sub">Both are free and work together. Pick what fits the job.</p>
+  <p class="sub">The AI Editor doesn't replace the playbooks. Pick what fits the job; both are free.</p>
   <div class="which">
     <div><span class="kicker">Editing agent</span><h3>AI Editor</h3><p>Start with raw footage. Finish with a post-ready edit plan.</p>
       <ul><li>Your real footage — no avatars or fake speakers</li><li>Cuts, captions, motion, B-roll, music and sound in one pass</li><li>Every decision explained; you approve the changes</li></ul>
@@ -611,7 +702,7 @@ def home(n_styles, n_moves, n_skills, n_free):
 → creator-video · remotion · captions · effects
 ✓ preview first, render on approval</pre></div>
     <div><h3>Skills and MCP</h3><p>REA dissects reference sites and apps; the skill stack covers captions, motion, voice, music and footage — free routes first.</p>
-      <a class="btn ghost sm" href="skills.html" style="margin-top:18px">See the skill stack</a></div>
+      <a class="btn light sm" href="skills.html" style="margin-top:18px">See the skill stack</a></div>
   </div>
 </section>
 
@@ -630,9 +721,9 @@ def home(n_styles, n_moves, n_skills, n_free):
 
 <section>
   <div class="final">
-    <h2 class="big">Edit your next video by describing it</h2>
-    <a class="btn brand" href="editor/">Open the AI Editor</a>
-    <p>Free. No account. Your footage stays on your device.</p>
+    <h2 class="big">Edit one video every day, free</h2>
+    <a class="btn light" href="editor/">Open the AI Editor</a>
+    <p>No account. No upload. No credit card.</p>
   </div>
 </section>
 """

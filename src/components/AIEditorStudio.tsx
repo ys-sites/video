@@ -15,8 +15,8 @@ type Op = { id: string; track: Track; start: number; end: number; label: string;
 type Aspect = '9:16' | '16:9' | '1:1';
 
 const TRACKS: { id: Track; name: string; color: string; icon: typeof Film }[] = [
-  { id: 'motion', name: 'Motion graphics', color: 'bg-[#e2bb69]/80 text-[#1b1606]', icon: Type },
-  { id: 'captions', name: 'Captions', color: 'bg-[#f2f2ea]/85 text-[#141815]', icon: Captions },
+  { id: 'motion', name: 'Motion graphics', color: 'bg-[#c5f04a]/80 text-[#0b0f00]', icon: Type },
+  { id: 'captions', name: 'Captions', color: 'bg-[#f2f2ea]/85 text-[#111113]', icon: Captions },
   { id: 'video', name: 'Video', color: 'bg-[#4f8a72]/90 text-white', icon: Film },
   { id: 'broll', name: 'B-roll', color: 'bg-[#6b7fd6]/85 text-white', icon: ImageIcon },
   { id: 'music', name: 'Music', color: 'bg-[#b06ad6]/80 text-white', icon: Music },
@@ -288,13 +288,13 @@ export default function AIEditorStudio() {
   return (
     <div className="ai-editor space-y-16 pb-6">
       {/* Hero: one promise, two ways in */}
-      <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0d100e] px-6 py-14 sm:px-12 text-center shadow-2xl">
-        <div className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[720px] -translate-x-1/2 rounded-full bg-gradient-to-r from-[#f0a35e]/25 via-[#e2bb69]/20 to-[#4f8a72]/25 blur-3xl" />
-        <p className="relative text-[11px] font-bold tracking-[0.25em] text-[#e2bb69]">CHAT-TO-EDIT STUDIO</p>
+      <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#09090b] px-6 py-14 sm:px-12 text-center shadow-2xl">
+        <div className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[720px] -translate-x-1/2 rounded-full bg-gradient-to-r from-[#7890ff]/25 via-[#c5f04a]/20 to-[#4f8a72]/25 blur-3xl" />
+        <p className="relative text-[11px] font-bold tracking-[0.25em] text-[#c5f04a]">CHAT-TO-EDIT STUDIO</p>
         <h1 className="relative mt-4 text-4xl sm:text-6xl font-bold tracking-tight text-white leading-[1.05]">
           Say the edit.<br />Keep the final cut.
         </h1>
-        <p className="relative mx-auto mt-5 max-w-xl text-[#9aa49c] text-sm sm:text-base">
+        <p className="relative mx-auto mt-5 max-w-xl text-[#a1a1aa] text-sm sm:text-base">
           Drop in your footage, describe what you want, and get a full edit plan you can change block by block — then render it on your own machine.
         </p>
         <div className="relative mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2 text-left">
@@ -302,8 +302,8 @@ export default function AIEditorStudio() {
             { m: 'clips' as const, kicker: 'Long video → short clips', title: 'Find the moments, cut the clips, reframe for every feed', cta: 'Plan clips' },
             { m: 'producer' as const, kicker: 'Raw footage → finished video', title: 'Describe the edit in plain words and steer every change', cta: 'Start editing' },
           ].map(c => (
-            <button key={c.m} onClick={() => goEditor(c.m)} className="group rounded-2xl border border-white/10 bg-[#151a16] p-6 transition hover:border-[#e2bb69]/40 hover:bg-[#19201b]">
-              <p className="text-[11px] font-bold uppercase tracking-wider text-[#8e988f]">{c.kicker}</p>
+            <button key={c.m} onClick={() => goEditor(c.m)} className="group rounded-2xl border border-white/10 bg-[#171718] p-6 transition hover:border-[#c5f04a]/40 hover:bg-[#1f1f22]">
+              <p className="text-[11px] font-bold uppercase tracking-wider text-[#a1a1aa]">{c.kicker}</p>
               <p className="mt-2 text-lg font-semibold text-white">{c.title}</p>
               <span className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold text-[#111] transition group-hover:gap-3">
                 {c.cta} <ArrowRight size={14} />
@@ -311,33 +311,33 @@ export default function AIEditorStudio() {
             </button>
           ))}
         </div>
-        <p className="relative mt-8 text-xs text-[#7d887f]">Built on 136 studied reels · {creatorStyles.length} creator styles · 45 effects · footage never leaves your browser</p>
+        <p className="relative mt-8 text-xs text-[#8b8b94]">Built on 136 studied reels · {creatorStyles.length} creator styles · 45 effects · footage never leaves your browser</p>
       </section>
 
       {/* Editor: chat on the left, preview and timeline on the right */}
       <section ref={editorRef} className="scroll-mt-6">
         <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="text-[11px] font-bold tracking-[0.2em] text-[#e2bb69]">TRY IT NOW</p>
+            <p className="text-[11px] font-bold tracking-[0.2em] text-[#c5f04a]">TRY IT NOW</p>
             <h2 className="mt-2 text-3xl font-bold text-white">Tell it what to change</h2>
-            <p className="mt-1 text-sm text-[#8e988f]">
+            <p className="mt-1 text-sm text-[#a1a1aa]">
               {mode === 'producer' ? 'Raw footage → finished edit.' : 'Long video → short clips.'} Pick a style, add quick fixes, then chat.
             </p>
           </div>
-          <div className="flex rounded-xl border border-white/10 bg-[#0e1210] p-1 text-xs font-semibold">
+          <div className="flex rounded-xl border border-white/10 bg-[#111113] p-1 text-xs font-semibold">
             {(['producer', 'clips'] as const).map(m => (
-              <button key={m} onClick={() => setMode(m)} className={`rounded-lg px-3 py-1.5 ${mode === m ? 'bg-[#263e34] text-white' : 'text-[#8e988f] hover:text-white'}`}>
+              <button key={m} onClick={() => setMode(m)} className={`rounded-lg px-3 py-1.5 ${mode === m ? 'bg-[#27272a] text-white' : 'text-[#a1a1aa] hover:text-white'}`}>
                 {m === 'producer' ? 'Full edit' : 'Clips'}
               </button>
             ))}
           </div>
         </div>
 
-        <div className="grid overflow-hidden rounded-3xl border border-white/10 bg-[#111512] shadow-2xl lg:grid-cols-[380px_1fr]">
+        <div className="grid overflow-hidden rounded-3xl border border-white/10 bg-[#171718] shadow-2xl lg:grid-cols-[380px_1fr]">
           {/* Chat panel */}
           <div className="flex flex-col border-b border-white/10 lg:border-b-0 lg:border-r">
-            <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3 text-xs text-[#8e988f]">
-              <Bot size={14} className="text-[#e2bb69]" /> Edit agent
+            <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3 text-xs text-[#a1a1aa]">
+              <Bot size={14} className="text-[#c5f04a]" /> Edit agent
               <span className="ml-auto flex gap-1">
                 <button aria-label="Undo" disabled={cursor === 0} onClick={() => setCursor(c => c - 1)} className="rounded p-1 hover:bg-white/5 disabled:opacity-30"><Undo2 size={14} /></button>
                 <button aria-label="Redo" disabled={cursor >= history.length - 1} onClick={() => setCursor(c => c + 1)} className="rounded p-1 hover:bg-white/5 disabled:opacity-30"><Redo2 size={14} /></button>
@@ -345,15 +345,15 @@ export default function AIEditorStudio() {
             </div>
 
             <div className="flex-1 space-y-4 overflow-y-auto p-4 max-h-[520px]">
-              <button onClick={() => fileRef.current?.click()} className="flex w-full items-center gap-3 rounded-xl border border-dashed border-white/15 bg-[#0d100e] p-3 text-left text-xs text-[#aab4ac] hover:border-[#e2bb69]/50">
-                <Upload size={16} className="shrink-0 text-[#e2bb69]" />
+              <button onClick={() => fileRef.current?.click()} className="flex w-full items-center gap-3 rounded-xl border border-dashed border-white/15 bg-[#09090b] p-3 text-left text-xs text-[#d4d4d8] hover:border-[#c5f04a]/50">
+                <Upload size={16} className="shrink-0 text-[#c5f04a]" />
                 <span className="truncate">{file ? `${file.name} · ${fmt(duration)}` : 'Add footage (stays on this device)'}</span>
               </button>
               <input ref={fileRef} type="file" accept="video/*" hidden onChange={pickFile} />
 
-              <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#7d887f]">
+              <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#8b8b94]">
                 Style
-                <select value={styleId} onChange={e => setStyleId(e.target.value)} className="mt-1.5 w-full rounded-lg border border-white/10 bg-[#0d100e] px-3 py-2 text-sm normal-case tracking-normal text-white">
+                <select value={styleId} onChange={e => setStyleId(e.target.value)} className="mt-1.5 w-full rounded-lg border border-white/10 bg-[#09090b] px-3 py-2 text-sm normal-case tracking-normal text-white">
                   {creatorStyles.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
                 </select>
               </label>
@@ -364,41 +364,41 @@ export default function AIEditorStudio() {
                   onChange={e => setReference(e.target.value)}
                   placeholder="Reference reel link (optional)"
                   aria-label="Reference reel link"
-                  className="min-w-0 flex-1 rounded-lg border border-white/10 bg-[#0d100e] px-3 py-2 text-xs text-white placeholder:text-[#5f6a62]"
+                  className="min-w-0 flex-1 rounded-lg border border-white/10 bg-[#09090b] px-3 py-2 text-xs text-white placeholder:text-[#52525b]"
                 />
-                <span className="flex items-center gap-1 rounded-lg border border-white/10 bg-[#0d100e] px-2 text-xs text-[#b9c4bc]" title="Versions to make">
+                <span className="flex items-center gap-1 rounded-lg border border-white/10 bg-[#09090b] px-2 text-xs text-[#d4d4d8]" title="Versions to make">
                   <button aria-label="Fewer versions" onClick={() => setVersions(v => Math.max(1, v - 1))}><Minus size={12} /></button>
                   <span className="w-4 text-center tabular-nums">{versions}</span>
                   <button aria-label="More versions" onClick={() => setVersions(v => Math.min(5, v + 1))}><Plus size={12} /></button>
                 </span>
               </div>
               {recipe && (
-                <p className="flex items-center gap-2 rounded-lg bg-[#1d2118] px-3 py-1.5 text-[11px] text-[#e2bb69]">
+                <p className="flex items-center gap-2 rounded-lg bg-[#1a1d10] px-3 py-1.5 text-[11px] text-[#c5f04a]">
                   Format: {recipe.name} · shots ~{recipe.shot} s · {recipe.len} s
-                  <button className="ml-auto text-[#8e988f] hover:text-white" onClick={() => setRecipe(null)}>clear</button>
+                  <button className="ml-auto text-[#a1a1aa] hover:text-white" onClick={() => setRecipe(null)}>clear</button>
                 </p>
               )}
 
               {log ? (
                 <div className="space-y-3 text-sm">
-                  <div className="ml-6 rounded-xl bg-[#1d2620] p-3 text-[#dfe6e0]">{log.request}</div>
-                  <div className="rounded-xl bg-[#0d100e] p-3 text-[#c3ccc5]">
+                  <div className="ml-6 rounded-xl bg-[#27272a] p-3 text-[#fafafa]">{log.request}</div>
+                  <div className="rounded-xl bg-[#09090b] p-3 text-[#d4d4d8]">
                     <p className="mb-2 flex items-center gap-1.5 text-xs text-[#52d68a]"><Check size={13} /> Edit ready — here's what changed and why:</p>
                     <ul className="space-y-1.5 text-[13px]">
                       {log.lines.map((l, i) => <li key={i}>• {l}</li>)}
                     </ul>
-                    <p className="mt-3 text-xs text-[#7d887f]">Each change sits on its own track. Click a block to adjust it by hand.</p>
+                    <p className="mt-3 text-xs text-[#8b8b94]">Each change sits on its own track. Click a block to adjust it by hand.</p>
                   </div>
                 </div>
               ) : (
-                <p className="rounded-xl bg-[#0d100e] p-3 text-sm text-[#8e988f]">
+                <p className="rounded-xl bg-[#09090b] p-3 text-sm text-[#a1a1aa]">
                   Describe the edit — or tap a suggestion. I'll plan cuts, captions, motion, music and sound, and explain each decision.
                 </p>
               )}
 
               <div className="flex flex-wrap gap-1.5">
                 {QUICK_PROMPTS.map(q => (
-                  <button key={q} onClick={() => makeEdit(q)} className="rounded-full border border-white/10 bg-[#161c18] px-2.5 py-1 text-[11px] text-[#b9c4bc] hover:border-[#e2bb69]/50 hover:text-white">{q}</button>
+                  <button key={q} onClick={() => makeEdit(q)} className="rounded-full border border-white/10 bg-[#1f1f22] px-2.5 py-1 text-[11px] text-[#d4d4d8] hover:border-[#c5f04a]/50 hover:text-white">{q}</button>
                 ))}
               </div>
             </div>
@@ -409,25 +409,25 @@ export default function AIEditorStudio() {
                 onChange={e => setPrompt(e.target.value)}
                 placeholder="e.g. Make it punchy, add captions and a clear ask"
                 aria-label="Tell the editor what to change"
-                className="min-w-0 flex-1 rounded-lg border border-white/10 bg-[#0d100e] px-3 py-2 text-sm text-white placeholder:text-[#5f6a62]"
+                className="min-w-0 flex-1 rounded-lg border border-white/10 bg-[#09090b] px-3 py-2 text-sm text-white placeholder:text-[#52525b]"
               />
-              <button className="flex items-center gap-1.5 rounded-lg bg-[#e2bb69] px-3 py-2 text-xs font-bold text-[#1b1606] hover:bg-[#ecc97f]"><Wand2 size={14} /> Edit</button>
+              <button className="flex items-center gap-1.5 rounded-lg bg-[#c5f04a] px-3 py-2 text-xs font-bold text-[#0b0f00] hover:bg-[#d4f56f]"><Wand2 size={14} /> Edit</button>
             </form>
           </div>
 
           {/* Preview + timeline */}
           <div className="flex min-w-0 flex-col">
-            <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2.5 text-xs text-[#8e988f]">
+            <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2.5 text-xs text-[#a1a1aa]">
               <span className="truncate">{file?.name ?? 'Preview'}</span>
               <span className="ml-auto flex rounded-lg border border-white/10 p-0.5">
                 {(['9:16', '1:1', '16:9'] as Aspect[]).map(a => (
-                  <button key={a} onClick={() => setAspect(a)} className={`rounded px-2 py-0.5 ${aspect === a ? 'bg-[#263e34] text-white' : 'hover:text-white'}`}>{a}</button>
+                  <button key={a} onClick={() => setAspect(a)} className={`rounded px-2 py-0.5 ${aspect === a ? 'bg-[#27272a] text-white' : 'hover:text-white'}`}>{a}</button>
                 ))}
               </span>
             </div>
 
-            <div className="flex flex-1 items-center justify-center bg-[#0a0c0b] p-4">
-              <div className={`relative overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-[#1c2a23] via-[#121815] to-[#2a2113] ${aspectBox}`}>
+            <div className="flex flex-1 items-center justify-center bg-[#0b0b0c] p-4">
+              <div className={`relative overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-[#1f2230] via-[#141417] to-[#26262a] ${aspectBox}`}>
                 {file ? (
                   <video
                     ref={videoRef}
@@ -440,24 +440,24 @@ export default function AIEditorStudio() {
                     onPause={() => setPlaying(false)}
                   />
                 ) : (
-                  <div className="flex h-full w-full items-center justify-center p-6 text-center text-xs text-[#6f7b72]">
+                  <div className="flex h-full w-full items-center justify-center p-6 text-center text-xs text-[#71717a]">
                     {ops.length ? 'Plan preview — add footage to see it on your clip' : 'Add footage or tap a suggestion'}
                   </div>
                 )}
                 {active('broll') && <div className="absolute inset-x-3 top-3 rounded-lg bg-[#6b7fd6]/85 px-2 py-1 text-[11px] font-semibold text-white">B-roll: {active('broll')!.label}</div>}
                 {active('motion') && (
-                  <div className="absolute inset-x-0 top-1/3 px-4 text-center text-2xl sm:text-3xl font-black uppercase leading-none text-[#f5e27a] drop-shadow-[0_3px_0_rgba(0,0,0,0.6)]">{active('motion')!.label}</div>
+                  <div className="absolute inset-x-0 top-1/3 px-4 text-center text-2xl sm:text-3xl font-black uppercase leading-none text-[#e8ff9a] drop-shadow-[0_3px_0_rgba(0,0,0,0.6)]">{active('motion')!.label}</div>
                 )}
                 {active('captions') && (
                   <div className="absolute inset-x-0 bottom-[18%] text-center">
-                    <span className="rounded-md bg-black/70 px-2 py-1 text-sm font-extrabold text-white">your <span className="text-[#e2bb69]">words</span> here</span>
+                    <span className="rounded-md bg-black/70 px-2 py-1 text-sm font-extrabold text-white">your <span className="text-[#c5f04a]">words</span> here</span>
                   </div>
                 )}
               </div>
             </div>
 
-            <div className="border-t border-white/10 bg-[#0e1210] px-3 py-3">
-              <div className="mb-2 flex items-center gap-3 text-xs text-[#8e988f]">
+            <div className="border-t border-white/10 bg-[#111113] px-3 py-3">
+              <div className="mb-2 flex items-center gap-3 text-xs text-[#a1a1aa]">
                 <button
                   aria-label={playing ? 'Pause' : 'Play'}
                   onClick={() => {
@@ -486,7 +486,7 @@ export default function AIEditorStudio() {
               >
                 {TRACKS.map(t => (
                   <div key={t.id} className="flex items-center gap-2">
-                    <span className="flex w-[104px] shrink-0 items-center gap-1.5 truncate text-[10px] text-[#7d887f]"><t.icon size={11} /> {t.name}</span>
+                    <span className="flex w-[104px] shrink-0 items-center gap-1.5 truncate text-[10px] text-[#8b8b94]"><t.icon size={11} /> {t.name}</span>
                     <div className="relative h-6 flex-1 rounded bg-white/[0.03]">
                       {ops.filter(o => o.track === t.id).map(o => (
                         <button
@@ -502,16 +502,16 @@ export default function AIEditorStudio() {
                     </div>
                   </div>
                 ))}
-                <div className="pointer-events-none absolute top-0 bottom-0 w-px bg-[#e2bb69]" style={{ left: `calc(112px + (100% - 112px) * ${Math.min(1, time / duration)})` }} />
+                <div className="pointer-events-none absolute top-0 bottom-0 w-px bg-[#c5f04a]" style={{ left: `calc(112px + (100% - 112px) * ${Math.min(1, time / duration)})` }} />
               </div>
 
               {sel && (
-                <div className="mt-3 flex flex-wrap items-center gap-2 rounded-xl border border-white/10 bg-[#141a16] p-2.5 text-xs text-[#b9c4bc]">
+                <div className="mt-3 flex flex-wrap items-center gap-2 rounded-xl border border-white/10 bg-[#18181b] p-2.5 text-xs text-[#d4d4d8]">
                   <input
                     value={sel.label}
                     onChange={e => update(sel.id, { label: e.target.value })}
                     aria-label="Block label"
-                    className="w-40 rounded border border-white/10 bg-[#0d100e] px-2 py-1 text-white"
+                    className="w-40 rounded border border-white/10 bg-[#09090b] px-2 py-1 text-white"
                   />
                   {(['start', 'end'] as const).map(k => (
                     <span key={k} className="flex items-center gap-1">
@@ -522,13 +522,13 @@ export default function AIEditorStudio() {
                     </span>
                   ))}
                   <button onClick={() => { commit(ops.filter(o => o.id !== sel.id)); setSelected(null); }} className="ml-auto flex items-center gap-1 rounded bg-[#4a1f1f] px-2 py-1 text-[#ffb4b4] hover:bg-[#5c2626]"><Trash2 size={12} /> Remove</button>
-                  <p className="basis-full text-[11px] text-[#7d887f]">{sel.why} · <span className="text-[#9ec4af]">{sel.tool}</span></p>
+                  <p className="basis-full text-[11px] text-[#8b8b94]">{sel.why} · <span className="text-[#c5f04a]">{sel.tool}</span></p>
                 </div>
               )}
 
               <div className="mt-3 flex flex-wrap gap-2">
-                <button onClick={copyBrief} className="flex items-center gap-1.5 rounded-lg bg-[#263e34] px-3 py-2 text-xs font-semibold text-white hover:bg-[#2f4c40]"><Copy size={13} /> Copy brief for Claude Code</button>
-                <button onClick={() => saveFile('ai-edit-plan.json', JSON.stringify({ mode, style: style?.id, recipe: recipe?.id, reference, versions, aspect, duration, request: log?.request, fixes: [...fixes], ops }, null, 2), 'application/json')} className="flex items-center gap-1.5 rounded-lg border border-white/10 px-3 py-2 text-xs font-semibold text-[#b9c4bc] hover:text-white"><Download size={13} /> Edit plan (.json)</button>
+                <button onClick={copyBrief} className="flex items-center gap-1.5 rounded-lg bg-[#27272a] px-3 py-2 text-xs font-semibold text-white hover:bg-[#3f3f46]"><Copy size={13} /> Copy brief for Claude Code</button>
+                <button onClick={() => saveFile('ai-edit-plan.json', JSON.stringify({ mode, style: style?.id, recipe: recipe?.id, reference, versions, aspect, duration, request: log?.request, fixes: [...fixes], ops }, null, 2), 'application/json')} className="flex items-center gap-1.5 rounded-lg border border-white/10 px-3 py-2 text-xs font-semibold text-[#d4d4d8] hover:text-white"><Download size={13} /> Edit plan (.json)</button>
                 {notice && <span className="self-center text-xs text-[#52d68a]">{notice}</span>}
               </div>
             </div>
@@ -538,29 +538,29 @@ export default function AIEditorStudio() {
 
       {/* Recreate a proven format */}
       <section>
-        <p className="text-[11px] font-bold tracking-[0.2em] text-[#e2bb69]">RECREATE THIS</p>
+        <p className="text-[11px] font-bold tracking-[0.2em] text-[#c5f04a]">RECREATE THIS</p>
         <h2 className="mt-2 text-3xl font-bold text-white">Start from a format that already works</h2>
-        <p className="mt-1 text-sm text-[#8e988f]">Each one is measured from the 136-reel study: real lengths, real shot timing, real talking speed.</p>
+        <p className="mt-1 text-sm text-[#a1a1aa]">Each one is measured from the 136-reel study: real lengths, real shot timing, real talking speed.</p>
         <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {RECIPES.map(r => (
-            <div key={r.id} className="flex flex-col rounded-2xl border border-white/10 bg-[#121613] p-5">
+            <div key={r.id} className="flex flex-col rounded-2xl border border-white/10 bg-[#171718] p-5">
               <div className="flex items-baseline gap-2">
-                <span className="rounded bg-[#263e34] px-1.5 py-0.5 font-mono text-[10px] text-[#a5c9b6]">{r.id}</span>
+                <span className="rounded bg-[#27272a] px-1.5 py-0.5 font-mono text-[10px] text-[#d4d4d8]">{r.id}</span>
                 <span className="font-semibold text-white">{r.name}</span>
-                <span className="ml-auto text-[11px] text-[#7d887f]">{r.reels} reels</span>
+                <span className="ml-auto text-[11px] text-[#8b8b94]">{r.reels} reels</span>
               </div>
               <div className="mt-4 grid grid-cols-3 gap-2 text-center">
                 {[[`${r.len}s`, 'length'], [`${r.shot}s`, 'per shot'], [`${r.wpm}`, 'words/min']].map(([v, l]) => (
-                  <div key={l} className="rounded-lg bg-[#0d100e] py-2">
+                  <div key={l} className="rounded-lg bg-[#09090b] py-2">
                     <p className="font-bold tabular-nums text-white">{v}</p>
-                    <p className="text-[10px] text-[#7d887f]">{l}</p>
+                    <p className="text-[10px] text-[#8b8b94]">{l}</p>
                   </div>
                 ))}
               </div>
               <button
                 aria-label={`Recreate ${r.name}`}
                 onClick={() => { setRecipe(r); setAspect('9:16'); const d = file ? duration : r.len; setDuration(d); goEditor('producer'); makeEdit(r.prompt, r, d); }}
-                className="mt-4 inline-flex items-center justify-center gap-2 rounded-full border border-white/15 py-2 text-xs font-semibold text-white hover:border-[#e2bb69]/60 hover:bg-[#1d2118]"
+                className="mt-4 inline-flex items-center justify-center gap-2 rounded-full border border-white/15 py-2 text-xs font-semibold text-white hover:border-[#c5f04a]/60 hover:bg-[#1a1d10]"
               >
                 Recreate this <ArrowRight size={13} />
               </button>
@@ -571,9 +571,9 @@ export default function AIEditorStudio() {
 
       {/* Quick fixes */}
       <section>
-        <p className="text-[11px] font-bold tracking-[0.2em] text-[#e2bb69]">ONE-TAP FIXES</p>
+        <p className="text-[11px] font-bold tracking-[0.2em] text-[#c5f04a]">ONE-TAP FIXES</p>
         <h2 className="mt-2 text-3xl font-bold text-white">Fix the recording, not just the edit</h2>
-        <p className="mt-1 text-sm text-[#8e988f]">Switch them on and they join the next edit. Each one says which tool does the work.</p>
+        <p className="mt-1 text-sm text-[#a1a1aa]">Switch them on and they join the next edit. Each one says which tool does the work.</p>
         <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {FIXES.map(f => {
             const on = fixes.has(f.id);
@@ -582,15 +582,15 @@ export default function AIEditorStudio() {
                 key={f.id}
                 onClick={() => setFixes(s => { const n = new Set(s); if (n.has(f.id)) n.delete(f.id); else n.add(f.id); return n; })}
                 aria-pressed={on}
-                className={`rounded-2xl border p-5 text-left transition ${on ? 'border-[#e2bb69]/60 bg-[#1d2118]' : 'border-white/10 bg-[#121613] hover:border-white/20'}`}
+                className={`rounded-2xl border p-5 text-left transition ${on ? 'border-[#c5f04a]/60 bg-[#1a1d10]' : 'border-white/10 bg-[#171718] hover:border-white/20'}`}
               >
                 <div className="flex items-center gap-2">
-                  <f.icon size={18} className={on ? 'text-[#e2bb69]' : 'text-[#8e988f]'} />
+                  <f.icon size={18} className={on ? 'text-[#c5f04a]' : 'text-[#a1a1aa]'} />
                   <span className="font-semibold text-white">{f.name}</span>
-                  <span className={`ml-auto rounded-full px-2 py-0.5 text-[10px] font-bold ${on ? 'bg-[#e2bb69] text-[#1b1606]' : 'bg-white/5 text-[#7d887f]'}`}>{on ? 'ON' : 'OFF'}</span>
+                  <span className={`ml-auto rounded-full px-2 py-0.5 text-[10px] font-bold ${on ? 'bg-[#c5f04a] text-[#0b0f00]' : 'bg-white/5 text-[#8b8b94]'}`}>{on ? 'ON' : 'OFF'}</span>
                 </div>
-                <p className="mt-2 text-sm text-[#a5afa7]">{f.text}</p>
-                <p className={`mt-3 text-[11px] ${f.local ? 'text-[#9ec4af]' : 'text-[#e0a37a]'}`}>{f.tool}</p>
+                <p className="mt-2 text-sm text-[#a1a1aa]">{f.text}</p>
+                <p className={`mt-3 text-[11px] ${f.local ? 'text-[#c5f04a]' : 'text-[#e0a37a]'}`}>{f.tool}</p>
               </button>
             );
           })}
@@ -599,7 +599,7 @@ export default function AIEditorStudio() {
 
       {/* Workflow */}
       <section>
-        <p className="text-[11px] font-bold tracking-[0.2em] text-[#e2bb69]">THE LOOP</p>
+        <p className="text-[11px] font-bold tracking-[0.2em] text-[#c5f04a]">THE LOOP</p>
         <h2 className="mt-2 text-3xl font-bold text-white">Cut, polish, check, reuse</h2>
         <div className="mt-6 grid gap-3 md:grid-cols-4">
           {[
@@ -608,10 +608,10 @@ export default function AIEditorStudio() {
             ['03', 'Check it by hand', 'Preview in Remotion Studio, adjust any block, approve before rendering.'],
             ['04', 'Save it as a skill', 'Keep the recipe as a style and batch the next ten videos with it.'],
           ].map(([n, t, d]) => (
-            <div key={n} className="rounded-2xl border border-white/10 bg-[#121613] p-5">
-              <p className="font-mono text-xs text-[#e2bb69]">{n}</p>
+            <div key={n} className="rounded-2xl border border-white/10 bg-[#171718] p-5">
+              <p className="font-mono text-xs text-[#c5f04a]">{n}</p>
               <p className="mt-2 font-semibold text-white">{t}</p>
-              <p className="mt-1.5 text-sm text-[#97a199]">{d}</p>
+              <p className="mt-1.5 text-sm text-[#a1a1aa]">{d}</p>
             </div>
           ))}
         </div>
@@ -619,21 +619,21 @@ export default function AIEditorStudio() {
 
       {/* Feature tabs */}
       <section>
-        <p className="text-[11px] font-bold tracking-[0.2em] text-[#e2bb69]">HANDS-ON WHEN YOU WANT IT</p>
+        <p className="text-[11px] font-bold tracking-[0.2em] text-[#c5f04a]">HANDS-ON WHEN YOU WANT IT</p>
         <h2 className="mt-2 text-3xl font-bold text-white">Automatic for speed, manual for precision</h2>
         <div className="mt-6 flex gap-2">
           {features.map((f, i) => (
-            <button key={f.tag} onClick={() => setFeatureTab(i)} className={`rounded-full px-4 py-1.5 text-xs font-semibold ${featureTab === i ? 'bg-white text-[#111]' : 'border border-white/10 text-[#8e988f] hover:text-white'}`}>{f.tag}</button>
+            <button key={f.tag} onClick={() => setFeatureTab(i)} className={`rounded-full px-4 py-1.5 text-xs font-semibold ${featureTab === i ? 'bg-white text-[#111]' : 'border border-white/10 text-[#a1a1aa] hover:text-white'}`}>{f.tag}</button>
           ))}
         </div>
-        <div className="mt-4 rounded-3xl border border-white/10 bg-[#121613] p-6">
+        <div className="mt-4 rounded-3xl border border-white/10 bg-[#171718] p-6">
           <h3 className="text-xl font-semibold text-white">{features[featureTab].title}</h3>
           <div className="mt-5 grid gap-4 md:grid-cols-3">
             {features[featureTab].items.map(it => (
-              <div key={it.name} className="rounded-2xl bg-[#0d100e] p-5">
-                <it.icon size={18} className="text-[#e2bb69]" />
+              <div key={it.name} className="rounded-2xl bg-[#09090b] p-5">
+                <it.icon size={18} className="text-[#c5f04a]" />
                 <p className="mt-3 font-semibold text-white">{it.name}</p>
-                <p className="mt-1.5 text-sm text-[#97a199]">{it.text}</p>
+                <p className="mt-1.5 text-sm text-[#a1a1aa]">{it.text}</p>
               </div>
             ))}
           </div>
@@ -643,17 +643,17 @@ export default function AIEditorStudio() {
       {/* Which mode */}
       <section>
         <h2 className="text-3xl font-bold text-white">Which way in?</h2>
-        <p className="mt-1 text-sm text-[#8e988f]">Same studio, two starting points.</p>
+        <p className="mt-1 text-sm text-[#a1a1aa]">Same studio, two starting points.</p>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
           {[
             { m: 'producer' as const, kicker: 'Edit agent', title: 'Full edit', lead: 'Start with raw footage and finish with a post-ready video.', points: ['Your real footage — no avatars or synthetic speakers', 'Captions, motion, B-roll, music and sound in one pass', 'Every decision explained; you approve the changes'] },
             { m: 'clips' as const, kicker: 'Clip finder', title: 'Clips', lead: 'Start with a long talk or podcast and pull the best moments.', points: ['Moments chosen by hook, payoff and a clean ending', 'Reframed to 9:16 with captions in the safe zone', 'Each clip gets its own brief for batch rendering'] },
           ].map(c => (
-            <div key={c.m} className="rounded-3xl border border-white/10 bg-[#121613] p-6">
-              <p className="text-[11px] font-bold uppercase tracking-wider text-[#e2bb69]">{c.kicker}</p>
+            <div key={c.m} className="rounded-3xl border border-white/10 bg-[#171718] p-6">
+              <p className="text-[11px] font-bold uppercase tracking-wider text-[#c5f04a]">{c.kicker}</p>
               <h3 className="mt-1 text-xl font-semibold text-white">{c.title}</h3>
-              <p className="mt-1 text-sm text-[#97a199]">{c.lead}</p>
-              <ul className="mt-4 space-y-2 text-sm text-[#c3ccc5]">
+              <p className="mt-1 text-sm text-[#a1a1aa]">{c.lead}</p>
+              <ul className="mt-4 space-y-2 text-sm text-[#d4d4d8]">
                 {c.points.map(p => <li key={p} className="flex gap-2"><Check size={15} className="mt-0.5 shrink-0 text-[#52d68a]" /> {p}</li>)}
               </ul>
               <button onClick={() => goEditor(c.m)} className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold text-[#111]">Use {c.title} <ArrowRight size={13} /></button>
@@ -663,28 +663,28 @@ export default function AIEditorStudio() {
       </section>
 
       {/* Agent */}
-      <section className="rounded-3xl border border-white/10 bg-gradient-to-br from-[#151b17] to-[#0f1210] p-6 sm:p-8">
+      <section className="rounded-3xl border border-white/10 bg-gradient-to-br from-[#171718] to-[#111113] p-6 sm:p-8">
         <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="text-[11px] font-bold tracking-[0.2em] text-[#e2bb69]">IN YOUR AGENT</p>
+            <p className="text-[11px] font-bold tracking-[0.2em] text-[#c5f04a]">IN YOUR AGENT</p>
             <h2 className="mt-2 text-3xl font-bold text-white">Plan here, render with Claude Code</h2>
-            <p className="mt-2 text-sm text-[#97a199]">The brief is written for this repo. Claude Code follows the master router to the right skills and keeps every layer editable.</p>
+            <p className="mt-2 text-sm text-[#a1a1aa]">The brief is written for this repo. Claude Code follows the master router to the right skills and keeps every layer editable.</p>
           </div>
-          <pre className="overflow-x-auto rounded-2xl border border-white/10 bg-black/60 p-4 text-[12px] leading-relaxed text-[#b9c4bc]"><span className="text-[#7d887f]"><Terminal size={12} className="mr-1 inline" />claude</span>{'\n'}&gt; [paste brief]{'\n'}<span className="text-[#9ec4af]">→ docs/MASTER-ROUTER.md</span>{'\n'}<span className="text-[#9ec4af]">→ skills/creator-video  · remotion  · captions-skill  · effects</span>{'\n'}<span className="text-[#e2bb69]">✓ editable Remotion project · preview · render on approval</span></pre>
+          <pre className="overflow-x-auto rounded-2xl border border-white/10 bg-black/60 p-4 text-[12px] leading-relaxed text-[#d4d4d8]"><span className="text-[#8b8b94]"><Terminal size={12} className="mr-1 inline" />claude</span>{'\n'}&gt; [paste brief]{'\n'}<span className="text-[#c5f04a]">→ docs/MASTER-ROUTER.md</span>{'\n'}<span className="text-[#c5f04a]">→ skills/creator-video  · remotion  · captions-skill  · effects</span>{'\n'}<span className="text-[#c5f04a]">✓ editable Remotion project · preview · render on approval</span></pre>
         </div>
       </section>
 
       {/* FAQ */}
       <section>
         <h2 className="text-3xl font-bold text-white">Questions</h2>
-        <div className="mt-6 divide-y divide-white/10 rounded-3xl border border-white/10 bg-[#121613]">
+        <div className="mt-6 divide-y divide-white/10 rounded-3xl border border-white/10 bg-[#171718]">
           {FAQ.map(([q, a], i) => (
             <div key={q}>
               <button onClick={() => setOpenFaq(openFaq === i ? null : i)} aria-expanded={openFaq === i} className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left font-semibold text-white">
                 {q}
-                <ChevronDown size={16} className={`shrink-0 text-[#8e988f] transition ${openFaq === i ? 'rotate-180' : ''}`} />
+                <ChevronDown size={16} className={`shrink-0 text-[#a1a1aa] transition ${openFaq === i ? 'rotate-180' : ''}`} />
               </button>
-              {openFaq === i && <p className="px-6 pb-5 text-sm text-[#a5afa7]">{a}</p>}
+              {openFaq === i && <p className="px-6 pb-5 text-sm text-[#a1a1aa]">{a}</p>}
             </div>
           ))}
         </div>
@@ -692,8 +692,8 @@ export default function AIEditorStudio() {
 
       <section className="text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-white">Start editing by describing it</h2>
-        <button onClick={() => goEditor('producer')} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#e2bb69] px-6 py-3 text-sm font-bold text-[#1b1606] hover:bg-[#ecc97f]">Open the editor <ArrowRight size={15} /></button>
-        <p className="mt-3 text-xs text-[#7d887f]">Free. No upload. No account.</p>
+        <button onClick={() => goEditor('producer')} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#c5f04a] px-6 py-3 text-sm font-bold text-[#0b0f00] hover:bg-[#d4f56f]">Open the editor <ArrowRight size={15} /></button>
+        <p className="mt-3 text-xs text-[#8b8b94]">Free. No upload. No account.</p>
       </section>
     </div>
   );
