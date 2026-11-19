@@ -5,6 +5,7 @@ import {
   Keyboard, Palette, Crop, Captions, ChevronDown, Layers3, Volume2, ImageIcon, Minus, Plus,
 } from 'lucide-react';
 import { builtInStyles } from '../styles';
+import AccountBar from './AccountBar';
 
 // Layout ideas from REA captures of opus.pro/ai-video-editor, chatcut.io and
 // captions.ai/features/edit-with-ai (2026-11-19, notes in docs/ai-editor-research.md).
@@ -222,6 +223,26 @@ export default function AIEditorStudio() {
     if (key === 'start' ? v < o.end : v > o.start) update(o.id, { [key]: v });
   };
 
+  const planData = () => ({ mode, style: style?.id, recipe: recipe?.id, reference, versions, aspect, duration, request: log?.request, log, fixes: [...fixes], ops });
+
+  const loadPlan = (d: Record<string, unknown>) => {
+    const list = Array.isArray(d.ops) ? (d.ops as Op[]) : [];
+    if (d.mode === 'clips' || d.mode === 'producer') setMode(d.mode);
+    if (typeof d.style === 'string' && creatorStyles.some(c => c.id === d.style)) setStyleId(d.style);
+    setRecipe(RECIPES.find(r => r.id === d.recipe) ?? null);
+    setReference(typeof d.reference === 'string' ? d.reference : '');
+    setVersions(typeof d.versions === 'number' ? Math.min(5, Math.max(1, d.versions)) : 1);
+    if (d.aspect === '9:16' || d.aspect === '1:1' || d.aspect === '16:9') setAspect(d.aspect);
+    if (typeof d.duration === 'number' && d.duration > 0) setDuration(d.duration);
+    setFixes(new Set((Array.isArray(d.fixes) ? d.fixes : []).filter((f): f is FixId => FIXES.some(x => x.id === f))));
+    const l = d.log as { request?: unknown; lines?: unknown } | null;
+    setLog(l && typeof l.request === 'string' && Array.isArray(l.lines) ? { request: l.request, lines: l.lines.map(String) } : null);
+    setHistory([[], list]);
+    setCursor(1);
+    setSelected(null);
+    setTime(0);
+  };
+
   const brief = useMemo(() => {
     const fixNames = FIXES.filter(f => fixes.has(f.id)).map(f => f.name).join(', ') || 'none';
     const rows = [...ops].sort((a, b) => a.start - b.start)
@@ -333,6 +354,7 @@ export default function AIEditorStudio() {
           </div>
         </div>
 
+        <AccountBar getPlan={planData} title={(log?.request ?? `${style?.name ?? 'Creator'} edit`).slice(0, 120)} onLoad={loadPlan} />
         <div className="grid overflow-hidden rounded-3xl border border-white/10 bg-[#171718] shadow-2xl lg:grid-cols-[380px_1fr]">
           {/* Chat panel */}
           <div className="flex flex-col border-b border-white/10 lg:border-b-0 lg:border-r">
@@ -528,7 +550,7 @@ export default function AIEditorStudio() {
 
               <div className="mt-3 flex flex-wrap gap-2">
                 <button onClick={copyBrief} className="flex items-center gap-1.5 rounded-lg bg-[#27272a] px-3 py-2 text-xs font-semibold text-white hover:bg-[#3f3f46]"><Copy size={13} /> Copy brief for Claude Code</button>
-                <button onClick={() => saveFile('ai-edit-plan.json', JSON.stringify({ mode, style: style?.id, recipe: recipe?.id, reference, versions, aspect, duration, request: log?.request, fixes: [...fixes], ops }, null, 2), 'application/json')} className="flex items-center gap-1.5 rounded-lg border border-white/10 px-3 py-2 text-xs font-semibold text-[#d4d4d8] hover:text-white"><Download size={13} /> Edit plan (.json)</button>
+                <button onClick={() => saveFile('ai-edit-plan.json', JSON.stringify(planData(), null, 2), 'application/json')} className="flex items-center gap-1.5 rounded-lg border border-white/10 px-3 py-2 text-xs font-semibold text-[#d4d4d8] hover:text-white"><Download size={13} /> Edit plan (.json)</button>
                 {notice && <span className="self-center text-xs text-[#52d68a]">{notice}</span>}
               </div>
             </div>
