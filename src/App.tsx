@@ -10,6 +10,7 @@ import ShinyText from './components/ui/ShinyText';
 import BlurText from './components/ui/BlurText';
 import DecryptedText from './components/ui/DecryptedText';
 import Aurora from './components/ui/Aurora';
+import CreatorStyleExplainer from './components/CreatorStyleExplainer';
 
 const STORAGE = 'master-video-editor.v2';
 
@@ -208,6 +209,9 @@ export default function App() {
             </button>
           </div>
         </section>
+
+        {/* How the creator-style system works (explainer video) */}
+        <CreatorStyleExplainer />
 
         {notice && (
           <div className="mb-6 p-4 rounded-xl bg-[#203127] border border-[#3e5a49] text-[#9ee2b9] flex items-center gap-3 text-sm animate-fade-in">
