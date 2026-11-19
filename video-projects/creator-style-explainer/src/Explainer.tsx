@@ -1,11 +1,11 @@
 import React from "react";
 import { Audio } from "@remotion/media";
-import { ding, whoosh } from "@remotion/sfx";
+import { ding, mouseClick, whoosh } from "@remotion/sfx";
 import { TransitionSeries, linearTiming, type TransitionPresentation } from "@remotion/transitions";
 import { fade } from "@remotion/transitions/fade";
 import { slide } from "@remotion/transitions/slide";
 import { wipe } from "@remotion/transitions/wipe";
-import { Sequence, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
+import { Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { C } from "./theme";
 import { Hook } from "./scenes/Hook";
 import { Measured } from "./scenes/Measured";
@@ -50,6 +50,21 @@ const presentations: TransitionPresentation<any>[] = [
 const cutStarts = SCENES.slice(1).map((_, i) =>
   SCENES.slice(0, i + 1).reduce((sum, s) => sum + s.duration, 0) - T * (i + 1),
 );
+
+const sceneStart = (id: string) => {
+  const i = SCENES.findIndex((s) => s.id === id);
+  return i === 0 ? 0 : cutStarts[i - 1];
+};
+
+// Click on each hero number as it pops in.
+const POPS = [
+  2,
+  sceneStart("Numbers"),
+  sceneStart("Numbers") + 120,
+  sceneStart("Numbers") + 240,
+  sceneStart("Numbers") + 360,
+  sceneStart("Endings") + 4,
+];
 
 const Progress: React.FC = () => {
   const frame = useCurrentFrame();
@@ -101,13 +116,20 @@ export const Explainer: React.FC = () => {
         })}
       </TransitionSeries>
       <Progress />
+      {/* Original music bed, synthesised by scripts/make_music.py */}
+      <Audio src={staticFile("music-bed.wav")} volume={0.55} name="Music bed" />
       {cutStarts.map((f) => (
         <Sequence key={f} from={Math.max(0, f - 4)} durationInFrames={30} name="whoosh">
-          <Audio src={whoosh} volume={0.22} />
+          <Audio src={whoosh} volume={0.8} />
         </Sequence>
       ))}
-      <Sequence from={cutStarts[cutStarts.length - 1] + 12} durationInFrames={60} name="ding">
-        <Audio src={ding} volume={0.3} />
+      {POPS.map((f) => (
+        <Sequence key={`pop-${f}`} from={f} durationInFrames={20} name="pop">
+          <Audio src={mouseClick} volume={0.7} />
+        </Sequence>
+      ))}
+      <Sequence from={cutStarts[cutStarts.length - 1] + 18} durationInFrames={60} name="ding">
+        <Audio src={ding} volume={0.6} />
       </Sequence>
     </>
   );

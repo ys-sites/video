@@ -4,7 +4,7 @@ An 84-second 9:16 video that explains the creator-style system: the 136-reel stu
 
 - Numbers come from `skills/creator-video/references/real-estate-creator-study.md`.
 - No third-party footage is used; the presenter in the "look" scene is a drawn stand-in.
-- Sound effects stream from remotion.media at render time.
+- Sound: see below.
 
 ```bash
 npm i
@@ -13,3 +13,11 @@ npx remotion render CreatorStyleExplainer out/creator-style-explainer.mp4 --crf=
 ```
 
 The site copy lives at `public/videos/creator-style-explainer.mp4` (re-muxed with `-movflags +faststart`).
+
+## Sound
+
+- Music bed: original, synthesised with numpy (no samples, no licence). Generate it before rendering:
+  `python scripts/make_music.py 84.35 public/music-bed.wav` (needs numpy).
+- Whooshes on scene changes, clicks on hero numbers, a ding at the end (remotion.media SFX).
+- After rendering, normalise to the study's delivery target and add faststart:
+  `ffmpeg -i out/raw.mp4 -c:v copy -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k -movflags +faststart out/creator-style-explainer.mp4`

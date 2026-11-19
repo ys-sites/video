@@ -7,3 +7,5 @@ dist
 out
 build
 check
+# Regenerate with: python scripts/make_music.py 84.35 public/music-bed.wav
+public/music-bed.wav
