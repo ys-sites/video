@@ -13,6 +13,7 @@ The home page follows the section order of opus.pro/ai-video-editor (studied
 with the REA MCP, see docs/ai-editor-research.md); all copy is our own.
 """
 import html
+import re
 import json
 from pathlib import Path
 
@@ -21,6 +22,48 @@ STYLES = json.loads((ROOT / "data" / "styles.json").read_text(encoding="utf-8"))
 REELS = json.loads((ROOT / "data" / "reels.json").read_text(encoding="utf-8"))
 SKILLS = json.loads((ROOT / "data" / "skills.json").read_text(encoding="utf-8"))
 UPDATED = "Nov 19, 2026"
+
+# The site shows free tools only (user rule: nothing paid on the website).
+PAID_STYLES = {"motionsmith-saas-launch", "motionsmith-vox", "invideo-paper-cutout", "ae-claude-mcp"}
+PAID_WORDS = ("after effects", "premiere", "audition", "photoshop", "media encoder", "motionsmith", "higgsfield",
+              "runway", "kling", "luma", "seedance", "invideo", "elevenlabs", "autoedit", "treg", "ae gpt", "subscription", "paid")
+
+
+def is_paid(text):
+    t = str(text).lower()
+    return any(w in t for w in PAID_WORDS)
+
+
+FREE_SWAPS = [
+    (r"AI video generator \(Runway, Kling, Higgsfield, Luma\)", "ComfyUI (LTX-Video / Wan)"),
+    (r"Runway[- ]style generators", "ComfyUI (LTX-Video / Wan)"),
+    (r"Claude Code \+ After Effects", "Claude Code + Remotion"),
+    (r"After Effects", "Remotion"), (r"Premiere Pro|Premiere", "DaVinci Resolve"), (r"Media Encoder", "ffmpeg"),
+    (r"Audition", "Audacity"), (r"Photoshop", "GIMP"), (r"ElevenLabs", "OmniVoice"),
+    (r"Higgsfield|Kling|Seedance|Runway|Luma", "ComfyUI"),
+]
+
+
+def swap(v):
+    if isinstance(v, str):
+        for a, b in FREE_SWAPS:
+            v = re.sub(a, b, v)
+        return v
+    if isinstance(v, list):
+        return [swap(x) for x in v]
+    if isinstance(v, dict):
+        return {k: swap(x) for k, x in v.items()}
+    return v
+
+
+def free_only(styles, tools):
+    styles = [swap(dict(st, tools=[t for t in st.get("tools", []) if not is_paid(t)])) for st in styles if st["slug"] not in PAID_STYLES]
+    for st in styles:
+        st["tools"] = list(dict.fromkeys(st["tools"]))
+    tools = [t for t in tools if str(t.get("price", "")).lower().startswith("free") and not is_paid(t.get("notes", ""))]
+    for g in SKILLS["groups"]:
+        g["skills"] = [k for k in g["skills"] if k["cost"] != "paid"]
+    return styles, tools
 
 
 def esc(s):
@@ -950,8 +993,8 @@ def skills_page(n_skills, n_free):
 <div class="page-head">
   <p class="eyebrow">Skill stack</p>
   <h1>{n_skills} skills. {n_free} free.</h1>
-  <p class="sub">Every creator-video skill and tool in the workspace, grouped by job. Free routes come first; each paid one names its free alternative.</p>
-  <div class="note"><span class="badge ready">ready</span> works now · <span class="badge setup">setup</span> one setup step left · <span class="badge reference">reference</span> local copy, not yet installed or security-reviewed · <span class="badge paid">paid</span> needs credits — use the free route</div>
+  <p class="sub">Every creator-video skill in the workspace, grouped by job. Everything listed here is free.</p>
+  <div class="note"><span class="badge ready">ready</span> works now · <span class="badge setup">setup</span> one setup step left · <span class="badge reference">reference</span> local copy, not yet installed or reviewed</div>
 </div>
 <section style="padding-top:28px">
   <div class="search"><input type="text" data-filter=".skill" placeholder="Search skills — try “voice”, “captions”, “free”…" aria-label="Search skills"></div>
@@ -986,9 +1029,9 @@ def reels_page(reels):
 
 
 def main():
-    styles = STYLES["styles"]
-    moves = STYLES["motion_dictionary"]
-    tools = STYLES["tools"]
+    styles, tools = free_only(STYLES["styles"], STYLES["tools"])
+    slugs = {st["slug"] for st in styles}
+    moves = [m for m in STYLES["motion_dictionary"] if m.get("source_style") in slugs]
     reels = REELS.get("reels", [])
     n_skills = sum(len(g["skills"]) for g in SKILLS["groups"])
     n_free = sum(1 for g in SKILLS["groups"] for k in g["skills"] if k["cost"] == "free")

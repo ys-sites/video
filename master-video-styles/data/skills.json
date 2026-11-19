@@ -5,72 +5,286 @@
       "job": "Cut, captions and talking-head edits",
       "accent": "pink",
       "skills": [
-        {"name": "Remotion skills", "where": "Claude skills remotion:*", "status": "ready", "cost": "free", "does": "Editable React video projects: trims, layers, transitions, render to MP4."},
-        {"name": "captions-skill", "where": "captions-skill/", "status": "ready", "cost": "free", "does": "7 animated caption styles burned in from Whisper word timings (pop-sticker, editorial-highlight, …)."},
-        {"name": "effects", "where": "Claude skill effects", "status": "ready", "cost": "free", "does": "45 face-tracked effects: zooms, spotlight, glass widgets, iMessage pop-ups, place-in-grid."},
-        {"name": "talking-head-reels", "where": "talking-head-reels/", "status": "reference", "cost": "free", "does": "Tightened 9:16 talking-head reel in a bold editorial style."},
-        {"name": "voiceover-glass-reel", "where": "voiceover-glass-reel/", "status": "reference", "cost": "free", "does": "Voice-over to a 16:9 documentary reel with glass motion (needs After Effects)."},
-        {"name": "DaVinci Resolve MCP", "where": "resources/concordia/video-motion/davinci-resolve-mcp", "status": "reference", "cost": "free", "does": "Drive DaVinci Resolve (free edition) timelines from Claude."}
+        {
+          "name": "Remotion skills",
+          "where": "Claude skills remotion:*",
+          "status": "ready",
+          "cost": "free",
+          "does": "Editable React video projects: trims, layers, transitions, render to MP4."
+        },
+        {
+          "name": "captions-skill",
+          "where": "captions-skill/",
+          "status": "ready",
+          "cost": "free",
+          "does": "7 animated caption styles burned in from Whisper word timings (pop-sticker, editorial-highlight, …)."
+        },
+        {
+          "name": "effects",
+          "where": "Claude skill effects",
+          "status": "ready",
+          "cost": "free",
+          "does": "45 face-tracked effects: zooms, spotlight, glass widgets, iMessage pop-ups, place-in-grid."
+        },
+        {
+          "name": "talking-head-reels",
+          "where": "talking-head-reels/",
+          "status": "reference",
+          "cost": "free",
+          "does": "Tightened 9:16 talking-head reel in a bold editorial style."
+        },
+        {
+          "name": "DaVinci Resolve MCP",
+          "where": "resources/concordia/video-motion/davinci-resolve-mcp",
+          "status": "reference",
+          "cost": "free",
+          "does": "Drive DaVinci Resolve (free edition) timelines from Claude."
+        }
       ]
     },
     {
       "job": "Motion graphics and animation",
       "accent": "violet",
       "skills": [
-        {"name": "HyperFrames (local skills)", "where": "resources/concordia/video-motion/openmontage", "status": "reference", "cost": "free", "does": "HTML + GSAP compositions rendered to video on your machine; the hosted HyperFrames MCP is the paid route."},
-        {"name": "motionmaxxing", "where": "resources/concordia/video-motion/motionmaxxing", "status": "reference", "cost": "free", "does": "Launch films, product promos, kinetic type and brand stings."},
-        {"name": "motion-video-director", "where": "resources/concordia/motion-video-director", "status": "reference", "cost": "free", "does": "Motion graphics, product videos, captions and SFX with a coding agent."},
-        {"name": "Anidoodle", "where": "resources/motion-systems/anidoodle", "status": "reference", "cost": "free", "does": "Code-drawn stills, films and 3D motion graphics in 32 styles."},
-        {"name": "Bang Motion", "where": "resources/motion-systems/bang-motion", "status": "reference", "cost": "free", "does": "Cinematic browser motion: openers, bumpers, kinetic typography."},
-        {"name": "Hand-drawn and whiteboard", "where": "resources/motion-systems/handdraw-skill, hand-drawn-explainer", "status": "reference", "cost": "free", "does": "Stroke-by-stroke explainers from a JSON animation script."},
-        {"name": "Manim", "where": "resources/motion-systems/manim-skill", "status": "reference", "cost": "free", "does": "Math and diagram animation."},
-        {"name": "Lemo-Opuscar, Paint MV, Huashu", "where": "resources/concordia/video-motion/lemo-opuscar, resources/motion-systems", "status": "reference", "cost": "free", "does": "Painterly code films: oil, watercolor, paper, art-motion recipes."},
-        {"name": "GSAP, Three.js, p5.js, Theatre.js", "where": "resources/concordia/video-motion/openmontage, p5.js, theatre", "status": "reference", "cost": "free", "does": "Timelines, 3D scenes, procedural characters and particles."},
-        {"name": "anatomy", "where": "Claude skill anatomy", "status": "ready", "cost": "free", "does": "Isometric explainer figures of how a system works."}
+        {
+          "name": "HyperFrames (local skills)",
+          "where": "resources/concordia/video-motion/openmontage",
+          "status": "reference",
+          "cost": "free",
+          "does": "HTML + GSAP compositions rendered to video on your machine; the hosted HyperFrames MCP is the paid route."
+        },
+        {
+          "name": "motionmaxxing",
+          "where": "resources/concordia/video-motion/motionmaxxing",
+          "status": "reference",
+          "cost": "free",
+          "does": "Launch films, product promos, kinetic type and brand stings."
+        },
+        {
+          "name": "motion-video-director",
+          "where": "resources/concordia/motion-video-director",
+          "status": "reference",
+          "cost": "free",
+          "does": "Motion graphics, product videos, captions and SFX with a coding agent."
+        },
+        {
+          "name": "Anidoodle",
+          "where": "resources/motion-systems/anidoodle",
+          "status": "reference",
+          "cost": "free",
+          "does": "Code-drawn stills, films and 3D motion graphics in 32 styles."
+        },
+        {
+          "name": "Bang Motion",
+          "where": "resources/motion-systems/bang-motion",
+          "status": "reference",
+          "cost": "free",
+          "does": "Cinematic browser motion: openers, bumpers, kinetic typography."
+        },
+        {
+          "name": "Hand-drawn and whiteboard",
+          "where": "resources/motion-systems/handdraw-skill, hand-drawn-explainer",
+          "status": "reference",
+          "cost": "free",
+          "does": "Stroke-by-stroke explainers from a JSON animation script."
+        },
+        {
+          "name": "Manim",
+          "where": "resources/motion-systems/manim-skill",
+          "status": "reference",
+          "cost": "free",
+          "does": "Math and diagram animation."
+        },
+        {
+          "name": "Lemo-Opuscar, Paint MV, Huashu",
+          "where": "resources/concordia/video-motion/lemo-opuscar, resources/motion-systems",
+          "status": "reference",
+          "cost": "free",
+          "does": "Painterly code films: oil, watercolor, paper, art-motion recipes."
+        },
+        {
+          "name": "GSAP, Three.js, p5.js, Theatre.js",
+          "where": "resources/concordia/video-motion/openmontage, p5.js, theatre",
+          "status": "reference",
+          "cost": "free",
+          "does": "Timelines, 3D scenes, procedural characters and particles."
+        },
+        {
+          "name": "anatomy",
+          "where": "Claude skill anatomy",
+          "status": "ready",
+          "cost": "free",
+          "does": "Isometric explainer figures of how a system works."
+        }
       ]
     },
     {
       "job": "Voice-over and transcription",
       "accent": "cyan",
       "skills": [
-        {"name": "OmniVoice", "where": "C:\\Users\\Sharafath\\AI-Local\\OmniVoice", "status": "setup", "cost": "free", "does": "Local TTS and voice cloning on CPU (consenting voices only). Replaces ElevenLabs."},
-        {"name": "Piper TTS", "where": "resources/concordia/video-motion/piper", "status": "reference", "cost": "free", "does": "Fast, light local narration voices; runs well on CPU."},
-        {"name": "VoiceStudio, Coqui TTS", "where": "resources/concordia/video-motion/voicestudio, coqui-tts", "status": "reference", "cost": "free", "does": "Local voices, dubbing and narration automation."},
-        {"name": "Whisper (+ whisper.cpp, WhisperX)", "where": "captions-skill venv; whisper.cpp and WhisperX in resources/concordia/video-motion", "status": "ready", "cost": "free", "does": "Word-timed transcripts for cuts and captions. Replaces ElevenLabs Scribe and Azure STT."},
-        {"name": "fish audio", "where": "MCP connector", "status": "paid", "cost": "paid", "does": "Fallback only: cloud TTS, cloning and SFX on credits.", "free_alt": "OmniVoice or Piper"},
-        {"name": "ElevenLabs, Azure, Doubao, DashScope skills", "where": "resources/concordia/video-motion/openmontage", "status": "paid", "cost": "paid", "does": "Cloud voice APIs.", "free_alt": "OmniVoice, Piper, Whisper"}
+        {
+          "name": "OmniVoice",
+          "where": "C:\\Users\\Sharafath\\AI-Local\\OmniVoice",
+          "status": "setup",
+          "cost": "free",
+          "does": "Local TTS and voice cloning on CPU (consenting voices only)."
+        },
+        {
+          "name": "Piper TTS",
+          "where": "resources/concordia/video-motion/piper",
+          "status": "reference",
+          "cost": "free",
+          "does": "Fast, light local narration voices; runs well on CPU."
+        },
+        {
+          "name": "VoiceStudio, Coqui TTS",
+          "where": "resources/concordia/video-motion/voicestudio, coqui-tts",
+          "status": "reference",
+          "cost": "free",
+          "does": "Local voices, dubbing and narration automation."
+        },
+        {
+          "name": "Whisper (+ whisper.cpp, WhisperX)",
+          "where": "captions-skill venv; whisper.cpp and WhisperX in resources/concordia/video-motion",
+          "status": "ready",
+          "cost": "free",
+          "does": "Word-timed transcripts for cuts and captions."
+        },
+        {
+          "name": "fish audio",
+          "where": "MCP connector",
+          "status": "paid",
+          "cost": "paid",
+          "does": "Fallback only: cloud TTS, cloning and SFX on credits.",
+          "free_alt": "OmniVoice or Piper"
+        },
+        {
+          "name": "ElevenLabs, Azure, Doubao, DashScope skills",
+          "where": "resources/concordia/video-motion/openmontage",
+          "status": "paid",
+          "cost": "paid",
+          "does": "Cloud voice APIs.",
+          "free_alt": "OmniVoice, Piper, Whisper"
+        }
       ]
     },
     {
       "job": "Music and sound effects",
       "accent": "amber",
       "skills": [
-        {"name": "Code-synth soundtrack", "where": "resources/motion-systems/javascript-animation-skills (soundtrack); video-projects/creator-style-explainer/scripts/make_music.py", "status": "ready", "cost": "free", "does": "Original music beds, whooshes and pops synthesised in code; no licence needed."},
-        {"name": "AudioCraft / MusicGen", "where": "resources/concordia/video-motion/audiocraft", "status": "reference", "cost": "free", "does": "Open-source AI music; the small model can run on CPU (slowly)."},
-        {"name": "ACE-Step 1.5", "where": "resources/concordia/video-motion/openmontage (acestep)", "status": "reference", "cost": "free", "does": "Open-source AI music and stems; heavy for this PC."},
-        {"name": "media-use", "where": "resources/concordia/video-motion/openmontage (media-use)", "status": "reference", "cost": "free", "does": "Resolves BGM and SFX into frozen local files with a licence ledger."},
-        {"name": "ElevenLabs music and SFX, Lyria", "where": "resources/concordia/video-motion/openmontage", "status": "paid", "cost": "paid", "does": "Cloud music and SFX.", "free_alt": "Code synth or MusicGen"}
+        {
+          "name": "Code-synth soundtrack",
+          "where": "resources/motion-systems/javascript-animation-skills (soundtrack); video-projects/creator-style-explainer/scripts/make_music.py",
+          "status": "ready",
+          "cost": "free",
+          "does": "Original music beds, whooshes and pops synthesised in code; no licence needed."
+        },
+        {
+          "name": "AudioCraft / MusicGen",
+          "where": "resources/concordia/video-motion/audiocraft",
+          "status": "reference",
+          "cost": "free",
+          "does": "Open-source AI music; the small model can run on CPU (slowly)."
+        },
+        {
+          "name": "ACE-Step 1.5",
+          "where": "resources/concordia/video-motion/openmontage (acestep)",
+          "status": "reference",
+          "cost": "free",
+          "does": "Open-source AI music and stems; heavy for this PC."
+        },
+        {
+          "name": "media-use",
+          "where": "resources/concordia/video-motion/openmontage (media-use)",
+          "status": "reference",
+          "cost": "free",
+          "does": "Resolves BGM and SFX into frozen local files with a licence ledger."
+        },
+        {
+          "name": "ElevenLabs music and SFX, Lyria",
+          "where": "resources/concordia/video-motion/openmontage",
+          "status": "paid",
+          "cost": "paid",
+          "does": "Cloud music and SFX.",
+          "free_alt": "Code synth or MusicGen"
+        }
       ]
     },
     {
       "job": "AI footage, images and B-roll",
       "accent": "green",
       "skills": [
-        {"name": "ComfyUI + LTX-Video 2B / Wan 2.1 1.3B", "where": "C:\\Users\\Sharafath\\AI-Local\\ComfyUI", "status": "setup", "cost": "free", "does": "Local text/image to video. Short, low-res clips; 15-60 min each on this PC."},
-        {"name": "Claude Drawing", "where": "resources/motion-systems/claude-drawing-skill", "status": "reference", "cost": "free", "does": "Illustrations drawn in code, no image model."},
-        {"name": "UGC Factory prompt styles", "where": "resources/concordia/video-motion/ugc-factory", "status": "reference", "cost": "free", "does": "15 prompt styles (real estate, product 360, social hook …); written for Seedance, reusable with local models."},
-        {"name": "Seedance, Kling, MiniMax H3, Grok, FLUX, Atlas Cloud", "where": "resources/concordia/video-motion/openmontage, MiniMax-H3", "status": "paid", "cost": "paid", "does": "Cloud video and image models.", "free_alt": "ComfyUI LTX or Wan"},
-        {"name": "Genjutsu character swap", "where": "resources/repo-quarantine/sirioberati", "status": "paid", "cost": "paid", "does": "Higgsfield-style \"same scene, new character\" via Enhancor Seedance.", "free_alt": "None that fits this PC yet; rent a GPU by the hour"}
+        {
+          "name": "ComfyUI + LTX-Video 2B / Wan 2.1 1.3B",
+          "where": "C:\\Users\\Sharafath\\AI-Local\\ComfyUI",
+          "status": "setup",
+          "cost": "free",
+          "does": "Local text/image to video. Short, low-res clips; 15-60 min each on this PC."
+        },
+        {
+          "name": "Claude Drawing",
+          "where": "resources/motion-systems/claude-drawing-skill",
+          "status": "reference",
+          "cost": "free",
+          "does": "Illustrations drawn in code, no image model."
+        },
+        {
+          "name": "UGC Factory prompt styles",
+          "where": "resources/concordia/video-motion/ugc-factory",
+          "status": "reference",
+          "cost": "free",
+          "does": "15 prompt styles (real estate, product 360, social hook …); usable with local models."
+        },
+        {
+          "name": "Seedance, Kling, MiniMax H3, Grok, FLUX, Atlas Cloud",
+          "where": "resources/concordia/video-motion/openmontage, MiniMax-H3",
+          "status": "paid",
+          "cost": "paid",
+          "does": "Cloud video and image models.",
+          "free_alt": "ComfyUI LTX or Wan"
+        },
+        {
+          "name": "Genjutsu character swap",
+          "where": "resources/repo-quarantine/sirioberati",
+          "status": "paid",
+          "cost": "paid",
+          "does": "Higgsfield-style \"same scene, new character\" via Enhancor Seedance.",
+          "free_alt": "None that fits this PC yet; rent a GPU by the hour"
+        }
       ]
     },
     {
       "job": "Study a reference, then recreate it",
       "accent": "red",
       "skills": [
-        {"name": "REA MCP", "where": "MCP connector", "status": "ready", "cost": "free", "does": "Dissects websites and apps: structure, screenshots, interactions."},
-        {"name": "rea-video", "where": "resources/repo-quarantine/JuneYaooo/rea-video", "status": "reference", "cost": "free", "does": "Shot-by-shot breakdown of a reference video and a remake plan."},
-        {"name": "136-reel creator study", "where": "skills/creator-video/references/real-estate-creator-study.md", "status": "ready", "cost": "free", "does": "12 measured reel types: length, shot timing, words per minute, hooks, CTAs."},
-        {"name": "website-to-video, playwright-recording", "where": "resources/concordia/video-motion/openmontage", "status": "reference", "cost": "free", "does": "Turn a site or app walkthrough into a video."}
+        {
+          "name": "REA MCP",
+          "where": "MCP connector",
+          "status": "ready",
+          "cost": "free",
+          "does": "Dissects websites and apps: structure, screenshots, interactions."
+        },
+        {
+          "name": "rea-video",
+          "where": "resources/repo-quarantine/JuneYaooo/rea-video",
+          "status": "reference",
+          "cost": "free",
+          "does": "Shot-by-shot breakdown of a reference video and a remake plan."
+        },
+        {
+          "name": "136-reel creator study",
+          "where": "skills/creator-video/references/real-estate-creator-study.md",
+          "status": "ready",
+          "cost": "free",
+          "does": "12 measured reel types: length, shot timing, words per minute, hooks, CTAs."
+        },
+        {
+          "name": "website-to-video, playwright-recording",
+          "where": "resources/concordia/video-motion/openmontage",
+          "status": "reference",
+          "cost": "free",
+          "does": "Turn a site or app walkthrough into a video."
+        }
       ]
     }
   ]
