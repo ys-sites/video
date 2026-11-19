@@ -645,7 +645,7 @@ document.querySelectorAll('button.copy').forEach(function(b){
 });
 """
 
-NAV = [("editor/", "AI Editor", "editor"), ("styles.html", "Styles", "styles"), ("reels.html", "Reels", "reels"), ("index.html#how", "How it works", "how")]
+NAV = [("editor/", "AI Editor", "editor"), ("styles.html", "Styles", "styles"), ("index.html#how", "How it works", "how")]
 
 
 def shell(page, title, description, body):
