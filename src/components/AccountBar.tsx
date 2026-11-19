@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type ChangeEvent, type FormEvent } from 'react';
-import { Cloud, LogOut, Mail, Save, Trash2, FolderOpen, Film, Upload, X, Clapperboard, ArrowLeft } from 'lucide-react';
+import { Cloud, LogOut, Mail, Save, Trash2, FolderOpen, Film, Upload, X, ArrowLeft } from 'lucide-react';
 import {
   accountsReady, enabledProviders, sendMagicLink, signInWithGoogle, sessionFromUrl, getSession, signOut,
   listPlans, savePlan, deletePlan, type Session, type SavedPlan,
@@ -212,7 +212,7 @@ function AuthDialog({ mode, onMode, onClose }: { mode: 'login' | 'signup'; onMod
       <div role="dialog" aria-modal="true" aria-labelledby="auth-title" onClick={e => e.stopPropagation()}
         className="relative w-full max-w-[400px] rounded-2xl border border-white/10 bg-[#111113] p-7 text-left shadow-2xl">
         <button onClick={onClose} aria-label="Close" className="absolute right-4 top-4 rounded-lg p-1.5 text-[#71717a] hover:bg-white/5 hover:text-white"><X size={18} /></button>
-        <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#fafafa] text-[#09090b]"><Clapperboard size={18} /></span>
+        <img src="/img/logo.svg" alt="" width={40} height={40} className="h-10 w-10" />
 
         {sent ? (
           <>

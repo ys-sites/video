@@ -431,6 +431,34 @@ figcaption{position:absolute;right:14px;bottom:12px;font-size:11px;color:rgba(25
 .steps-wrap .tall img{width:100%;height:auto;max-height:620px;object-fit:cover;border-radius:24px}
 .steps-wrap .three{grid-template-columns:1fr;margin-top:0}
 @media(max-width:760px){.steps-wrap{grid-template-columns:1fr}.steps-wrap .tall img{max-height:420px}}
+
+/* unslop pass (github.com/heydamir/unslop, CC BY 4.0, Damir Sokolovsky): one neutral ramp, one accent,
+   sentence-case labels, no colour stripes, glows or idle loops. */
+.tag,.which .kicker,.step .days,.badge,th,.shot .kicker,.eyebrow,.kicker{text-transform:none;letter-spacing:0}
+.tag{background:#1f1f22;color:var(--muted);border-radius:6px;font-weight:500;font-size:12.5px;padding:4px 9px}
+.card::before,.detail::before{display:none}
+.card .go,.reel-link,.card h3 a:hover{color:var(--text)}
+.reel-link{border-color:var(--line)}
+.reel-link:hover{background:#1f1f22}
+.step .n{background:#fafafa;color:#09090b}
+.chipwall span{background:#1f1f22;color:#d4d4d8;font-weight:500;border-radius:8px}
+.ico{background:#1f1f22;color:#d4d4d8}
+.mini .ph{animation:none;left:58%}
+.announce{background:var(--panel);border-bottom:1px solid #1f1f22;font-weight:500;color:var(--muted)}
+.announce span{color:var(--text);text-decoration:none}
+.logo{font-weight:600;gap:10px}
+.logo svg{flex:0 0 auto;display:block}
+.btn,button.copy{font-weight:600}
+button.copy{background:#fafafa;color:#09090b}
+.search input{border-radius:12px}
+.search input:focus{border-color:#52525b}
+.badge{border-radius:6px;font-weight:600}
+.which li::before{background:#1f1f22;color:var(--text)}
+.ex-stat b{color:var(--text)}
+.composer i{background:#fafafa}
+.skill-group h2::before{background:#52525b}
+.move .src a,.tool a,td a{color:#d4d4d8;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#52525b}
+.detail p,.detail ul{color:#d4d4d8}
 /* responsive: tablets, phones, landscape phones, ultrawide */
 @media(min-width:1700px){.wrap{max-width:1320px}}
 @media(max-width:1024px){
@@ -617,8 +645,7 @@ document.querySelectorAll('button.copy').forEach(function(b){
 });
 """
 
-NAV = [("editor/", "AI Editor", "editor"), ("styles.html", "Styles", "styles"), ("skills.html", "Skills", "skills"),
-       ("reels.html", "Reels", "reels"), ("index.html#how", "How it works", "how")]
+NAV = [("editor/", "AI Editor", "editor"), ("styles.html", "Styles", "styles"), ("reels.html", "Reels", "reels"), ("index.html#how", "How it works", "how")]
 
 
 def shell(page, title, description, body):
@@ -632,6 +659,7 @@ def shell(page, title, description, body):
 <title>{esc_text(title)}</title>
 <meta name="description" content="{esc(description)}">
 <meta name="theme-color" content="#09090b">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -640,7 +668,7 @@ def shell(page, title, description, body):
 <body>
 <a class="announce" href="editor/">New: <span>the AI Editor</span> — edit your video by describing it. Try it free →</a>
 <header class="top"><div class="wrap">
-  <a class="logo" href="index.html"><i>▶</i>Master Video Styles</a>
+  <a class="logo" href="index.html"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#fafafa"/><rect x="6" y="8.5" width="11" height="3.5" rx="1.75" fill="#09090b"/><rect x="6" y="14.25" width="20" height="3.5" rx="1.75" fill="#09090b"/><rect x="6" y="20" width="8" height="3.5" rx="1.75" fill="#09090b"/><rect x="19.5" y="5.5" width="2.5" height="21" rx="1.25" fill="#09090b"/><rect x="17.25" y="5.5" width="7" height="2.5" rx="1.25" fill="#09090b"/></svg>Master Video Styles</a>
   <nav class="menu" aria-label="Main">{links}</nav>
   <a class="btn light sm" href="editor/">Open editor</a>
 </div></header>
@@ -649,7 +677,7 @@ def shell(page, title, description, body):
 </main>
 <footer class="foot"><div class="wrap">
   <div class="cols">
-    <div><a class="logo" href="index.html"><i>▶</i>Master Video Styles</a><p style="margin-top:12px;max-width:300px">Every video style as a playbook, an AI editor that plans the cut, and a free-first skill stack to render it.</p></div>
+    <div><a class="logo" href="index.html"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#fafafa"/><rect x="6" y="8.5" width="11" height="3.5" rx="1.75" fill="#09090b"/><rect x="6" y="14.25" width="20" height="3.5" rx="1.75" fill="#09090b"/><rect x="6" y="20" width="8" height="3.5" rx="1.75" fill="#09090b"/><rect x="19.5" y="5.5" width="2.5" height="21" rx="1.25" fill="#09090b"/><rect x="17.25" y="5.5" width="7" height="2.5" rx="1.25" fill="#09090b"/></svg>Master Video Styles</a><p style="margin-top:12px;max-width:300px">Every video style as a playbook, an AI editor that plans the cut, and a free-first skill stack to render it.</p></div>
     <div><h4>Studio</h4><a href="editor/">AI Editor</a><a href="index.html#how">How it works</a><a href="index.html#faq">FAQ</a></div>
     <div><h4>Library</h4><a href="styles.html">Styles and playbooks</a><a href="styles.html#moves">Motion dictionary</a><a href="styles.html#tools">Tools</a></div>
     <div><h4>Resources</h4><a href="skills.html">Skill stack</a><a href="reels.html">Reel catalog</a><a href="styles.html#details">Copy-paste prompts</a></div>
@@ -756,13 +784,13 @@ def ui(title, rows):
 def home(n_styles, n_moves, n_skills, n_free):
     chips = "".join(f'<span style="--c:{c}">{t}</span>' for t, c in [
         ("Sumit", "#ff5da2"), ("Kelsie listicle", "#ffb020"), ("Fly-through", "#8b7cff"), ("Vision pitch", "#22d3ee"),
-        ("Paper cut-out", "#8b7cff"), ("SaaS launch", "#ff6b6b"), ("Vox", "#facc15"), ("Realtor reels", "#34d399")])
+        ("Vox", "#facc15"), ("Realtor reels", "#34d399")])
     tracks = "".join(
         f'<div class="tr" style="top:{12 + i * 16}px">' + "".join(
             f'<b style="left:{l}%;width:{w}%;background:{c}"></b>' for l, w in spans) + '</div>'
         for i, (c, spans) in enumerate([
             ("#c5f04a", [(0, 14), (80, 20)]), ("#e4e4e7", [(0, 100)]),
-            ("#71717a", [(0, 18), (20, 16), (38, 22), (62, 16), (80, 20)]), ("#8b7cff", [(0, 100)])]))
+            ("#71717a", [(0, 18), (20, 16), (38, 22), (62, 16), (80, 20)]), ("#52525b", [(0, 100)])]))
     groups = [
         ("speed", BOLT, "Speed", "Edit in minutes with chat, timeline and one-tap fixes", [
             ("Describe the edit", ui("Edit agent", [("Make it punchy", "chip", True), ("Add captions", "chip", False), ("Open on the strongest moment", "chip", False), ("Add music under my voice", "chip", False)]),

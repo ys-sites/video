@@ -429,7 +429,7 @@ export default function AIEditorStudio() {
                       </div>
                     ))
                   )}
-                  {thinking && <p className="flex items-center gap-2 text-sm text-[#a1a1aa]"><span className="h-2 w-2 animate-pulse rounded-full bg-[#c5f04a]" /> Planning the edit…</p>}
+                  {thinking && <p className="flex items-center gap-2 text-sm text-[#a1a1aa]"><span className="h-2 w-2 rounded-full bg-[#a1a1aa]" /> Planning the edit…</p>}
                 </div>
 
                 <details className="border-t border-white/10 px-4 py-2 text-xs text-[#a1a1aa]">
@@ -502,7 +502,7 @@ export default function AIEditorStudio() {
                   </button>
                 )}
                 {shown('broll') && <div className="absolute inset-x-3 top-3 rounded-lg bg-[#6b7fd6]/85 px-2 py-1 text-[11px] font-semibold text-white">B-roll: {shown('broll')!.label}</div>}
-                {shown('motion') && <div className="pointer-events-none absolute inset-x-0 top-1/3 px-4 text-center text-2xl font-black uppercase leading-none text-[#e8ff9a] drop-shadow-[0_3px_0_rgba(0,0,0,0.6)] sm:text-3xl">{shown('motion')!.label}</div>}
+                {shown('motion') && <div className="pointer-events-none absolute inset-x-0 top-1/3 px-4 text-center text-2xl font-bold leading-tight text-white sm:text-3xl">{shown('motion')!.label}</div>}
                 {shown('captions') && (
                   <div className="pointer-events-none absolute inset-x-0 bottom-[18%] text-center">
                     <span className="rounded-md bg-black/70 px-2 py-1 text-sm font-extrabold text-white">your <span className="text-[#c5f04a]">words</span> here</span>
