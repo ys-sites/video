@@ -7,7 +7,9 @@
   "ai": { "binding": "AI" },
   "vars": {
     "SUPABASE_URL": "https://jyogdywflsjilqcghqvf.supabase.co",
-    "ALLOWED_ORIGINS": "https://masvid.vercel.app,http://localhost:3000"
+    "ALLOWED_ORIGINS": "https://masvid.vercel.app,http://localhost:3000",
+    // "true" re-opens My videos uploads (also set cloudVideos in src/lib/videos.ts).
+    "UPLOADS_OPEN": "false"
   },
   "observability": { "enabled": true }
 }

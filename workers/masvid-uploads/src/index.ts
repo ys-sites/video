@@ -7,6 +7,8 @@ interface Env {
   AI: { run(model: string, input: unknown): Promise<{ response?: unknown }> };
   SUPABASE_URL: string;
   ALLOWED_ORIGINS: string;
+  /** "true" accepts new uploads; anything else keeps storage free. */
+  UPLOADS_OPEN?: string;
 }
 
 const MAX_BYTES = 95 * 1024 * 1024; // Workers Free accepts request bodies up to 100 MB.
@@ -167,6 +169,7 @@ export default {
     }
 
     if (parts.length === 1 && req.method === 'PUT') {
+      if (env.UPLOADS_OPEN !== 'true') return json({ error: 'Uploads are off. Videos stay on your device.' }, 403, h);
       const type = req.headers.get('Content-Type') ?? '';
       const size = Number(req.headers.get('Content-Length') ?? 0);
       if (!type.startsWith('video/')) return json({ error: 'Only video files can be uploaded.' }, 415, h);
