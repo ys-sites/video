@@ -14,6 +14,7 @@ One map of every tool, skill, repo and asset in this workspace. For any request 
 | Captions (pop-sticker) | `captions-skill/SKILL.md` + `docs/caption-skill-setup.md` — show frames at 1.5 s, 4 s, 8 s and wait for approval | Local caption renderer |
 | SaaS / product launch promo | `docs/motionsmith-workflow.md` + `skills/creator-video/SKILL.md` | Remotion or HyperFrames |
 | Multi-agent animation (Levi Lab style: voice→scenes→parallel layers→code→review) | Remotion skill; one subagent per layer only for videos > 20 s | Remotion Studio preview, render after approval |
+| Character swap / Higgsfield-style "same scene, new character" | Genjutsu (`resources/repo-quarantine/sirioberati/Genjustsu-Open-Source-Workflow`) — staged and triaged, **not approved**; see triage file. Needs Enhancor + Replicate keys, WSL2, catbox fallback off, consent from anyone replaced | Seedance 2.5 via Enhancor (paid, draft first) |
 | AI-generated footage (text/image → video) | §3 local AI stack: LTX-Video 2B or Wan 1.3B in ComfyUI | `C:\Users\Sharafath\AI-Local\ComfyUI\output` |
 | Voice-over, voice cloning | OmniVoice (local, CPU) or fish audio MCP (cloud, paid credits) | Clone only voices the user has consent for |
 | Chat-to-edit request ("edit this like Opus / ChatCut / Captions / Shorty"), or a brief pasted from the site's **AI Editor** tab | `docs/ai-editor-research.md` (capability map) → `skills/creator-video/SKILL.md` § Chat-to-edit briefs | Remotion project, render after approval |
