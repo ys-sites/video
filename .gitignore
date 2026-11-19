@@ -18,3 +18,7 @@ __MACOSX/
 __pycache__/
 *.pyc
 
+
+# Third-party real-estate reel references (local research only; creators retain rights).
+real-estate-reels/
+real-estate-reels-expansion/
