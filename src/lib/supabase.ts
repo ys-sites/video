@@ -4,8 +4,10 @@
 // Never put the secret (service_role / sb_secret_) key in this file.
 
 export const SUPABASE_URL = 'https://jyogdywflsjilqcghqvf.supabase.co';
-export const SUPABASE_KEY = ''; // sb_publishable_… from Project Settings → API Keys
+export const SUPABASE_KEY = 'sb_publishable_LTjxZUQizJHlsbIKkL7HaQ_FJv_wM0R';
 export const accountsReady = SUPABASE_KEY.startsWith('sb_publishable_');
+/** Turn on once the Google provider is enabled in Supabase → Authentication → Providers. */
+export const googleReady = false;
 
 export type Session = { access_token: string; refresh_token: string; expires_at: number; email: string };
 export type SavedPlan = { id: string; title: string; plan: Record<string, unknown>; updated_at: string };
