@@ -35,6 +35,7 @@ Unsure which skill fits? `python tools/resource_catalog.py route "<task>"` sugge
 
 | Tool | Location | Status | Use for |
 |---|---|---|---|
+| Cloudflare plugin (`cloudflare@cloudflare` 1.0.4) | Claude Code user plugin; skills in `~/.claude/plugins/cache/cloudflare/cloudflare/1.0.4/skills` (wrangler, workers, R2 via `cloudflare` skill), MCP `https://mcp.cloudflare.com/mcp` | Installed 2026-11-19 from the official `cloudflare/skills` marketplace; MCP needs a restart and a one-time Cloudflare OAuth login | R2 video storage, Workers for signed uploads; `cf` CLI not installed (optional, user to decide) |
 | ComfyUI (CPU) | `C:\Users\Sharafath\AI-Local\ComfyUI` | Installed by user 2026-11-19; first render untested | Node-based image/video generation |
 | LTX-Video 2B distilled fp8 | `ComfyUI\models\checkpoints` + T5 fp8 in `text_encoders` | Downloaded 2026-11-19, sha256-verified; render untested | Fastest local text/image→video; low res, short clips, ~15–40 min each |
 | Wan 2.1 T2V 1.3B | `ComfyUI\models\diffusion_models` + UMT5 fp8 + Wan VAE | Downloaded 2026-11-19, sha256-verified; render untested | Better motion than LTX, slower (~30–60+ min per short clip) |
