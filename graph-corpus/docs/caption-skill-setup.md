@@ -1,0 +1,13 @@
+# Caption styles: local setup and handoff
+
+The user requested the `pop-sticker` workflow from `captions-skill/SKILL.md`, with check frames at 1.5, 4 and 8 seconds and explicit approval before the full video render. No video has been selected yet.
+
+The repository was cloned from `https://github.com/Vibha-Ramprakash/claude-caption-styles` at commit `c1a594de6552f63f5c0f0169a0211276bacd97af`. Its `scripts/words.py` has one local Windows compatibility fix: the virtual-environment interpreter path uses `python.exe`. Preserve this local change when updating the clone.
+
+Node, Python and Chrome are already available. FFmpeg and FFprobe were found at `C:\Users\Sharafath\Desktop\ai-video-editor-old\tools\ffmpeg-9.0.2-essentials_build\bin`. They are not on the usual PATH, so prepend that directory in the shell used for the renderer. Set `CHROME_PATH` to the installed browser if discovery fails. `npm install` was run inside the clone; the transcription environment is local to the clone. For the locally cached default model, set `HF_HOME` to the clone's `.model-cache` directory in the shell that runs `words.py`.
+
+When the user supplies a video, inspect it and use a fresh workspace-local copy so that `words.py` and the renderer do not overwrite files beside the original. Check available audio, duration, rotation, frame rate and color transfer. If the footage is HDR and the resulting colors look washed out, make a separately named SDR copy and compare it before applying captions.
+
+Generate and listen-check word timings, repair recognized text, mark one meaningful keyword per line, and set line breaks around natural speech with two to four words where feasible. Never assert transcript accuracy without listening. Generate the three requested stills, inspect them, present them to the user, and wait for approval before full rendering. If a specified still time falls outside a short clip, explain that and use an appropriate in-range time. Use a new output path and preserve original audio and footage.
+
+The renderer loads fonts from Google Fonts. If network access is unavailable, check the actual font used and report any fallback rather than assuming it matches. The default `base` faster-whisper model was downloaded and loaded successfully in the local `.model-cache`; other models may need downloads. A synthetic clip and the repository's sample timings produced check frames at 1.5, 4 and 8 seconds. Chrome timed out under the default sandbox but the same test completed with approved elevated execution. This verifies setup only: no user video, transcript, SDR conversion, review frames or finished edit exists yet.

@@ -29,3 +29,7 @@ The exported brief provides the style rules, user inputs, suggested pieces and l
 - `resources/concordia/3d/product-layout/CREDITS.md`: provenance for the local industrial GLB assets. Use only when relevant and honor asset rights.
 
 Those resources are local reference copies and are not automatically run. Choose only material that serves the user's specific style and story; the guide's paper aesthetic and editorial clarity take priority over unrelated promotional defaults.
+
+## Cloud Master Video Styles integration
+
+`master-video-styles/` (pulled from `origin/main` commit `d1b0d95`) adds 17 style playbooks, 166 studied reference reels, a 12-move motion dictionary, an 18-tool reference map, and 5 markdown playbooks/prompts. `src/masterStylesData.ts` imports `master-video-styles/data/styles.json`, `master-video-styles/data/reels.json`, and the markdown files directly as a single source of truth, merging the 17 cloud styles into `builtInStyles` in `src/styles.ts` (37 total built-in profiles) and surfacing the full catalog in `src/App.tsx` while preserving all 20 original profiles and browser `localStorage` drafts.

@@ -1,0 +1,19 @@
+{
+  "run_id": "run-20261119",
+  "repo": "bang-motion",
+  "target": "C:\\Users\\Sharafath\\Desktop\\Website\\Master Video Editor\\video\\resources\\motion-systems\\bang-motion",
+  "source_ref": {
+    "commit": "c1aa65e921c970d858705fcb4a53a8294d1a4131",
+    "worktree_dirty": false
+  },
+  "profile": "standard",
+  "scope_paths": [
+    "."
+  ],
+  "budget": null,
+  "execution_policy": "sandboxed-source-and-local-only",
+  "selected_companion_files": [],
+  "prior_run_paths": [],
+  "shared_file_owners": "parent",
+  "run_status": "in_progress"
+}

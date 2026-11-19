@@ -1,4 +1,28 @@
-export type StyleProfile = { id: string; name: string; description: string; palette: string; format: string; duration: string; motion: string[]; pieces: string[]; promptSuffix: string; source: string; category?: 'study' | 'creator' };
+import { cloudStyleProfiles, type CloudCategory, type CloudStyleStep } from './masterStylesData';
+
+export type StyleProfile = {
+  id: string;
+  name: string;
+  description: string;
+  palette: string;
+  format: string;
+  duration: string;
+  motion: string[];
+  pieces: string[];
+  promptSuffix: string;
+  source: string;
+  category?: 'study' | 'creator';
+  cloudCategory?: CloudCategory;
+  accent?: string;
+  tag?: string;
+  creator?: string;
+  creatorHandle?: string;
+  referenceReelUrl?: string;
+  referenceReelNote?: string;
+  steps?: CloudStyleStep[];
+  tools?: string[];
+  bestFor?: string;
+};
 export const vox: StyleProfile = {
   id: 'vox-paper-collage', name: 'Vox paper collage', description: 'A story assembled from printed cut-outs, paper textures, maps and word-by-word headlines.',
   palette: 'Cream paper #EDE6D6 · faded warm ink · restrained red accent', format: '1920 × 1080 · 16:9 · 25 fps', duration: 'About 12 seconds, adjusted to the story',
@@ -94,7 +118,7 @@ export const voiceoverGlass: StyleProfile = {
   promptSuffix: 'Use available local tools and user-provided or licensed assets. Higgsfield is optional reference only; do not assume it is connected.',
   source: 'Supplied voiceover-glass-reel reference; local-first adaptation, not its macOS or After Effects pipeline.'
 };
-export const builtInStyles = [{ ...vox, category: 'study' as const }, ...studyProfiles, ...additionalStudyProfiles, ...[captionReel, creatorVlog, kelsey, saasLaunch, editorialTalkingHead, voiceoverGlass].map(p => ({ ...p, category: 'creator' as const }))];
+export const builtInStyles = [{ ...vox, category: 'study' as const }, ...studyProfiles, ...additionalStudyProfiles, ...[captionReel, creatorVlog, kelsey, saasLaunch, editorialTalkingHead, voiceoverGlass].map(p => ({ ...p, category: 'creator' as const })), ...cloudStyleProfiles];
 export function validProfile(value: unknown): value is StyleProfile {
   if (!value || typeof value !== 'object') return false;
   const v = value as Record<string, unknown>;
@@ -113,5 +137,9 @@ export function productionBrief(style: StyleProfile, story: string, beats: strin
       : style.id === creatorVlog.id || style.id === kelsey.id
         ? 'Ingest and inspect the supplied footage and references. Plan source clip ranges, speech, captions and visual beats, then build an editable cut and preview with available tools. Review timing, audio and framing before delivery.'
         : style.category === 'study' ? 'Identify learning objectives and verify the supplied source material. Plan concepts, diagrams and complete worked examples, then storyboard and review narration and captions before production.' : 'Present an appropriate story, piece list and motion plan, then review it before final production.';
-  return `You are a motion director. Plan an original film using this style profile.\n\nSTYLE: ${style.name}\nSOURCE: ${style.source}\nLOOK: ${style.description}\nPALETTE: ${style.palette}\nFORMAT: ${style.format}; ${style.duration}\n\nSTORY / BRIEF:\n${story.trim() || '[Add the story]'}\n\nBEATS (one per line):\n${beats.trim() || '[Add story beats or key spoken moments]'}\n\nASSETS AND REFERENCES:\n${pieces.trim() || '[Add supplied assets, references, or pieces needed]'}\n\nDESTINATION: ${destination}\n\nMOTION RULES:\n${style.motion.map(x => '- ' + x).join('\n')}\n\nSUGGESTED LAYERS:\n${style.pieces.map(x => '- ' + x).join('\n')}\n\n${isVox ? 'CUT-OUT STYLE LINE (append exactly to each piece prompt when applicable)' : 'STYLE GUIDANCE'}:\n${style.promptSuffix}\n\nWORKFLOW:\n1. ${workflow}\n2. Preserve source references and asset licensing. If a photo is supplied, preserve the real subject's shape, proportions and colors. Use original, licensed or user-supplied assets.\n3. Keep layers and keyframes editable; time entrances and movement to the approved story. Use real readable text for titles if generated lettering is inaccurate.\n4. Use the local resources index and the selected editor's actual capabilities; never claim a connector, render or model is available without checking. Review a preview before delivery.\n\nLOCAL RESOURCE ROUTES: skills/study-video; skills/creator-video; resources/motion-systems; resources/creator-styles/sources; resources/concordia/motion-video-director; resources/concordia/video-motion/design-motion-principles; resources/concordia/video-motion/motionmaxxing; resources/concordia/video-motion/react-three-fiber; resources/concordia/video-motion/drei; resources/concordia/3d/product-layout/CREDITS.md. These are references, not installed integrations.\n`;
+  const refLine = style.referenceReelUrl ? `\nREFERENCE REEL: ${style.referenceReelUrl}${style.referenceReelNote ? ` (${style.referenceReelNote})` : ''}` : '';
+  const stepsBlock = style.steps?.length
+    ? `\n\nPLAYBOOK STEPS:\n${style.steps.map((s, idx) => `${idx + 1}. ${s.title}${s.days ? ` [${s.days}]` : ''}: ${s.detail}${s.tools?.length ? ` (Tools: ${s.tools.join(', ')})` : ''}`).join('\n')}`
+    : '';
+  return `You are a motion director. Plan an original film using this style profile.\n\nSTYLE: ${style.name}\nSOURCE: ${style.source}${refLine}\nLOOK: ${style.description}\nPALETTE: ${style.palette}\nFORMAT: ${style.format}; ${style.duration}\n\nSTORY / BRIEF:\n${story.trim() || '[Add the story]'}\n\nBEATS (one per line):\n${beats.trim() || '[Add story beats or key spoken moments]'}\n\nASSETS AND REFERENCES:\n${pieces.trim() || '[Add supplied assets, references, or pieces needed]'}\n\nDESTINATION: ${destination}\n\nMOTION RULES:\n${style.motion.map(x => '- ' + x).join('\n')}\n\nSUGGESTED LAYERS:\n${style.pieces.map(x => '- ' + x).join('\n')}${stepsBlock}\n\n${isVox ? 'CUT-OUT STYLE LINE (append exactly to each piece prompt when applicable)' : 'STYLE GUIDANCE'}:\n${style.promptSuffix}\n\nWORKFLOW:\n1. ${workflow}\n2. Preserve source references and asset licensing. If a photo is supplied, preserve the real subject's shape, proportions and colors. Use original, licensed or user-supplied assets.\n3. Keep layers and keyframes editable; time entrances and movement to the approved story. Use real readable text for titles if generated lettering is inaccurate.\n4. Use the local resources index and the selected editor's actual capabilities; never claim a connector, render or model is available without checking. Review a preview before delivery.\n\nLOCAL RESOURCE ROUTES: skills/study-video; skills/creator-video; master-video-styles/data/styles.json; master-video-styles/data/reels.json; master-video-styles/playbooks; master-video-styles/prompts; resources/motion-systems; resources/creator-styles/sources; resources/concordia/motion-video-director; resources/concordia/video-motion/design-motion-principles; resources/concordia/video-motion/motionmaxxing; resources/concordia/video-motion/react-three-fiber; resources/concordia/video-motion/drei; resources/concordia/3d/product-layout/CREDITS.md. These are references, not installed integrations.\n`;
 }

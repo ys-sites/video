@@ -37,3 +37,13 @@ These shallow Git clones were acquired for reference on 2026-11-15. Security aud
 | [Paint MV Skills](https://github.com/lintsinghua/paint-mv-skills) | `ca8f5f75f186d590e687542b106aa73ceff9133c` |
 | [Hand-drawn Explainer](https://github.com/hi-nikola/hand-drawn-explainer-video-nikola) | `3ee5d1c01fe8d34f5162c4aace418753f85bd0d9` |
 | [Claude Motion Styles](https://github.com/Vibha-Ramprakash/claude-motion-styles) | `76e4884ded05afac8d9135d1d96a3baec1c3a2d2` |
+
+## Pulled Master Video Styles playbooks & prompts
+
+Pulled from `origin/main` into `master-video-styles/` and wired into the local studio (`src/masterStylesData.ts`, `src/styles.ts`, `src/App.tsx`):
+
+- `master-video-styles/playbooks/sumit-kelsie-edit-styles.md` — Sumit documentary explainer and Kelsie (`@_k.elsie`) listicle / listing-tour playbooks (kept distinct from the separately retained six-video `@kelssie3` talking-to-camera teardown under `resources/creator-styles/sources/kelssie3-teardown/`).
+- `master-video-styles/playbooks/overstimulated-mind-edit-process.md` — 6-step, 7-day talking-head build workflow.
+- `master-video-styles/playbooks/invideo-paper-cutout-guide.md` — InVideo + Claude paper-cutout collage workflow.
+- `master-video-styles/playbooks/after-effects-claude-mcp.md` — community After Effects MCP bridge options (reference only; not installed integrations).
+- `master-video-styles/prompts/sumit-style-video-edit-prompt.md` — director prompt for Sumit and Kelsie edit styles.

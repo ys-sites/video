@@ -1,0 +1,446 @@
+{
+  "created_utc": "2026-11-19T05:25:06.203909+00:00",
+  "status": "partial",
+  "results": [
+    {
+      "repository": "bang-motion",
+      "skill_path": "resources/motion-systems/bang-motion",
+      "source_revision": "c1aa65e921c970d858705fcb4a53a8294d1a4131",
+      "status": "scanner_completed",
+      "audit_status": "not_audited",
+      "exit_code": 1,
+      "score": 100,
+      "recommendation": "DO_NOT_INSTALL",
+      "issue_count": 71,
+      "issues": [
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ".claude-plugin/marketplace.json",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ".claude-plugin/plugin.json",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ".git/HEAD",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ".git/config",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ".git/description",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ".git/index",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ".git/info/exclude",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ".git/logs/HEAD",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ".git/logs/refs/heads/main",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ".git/logs/refs/remotes/origin/HEAD",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ".git/objects/pack/pack-936b0e3edddd8b08821bed05f7486b62ffd1087a.idx",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ".git/objects/pack/pack-936b0e3edddd8b08821bed05f7486b62ffd1087a.pack",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ".git/objects/pack/pack-936b0e3edddd8b08821bed05f7486b62ffd1087a.rev",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ".git/packed-refs",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ".git/refs/heads/main",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ".git/refs/remotes/origin/HEAD",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ".git/shallow",
+          "line": 1
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 27
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 551
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 39
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 550
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 68
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 104
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 140
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 531
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 83
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 129
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 130
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 132
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 133
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 170
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 211
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 215
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 301
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 359
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 409
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 506
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 540
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 98
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 120
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 225
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 349
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 542
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 134
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 330
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 386
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 538
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 355
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 543
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 532
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 544
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 545
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 546
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 547
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": "docs/gallery/01-grainy-gradient.jpg",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": "docs/gallery/02-kinetic-colorblock.jpg",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": "docs/gallery/03-saas-ui-tour.jpg",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": "docs/gallery/04-flat-vector.jpg",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": "docs/gallery/05-continuous-action.jpg",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": "docs/gallery/06-cartoon-stage.jpg",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": "docs/gallery/07-flat-pop-photo.jpg",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": "docs/gallery/08-white-catalog.jpg",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": "docs/gallery/09-visual-journalism.jpg",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": "docs/gallery/10-vintage-sketch.jpg",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": "docs/gallery/11-cartoon-collage.jpg",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": "docs/gallery/12-more-combinations.jpg",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": "docs/gallery/hero.jpg",
+          "line": 1
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": "icon.png",
+          "line": 1
+        },
+        {
+          "rule": "LP3",
+          "severity": "MEDIUM",
+          "path": "SKILL.md",
+          "line": 1
+        },
+        {
+          "rule": "SC4",
+          "severity": "LOW",
+          "path": "scripts/ae/bridge/package.json",
+          "line": 1
+        },
+        {
+          "rule": "SC1",
+          "severity": "LOW",
+          "path": "scripts/ae/bridge/package.json",
+          "line": 13
+        }
+      ],
+      "note": "Static offline scanner only; no semantic review, dependency contents, or full audit."
+    }
+  ]
+}

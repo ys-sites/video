@@ -1,0 +1,124 @@
+{
+  "created_utc": "2026-11-19T05:22:06.536961+00:00",
+  "tools": [
+    {
+      "name": "Strix",
+      "repository": "usestrix/strix",
+      "path": "resources/security-tools/strix",
+      "commit": "8db295a5b3564be2b430bb3a9afdb4db7850fa24",
+      "worktree_clean": true,
+      "source_acquisition": "shallow checkout; LFS not downloaded",
+      "audit_status": "not_audited",
+      "execution_status": "blocked"
+    },
+    {
+      "name": "Cloudflare Security Audit",
+      "repository": "cloudflare/security-audit-skill",
+      "path": "resources/security-tools/cloudflare-security-audit",
+      "commit": "c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+      "worktree_clean": true,
+      "source_acquisition": "shallow checkout; LFS not downloaded",
+      "audit_status": "not_audited",
+      "execution_status": "blocked"
+    },
+    {
+      "name": "Trivy",
+      "repository": "aquasecurity/trivy",
+      "path": "resources/security-tools/trivy",
+      "commit": "b12cc9634756eb6e425c24c05e568473e4cf608e",
+      "worktree_clean": true,
+      "source_acquisition": "shallow checkout; LFS not downloaded",
+      "audit_status": "not_audited",
+      "execution_status": "blocked"
+    },
+    {
+      "name": "Nuclei",
+      "repository": "projectdiscovery/nuclei",
+      "path": "resources/security-tools/nuclei",
+      "commit": "28b60e680aa2f7f1509a950a90e6f312a15332ab",
+      "worktree_clean": true,
+      "source_acquisition": "shallow checkout; LFS not downloaded",
+      "audit_status": "not_audited",
+      "execution_status": "blocked"
+    },
+    {
+      "name": "TruffleHog",
+      "repository": "trufflesecurity/trufflehog",
+      "path": "resources/security-tools/trufflehog",
+      "commit": "9529cc6177f50ed15e29cb886547749627e5f96e",
+      "worktree_clean": true,
+      "source_acquisition": "shallow checkout; LFS not downloaded",
+      "audit_status": "not_audited",
+      "execution_status": "blocked"
+    },
+    {
+      "name": "Semgrep",
+      "repository": "semgrep/semgrep",
+      "path": "resources/security-tools/semgrep",
+      "commit": "cd3b439c36f43a299dffcd1e7544f6ce7ebb03cc",
+      "worktree_clean": true,
+      "source_acquisition": "shallow checkout; LFS not downloaded",
+      "audit_status": "not_audited",
+      "execution_status": "blocked"
+    },
+    {
+      "name": "Codex Security",
+      "repository": "openai/codex-security",
+      "path": "resources/security-tools/codex-security",
+      "commit": "5313e2e8579de78dea582bfed0d96cec493f5594",
+      "worktree_clean": true,
+      "source_acquisition": "shallow checkout; LFS not downloaded",
+      "audit_status": "not_audited",
+      "execution_status": "blocked"
+    },
+    {
+      "name": "ClamAV",
+      "repository": "Cisco-Talos/clamav",
+      "path": "resources/security-tools/clamav",
+      "commit": "fc11d725ccc7c9900ab1add88d790b4e7ae7debf",
+      "worktree_clean": true,
+      "source_acquisition": "shallow checkout; LFS not downloaded",
+      "audit_status": "not_audited",
+      "execution_status": "blocked"
+    },
+    {
+      "name": "Claude Code Security Review",
+      "repository": "anthropics/claude-code-security-review",
+      "path": "resources/security-tools/claude-security-review",
+      "commit": "0c6a49f1fa56a1d472575da86a94dbc1edb78eda",
+      "worktree_clean": true,
+      "source_acquisition": "shallow checkout; LFS not downloaded",
+      "audit_status": "not_audited",
+      "execution_status": "blocked"
+    },
+    {
+      "name": "BLA",
+      "repository": "qybaihe/bla",
+      "path": "resources/security-tools/bla",
+      "commit": "4bb09a62671ab291ba3bac91d97a3581b468acdb",
+      "worktree_clean": true,
+      "source_acquisition": "shallow checkout; LFS not downloaded",
+      "audit_status": "not_audited",
+      "execution_status": "blocked"
+    },
+    {
+      "name": "PyRIT",
+      "repository": "Azure/PyRIT",
+      "path": "resources/security-tools/pyrit",
+      "commit": "bec7cb5d6089481d75fb8df143793de3da6905f5",
+      "worktree_clean": true,
+      "source_acquisition": "shallow checkout; LFS not downloaded",
+      "audit_status": "not_audited",
+      "execution_status": "blocked"
+    },
+    {
+      "name": "SkillSpector",
+      "repository": "NVIDIA/SkillSpector",
+      "path": "resources/skillspector-source",
+      "commit": "c81615007d40e86051a302a3cf897f8a05264928",
+      "source_acquisition": "existing checkout",
+      "audit_status": "not_audited",
+      "execution_status": "tool installed; reference not independently audited"
+    }
+  ]
+}

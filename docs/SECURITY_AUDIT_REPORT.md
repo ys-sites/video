@@ -1,6 +1,6 @@
 # Cloudflare Security Audit Report
 
-**Date**: 2026-11-15 19:26:04 UTC  
+**Date**: 2026-11-19 05:21:45 UTC  
 **Audit Target**: `src`  
 **Standard**: Cloudflare Vulnerability Harness (6-Phase Protocol)
 
@@ -18,7 +18,7 @@
 
 ## 1. Map: Attack Surface & Boundaries
 
-- **Input Triggers / Event Handlers**: 6 detected
+- **Input Triggers / Event Handlers**: 12 detected
 - **External Endpoints & Fetch Calls**: 0 detected
 - **Environment Variables**: 0 references detected
 

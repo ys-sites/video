@@ -1,0 +1,1197 @@
+{
+  "created_utc": "2026-11-19T05:32:35.261983+00:00",
+  "status": "partial",
+  "results": [
+    {
+      "repository": "anidoodle",
+      "skill_path": "resources/motion-systems/anidoodle/plugins/anidoodle/skills/anidoodle",
+      "source_revision": "4ae27d2c281fcfd01bce87ab13dc5ad4df81a795",
+      "status": "incomplete",
+      "audit_status": "not_audited",
+      "exit_code": 137,
+      "error": "JSONDecodeError"
+    },
+    {
+      "repository": "anidoodle",
+      "skill_path": "resources/motion-systems/anidoodle/skills/anidoodle",
+      "source_revision": "4ae27d2c281fcfd01bce87ab13dc5ad4df81a795",
+      "status": "scanner_completed",
+      "audit_status": "not_audited",
+      "exit_code": 1,
+      "score": 51,
+      "recommendation": "DO_NOT_INSTALL",
+      "issue_count": 20,
+      "issues": [
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        }
+      ],
+      "note": "Static offline scanner only; no semantic review, dependency contents, or full audit."
+    },
+    {
+      "repository": "anything2explainer",
+      "skill_path": "resources/motion-systems/anything2explainer",
+      "source_revision": "0b85f6c7bfc4ef094ee1afb6c68c06fcf329cfab",
+      "status": "incomplete",
+      "audit_status": "not_audited",
+      "exit_code": 137,
+      "error": "JSONDecodeError"
+    },
+    {
+      "repository": "bang-motion",
+      "skill_path": "resources/motion-systems/bang-motion",
+      "source_revision": "c1aa65e921c970d858705fcb4a53a8294d1a4131",
+      "status": "scanner_completed",
+      "audit_status": "not_audited",
+      "exit_code": 1,
+      "score": 100,
+      "recommendation": "DO_NOT_INSTALL",
+      "issue_count": 71,
+      "issues": [
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "LP3",
+          "severity": "MEDIUM",
+          "path": ""
+        },
+        {
+          "rule": "SC4",
+          "severity": "LOW",
+          "path": ""
+        },
+        {
+          "rule": "SC1",
+          "severity": "LOW",
+          "path": ""
+        }
+      ],
+      "note": "Static offline scanner only; no semantic review, dependency contents, or full audit."
+    },
+    {
+      "repository": "claude-drawing-skill",
+      "skill_path": "resources/motion-systems/claude-drawing-skill",
+      "source_revision": "6af36dc717b63d6ddafb54d2eaa120cacd99ab4d",
+      "status": "incomplete",
+      "audit_status": "not_audited",
+      "exit_code": 137,
+      "error": "JSONDecodeError"
+    },
+    {
+      "repository": "hand-drawn-explainer",
+      "skill_path": "resources/motion-systems/hand-drawn-explainer",
+      "source_revision": "3ee5d1c01fe8d34f5162c4aace418753f85bd0d9",
+      "status": "scanner_incomplete",
+      "audit_status": "not_audited",
+      "exit_code": 2,
+      "score": 100,
+      "recommendation": "DO_NOT_INSTALL",
+      "issue_count": 88,
+      "issues": [
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "LP3",
+          "severity": "MEDIUM",
+          "path": ""
+        },
+        {
+          "rule": "RP1",
+          "severity": "MEDIUM",
+          "path": ""
+        },
+        {
+          "rule": "SC4",
+          "severity": "LOW",
+          "path": ""
+        },
+        {
+          "rule": "SC4",
+          "severity": "LOW",
+          "path": ""
+        }
+      ],
+      "note": "Static offline scanner only; no semantic review, dependency contents, or full audit."
+    },
+    {
+      "repository": "huashu-art-motion",
+      "skill_path": "resources/motion-systems/huashu-art-motion",
+      "source_revision": "b7c34521c61bb9359590193c9d1ec95de607a4d1",
+      "status": "incomplete",
+      "audit_status": "not_audited",
+      "exit_code": 137,
+      "error": "JSONDecodeError"
+    },
+    {
+      "repository": "manim-skill",
+      "skill_path": "resources/motion-systems/manim-skill/skills/manimgl-best-practices",
+      "source_revision": "cef045011722d285692e3381d12d4d637da56e18",
+      "status": "scanner_completed",
+      "audit_status": "not_audited",
+      "exit_code": 1,
+      "score": 75,
+      "recommendation": "DO_NOT_INSTALL",
+      "issue_count": 9,
+      "issues": [
+        {
+          "rule": "AST5",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AST5",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "AST5",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "LP3",
+          "severity": "MEDIUM",
+          "path": ""
+        },
+        {
+          "rule": "AE4",
+          "severity": "MEDIUM",
+          "path": ""
+        },
+        {
+          "rule": "AE4",
+          "severity": "MEDIUM",
+          "path": ""
+        },
+        {
+          "rule": "AE4",
+          "severity": "MEDIUM",
+          "path": ""
+        },
+        {
+          "rule": "AE4",
+          "severity": "MEDIUM",
+          "path": ""
+        },
+        {
+          "rule": "AE4",
+          "severity": "MEDIUM",
+          "path": ""
+        }
+      ],
+      "note": "Static offline scanner only; no semantic review, dependency contents, or full audit."
+    },
+    {
+      "repository": "motion-skill",
+      "skill_path": "resources/motion-systems/motion-skill",
+      "source_revision": "947825034fd38cd3e607ffdd981e86c760152966",
+      "status": "scanner_completed",
+      "audit_status": "not_audited",
+      "exit_code": 1,
+      "score": 65,
+      "recommendation": "DO_NOT_INSTALL",
+      "issue_count": 29,
+      "issues": [
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "SC9",
+          "severity": "HIGH",
+          "path": ""
+        },
+        {
+          "rule": "LP3",
+          "severity": "MEDIUM",
+          "path": ""
+        }
+      ],
+      "note": "Static offline scanner only; no semantic review, dependency contents, or full audit."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+# Quarantine triage — 2026-11-19
+
+Static, read-only triage of the 15 repositories staged in `resources/repo-quarantine/` (shallow clone, hooks/LFS/submodules/symlinks off; commit in each `*.provenance.json`). No target code was imported, installed or run. This is triage, not a full audit: SkillSpector, dependency (OSV) and malware-signature scans have not been run on these repos. **All remain BLOCKED by `tools/security_gate.py`.**
+
+Machine context that limits use: integrated AMD Radeon GPU (no NVIDIA/CUDA), 15 GB RAM. The local diffusion/avatar/voice stacks below need an NVIDIA GPU with roughly 8–24 GB VRAM plus 10–80 GB of model weights each.
+
+| Repository | Commit | License | What it really is | Findings | Verdict |
+|---|---|---|---|---|---|
+| huginn/huginn | c1850b8 | MIT | Ruby/Rails automation agents | Only placeholder keys (`-----BEGIN PRIVATE KEY-----\n...`) in docs; Docker script pipes the NodeSource installer to bash | No malicious indicators. Runs in Docker; needs review of agents that call external services |
+| suifeng9203/HeyGem.ai | cb5ff42 | unclear (NOASSERTION) | Electron client for a Docker-based avatar/lip-sync stack | Ships prebuilt ffmpeg Windows DLLs and VMAF `.pkl` models (unverifiable binaries); `postinstall: electron-builder install-app-deps`; last pushed 2025-04 | Unverified binaries; needs NVIDIA + Docker. Do not run from this checkout |
+| k2-fsa/OmniVoice | 08be0b4 | Apache-2.0 | Voice-cloning TTS | `torch.load` without `weights_only` in eval scripts; `pickle.loads` in denoise worker | Clean code base; only load model weights from the official source. Voice cloning only with the speaker's consent |
+| Comfy-Org/ComfyUI | d5d59c4 | GPL-3.0 | Node-based diffusion UI | `.bat` launchers in `.ci/`; flagged chat template and test `exec` are false positives | No malicious indicators. Custom nodes are the real risk — each needs its own review |
+| deepbeepmeep/WanGP | f4cfc12 | unclear (NOASSERTION) | Local AI video generator | Prebuilt `.dll`/`.so` allocators (opaque); `torch.load(weights_only=False)`; 11× `trust_remote_code=True`; `--extra-index-url` to an Azure DevOps nightly feed (dependency-confusion exposure); `shell=True` in setup.py; uv installer piped to shell | Highest-risk install surface. Not usable here without NVIDIA |
+| JuneYaooo/rea-video | ac47077 | Apache-2.0 | Video reverse-engineering skill + CLI | `skills/rea-video/references/chatcut.md` instructs the agent to install a commercial paid app via `curl … \| sh` / `irm … \| iex` with a referral tag and to seek sandbox permission; `pickle.loads` of a local cache in a benchmark script | Core tool OK to review further; **the ChatCut install instruction must not be followed** |
+| MeiGen-AI/LongCat-Video-Avatar | 7cbb465 | none declared | Project homepage (247 MB of media) | Nothing notable | No license — no reuse rights by default |
+| sybil-solutions/inference-optimisation-skill | fda968e | MIT | Agent skill for local LLM serving speed | Nothing flagged | Low risk; not relevant without a GPU |
+| Immortal-Protocols/lastbook | 4fd221e | MIT | Offline survival-knowledge app | Vendored `libpdfium.dylib`; hidden-Unicode hits are legitimate Persian/Sinhala text | No malicious indicators. **Deleted 2026-11-19** at the user's request (no video or website use) |
+| sunnychase/open-higgsfield-ai | 3364a34 | none declared | Web front end for the paid **muapi.ai** API | Prompts/media go to `api.muapi.ai`; not local or free | No license; needs a paid third-party API key |
+| Anil-matcha/Open-Generative-AI | 46cf201 | MIT | Web front end for the paid **muapi.ai** API | Same muapi dependency; three git submodules from other repos not fetched or reviewed | Submodules unreviewed; needs paid API key |
+| neuregex/freefield | f7540e1 | MIT | ComfyUI app pack with open-weight models | Nothing flagged in static triage | Inherits ComfyUI/custom-node risk; needs NVIDIA |
+| hpcaitech/Open-Sora | 7ad6a96 | Apache-2.0 | Research text-to-video training/inference | Gradio demo pip-installs packages at runtime with `shell=True`; training scripts run `sudo drop_cache`; `torch.load` without `weights_only` | No malicious indicators. Data-centre GPUs required; don't run the Gradio app (it installs at start-up) |
+| Tencent-Hunyuan/HunyuanVideo | 4eda9cb | Tencent community licence (NOASSERTION) | Text-to-video model code | `shell=True` only in an env-info helper; flash-attention pinned to a tag | No malicious indicators. Licence has territory and usage limits — read before commercial use. Needs a large NVIDIA GPU |
+| Lightricks/LTX-Video | 50f0aef | Apache-2.0 | Fast text/image-to-video model code | `trust_remote_code=True` for the optional prompt-enhancer caption model; `torch.load` without `weights_only` | No malicious indicators; load weights only from Lightricks' official Hugging Face repo. Smallest of the video models but still needs NVIDIA |
+
+Not yet done: SkillSpector on the skill repos (rea-video, inference-optimisation-skill), dependency vulnerability lookup, ClamAV over shipped binaries, review of git submodules, and source review of any repo before approval.

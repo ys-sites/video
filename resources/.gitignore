@@ -14,3 +14,7 @@ skillspector-venv/
 motionsmith-research/
 # Optional third-party provider-specific reference material.
 higgsfield-reference/
+# Security tool source staging; not an approved toolchain.
+security-tools/
+# Scanner scratch is disposable and may contain untrusted findings.
+repo-catalog/security-audits/scanner/

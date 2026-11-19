@@ -1,0 +1,124 @@
+{
+  "created_utc": "2026-11-19T05:36:59.797658+00:00",
+  "status": "partial",
+  "results": [
+    {
+      "repository": "manim-skill",
+      "skill_path": "resources/motion-systems/manim-skill/skills/manim-composer",
+      "source_revision": "cef045011722d285692e3381d12d4d637da56e18",
+      "status": "scanner_completed",
+      "audit_status": "not_audited",
+      "limits": {
+        "wall_s": 900,
+        "cpu_s": 3600,
+        "address_space_bytes": 5368709120
+      },
+      "scan_input": "git archive of tracked files at HEAD (excludes .git and untracked files)",
+      "tree_object": "134e1413eda79ef0a894c3407cc0805aa802a342",
+      "worktree_differs_from_head": true,
+      "exit_code": 0,
+      "score": 0,
+      "recommendation": "SAFE",
+      "issue_count": 0,
+      "issues": [],
+      "note": "Static offline scanner only; no semantic review, dependency contents, or full audit."
+    },
+    {
+      "repository": "manim-skill",
+      "skill_path": "resources/motion-systems/manim-skill/skills/manimce-best-practices",
+      "source_revision": "cef045011722d285692e3381d12d4d637da56e18",
+      "status": "scanner_completed",
+      "audit_status": "not_audited",
+      "limits": {
+        "wall_s": 900,
+        "cpu_s": 3600,
+        "address_space_bytes": 5368709120
+      },
+      "scan_input": "git archive of tracked files at HEAD (excludes .git and untracked files)",
+      "tree_object": "12f05bc0b33394aa665dea9720e32ebb9b9dda92",
+      "worktree_differs_from_head": true,
+      "exit_code": 0,
+      "score": 0,
+      "recommendation": "SAFE",
+      "issue_count": 0,
+      "issues": [],
+      "note": "Static offline scanner only; no semantic review, dependency contents, or full audit."
+    },
+    {
+      "repository": "manim-skill",
+      "skill_path": "resources/motion-systems/manim-skill/skills/manimgl-best-practices",
+      "source_revision": "cef045011722d285692e3381d12d4d637da56e18",
+      "status": "scanner_completed",
+      "audit_status": "not_audited",
+      "limits": {
+        "wall_s": 900,
+        "cpu_s": 3600,
+        "address_space_bytes": 5368709120
+      },
+      "scan_input": "git archive of tracked files at HEAD (excludes .git and untracked files)",
+      "tree_object": "8497011ae59d39933701c10529059cac6d8c7802",
+      "worktree_differs_from_head": true,
+      "exit_code": 1,
+      "score": 73,
+      "recommendation": "DO_NOT_INSTALL",
+      "issue_count": 9,
+      "issues": [
+        {
+          "rule": "AST5",
+          "severity": "HIGH",
+          "path": "templates/3d_scene.py",
+          "line": 258
+        },
+        {
+          "rule": "AST5",
+          "severity": "HIGH",
+          "path": "templates/basic_scene.py",
+          "line": 134
+        },
+        {
+          "rule": "AST5",
+          "severity": "HIGH",
+          "path": "templates/math_scene.py",
+          "line": 333
+        },
+        {
+          "rule": "LP3",
+          "severity": "MEDIUM",
+          "path": "SKILL.md",
+          "line": 1
+        },
+        {
+          "rule": "AE4",
+          "severity": "MEDIUM",
+          "path": "examples/damped_solutions_splane.py",
+          "line": 1
+        },
+        {
+          "rule": "AE4",
+          "severity": "MEDIUM",
+          "path": "examples/solve_damped_ode.py",
+          "line": 1
+        },
+        {
+          "rule": "AE4",
+          "severity": "MEDIUM",
+          "path": "examples/spring_mass_system.py",
+          "line": 1
+        },
+        {
+          "rule": "AE4",
+          "severity": "MEDIUM",
+          "path": "references/rotating_exponentials.md",
+          "line": 1
+        },
+        {
+          "rule": "AE4",
+          "severity": "MEDIUM",
+          "path": "references/spring_mass_system.md",
+          "line": 1
+        }
+      ],
+      "note": "Static offline scanner only; no semantic review, dependency contents, or full audit."
+    }
+  ]
+}

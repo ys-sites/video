@@ -1,0 +1,300 @@
+{
+  "created_utc": "2026-11-19T05:58:04.841120+00:00",
+  "status": "partial",
+  "results": [
+    {
+      "repository": "anidoodle",
+      "skill_path": "resources/motion-systems/anidoodle/skills/anidoodle",
+      "source_revision": "4ae27d2c281fcfd01bce87ab13dc5ad4df81a795",
+      "status": "incomplete",
+      "audit_status": "not_audited",
+      "limits": {
+        "wall_s": 900,
+        "cpu_s": 7200,
+        "address_space_bytes": 5368709120
+      },
+      "scan_input": "git archive of tracked files at HEAD (excludes .git and untracked files)",
+      "tree_object": "9b4556d5b8c48a471602a6843b8930a70a598c0c",
+      "worktree_differs_from_head": true,
+      "error": "TimeoutExpired"
+    },
+    {
+      "repository": "anything2explainer",
+      "skill_path": "resources/motion-systems/anything2explainer",
+      "source_revision": "0b85f6c7bfc4ef094ee1afb6c68c06fcf329cfab",
+      "status": "incomplete",
+      "audit_status": "not_audited",
+      "limits": {
+        "wall_s": 900,
+        "cpu_s": 7200,
+        "address_space_bytes": 5368709120
+      },
+      "scan_input": "git archive of tracked files at HEAD (excludes .git and untracked files)",
+      "tree_object": "964d45e374450c75b1864df8dc0d833fabc32815",
+      "worktree_differs_from_head": true,
+      "error": "TimeoutExpired"
+    },
+    {
+      "repository": "bang-motion",
+      "skill_path": "resources/motion-systems/bang-motion",
+      "source_revision": "c1aa65e921c970d858705fcb4a53a8294d1a4131",
+      "status": "scanner_completed",
+      "audit_status": "not_audited",
+      "limits": {
+        "wall_s": 900,
+        "cpu_s": 7200,
+        "address_space_bytes": 5368709120
+      },
+      "scan_input": "git archive of tracked files at HEAD (excludes .git and untracked files)",
+      "tree_object": "951cfec95cff8f6d5da76178c4ecfe648fd26eb3",
+      "worktree_differs_from_head": true,
+      "exit_code": 1,
+      "score": 57,
+      "recommendation": "DO_NOT_INSTALL",
+      "issue_count": 40,
+      "issues": [
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 27
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 551
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 39
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 550
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 68
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 104
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 140
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 531
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 83
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 129
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 130
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 132
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 133
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 170
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 211
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 215
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 301
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 359
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 409
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 506
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 540
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 98
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 120
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 225
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 349
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 542
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 134
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 330
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 386
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 538
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 355
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 543
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 532
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 544
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 545
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 546
+        },
+        {
+          "rule": "AE1",
+          "severity": "HIGH",
+          "path": "SKILL.md",
+          "line": 547
+        },
+        {
+          "rule": "LP3",
+          "severity": "MEDIUM",
+          "path": "SKILL.md",
+          "line": 1
+        },
+        {
+          "rule": "SC4",
+          "severity": "LOW",
+          "path": "scripts/ae/bridge/package.json",
+          "line": 1
+        },
+        {
+          "rule": "SC1",
+          "severity": "LOW",
+          "path": "scripts/ae/bridge/package.json",
+          "line": 13
+        }
+      ],
+      "note": "Static offline scanner only; no semantic review, dependency contents, or full audit."
+    }
+  ]
+}

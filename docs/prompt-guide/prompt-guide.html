@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Prompt Playbook</title>
+<style>
+  :root {
+    --bg: #101412; --panel: #171f1a; --panel2: #1c2620; --line: #2c3a32;
+    --text: #e9efe9; --muted: #96a097; --sage: #9fc2b0; --gold: #e2bb69; --red: #e08a76;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { width: 1600px; background: var(--bg); color: var(--text); font-family: "Segoe UI", system-ui, sans-serif; padding: 64px 72px 56px; }
+  .kicker { color: var(--gold); letter-spacing: .22em; font-size: 15px; font-weight: 700; text-transform: uppercase; }
+  h1 { font-family: Georgia, "Times New Roman", serif; font-size: 66px; line-height: 1.05; margin: 14px 0 12px; }
+  h1 em { color: var(--sage); font-style: italic; }
+  .lede { color: var(--muted); font-size: 22px; max-width: 1180px; line-height: 1.45; }
+  .formula { margin: 36px 0 34px; display: flex; gap: 14px; align-items: stretch; }
+  .chip { flex: 1; background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 20px 20px 18px; position: relative; }
+  .chip .n { color: var(--gold); font: 700 15px/1 "Segoe UI"; letter-spacing: .12em; }
+  .chip b { display: block; font-size: 25px; margin: 10px 0 6px; }
+  .chip span { color: var(--muted); font-size: 16.5px; line-height: 1.4; }
+  .plus { align-self: center; color: var(--gold); font-size: 30px; font-weight: 300; }
+  .example { background: linear-gradient(90deg, #22342b, #1a2620); border: 1px solid #3b584b; border-radius: 18px; padding: 22px 26px; font-family: Consolas, "Cascadia Mono", monospace; font-size: 19px; line-height: 1.6; color: #d6e6dc; }
+  .example .tag { color: var(--gold); font-family: "Segoe UI"; font-weight: 700; font-size: 14px; letter-spacing: .16em; display: block; margin-bottom: 6px; }
+  .example i { color: var(--sage); font-style: normal; }
+  h2 { font-family: Georgia, serif; font-size: 34px; margin: 46px 0 18px; }
+  h2 small { color: var(--muted); font: 400 18px "Segoe UI"; margin-left: 12px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px; }
+  .card h3 { font-size: 21px; margin-bottom: 4px; }
+  .card .route { color: var(--sage); font-size: 14.5px; margin-bottom: 10px; font-family: Consolas, monospace; }
+  .card p { font-family: Consolas, monospace; font-size: 15.5px; color: #cfdcd3; line-height: 1.5; background: var(--panel2); border-radius: 10px; padding: 10px 12px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .list { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 22px 26px; }
+  .list h3 { font-size: 22px; margin-bottom: 12px; }
+  .list.do h3 { color: var(--sage); } .list.dont h3 { color: var(--red); }
+  .list li { list-style: none; font-size: 18px; line-height: 1.45; padding: 7px 0 7px 30px; position: relative; color: #dbe5de; border-top: 1px solid #222d27; }
+  .list li:first-of-type { border-top: 0; }
+  .list.do li::before { content: "✓"; color: var(--sage); position: absolute; left: 2px; font-weight: 700; }
+  .list.dont li::before { content: "✕"; color: var(--red); position: absolute; left: 2px; font-weight: 700; }
+  .list code, .tok code { font-family: Consolas, monospace; color: var(--gold); font-size: 16px; }
+  .loop { display: flex; gap: 10px; align-items: center; }
+  .step { flex: 1; text-align: center; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 10px; }
+  .step b { display: block; font-size: 19px; margin-bottom: 4px; }
+  .step span { color: var(--muted); font-size: 15px; line-height: 1.35; display: block; }
+  .arrow { color: var(--gold); font-size: 26px; }
+  .tok { background: #1e1a10; border: 1px solid #5a4a22; border-radius: 16px; padding: 22px 26px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 36px; }
+  .tok div { font-size: 18px; line-height: 1.45; color: #efe6cf; padding-left: 26px; position: relative; }
+  .tok div::before { content: "◆"; color: var(--gold); position: absolute; left: 0; font-size: 14px; top: 4px; }
+  footer { margin-top: 40px; display: flex; justify-content: space-between; color: var(--muted); font-size: 15px; border-top: 1px solid var(--line); padding-top: 18px; }
+  footer b { color: var(--gold); }
+</style>
+</head>
+<body>
+  <div class="kicker">Master Video Editor · Prompt Playbook</div>
+  <h1>Ask once. <em>Get it right.</em></h1>
+  <p class="lede">Every request is routed through <b>docs/MASTER-ROUTER.md</b>. The clearer the first message, the fewer questions, re-reads and tokens it takes to reach a finished video, page or tool.</p>
+
+  <div class="formula">
+    <div class="chip"><div class="n">01 · TYPE</div><b>What kind</b><span>Lesson video, creator reel, captions, AI footage, voice-over, website, new repo</span></div>
+    <div class="plus">+</div>
+    <div class="chip"><div class="n">02 · STYLE</div><b>Which look</b><span>Vox, Paint MV, Bang Motion, Kelsey, hand-drawn, a reference link</span></div>
+    <div class="plus">+</div>
+    <div class="chip"><div class="n">03 · INPUTS</div><b>What you give</b><span>Script or topic, file paths, brand colour, font, voice</span></div>
+    <div class="plus">+</div>
+    <div class="chip"><div class="n">04 · SPECS</div><b>Format</b><span>Length, 9:16 or 16:9, language, captions on/off</span></div>
+    <div class="plus">+</div>
+    <div class="chip"><div class="n">05 · STOP POINT</div><b>When to check</b><span>Brief only · preview frames · full render</span></div>
+  </div>
+
+  <div class="example"><span class="tag">ONE MESSAGE, ALL FIVE</span>
+    <i>Creator reel</i>, <i>Kelsey listicle style</i>, script in <i>video-projects/shawarma-moods-christmas-2026/script.md</i>, brand gold #e2bb69,
+    <i>30 s · 9:16 · English captions</i>. <i>Show me 3 preview frames before rendering.</i>
+  </div>
+
+  <h2>Copy-ready starters <small>swap the [bracketed] parts</small></h2>
+  <div class="grid">
+    <div class="card"><h3>Lesson / explainer</h3><div class="route">→ skills/study-video</div><p>Study video on [topic] in [Vox] style, 60 s, 16:9, from [notes.md]. Preview frames first.</p></div>
+    <div class="card"><h3>Creator reel</h3><div class="route">→ skills/creator-video</div><p>Reel in [Kelsey] style from [clip.mp4], pop-sticker captions, 9:16. Check frames at 1.5/4/8 s.</p></div>
+    <div class="card"><h3>AI footage</h3><div class="route">→ ComfyUI · LTX / Wan</div><p>Generate a [3 s] clip: [prompt]. LTX for speed, Wan for motion. 512 px.</p></div>
+    <div class="card"><h3>Voice-over</h3><div class="route">→ OmniVoice / fish audio</div><p>Voice-over for [script.md] in [my voice: sample.wav], calm pace, export WAV.</p></div>
+    <div class="card"><h3>Website change</h3><div class="route">→ src/App.tsx · Vercel</div><p>On the website, [add a before/after section] like [ignix.social]. Run lint + build.</p></div>
+    <div class="card"><h3>New repo</h3><div class="route">→ quarantine → check → approve</div><p>Add [github url]. Goal: [what it should do for my videos]. Check safety, then tell me.</p></div>
+  </div>
+
+  <h2>The fix loop <small>one change, named layer</small></h2>
+  <div class="loop">
+    <div class="step"><b>Preview</b><span>frames or Studio link</span></div><div class="arrow">→</div>
+    <div class="step"><b>Name the layer</b><span>scenes · text · colour · sound · motion</span></div><div class="arrow">→</div>
+    <div class="step"><b>One fix</b><span>“scene 4 is too fast, add 1 s”</span></div><div class="arrow">→</div>
+    <div class="step"><b>Re-check</b><span>only that layer changes</span></div><div class="arrow">→</div>
+    <div class="step"><b>“Approved — render”</b><span>final file path returned</span></div>
+  </div>
+
+  <h2>Do · Don’t</h2>
+  <div class="two">
+    <div class="list do"><h3>Do</h3><ul>
+      <li>Put the goal in the first line: <code>Goal: 30 s promo for X</code></li>
+      <li>Give file paths, not descriptions of files</li>
+      <li>Send all repo links in one message with what each is for</li>
+      <li>Say the stop point: brief, preview or render</li>
+      <li>Say “approved” or “stop” clearly — paid or deleting steps wait for it</li>
+    </ul></div>
+    <div class="list dont"><h3>Don’t</h3><ul>
+      <li>Paste a whole web article — send the link and the part you want</li>
+      <li>Stack five fixes in one message (it rebuilds everything)</li>
+      <li>Fire new requests mid-task unless they’re urgent — queue them</li>
+      <li>Ask for 13B video models locally — say “use cloud GPU” instead</li>
+      <li>Use “make it better” — name what is wrong and where</li>
+    </ul></div>
+  </div>
+
+  <h2>Token savers</h2>
+  <div class="tok">
+    <div>Ask questions against the graph: <code>/graphify query "…"</code></div>
+    <div>After adding files: <code>python tools/sync_graph_corpus.py</code> then <code>/graphify graph-corpus --update</code></div>
+    <div>Reuse names from the router: “Bang Motion”, “LTX”, “pop-sticker”</div>
+    <div>Reference earlier work by path, not by re-describing it</div>
+    <div>Short videos (≤ 20 s): say “no subagents, do it yourself in order”</div>
+    <div>Start a fresh chat for a new project; the router + memory carry over</div>
+  </div>
+
+  <footer><span>Routing map: <b>docs/MASTER-ROUTER.md</b> · Local AI: <b>C:\Users\Sharafath\AI-Local</b></span><span>Updated 2026-11-19</span></footer>
+</body>
+</html>
