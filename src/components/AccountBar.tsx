@@ -52,7 +52,7 @@ export default function AccountBar({ getPlan, title, onLoad }: Props) {
   if (!accountsReady) {
     return (
       <p className="mb-4 flex items-center gap-2 rounded-xl border border-white/10 bg-[#111113] px-4 py-2.5 text-xs text-[#8b8b94]">
-        <Cloud size={14} /> Accounts and cloud-saved plans are coming soon. Plans download as .json for now.
+        <Cloud size={14} /> Sign-in is coming soon. To keep your work for now, use Export.
       </p>
     );
   }

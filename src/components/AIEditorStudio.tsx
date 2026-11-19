@@ -382,7 +382,7 @@ export default function AIEditorStudio() {
 
             {panel === 'transcript' ? (
               <div className="flex-1 p-4 text-sm text-[#a1a1aa]">
-                <p className="rounded-xl bg-[#18181b] p-4">Word-by-word transcripts come with the cloud agent: sign in, add your video, and Whisper (free on Workers AI) writes the transcript so cuts land on real word boundaries. Until then, the plan uses the format's measured timing.</p>
+                <p className="rounded-xl bg-[#18181b] p-4">Your transcript will appear here once you sign in and add a video.</p>
               </div>
             ) : (
               <div className="flex min-h-0 flex-1 flex-col">

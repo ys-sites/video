@@ -349,6 +349,14 @@ h2.big{letter-spacing:-.04em}
 .demo-note{font-size:12.5px;color:var(--faint);margin-top:12px;text-align:center}
 @media(max-width:960px){.demo{grid-template-columns:1fr}.demo .lede{max-width:none}}
 @media(max-width:560px){.win-top{grid-template-columns:1fr}.win-ai{border-right:0;border-bottom:1px solid var(--line)}.win-view{min-height:220px}}
+
+.proof{margin-top:28px;color:var(--faint);font-size:14px}
+.three{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;text-align:left}
+.three li{background:var(--panel);border-radius:20px;padding:26px}
+.three span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#fafafa;color:#09090b;font-weight:700}
+.three h3{font-size:19px;margin-top:16px}
+.three p{color:var(--muted);margin-top:6px;font-size:15px}
+@media(max-width:760px){.three{grid-template-columns:1fr}}
 /* responsive: tablets, phones, landscape phones, ultrawide */
 @media(min-width:1700px){.wrap{max-width:1320px}}
 @media(max-width:1024px){
@@ -400,7 +408,7 @@ h2.big{letter-spacing:-.04em}
 </style>
 </head>
 <body>
-<a class="announce" href="editor/">New: <span>the AI Editor</span> — describe the edit, keep the final cut. Try it free →</a>
+<a class="announce" href="editor/">New: <span>the AI Editor</span> — edit your video by describing it. Try it free →</a>
 <header class="top"><div class="wrap">
   <a class="logo" href="index.html"><i>▶</i>Master Video Styles</a>
   <nav class="menu" aria-label="Main"><a href="editor/">AI Editor</a><a href="styles.html">Styles</a><a href="skills.html">Skills</a><a href="reels.html">Reels</a><a href="index.html#how">How it works</a></nav>
@@ -411,7 +419,7 @@ h2.big{letter-spacing:-.04em}
 <section class="hero">
   <p class="eyebrow">The creator video studio</p>
   <h1>Every video style,<br>mastered</h1>
-  <p class="lede">Two ways to start. Edit your own footage just by describing it, or pick a proven style and follow its playbook.</p>
+  <p class="lede">Upload your video, say what you want, and get a ready-to-post edit plan. Free, and your footage stays on your device.</p>
   <div class="paths">
     <a class="path" href="editor/">
       <div class="mini" aria-hidden="true"><div class="tr" style="top:12px"><b style="left:0%;width:14%;background:#c5f04a"></b><b style="left:80%;width:20%;background:#c5f04a"></b></div><div class="tr" style="top:28px"><b style="left:0%;width:100%;background:#e4e4e7"></b></div><div class="tr" style="top:44px"><b style="left:0%;width:18%;background:#71717a"></b><b style="left:20%;width:16%;background:#71717a"></b><b style="left:38%;width:22%;background:#71717a"></b><b style="left:62%;width:16%;background:#71717a"></b><b style="left:80%;width:20%;background:#71717a"></b></div><div class="tr" style="top:60px"><b style="left:0%;width:100%;background:#8b7cff"></b></div><div class="ph"></div></div>
@@ -426,17 +434,38 @@ h2.big{letter-spacing:-.04em}
       <span class="btn light">Browse styles</span>
     </a>
   </div>
+  <p class="proof">Built from 136 real creator reels · 17 proven styles · free to use</p>
 </section>
 
-<section class="center" style="padding-top:16px">
-  <p style="color:var(--muted);font-size:14px">Built on research, not guesswork</p>
-  <div class="numbers">
-    <div><b>136</b><span>reels measured</span></div>
-    <div><b>17</b><span>style playbooks</span></div>
-    <div><b>12</b><span>motion moves</span></div>
-    <div><b>45</b><span>face-tracked effects</span></div>
-    <div><b>36</b><span>skills, 31 free</span></div>
+<section class="center">
+  <h2 class="big">See it in action</h2>
+  <p class="sub">Type what you want. Watch a raw clip become a finished reel.</p>
+  <div class="stage live" id="stage-demo" role="img"
+       aria-label="Animated demo: a typed request turns a raw clip into an edited reel, cycling through a listing tour, a tips listicle and a cinematic listing film"
+       data-p0="Cut this walkthrough like a Kelsie listing tour — captions, a push-in and a comment-word ask"
+       data-p1="Turn this into a 3-tip listicle with keyword captions and a counter"
+       data-p2="Make a cinematic film from these listing clips — fast cuts on the beat, music only, a title card">
+    <div class="phones">
+      <div class="phone raw">
+        <span class="tagp">Raw clip</span>
+        <div class="ex on" data-i="0"><div class="scene sc-house"></div></div>
+        <div class="ex" data-i="1"><div class="scene sc-room"></div></div>
+        <div class="ex" data-i="2"><div class="scene sc-pod"></div></div>
+      </div>
+      <div class="mid" aria-hidden="true"><div class="dots"><i class="on"></i><i></i><i></i></div><small>AI EDITOR</small></div>
+      <div class="phone cut">
+        <div class="ex on" data-i="0"><span class="tagp">Listing tour · 60 s · 1.3 s shots</span><div class="scene sc-house"></div>
+          <div class="ov title"><small>JUST LISTED</small>4 bed · 3 bath</div><div class="ov cap"><span>Corner lot · <b>big yard</b></span></div><div class="ov ask"><span>Comment “TOUR”</span></div></div>
+        <div class="ex" data-i="1"><span class="tagp">Listicle · 42 s · 220 wpm</span><div class="scene sc-room"></div>
+          <div class="ov title"><small>3 TIPS BEFORE YOU BUY</small>Get pre-approved</div><div class="ov num">01</div><div class="ov cap"><span>Know your <b>budget</b> first</span></div><div class="ov ask"><span>Save this for later</span></div></div>
+        <div class="ex" data-i="2"><span class="tagp">Cinematic film · 64 s · 1.1 s shots</span><div class="scene sc-pod"></div>
+          <div class="ov title"><small>OPEN HOUSE SUNDAY</small>Chef's kitchen</div><div class="ov cap"><span>Quartz <b>island</b> · new oak floors</span></div><div class="ov ask"><span>DM for the private tour</span></div></div>
+      </div>
+    </div>
+    <div class="bubble"><span class="typed2">Cut this walkthrough like a Kelsie listing tour — captions, a push-in and a comment-word ask</span><i>↑</i></div>
   </div>
+  <p class="demo-note">Illustration of the workflow. Formats and numbers come from the 136-reel creator study; no creator footage is shown.</p>
+
 </section>
 
 <section>
@@ -444,7 +473,7 @@ h2.big{letter-spacing:-.04em}
     <div>
       <span class="label"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>How it works</span>
       <h2 style="margin-top:12px">Edit just by describing it</h2>
-      <p class="lede">Ask the way you'd ask an editor — “cut it like a Kelsie listing tour” — and the plan lands on the timeline while you watch, built from 136 measured real-estate reels.</p>
+      <p class="lede">Ask like you'd ask an editor — “cut it like a listing tour” — and every change lands on the timeline while you watch.</p>
       <a class="btn light" href="editor/">Open the AI Editor</a>
     </div>
     <div>
@@ -490,76 +519,17 @@ h2.big{letter-spacing:-.04em}
 </section>
 
 <section class="center">
-  <h2 class="big">Meet the AI Editor:<br>your chat-to-edit studio</h2>
-  <p class="sub">Your real footage in, a finished edit plan out. No avatars, no generated speakers. It makes every decision visible and explains it; you direct the changes.</p>
-  <a class="btn light" href="editor/" style="margin-top:24px">Try the AI Editor</a>
-  <div class="stage live" id="stage-demo" role="img"
-       aria-label="Animated demo: a typed request turns a raw clip into an edited reel, cycling through a listing tour, a tips listicle and a cinematic listing film"
-       data-p0="Cut this walkthrough like a Kelsie listing tour — captions, a push-in and a comment-word ask"
-       data-p1="Turn this into a 3-tip listicle with keyword captions and a counter"
-       data-p2="Make a cinematic film from these listing clips — fast cuts on the beat, music only, a title card">
-    <div class="phones">
-      <div class="phone raw">
-        <span class="tagp">Raw clip</span>
-        <div class="ex on" data-i="0"><div class="scene sc-house"></div></div>
-        <div class="ex" data-i="1"><div class="scene sc-room"></div></div>
-        <div class="ex" data-i="2"><div class="scene sc-pod"></div></div>
-      </div>
-      <div class="mid" aria-hidden="true"><div class="dots"><i class="on"></i><i></i><i></i></div><small>AI EDITOR</small></div>
-      <div class="phone cut">
-        <div class="ex on" data-i="0"><span class="tagp">Listing tour · 60 s · 1.3 s shots</span><div class="scene sc-house"></div>
-          <div class="ov title"><small>JUST LISTED</small>4 bed · 3 bath</div><div class="ov cap"><span>Corner lot · <b>big yard</b></span></div><div class="ov ask"><span>Comment “TOUR”</span></div></div>
-        <div class="ex" data-i="1"><span class="tagp">Listicle · 42 s · 220 wpm</span><div class="scene sc-room"></div>
-          <div class="ov title"><small>3 TIPS BEFORE YOU BUY</small>Get pre-approved</div><div class="ov num">01</div><div class="ov cap"><span>Know your <b>budget</b> first</span></div><div class="ov ask"><span>Save this for later</span></div></div>
-        <div class="ex" data-i="2"><span class="tagp">Cinematic film · 64 s · 1.1 s shots</span><div class="scene sc-pod"></div>
-          <div class="ov title"><small>OPEN HOUSE SUNDAY</small>Chef's kitchen</div><div class="ov cap"><span>Quartz <b>island</b> · new oak floors</span></div><div class="ov ask"><span>DM for the private tour</span></div></div>
-      </div>
-    </div>
-    <div class="bubble"><span class="typed2">Cut this walkthrough like a Kelsie listing tour — captions, a push-in and a comment-word ask</span><i>↑</i></div>
-  </div>
-  <p class="demo-note">Illustration of the workflow. Formats and numbers come from the 136-reel creator study; no creator footage is shown.</p>
-
-  <div class="row">
-    <div><span class="label"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>AI Editor</span><h3>The AI makes the edit</h3><p>One pass plans cuts, captions, motion, B-roll, music and sound, with an edit log that says what changed and why. Ask for a change in plain words and it changes that, not the whole video.</p></div>
-    <div class="log">
-      <div class="ask">Turn this into a reel with a clear ask at the end</div>
-      <div class="done">✓ Edit ready — here's what changed and why</div>
-      <ul style="display:grid;gap:8px">
-        <li><b>12 tight takes</b> — pauses and fillers cut</li>
-        <li><b>Hook title</b> — strongest line first, inside 0.5 s</li>
-        <li><b>Word-by-word captions</b> — in the mobile safe zone</li>
-        <li><b>Music bed</b> — ducked under the voice</li>
-        <li><b>One clear ask</b> — follow, comment or book</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="row boxed">
-    <div><span class="label"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>AI Editor</span><h3>You keep the last word</h3><p>A real timeline for the last mile: block-level selection, undo, restore and targeted changes. Chat for intent, timeline for precision.</p></div>
-    <img src="img/editor-hand.jpg" alt="A selected timeline block with controls to rename, move or remove it" width="1200" height="675" loading="lazy">
-  </div>
+  <h2 class="big">Three steps. That's it.</h2>
+  <ol class="three">
+    <li><span>1</span><h3>Add your video</h3><p>It stays on your device.</p></li>
+    <li><span>2</span><h3>Say what you want</h3><p>“Make it punchy”, “add captions”, “cut it like a listing tour”.</p></li>
+    <li><span>3</span><h3>Adjust and export</h3><p>Change anything on the timeline, then export.</p></li>
+  </ol>
+  <a class="btn light" href="editor/" style="margin-top:32px">Start editing — free</a>
 </section>
-
-<section class="center">
-  <h2 class="big">Take full control when you want it</h2>
-  <p class="sub">A complete creator studio. Automatic when speed matters, hands-on when precision does.</p>
-  <a class="btn light" href="editor/" style="margin-top:24px">Open the editor</a>
-  <div class="ctl"><div><span class="label"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Speed</span><h3>Edit in minutes with chat, timeline and one-tap fixes</h3><div class="tabs" role="tablist" aria-label="Speed"><button role="tab" id="t-speed-0" aria-controls="p-speed-0" aria-selected="true" tabindex="0">Describe the edit</button><button role="tab" id="t-speed-1" aria-controls="p-speed-1" aria-selected="false" tabindex="-1">Fix it by hand</button><button role="tab" id="t-speed-2" aria-controls="p-speed-2" aria-selected="false" tabindex="-1">One-tap fixes</button></div></div><div><div class="panel" role="tabpanel" id="p-speed-0" aria-labelledby="t-speed-0"><div class="ui"><div class="t">Edit agent</div><div class="r on">Make it punchy<em>chip</em></div><div class="r">Add captions<em>chip</em></div><div class="r">Open on the strongest moment<em>chip</em></div><div class="r">Add music under my voice<em>chip</em></div></div><p class="cap">Type the edit in plain words or tap a quick prompt. The plan lands on six tracks, each change with a reason.</p></div><div class="panel" role="tabpanel" id="p-speed-1" aria-labelledby="t-speed-1" hidden><div class="ui"><img src="img/editor-hand.jpg" alt="Selected timeline block with rename, move and remove controls" width="1200" height="675" loading="lazy"></div><p class="cap">Click any block to rename, move, stretch or remove it. Undo and redo every step.</p></div><div class="panel" role="tabpanel" id="p-speed-2" aria-labelledby="t-speed-2" hidden><div class="ui"><div class="t">Quick fixes</div><div class="r on">Trim fillers and pauses<em>ON</em></div><div class="r on">Clean audio to −14 LUFS<em>ON</em></div><div class="r">Punch-in zooms<em>ON</em></div><div class="r">Background<em>OFF</em></div></div><p class="cap">Each fix joins the next edit and names the free local tool that does the work.</p></div></div></div><div class="ctl"><div><span class="label"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 17.2V21h3.8L17.8 10 14 6.2zM20.7 7a1 1 0 000-1.4l-2.3-2.3a1 1 0 00-1.4 0L15.2 5 19 8.8z"/></svg>Style</span><h3>Start from a style that already works</h3><div class="tabs" role="tablist" aria-label="Style"><button role="tab" id="t-style-0" aria-controls="p-style-0" aria-selected="true" tabindex="0">Proven formats</button><button role="tab" id="t-style-1" aria-controls="p-style-1" aria-selected="false" tabindex="-1">Playbooks</button><button role="tab" id="t-style-2" aria-controls="p-style-2" aria-selected="false" tabindex="-1">Motion moves</button></div></div><div><div class="panel" role="tabpanel" id="p-style-0" aria-labelledby="t-style-0"><div class="ui"><div class="t">Walk-and-talk · 25 reels</div><div class="r">Length<em>34 s</em></div><div class="r on">Per shot<em>2.8 s</em></div><div class="r">Talking speed<em>209 wpm</em></div><div class="r">First word<em>0.0 s</em></div></div><p class="cap">Nine reel types measured from 136 real reels: real lengths, shot timing and talking speed.</p></div><div class="panel" role="tabpanel" id="p-style-1" aria-labelledby="t-style-1" hidden><div class="ui"><div class="t">17 playbooks</div><div class="r">What it looks like<em>1</em></div><div class="r">When to use it<em>2</em></div><div class="r on">Step-by-step build<em>3</em></div><div class="r">Copy-paste prompt<em>4</em></div></div><p class="cap">17 styles, each with what it looks like, when to use it, the steps and a prompt for Claude.</p></div><div class="panel" role="tabpanel" id="p-style-2" aria-labelledby="t-style-2" hidden><div class="ui"><div class="t">12 moves</div><div class="r on">Punch-in on the keyword<em>move</em></div><div class="r">Fly-through push-in<em>move</em></div><div class="r">Kinetic keyword<em>move</em></div><div class="r">Before / after wipe<em>move</em></div></div><p class="cap">Borrow one move at a time without taking on a whole style.</p></div></div></div><div class="ctl"><div><span class="label"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>AI</span><h3>AI that runs on your own machine</h3><div class="tabs" role="tablist" aria-label="AI"><button role="tab" id="t-ai-0" aria-controls="p-ai-0" aria-selected="true" tabindex="0">Captions</button><button role="tab" id="t-ai-1" aria-controls="p-ai-1" aria-selected="false" tabindex="-1">Face-tracked effects</button><button role="tab" id="t-ai-2" aria-controls="p-ai-2" aria-selected="false" tabindex="-1">Free voice and music</button></div></div><div><div class="panel" role="tabpanel" id="p-ai-0" aria-labelledby="t-ai-0"><div class="ui"><div class="t">Word-by-word captions</div><div class="cap-demo"><span>your <b>words</b> here</span></div></div><p class="cap">Seven caption styles from word timings, checked on three frames before the full render.</p></div><div class="panel" role="tabpanel" id="p-ai-1" aria-labelledby="t-ai-1" hidden><div class="ui"><div class="t">45 effects</div><div class="r on">Spotlight<em>face</em></div><div class="r">Orbit<em>face</em></div><div class="r">Glass widgets<em>face</em></div><div class="r">iMessage pop-ups<em>face</em></div></div><p class="cap">Effects that follow the speaker and can sit behind them.</p></div><div class="panel" role="tabpanel" id="p-ai-2" aria-labelledby="t-ai-2" hidden><div class="ui"><div class="t">31 of 36 skills free</div><div class="r on">Voice: OmniVoice, Piper<em>free</em></div><div class="r">Transcripts: Whisper<em>free</em></div><div class="r">Music: code synth, MusicGen<em>free</em></div><div class="r">Paid services<em>fallback</em></div></div><p class="cap">Local voices, transcripts and code-made music. Paid services are fallbacks only.</p></div></div></div>
-</section>
-
-<section class="center">
-  <h2 class="big">The easiest creator studio.<br>No editing skills required</h2>
-  <ul class="four">
-    <li><div class="vis"><span class="pill-demo">Make it punchy ✦</span></div><div class="txt"><h3>Easy for everyone</h3><p>Describe the edit in your own words. Quick prompts cover the common asks.</p></div></li>
-    <li><div class="vis"><div class="aspects"><span style="width:36px;height:64px">9:16</span><span style="width:52px;height:52px">1:1</span><span style="width:80px;height:45px">16:9</span></div></div><div class="txt"><h3>Every screen</h3><p>Plan for Reels, TikTok, Shorts or YouTube with captions kept in the safe zone.</p></div></li>
-    <li><div class="vis"><span class="big">0.5 s</span></div><div class="txt"><h3>Hooks that hold</h3><p>First word inside half a second and one clear ask at the end — the measured norm.</p></div></li>
-    <li><div class="vis"><span class="big" style="color:var(--brand)">Free</span></div><div class="txt"><h3>Free first</h3><p>Every paid tool has a free local route. Your footage never leaves your device.</p></div></li>
-  </ul>
-</section>
-
 <section class="center" id="how">
-  <h2 class="big">See how the creator style works</h2>
-  <p class="sub">An 84-second tour of the system behind every edit.</p>
+  <h2 class="big">Why the edits work</h2>
+  <p class="sub">Every style is measured from real creator reels — watch the 84-second tour.</p>
   <div class="explainer">
     <div class="ex-video">
       <video src="videos/creator-style-explainer.mp4" poster="videos/creator-style-explainer-poster.jpg" controls playsinline preload="metadata">
@@ -576,75 +546,23 @@ h2.big{letter-spacing:-.04em}
         <div class="ex-stat"><b>1.4 s</b><span>median shot</span></div>
         <div class="ex-stat"><b>0.5 s</b><span>to the first word</span></div>
       </div>
-      <ol class="ex-steps">
-        <li><span class="n">1</span><div><b>Transcribe</b>Every word, with timings.</div></li>
-        <li><span class="n">2</span><div><b>Pick the type</b>Your footage decides it.</div></li>
-        <li class="you"><span class="n">3</span><div><b>Storyboard</b>You approve before rendering.</div></li>
-        <li><span class="n">4</span><div><b>Build</b>Remotion, captions, effects.</div></li>
-        <li><span class="n">5</span><div><b>Render</b>1080×1920, 30 fps, −14 LUFS.</div></li>
-        <li><span class="n">6</span><div><b>Checklist</b>Hook, pace, one clear ask.</div></li>
-      </ol>
     </div>
-  </div>
-</section>
-
-<section class="center">
-  <h2 class="big">Plan, style, render. All-in-one creator studio</h2>
-  <p class="sub">Stop juggling tabs. Everything the workflow needs is one click away.</p>
-  <ul class="eight">
-    <li><a href="editor/"><div class="ico">▶</div><h3>AI Editor</h3><p>Chat-to-edit planner with a real timeline.</p></a></li>
-    <li><a href="styles.html"><div class="ico" style="--c:var(--pink)">◆</div><h3>Style playbooks</h3><p>17 styles with steps and prompts.</p></a></li>
-    <li><a href="styles.html#moves"><div class="ico" style="--c:var(--violet)">↯</div><h3>Motion dictionary</h3><p>12 moves to borrow one at a time.</p></a></li>
-    <li><a href="styles.html#tools"><div class="ico" style="--c:var(--cyan)">⚙</div><h3>Tools map</h3><p>What each tool does and what it costs.</p></a></li>
-    <li><a href="skills.html"><div class="ico" style="--c:var(--green)">✦</div><h3>Skill stack</h3><p>36 skills grouped by job, free first.</p></a></li>
-    <li><a href="reels.html"><div class="ico" style="--c:var(--amber)">▦</div><h3>Reel catalog</h3><p>Every studied reel, tagged by style.</p></a></li>
-    <li><a href="index.html#how"><div class="ico" style="--c:var(--orange)">◎</div><h3>Creator study</h3><p>136 reels, 12 types, measured rules.</p></a></li>
-    <li><a href="skills.html#voice-over-and-transcription"><div class="ico" style="--c:var(--red)">♪</div><h3>Free voice and music</h3><p>Local voices, transcripts and code-made music.</p></a></li>
-  </ul>
-</section>
-
-<section class="center">
-  <h2 class="big">Which do I need?</h2>
-  <p class="sub">The AI Editor doesn't replace the playbooks. Pick what fits the job; both are free.</p>
-  <div class="which">
-    <div><span class="kicker">Editing agent</span><h3>AI Editor</h3><p>Start with raw footage. Finish with a post-ready edit plan.</p>
-      <ul><li>Your real footage — no avatars or fake speakers</li><li>Cuts, captions, motion, B-roll, music and sound in one pass</li><li>Every decision explained; you approve the changes</li></ul>
-      <a class="btn light" href="editor/">Use the AI Editor</a></div>
-    <div><span class="kicker">Style library</span><h3>Style playbooks</h3><p>Start with a look you love. Get the exact steps to make it.</p>
-      <ul><li>17 styles from real creators, broken into steps</li><li>A copy-paste prompt for Claude with each one</li><li>Motion moves and tools you can mix and match</li></ul>
-      <a class="btn light" href="styles.html">Browse the styles</a></div>
-  </div>
-</section>
-
-<section class="center">
-  <h2 class="big">Also works inside your agent</h2>
-  <div class="agent">
-    <div><h3>Claude Code</h3><p>Copy the brief from the AI Editor and paste it into Claude Code. It follows the master router to the right skills and builds an editable project.</p>
-      <pre>&gt; [paste brief]
-→ docs/MASTER-ROUTER.md
-→ creator-video · remotion · captions · effects
-✓ preview first, render on approval</pre></div>
-    <div><h3>Skills and MCP</h3><p>REA dissects reference sites and apps; the skill stack covers captions, motion, voice, music and footage — free routes first.</p>
-      <a class="btn light sm" href="skills.html" style="margin-top:18px">See the skill stack</a></div>
   </div>
 </section>
 
 <section class="center" id="faq">
   <h2 class="big">Got questions?</h2>
   <div class="faq">
-    <details><summary>What is the AI Editor?</summary><p>A chat-to-edit planner. You describe the edit, it plans cuts, captions, motion, B-roll, music and sound on a six-track timeline and explains each decision. You adjust anything by hand, then copy the brief into Claude Code to render it.</p></details>
+    <details><summary>What is the AI Editor?</summary><p>A video editor you talk to. Describe the edit and it plans the cuts, captions, titles, music and sound on a timeline. You can change anything by hand.</p></details>
     <details><summary>Does my footage get uploaded?</summary><p>No. The clip plays in your browser only. Nothing is sent to a server.</p></details>
-    <details><summary>Does it render the video in the browser?</summary><p>Not yet. The browser plans the edit; the render happens on your machine with Remotion and the free skills, so you keep full quality and editable layers.</p></details>
-    <details><summary>Do I need paid tools?</summary><p>No. Every paid service on the skill stack lists a free local route: OmniVoice or Piper for voice, Whisper for transcripts, code-made or open-source music, ComfyUI for footage.</p></details>
-    <details><summary>Where do the styles come from?</summary><p>From public creator reels studied frame by frame. Techniques are copied; footage, voices, text and branding never are.</p></details>
-    <details><summary>Does it make deepfakes or fake speakers?</summary><p>No. It edits your real footage. Voice cloning and character swaps stay off unless the person has agreed to it.</p></details>
+    <details><summary>Do I need paid tools?</summary><p>No. The editor is free to use.</p></details>
     <details><summary>Which formats does it support?</summary><p>Vertical 9:16 for Reels, TikTok and Shorts, square 1:1 and widescreen 16:9.</p></details>
   </div>
 </section>
 
 <section>
   <div class="final">
-    <h2 class="big">Edit one video every day, free</h2>
+    <h2 class="big">Ready to make your next video?</h2>
     <a class="btn light" href="editor/">Open the AI Editor</a>
     <p>No account. No upload. No credit card.</p>
   </div>
