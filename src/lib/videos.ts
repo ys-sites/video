@@ -3,7 +3,7 @@
 // token; the Worker only touches the caller's own folder.
 import { getSession } from './supabase';
 
-export const UPLOADS_URL = ''; // https://masvid-uploads.<subdomain>.workers.dev once the Worker has a route
+export const UPLOADS_URL = 'https://masvid-uploads.restoredinmtl.workers.dev';
 export const videosReady = UPLOADS_URL.startsWith('https://');
 export const MAX_UPLOAD = 95 * 1024 * 1024;
 
