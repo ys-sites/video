@@ -361,7 +361,7 @@ export default function AIEditorStudio() {
             ))}
           </span>
           <div className="relative">
-            <button onClick={() => setExportOpen(o => !o)} aria-expanded={exportOpen} className="ml-1 flex items-center gap-1.5 rounded-lg bg-[#c5f04a] px-3 py-1.5 text-xs font-bold text-[#0b0f00] hover:bg-[#d4f56f]">
+            <button onClick={() => setExportOpen(o => !o)} aria-expanded={exportOpen} className="ml-1 flex items-center gap-1.5 rounded-lg bg-[#fafafa] px-3.5 py-1.5 text-sm font-semibold text-[#09090b] hover:bg-[#e4e4e7]">
               Export <ChevronDown size={13} />
             </button>
             {exportOpen && (
@@ -392,24 +392,24 @@ export default function AIEditorStudio() {
                 <div className="max-h-[440px] flex-1 space-y-4 overflow-y-auto p-4">
                   {empty ? (
                     <>
-                      <button onClick={() => fileRef.current?.click()} className="flex w-full flex-col items-center gap-2 rounded-2xl border border-dashed border-white/15 bg-[#09090b] px-4 py-6 text-center hover:border-[#c5f04a]/50">
-                        <Upload size={20} className="text-[#c5f04a]" />
+                      <button onClick={() => fileRef.current?.click()} className="flex w-full flex-col items-center gap-2 rounded-2xl border border-dashed border-white/15 bg-[#09090b] px-4 py-6 text-center hover:border-white/30">
+                        <Upload size={20} className="text-[#a1a1aa]" />
                         <span className="text-sm font-semibold text-white">{file ? file.name : 'Add your video'}</span>
                         <span className="text-xs text-[#8b8b94]">{file ? `${fmt(duration)} · ready` : 'It stays on your device'}</span>
                       </button>
                       <div>
-                        <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-[#71717a]">Start from a format</p>
+                        <p className="mb-2 text-xs font-medium text-[#a1a1aa]">Start from a format</p>
                         <div className="flex flex-wrap gap-1.5">
                           {RECIPES.slice(0, 6).map(r => (
-                            <button key={r.id} onClick={() => useRecipe(r)} className="rounded-full border border-white/10 bg-[#18181b] px-3 py-1.5 text-xs text-[#e4e4e7] hover:border-[#c5f04a]/50">{r.name}</button>
+                            <button key={r.id} onClick={() => useRecipe(r)} className="rounded-full border border-white/10 bg-[#18181b] px-3 py-1.5 text-xs text-[#e4e4e7] hover:border-white/25 hover:text-white">{r.name}</button>
                           ))}
                         </div>
                       </div>
                       <div>
-                        <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-[#71717a]">Or just ask</p>
+                        <p className="mb-2 text-xs font-medium text-[#a1a1aa]">Or just ask</p>
                         <div className="flex flex-wrap gap-1.5">
                           {QUICK_PROMPTS.slice(0, 4).map(q => (
-                            <button key={q} onClick={() => makeEdit(q)} className="rounded-full border border-white/10 bg-[#18181b] px-3 py-1.5 text-xs text-[#e4e4e7] hover:border-[#c5f04a]/50">{q}</button>
+                            <button key={q} onClick={() => makeEdit(q)} className="rounded-full border border-white/10 bg-[#18181b] px-3 py-1.5 text-xs text-[#e4e4e7] hover:border-white/25 hover:text-white">{q}</button>
                           ))}
                         </div>
                       </div>
@@ -473,7 +473,7 @@ export default function AIEditorStudio() {
                       aria-label="Tell the editor what to change"
                       className="min-h-[44px] flex-1 resize-none bg-transparent py-1 text-sm text-white outline-none placeholder:text-[#52525b]"
                     />
-                    <button aria-label="Send" disabled={thinking} className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#c5f04a] text-[#0b0f00] hover:bg-[#d4f56f] disabled:opacity-50"><ArrowUp size={16} /></button>
+                    <button aria-label="Send" disabled={thinking} className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#fafafa] text-[#09090b] hover:bg-[#e4e4e7] disabled:opacity-50"><ArrowUp size={16} /></button>
                   </div>
                 </form>
               </div>

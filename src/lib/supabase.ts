@@ -66,6 +66,17 @@ export async function sendMagicLink(email: string) {
   });
 }
 
+/** Which sign-in methods are switched on in the Supabase dashboard. */
+export async function enabledProviders(): Promise<{ google: boolean; email: boolean }> {
+  try {
+    const r = await fetch(`${SUPABASE_URL}/auth/v1/settings`, { headers: { apikey: SUPABASE_KEY } });
+    const d = await r.json();
+    return { google: !!d.external?.google, email: d.external?.email !== false };
+  } catch {
+    return { google: false, email: true };
+  }
+}
+
 /** Send the browser to Google; Supabase returns here with the session in the URL hash. */
 export function signInWithGoogle() {
   const back = location.origin + location.pathname;

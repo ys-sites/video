@@ -1,7 +1,7 @@
-import { useEffect, useState, type ChangeEvent, type FormEvent } from 'react';
-import { Cloud, LogOut, Mail, Save, Trash2, FolderOpen, Film, Upload } from 'lucide-react';
+import { useEffect, useRef, useState, type ChangeEvent, type FormEvent } from 'react';
+import { Cloud, LogOut, Mail, Save, Trash2, FolderOpen, Film, Upload, X, Clapperboard, ArrowLeft } from 'lucide-react';
 import {
-  accountsReady, googleReady, sendMagicLink, signInWithGoogle, sessionFromUrl, getSession, signOut,
+  accountsReady, enabledProviders, sendMagicLink, signInWithGoogle, sessionFromUrl, getSession, signOut,
   listPlans, savePlan, deletePlan, type Session, type SavedPlan,
 } from '../lib/supabase';
 import { videosReady, listVideos, uploadVideo, deleteVideo, fetchVideo, type StoredVideo } from '../lib/videos';
@@ -19,7 +19,6 @@ type Props = {
 
 export default function AccountBar({ getPlan, title, onLoad, onOpenVideo }: Props) {
   const [session, setSession] = useState<Session | null>(null);
-  const [email, setEmail] = useState('');
   const [plans, setPlans] = useState<SavedPlan[]>([]);
   const [openId, setOpenId] = useState<string | null>(null);
   const [showList, setShowList] = useState(false);
@@ -28,6 +27,7 @@ export default function AccountBar({ getPlan, title, onLoad, onOpenVideo }: Prop
   const [progress, setProgress] = useState<number | null>(null);
   const [msg, setMsg] = useState('');
   const [busy, setBusy] = useState(false);
+  const [auth, setAuth] = useState<'login' | 'signup' | null>(null);
 
   useEffect(() => {
     if (!accountsReady) return;
@@ -65,39 +65,17 @@ export default function AccountBar({ getPlan, title, onLoad, onOpenVideo }: Prop
   }
 
   if (!session) {
-    const submit = (e: FormEvent) => {
-      e.preventDefault();
-      run(async () => {
-        await sendMagicLink(email.trim());
-        setMsg(`Check ${email.trim()} for a sign-in link.`);
-      });
-    };
     return (
-      <form onSubmit={submit} className="mb-4 flex flex-wrap items-center gap-2 rounded-xl border border-white/10 bg-[#111113] px-4 py-2.5 text-xs text-[#a1a1aa]">
-        <Cloud size={14} className="text-[#c5f04a]" /> Save plans to your account:
-        {googleReady && (
-          <>
-            <button type="button" onClick={signInWithGoogle} className="flex items-center gap-2 rounded-lg bg-[#fafafa] px-3 py-1.5 font-semibold text-[#09090b]">
-              <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 7.9-2.9l-3.9-3c-1.1.7-2.4 1.2-4 1.2-3.1 0-5.7-2.1-6.6-4.9h-4v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.4 14.4a7.2 7.2 0 0 1 0-4.6V6.7h-4a12 12 0 0 0 0 10.8z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 1.4 6.7l4 3.1C6.3 6.9 8.9 4.8 12 4.8z"/></svg>
-              Continue with Google
-            </button>
-            <span className="text-[#71717a]">or</span>
-          </>
-        )}
-        <input
-          type="email"
-          required
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          placeholder="you@email.com"
-          aria-label="Email for sign-in link"
-          className="min-w-0 flex-1 rounded-lg border border-white/10 bg-[#09090b] px-3 py-1.5 text-sm text-white placeholder:text-[#52525b] sm:max-w-[260px]"
-        />
-        <button disabled={busy} className="flex items-center gap-1.5 rounded-lg bg-[#fafafa] px-3 py-1.5 font-semibold text-[#09090b] disabled:opacity-50">
-          <Mail size={13} /> Email me a link
-        </button>
-        {msg && <span className="basis-full text-[#c5f04a]" role="status">{msg}</span>}
-      </form>
+      <>
+        <div className="mb-4 flex flex-wrap items-center gap-3 rounded-xl border border-white/10 bg-[#111113] px-4 py-2.5 text-sm text-[#a1a1aa]">
+          <Cloud size={15} className="shrink-0 text-[#c5f04a]" />
+          <span className="min-w-0 flex-1">Save your edits and videos, free.</span>
+          <button onClick={() => setAuth('login')} className="rounded-lg px-3 py-1.5 font-semibold text-white hover:bg-white/5">Log in</button>
+          <button onClick={() => setAuth('signup')} className="rounded-lg bg-[#fafafa] px-3.5 py-1.5 font-semibold text-[#09090b] hover:bg-[#e4e4e7]">Sign up</button>
+        </div>
+        {msg && !auth && <p className="-mt-2 mb-4 text-xs text-[#c5f04a]" role="status">{msg}</p>}
+        {auth && <AuthDialog mode={auth} onMode={setAuth} onClose={() => setAuth(null)} />}
+      </>
     );
   }
 
@@ -189,6 +167,90 @@ export default function AccountBar({ getPlan, title, onLoad, onOpenVideo }: Prop
           ))}
         </ul>
       )}
+    </div>
+  );
+}
+
+const GOOGLE_ICON = (
+  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 7.9-2.9l-3.9-3c-1.1.7-2.4 1.2-4 1.2-3.1 0-5.7-2.1-6.6-4.9h-4v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.4 14.4a7.2 7.2 0 0 1 0-4.6V6.7h-4a12 12 0 0 0 0 10.8z"/><path fill="#EA4335" d="M12 4.8c1.7 0 3.3.6 4.5 1.8l3.4-3.4A12 12 0 0 0 1.4 6.7l4 3.1C6.3 6.9 8.9 4.8 12 4.8z"/></svg>
+);
+
+/** Sign-up / log-in panel in the style of ChatCut and OpusClip: Google first, email below. */
+function AuthDialog({ mode, onMode, onClose }: { mode: 'login' | 'signup'; onMode: (m: 'login' | 'signup') => void; onClose: () => void }) {
+  const [email, setEmail] = useState('');
+  const [sent, setSent] = useState('');
+  const [error, setError] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [google, setGoogle] = useState<boolean | null>(null);
+  const input = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    enabledProviders().then(p => setGoogle(p.google));
+    input.current?.focus();
+    const esc = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', esc);
+    return () => window.removeEventListener('keydown', esc);
+  }, [onClose]);
+
+  const submit = async (e: FormEvent) => {
+    e.preventDefault();
+    setBusy(true);
+    setError('');
+    try {
+      await sendMagicLink(email.trim());
+      setSent(email.trim());
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Could not send the email. Try again.');
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const signup = mode === 'signup';
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm" onClick={onClose}>
+      <div role="dialog" aria-modal="true" aria-labelledby="auth-title" onClick={e => e.stopPropagation()}
+        className="relative w-full max-w-[400px] rounded-2xl border border-white/10 bg-[#111113] p-7 text-left shadow-2xl">
+        <button onClick={onClose} aria-label="Close" className="absolute right-4 top-4 rounded-lg p-1.5 text-[#71717a] hover:bg-white/5 hover:text-white"><X size={18} /></button>
+        <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#fafafa] text-[#09090b]"><Clapperboard size={18} /></span>
+
+        {sent ? (
+          <>
+            <h2 id="auth-title" className="mt-5 text-2xl font-semibold tracking-tight text-white">Check your inbox</h2>
+            <p className="mt-2 text-sm text-[#a1a1aa]">We sent a sign-in link to <b className="text-white">{sent}</b>. Open it on this device to continue.</p>
+            <button onClick={() => setSent('')} className="mt-6 flex items-center gap-1.5 text-sm font-semibold text-[#d4d4d8] hover:text-white"><ArrowLeft size={14} /> Use a different email</button>
+          </>
+        ) : (
+          <>
+            <h2 id="auth-title" className="mt-5 text-2xl font-semibold tracking-tight text-white">{signup ? 'Create your free account' : 'Welcome back'}</h2>
+            <p className="mt-1.5 text-sm text-[#a1a1aa]">{signup ? 'Save your edits and videos, and pick up on any device.' : 'Log in to open your saved edits and videos.'}</p>
+
+            <button type="button" disabled={!google} onClick={signInWithGoogle}
+              className="mt-6 flex h-11 w-full items-center justify-center gap-2.5 rounded-xl bg-[#fafafa] text-sm font-semibold text-[#09090b] hover:bg-[#e4e4e7] disabled:cursor-not-allowed disabled:opacity-40">
+              {GOOGLE_ICON} Continue with Google
+            </button>
+            {google === false && <p className="mt-2 text-center text-xs text-[#71717a]">Google sign-in is coming soon. Use your email for now.</p>}
+
+            <div className="my-5 flex items-center gap-3 text-xs text-[#52525b]"><span className="h-px flex-1 bg-white/10" />or<span className="h-px flex-1 bg-white/10" /></div>
+
+            <form onSubmit={submit}>
+              <label htmlFor="auth-email" className="text-xs font-semibold text-[#a1a1aa]">Email</label>
+              <input id="auth-email" ref={input} type="email" required autoComplete="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="you@email.com"
+                className="mt-1.5 h-11 w-full rounded-xl border border-white/10 bg-[#09090b] px-3.5 text-sm text-white outline-none placeholder:text-[#52525b] focus:border-white/30" />
+              <button disabled={busy} className="mt-3 flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-white/15 text-sm font-semibold text-white hover:bg-white/5 disabled:opacity-50">
+                <Mail size={15} /> {busy ? 'Sending…' : 'Continue with email'}
+              </button>
+              {error && <p className="mt-2 text-xs text-[#ffb4b4]" role="alert">{error}</p>}
+            </form>
+
+            <p className="mt-6 text-center text-sm text-[#a1a1aa]">
+              {signup ? 'Already have an account? ' : 'New here? '}
+              <button onClick={() => onMode(signup ? 'login' : 'signup')} className="font-semibold text-white underline-offset-4 hover:underline">{signup ? 'Log in' : 'Create an account'}</button>
+            </p>
+            <p className="mt-3 text-center text-[11px] text-[#52525b]">No password needed. We only use your email to sign you in.</p>
+          </>
+        )}
+      </div>
     </div>
   );
 }

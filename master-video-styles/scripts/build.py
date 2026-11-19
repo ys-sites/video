@@ -101,14 +101,14 @@ header.top .wrap{display:flex;align-items:center;gap:20px;min-height:68px}
 .btn.sm{padding:9px 16px;font-size:14px}
 .hero{text-align:center;padding:88px 0 40px;position:relative}
 .hero::before{content:"";position:absolute;inset:-60px 0 auto;height:420px;background:radial-gradient(ellipse at 50% 0,rgba(250,204,21,.13),transparent 65%);pointer-events:none}
-.eyebrow{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--text)}
+.eyebrow{font-size:15px;font-weight:500;color:var(--muted)}
 .hero h1{font-size:clamp(40px,7.4vw,84px);line-height:1.02;letter-spacing:-.045em;font-weight:800;margin:18px auto 0;max-width:900px}
 .hero h1 em{font-style:normal;color:var(--brand)}
 .hero .lede{font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:640px;margin:20px auto 0}
 .paths{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:52px;text-align:center}
 .path{background:var(--panel);border:1px solid #202024;border-radius:var(--radius);padding:36px 28px;display:flex;flex-direction:column;align-items:center;gap:14px;text-decoration:none;transition:border-color .2s,transform .2s}
 .path:hover{border-color:#3f3f46;transform:translateY(-2px)}
-.path .kicker{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.path .kicker{font-size:14px;font-weight:500;color:var(--faint)}
 .path h2{font-size:clamp(21px,2.4vw,26px);line-height:1.2;letter-spacing:-.02em;max-width:360px}
 .path .btn{margin-top:8px}
 .mini{width:100%;max-width:300px;height:96px;border-radius:14px;background:#0f0f11;border:1px solid var(--line);position:relative;overflow:hidden}
@@ -273,12 +273,12 @@ h1,h2,h3,.hero h1,h2.big,.path h2,.page-head h1{font-weight:600}
 h2.big{letter-spacing:-.04em}
 .announce{background:linear-gradient(90deg,#070a12,#18213a 50%,#070a12);border-bottom:0;color:#fafafa}
 .announce span{color:#fafafa;text-decoration:underline;text-underline-offset:3px}
-.hero::before{background:radial-gradient(ellipse at 50% 0,rgba(120,140,255,.10),transparent 65%)}
+.hero::before{display:none}
 .hero h1 em{color:var(--text)}
 .logo i{background:#fafafa;color:#09090b}
 .path,.shot,.numbers div,.four li,.eight a,.which>div,.agent>div,.faq details,.panel,.explainer{border-color:transparent;background:var(--panel)}
 .path:hover,.eight a:hover{border-color:#3f3f46}
-.label{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--brand);letter-spacing:0;text-transform:none}
+.label{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--muted);letter-spacing:0;text-transform:none}
 .label svg{width:16px;height:16px}
 .stage{position:relative;margin-top:40px;border-radius:var(--radius);overflow:hidden;background:linear-gradient(160deg,#2b3a55,#4a6283 45%,#7d93ad);padding:clamp(18px,4vw,48px) clamp(14px,5vw,72px) 0}
 .stage img{border-radius:14px 14px 0 0;box-shadow:0 30px 80px rgba(0,0,0,.45);width:100%;height:auto}
@@ -323,7 +323,7 @@ h2.big{letter-spacing:-.04em}
 .vis .big{font-size:44px;font-weight:700;letter-spacing:-.04em}
 .btn.light{background:#fafafa;color:#09090b}
 .btn.brand{background:#fafafa;color:#09090b}
-.final{background:radial-gradient(ellipse at 50% 130%,rgba(120,140,255,.22),transparent 60%),var(--panel);border-color:transparent}
+.final{background:var(--panel);border-color:transparent}
 .ex-stat b,.ex-steps li.you .n{color:var(--brand)}
 .ex-steps li.you .n{background:var(--brand);color:#111}
 .tag{background:#27272a}
@@ -743,7 +743,7 @@ def skill_card(k):
 
 # ---------- pages ----------
 
-SPARK = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/></svg>'
+SPARK = ''
 BOLT = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>'
 PEN = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 17.2V21h3.8L17.8 10 14 6.2zM20.7 7a1 1 0 000-1.4l-2.3-2.3a1 1 0 00-1.4 0L15.2 5 19 8.8z"/></svg>'
 
@@ -799,19 +799,19 @@ def home(n_styles, n_moves, n_skills, n_free):
 
     return f"""
 <section class="hero">
-  <p class="eyebrow">The creator video studio</p>
+  <p class="eyebrow">Video editor for real-estate creators</p>
   <h1>Every video style,<br>mastered</h1>
   <p class="lede">Upload your video, say what you want, and get a ready-to-post edit plan. Free, and your footage stays on your device.</p>
   <div class="paths">
     <a class="path" href="editor/">
       <div class="mini" aria-hidden="true">{tracks}<div class="ph"></div></div>
-      <span class="kicker">Raw footage to finished video</span>
+      <span class="kicker">Edit your own footage</span>
       <h2>Edit like a pro just by chatting</h2>
       <span class="btn light">Open the AI Editor</span>
     </a>
     <a class="path" href="styles.html">
       <div class="chipwall" aria-hidden="true">{chips}</div>
-      <span class="kicker">Pick a style, get the playbook</span>
+      <span class="kicker">Follow a proven style</span>
       <h2>{n_styles} styles, each with steps and a prompt</h2>
       <span class="btn light">Browse styles</span>
     </a>
