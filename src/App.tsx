@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useRef, type ChangeEvent } from 'r
 import {
   Clapperboard, Sparkles, Play, Pause, Layers3, Copy, ArrowDownToLine,
   FilePlus2, ArrowUpRight, Check, ShieldCheck, Film, Sliders,
-  MonitorPlay, Smartphone, Square, Search, ExternalLink, BookOpen, Wrench
+  MonitorPlay, Smartphone, Square, Search, ExternalLink, BookOpen, Wrench, Wand2
 } from 'lucide-react';
 import { builtInStyles, productionBrief, validProfile, vox, type StyleProfile } from './styles';
 import {
@@ -17,6 +17,7 @@ import ShinyText from './components/ui/ShinyText';
 import DecryptedText from './components/ui/DecryptedText';
 import Aurora from './components/ui/Aurora';
 import CreatorStyleExplainer from './components/CreatorStyleExplainer';
+import AIEditorStudio from './components/AIEditorStudio';
 
 const STORAGE = 'master-video-editor.v2';
 
@@ -107,7 +108,7 @@ export default function App() {
   const [state, setState] = useState<Saved>(load);
   const [notice, setNotice] = useState('');
   const [playing, setPlaying] = useState(true);
-  const [activeTab, setActiveTab] = useState<'director' | 'styles' | 'reels' | 'security'>('director');
+  const [activeTab, setActiveTab] = useState<'editor' | 'director' | 'styles' | 'reels' | 'security'>('editor');
   const [styleFilter, setStyleFilter] = useState<StyleFilter>('all');
   const [styleQuery, setStyleQuery] = useState('');
   const [reelsSubTab, setReelsSubTab] = useState<ReelsSubTab>('reels');
@@ -228,6 +229,14 @@ export default function App() {
           {/* Navigation Pills */}
           <nav className="flex flex-wrap items-center gap-2 bg-[#0e1210]/90 p-1.5 rounded-xl border border-white/5">
             <button
+              onClick={() => setActiveTab('editor')}
+              className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all flex items-center gap-2 ${
+                activeTab === 'editor' ? 'bg-[#263e34] text-white shadow-md' : 'text-[#8e988f] hover:text-white'
+              }`}
+            >
+              <Wand2 size={14} /> AI Editor
+            </button>
+            <button
               onClick={() => setActiveTab('director')}
               className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all flex items-center gap-2 ${
                 activeTab === 'director' ? 'bg-[#263e34] text-white shadow-md' : 'text-[#8e988f] hover:text-white'
@@ -268,7 +277,10 @@ export default function App() {
           </div>
         </header>
 
+        {activeTab === 'editor' && <AIEditorStudio />}
+
         {/* Hero Banner */}
+        {activeTab !== 'editor' && (<>
         <section className="mb-10 text-center lg:text-left flex flex-col lg:flex-row items-center justify-between gap-8 p-8 rounded-3xl bg-gradient-to-r from-[#171f1a]/90 via-[#131915]/80 to-[#101412]/90 border border-white/10 shadow-2xl">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#263e34]/50 border border-[#3b584b] text-[#9fc2b0] text-xs font-medium mb-4">
@@ -303,6 +315,7 @@ export default function App() {
 
         {/* How the creator-style system works (explainer video) */}
         <CreatorStyleExplainer />
+        </>)}
 
         {notice && (
           <div className="mb-6 p-4 rounded-xl bg-[#203127] border border-[#3e5a49] text-[#9ee2b9] flex items-center gap-3 text-sm animate-fade-in">

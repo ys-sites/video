@@ -4,3 +4,5 @@
 .custom-preview{margin:17px;background:#e7ebe1;color:#617866;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;min-height:240px}.custom-preview p{font-family:Georgia,serif;font-size:20px}.custom-preview span{font-size:11px;color:#89988a}
 
 .category-label { padding: 18px 12px 7px; color: #71685f; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+/* AI Editor tab: let Tailwind utilities win over the legacy element rules above. */
+.ai-editor :is(button,input,select,textarea,label,p){all:revert-layer}.ai-editor button{cursor:pointer}.ai-editor button:disabled{cursor:default}.ai-editor :is(h1,h2,h3){margin:revert-layer;font-size:revert-layer;line-height:revert-layer;letter-spacing:revert-layer;font-weight:revert-layer}.ai-editor :is(button,a,input,select):focus-visible{outline:3px solid #e2bb69;outline-offset:2px}

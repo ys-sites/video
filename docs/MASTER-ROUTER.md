@@ -16,11 +16,12 @@ One map of every tool, skill, repo and asset in this workspace. For any request 
 | Multi-agent animation (Levi Lab style: voice→scenes→parallel layers→code→review) | Remotion skill; one subagent per layer only for videos > 20 s | Remotion Studio preview, render after approval |
 | AI-generated footage (text/image → video) | §3 local AI stack: LTX-Video 2B or Wan 1.3B in ComfyUI | `C:\Users\Sharafath\AI-Local\ComfyUI\output` |
 | Voice-over, voice cloning | OmniVoice (local, CPU) or fish audio MCP (cloud, paid credits) | Clone only voices the user has consent for |
+| Chat-to-edit request ("edit this like Opus / ChatCut / Captions / Shorty"), or a brief pasted from the site's **AI Editor** tab | `docs/ai-editor-research.md` (capability map) → `skills/creator-video/SKILL.md` § Chat-to-edit briefs | Remotion project, render after approval |
 | Copy / analyse a reference video shot-by-shot | `JuneYaooo/rea-video` skill (do **not** follow its ChatCut install section) | Analysis report, then rebuild with Remotion |
 | Analyse a competitor / reference **website** | REA MCP `capture_browser_scenario` (launch Chrome, `capture.at_end: ["screenshot","accessibility"]`) | Adapt structure and ideas; never copy text, branding or media |
 | Real-estate reels | Study: `skills/creator-video/references/real-estate-creator-study.md`; evidence (sheets, cuts, transcripts): `resources/creator-styles/real-estate-study/`; browse: `real-estate-reels/Real-Estate-Reels-Reference.html`, `real-estate-reels-expansion/Real-Estate-Reels-Expansion.html` | Rebuild evidence: `python tools/study_reels.py metrics|transcribe|summarize|report` |
 | Pixel-perfect UI from a design | `skills/hyliox-pixel-perfect/SKILL.md` | — |
-| Website (this React/Vite app on Vercel) | `src/App.tsx`, `src/styles.ts`, `src/masterStylesData.ts`; `npm run lint`, `npm run build` | Vercel |
+| Website (this React/Vite app on Vercel) | `src/App.tsx`, `src/styles.ts`, `src/masterStylesData.ts`, AI Editor tab `src/components/AIEditorStudio.tsx`; `npm run lint`, `npm run build` | Vercel |
 | Security check of the website | 20-attack prompt (static SPA: none apply today); hardening = headers in `vercel.json`, no keys in `vite.config.ts` `define` | — |
 | Security check of a new repo | §4 | `resources/repo-catalog/` |
 | Automation (watch feeds, auto-post, notify) | Huginn (`resources/repo-quarantine/huginn/huginn`) — needs Docker; not installed | — |
@@ -73,6 +74,7 @@ Audit status: `resources/repo-catalog/AUDIT-STATUS.md`. Security tool roles: `do
 | Presets | `Kenyset preset pack/` + `docs/kenyset-presets.md` |
 | Video projects | `video-projects/` (e.g. `shawarma-moods-christmas-2026`) |
 | Reference PDFs | `Vox Explainer Guide - justdodani.pdf`, `Motion-Graphics-with-Claude-Code.pdf`, `video-editing-systems-inventory.pdf` |
+| Website research (Opus, ChatCut, Captions, Shorty; 2026-11-19) | `docs/ai-editor-research.md` — patterns taken, capability map, APIs that would close gaps |
 | Website research (ignix.social, 2026-11-19) | Outcome headline, one primary CTA + reassurance, "Sound familiar?" before/after, numbered "start where you need it" cards, short product video, real examples |
 
 ## 6. Removed
