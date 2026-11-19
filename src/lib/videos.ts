@@ -5,6 +5,8 @@ import { getSession } from './supabase';
 
 export const UPLOADS_URL = 'https://masvid-uploads.restoredinmtl.workers.dev';
 export const videosReady = UPLOADS_URL.startsWith('https://');
+/** Cloud copies of videos (My videos). Off: videos stay on the visitor's device, so storage costs nothing. */
+export const cloudVideos = false;
 export const MAX_UPLOAD = 95 * 1024 * 1024;
 
 export type StoredVideo = { id: string; name: string; size: number; type: string; uploaded: string };
