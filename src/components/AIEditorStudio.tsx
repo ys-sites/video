@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useRef, useState, type ChangeEvent } from 'react';
 import {
-  Upload, Wand2, Scissors, Mic, Eye, Eraser, Sparkles, ZoomIn, Undo2, Redo2, Trash2,
-  Play, Pause, Download, Copy, Bot, Music, Film, Type, Check, ArrowRight, Terminal,
-  Keyboard, Palette, Crop, Captions, ChevronDown, Layers3, Volume2, ImageIcon, Minus, Plus,
+  Upload, Scissors, Mic, Eye, EyeOff, Eraser, ZoomIn, Undo2, Redo2, Trash2, House, ArrowUp,
+  Play, Pause, Download, Copy, Music, Film, Type, Palette, Captions, ChevronDown, Volume2, VolumeX,
+  ImageIcon, Minus, Plus,
 } from 'lucide-react';
 import { builtInStyles } from '../styles';
 import AccountBar from './AccountBar';
+import { askAgent, agentAvailable, type AgentStep } from '../lib/agent';
 
 // Layout ideas from REA captures of opus.pro/ai-video-editor, chatcut.io and
 // captions.ai/features/edit-with-ai (2026-11-19, notes in docs/ai-editor-research.md).
@@ -14,6 +15,8 @@ import AccountBar from './AccountBar';
 type Track = 'video' | 'captions' | 'motion' | 'broll' | 'music' | 'sfx';
 type Op = { id: string; track: Track; start: number; end: number; label: string; why: string; tool: string };
 type Aspect = '9:16' | '16:9' | '1:1';
+type Msg = { role: 'user'; text: string } | { role: 'agent'; steps: AgentStep[]; note?: string };
+const LANE = 112;
 
 const TRACKS: { id: Track; name: string; color: string; icon: typeof Film }[] = [
   { id: 'motion', name: 'Motion graphics', color: 'bg-[#c5f04a]/80 text-[#0b0f00]', icon: Type },
@@ -57,15 +60,6 @@ const FIXES = [
   { id: 'eyes', name: 'Eye contact', icon: Eye, text: 'Redirect the gaze to the lens when reading a script.', tool: 'No reviewed local model yet — cloud tool only, with consent', local: false },
 ] as const;
 type FixId = (typeof FIXES)[number]['id'];
-
-const FAQ = [
-  ['Does this page edit my video?', 'It plans the edit. Your clip plays in your browser and never leaves it. The plan becomes a brief that Claude Code turns into an editable Remotion project on your machine, where the real render happens.'],
-  ['Which footage works best?', 'Talking-head clips, walk-and-talks, tours and screen recordings with clear speech. The planner leans on word timings, so audible speech gives the best cuts.'],
-  ['Can I change what the AI decided?', 'Yes. Click any block on the timeline to rename it, move it, stretch it or delete it. Undo and redo keep every step. The brief always matches what you see.'],
-  ['Where do the style rules come from?', 'From the 136-reel creator study and the style library on this site: median shot 1.4 s, first word within 0.5 s, captions in the safe zone, one clear ask.'],
-  ['Does it fake people or voices?', 'No. It edits your real footage. Voice cloning and eye-contact tools stay off unless you own the voice and face and ask for them.'],
-  ['Can I use it from my agent?', 'Copy the brief into Claude Code. The repo routes it through docs/MASTER-ROUTER.md to the creator-video, Remotion, captions and effects skills.'],
-];
 
 const fmt = (s: number) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
 const has = (text: string, words: string[]) => words.some(w => text.includes(w));
@@ -152,14 +146,18 @@ export default function AIEditorStudio() {
   const [time, setTime] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [notice, setNotice] = useState('');
-  const [featureTab, setFeatureTab] = useState(0);
   const [reference, setReference] = useState('');
   const [versions, setVersions] = useState(1);
   const [recipe, setRecipe] = useState<(typeof RECIPES)[number] | null>(null);
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [projectTitle, setProjectTitle] = useState('Untitled edit');
+  const [exportOpen, setExportOpen] = useState(false);
+  const [panel, setPanel] = useState<'ai' | 'transcript'>('ai');
+  const [thread, setThread] = useState<Msg[]>([]);
+  const [thinking, setThinking] = useState(false);
+  const [hidden, setHidden] = useState<Set<Track>>(new Set());
+  const [muted, setMuted] = useState<Set<Track>>(new Set());
   const videoRef = useRef<HTMLVideoElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
-  const editorRef = useRef<HTMLDivElement>(null);
 
   const ops = history[cursor];
   const style = creatorStyles.find(s => s.id === styleId) ?? creatorStyles[0];
@@ -201,20 +199,53 @@ export default function AIEditorStudio() {
     setTime(0);
   };
 
-  const makeEdit = (text = prompt, r = recipe, d = duration) => {
+  const stepsFor = (plan: Op[], r: typeof recipe): AgentStep[] => {
+    const on = (t: Track) => plan.filter(o => o.track === t);
+    const steps: AgentStep[] = [];
+    const takes = on('video').filter(o => o.end - o.start > 0.05).length;
+    steps.push({ title: takes > 1 ? 'Tightened the cut' : 'Kept your take', text: takes > 1 ? `Cut it into ${takes} takes${r ? ` at about ${r.shot} s each, the measured pace for a ${r.name}` : ''} and dropped the pauses.` : 'Your footage stays whole — ask to make it punchy to tighten it.' });
+    if (on('motion').length) steps.push({ title: 'Added motion graphics', text: Array.from(new Set(on('motion').map(o => o.label))).join(', ') + ' on the MG track.' });
+    if (on('captions').length) steps.push({ title: 'Captioned every word', text: 'Word-by-word captions in the mobile safe zone.' });
+    if (on('broll').length) steps.push({ title: 'Added B-roll', text: `${on('broll').length} cutaways where you describe something — use your own or licensed clips.` });
+    if (on('music').length) steps.push({ title: 'Added music', text: 'A music bed ducked under your voice.' });
+    if (on('sfx').length) steps.push({ title: 'Added sound effects', text: `${on('sfx').length} sounds on the cuts so the jumps feel intended.` });
+    return steps;
+  };
+
+  const makeEdit = async (text = prompt, r = recipe, d = duration) => {
     const request = text.trim() || `Edit this in ${style?.name ?? 'creator'} style`;
-    const plan = buildPlan(request, fixes, style?.name ?? 'creator', d, r?.shot);
+    setPrompt('');
+    setThread(t => [...t, { role: 'user', text: request }]);
+    setThinking(true);
+    let plan: Op[];
+    let steps: AgentStep[];
+    let note: string | undefined;
+    try {
+      if (!(await agentAvailable())) throw new Error('offline');
+      const reply = await askAgent(request, { duration: d, aspect, style: style?.name, recipe: r && { name: r.name, shot: r.shot, len: r.len }, ops: ops.map(({ track, start, end, label }) => ({ track, start, end, label })) }, d);
+      plan = reply.ops.map(o => op(o));
+      steps = reply.steps.length ? reply.steps : stepsFor(plan, r);
+      note = reply.reply || undefined;
+    } catch (e) {
+      plan = buildPlan(request, fixes, style?.name ?? 'creator', d, r?.shot);
+      steps = stepsFor(plan, r);
+      const msg = e instanceof Error ? e.message : '';
+      if (/allowance/.test(msg)) note = msg;
+    }
     commit(plan);
     setSelected(null);
-    const byTrack = (t: Track) => plan.filter(o => o.track === t).length;
-    const lines = [
-      byTrack('video') > 1 ? `Cut the footage into ${byTrack('video')} tight takes and dropped the pauses.` : 'Kept your take whole.',
-      ...Array.from(new Set(plan.filter(o => o.track !== 'video').map(o => `${o.label} — ${o.why}`))).slice(0, 5),
-      `Styled for ${style?.name ?? 'creator'} at ${aspect}${r ? `, paced like a ${r.name} (${r.reels} studied reels)` : ''}.`,
-      ...(reference.trim() ? ['Reference noted — it gets a shot-by-shot breakdown before the cut.'] : []),
-    ];
-    setLog({ request, lines });
-    setPrompt('');
+    setThread(t => [...t, { role: 'agent', steps, note: note ?? 'Every change is on its own track — click a block to adjust it.' }]);
+    setLog({ request, lines: steps.map(st => `${st.title} — ${st.text}`) });
+    setThinking(false);
+    if (projectTitle === 'Untitled edit') setProjectTitle(request.slice(0, 60));
+  };
+
+  const useRecipe = (r: (typeof RECIPES)[number]) => {
+    setRecipe(r);
+    setAspect('9:16');
+    const d = file ? duration : r.len;
+    setDuration(d);
+    makeEdit(r.prompt, r, d);
   };
 
   const update = (id: string, patch: Partial<Op>) => commit(ops.map(o => (o.id === id ? { ...o, ...patch } : o)));
@@ -236,7 +267,9 @@ export default function AIEditorStudio() {
     if (typeof d.duration === 'number' && d.duration > 0) setDuration(d.duration);
     setFixes(new Set((Array.isArray(d.fixes) ? d.fixes : []).filter((f): f is FixId => FIXES.some(x => x.id === f))));
     const l = d.log as { request?: unknown; lines?: unknown } | null;
-    setLog(l && typeof l.request === 'string' && Array.isArray(l.lines) ? { request: l.request, lines: l.lines.map(String) } : null);
+    const restored = l && typeof l.request === 'string' && Array.isArray(l.lines) ? { request: l.request, lines: l.lines.map(String) } : null;
+    setLog(restored);
+    setThread(restored ? [{ role: 'user', text: restored.request }, { role: 'agent', steps: restored.lines.map(x => { const [title, ...rest] = x.split(' — '); return { title, text: rest.join(' — ') }; }) }] : []);
     setHistory([[], list]);
     setCursor(1);
     setSelected(null);
@@ -283,172 +316,170 @@ export default function AIEditorStudio() {
 
   const active = (t: Track) => ops.find(o => o.track === t && time >= o.start && time < o.end);
   const aspectBox = aspect === '9:16' ? 'aspect-[9/16] max-h-[460px]' : aspect === '1:1' ? 'aspect-square max-h-[420px]' : 'aspect-video w-full';
-  const goEditor = (m: 'producer' | 'clips') => {
-    setMode(m);
-    editorRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const BADGE: Record<Track, string> = { motion: 'MG', captions: 'CC', video: 'V1', broll: 'B', music: 'M', sfx: 'FX' };
+  const canSplit = !!sel && time > sel.start + 0.1 && time < sel.end - 0.1;
+  const split = () => {
+    if (!sel || !canSplit) return;
+    const t = +time.toFixed(2);
+    commit(ops.flatMap(o => (o.id === sel.id ? [{ ...o, end: t }, { ...o, id: `op${++uid}`, start: t }] : [o])));
   };
-
-  const features = [
-    { tag: 'Speed', title: 'Edit the words, the video follows', items: [
-      { icon: Type, name: 'Edit by transcript', text: 'Delete a sentence in the text and the cut follows. Retiming captions is a text edit, not a keyframe hunt.' },
-      { icon: Layers3, name: 'Timeline when you need it', text: 'Every AI decision is a block you can move, stretch, rename or delete, with undo for each step.' },
-      { icon: Keyboard, name: 'Shortcuts in the studio', text: 'Remotion Studio previews frame by frame with keyboard scrubbing before anything renders.' },
-    ] },
-    { tag: 'Brand', title: 'Your look on every video', items: [
-      { icon: Palette, name: 'Style presets', text: `${creatorStyles.length} creator styles plus the 18-style mega prompt set the type, colour and pace.` },
-      { icon: Crop, name: 'Reframe for any feed', text: 'Switch 9:16, 1:1 or 16:9 and the plan keeps captions inside the safe zone.' },
-      { icon: ImageIcon, name: 'Bring your assets', text: 'Logos, product shots and your own B-roll go in their own track so they are never regenerated.' },
-    ] },
-    { tag: 'AI', title: 'One prompt, a full pass', items: [
-      { icon: Captions, name: 'Captions that pop', text: 'Word-timed captions with keyword highlights, checked on three frames before rendering.' },
-      { icon: Sparkles, name: '45 face-tracked effects', text: 'Spotlight, orbit, glass widgets and punch-ins that track the speaker and can sit behind them.' },
-      { icon: Mic, name: 'Clean voice', text: 'Denoise and loudness to −14 LUFS so it sounds the same on every platform.' },
-    ] },
-  ];
+  const remove = () => {
+    if (!sel) return;
+    commit(ops.filter(o => o.id !== sel.id));
+    setSelected(null);
+  };
+  const toggle = (set: Set<Track>, t: Track, apply: (s: Set<Track>) => void) => {
+    const n = new Set(set);
+    if (n.has(t)) n.delete(t); else n.add(t);
+    apply(n);
+  };
+  const shown = (t: Track) => (hidden.has(t) ? undefined : active(t));
+  const empty = thread.length === 0;
 
   return (
-    <div className="ai-editor space-y-16 pb-6">
-      {/* Hero: one promise, two ways in */}
-      <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#09090b] px-6 py-14 sm:px-12 text-center shadow-2xl">
-        <div className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[720px] -translate-x-1/2 rounded-full bg-gradient-to-r from-[#7890ff]/25 via-[#c5f04a]/20 to-[#4f8a72]/25 blur-3xl" />
-        <p className="relative text-[11px] font-bold tracking-[0.25em] text-[#c5f04a]">CHAT-TO-EDIT STUDIO</p>
-        <h1 className="relative mt-4 text-4xl sm:text-6xl font-bold tracking-tight text-white leading-[1.05]">
-          Say the edit.<br />Keep the final cut.
-        </h1>
-        <p className="relative mx-auto mt-5 max-w-xl text-[#a1a1aa] text-sm sm:text-base">
-          Drop in your footage, describe what you want, and get a full edit plan you can change block by block — then render it on your own machine.
-        </p>
-        <div className="relative mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2 text-left">
-          {[
-            { m: 'clips' as const, kicker: 'Long video → short clips', title: 'Find the moments, cut the clips, reframe for every feed', cta: 'Plan clips' },
-            { m: 'producer' as const, kicker: 'Raw footage → finished video', title: 'Describe the edit in plain words and steer every change', cta: 'Start editing' },
-          ].map(c => (
-            <button key={c.m} onClick={() => goEditor(c.m)} className="group rounded-2xl border border-white/10 bg-[#171718] p-6 transition hover:border-[#c5f04a]/40 hover:bg-[#1f1f22]">
-              <p className="text-[11px] font-bold uppercase tracking-wider text-[#a1a1aa]">{c.kicker}</p>
-              <p className="mt-2 text-lg font-semibold text-white">{c.title}</p>
-              <span className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold text-[#111] transition group-hover:gap-3">
-                {c.cta} <ArrowRight size={14} />
-              </span>
-            </button>
-          ))}
-        </div>
-        <p className="relative mt-8 text-xs text-[#8b8b94]">Built on 136 studied reels · {creatorStyles.length} creator styles · 45 effects · footage never leaves your browser</p>
-      </section>
+    <div className="ai-editor pb-6">
+      <AccountBar getPlan={planData} title={projectTitle.slice(0, 120)} onLoad={loadPlan} />
 
-      {/* Editor: chat on the left, preview and timeline on the right */}
-      <section ref={editorRef} className="scroll-mt-6">
-        <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="text-[11px] font-bold tracking-[0.2em] text-[#c5f04a]">TRY IT NOW</p>
-            <h2 className="mt-2 text-3xl font-bold text-white">Tell it what to change</h2>
-            <p className="mt-1 text-sm text-[#a1a1aa]">
-              {mode === 'producer' ? 'Raw footage → finished edit.' : 'Long video → short clips.'} Pick a style, add quick fixes, then chat.
-            </p>
-          </div>
-          <div className="flex rounded-xl border border-white/10 bg-[#111113] p-1 text-xs font-semibold">
-            {(['producer', 'clips'] as const).map(m => (
-              <button key={m} onClick={() => setMode(m)} className={`rounded-lg px-3 py-1.5 ${mode === m ? 'bg-[#27272a] text-white' : 'text-[#a1a1aa] hover:text-white'}`}>
-                {m === 'producer' ? 'Full edit' : 'Clips'}
-              </button>
+      <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#111113] shadow-2xl">
+        {/* Top bar */}
+        <div className="flex items-center gap-1.5 border-b border-white/10 px-3 py-2 text-[#a1a1aa]">
+          <a href="/" aria-label="Back to Master Video Styles" className="rounded-lg p-1.5 hover:bg-white/5 hover:text-white"><House size={16} /></a>
+          <button aria-label="Undo" disabled={cursor === 0} onClick={() => setCursor(c => c - 1)} className="rounded-lg p-1.5 hover:bg-white/5 disabled:opacity-30"><Undo2 size={16} /></button>
+          <button aria-label="Redo" disabled={cursor >= history.length - 1} onClick={() => setCursor(c => c + 1)} className="rounded-lg p-1.5 hover:bg-white/5 disabled:opacity-30"><Redo2 size={16} /></button>
+          <input
+            value={projectTitle}
+            onChange={e => setProjectTitle(e.target.value)}
+            aria-label="Project name"
+            className="mx-2 min-w-0 flex-1 truncate rounded-lg bg-transparent px-2 py-1 text-center text-sm font-semibold text-white hover:bg-white/5 focus:bg-white/5"
+          />
+          <span className="hidden rounded-lg border border-white/10 p-0.5 text-xs sm:flex">
+            {(['9:16', '1:1', '16:9'] as Aspect[]).map(a => (
+              <button key={a} onClick={() => setAspect(a)} className={`rounded px-2 py-0.5 ${aspect === a ? 'bg-[#27272a] text-white' : 'hover:text-white'}`}>{a}</button>
             ))}
+          </span>
+          <div className="relative">
+            <button onClick={() => setExportOpen(o => !o)} aria-expanded={exportOpen} className="ml-1 flex items-center gap-1.5 rounded-lg bg-[#c5f04a] px-3 py-1.5 text-xs font-bold text-[#0b0f00] hover:bg-[#d4f56f]">
+              Export <ChevronDown size={13} />
+            </button>
+            {exportOpen && (
+              <div className="absolute right-0 top-full z-20 mt-2 w-60 overflow-hidden rounded-xl border border-white/10 bg-[#18181b] text-sm shadow-2xl">
+                <button onClick={() => { copyBrief(); setExportOpen(false); }} className="flex w-full items-center gap-2 px-4 py-3 text-left text-white hover:bg-white/5"><Copy size={14} /> Copy brief for Claude Code</button>
+                <button onClick={() => { saveFile('ai-edit-plan.json', JSON.stringify(planData(), null, 2), 'application/json'); setExportOpen(false); }} className="flex w-full items-center gap-2 px-4 py-3 text-left text-white hover:bg-white/5"><Download size={14} /> Download plan (.json)</button>
+                <p className="border-t border-white/10 px-4 py-2.5 text-[11px] text-[#8b8b94]">The render runs on your machine with the free skills.</p>
+              </div>
+            )}
           </div>
         </div>
 
-        <AccountBar getPlan={planData} title={(log?.request ?? `${style?.name ?? 'Creator'} edit`).slice(0, 120)} onLoad={loadPlan} />
-        <div className="grid overflow-hidden rounded-3xl border border-white/10 bg-[#171718] shadow-2xl lg:grid-cols-[380px_1fr]">
-          {/* Chat panel */}
-          <div className="flex flex-col border-b border-white/10 lg:border-b-0 lg:border-r">
-            <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3 text-xs text-[#a1a1aa]">
-              <Bot size={14} className="text-[#c5f04a]" /> Edit agent
-              <span className="ml-auto flex gap-1">
-                <button aria-label="Undo" disabled={cursor === 0} onClick={() => setCursor(c => c - 1)} className="rounded p-1 hover:bg-white/5 disabled:opacity-30"><Undo2 size={14} /></button>
-                <button aria-label="Redo" disabled={cursor >= history.length - 1} onClick={() => setCursor(c => c + 1)} className="rounded p-1 hover:bg-white/5 disabled:opacity-30"><Redo2 size={14} /></button>
-              </span>
+        <div className="grid lg:grid-cols-[minmax(320px,380px)_1fr]">
+          {/* AI / Transcript panel */}
+          <div className="flex min-h-[420px] flex-col border-b border-white/10 lg:border-b-0 lg:border-r">
+            <div className="flex gap-5 px-4 pt-3 text-xs font-semibold">
+              {(['ai', 'transcript'] as const).map(t => (
+                <button key={t} onClick={() => setPanel(t)} className={`pb-2 ${panel === t ? 'border-b-2 border-white text-white' : 'text-[#71717a] hover:text-white'}`}>{t === 'ai' ? 'AI' : 'Transcript'}</button>
+              ))}
             </div>
 
-            <div className="flex-1 space-y-4 overflow-y-auto p-4 max-h-[520px]">
-              <button onClick={() => fileRef.current?.click()} className="flex w-full items-center gap-3 rounded-xl border border-dashed border-white/15 bg-[#09090b] p-3 text-left text-xs text-[#d4d4d8] hover:border-[#c5f04a]/50">
-                <Upload size={16} className="shrink-0 text-[#c5f04a]" />
-                <span className="truncate">{file ? `${file.name} · ${fmt(duration)}` : 'Add footage (stays on this device)'}</span>
-              </button>
-              <input ref={fileRef} type="file" accept="video/*" hidden onChange={pickFile} />
-
-              <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#8b8b94]">
-                Style
-                <select value={styleId} onChange={e => setStyleId(e.target.value)} className="mt-1.5 w-full rounded-lg border border-white/10 bg-[#09090b] px-3 py-2 text-sm normal-case tracking-normal text-white">
-                  {creatorStyles.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
-                </select>
-              </label>
-
-              <div className="flex gap-2">
-                <input
-                  value={reference}
-                  onChange={e => setReference(e.target.value)}
-                  placeholder="Reference reel link (optional)"
-                  aria-label="Reference reel link"
-                  className="min-w-0 flex-1 rounded-lg border border-white/10 bg-[#09090b] px-3 py-2 text-xs text-white placeholder:text-[#52525b]"
-                />
-                <span className="flex items-center gap-1 rounded-lg border border-white/10 bg-[#09090b] px-2 text-xs text-[#d4d4d8]" title="Versions to make">
-                  <button aria-label="Fewer versions" onClick={() => setVersions(v => Math.max(1, v - 1))}><Minus size={12} /></button>
-                  <span className="w-4 text-center tabular-nums">{versions}</span>
-                  <button aria-label="More versions" onClick={() => setVersions(v => Math.min(5, v + 1))}><Plus size={12} /></button>
-                </span>
+            {panel === 'transcript' ? (
+              <div className="flex-1 p-4 text-sm text-[#a1a1aa]">
+                <p className="rounded-xl bg-[#18181b] p-4">Word-by-word transcripts come with the cloud agent: sign in, add your video, and Whisper (free on Workers AI) writes the transcript so cuts land on real word boundaries. Until then, the plan uses the format's measured timing.</p>
               </div>
-              {recipe && (
-                <p className="flex items-center gap-2 rounded-lg bg-[#1a1d10] px-3 py-1.5 text-[11px] text-[#c5f04a]">
-                  Format: {recipe.name} · shots ~{recipe.shot} s · {recipe.len} s
-                  <button className="ml-auto text-[#a1a1aa] hover:text-white" onClick={() => setRecipe(null)}>clear</button>
-                </p>
-              )}
-
-              {log ? (
-                <div className="space-y-3 text-sm">
-                  <div className="ml-6 rounded-xl bg-[#27272a] p-3 text-[#fafafa]">{log.request}</div>
-                  <div className="rounded-xl bg-[#09090b] p-3 text-[#d4d4d8]">
-                    <p className="mb-2 flex items-center gap-1.5 text-xs text-[#52d68a]"><Check size={13} /> Edit ready — here's what changed and why:</p>
-                    <ul className="space-y-1.5 text-[13px]">
-                      {log.lines.map((l, i) => <li key={i}>• {l}</li>)}
-                    </ul>
-                    <p className="mt-3 text-xs text-[#8b8b94]">Each change sits on its own track. Click a block to adjust it by hand.</p>
-                  </div>
+            ) : (
+              <div className="flex min-h-0 flex-1 flex-col">
+                <div className="max-h-[440px] flex-1 space-y-4 overflow-y-auto p-4">
+                  {empty ? (
+                    <>
+                      <button onClick={() => fileRef.current?.click()} className="flex w-full flex-col items-center gap-2 rounded-2xl border border-dashed border-white/15 bg-[#09090b] px-4 py-6 text-center hover:border-[#c5f04a]/50">
+                        <Upload size={20} className="text-[#c5f04a]" />
+                        <span className="text-sm font-semibold text-white">{file ? file.name : 'Add your video'}</span>
+                        <span className="text-xs text-[#8b8b94]">{file ? `${fmt(duration)} · ready` : 'It stays on your device'}</span>
+                      </button>
+                      <div>
+                        <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-[#71717a]">Start from a format</p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {RECIPES.slice(0, 6).map(r => (
+                            <button key={r.id} onClick={() => useRecipe(r)} className="rounded-full border border-white/10 bg-[#18181b] px-3 py-1.5 text-xs text-[#e4e4e7] hover:border-[#c5f04a]/50">{r.name}</button>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-[#71717a]">Or just ask</p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {QUICK_PROMPTS.slice(0, 4).map(q => (
+                            <button key={q} onClick={() => makeEdit(q)} className="rounded-full border border-white/10 bg-[#18181b] px-3 py-1.5 text-xs text-[#e4e4e7] hover:border-[#c5f04a]/50">{q}</button>
+                          ))}
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    thread.map((m, i) => m.role === 'user' ? (
+                      <div key={i} className="ml-8 rounded-2xl bg-[#27272a] px-4 py-3 text-sm text-white">{m.text}</div>
+                    ) : (
+                      <div key={i} className="space-y-3 text-sm">
+                        {m.steps.map((st, k) => (
+                          <div key={k}>
+                            <p className="flex items-center gap-2 font-semibold text-white"><span className="h-2 w-2 rounded-full bg-[#52d68a]" />{st.title}</p>
+                            <p className="mt-0.5 pl-4 text-[#a1a1aa]">{st.text}</p>
+                          </div>
+                        ))}
+                        {m.note && <p className="text-xs text-[#71717a]">{m.note}</p>}
+                      </div>
+                    ))
+                  )}
+                  {thinking && <p className="flex items-center gap-2 text-sm text-[#a1a1aa]"><span className="h-2 w-2 animate-pulse rounded-full bg-[#c5f04a]" /> Planning the edit…</p>}
                 </div>
-              ) : (
-                <p className="rounded-xl bg-[#09090b] p-3 text-sm text-[#a1a1aa]">
-                  Describe the edit — or tap a suggestion. I'll plan cuts, captions, motion, music and sound, and explain each decision.
-                </p>
-              )}
 
-              <div className="flex flex-wrap gap-1.5">
-                {QUICK_PROMPTS.map(q => (
-                  <button key={q} onClick={() => makeEdit(q)} className="rounded-full border border-white/10 bg-[#1f1f22] px-2.5 py-1 text-[11px] text-[#d4d4d8] hover:border-[#c5f04a]/50 hover:text-white">{q}</button>
-                ))}
+                <details className="border-t border-white/10 px-4 py-2 text-xs text-[#a1a1aa]">
+                  <summary className="cursor-pointer select-none py-1 font-semibold text-[#d4d4d8]">Options{recipe ? ` · ${recipe.name}` : ''}</summary>
+                  <div className="space-y-3 pb-2 pt-2">
+                    <label className="block">Style
+                      <select value={styleId} onChange={e => setStyleId(e.target.value)} className="mt-1 w-full rounded-lg border border-white/10 bg-[#09090b] px-3 py-2 text-sm text-white">
+                        {creatorStyles.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
+                      </select>
+                    </label>
+                    <div className="flex gap-2">
+                      <input value={reference} onChange={e => setReference(e.target.value)} placeholder="Reference reel link (optional)" aria-label="Reference reel link" className="min-w-0 flex-1 rounded-lg border border-white/10 bg-[#09090b] px-3 py-2 text-white placeholder:text-[#52525b]" />
+                      <span className="flex items-center gap-1 rounded-lg border border-white/10 bg-[#09090b] px-2" title="Versions to make">
+                        <button aria-label="Fewer versions" onClick={() => setVersions(v => Math.max(1, v - 1))}><Minus size={12} /></button>
+                        <span className="w-4 text-center tabular-nums text-white">{versions}</span>
+                        <button aria-label="More versions" onClick={() => setVersions(v => Math.min(5, v + 1))}><Plus size={12} /></button>
+                      </span>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {FIXES.filter(f => f.local).map(f => {
+                        const on = fixes.has(f.id);
+                        return (
+                          <button key={f.id} aria-pressed={on} title={f.tool} onClick={() => setFixes(s => { const n = new Set(s); if (n.has(f.id)) n.delete(f.id); else n.add(f.id); return n; })}
+                            className={`flex items-center gap-1.5 rounded-full border px-2.5 py-1 ${on ? 'border-[#c5f04a]/60 bg-[#1a1d10] text-[#c5f04a]' : 'border-white/10 text-[#a1a1aa]'}`}>
+                            <f.icon size={12} /> {f.name}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </details>
+
+                <form onSubmit={e => { e.preventDefault(); makeEdit(); }} className="p-3 pt-0">
+                  <div className="flex items-end gap-2 rounded-2xl border border-white/10 bg-[#18181b] p-2 pl-3 focus-within:border-white/25">
+                    <textarea
+                      value={prompt}
+                      onChange={e => setPrompt(e.target.value)}
+                      onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); makeEdit(); } }}
+                      rows={2}
+                      placeholder="Tell AI what to change…"
+                      aria-label="Tell the editor what to change"
+                      className="min-h-[44px] flex-1 resize-none bg-transparent py-1 text-sm text-white outline-none placeholder:text-[#52525b]"
+                    />
+                    <button aria-label="Send" disabled={thinking} className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#c5f04a] text-[#0b0f00] hover:bg-[#d4f56f] disabled:opacity-50"><ArrowUp size={16} /></button>
+                  </div>
+                </form>
               </div>
-            </div>
-
-            <form onSubmit={e => { e.preventDefault(); makeEdit(); }} className="flex gap-2 border-t border-white/10 p-3">
-              <input
-                value={prompt}
-                onChange={e => setPrompt(e.target.value)}
-                placeholder="e.g. Make it punchy, add captions and a clear ask"
-                aria-label="Tell the editor what to change"
-                className="min-w-0 flex-1 rounded-lg border border-white/10 bg-[#09090b] px-3 py-2 text-sm text-white placeholder:text-[#52525b]"
-              />
-              <button className="flex items-center gap-1.5 rounded-lg bg-[#c5f04a] px-3 py-2 text-xs font-bold text-[#0b0f00] hover:bg-[#d4f56f]"><Wand2 size={14} /> Edit</button>
-            </form>
+            )}
           </div>
 
-          {/* Preview + timeline */}
+          {/* Preview */}
           <div className="flex min-w-0 flex-col">
-            <div className="flex items-center gap-2 border-b border-white/10 px-4 py-2.5 text-xs text-[#a1a1aa]">
-              <span className="truncate">{file?.name ?? 'Preview'}</span>
-              <span className="ml-auto flex rounded-lg border border-white/10 p-0.5">
-                {(['9:16', '1:1', '16:9'] as Aspect[]).map(a => (
-                  <button key={a} onClick={() => setAspect(a)} className={`rounded px-2 py-0.5 ${aspect === a ? 'bg-[#27272a] text-white' : 'hover:text-white'}`}>{a}</button>
-                ))}
-              </span>
-            </div>
-
-            <div className="flex flex-1 items-center justify-center bg-[#0b0b0c] p-4">
+            <div className="flex flex-1 items-center justify-center bg-[#09090b] p-4">
               <div className={`relative overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-[#1f2230] via-[#141417] to-[#26262a] ${aspectBox}`}>
                 {file ? (
                   <video
@@ -456,267 +487,110 @@ export default function AIEditorStudio() {
                     src={file.url}
                     className="h-full w-full object-cover"
                     playsInline
+                    muted={muted.has('video')}
                     onLoadedMetadata={e => setDuration(Math.max(1, e.currentTarget.duration || 45))}
                     onTimeUpdate={e => setTime(e.currentTarget.currentTime)}
                     onPlay={() => setPlaying(true)}
                     onPause={() => setPlaying(false)}
                   />
                 ) : (
-                  <div className="flex h-full w-full items-center justify-center p-6 text-center text-xs text-[#71717a]">
-                    {ops.length ? 'Plan preview — add footage to see it on your clip' : 'Add footage or tap a suggestion'}
-                  </div>
+                  <button onClick={() => fileRef.current?.click()} className="flex h-full w-full flex-col items-center justify-center gap-2 p-6 text-center text-xs text-[#8b8b94] hover:text-white">
+                    <Upload size={18} /> {ops.length ? 'Add your video to see the plan on it' : 'Add your video to preview it here'}
+                  </button>
                 )}
-                {active('broll') && <div className="absolute inset-x-3 top-3 rounded-lg bg-[#6b7fd6]/85 px-2 py-1 text-[11px] font-semibold text-white">B-roll: {active('broll')!.label}</div>}
-                {active('motion') && (
-                  <div className="absolute inset-x-0 top-1/3 px-4 text-center text-2xl sm:text-3xl font-black uppercase leading-none text-[#e8ff9a] drop-shadow-[0_3px_0_rgba(0,0,0,0.6)]">{active('motion')!.label}</div>
-                )}
-                {active('captions') && (
-                  <div className="absolute inset-x-0 bottom-[18%] text-center">
+                {shown('broll') && <div className="absolute inset-x-3 top-3 rounded-lg bg-[#6b7fd6]/85 px-2 py-1 text-[11px] font-semibold text-white">B-roll: {shown('broll')!.label}</div>}
+                {shown('motion') && <div className="pointer-events-none absolute inset-x-0 top-1/3 px-4 text-center text-2xl font-black uppercase leading-none text-[#e8ff9a] drop-shadow-[0_3px_0_rgba(0,0,0,0.6)] sm:text-3xl">{shown('motion')!.label}</div>}
+                {shown('captions') && (
+                  <div className="pointer-events-none absolute inset-x-0 bottom-[18%] text-center">
                     <span className="rounded-md bg-black/70 px-2 py-1 text-sm font-extrabold text-white">your <span className="text-[#c5f04a]">words</span> here</span>
                   </div>
                 )}
               </div>
             </div>
-
-            <div className="border-t border-white/10 bg-[#111113] px-3 py-3">
-              <div className="mb-2 flex items-center gap-3 text-xs text-[#a1a1aa]">
-                <button
-                  aria-label={playing ? 'Pause' : 'Play'}
-                  onClick={() => {
-                    const v = videoRef.current;
-                    if (v) return v.paused ? void v.play() : v.pause();
-                    setPlaying(p => !p);
-                  }}
-                  className="rounded-full bg-white/10 p-1.5 text-white hover:bg-white/20"
-                >
-                  {playing ? <Pause size={13} /> : <Play size={13} />}
-                </button>
-                <span className="tabular-nums">{fmt(time)} / {fmt(duration)}</span>
-                <span className="ml-auto hidden sm:inline">{ops.length} edits · click a block to change it</span>
-              </div>
-
-              <div
-                className="relative space-y-1"
-                onClick={e => {
-                  const box = e.currentTarget.getBoundingClientRect();
-                  const lane = box.left + 112;
-                  if (e.clientX < lane) return;
-                  const t = ((e.clientX - lane) / (box.right - lane)) * duration;
-                  setTime(t);
-                  if (videoRef.current) videoRef.current.currentTime = t;
+            <div className="flex items-center gap-3 border-t border-white/10 px-4 py-2 text-xs text-[#a1a1aa]">
+              <button
+                aria-label={playing ? 'Pause' : 'Play'}
+                onClick={() => {
+                  const v = videoRef.current;
+                  if (v) return v.paused ? void v.play() : v.pause();
+                  setPlaying(p => !p);
                 }}
+                className="rounded-full bg-white/10 p-1.5 text-white hover:bg-white/20"
               >
-                {TRACKS.map(t => (
-                  <div key={t.id} className="flex items-center gap-2">
-                    <span className="flex w-[104px] shrink-0 items-center gap-1.5 truncate text-[10px] text-[#8b8b94]"><t.icon size={11} /> {t.name}</span>
-                    <div className="relative h-6 flex-1 rounded bg-white/[0.03]">
-                      {ops.filter(o => o.track === t.id).map(o => (
-                        <button
-                          key={o.id}
-                          title={`${o.label} — ${o.why}`}
-                          onClick={e => { e.stopPropagation(); setSelected(o.id); }}
-                          className={`absolute top-0.5 bottom-0.5 min-w-[6px] truncate rounded px-1 text-left text-[10px] font-semibold ${t.color} ${selected === o.id ? 'ring-2 ring-white' : ''}`}
-                          style={{ left: `${(o.start / duration) * 100}%`, width: `${((o.end - o.start) / duration) * 100}%` }}
-                        >
-                          {o.label}
-                        </button>
-                      ))}
-                    </div>
+                {playing ? <Pause size={13} /> : <Play size={13} />}
+              </button>
+              <span className="tabular-nums">{fmt(time)} / {fmt(duration)}</span>
+              <span className="ml-auto">{ops.length} edits</span>
+            </div>
+          </div>
+        </div>
+        <input ref={fileRef} type="file" accept="video/*" hidden onChange={pickFile} />
+
+        {/* Timeline */}
+        <div className="border-t border-white/10 px-3 pb-3 pt-2">
+          <div className="mb-2 flex items-center gap-1 text-[#a1a1aa]">
+            <button aria-label="Split at playhead" title="Split the selected block at the playhead" disabled={!canSplit} onClick={split} className="rounded-lg p-1.5 hover:bg-white/5 disabled:opacity-30"><Scissors size={15} /></button>
+            <button aria-label="Delete selected block" disabled={!sel} onClick={remove} className="rounded-lg p-1.5 hover:bg-white/5 disabled:opacity-30"><Trash2 size={15} /></button>
+            <span className="ml-auto text-[11px] text-[#71717a]">{sel ? 'Drag the playhead, then split — or edit the block below' : 'Click a block to change it'}</span>
+          </div>
+          <div
+            className="relative space-y-1"
+            onClick={e => {
+              const box = e.currentTarget.getBoundingClientRect();
+              const lane = box.left + LANE;
+              if (e.clientX < lane) return;
+              const t = Math.max(0, Math.min(duration, ((e.clientX - lane) / (box.right - lane)) * duration));
+              setTime(t);
+              if (videoRef.current) videoRef.current.currentTime = t;
+            }}
+          >
+            {TRACKS.map(t => {
+              const off = hidden.has(t.id);
+              const audio = t.id === 'music' || t.id === 'sfx' || t.id === 'video';
+              return (
+                <div key={t.id} className="flex items-center gap-2">
+                  <span className="flex shrink-0 items-center gap-1" style={{ width: LANE - 8 }}>
+                    <span className="w-7 rounded bg-[#27272a] py-0.5 text-center text-[10px] font-bold text-[#d4d4d8]" title={t.name}>{BADGE[t.id]}</span>
+                    <button aria-label={`${off ? 'Show' : 'Hide'} ${t.name}`} onClick={e => { e.stopPropagation(); toggle(hidden, t.id, setHidden); }} className="rounded p-1 text-[#71717a] hover:text-white">{off ? <EyeOff size={12} /> : <Eye size={12} />}</button>
+                    {audio && <button aria-label={`${muted.has(t.id) ? 'Unmute' : 'Mute'} ${t.name}`} onClick={e => { e.stopPropagation(); toggle(muted, t.id, setMuted); }} className="rounded p-1 text-[#71717a] hover:text-white">{muted.has(t.id) ? <VolumeX size={12} /> : <Volume2 size={12} />}</button>}
+                  </span>
+                  <div className={`relative h-8 flex-1 rounded-md bg-white/[0.03] ${off ? 'opacity-30' : ''}`}>
+                    {ops.filter(o => o.track === t.id).map(o => (
+                      <button
+                        key={o.id}
+                        title={`${o.label} — ${o.why}`}
+                        onClick={e => { e.stopPropagation(); setSelected(o.id); }}
+                        className={`absolute top-0.5 bottom-0.5 min-w-[6px] truncate rounded px-1.5 text-left text-[10px] font-semibold ${t.color} ${selected === o.id ? 'ring-2 ring-white' : ''}`}
+                        style={{ left: `${(o.start / duration) * 100}%`, width: `${((o.end - o.start) / duration) * 100}%` }}
+                      >
+                        {o.label}
+                      </button>
+                    ))}
                   </div>
-                ))}
-                <div className="pointer-events-none absolute top-0 bottom-0 w-px bg-[#c5f04a]" style={{ left: `calc(112px + (100% - 112px) * ${Math.min(1, time / duration)})` }} />
-              </div>
-
-              {sel && (
-                <div className="mt-3 flex flex-wrap items-center gap-2 rounded-xl border border-white/10 bg-[#18181b] p-2.5 text-xs text-[#d4d4d8]">
-                  <input
-                    value={sel.label}
-                    onChange={e => update(sel.id, { label: e.target.value })}
-                    aria-label="Block label"
-                    className="w-40 rounded border border-white/10 bg-[#09090b] px-2 py-1 text-white"
-                  />
-                  {(['start', 'end'] as const).map(k => (
-                    <span key={k} className="flex items-center gap-1">
-                      {k}
-                      <button aria-label={`Earlier ${k}`} onClick={() => nudge(sel, k, -0.5)} className="rounded bg-white/5 p-0.5"><Minus size={11} /></button>
-                      <span className="w-9 text-center tabular-nums">{sel[k].toFixed(1)}s</span>
-                      <button aria-label={`Later ${k}`} onClick={() => nudge(sel, k, 0.5)} className="rounded bg-white/5 p-0.5"><Plus size={11} /></button>
-                    </span>
-                  ))}
-                  <button onClick={() => { commit(ops.filter(o => o.id !== sel.id)); setSelected(null); }} className="ml-auto flex items-center gap-1 rounded bg-[#4a1f1f] px-2 py-1 text-[#ffb4b4] hover:bg-[#5c2626]"><Trash2 size={12} /> Remove</button>
-                  <p className="basis-full text-[11px] text-[#8b8b94]">{sel.why} · <span className="text-[#c5f04a]">{sel.tool}</span></p>
                 </div>
-              )}
-
-              <div className="mt-3 flex flex-wrap gap-2">
-                <button onClick={copyBrief} className="flex items-center gap-1.5 rounded-lg bg-[#27272a] px-3 py-2 text-xs font-semibold text-white hover:bg-[#3f3f46]"><Copy size={13} /> Copy brief for Claude Code</button>
-                <button onClick={() => saveFile('ai-edit-plan.json', JSON.stringify(planData(), null, 2), 'application/json')} className="flex items-center gap-1.5 rounded-lg border border-white/10 px-3 py-2 text-xs font-semibold text-[#d4d4d8] hover:text-white"><Download size={13} /> Edit plan (.json)</button>
-                {notice && <span className="self-center text-xs text-[#52d68a]">{notice}</span>}
-              </div>
-            </div>
+              );
+            })}
+            <div className="pointer-events-none absolute top-0 bottom-0 w-0.5 bg-[#f97316]" style={{ left: `calc(${LANE}px + (100% - ${LANE}px) * ${Math.min(1, time / duration)})` }} />
           </div>
-        </div>
-      </section>
 
-      {/* Recreate a proven format */}
-      <section>
-        <p className="text-[11px] font-bold tracking-[0.2em] text-[#c5f04a]">RECREATE THIS</p>
-        <h2 className="mt-2 text-3xl font-bold text-white">Start from a format that already works</h2>
-        <p className="mt-1 text-sm text-[#a1a1aa]">Each one is measured from the 136-reel study: real lengths, real shot timing, real talking speed.</p>
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {RECIPES.map(r => (
-            <div key={r.id} className="flex flex-col rounded-2xl border border-white/10 bg-[#171718] p-5">
-              <div className="flex items-baseline gap-2">
-                <span className="rounded bg-[#27272a] px-1.5 py-0.5 font-mono text-[10px] text-[#d4d4d8]">{r.id}</span>
-                <span className="font-semibold text-white">{r.name}</span>
-                <span className="ml-auto text-[11px] text-[#8b8b94]">{r.reels} reels</span>
-              </div>
-              <div className="mt-4 grid grid-cols-3 gap-2 text-center">
-                {[[`${r.len}s`, 'length'], [`${r.shot}s`, 'per shot'], [`${r.wpm}`, 'words/min']].map(([v, l]) => (
-                  <div key={l} className="rounded-lg bg-[#09090b] py-2">
-                    <p className="font-bold tabular-nums text-white">{v}</p>
-                    <p className="text-[10px] text-[#8b8b94]">{l}</p>
-                  </div>
-                ))}
-              </div>
-              <button
-                aria-label={`Recreate ${r.name}`}
-                onClick={() => { setRecipe(r); setAspect('9:16'); const d = file ? duration : r.len; setDuration(d); goEditor('producer'); makeEdit(r.prompt, r, d); }}
-                className="mt-4 inline-flex items-center justify-center gap-2 rounded-full border border-white/15 py-2 text-xs font-semibold text-white hover:border-[#c5f04a]/60 hover:bg-[#1a1d10]"
-              >
-                Recreate this <ArrowRight size={13} />
-              </button>
+          {sel && (
+            <div className="mt-3 flex flex-wrap items-center gap-2 rounded-xl border border-white/10 bg-[#18181b] p-2.5 text-xs text-[#d4d4d8]">
+              <input value={sel.label} onChange={e => update(sel.id, { label: e.target.value })} aria-label="Block label" className="w-40 rounded border border-white/10 bg-[#09090b] px-2 py-1 text-white" />
+              {(['start', 'end'] as const).map(k => (
+                <span key={k} className="flex items-center gap-1">
+                  {k}
+                  <button aria-label={`Earlier ${k}`} onClick={() => nudge(sel, k, -0.5)} className="rounded bg-white/5 p-0.5"><Minus size={11} /></button>
+                  <span className="w-9 text-center tabular-nums">{sel[k].toFixed(1)}s</span>
+                  <button aria-label={`Later ${k}`} onClick={() => nudge(sel, k, 0.5)} className="rounded bg-white/5 p-0.5"><Plus size={11} /></button>
+                </span>
+              ))}
+              <p className="basis-full text-[11px] text-[#8b8b94]">{sel.why} · <span className="text-[#c5f04a]">{sel.tool}</span></p>
             </div>
-          ))}
+          )}
         </div>
-      </section>
+      </div>
 
-      {/* Quick fixes */}
-      <section>
-        <p className="text-[11px] font-bold tracking-[0.2em] text-[#c5f04a]">ONE-TAP FIXES</p>
-        <h2 className="mt-2 text-3xl font-bold text-white">Fix the recording, not just the edit</h2>
-        <p className="mt-1 text-sm text-[#a1a1aa]">Switch them on and they join the next edit. Each one says which tool does the work.</p>
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {FIXES.map(f => {
-            const on = fixes.has(f.id);
-            return (
-              <button
-                key={f.id}
-                onClick={() => setFixes(s => { const n = new Set(s); if (n.has(f.id)) n.delete(f.id); else n.add(f.id); return n; })}
-                aria-pressed={on}
-                className={`rounded-2xl border p-5 text-left transition ${on ? 'border-[#c5f04a]/60 bg-[#1a1d10]' : 'border-white/10 bg-[#171718] hover:border-white/20'}`}
-              >
-                <div className="flex items-center gap-2">
-                  <f.icon size={18} className={on ? 'text-[#c5f04a]' : 'text-[#a1a1aa]'} />
-                  <span className="font-semibold text-white">{f.name}</span>
-                  <span className={`ml-auto rounded-full px-2 py-0.5 text-[10px] font-bold ${on ? 'bg-[#c5f04a] text-[#0b0f00]' : 'bg-white/5 text-[#8b8b94]'}`}>{on ? 'ON' : 'OFF'}</span>
-                </div>
-                <p className="mt-2 text-sm text-[#a1a1aa]">{f.text}</p>
-                <p className={`mt-3 text-[11px] ${f.local ? 'text-[#c5f04a]' : 'text-[#e0a37a]'}`}>{f.tool}</p>
-              </button>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* Workflow */}
-      <section>
-        <p className="text-[11px] font-bold tracking-[0.2em] text-[#c5f04a]">THE LOOP</p>
-        <h2 className="mt-2 text-3xl font-bold text-white">Cut, polish, check, reuse</h2>
-        <div className="mt-6 grid gap-3 md:grid-cols-4">
-          {[
-            ['01', 'Cut it clean', 'The transcript drives the cut: fillers out, strongest line first.'],
-            ['02', 'Polish in one pass', 'Captions, motion, B-roll, music and sound land on separate tracks.'],
-            ['03', 'Check it by hand', 'Preview in Remotion Studio, adjust any block, approve before rendering.'],
-            ['04', 'Save it as a skill', 'Keep the recipe as a style and batch the next ten videos with it.'],
-          ].map(([n, t, d]) => (
-            <div key={n} className="rounded-2xl border border-white/10 bg-[#171718] p-5">
-              <p className="font-mono text-xs text-[#c5f04a]">{n}</p>
-              <p className="mt-2 font-semibold text-white">{t}</p>
-              <p className="mt-1.5 text-sm text-[#a1a1aa]">{d}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Feature tabs */}
-      <section>
-        <p className="text-[11px] font-bold tracking-[0.2em] text-[#c5f04a]">HANDS-ON WHEN YOU WANT IT</p>
-        <h2 className="mt-2 text-3xl font-bold text-white">Automatic for speed, manual for precision</h2>
-        <div className="mt-6 flex gap-2">
-          {features.map((f, i) => (
-            <button key={f.tag} onClick={() => setFeatureTab(i)} className={`rounded-full px-4 py-1.5 text-xs font-semibold ${featureTab === i ? 'bg-white text-[#111]' : 'border border-white/10 text-[#a1a1aa] hover:text-white'}`}>{f.tag}</button>
-          ))}
-        </div>
-        <div className="mt-4 rounded-3xl border border-white/10 bg-[#171718] p-6">
-          <h3 className="text-xl font-semibold text-white">{features[featureTab].title}</h3>
-          <div className="mt-5 grid gap-4 md:grid-cols-3">
-            {features[featureTab].items.map(it => (
-              <div key={it.name} className="rounded-2xl bg-[#09090b] p-5">
-                <it.icon size={18} className="text-[#c5f04a]" />
-                <p className="mt-3 font-semibold text-white">{it.name}</p>
-                <p className="mt-1.5 text-sm text-[#a1a1aa]">{it.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Which mode */}
-      <section>
-        <h2 className="text-3xl font-bold text-white">Which way in?</h2>
-        <p className="mt-1 text-sm text-[#a1a1aa]">Same studio, two starting points.</p>
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
-          {[
-            { m: 'producer' as const, kicker: 'Edit agent', title: 'Full edit', lead: 'Start with raw footage and finish with a post-ready video.', points: ['Your real footage — no avatars or synthetic speakers', 'Captions, motion, B-roll, music and sound in one pass', 'Every decision explained; you approve the changes'] },
-            { m: 'clips' as const, kicker: 'Clip finder', title: 'Clips', lead: 'Start with a long talk or podcast and pull the best moments.', points: ['Moments chosen by hook, payoff and a clean ending', 'Reframed to 9:16 with captions in the safe zone', 'Each clip gets its own brief for batch rendering'] },
-          ].map(c => (
-            <div key={c.m} className="rounded-3xl border border-white/10 bg-[#171718] p-6">
-              <p className="text-[11px] font-bold uppercase tracking-wider text-[#c5f04a]">{c.kicker}</p>
-              <h3 className="mt-1 text-xl font-semibold text-white">{c.title}</h3>
-              <p className="mt-1 text-sm text-[#a1a1aa]">{c.lead}</p>
-              <ul className="mt-4 space-y-2 text-sm text-[#d4d4d8]">
-                {c.points.map(p => <li key={p} className="flex gap-2"><Check size={15} className="mt-0.5 shrink-0 text-[#52d68a]" /> {p}</li>)}
-              </ul>
-              <button onClick={() => goEditor(c.m)} className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold text-[#111]">Use {c.title} <ArrowRight size={13} /></button>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Agent */}
-      <section className="rounded-3xl border border-white/10 bg-gradient-to-br from-[#171718] to-[#111113] p-6 sm:p-8">
-        <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
-          <div>
-            <p className="text-[11px] font-bold tracking-[0.2em] text-[#c5f04a]">IN YOUR AGENT</p>
-            <h2 className="mt-2 text-3xl font-bold text-white">Plan here, render with Claude Code</h2>
-            <p className="mt-2 text-sm text-[#a1a1aa]">The brief is written for this repo. Claude Code follows the master router to the right skills and keeps every layer editable.</p>
-          </div>
-          <pre className="overflow-x-auto rounded-2xl border border-white/10 bg-black/60 p-4 text-[12px] leading-relaxed text-[#d4d4d8]"><span className="text-[#8b8b94]"><Terminal size={12} className="mr-1 inline" />claude</span>{'\n'}&gt; [paste brief]{'\n'}<span className="text-[#c5f04a]">→ docs/MASTER-ROUTER.md</span>{'\n'}<span className="text-[#c5f04a]">→ skills/creator-video  · remotion  · captions-skill  · effects</span>{'\n'}<span className="text-[#c5f04a]">✓ editable Remotion project · preview · render on approval</span></pre>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section>
-        <h2 className="text-3xl font-bold text-white">Questions</h2>
-        <div className="mt-6 divide-y divide-white/10 rounded-3xl border border-white/10 bg-[#171718]">
-          {FAQ.map(([q, a], i) => (
-            <div key={q}>
-              <button onClick={() => setOpenFaq(openFaq === i ? null : i)} aria-expanded={openFaq === i} className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left font-semibold text-white">
-                {q}
-                <ChevronDown size={16} className={`shrink-0 text-[#a1a1aa] transition ${openFaq === i ? 'rotate-180' : ''}`} />
-              </button>
-              {openFaq === i && <p className="px-6 pb-5 text-sm text-[#a1a1aa]">{a}</p>}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white">Start editing by describing it</h2>
-        <button onClick={() => goEditor('producer')} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#c5f04a] px-6 py-3 text-sm font-bold text-[#0b0f00] hover:bg-[#d4f56f]">Open the editor <ArrowRight size={15} /></button>
-        <p className="mt-3 text-xs text-[#8b8b94]">Free. No upload. No account.</p>
-      </section>
+      {notice && <p role="status" className="fixed bottom-6 left-1/2 z-30 -translate-x-1/2 rounded-full bg-[#fafafa] px-4 py-2 text-sm font-semibold text-[#09090b] shadow-2xl">{notice}</p>}
     </div>
   );
 }

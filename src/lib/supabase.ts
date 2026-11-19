@@ -64,7 +64,13 @@ export async function sendMagicLink(email: string) {
   });
 }
 
-/** Pick up the session the magic link puts in the URL hash, then clean the URL. */
+/** Send the browser to Google; Supabase returns here with the session in the URL hash. */
+export function signInWithGoogle() {
+  const back = location.origin + location.pathname;
+  location.assign(`${SUPABASE_URL}/auth/v1/authorize?provider=google&redirect_to=${encodeURIComponent(back)}`);
+}
+
+/** Pick up the session the magic link or Google puts in the URL hash, then clean the URL. */
 export function sessionFromUrl(): { session: Session | null; error: string } {
   const hash = new URLSearchParams(location.hash.slice(1));
   const error = hash.get('error_description') || '';

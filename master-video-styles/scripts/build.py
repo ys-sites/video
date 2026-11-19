@@ -285,6 +285,92 @@ h2.big{letter-spacing:-.04em}
 .ex-steps li.you .n{background:var(--brand);color:#111}
 .tag{background:#27272a}
 @media(max-width:860px){.row,.ctl{grid-template-columns:1fr;margin-top:64px}.row .vis-first{order:-1}.bubble{position:static;transform:none;width:auto;margin:16px 0 18px}.stage{padding-bottom:0}}
+
+
+/* Opus-style stage: raw phone -> edited phone, typed prompt, carousel dots */
+.stage.live{padding:clamp(24px,5vw,56px) clamp(14px,4vw,48px) clamp(120px,14vw,150px)}
+.phones{display:flex;align-items:center;justify-content:center;gap:clamp(14px,4vw,56px)}
+.phone{position:relative;width:clamp(130px,22vw,250px);aspect-ratio:9/16;border-radius:clamp(18px,2.4vw,28px);overflow:hidden;background:#0b0b0c;box-shadow:0 24px 60px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.18)}
+.phone .tagp{position:absolute;top:10px;left:10px;z-index:3;font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:999px;background:rgba(9,9,11,.72);color:#fafafa}
+.phone.raw .scene{filter:saturate(.35) brightness(.85)}
+.scene{position:absolute;inset:0;transition:transform 1.4s ease}
+.phone.cut.go .scene{transform:scale(1.12)}
+.scene{background-size:cover;background-position:center}
+.sc-house{background-image:url(img/demo/house.jpg)}
+.sc-room{background-image:url(img/demo/living.jpg)}
+.sc-pod{background-image:url(img/demo/kitchen.jpg)}
+.scene::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),transparent 30%,transparent 60%,rgba(0,0,0,.45))}
+.phone.raw .scene::after{display:none}
+.ov{position:absolute;left:0;right:0;z-index:2;text-align:center;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s;padding:0 8px}
+.phone.cut.go .ov{opacity:1;transform:none}
+.ov.title{top:12%;font-weight:800;letter-spacing:-.02em;font-size:clamp(14px,2vw,22px);color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.45);line-height:1.05}
+.ov.title small{display:block;font-size:.55em;letter-spacing:.12em;opacity:.85;margin-bottom:4px}
+.ov.cap{bottom:16%;transition-delay:.25s}
+.ov.cap span{background:#09090b;color:#fafafa;font-weight:800;font-size:clamp(11px,1.4vw,15px);padding:5px 9px;border-radius:7px;display:inline-block}
+.ov.cap b{color:var(--brand)}
+.ov.ask{bottom:5%;transition-delay:.5s}
+.ov.ask span{background:var(--brand);color:#111;font-weight:800;font-size:clamp(10px,1.2vw,13px);padding:4px 10px;border-radius:999px;display:inline-block}
+.ov.num{top:30%;left:auto;right:8%;width:auto;font-weight:800;font-size:clamp(22px,3.4vw,40px);color:var(--brand);transition-delay:.15s}
+.ex{display:none}
+.ex.on{display:block}
+.mid{display:flex;flex-direction:column;align-items:center;gap:10px;color:rgba(255,255,255,.8)}
+.mid .dots{display:flex;flex-direction:column;gap:7px}
+.mid .dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .3s,transform .3s}
+.mid .dots i.on{background:#fff;transform:scale(1.25)}
+.mid small{font-size:11px;font-weight:600;writing-mode:vertical-rl;letter-spacing:.08em;opacity:.8}
+.stage.live .bubble{bottom:clamp(14px,2.4vw,28px)}
+.stage.live .bubble .typed2::after{content:"";display:inline-block;width:2px;height:1em;background:#fff;margin-left:2px;vertical-align:-3px;animation:blink 1s steps(1) infinite}
+.stage.live .bubble i{transition:transform .2s,background .2s}
+.stage.live .bubble.sent i{background:var(--brand);transform:scale(1.12)}
+@media(max-width:860px){.stage.live .bubble{position:absolute;left:50%;transform:translateX(-50%);width:min(560px,92%);margin:0}}
+@media(max-width:560px){.stage.live{padding-bottom:150px}.mid small{display:none}}
+/* animated how-it-works demo */
+.demo{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,64px);align-items:center;text-align:left}
+.demo h2{font-size:clamp(34px,5vw,60px);letter-spacing:-.045em;line-height:1.02}
+.demo .lede{margin:18px 0 26px;color:var(--muted);font-size:clamp(16px,1.8vw,19px);max-width:440px}
+.win{background:#111113;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.win-top{display:grid;grid-template-columns:1fr 1.05fr;min-height:300px}
+.win-ai{padding:16px;display:flex;flex-direction:column;gap:10px;border-right:1px solid var(--line);min-width:0}
+.win-tabs{display:flex;gap:16px;font-size:12px;font-weight:600;color:var(--faint)}
+.win-tabs b{color:var(--text);border-bottom:2px solid var(--text);padding-bottom:3px}
+.steps-live{list-style:none;display:grid;gap:9px;flex:1;align-content:start;font-size:12.5px}
+.steps-live li{opacity:0;transform:translateY(6px);transition:opacity .35s,transform .35s;color:#d4d4d8}
+.steps-live li.on{opacity:1;transform:none}
+.steps-live li code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px;color:#fafafa}
+.steps-live li code::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:8px;vertical-align:1px}
+.steps-live li span{color:var(--muted)}
+.composer{display:flex;align-items:flex-end;gap:10px;background:#18181b;border:1px solid var(--line);border-radius:14px;padding:10px 10px 10px 14px;font-size:12.5px;min-height:56px}
+.composer .typed{flex:1;color:#fafafa;min-height:34px}
+.composer .typed::after{content:"";display:inline-block;width:1.5px;height:13px;background:var(--brand);margin-left:2px;vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.composer i{flex:0 0 28px;height:28px;border-radius:50%;background:var(--brand);color:#111;display:grid;place-items:center;font-style:normal;font-weight:800;font-size:13px}
+.win-view{position:relative;overflow:hidden;background:#18181b;min-height:260px}
+.house{position:absolute;inset:0;background:url(img/demo/kitchen-square.jpg) center/cover;transform:scale(var(--zoom,1));transition:transform 1.2s ease}
+.house .roof{height:clamp(30px,6vw,56px);background:#3f3f46;clip-path:polygon(50% 0,100% 100%,0 100%);margin:0 -8%}
+.house .body{height:clamp(54px,10vw,92px);background:#f4f1ea;border-radius:2px;display:grid;grid-template-columns:repeat(3,1fr);gap:8%;padding:10% 10% 0}
+.house .body span{background:#7fb0d6;border-radius:2px;height:55%}
+.house .body span:nth-child(2){background:#5b4636;height:100%;border-radius:2px 2px 0 0}
+.view-cap{position:absolute;left:50%;bottom:9%;transform:translateX(-50%);background:#09090b;color:#fafafa;font-weight:800;font-size:clamp(13px,1.6vw,17px);padding:6px 12px;border-radius:8px;white-space:nowrap;transition:opacity .25s}
+.view-cap b{color:var(--brand)}
+.view-title{position:absolute;top:10%;left:0;right:0;text-align:center;font-weight:800;letter-spacing:-.02em;font-size:clamp(20px,3vw,30px);color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.35);opacity:0;transition:opacity .3s}
+.view-title.on{opacity:1}
+.view-tag{position:absolute;top:10px;left:10px;font-size:10.5px;font-weight:700;background:rgba(9,9,11,.7);color:#fafafa;padding:3px 8px;border-radius:999px}
+.win-tl{border-top:1px solid var(--line);padding:10px 14px 14px;position:relative}
+.ruler{display:flex;justify-content:space-between;font-size:10.5px;color:var(--faint);margin-left:34px;padding-bottom:6px}
+.lane{display:flex;align-items:center;gap:10px;height:30px;margin-top:5px}
+.lane>em{flex:0 0 24px;font-style:normal;font-size:10.5px;font-weight:700;color:var(--faint)}
+.lane>div{position:relative;flex:1;height:100%;border:1px dashed #27272a;border-radius:6px}
+.clip{position:absolute;top:2px;bottom:2px;border-radius:5px;font-size:10px;font-weight:700;padding:0 6px;display:flex;align-items:center;overflow:hidden;white-space:nowrap;color:#09090b;opacity:0;transform:scaleX(.6);transform-origin:left;transition:opacity .35s,transform .35s}
+.clip.on{opacity:1;transform:none}
+.clip.v{background:linear-gradient(90deg,#4b5563,#6b7280);color:#fafafa}
+.clip.c{background:#e4e4e7}
+.clip.m{background:var(--brand)}
+.clip.a{background:repeating-linear-gradient(90deg,#a78bfa 0 2px,transparent 2px 5px),#2e2645;color:#e9e5ff}
+.playhead{position:absolute;top:28px;bottom:12px;width:2px;background:var(--orange);left:calc(48px + (100% - 62px) * var(--t,0));pointer-events:none}
+.playhead::before{content:"";position:absolute;top:-5px;left:-4px;width:10px;height:10px;border-radius:2px;background:var(--orange)}
+.demo-note{font-size:12.5px;color:var(--faint);margin-top:12px;text-align:center}
+@media(max-width:960px){.demo{grid-template-columns:1fr}.demo .lede{max-width:none}}
+@media(max-width:560px){.win-top{grid-template-columns:1fr}.win-ai{border-right:0;border-bottom:1px solid var(--line)}.win-view{min-height:220px}}
 /* responsive: tablets, phones, landscape phones, ultrawide */
 @media(min-width:1700px){.wrap{max-width:1320px}}
 @media(max-width:1024px){
@@ -336,6 +422,102 @@ h2.big{letter-spacing:-.04em}
 """
 
 SCRIPT = """
+
+(function(){
+  var stage = document.getElementById('stage-demo');
+  if (!stage) return;
+  var exs = stage.querySelectorAll('.ex');
+  var dots = stage.querySelectorAll('.dots i');
+  var cut = stage.querySelector('.phone.cut');
+  var bubble = stage.querySelector('.bubble');
+  var typed = stage.querySelector('.typed2');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var timers = [], idx = 0, live = false;
+  function at(ms, fn){ timers.push(setTimeout(fn, ms)); }
+  function show(i){
+    exs.forEach(function(e){ e.classList.toggle('on', +e.dataset.i === i); });
+    dots.forEach(function(d, k){ d.classList.toggle('on', k === i); });
+  }
+  function run(i){
+    timers.forEach(clearTimeout); timers = [];
+    idx = i; show(i);
+    var text = stage.dataset['p' + i];
+    cut.classList.remove('go'); bubble.classList.remove('sent'); typed.textContent = '';
+    if (reduce) { typed.textContent = text; cut.classList.add('go'); return; }
+    for (var n = 1; n <= text.length; n++) (function(n){ at(400 + n * 30, function(){ typed.textContent = text.slice(0, n); }); })(n);
+    var t = 400 + text.length * 30 + 350;
+    at(t, function(){ bubble.classList.add('sent'); });
+    at(t + 450, function(){ cut.classList.add('go'); });
+    at(t + 5200, function(){ if (live) run((idx + 1) % dots.length); });
+  }
+  dots.forEach(function(d, k){ d.addEventListener('click', function(){ run(k); }); d.style.cursor = 'pointer'; });
+  if (reduce || !('IntersectionObserver' in window)) { run(0); return; }
+  new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if (e.isIntersecting && !live) { live = true; run(idx); }
+      else if (!e.isIntersecting && live) { live = false; timers.forEach(clearTimeout); }
+    });
+  }, {threshold: .3}).observe(stage);
+})();
+
+(function(){
+  var demo = document.getElementById('demo-win');
+  if (!demo) return;
+  var steps = demo.querySelectorAll('.steps-live li');
+  var clips = demo.querySelectorAll('.clip');
+  var typed = demo.querySelector('.typed');
+  var cap = demo.querySelector('.view-cap');
+  var title = demo.querySelector('.view-title');
+  var house = demo.querySelector('.house');
+  var tl = demo.querySelector('.win-tl');
+  var prompt = typed.dataset.text;
+  var caps = JSON.parse(demo.dataset.caps);
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var timers = [], raf = 0, running = false;
+  function at(ms, fn){ timers.push(setTimeout(fn, ms)); }
+  function finalState(){
+    typed.textContent = prompt;
+    steps.forEach(function(s){ s.classList.add('on'); });
+    clips.forEach(function(c){ c.classList.add('on'); });
+    title.classList.add('on');
+    cap.innerHTML = caps[caps.length - 1];
+    tl.style.setProperty('--t', .62);
+  }
+  function play(){
+    if (running) return;
+    running = true;
+    timers.forEach(clearTimeout); timers = []; cancelAnimationFrame(raf);
+    typed.textContent = '';
+    steps.forEach(function(s){ s.classList.remove('on'); });
+    clips.forEach(function(c){ c.classList.remove('on'); });
+    title.classList.remove('on');
+    house.style.setProperty('--zoom', 1);
+    tl.style.setProperty('--t', 0);
+    cap.innerHTML = caps[0];
+    for (var i = 1; i <= prompt.length; i++) (function(n){ at(n * 32, function(){ typed.textContent = prompt.slice(0, n); }); })(i);
+    var t0 = prompt.length * 32 + 300;
+    steps.forEach(function(s, i){ at(t0 + i * 900, function(){ s.classList.add('on'); }); });
+    var t1 = t0 + steps.length * 900;
+    clips.forEach(function(c, i){ at(t1 + i * 160, function(){ c.classList.add('on'); }); });
+    at(t1 + 300, function(){ title.classList.add('on'); house.style.setProperty('--zoom', 1.12); });
+    var start = performance.now() + t1 + 400, len = 6500;
+    (function tick(now){
+      var k = Math.max(0, Math.min(1, (now - start) / len));
+      tl.style.setProperty('--t', k);
+      cap.innerHTML = caps[Math.min(caps.length - 1, Math.floor(k * caps.length))];
+      if (k > .55) house.style.setProperty('--zoom', 1.3);
+      if (k < 1) raf = requestAnimationFrame(tick);
+      else at(2200, function(){ running = false; play(); });
+    })(performance.now());
+  }
+  if (reduce || !('IntersectionObserver' in window)) { finalState(); return; }
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) play();
+      else { running = false; timers.forEach(clearTimeout); cancelAnimationFrame(raf); }
+    });
+  }, {threshold: .35}).observe(demo);
+})();
 document.querySelectorAll('[data-filter]').forEach(function(input){
   var items = document.querySelectorAll(input.dataset.filter);
   input.addEventListener('input', function(){
@@ -587,14 +769,85 @@ def home(n_styles, n_moves, n_skills, n_free):
   </div>
 </section>
 
+<section>
+  <div class="demo">
+    <div>
+      <span class="label">{SPARK}How it works</span>
+      <h2 style="margin-top:12px">Edit just by describing it</h2>
+      <p class="lede">Ask the way you'd ask an editor — “cut it like a Kelsie listing tour” — and the plan lands on the timeline while you watch, built from 136 measured real-estate reels.</p>
+      <a class="btn light" href="editor/">Open the AI Editor</a>
+    </div>
+    <div>
+      <div class="win" id="demo-win" data-caps='["Just <b>listed</b>","4 bed · <b>3 bath</b>","Walk-in <b>pantry</b>","Sunset <b>skyline</b>","Comment <b>TOUR</b>"]' aria-label="Animated demo: a chat request becomes a listing-tour edit on the timeline" role="img">
+        <div class="win-top">
+          <div class="win-ai">
+            <div class="win-tabs"><b>AI</b><span>Transcript</span></div>
+            <ul class="steps-live">
+              <li><code>read_footage</code> <span>· 6 clips · 0:58 · host + rooms</span></li>
+              <li><code>match_format</code> <span>· Hosted listing tour (36 of 136 reels)</span></li>
+              <li>Kelsie-style tour: neighbourhood hook, fly-through push-in, one selling point per room, aerial, seated ask.</li>
+              <li><code>plan</code> <span>· 1.3 s shots → captions → “Comment TOUR”</span></li>
+            </ul>
+            <div class="composer"><span class="typed" data-text="Cut my listing walkthrough like a Kelsie tour, drop the dead air and caption every word"></span><i>↑</i></div>
+          </div>
+          <div class="win-view">
+            <span class="view-tag">9:16 · 59 s</span>
+            <div class="view-title">Just listed</div>
+            <div class="house" aria-hidden="true"></div>
+            <div class="view-cap">Just <b>listed</b></div>
+          </div>
+        </div>
+        <div class="win-tl">
+          <div class="ruler"><span>0:00</span><span>0:15</span><span>0:30</span><span>0:45</span><span>0:59</span></div>
+          <div class="lane"><em>C1</em><div>
+            <span class="clip c" style="left:0;width:24%">Just listed</span><span class="clip c" style="left:25%;width:24%">4 bed · 3 bath</span><span class="clip c" style="left:50%;width:24%">Walk-in pantry</span><span class="clip c" style="left:75%;width:25%">Comment TOUR</span>
+          </div></div>
+          <div class="lane"><em>MG</em><div>
+            <span class="clip m" style="left:0;width:12%">Hook</span><span class="clip m" style="left:30%;width:14%">Push-in</span><span class="clip m" style="left:62%;width:12%">Aerial</span><span class="clip m" style="left:88%;width:12%">Ask</span>
+          </div></div>
+          <div class="lane"><em>V1</em><div>
+            <span class="clip v" style="left:0;width:15%">Street</span><span class="clip v" style="left:16%;width:13%">Front</span><span class="clip v" style="left:30%;width:14%">Kitchen</span><span class="clip v" style="left:45%;width:15%">Living</span><span class="clip v" style="left:61%;width:13%">Aerial</span><span class="clip v" style="left:75%;width:12%">Suite</span><span class="clip v" style="left:88%;width:12%">Seated</span>
+          </div></div>
+          <div class="lane"><em>A1</em><div>
+            <span class="clip a" style="left:0;width:100%"><span style="background:#2e2645;padding:1px 6px;border-radius:4px">Voice + music bed, ducked</span></span>
+          </div></div>
+          <div class="playhead" aria-hidden="true"></div>
+        </div>
+      </div>
+      <p class="demo-note">Illustration of the workflow — the numbers come from the creator study; no creator footage is used.</p>
+    </div>
+  </div>
+</section>
+
 <section class="center">
   <h2 class="big">Meet the AI Editor:<br>your chat-to-edit studio</h2>
   <p class="sub">Your real footage in, a finished edit plan out. No avatars, no generated speakers. It makes every decision visible and explains it; you direct the changes.</p>
   <a class="btn light" href="editor/" style="margin-top:24px">Try the AI Editor</a>
-  <div class="stage">
-    <img src="img/editor-plan.jpg" alt="The AI Editor with a chat request, an edit log and a six-track timeline" width="1200" height="669" loading="lazy">
-    <div class="bubble">Make it punchy, add captions with keyword pops, zooms and a clear ask<i>↑</i></div>
+  <div class="stage live" id="stage-demo" role="img"
+       aria-label="Animated demo: a typed request turns a raw clip into an edited reel, cycling through a listing tour, a tips listicle and a cinematic listing film"
+       data-p0="Cut this walkthrough like a Kelsie listing tour — captions, a push-in and a comment-word ask"
+       data-p1="Turn this into a 3-tip listicle with keyword captions and a counter"
+       data-p2="Make a cinematic film from these listing clips — fast cuts on the beat, music only, a title card">
+    <div class="phones">
+      <div class="phone raw">
+        <span class="tagp">Raw clip</span>
+        <div class="ex on" data-i="0"><div class="scene sc-house"></div></div>
+        <div class="ex" data-i="1"><div class="scene sc-room"></div></div>
+        <div class="ex" data-i="2"><div class="scene sc-pod"></div></div>
+      </div>
+      <div class="mid" aria-hidden="true"><div class="dots"><i class="on"></i><i></i><i></i></div><small>AI EDITOR</small></div>
+      <div class="phone cut">
+        <div class="ex on" data-i="0"><span class="tagp">Listing tour · 60 s · 1.3 s shots</span><div class="scene sc-house"></div>
+          <div class="ov title"><small>JUST LISTED</small>4 bed · 3 bath</div><div class="ov cap"><span>Corner lot · <b>big yard</b></span></div><div class="ov ask"><span>Comment “TOUR”</span></div></div>
+        <div class="ex" data-i="1"><span class="tagp">Listicle · 42 s · 220 wpm</span><div class="scene sc-room"></div>
+          <div class="ov title"><small>3 TIPS BEFORE YOU BUY</small>Get pre-approved</div><div class="ov num">01</div><div class="ov cap"><span>Know your <b>budget</b> first</span></div><div class="ov ask"><span>Save this for later</span></div></div>
+        <div class="ex" data-i="2"><span class="tagp">Cinematic film · 64 s · 1.1 s shots</span><div class="scene sc-pod"></div>
+          <div class="ov title"><small>OPEN HOUSE SUNDAY</small>Chef's kitchen</div><div class="ov cap"><span>Quartz <b>island</b> · new oak floors</span></div><div class="ov ask"><span>DM for the private tour</span></div></div>
+      </div>
+    </div>
+    <div class="bubble"><span class="typed2">Cut this walkthrough like a Kelsie listing tour — captions, a push-in and a comment-word ask</span><i>↑</i></div>
   </div>
+  <p class="demo-note">Illustration of the workflow. Formats and numbers come from the 136-reel creator study; no creator footage is shown.</p>
 
   <div class="row">
     <div><span class="label">{SPARK}AI Editor</span><h3>The AI makes the edit</h3><p>One pass plans cuts, captions, motion, B-roll, music and sound, with an edit log that says what changed and why. Ask for a change in plain words and it changes that, not the whole video.</p></div>

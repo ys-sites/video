@@ -1,0 +1,13 @@
+{
+  // Deploy: npx wrangler@4.20.0 deploy (from this folder). Free plan; no secrets needed.
+  "name": "masvid-uploads",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-06-01",
+  "r2_buckets": [{ "binding": "VIDEOS", "bucket_name": "masvid-videos" }],
+  "ai": { "binding": "AI" },
+  "vars": {
+    "SUPABASE_URL": "https://jyogdywflsjilqcghqvf.supabase.co",
+    "ALLOWED_ORIGINS": "https://masvid.vercel.app,http://localhost:3000"
+  },
+  "observability": { "enabled": true }
+}
