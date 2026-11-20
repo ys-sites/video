@@ -15,7 +15,7 @@ One map of every tool, skill, repo and asset in this workspace. For any request 
 | SaaS / product launch promo | `docs/motionsmith-workflow.md` + `skills/creator-video/SKILL.md` | Remotion or HyperFrames |
 | Multi-agent animation (Levi Lab style: voice→scenes→parallel layers→code→review) | Remotion skill; one subagent per layer only for videos > 20 s | Remotion Studio preview, render after approval |
 | Character swap / Higgsfield-style "same scene, new character" | Genjutsu (`resources/repo-quarantine/sirioberati/Genjustsu-Open-Source-Workflow`) — staged and triaged, **not approved**; see triage file. Needs Enhancor + Replicate keys, WSL2, catbox fallback off, consent from anyone replaced | Seedance 2.5 via Enhancor (paid, draft first) |
-| AI-generated footage (text/image → video) | §3 local AI stack: LTX-Video 2B or Wan 1.3B in ComfyUI | `C:\Users\Sharafath\AI-Local\ComfyUI\output` |
+| AI-generated footage (text/image → video) | §3 local AI stack: LTX-Video 2B or Wan 1.3B in ComfyUI. Higher quality, with sound and up to ~60 s: FreeVideo (MiniMax H3) on a rented NVIDIA GPU (§3 cloud route) | `C:\Users\Sharafath\AI-Local\ComfyUI\output` |
 | Voice-over, voice cloning | Free first: OmniVoice (local, CPU) or Piper; fish audio MCP (paid credits) only as fallback — it replaces ElevenLabs. Free routes for every paid tool: `docs/ai-editor-research.md` § Free first | Clone only voices the user has consent for |
 | Chat-to-edit request ("edit this like Opus / ChatCut / Captions / Shorty"), or a brief pasted from the site's **AI Editor** tab | `docs/ai-editor-research.md` (capability map) → `skills/creator-video/SKILL.md` § Chat-to-edit briefs | Remotion project, render after approval |
 | Copy / analyse a reference video shot-by-shot | `JuneYaooo/rea-video` skill (do **not** follow its ChatCut install section) | Analysis report, then rebuild with Remotion |
@@ -45,6 +45,7 @@ Unsure which skill fits? `python tools/resource_catalog.py route "<task>"` sugge
 | inference-optimisation-skill | `resources/repo-quarantine/sybil-solutions/...` | Reviewed, not installed | Speed up local LLMs (llama.cpp + Vulkan on the iGPU) |
 | 14 motion skills | `resources/motion-systems/*` | Reference skills; scanner flags reviewed as benign, 3 large folders incompletely scanned | Styles: Anidoodle, Bang Motion, Paint MV, hand-drawn, Manim, etc. |
 | open-higgsfield-ai, Open-Generative-AI | `resources/repo-quarantine/...` | Reviewed; front ends for paid **muapi.ai** API | Hosted image/video generation with a muapi key |
+| FreeVideo (MiniMax H3, `FlashML-org/FreeVideo` 2259974) | `resources/repo-quarantine/FlashML-org/FreeVideo` | Triaged 2026-11-20, no malicious indicators, **not approved**. Hard-requires NVIDIA RTX 30+ (≥ 8 GB VRAM) or Apple-silicon Mac; refuses this PC | Best open text/image→video with audio, ~60 s, drama/shot tools; has its own MCP + Claude skill. Cloud GPU only |
 | HunyuanVideo, Open-Sora, LongCat-Video-Avatar, HeyGem, WanGP (large models) | `resources/repo-quarantine/...` | Too large for this PC | Cloud GPU route (§3) |
 | 12 security tools | `resources/security-tools/*`, `resources/skillspector-source` | Source staged; SkillSpector installed in WSL | §4 |
 
@@ -56,6 +57,7 @@ Unsure which skill fits? `python tools/resource_catalog.py route "<task>"` sugge
 - Start ComfyUI: `C:\Users\Sharafath\AI-Local\ComfyUI\.venv\Scripts\python.exe main.py --cpu` then open http://127.0.0.1:8188.
 - Practical limits: keep video at ≤ 512 px wide, ≤ 3–5 s, few steps (distilled models). Close other apps while rendering (RAM is shared with the iGPU).
 - Cloud route for 11–14B models (HunyuanVideo, Open-Sora, LongCat, HeyGem, big WanGP models): rent an NVIDIA GPU by the hour (paid — the user decides), run ComfyUI there, control it from this PC's browser.
+- FreeVideo on the cloud route: Linux RTX 30/40/50 box (16 GB VRAM + 32 GB RAM ≈ 8–10 min per 5 s clip per its benchmarks), clone the reviewed commit, `./setup.sh` with official-only sources, `freevideo server` on 127.0.0.1 and reach it through `ssh -L`. Never `--listen 0.0.0.0` on a public host.
 
 ## 4. Security rules for anything new
 
