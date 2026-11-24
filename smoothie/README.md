@@ -50,9 +50,13 @@ Then the smoke tests (each must PASS before the next): site `npm run lint && npm
 
 `install.ps1` dry run: **21/21 steps PASS**, planned **2.93 GB** local of the 100 GB budget, free space 338.9 GB. Every engine's reviewed tree hash matches the scanned quarantine copy, and each pinned commit is still the upstream HEAD. Model list dry run: all 9 files found on Hugging Face with published hashes (19.2 GB already local, 47.65 GB GPU-only). GPU scripts pass `bash -n`; `comfy_job.py --dry-run` passes and refuses non-loopback servers.
 
+## Security review status (2026-11-24)
+
+Source review of everything that would be installed: no malicious code found; all scanner flags resolved in `RESULTS.md`. **Install on hold** until: a Bitdefender custom scan of `resources\repo-quarantine` is clean (Bitdefender flagged three audit *report* files as a stealer heuristic; no repository file was flagged), you say "install now" explicitly, and the motion-educator/stickman SkillSpector scans are retried or accepted. Record: `resources/repo-catalog/smoothie-approval-20261124.md`.
+
 ## What still needs you
 
-1. **"install now"** to run the three phases above.
+1. **Bitdefender custom scan** of `resources\repo-quarantine`, then **"install now"** to run the three phases above.
 2. **Keys / paid (only if you want them):** Vast.ai or RunPod account + API key for the GPU tier (a few cents to ~$0.30 per job, see GPU-TIER.md); Hypit, vox-director (Atlas Cloud), UGC-Factory/re-walkthrough/advertising-ops (Higgsfield, Apify), AutoClip and DeepTutor (LLM key) stay off unless you approve.
 3. **Access:** `ys-sites/insta-reels` is private: grant access (or add the Muse GitHub App) so Appendix D can be audited.
 4. **Optional installs, your choice:** MiKTeX (~1 GB) for Manim equations; Blender (~0.5 GB) for the Blender modes; LosslessCut/OBS as GUI tools.

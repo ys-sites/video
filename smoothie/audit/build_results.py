@@ -164,7 +164,7 @@ def main():
     head = ['| Name | Repo @ reviewed commit | Verdict | Merged into | Audit evidence (dry-run check) | Lives at when installed | Why |', '|---|---|---|---|---|---|---|']
     (HERE / 'results-repos.md').write_text('\n'.join(head + rows) + '\n', encoding='utf-8')
     print(len(out), 'repos;', counts)
-    extra_sections(HERE.parents[2])
+    extra_sections(HERE.parents[1])
 
 SITE_MAP = {  # website skill name -> unified skill
     'Remotion skills': 'vs-motion', 'captions-skill': 'vs-voice-captions', 'effects': 'vs-motion, vs-real-estate', 'talking-head-reels': 'vs-real-estate',

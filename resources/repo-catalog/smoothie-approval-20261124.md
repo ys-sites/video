@@ -14,4 +14,11 @@
 
 ## Approved to install
 
-STATUS: pending final scan results (filled in below when the scans finish).
+STATUS: **ON HOLD (not installed).**
+
+- Source review result: no malicious code found in the install set; every high-severity scanner flag was traced to tests, docs, defensive code or false positives (`smoothie/RESULTS.md`, "Scanner flags ... resolved in source").
+- Hold reasons:
+  1. Bitdefender (2026-11-24 00:03) quarantined three audit report files as `Generic.PY.Stealer` (grep listings of risky-pattern lines). Assessed as a heuristic false positive on text, but an independent Bitdefender custom scan of `resources\repo-quarantine` is required before install.
+  2. Claude Code's permission system blocked the install; it needs an explicit "install now" from the user (the earlier approval was conditional).
+  3. SkillSpector coverage for `zeative/motion-educator` and `kaomei/stickman-video-director` is incomplete (scanner timeout); retry or explicit acceptance of the manual review.
+- Approved set once the hold clears: npm `gsap@3.15.1`, `three@0.187.0`, `lottie-web@5.13.0`, `hyperframes@0.9.87` (all `--ignore-scripts`); `video-py` venv from `smoothie/install/video-py.lock.txt`; engines at the pinned commit + tree hash in `install.ps1` (ffmpeg-skill, sfx-generator, cinematic-film, still-to-film [`--no-upscale` only], motion-educator, stickman-director [code engine only], paper2video [inside video-py]); the eight `vs-*` skills.
