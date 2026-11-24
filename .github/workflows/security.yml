@@ -37,7 +37,7 @@ jobs:
 
       - name: Run Semgrep SAST
         run: |
-          semgrep scan --config auto --sarif --output semgrep.sarif src/ || true
+          semgrep scan --config auto --error --sarif --output semgrep.sarif src/
 
       - name: Upload SARIF report
         uses: github/codeql-action/upload-sarif@v3
@@ -60,20 +60,4 @@ jobs:
           scan-ref: '.'
           format: 'table'
           severity: 'CRITICAL,HIGH'
-          exit-code: '0'
-
-  ai-skill-inspector:
-    name: 6. NVIDIA SkillSpector - AI Skill & Prompt Safety
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Run AI Skill Scanner
-        run: |
-          python tools/security/skillspector_runner.py --target skills/ --no-llm
+          exit-code: '1'

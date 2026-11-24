@@ -15,6 +15,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / 'resources' / 'repo-catalog'
 LIBRARY = ROOT / 'resources' / 'concordia'
+EXTERNAL_INVENTORY = CATALOG / 'jack-agency-repositories-20261120.json'
+EXTERNAL_ROUTES = CATALOG / 'jack-agency-routing.json'
 STOP = {'the', 'and', 'for', 'from', 'with', 'this', 'that', 'your', 'using', 'video', 'skill', 'skills', 'create', 'make'}
 
 def words(value: str) -> set[str]:
@@ -47,6 +49,28 @@ def repositories() -> list[dict]:
         name = item['requested']
         mentions = [line.strip() for line in lines if re.search(r'https?://github\.com/' + re.escape(name) + r'(?![\w.\-/])', line, re.I)]
         result.append({'repository': name, 'url': 'https://github.com/' + name, 'github_metadata': item['metadata'], 'metadata_error': item['error'], 'mentions': mentions, 'local_reference': local.get(name.lower()), 'audit_status': 'not_audited', 'execution_status': 'not_approved', 'note': 'Repository metadata and local presence are not a security verdict.'})
+    existing = {item['repository'].lower() for item in result}
+    for item in routed_repositories():
+        if item['repository'].lower() not in existing:
+            result.append(item)
+    return result
+
+def routed_repositories() -> list[dict]:
+    """Join curated descriptions with recorded source locations; never load repo code."""
+    if not EXTERNAL_INVENTORY.is_file() or not EXTERNAL_ROUTES.is_file():
+        return []
+    inventory = json.loads(EXTERNAL_INVENTORY.read_text(encoding='utf-8'))
+    routes = json.loads(EXTERNAL_ROUTES.read_text(encoding='utf-8'))
+    by_name = {item['repository'].lower(): item for item in inventory['repositories']}
+    result = []
+    for route in routes['repositories']:
+        record = by_name.get(route['repository'].lower())
+        if not record:
+            continue
+        result.append({**route, 'url': record.get('source_url'),
+                       'local_reference': record.get('path'), 'source_revision': record.get('commit'),
+                       'checkout_status': record.get('checkout_status'),
+                       'audit_status': 'not_audited', 'execution_status': 'not_approved'})
     return result
 
 def main() -> None:
@@ -74,6 +98,16 @@ def main() -> None:
         for score, s in sorted(matches, key=lambda x: (-x[0], x[1]['path']))[:max(1, min(args.limit, 30))]:
             print(f"{score:2}  {s['name']}  [{s['status']}]\n    {s['path']}\n    {s['description'][:240]}")
         if not matches: print('No local skill reference matched. Check the task against the available installed skill catalog.')
-        print('\nSuggestions are unreviewed references, not installed skills or security approvals.')
+        repo_matches = []
+        for repo in routed_repositories():
+            title = words(repo['repository'] + ' ' + ' '.join(repo['keywords']))
+            desc = words(repo['description'])
+            score = 3 * len(q & title) + len(q & desc)
+            if score: repo_matches.append((score, repo))
+        if repo_matches:
+            print('\nStaged repository references:')
+            for score, repo in sorted(repo_matches, key=lambda x: (-x[0], x[1]['repository'].lower()))[:max(1, min(args.limit, 30))]:
+                print(f"{score:2}  {repo['repository']} [not audited; execution not approved]\n    {repo['local_reference']}\n    {repo['description']}")
+        print('\nSuggestions are unreviewed references, not security approvals; only entries marked installed_project_skill are installed.')
 
 if __name__ == '__main__': main()
