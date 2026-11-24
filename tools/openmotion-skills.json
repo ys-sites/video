@@ -1,47 +1,246 @@
 {
   "description": "Skills imported into the sibling OpenMotion checkout's library (../openmotion/library/skills) by tools/sync_openmotion_skills.py. Paths are relative to this repo root; '~' is the user home. Each entry becomes the OpenMotion skill id 'masvid-<id>'.",
   "skills": [
-    { "id": "creator-video", "source": "skills/creator-video", "group": "creator" },
-    { "id": "talking-head-reels", "source": "talking-head-reels/talking-head-reels", "group": "creator" },
-    { "id": "voiceover-glass-reel", "source": "voiceover-glass-reel/voiceover-glass-reel", "group": "creator" },
-    { "id": "pop-sticker-captions", "source": "captions-skill", "group": "creator" },
-    { "id": "effects", "source": "~/.claude/skills/effects", "group": "creator" },
-    { "id": "study-video", "source": "skills/study-video", "group": "study" },
-    { "id": "hyliox-pixel-perfect", "source": "skills/hyliox-pixel-perfect", "group": "design" },
-    { "id": "anatomy", "source": "~/.claude/skills/anatomy", "group": "design" },
-
-    { "id": "anidoodle", "source": "resources/motion-systems/anidoodle/skills/anidoodle", "group": "motion-system" },
-    { "id": "anything2explainer", "source": "resources/motion-systems/anything2explainer", "group": "motion-system" },
-    { "id": "bang-motion", "source": "resources/motion-systems/bang-motion", "group": "motion-system" },
-    { "id": "claude-drawing", "source": "resources/motion-systems/claude-drawing-skill", "group": "motion-system" },
-    { "id": "hand-drawn-explainer", "source": "resources/motion-systems/hand-drawn-explainer", "group": "motion-system" },
-    { "id": "handdraw", "source": "resources/motion-systems/handdraw-skill", "group": "motion-system" },
-    { "id": "huashu-art-motion", "source": "resources/motion-systems/huashu-art-motion", "group": "motion-system" },
-    { "id": "motion-skill", "source": "resources/motion-systems/motion-skill", "group": "motion-system" },
-    { "id": "javascript-animation", "source": "resources/motion-systems/javascript-animation-skills/skills/javascript-animation", "group": "motion-system" },
-    { "id": "soundtrack", "source": "resources/motion-systems/javascript-animation-skills/skills/soundtrack", "group": "motion-system" },
-    { "id": "manim-composer", "source": "resources/motion-systems/manim-skill/skills/manim-composer", "group": "motion-system" },
-    { "id": "manimce-best-practices", "source": "resources/motion-systems/manim-skill/skills/manimce-best-practices", "group": "motion-system" },
-    { "id": "manimgl-best-practices", "source": "resources/motion-systems/manim-skill/skills/manimgl-best-practices", "group": "motion-system" },
-    { "id": "motion-design", "source": "resources/motion-systems/motion-design-skill/skills/motion-design", "group": "motion-system" },
-    { "id": "paint-mv", "source": "resources/motion-systems/paint-mv-skills/skills/paint-mv", "group": "motion-system" },
-    { "id": "paint-mv-storyboard", "source": "resources/motion-systems/paint-mv-skills/skills/paint-mv-storyboard", "group": "motion-system" },
-    { "id": "paint-mv-animate", "source": "resources/motion-systems/paint-mv-skills/skills/paint-mv-animate", "group": "motion-system" },
-    { "id": "paint-mv-render", "source": "resources/motion-systems/paint-mv-skills/skills/paint-mv-render", "group": "motion-system" },
-
-    { "id": "ecc-video-editing", "source": ".claude/skills/ecc-video-editing", "group": "ecc" },
-    { "id": "ecc-taste", "source": ".claude/skills/ecc-taste", "group": "ecc" },
-    { "id": "ecc-manim-video", "source": ".claude/skills/ecc-manim-video", "group": "ecc" },
-    { "id": "ecc-motion-foundations", "source": ".claude/skills/ecc-motion-foundations", "group": "ecc" },
-    { "id": "ecc-motion-patterns", "source": ".claude/skills/ecc-motion-patterns", "group": "ecc" },
-    { "id": "ecc-motion-advanced", "source": ".claude/skills/ecc-motion-advanced", "group": "ecc" },
-    { "id": "ecc-ui-demo", "source": ".claude/skills/ecc-ui-demo", "group": "ecc" },
-    { "id": "ecc-short-video-distribution", "source": ".claude/skills/ecc-short-video-distribution", "group": "ecc" },
-    { "id": "ecc-content-engine", "source": ".claude/skills/ecc-content-engine", "group": "ecc" },
-    { "id": "ecc-brand-voice", "source": ".claude/skills/ecc-brand-voice", "group": "ecc" },
-    { "id": "ecc-marketing-campaign", "source": ".claude/skills/ecc-marketing-campaign", "group": "ecc" },
-    { "id": "ecc-frontend-design-direction", "source": ".claude/skills/ecc-frontend-design-direction", "group": "ecc" },
-    { "id": "ecc-design-system", "source": ".claude/skills/ecc-design-system", "group": "ecc" },
-    { "id": "ecc-make-interfaces-feel-better", "source": ".claude/skills/ecc-make-interfaces-feel-better", "group": "ecc" }
-  ]
+    {
+      "id": "creator-video",
+      "source": "skills/creator-video",
+      "group": "creator"
+    },
+    {
+      "id": "talking-head-reels",
+      "source": "talking-head-reels/talking-head-reels",
+      "group": "creator"
+    },
+    {
+      "id": "voiceover-glass-reel",
+      "source": "voiceover-glass-reel/voiceover-glass-reel",
+      "group": "creator"
+    },
+    {
+      "id": "pop-sticker-captions",
+      "source": "captions-skill",
+      "group": "creator"
+    },
+    {
+      "id": "effects",
+      "source": "~/.claude/skills/effects",
+      "group": "creator"
+    },
+    {
+      "id": "study-video",
+      "source": "skills/study-video",
+      "group": "study"
+    },
+    {
+      "id": "hyliox-pixel-perfect",
+      "source": "skills/hyliox-pixel-perfect",
+      "group": "design"
+    },
+    {
+      "id": "anatomy",
+      "source": "~/.claude/skills/anatomy",
+      "group": "design"
+    },
+    {
+      "id": "anidoodle",
+      "source": "resources/motion-systems/anidoodle/skills/anidoodle",
+      "group": "motion-system"
+    },
+    {
+      "id": "anything2explainer",
+      "source": "resources/motion-systems/anything2explainer",
+      "group": "motion-system"
+    },
+    {
+      "id": "bang-motion",
+      "source": "resources/motion-systems/bang-motion",
+      "group": "motion-system"
+    },
+    {
+      "id": "claude-drawing",
+      "source": "resources/motion-systems/claude-drawing-skill",
+      "group": "motion-system"
+    },
+    {
+      "id": "hand-drawn-explainer",
+      "source": "resources/motion-systems/hand-drawn-explainer",
+      "group": "motion-system"
+    },
+    {
+      "id": "handdraw",
+      "source": "resources/motion-systems/handdraw-skill",
+      "group": "motion-system"
+    },
+    {
+      "id": "huashu-art-motion",
+      "source": "resources/motion-systems/huashu-art-motion",
+      "group": "motion-system"
+    },
+    {
+      "id": "motion-skill",
+      "source": "resources/motion-systems/motion-skill",
+      "group": "motion-system"
+    },
+    {
+      "id": "javascript-animation",
+      "source": "resources/motion-systems/javascript-animation-skills/skills/javascript-animation",
+      "group": "motion-system"
+    },
+    {
+      "id": "soundtrack",
+      "source": "resources/motion-systems/javascript-animation-skills/skills/soundtrack",
+      "group": "motion-system"
+    },
+    {
+      "id": "manim-composer",
+      "source": "resources/motion-systems/manim-skill/skills/manim-composer",
+      "group": "motion-system"
+    },
+    {
+      "id": "manimce-best-practices",
+      "source": "resources/motion-systems/manim-skill/skills/manimce-best-practices",
+      "group": "motion-system"
+    },
+    {
+      "id": "manimgl-best-practices",
+      "source": "resources/motion-systems/manim-skill/skills/manimgl-best-practices",
+      "group": "motion-system"
+    },
+    {
+      "id": "motion-design",
+      "source": "resources/motion-systems/motion-design-skill/skills/motion-design",
+      "group": "motion-system"
+    },
+    {
+      "id": "paint-mv",
+      "source": "resources/motion-systems/paint-mv-skills/skills/paint-mv",
+      "group": "motion-system"
+    },
+    {
+      "id": "paint-mv-storyboard",
+      "source": "resources/motion-systems/paint-mv-skills/skills/paint-mv-storyboard",
+      "group": "motion-system"
+    },
+    {
+      "id": "paint-mv-animate",
+      "source": "resources/motion-systems/paint-mv-skills/skills/paint-mv-animate",
+      "group": "motion-system"
+    },
+    {
+      "id": "paint-mv-render",
+      "source": "resources/motion-systems/paint-mv-skills/skills/paint-mv-render",
+      "group": "motion-system"
+    },
+    {
+      "id": "ecc-video-editing",
+      "source": ".claude/skills/ecc-video-editing",
+      "group": "ecc"
+    },
+    {
+      "id": "ecc-taste",
+      "source": ".claude/skills/ecc-taste",
+      "group": "ecc"
+    },
+    {
+      "id": "ecc-manim-video",
+      "source": ".claude/skills/ecc-manim-video",
+      "group": "ecc"
+    },
+    {
+      "id": "ecc-motion-foundations",
+      "source": ".claude/skills/ecc-motion-foundations",
+      "group": "ecc"
+    },
+    {
+      "id": "ecc-motion-patterns",
+      "source": ".claude/skills/ecc-motion-patterns",
+      "group": "ecc"
+    },
+    {
+      "id": "ecc-motion-advanced",
+      "source": ".claude/skills/ecc-motion-advanced",
+      "group": "ecc"
+    },
+    {
+      "id": "ecc-ui-demo",
+      "source": ".claude/skills/ecc-ui-demo",
+      "group": "ecc"
+    },
+    {
+      "id": "ecc-short-video-distribution",
+      "source": ".claude/skills/ecc-short-video-distribution",
+      "group": "ecc"
+    },
+    {
+      "id": "ecc-content-engine",
+      "source": ".claude/skills/ecc-content-engine",
+      "group": "ecc"
+    },
+    {
+      "id": "ecc-brand-voice",
+      "source": ".claude/skills/ecc-brand-voice",
+      "group": "ecc"
+    },
+    {
+      "id": "ecc-marketing-campaign",
+      "source": ".claude/skills/ecc-marketing-campaign",
+      "group": "ecc"
+    },
+    {
+      "id": "ecc-frontend-design-direction",
+      "source": ".claude/skills/ecc-frontend-design-direction",
+      "group": "ecc"
+    },
+    {
+      "id": "ecc-design-system",
+      "source": ".claude/skills/ecc-design-system",
+      "group": "ecc"
+    },
+    {
+      "id": "ecc-make-interfaces-feel-better",
+      "source": ".claude/skills/ecc-make-interfaces-feel-better",
+      "group": "ecc"
+    },
+    {
+      "id": "vs-studio",
+      "source": ".claude/skills/vs-studio",
+      "group": "video-system"
+    },
+    {
+      "id": "vs-director",
+      "source": ".claude/skills/vs-director",
+      "group": "video-system"
+    },
+    {
+      "id": "vs-edit",
+      "source": ".claude/skills/vs-edit",
+      "group": "video-system"
+    },
+    {
+      "id": "vs-voice-captions",
+      "source": ".claude/skills/vs-voice-captions",
+      "group": "video-system"
+    },
+    {
+      "id": "vs-motion",
+      "source": ".claude/skills/vs-motion",
+      "group": "video-system"
+    },
+    {
+      "id": "vs-lesson",
+      "source": ".claude/skills/vs-lesson",
+      "group": "video-system"
+    },
+    {
+      "id": "vs-real-estate",
+      "source": ".claude/skills/vs-real-estate",
+      "group": "video-system"
+    },
+    {
+      "id": "vs-generate",
+      "source": ".claude/skills/vs-generate",
+      "group": "video-system"
+    }
+  ],
+  "site_styles": "Also generated: one 'masvid-style-<slug>' skill per free style on masvid.vercel.app (master-video-styles/data/styles.json, filtered by build.py's free_only)."
 }

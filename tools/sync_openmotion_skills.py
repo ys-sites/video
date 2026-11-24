@@ -71,6 +71,52 @@ def plan(src: Path) -> tuple[list[Path], int]:
     return keep, skipped
 
 
+def style_skills() -> list[tuple[str, str]]:
+    """One skill per free style shown on masvid.vercel.app, built from the site's own data."""
+    sys.path.insert(0, str(REPO / "master-video-styles" / "scripts"))
+    import build  # the site generator; importing it only loads the data files
+
+    styles, _ = build.free_only(build.STYLES["styles"], build.STYLES["tools"])
+    out = []
+    for s in styles:
+        desc = f"{s['title']} ({s.get('tag', '')}). {s.get('look', '')} Best for: {s.get('best_for', '')}"
+        desc = " ".join(desc.split()).replace('"', "'")
+        lines = [
+            "---",
+            f"name: masvid-style-{s['slug']}",
+            f'description: "Site style — {desc[:900]}"',
+            "---",
+            "",
+            f"# {s['title']}",
+            "",
+            "> **Generated from masvid.vercel.app** (`master-video-styles/data/styles.json`) by "
+            "`tools/sync_openmotion_skills.py`. Use it as creative direction for an OpenMotion composition; "
+            "OpenMotion's own Skills govern project tools, preview and export. Only the user's own or licensed "
+            "footage and audio go into the video.",
+            "",
+            f"**Tag:** {s.get('tag', '')}  ",
+            f"**Best for:** {s.get('best_for', '')}",
+            "",
+            "## Look",
+            "",
+            s.get("look", ""),
+            "",
+        ]
+        if s.get("rules"):
+            lines += ["## Rules", ""] + [f"- {r}" for r in s["rules"]] + [""]
+        if s.get("steps"):
+            lines += ["## Steps", ""]
+            for i, st in enumerate(s["steps"], 1):
+                lines.append(f"{i}. **{st.get('title', '')}** — {st.get('detail', '')}")
+            lines.append("")
+        if s.get("prompt"):
+            lines += ["## Brief to apply", "", s["prompt"], ""]
+        if s.get("reference_reel_note"):
+            lines += ["## Reference (study only, not licensed for reuse)", "", s["reference_reel_note"], ""]
+        out.append((f"{PREFIX}style-{s['slug']}", "\n".join(lines)))
+    return out
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--target", type=Path, default=DEFAULT_TARGET)
@@ -112,6 +158,19 @@ def main() -> int:
                 out.write_text(with_header(text, header(src, skipped)), encoding="utf-8")
             else:
                 shutil.copyfile(src / rel, out)
+
+    for name, text in style_skills():
+        dest = target / name
+        if dest.exists() and name not in previous:
+            problems.append(f"{name}: {dest} exists and is not owned by this sync; left untouched")
+            continue
+        print(f"{name:40}    1 files {len(text.encode('utf-8')) / 1024:9.0f} KB  (site style)")
+        synced.append(name)
+        if not args.dry_run:
+            if dest.exists():
+                shutil.rmtree(dest)
+            dest.mkdir(parents=True)
+            (dest / "SKILL.md").write_text(text, encoding="utf-8")
 
     stale = sorted(previous - set(synced) - {p.split(":")[0] for p in problems})
     for name in stale:
