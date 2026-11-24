@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "skills": {
+    "openmotion": {
+      "source": "nexu-io/openmotion",
+      "commit": "74a3d1e79d599673bc49e5e93aaa8707f1041804",
+      "sourceType": "github",
+      "skillPath": "skills/openmotion/SKILL.md",
+      "computedHash": "5927786406c25b10fcabf1da1b8ce954795dbb18bef11f89044c3449a7796596",
+      "installMode": "copy"
+    }
+  }
+}

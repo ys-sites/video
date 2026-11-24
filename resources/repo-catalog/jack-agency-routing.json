@@ -1,0 +1,20 @@
+{
+  "repositories": [
+    {"repository":"tashfeenahmed/freellmapi","category":"ai-infrastructure","description":"Reference for routing requests among LLM providers; provider accounts, keys, limits and privacy require separate review.","keywords":["llm","models","provider","api","routing","free"]},
+    {"repository":"vercel-labs/agent-desktop","category":"automation","description":"Desktop accessibility based computer-use reference; consider privacy and permissions before any deployment.","keywords":["desktop","computer","accessibility","automation"]},
+    {"repository":"lemomo-ai/lemo-opuscar","category":"video-production","description":"Code-generated film style reference for real estate films, creator videos and educational explainers; use the existing creator or study route first.","keywords":["film","cinematic","real-estate","property","listing","home","tour","opuscar","animation","styles"]},
+    {"repository":"addyosmani/agent-skills","category":"software-development","description":"Engineering skill library reference for software planning, implementation and review.","keywords":["coding","engineering","development","planning","review"]},
+    {"repository":"WorldFlowAI/everything-claude-code","category":"software-development","description":"Collection of agent configuration, skills and commands for development reference.","keywords":["coding","agent","development","configuration","claude"]},
+    {"repository":"ItsssssJack/SlopMonster","category":"writing","description":"Reference for reviewing repetitive AI writing patterns in scripts and other English text.","keywords":["writing","script","copy","draft","slop","editing"]},
+    {"repository":"meta/astryx","category":"design","description":"React and StyleX design system reference for interface design and components.","keywords":["react","website","design","interface","components","astryx"]},
+    {"repository":"Donchitos/Claude-Code-Game-Studios","category":"games","description":"Claude Code browser game creation workflow reference.","keywords":["game","games","browser","interactive","studio"]},
+    {"repository":"p-e-w/heretic","category":"model-research","description":"Training-free language-model modification research; not a multi-agent orchestration system.","keywords":["model","language","modification","heretic","research"]},
+    {"repository":"gosom/google-maps-scraper","category":"agency-research","description":"Google Maps business data collection reference; review source terms and privacy before use.","keywords":["google","maps","business","lead","prospecting","scraper"]},
+    {"repository":"huginn/huginn","category":"agency-automation","description":"Self-hosted event and feed automation reference.","keywords":["automation","events","feeds","workflow","monitor"]},
+    {"repository":"firecrawl/firecrawl","category":"agency-research","description":"Website crawling and content extraction reference; review source terms and privacy before use.","keywords":["website","crawl","scrape","research","extract"]},
+    {"repository":"reacherhq/check-if-email-exists","category":"agency-email","description":"Email existence checking reference; external network checks and results have limitations.","keywords":["email","verify","validation","address"]},
+    {"repository":"remoteintech/remote-jobs","category":"agency-research","description":"Community-maintained remote-friendly technology company directory reference.","keywords":["remote","jobs","companies","technology","directory"]},
+    {"repository":"knadh/listmonk","category":"agency-email","description":"Self-hosted mailing list and newsletter manager reference.","keywords":["email","newsletter","mailing","list","campaign"]},
+    {"repository":"twentyhq/twenty","category":"agency-crm","description":"Self-hosted customer relationship management platform reference.","keywords":["crm","customer","contacts","sales","agency","pipeline"]}
+  ]
+}

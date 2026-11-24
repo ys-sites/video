@@ -1,0 +1,9 @@
+# Jack and agency repository routes
+
+These 16 repositories are staged as source references. The machine-readable mapping is `resources/repo-catalog/jack-agency-routing.json`; exact checkouts and revisions are in `resources/repo-catalog/jack-agency-repositories-20261120.json`. `python tools/resource_catalog.py route "<task>"` now suggests matching repositories as well as existing local skill references. Suggestions are not installations, audit findings, or authorization to run code.
+
+- For a property film, home tour, or other code-made film, use the creator-video route first; Lemo Opuscar is a style reference. Study videos continue to use the study-video route. Do not claim that the Opuscar renderer is installed or working.
+- For scripts, SlopMonster is a writing reference. Agent Skills and Everything Claude Code are software workflow references. Agent Desktop is a desktop-control reference, while Astryx is a React design system, not an agent framework. Game Studios concerns browser games; Heretic concerns language-model modification, not parallel agents.
+- For agency research, Firecrawl and Google Maps Scraper are possible content and business-data references; remote-jobs is a directory. Huginn concerns event automation; Reacher concerns email checking; listmonk concerns newsletters; Twenty is a CRM. None is connected to the editor, running, sending messages, or collecting data through this integration.
+
+Follow the workspace security gate before installing or executing any of these references. The gate is currently fail-closed; quarantine is not OS-level isolation, and the recorded source revisions do not establish safety. Review licensing, credentials, privacy, and applicable source terms for the specific task. The new clones skipped Git LFS and submodules; their missing assets may need separate acquisition after review. Preserve the user's original resources and projects.

@@ -1251,6 +1251,283 @@
       "audit_status": "not_audited",
       "execution_status": "not_approved",
       "note": "Repository metadata and local presence are not a security verdict."
+    },
+    {
+      "repository": "tashfeenahmed/freellmapi",
+      "category": "ai-infrastructure",
+      "description": "Reference for routing requests among LLM providers; provider accounts, keys, limits and privacy require separate review.",
+      "keywords": [
+        "llm",
+        "models",
+        "provider",
+        "api",
+        "routing",
+        "free"
+      ],
+      "url": "https://github.com/tashfeenahmed/freellmapi.git",
+      "local_reference": "resources/repo-quarantine/tashfeenahmed/freellmapi",
+      "source_revision": "7ad9097fd9d83bc3e1af0f925ea813a913b18dde",
+      "checkout_status": "clean tracked working tree",
+      "audit_status": "not_audited",
+      "execution_status": "not_approved"
+    },
+    {
+      "repository": "vercel-labs/agent-desktop",
+      "category": "automation",
+      "description": "Desktop accessibility based computer-use reference; consider privacy and permissions before any deployment.",
+      "keywords": [
+        "desktop",
+        "computer",
+        "accessibility",
+        "automation"
+      ],
+      "url": "https://github.com/vercel-labs/agent-desktop.git",
+      "local_reference": "resources/repo-quarantine/vercel-labs/agent-desktop",
+      "source_revision": "e8934a5e95e1d212c74ead95cd3e4701c04eca31",
+      "checkout_status": "clean tracked working tree",
+      "audit_status": "not_audited",
+      "execution_status": "not_approved"
+    },
+    {
+      "repository": "lemomo-ai/lemo-opuscar",
+      "category": "video-production",
+      "description": "Code-generated film style reference for real estate films, creator videos and educational explainers; use the existing creator or study route first.",
+      "keywords": [
+        "film",
+        "cinematic",
+        "real-estate",
+        "property",
+        "listing",
+        "home",
+        "tour",
+        "opuscar",
+        "animation",
+        "styles"
+      ],
+      "url": "https://github.com/lemomo-ai/lemo-opuscar.git",
+      "local_reference": "resources/repo-quarantine/lemomo-ai/lemo-opuscar",
+      "source_revision": "f9e204293930952b61ba921cd8944d05f121beee",
+      "checkout_status": "clean tracked working tree",
+      "audit_status": "not_audited",
+      "execution_status": "not_approved"
+    },
+    {
+      "repository": "addyosmani/agent-skills",
+      "category": "software-development",
+      "description": "Engineering skill library reference for software planning, implementation and review.",
+      "keywords": [
+        "coding",
+        "engineering",
+        "development",
+        "planning",
+        "review"
+      ],
+      "url": "https://github.com/addyosmani/agent-skills.git",
+      "local_reference": "resources/repo-quarantine/addyosmani/agent-skills",
+      "source_revision": "8c99fa36d90068c82d547f7c12a9d67a3e95f4ee",
+      "checkout_status": "clean tracked working tree",
+      "audit_status": "not_audited",
+      "execution_status": "not_approved"
+    },
+    {
+      "repository": "WorldFlowAI/everything-claude-code",
+      "category": "software-development",
+      "description": "Collection of agent configuration, skills and commands for development reference.",
+      "keywords": [
+        "coding",
+        "agent",
+        "development",
+        "configuration",
+        "claude"
+      ],
+      "url": "https://github.com/WorldFlowAI/everything-claude-code.git",
+      "local_reference": "resources/repo-quarantine/WorldFlowAI/everything-claude-code",
+      "source_revision": "432485ba6b92c14fb357276a98957f348bcff9ee",
+      "checkout_status": "clean tracked working tree",
+      "audit_status": "not_audited",
+      "execution_status": "not_approved"
+    },
+    {
+      "repository": "ItsssssJack/SlopMonster",
+      "category": "writing",
+      "description": "Reference for reviewing repetitive AI writing patterns in scripts and other English text.",
+      "keywords": [
+        "writing",
+        "script",
+        "copy",
+        "draft",
+        "slop",
+        "editing"
+      ],
+      "url": "https://github.com/ItsssssJack/SlopMonster.git",
+      "local_reference": "resources/repo-quarantine/retries/ItsssssJack/SlopMonster",
+      "source_revision": "3fc9787d9337b57c599a80afbefbbb3be5a8eb0b",
+      "checkout_status": "clean tracked working tree",
+      "audit_status": "not_audited",
+      "execution_status": "not_approved"
+    },
+    {
+      "repository": "Donchitos/Claude-Code-Game-Studios",
+      "category": "games",
+      "description": "Claude Code browser game creation workflow reference.",
+      "keywords": [
+        "game",
+        "games",
+        "browser",
+        "interactive",
+        "studio"
+      ],
+      "url": "https://github.com/Donchitos/Claude-Code-Game-Studios.git",
+      "local_reference": "resources/repo-quarantine/Donchitos/Claude-Code-Game-Studios",
+      "source_revision": "abc0de79d6ceb0b5d7aa693945849b3937afbe6a",
+      "checkout_status": "clean tracked working tree",
+      "audit_status": "not_audited",
+      "execution_status": "not_approved"
+    },
+    {
+      "repository": "p-e-w/heretic",
+      "category": "model-research",
+      "description": "Training-free language-model modification research; not a multi-agent orchestration system.",
+      "keywords": [
+        "model",
+        "language",
+        "modification",
+        "heretic",
+        "research"
+      ],
+      "url": "https://github.com/p-e-w/heretic.git",
+      "local_reference": "resources/repo-quarantine/p-e-w/heretic",
+      "source_revision": "aecd4a845a23be3f96ddc03b37b53a9195ee2566",
+      "checkout_status": "clean tracked working tree",
+      "audit_status": "not_audited",
+      "execution_status": "not_approved"
+    },
+    {
+      "repository": "gosom/google-maps-scraper",
+      "category": "agency-research",
+      "description": "Google Maps business data collection reference; review source terms and privacy before use.",
+      "keywords": [
+        "google",
+        "maps",
+        "business",
+        "lead",
+        "prospecting",
+        "scraper"
+      ],
+      "url": "https://github.com/gosom/google-maps-scraper.git",
+      "local_reference": "resources/repo-quarantine/gosom/google-maps-scraper",
+      "source_revision": "6a766a4ec0988bd7f5750cfc6ad7b158762b9ae6",
+      "checkout_status": "clean tracked working tree",
+      "audit_status": "not_audited",
+      "execution_status": "not_approved"
+    },
+    {
+      "repository": "huginn/huginn",
+      "category": "agency-automation",
+      "description": "Self-hosted event and feed automation reference.",
+      "keywords": [
+        "automation",
+        "events",
+        "feeds",
+        "workflow",
+        "monitor"
+      ],
+      "url": "https://github.com/huginn/huginn.git",
+      "local_reference": "resources/repo-quarantine/huginn/huginn",
+      "source_revision": "c1850b84cf9b74d13050cc2a21b60ca133d41608",
+      "checkout_status": "clean tracked working tree",
+      "audit_status": "not_audited",
+      "execution_status": "not_approved"
+    },
+    {
+      "repository": "firecrawl/firecrawl",
+      "category": "agency-research",
+      "description": "Website crawling and content extraction reference; review source terms and privacy before use.",
+      "keywords": [
+        "website",
+        "crawl",
+        "scrape",
+        "research",
+        "extract"
+      ],
+      "url": "https://github.com/firecrawl/firecrawl.git",
+      "local_reference": "resources/repo-quarantine/firecrawl/firecrawl",
+      "source_revision": "41b36dfd28ad69df7da221d1d51f3d5fb4838be3",
+      "checkout_status": "clean tracked working tree",
+      "audit_status": "not_audited",
+      "execution_status": "not_approved"
+    },
+    {
+      "repository": "reacherhq/check-if-email-exists",
+      "category": "agency-email",
+      "description": "Email existence checking reference; external network checks and results have limitations.",
+      "keywords": [
+        "email",
+        "verify",
+        "validation",
+        "address"
+      ],
+      "url": "https://github.com/reacherhq/check-if-email-exists.git",
+      "local_reference": "resources/repo-quarantine/reacherhq/check-if-email-exists",
+      "source_revision": "906dc8a9b12728ac04fff4e8c4568f336c7e0c1f",
+      "checkout_status": "clean tracked working tree",
+      "audit_status": "not_audited",
+      "execution_status": "not_approved"
+    },
+    {
+      "repository": "remoteintech/remote-jobs",
+      "category": "agency-research",
+      "description": "Community-maintained remote-friendly technology company directory reference.",
+      "keywords": [
+        "remote",
+        "jobs",
+        "companies",
+        "technology",
+        "directory"
+      ],
+      "url": "https://github.com/remoteintech/remote-jobs.git",
+      "local_reference": "resources/repo-quarantine/remoteintech/remote-jobs",
+      "source_revision": "155939ad935d22afa8edbaaf0770b99f9d0dbf0d",
+      "checkout_status": "clean tracked working tree",
+      "audit_status": "not_audited",
+      "execution_status": "not_approved"
+    },
+    {
+      "repository": "knadh/listmonk",
+      "category": "agency-email",
+      "description": "Self-hosted mailing list and newsletter manager reference.",
+      "keywords": [
+        "email",
+        "newsletter",
+        "mailing",
+        "list",
+        "campaign"
+      ],
+      "url": "https://github.com/knadh/listmonk.git",
+      "local_reference": "resources/repo-quarantine/knadh/listmonk",
+      "source_revision": "e735e0b23421192a4c1b18b6221f4708b872fcd5",
+      "checkout_status": "clean tracked working tree",
+      "audit_status": "not_audited",
+      "execution_status": "not_approved"
+    },
+    {
+      "repository": "twentyhq/twenty",
+      "category": "agency-crm",
+      "description": "Self-hosted customer relationship management platform reference.",
+      "keywords": [
+        "crm",
+        "customer",
+        "contacts",
+        "sales",
+        "agency",
+        "pipeline"
+      ],
+      "url": "https://github.com/twentyhq/twenty.git",
+      "local_reference": "resources/repo-quarantine/twentyhq/twenty",
+      "source_revision": "6b993c2d87062685d4574c84a85d92ff42369a8e",
+      "checkout_status": "clean tracked working tree",
+      "audit_status": "not_audited",
+      "execution_status": "not_approved"
     }
   ]
 }

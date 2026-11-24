@@ -22,3 +22,6 @@ __pycache__/
 # Third-party real-estate reel references (local research only; creators retain rights).
 real-estate-reels/
 real-estate-reels-expansion/
+
+# local git worktrees
+.claude/worktrees/

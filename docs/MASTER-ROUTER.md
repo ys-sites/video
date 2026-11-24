@@ -31,6 +31,8 @@ One map of every tool, skill, repo and asset in this workspace. For any request 
 
 Unsure which skill fits? `python tools/resource_catalog.py route "<task>"` suggests candidates (it never runs them).
 
+The Jack and agency repositories are routed by `docs/jack-agency-routing.md` and inventoried in `resources/repo-catalog/jack-agency-repositories-20261120.json`. `python tools/resource_catalog.py route "<task>"` suggests matching staged repositories. Their quarantine checkouts are source references, not approved tools; consult the inventory for exact locations, revisions, checkout completeness, and audit status before use.
+
 ## 2. Capability status
 
 **Ready now** — Claude skills/connectors in this environment: `remotion:*` (create, render, captions, studio), `effects` (45 talking-head effects), `anatomy` (isometric explainer figures), `dataviz`; MCP: REA (web/binary analysis), HyperFrames by HeyGen (hosted projects only), fish audio (TTS/voice, paid credits), invideo, Canva.
@@ -64,6 +66,8 @@ Unsure which skill fits? `python tools/resource_catalog.py route "<task>"` sugge
 - FreeVideo on the cloud route: Linux RTX 30/40/50 box (16 GB VRAM + 32 GB RAM ≈ 8–10 min per 5 s clip per its benchmarks), clone the reviewed commit, `./setup.sh` with official-only sources, `freevideo server` on 127.0.0.1 and reach it through `ssh -L`. Never `--listen 0.0.0.0` on a public host.
 
 ## 4. Security rules for anything new
+
+`SECURITY.md` describes the current partial setup. `python tools/security/master_audit.py` is a read-only readiness check, not an audit; it exits nonzero while the full isolation and coverage requirements remain unverified. The four legacy scanner wrappers are disabled because their results were misleading. The GitHub Actions file defines TruffleHog, Semgrep and Trivy jobs; check actual runs and branch protection separately. SkillSpector is installed, but a scan needs independently established isolation and egress controls.
 
 1. Stage only: `resources/repo-quarantine/<owner>/<repo>` via the hardened clone (no hooks, LFS, submodules or symlinks; shallow) with a `*.provenance.json` (commit, date).
 2. Triage read-only: install hooks, download-and-execute, pickle weights, `trust_remote_code`, extra package indexes, shipped binaries, secrets, hidden Unicode, prompt-injection text. Record in `resources/repo-catalog/quarantine-triage-20261119.md` (or a new dated file).
