@@ -1,0 +1,42 @@
+{
+  "name": "open-design-ui",
+  "styles": [
+    "packages/design-system/tailwind.css",
+    "packages/design-system/studio.css"
+  ],
+  "items": [
+    {
+      "name": "button",
+      "title": "Button",
+      "description": "Trigger an action with the shared size, variant and loading states.",
+      "source": "packages/open-design-ui/button.tsx",
+      "export": "Button",
+      "example": "<Button type=\"button\" variant=\"primary\" onClick={save}>Save changes</Button>",
+      "consumer": "studio/src/motion/CaptionsPanel.tsx",
+      "import": "open-design-ui/button",
+      "adoption": { "mode": "enforced" }
+    },
+    {
+      "name": "icon-button",
+      "title": "IconButton",
+      "description": "Trigger an action with a square, icon-only button.",
+      "source": "packages/open-design-ui/icon-button.tsx",
+      "export": "IconButton",
+      "example": "<IconButton type=\"button\" aria-label=\"Add music\" icon={musicIcon} onClick={chooseFile} />",
+      "consumer": "studio/src/motion/TimelineCaptionActions.tsx",
+      "import": "open-design-ui/icon-button",
+      "adoption": { "mode": "opt-in", "review": "Check focus and hit areas in compact timeline toolbars before requiring IconButton for icon-only actions." }
+    },
+    {
+      "name": "slider",
+      "title": "Slider",
+      "description": "Adjust a bounded number by dragging or using the keyboard.",
+      "source": "packages/open-design-ui/slider.tsx",
+      "export": "Slider",
+      "example": "<Slider label=\"Guidance scale\" min={1} max={10} step={1} value={value} onCommit={setValue} />",
+      "consumer": "studio/src/motion/GenerationParameters.tsx",
+      "import": "open-design-ui/slider",
+      "adoption": { "mode": "enforced" }
+    }
+  ]
+}

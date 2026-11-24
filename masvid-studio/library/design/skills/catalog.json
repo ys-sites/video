@@ -1,0 +1,1261 @@
+{
+  "schemaVersion": 1,
+  "skills": [
+    {
+      "id": "8-bit-orbit-video-template",
+      "title": "8 Bit Orbit Video Template",
+      "description": "8 Bit Orbit Video Template design skill.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Create a 3-page Hyperframes video deck in 8-bit retro style with advanced transitions, rich motion, and each page under 3 seconds."
+    },
+    {
+      "id": "ad-creative",
+      "title": "Ad Creative",
+      "description": "Ad Creative design skill.",
+      "scenario": null,
+      "category": "marketing-creative",
+      "examplePrompt": null
+    },
+    {
+      "id": "after-hours-editorial-template",
+      "title": "After Hours Editorial Template",
+      "description": "After Hours Editorial Template design skill.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Create a three-page HyperFrames editorial sequence in a dark haute-couture style: premium serif typography, magenta accent, elegant chapter transitions, and cinematic grain. Keep each page under 3 seconds."
+    },
+    {
+      "id": "agent-browser",
+      "title": "Agent Browser",
+      "description": "{'test, or automate browser behavior': 'navigating pages, filling forms,'}",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": null
+    },
+    {
+      "id": "ai-music-album",
+      "title": "AI Music Album",
+      "description": "AI Music Album design skill.",
+      "scenario": null,
+      "category": "audio-music",
+      "examplePrompt": null
+    },
+    {
+      "id": "algorithmic-art",
+      "title": "Algorithmic Art",
+      "description": "Algorithmic Art design skill.",
+      "scenario": null,
+      "category": "image-generation",
+      "examplePrompt": null
+    },
+    {
+      "id": "animate",
+      "title": "animate",
+      "description": "Implement purposeful interface animations: easing, springs, interruption, exits, and reduced motion. Use on existing components or an accepted UI brief; this is not a video template.",
+      "scenario": null,
+      "category": "animation-motion",
+      "examplePrompt": null
+    },
+    {
+      "id": "apple-hig",
+      "title": "Apple Hig",
+      "description": "Apple Hig design skill.",
+      "scenario": null,
+      "category": "design-systems",
+      "examplePrompt": null
+    },
+    {
+      "id": "article-magazine",
+      "title": "Article Magazine",
+      "description": "Huashu / huashu-md-html-inspired magazine article layout for turning Markdown or notes into a polished long-form HTML essay.",
+      "scenario": "document",
+      "category": "general",
+      "examplePrompt": "Use the Magazine Article template to turn my content into a Huashu / huashu-md-html-inspired long-form HTML essay. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "artifacts-builder",
+      "title": "Artifacts Builder",
+      "description": "Artifacts Builder design skill.",
+      "scenario": null,
+      "category": "web-artifacts",
+      "examplePrompt": null
+    },
+    {
+      "id": "brainstorming",
+      "title": "brainstorming",
+      "description": "brainstorming design skill.",
+      "scenario": null,
+      "category": "creative-direction",
+      "examplePrompt": null
+    },
+    {
+      "id": "brand-extract",
+      "title": "Brand Extract",
+      "description": "Brand Extract design skill.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": null
+    },
+    {
+      "id": "brand-guidelines",
+      "title": "Brand Guidelines",
+      "description": "Brand Guidelines design skill.",
+      "scenario": null,
+      "category": "design-systems",
+      "examplePrompt": null
+    },
+    {
+      "id": "brandkit",
+      "title": "brandkit",
+      "description": "brandkit design skill.",
+      "scenario": null,
+      "category": "image-generation",
+      "examplePrompt": "|"
+    },
+    {
+      "id": "brutalist-skill",
+      "title": "Industrial Brutalist UI",
+      "description": "Industrial Brutalist UI design skill.",
+      "scenario": null,
+      "category": "creative-direction",
+      "examplePrompt": "|"
+    },
+    {
+      "id": "canvas-design",
+      "title": "Canvas Design",
+      "description": "Canvas Design design skill.",
+      "scenario": null,
+      "category": "image-generation",
+      "examplePrompt": null
+    },
+    {
+      "id": "card-twitter",
+      "title": "Card Twitter",
+      "description": "Twitter quote or data card designed to pair with a post.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Use the Twitter Share Card template to turn my content into a Twitter quote or data card designed to pair with a post. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "card-xiaohongshu",
+      "title": "Card Xiaohongshu",
+      "description": "Xiaohongshu-style knowledge cards, arranged as a swipeable multi-card carousel.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Use the Xiaohongshu Card template to turn my content into a Xiaohongshu-style swipeable knowledge-card carousel. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "chat-motion-overlay",
+      "title": "Chat Motion Overlay",
+      "description": "Generate configurable chat motion overlays from a transcript or screenshot, including plain bubble scenes, app-style chat containers, optional device frames, preset or uploaded avatars, nickname display rules, and tra...",
+      "scenario": null,
+      "category": "animation-motion",
+      "examplePrompt": null
+    },
+    {
+      "id": "color-expert",
+      "title": "Color Expert",
+      "description": "Color Expert design skill.",
+      "scenario": null,
+      "category": "design-systems",
+      "examplePrompt": null
+    },
+    {
+      "id": "competitive-ads-extractor",
+      "title": "Competitive Ads Extractor",
+      "description": "Competitive Ads Extractor design skill.",
+      "scenario": null,
+      "category": "marketing-creative",
+      "examplePrompt": null
+    },
+    {
+      "id": "copywriting",
+      "title": "copywriting",
+      "description": "copywriting design skill.",
+      "scenario": null,
+      "category": "marketing-creative",
+      "examplePrompt": null
+    },
+    {
+      "id": "creative-director",
+      "title": "Creative Director",
+      "description": "{'AI creative director with recursive self-assessment': '20+ methodologies (SIT, TRIZ, Bisociation, SCAMPER, Synectics), 3-axis evaluation calibrated against Cannes/D&AD/HumanKind, 5-phase process from brief to presen...",
+      "scenario": null,
+      "category": "creative-direction",
+      "examplePrompt": null
+    },
+    {
+      "id": "d3-visualization",
+      "title": "D3 Visualization",
+      "description": "D3 Visualization design skill.",
+      "scenario": null,
+      "category": "diagrams",
+      "examplePrompt": null
+    },
+    {
+      "id": "data-report",
+      "title": "Data Report",
+      "description": "Turns CSV, Excel, or JSON data into a polished visual report page.",
+      "scenario": "document",
+      "category": "general",
+      "examplePrompt": "Use the Data Visualization Report template to turn my CSV, Excel, or JSON data into a polished visual report page. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "deck-guizang-editorial",
+      "title": "Deck Guizang Editorial",
+      "description": "Editorial magazine meets e-ink: 10 layouts and 5 palettes (Ink, Indigo Porcelain, Forest Ink, Kraft Paper, Dune).",
+      "scenario": "deck",
+      "category": "general",
+      "examplePrompt": "Use the Guizang Editorial E-Ink Deck template to turn my content into an editorial magazine x e-ink horizontal deck with 10 layouts and 5 palettes. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "deck-open-slide-canvas",
+      "title": "Deck Open Slide Canvas",
+      "description": "Locked 1920x1080 canvas deck with React component-level free composition, not bound to a fixed template.",
+      "scenario": "deck",
+      "category": "general",
+      "examplePrompt": "Use the Open-Slide 1920 Canvas Deck template to turn my content into a locked 1920x1080 free-composition deck with React component-level layout. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "deck-swiss-international",
+      "title": "Deck Swiss International",
+      "description": "16-column grid, one saturated accent, and 22 locked layouts (Klein Blue, Lemon, Mint, Safety Orange).",
+      "scenario": "deck",
+      "category": "general",
+      "examplePrompt": "Use the Swiss International Deck template to turn my content into a 16-column-grid deck with one saturated accent and 22 locked layouts. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "design-brief",
+      "title": "Design Brief",
+      "description": "{'\"make it professional\" by requiring explicit dimensions': 'palette, typography,', 'Trigger keywords': 'design brief\", \"create a design brief\", \"ilang brief\", \"structured brief\".'}",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": null
+    },
+    {
+      "id": "design-consultation",
+      "title": "Design Consultation",
+      "description": "Design Consultation design skill.",
+      "scenario": null,
+      "category": "creative-direction",
+      "examplePrompt": null
+    },
+    {
+      "id": "design-md",
+      "title": "Design Md",
+      "description": "Design Md design skill.",
+      "scenario": null,
+      "category": "design-systems",
+      "examplePrompt": null
+    },
+    {
+      "id": "design-review",
+      "title": "Design Review",
+      "description": "{'Designer Who Codes': 'visual audit then fixes with atomic commits and before/after screenshots. Useful for tightening shipped UI before launch.'}",
+      "scenario": null,
+      "category": "creative-direction",
+      "examplePrompt": null
+    },
+    {
+      "id": "digits-fintech-swiss-template",
+      "title": "Digits Fintech Swiss Template",
+      "description": "Digits Fintech Swiss Template design skill.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Create a Swiss-grid fintech strategy deck with modular data cards, lime accents, and clean keyboard navigation."
+    },
+    {
+      "id": "doc",
+      "title": "doc",
+      "description": "doc design skill.",
+      "scenario": "document",
+      "category": "documents",
+      "examplePrompt": null
+    },
+    {
+      "id": "doc-kami-parchment",
+      "title": "Doc Kami Parchment",
+      "description": "Warm parchment canvas (#f5f4ed), monochrome ink-blue accent (#1B365D), one serif family, and editorial-grade typography.",
+      "scenario": "document",
+      "category": "general",
+      "examplePrompt": "Use the Kami Parchment Document template to turn my content into a warm parchment document with monochrome ink-blue accents, one serif family, and editorial-grade typography. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "docx",
+      "title": "docx",
+      "description": "docx design skill.",
+      "scenario": "document",
+      "category": "documents",
+      "examplePrompt": null
+    },
+    {
+      "id": "domain-name-brainstormer",
+      "title": "Domain Name Brainstormer",
+      "description": "Domain Name Brainstormer design skill.",
+      "scenario": null,
+      "category": "marketing-creative",
+      "examplePrompt": null
+    },
+    {
+      "id": "ecommerce-image-workflow",
+      "title": "Ecommerce Image Workflow",
+      "description": "Ecommerce Image Workflow design skill.",
+      "scenario": null,
+      "category": "image-generation",
+      "examplePrompt": "|"
+    },
+    {
+      "id": "editorial-burgundy-principles-template",
+      "title": "Editorial Burgundy Principles Template",
+      "description": "Editorial Burgundy Principles Template design skill.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Create a premium editorial deck in burgundy and blush with a tag cloud slide and an eight-principles card grid."
+    },
+    {
+      "id": "emil-design-eng",
+      "title": "Emil Design Eng",
+      "description": "Emil Design Eng design skill.",
+      "scenario": null,
+      "category": "design-engineering",
+      "examplePrompt": "|"
+    },
+    {
+      "id": "emilkowalski-motion",
+      "title": "Emilkowalski Motion",
+      "description": "Emilkowalski Motion design skill.",
+      "scenario": null,
+      "category": "animation-motion",
+      "examplePrompt": "|"
+    },
+    {
+      "id": "enhance-prompt",
+      "title": "Enhance Prompt",
+      "description": "Enhance Prompt design skill.",
+      "scenario": null,
+      "category": "design-systems",
+      "examplePrompt": null
+    },
+    {
+      "id": "export-download-debugging",
+      "title": "Export Download Debugging",
+      "description": "Export Download Debugging design skill.",
+      "scenario": null,
+      "category": "web-artifacts",
+      "examplePrompt": null
+    },
+    {
+      "id": "faq-page",
+      "title": "FAQ Page",
+      "description": "FAQ Page design skill.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": null
+    },
+    {
+      "id": "field-notes-editorial-template",
+      "title": "Field Notes Editorial Template",
+      "description": "Field Notes Editorial Template design skill.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Create an editorial Field Notes style report with three insight cards, key metrics blocks, and a retention line chart in one polished single-file HTML page."
+    },
+    {
+      "id": "figma-code-connect-components",
+      "title": "Figma Code Connect Components",
+      "description": "Figma Code Connect Components design skill.",
+      "scenario": null,
+      "category": "figma",
+      "examplePrompt": null
+    },
+    {
+      "id": "figma-create-design-system-rules",
+      "title": "Figma Create Design System Rules",
+      "description": "Figma Create Design System Rules design skill.",
+      "scenario": null,
+      "category": "figma",
+      "examplePrompt": null
+    },
+    {
+      "id": "figma-create-new-file",
+      "title": "Figma Create New File",
+      "description": "Figma Create New File design skill.",
+      "scenario": null,
+      "category": "figma",
+      "examplePrompt": null
+    },
+    {
+      "id": "figma-generate-design",
+      "title": "Figma Generate Design",
+      "description": "Figma Generate Design design skill.",
+      "scenario": null,
+      "category": "figma",
+      "examplePrompt": null
+    },
+    {
+      "id": "figma-generate-library",
+      "title": "Figma Generate Library",
+      "description": "Figma Generate Library design skill.",
+      "scenario": null,
+      "category": "figma",
+      "examplePrompt": null
+    },
+    {
+      "id": "figma-implement-design",
+      "title": "Figma Implement Design",
+      "description": "{'Translate Figma designs into production-ready code with 1': '1 visual fidelity. Useful for handing off Figma frames straight to a frontend agent.'}",
+      "scenario": null,
+      "category": "figma",
+      "examplePrompt": null
+    },
+    {
+      "id": "figma-use",
+      "title": "Figma Use",
+      "description": "Figma Use design skill.",
+      "scenario": null,
+      "category": "figma",
+      "examplePrompt": null
+    },
+    {
+      "id": "flutter-animating-apps",
+      "title": "Flutter Animating Apps",
+      "description": "Flutter Animating Apps design skill.",
+      "scenario": null,
+      "category": "animation-motion",
+      "examplePrompt": null
+    },
+    {
+      "id": "frame-data-chart-nyt",
+      "title": "Frame Data Chart Nyt",
+      "description": "NYT-newsroom typography, staggered reveal animation, and editorial-grade charts (line, bar, or range band).",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Use the NYT-Style Data Chart Frame template to turn my content into a frame with NYT-newsroom typography, staggered reveal animation, and editorial-grade charts. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "frame-flowchart-sticky",
+      "title": "Frame Flowchart Sticky",
+      "description": "SVG curve connectors, sticky-note nodes, and cursor interaction with a whiteboard-brainstorm feel.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Use the Sticky Flowchart Frame template to turn my content into a whiteboard-brainstorm frame with SVG curve connectors, sticky-note nodes, and cursor interaction. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "frame-glitch-title",
+      "title": "Frame Glitch Title",
+      "description": "Digital glitch, chromatic offset, and data-corruption title frame for video transitions or cyberpunk heroes.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Use the Glitch Title Frame template to turn my content into a digital-glitch, chromatic-offset, data-corruption title frame for a video transition or cyberpunk hero. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "frame-light-leak-cinema",
+      "title": "Frame Light Leak Cinema",
+      "description": "Film light leaks, grain, 16:9 letterbox, and large serif type for cinematic openings or chapter cards.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Use the Light-Leak Cinematic Frame template to turn my content into a cinematic opening or chapter card with film light leaks, grain, letterbox framing, and large serif type. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "frame-liquid-bg-hero",
+      "title": "Frame Liquid Bg Hero",
+      "description": "WebGL-style fluid displacement background with a quote overlay, suited to video intros, landing heroes, or posters.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Use the Liquid Background Hero template to turn my content into a WebGL-style fluid displacement background with a quote overlay for a video intro, landing hero, or poster. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "frame-logo-outro",
+      "title": "Frame Logo Outro",
+      "description": "Segmented logo assembly, glow bloom, and tagline reveal for video outros or brand closing frames.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Use the Logo Outro Frame template to turn my content into a video outro or brand closing frame with segmented logo assembly, glow bloom, and tagline reveal. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "frame-macos-notification",
+      "title": "Frame Macos Notification",
+      "description": "Realistic macOS notification banner with app icon, title, and body, suited to video overlays or product teasers.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Use the macOS Notification Banner template to turn my content into a realistic macOS notification banner for a video overlay or product teaser. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "frontend-design",
+      "title": "Frontend Design",
+      "description": "Frontend Design design skill.",
+      "scenario": null,
+      "category": "web-artifacts",
+      "examplePrompt": "Design and build a production-quality SaaS analytics dashboard for a finance team, with real interaction states, refined typography, and a distinctive visual direction."
+    },
+    {
+      "id": "frontend-dev",
+      "title": "Frontend Dev",
+      "description": "Frontend Dev design skill.",
+      "scenario": null,
+      "category": "web-artifacts",
+      "examplePrompt": null
+    },
+    {
+      "id": "frontend-skill",
+      "title": "Frontend Skill",
+      "description": "Frontend Skill design skill.",
+      "scenario": null,
+      "category": "design-systems",
+      "examplePrompt": null
+    },
+    {
+      "id": "frontend-slides",
+      "title": "Frontend Slides",
+      "description": "Frontend Slides design skill.",
+      "scenario": "deck",
+      "category": "slides",
+      "examplePrompt": null
+    },
+    {
+      "id": "full-page-screenshot",
+      "title": "Full Page Screenshot",
+      "description": "Full Page Screenshot design skill.",
+      "scenario": null,
+      "category": "screenshots",
+      "examplePrompt": null
+    },
+    {
+      "id": "gif-sticker-maker",
+      "title": "Gif Sticker Maker",
+      "description": "Gif Sticker Maker design skill.",
+      "scenario": null,
+      "category": "image-generation",
+      "examplePrompt": null
+    },
+    {
+      "id": "gpt-tasteskill",
+      "title": "Gpt Taste",
+      "description": "Gpt Taste design skill.",
+      "scenario": null,
+      "category": "creative-direction",
+      "examplePrompt": "|"
+    },
+    {
+      "id": "gsap-core",
+      "title": "Gsap Core",
+      "description": "Gsap Core design skill.",
+      "scenario": null,
+      "category": "animation-motion",
+      "examplePrompt": null
+    },
+    {
+      "id": "gsap-frameworks",
+      "title": "Gsap Frameworks",
+      "description": "Gsap Frameworks design skill.",
+      "scenario": null,
+      "category": "animation-motion",
+      "examplePrompt": null
+    },
+    {
+      "id": "gsap-performance",
+      "title": "Gsap Performance",
+      "description": "Gsap Performance design skill.",
+      "scenario": null,
+      "category": "animation-motion",
+      "examplePrompt": null
+    },
+    {
+      "id": "gsap-plugins",
+      "title": "Gsap Plugins",
+      "description": "Gsap Plugins design skill.",
+      "scenario": null,
+      "category": "animation-motion",
+      "examplePrompt": null
+    },
+    {
+      "id": "gsap-react",
+      "title": "Gsap React",
+      "description": "Gsap React design skill.",
+      "scenario": null,
+      "category": "animation-motion",
+      "examplePrompt": null
+    },
+    {
+      "id": "gsap-scrolltrigger",
+      "title": "Gsap Scrolltrigger",
+      "description": "Gsap Scrolltrigger design skill.",
+      "scenario": null,
+      "category": "animation-motion",
+      "examplePrompt": null
+    },
+    {
+      "id": "gsap-timeline",
+      "title": "Gsap Timeline",
+      "description": "Gsap Timeline design skill.",
+      "scenario": null,
+      "category": "animation-motion",
+      "examplePrompt": null
+    },
+    {
+      "id": "gsap-utils",
+      "title": "Gsap Utils",
+      "description": "Gsap Utils design skill.",
+      "scenario": null,
+      "category": "animation-motion",
+      "examplePrompt": null
+    },
+    {
+      "id": "hand-drawn-diagrams",
+      "title": "Hand Drawn Diagrams",
+      "description": "Hand Drawn Diagrams design skill.",
+      "scenario": null,
+      "category": "diagrams",
+      "examplePrompt": null
+    },
+    {
+      "id": "hatch-pet",
+      "title": "Hatch Pet",
+      "description": "Create, repair, validate, preview, and package Codex-compatible animated pet spritesheets from character art, screenshots, generated images, or visual references. Use when a user wants to hatch a Codex pet, create a c...",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Hatch me a tiny pixel-art shiba pet \u2014 friendly, sitting upright, with a small pomegranate prop. Use the hatch-pet skill end-to-end."
+    },
+    {
+      "id": "html-ppt-retro-quarterly-review",
+      "title": "HTML PPT Retro Quarterly Review",
+      "description": "HTML PPT Retro Quarterly Review design skill.",
+      "scenario": "deck",
+      "category": "general",
+      "examplePrompt": null
+    },
+    {
+      "id": "huashu-art-motion",
+      "title": "Huashu Art Motion",
+      "description": "\u8f85\u52a9\u827a\u672f\u52a8\u753b\u4e0e\u89e3\u8bf4\u4efb\u52a1\uff1a35 \u79cd\u827a\u672f\u98ce\u683c\u914d\u65b9\u30019 \u79cd\u89e3\u8bf4\u8bed\u6cd5\u3001\u5206\u955c\u4e0e\u786e\u5b9a\u6027 Canvas \u7ed8\u5236\u5de5\u5177\u3002\u6309\u5bbf\u4e3b\u65f6\u95f4\u8f74\u5b9e\u73b0\uff0c\u7d20\u6750\u4e0e\u5bfc\u51fa\u4f7f\u7528\u5bbf\u4e3b\u80fd\u529b\u3002",
+      "scenario": null,
+      "category": "animation-motion",
+      "examplePrompt": null
+    },
+    {
+      "id": "image-enhancer",
+      "title": "Image Enhancer",
+      "description": "Image Enhancer design skill.",
+      "scenario": null,
+      "category": "image-generation",
+      "examplePrompt": null
+    },
+    {
+      "id": "image-to-code-skill",
+      "title": "Image To Code",
+      "description": "Image To Code design skill.",
+      "scenario": null,
+      "category": "web-artifacts",
+      "examplePrompt": "|"
+    },
+    {
+      "id": "imagegen",
+      "title": "imagegen",
+      "description": "imagegen design skill.",
+      "scenario": null,
+      "category": "image-generation",
+      "examplePrompt": null
+    },
+    {
+      "id": "imagegen-frontend-mobile",
+      "title": "Imagegen Frontend Mobile",
+      "description": "Imagegen Frontend Mobile design skill.",
+      "scenario": null,
+      "category": "image-generation",
+      "examplePrompt": "|"
+    },
+    {
+      "id": "imagegen-frontend-web",
+      "title": "Imagegen Frontend Web",
+      "description": "Imagegen Frontend Web design skill.",
+      "scenario": null,
+      "category": "image-generation",
+      "examplePrompt": "|"
+    },
+    {
+      "id": "imagen",
+      "title": "imagen",
+      "description": "imagen design skill.",
+      "scenario": null,
+      "category": "image-generation",
+      "examplePrompt": null
+    },
+    {
+      "id": "impeccable-design-polish",
+      "title": "Impeccable Design Polish",
+      "description": "Impeccable Design Polish design skill.",
+      "scenario": null,
+      "category": "creative-direction",
+      "examplePrompt": "|"
+    },
+    {
+      "id": "library-curator",
+      "title": "Library Curator",
+      "description": "Library Curator design skill.",
+      "scenario": null,
+      "category": "assets",
+      "examplePrompt": null
+    },
+    {
+      "id": "login-flow",
+      "title": "Login Flow",
+      "description": "Mobile login and authentication flow screens",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": null
+    },
+    {
+      "id": "marketing-psychology",
+      "title": "Marketing Psychology",
+      "description": "Marketing Psychology design skill.",
+      "scenario": null,
+      "category": "marketing-creative",
+      "examplePrompt": null
+    },
+    {
+      "id": "minimalist-skill",
+      "title": "Minimalist UI",
+      "description": "Minimalist UI design skill.",
+      "scenario": null,
+      "category": "creative-direction",
+      "examplePrompt": "|"
+    },
+    {
+      "id": "minimax-docx",
+      "title": "Minimax Docx",
+      "description": "Minimax Docx design skill.",
+      "scenario": null,
+      "category": "documents",
+      "examplePrompt": null
+    },
+    {
+      "id": "minimax-pdf",
+      "title": "Minimax Pdf",
+      "description": "Minimax Pdf design skill.",
+      "scenario": null,
+      "category": "documents",
+      "examplePrompt": null
+    },
+    {
+      "id": "mockup-device-3d",
+      "title": "Mockup Device 3D",
+      "description": "Static iPhone and MacBook 3D-style showcase with real HTML embedded on screens, glass-lens refraction, and 360-degree turntable composition.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Use the Device 3D Showcase template to turn my content into a static iPhone and MacBook 3D-style showcase with real HTML embedded on the screens. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "motion-design",
+      "title": "Motion Design",
+      "description": "Apply motion craft to an active task: refine a brief, beat map, visual continuity, typography, pacing, and timeline implementation. Use when planning or improving motion graphics; the host task owns artifact creation,...",
+      "scenario": null,
+      "category": "animation-motion",
+      "examplePrompt": "Create a 15-second motion film for a focus timer. Show scattered thoughts converging into one clear task, with expressive typography, a continuous visual motif, and a confident closing frame."
+    },
+    {
+      "id": "motion-lab",
+      "title": "Motion Lab",
+      "description": "\u4e3a\u5f53\u524d\u7f51\u9875\u6216\u7ec4\u4ef6\u67e5\u627e\u3001\u9009\u578b\u548c\u6539\u9020\u52a8\u6548\u3002\u5305\u542b 160 \u4e2a\u6848\u4f8b\u7684 HTML/CSS/JS\u3001\u53c2\u6570\u4e0e\u4e2d\u82f1\u6587\u7d22\u5f15\uff0c\u8986\u76d6\u57fa\u7840\u3001\u6587\u5b57\u3001\u4ea4\u4e92\u548c\u9ad8\u7ea7\u52a8\u6548\u3002",
+      "scenario": null,
+      "category": "animation-motion",
+      "examplePrompt": null
+    },
+    {
+      "id": "nanobanana-ppt",
+      "title": "Nanobanana PPT",
+      "description": "Nanobanana PPT design skill.",
+      "scenario": "deck",
+      "category": "image-generation",
+      "examplePrompt": null
+    },
+    {
+      "id": "od-next-media-inputs",
+      "title": "Od Next Media Inputs",
+      "description": "Od Next Media Inputs design skill.",
+      "scenario": null,
+      "category": "image-generation",
+      "examplePrompt": "Prepare the media inputs required by the frozen plan, preserving every asset slot and quality requirement."
+    },
+    {
+      "id": "oil-motion",
+      "title": "Oil Motion",
+      "description": "\u5904\u7406\u89c6\u9891\u548c\u5e8f\u5217\u5e27\uff0c\u7f16\u8bd1\u6eda\u52a8\u3001\u6307\u9488\u3001\u62d6\u52a8\u4e0e\u72b6\u6001\u9a71\u52a8\u7684\u7f51\u9875\u52a8\u6548\uff1b\u5185\u542b\u672c\u5730\u5a92\u4f53\u5904\u7406\u811a\u672c\u548c\u8fd0\u884c\u65f6\u3002\u65b0\u7d20\u6750\u751f\u6210\u4f7f\u7528\u5bbf\u4e3b\u5de5\u5177\u3002",
+      "scenario": null,
+      "category": "animation-motion",
+      "examplePrompt": null
+    },
+    {
+      "id": "output-skill",
+      "title": "Full Output Enforcement",
+      "description": "Full Output Enforcement design skill.",
+      "scenario": null,
+      "category": "agent-workflow",
+      "examplePrompt": "|"
+    },
+    {
+      "id": "paywall-upgrade-cro",
+      "title": "Paywall Upgrade Cro",
+      "description": "Paywall Upgrade Cro design skill.",
+      "scenario": null,
+      "category": "marketing-creative",
+      "examplePrompt": null
+    },
+    {
+      "id": "pdf",
+      "title": "pdf",
+      "description": "pdf design skill.",
+      "scenario": null,
+      "category": "documents",
+      "examplePrompt": null
+    },
+    {
+      "id": "pixelbin-media",
+      "title": "Pixelbin Media",
+      "description": "Pixelbin Media design skill.",
+      "scenario": null,
+      "category": "image-generation",
+      "examplePrompt": null
+    },
+    {
+      "id": "plan-design-review",
+      "title": "Plan Design Review",
+      "description": "{'Senior Designer review': 'rates each design dimension 0-10, explains what a 10 looks like, and flags AI Slop signals. Useful as a gate before merging UI work.'}",
+      "scenario": null,
+      "category": "creative-direction",
+      "examplePrompt": null
+    },
+    {
+      "id": "platform-design",
+      "title": "Platform Design",
+      "description": "Platform Design design skill.",
+      "scenario": null,
+      "category": "design-systems",
+      "examplePrompt": null
+    },
+    {
+      "id": "poster-hero",
+      "title": "Poster Hero",
+      "description": "Vertical poster or Moments-style share image with strong visual impact.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Use the Marketing Poster template to turn my content into a vertical poster or Moments-style share image with strong visual impact. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "ppt-keynote",
+      "title": "PPT Keynote",
+      "description": "Apple Keynote-quality slides, one card per screen, with keyboard left/right navigation.",
+      "scenario": "deck",
+      "category": "general",
+      "examplePrompt": "Use the Keynote-style Slides template to turn my content into Apple Keynote-quality slides with one card per screen and keyboard left/right navigation. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "pptx",
+      "title": "pptx",
+      "description": "pptx design skill.",
+      "scenario": "deck",
+      "category": "slides",
+      "examplePrompt": null
+    },
+    {
+      "id": "pptx-generator",
+      "title": "Pptx Generator",
+      "description": "Pptx Generator design skill.",
+      "scenario": "deck",
+      "category": "slides",
+      "examplePrompt": null
+    },
+    {
+      "id": "pptx-html-fidelity-audit",
+      "title": "Pptx HTML Fidelity Audit",
+      "description": "Audit a python-pptx export against its source HTML deck, identify layout/content drift (footer overflow, cropped content, missing italic/em, lost styling, off-rhythm spacing), and re-export with strict footer-rail + c...",
+      "scenario": "deck",
+      "category": "general",
+      "examplePrompt": null
+    },
+    {
+      "id": "pr-feedback-quality-gate",
+      "title": "Pr Feedback Quality Gate",
+      "description": "Pr Feedback Quality Gate design skill.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": null
+    },
+    {
+      "id": "redesign-skill",
+      "title": "Redesign Existing Projects",
+      "description": "Redesign Existing Projects design skill.",
+      "scenario": null,
+      "category": "creative-direction",
+      "examplePrompt": "|"
+    },
+    {
+      "id": "reference-design-contract",
+      "title": "Reference Design Contract",
+      "description": "Reference Design Contract design skill.",
+      "scenario": null,
+      "category": "design-systems",
+      "examplePrompt": "Create a reference design contract for a developer-notes app. The direction should feel editorial, calm, tactile, and serious, but not copy any specific product. Produce DESIGN.md and an implementation handoff."
+    },
+    {
+      "id": "release-notes-one-pager",
+      "title": "Release Notes One Pager",
+      "description": "Release Notes One Pager design skill.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Write release notes for v2.3.1 with Added, Fixed, Breaking changes, Known issues, and an Upgrade note."
+    },
+    {
+      "id": "remotion",
+      "title": "remotion",
+      "description": "remotion design skill.",
+      "scenario": null,
+      "category": "video-generation",
+      "examplePrompt": null
+    },
+    {
+      "id": "replicate",
+      "title": "replicate",
+      "description": "replicate design skill.",
+      "scenario": null,
+      "category": "image-generation",
+      "examplePrompt": null
+    },
+    {
+      "id": "research-decision-room",
+      "title": "Research Decision Room",
+      "description": "{'context into an evidence-backed decision room': 'a single HTML artifact with an'}",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Synthesize 8 interview notes, 24 support tickets, and recent activation metrics into a research decision room for whether a project-management app should add an onboarding checklist or contextual inline tips."
+    },
+    {
+      "id": "resume-modern",
+      "title": "Resume Modern",
+      "description": "Modern minimal resume, single A4 page, ready for print or PDF export.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Use the Modern Resume template to turn my content into a modern minimal single-page A4 resume ready for print or PDF export. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "review-animations",
+      "title": "Review Animations",
+      "description": "Review Animations design skill.",
+      "scenario": null,
+      "category": "animation-motion",
+      "examplePrompt": "|"
+    },
+    {
+      "id": "screenshot",
+      "title": "screenshot",
+      "description": "screenshot design skill.",
+      "scenario": null,
+      "category": "screenshots",
+      "examplePrompt": null
+    },
+    {
+      "id": "screenshots-marketing",
+      "title": "Screenshots Marketing",
+      "description": "Screenshots Marketing design skill.",
+      "scenario": null,
+      "category": "screenshots",
+      "examplePrompt": null
+    },
+    {
+      "id": "shadcn-ui",
+      "title": "Shadcn UI",
+      "description": "Shadcn UI design skill.",
+      "scenario": null,
+      "category": "design-systems",
+      "examplePrompt": null
+    },
+    {
+      "id": "shader-dev",
+      "title": "Shader Dev",
+      "description": "Shader Dev design skill.",
+      "scenario": null,
+      "category": "3d-shaders",
+      "examplePrompt": null
+    },
+    {
+      "id": "slack-gif-creator",
+      "title": "Slack Gif Creator",
+      "description": "Slack Gif Creator design skill.",
+      "scenario": null,
+      "category": "image-generation",
+      "examplePrompt": null
+    },
+    {
+      "id": "slides",
+      "title": "slides",
+      "description": "slides design skill.",
+      "scenario": "deck",
+      "category": "slides",
+      "examplePrompt": null
+    },
+    {
+      "id": "social-reddit-card",
+      "title": "Social Reddit Card",
+      "description": "Realistic Reddit post card with vote rail and comment count, suited to video overlays or story sharing.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Use the Reddit Post Card template to turn my content into a realistic Reddit post card with vote rail and comment count for a video overlay or story share. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "social-spotify-card",
+      "title": "Social Spotify Card",
+      "description": "Spotify Now Playing-style card with album art, progress bar, and playback controls, suited to video overlays or personal homepages.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Use the Spotify Now-Playing Card template to turn my content into a Spotify Now Playing-style card with album art, progress bar, and playback controls for a video overlay or personal homepage. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "social-x-post-card",
+      "title": "Social X Post Card",
+      "description": "Realistic X post card with engagement metrics (likes, reposts, views), suited to video overlays or shareable image cards.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Use the X / Twitter Post Card template to turn my content into a realistic X post card with engagement metrics for a video overlay or shareable image card. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "soft-skill",
+      "title": "High End Visual Design",
+      "description": "High End Visual Design design skill.",
+      "scenario": null,
+      "category": "creative-direction",
+      "examplePrompt": "|"
+    },
+    {
+      "id": "sora",
+      "title": "sora",
+      "description": "sora design skill.",
+      "scenario": null,
+      "category": "video-generation",
+      "examplePrompt": null
+    },
+    {
+      "id": "speech",
+      "title": "speech",
+      "description": "speech design skill.",
+      "scenario": null,
+      "category": "audio-music",
+      "examplePrompt": null
+    },
+    {
+      "id": "stitch-loop",
+      "title": "Stitch Loop",
+      "description": "Stitch Loop design skill.",
+      "scenario": null,
+      "category": "design-systems",
+      "examplePrompt": null
+    },
+    {
+      "id": "stitch-skill",
+      "title": "Stitch Design Taste",
+      "description": "Stitch Design Taste design skill.",
+      "scenario": null,
+      "category": "design-systems",
+      "examplePrompt": "|"
+    },
+    {
+      "id": "swiftui-design",
+      "title": "Swiftui Design",
+      "description": "Swiftui Design design skill.",
+      "scenario": null,
+      "category": "design-systems",
+      "examplePrompt": null
+    },
+    {
+      "id": "swiss-creative-mode-template",
+      "title": "Swiss Creative Mode Template",
+      "description": "Swiss Creative Mode Template design skill.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": null
+    },
+    {
+      "id": "swiss-user-research-video-template",
+      "title": "Swiss User Research Video Template",
+      "description": "Swiss User Research Video Template design skill.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Create a Swiss-style user research synthesis deck with premium minimalist typography, warm paper tone, a participant donut breakdown, and subtle editorial interactions."
+    },
+    {
+      "id": "taste-skill",
+      "title": "Design Taste Frontend",
+      "description": "Design Taste Frontend design skill.",
+      "scenario": null,
+      "category": "creative-direction",
+      "examplePrompt": "|"
+    },
+    {
+      "id": "taste-skill-v1",
+      "title": "Design Taste Frontend V1",
+      "description": "Design Taste Frontend V1 design skill.",
+      "scenario": null,
+      "category": "creative-direction",
+      "examplePrompt": "|"
+    },
+    {
+      "id": "theme-factory",
+      "title": "Theme Factory",
+      "description": "Theme Factory design skill.",
+      "scenario": null,
+      "category": "design-systems",
+      "examplePrompt": null
+    },
+    {
+      "id": "threejs",
+      "title": "threejs",
+      "description": "threejs design skill.",
+      "scenario": null,
+      "category": "3d-shaders",
+      "examplePrompt": null
+    },
+    {
+      "id": "ui-animation",
+      "title": "UI Animation",
+      "description": "Implement, review, and measure UI motion. Reconstruct easing, springs and gestures from a recording using bundled frame extraction, tracking and curve-fitting tools when available.",
+      "scenario": null,
+      "category": "animation-motion",
+      "examplePrompt": null
+    },
+    {
+      "id": "ui-skills",
+      "title": "UI Skills",
+      "description": "UI Skills design skill.",
+      "scenario": null,
+      "category": "design-systems",
+      "examplePrompt": null
+    },
+    {
+      "id": "ui-ux-pro-max",
+      "title": "UI UX Pro Max",
+      "description": "UI UX Pro Max design skill.",
+      "scenario": null,
+      "category": "design-systems",
+      "examplePrompt": null
+    },
+    {
+      "id": "venice-audio-music",
+      "title": "Venice Audio Music",
+      "description": "Venice Audio Music design skill.",
+      "scenario": null,
+      "category": "audio-music",
+      "examplePrompt": null
+    },
+    {
+      "id": "venice-audio-speech",
+      "title": "Venice Audio Speech",
+      "description": "Venice Audio Speech design skill.",
+      "scenario": null,
+      "category": "audio-music",
+      "examplePrompt": null
+    },
+    {
+      "id": "venice-image-edit",
+      "title": "Venice Image Edit",
+      "description": "Venice Image Edit design skill.",
+      "scenario": null,
+      "category": "image-generation",
+      "examplePrompt": null
+    },
+    {
+      "id": "venice-image-generate",
+      "title": "Venice Image Generate",
+      "description": "Venice Image Generate design skill.",
+      "scenario": null,
+      "category": "image-generation",
+      "examplePrompt": null
+    },
+    {
+      "id": "venice-video",
+      "title": "Venice Video",
+      "description": "Venice Video design skill.",
+      "scenario": null,
+      "category": "video-generation",
+      "examplePrompt": null
+    },
+    {
+      "id": "vfx-text-cursor",
+      "title": "Vfx Text Cursor",
+      "description": "Cursor light trail, chromatic rays, and directional flares for word-by-word quote reveals in video intros.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Use the VFX Text Cursor template to turn my content into a video-intro quote reveal with cursor light trails, chromatic rays, and directional flares. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "video-downloader",
+      "title": "Video Downloader",
+      "description": "Video Downloader design skill.",
+      "scenario": null,
+      "category": "video-generation",
+      "examplePrompt": null
+    },
+    {
+      "id": "video-hyperframes",
+      "title": "Video Hyperframes",
+      "description": "Hyperframes / Remotion-compatible continuous frame animation with autoplay support.",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Use the Hyperframes Video template to turn my content into a Hyperframes / Remotion-compatible continuous frame animation with autoplay support. Preserve the template's visual signature, use real content and data, and avoid lorem ipsum or placeholder images."
+    },
+    {
+      "id": "web-artifacts-builder",
+      "title": "Web Artifacts Builder",
+      "description": "Web Artifacts Builder design skill.",
+      "scenario": null,
+      "category": "web-artifacts",
+      "examplePrompt": null
+    },
+    {
+      "id": "web-clone",
+      "title": "Web Clone",
+      "description": ">",
+      "scenario": "web-clone",
+      "category": "general",
+      "examplePrompt": null
+    },
+    {
+      "id": "web-design-guidelines",
+      "title": "Web Design Guidelines",
+      "description": "Web Design Guidelines design skill.",
+      "scenario": null,
+      "category": "design-systems",
+      "examplePrompt": "|"
+    },
+    {
+      "id": "weread-year-in-review-video-template",
+      "title": "Weread Year In Review Video Template",
+      "description": "{'stories. Use when users want a 9': '16 HTML-to-MP4 reading report with warm paper'}",
+      "scenario": null,
+      "category": "general",
+      "examplePrompt": "Create a WeRead-style 9:16 HyperFrames annual reading report video with 12 scenes, warm paper texture, book-page transitions, reading stats, notes, keywords, and a final reading persona card."
+    },
+    {
+      "id": "wpds",
+      "title": "wpds",
+      "description": "wpds design skill.",
+      "scenario": null,
+      "category": "design-systems",
+      "examplePrompt": null
+    },
+    {
+      "id": "writing-guidelines",
+      "title": "Writing Guidelines",
+      "description": "Writing Guidelines design skill.",
+      "scenario": null,
+      "category": "documentation",
+      "examplePrompt": "|"
+    },
+    {
+      "id": "youtube-clipper",
+      "title": "Youtube Clipper",
+      "description": "Youtube Clipper design skill.",
+      "scenario": null,
+      "category": "video-generation",
+      "examplePrompt": null
+    }
+  ]
+}

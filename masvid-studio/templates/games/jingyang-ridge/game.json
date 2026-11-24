@@ -1,0 +1,26 @@
+{
+  "id": "jingyang-ridge",
+  "title": "Jingyang Ridge",
+  "description": "Wu Song meets the white-browed tiger on Jingyang Ridge, painted in ink wash. Read the pounce, swipe and tail-sweep tells, dodge into a safe lane and punish the tiger while it recovers.",
+  "genre": "casual",
+  "style": "anime",
+  "setting": "medieval",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "Left / Right or A / D dodge · Space / J / click strike · touch buttons on phones · P / Esc pause · R restart",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-23T00:00:00.000Z",
+  "updatedAt": "2026-11-23T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "景阳冈",
+      "description": "水墨风《水浒传》武松打虎。看清猛虎扑、掀、剪的起手，闪到安全的位置，趁它落空时连拳打虎。",
+      "controls": "← → 或 A / D 闪避 · 空格 / J / 点击 出拳 · 手机用屏幕按钮 · P / Esc 暂停 · R 重开"
+    }
+  }
+}

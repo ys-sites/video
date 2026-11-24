@@ -1,0 +1,6 @@
+/* Shared by the Studio shell and the embeddable timeline component sheet. */
+.timeline-clip.is-selected,
+.timeline-clip[data-active].is-selected {
+  outline: 3px solid var(--timeline-clip-selection);
+  outline-offset: 0;
+}

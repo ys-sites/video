@@ -1,0 +1,26 @@
+{
+  "id": "rooftop-roast",
+  "title": "Rooftop Roast",
+  "description": "Fly a tiny drone over a city block, collect five coffee beans and land on the café roof to win a free coffee. A promo game any local business can rebrand by editing one SHOP object.",
+  "genre": "casual",
+  "style": "minimal",
+  "setting": "modern",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "Arrows / WASD fly · Q E or Shift / Space climb and descend · touch stick and ▲ ▼ on phones · P / Esc pause · R restart",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-23T00:00:00.000Z",
+  "updatedAt": "2026-11-23T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "屋顶咖啡",
+      "description": "驾驶小无人机飞过街区，收齐 5 颗咖啡豆，降落在咖啡店屋顶就能兑换一杯咖啡。改一个 SHOP 配置，就能换成任何本地小店的推广小游戏。",
+      "controls": "方向键 / WASD 飞行 · Q E 或 Shift / 空格 升降 · 手机用摇杆和 ▲ ▼ · P / Esc 暂停 · R 重开"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "last-light",
+  "title": "Last Light",
+  "description": "Search the abandoned Blackwood school for three keys before your torch fades. Keep the pursuing shade in your beam, replenish your light and unlock the east exit.",
+  "genre": "horror",
+  "style": "minimal",
+  "setting": "modern",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "WASD / arrows to move; mouse to aim. Hold the mouse or drag on touch to walk toward the pointer. Enter / Space to start. P / Escape to pause. R to restart.",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-20T00:00:00.000Z",
+  "updatedAt": "2026-11-20T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "最后的光",
+      "description": "在废弃的黑木学校里，手电熄灭前找到三把钥匙。用光束逼退追来的暗影，补充电量，打开东侧出口。",
+      "controls": "WASD / 方向键移动，鼠标瞄准手电；按住鼠标或触屏拖动朝指针方向走 · Enter / 空格开始 · P / Esc 暂停 · R 重开"
+    }
+  }
+}

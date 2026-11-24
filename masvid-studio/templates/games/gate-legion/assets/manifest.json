@@ -1,0 +1,90 @@
+{
+  "generator": "Built-in image_gen",
+  "originalArtwork": true,
+  "atlasLayout": "4 x 4",
+  "processing": "Cell extraction, alpha cleanup, WebP compression; cover normalized without cropping title. Sprites downscaled to 192 x 192 and cover to 400 px wide to fit the default npm package size budget.",
+  "atlasPrompt": "Create a production-ready original 16-bit pixel art GAME ASSET ATLAS, square 1024x1024, strict 4 columns by 4 rows of equal 256x256 cells. Every cell separated by empty margin, no labels no text no grid lines. Transparent background for all cells except terrain cells. All assets original medieval army game. Row1: [seamless richly detailed lush grassy ground tile viewed overhead; seamless dry dirt road tile viewed overhead; blue helmet soldier running frame one large centered isolated; same blue helmet soldier running frame two]. Row2: [red helmet enemy soldier frame one; red helmet enemy soldier frame two; ornate wooden rectangular blue gate sign with posts empty center; matching red gate sign empty center]. Row3: [red medieval army camp with tents and banner; gold coin cluster; tiny leafy bush; wooden shield]. Row4: [wood framed dark-blue UI panel empty center; white gloved pointing hand tutorial cursor; golden sparkle hit impact; blue shield emblem]. Crisp low-resolution pixels, dark outlines, highly readable silhouettes, rich handcrafted terrain texture, classic premium 16-bit videogame quality. STRICT evenly spaced 4x4 cells; every object stays inside its own cell.",
+  "coverPrompt": "Use case: ads-marketing. Original premium mobile game COVER illustration, portrait 9:16 around 768x1360. Lush 16-bit pixel art medieval grassy terrain with a winding broad dirt road, a dense crowd of dozens of tiny BLUE helmeted soldiers charging up the road toward two large wooden gates with bright blue and red signs clearly reading \"+10\" and \"×2\", distant RED enemy army camp. Charming elaborate grass tufts stones flowers and tent details. Highly finished game promotional art with depth, tactile material details and lively motion, not abstract primitive shapes. Main action occupies middle 75%, keep top 15% for a beautifully crafted title reading exactly \"GATE LEGION\". No other text. Crisp readable composition at phone size. No existing game characters, logos or brands.",
+  "files": [
+    {
+      "file": "00.webp",
+      "cell": 0,
+      "bytes": 14120
+    },
+    {
+      "file": "01.webp",
+      "cell": 1,
+      "bytes": 9908
+    },
+    {
+      "file": "02.webp",
+      "cell": 2,
+      "bytes": 25556
+    },
+    {
+      "file": "03.webp",
+      "cell": 3,
+      "bytes": 23236
+    },
+    {
+      "file": "04.webp",
+      "cell": 4,
+      "bytes": 24808
+    },
+    {
+      "file": "05.webp",
+      "cell": 5,
+      "bytes": 23076
+    },
+    {
+      "file": "06.webp",
+      "cell": 6,
+      "bytes": 26126
+    },
+    {
+      "file": "07.webp",
+      "cell": 7,
+      "bytes": 26036
+    },
+    {
+      "file": "08.webp",
+      "cell": 8,
+      "bytes": 34858
+    },
+    {
+      "file": "09.webp",
+      "cell": 9,
+      "bytes": 25932
+    },
+    {
+      "file": "10.webp",
+      "cell": 10,
+      "bytes": 21224
+    },
+    {
+      "file": "11.webp",
+      "cell": 11,
+      "bytes": 19742
+    },
+    {
+      "file": "12.webp",
+      "cell": 12,
+      "bytes": 21268
+    },
+    {
+      "file": "13.webp",
+      "cell": 13,
+      "bytes": 15618
+    },
+    {
+      "file": "14.webp",
+      "cell": 14,
+      "bytes": 19564
+    },
+    {
+      "file": "15.webp",
+      "cell": 15,
+      "bytes": 21612
+    }
+  ]
+}

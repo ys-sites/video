@@ -1,0 +1,27 @@
+{
+  "id": "pin-rescue",
+  "title": "Pin Rescue",
+  "description": "Pull pins to mix water and lava, then deliver gold across five puzzles.",
+  "genre": "casual",
+  "style": "minimal",
+  "setting": "fantasy",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "Tap pins. Cool lava before releasing gold.",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-21T00:00:00.000Z",
+  "updatedAt": "2026-11-21T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "熔金拔针",
+      "description": "拔针让水与熔岩混合成石头，再把金币送给小人，挑战五关。",
+      "controls": "点击拔针：先用水冷却熔岩，再放金币"
+    }
+  },
+  "orientation": "portrait"
+}

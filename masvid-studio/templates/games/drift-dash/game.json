@@ -1,0 +1,27 @@
+{
+  "id": "drift-dash",
+  "title": "Drift Dash",
+  "description": "Drift through a scrolling retro circuit and beat three AI rivals across three laps.",
+  "genre": "racing",
+  "style": "voxel",
+  "setting": "retro",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "Hold the left or right side to drift that way; release to straighten. Stay on the road and finish three laps first.",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-21T00:00:00.000Z",
+  "updatedAt": "2026-11-21T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "像素漂移冲刺",
+      "description": "在复古竖屏赛道自动前进，按住左右侧漂移，松手回正，三圈内击败三辆AI赛车。",
+      "controls": "按住屏幕左侧向左漂移，右侧向右漂移，松手回正；跟随弯道并抢先完成三圈。"
+    }
+  },
+  "orientation": "portrait"
+}

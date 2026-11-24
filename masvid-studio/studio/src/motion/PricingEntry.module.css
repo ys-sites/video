@@ -1,0 +1,130 @@
+/* Top-right Pricing entry strictly using prototypes-black-friday.html palette & tokens */
+.trigger {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: var(--motion-space-6);
+  box-sizing: border-box;
+  height: 30px;
+  min-height: 30px;
+  padding: 0 var(--motion-space-12) 1px;
+  border-radius: var(--motion-radius-step-9) !important;
+  border: 1px solid color-mix(in srgb, var(--motion-black-friday-ink-light) 18%, transparent);
+  background: var(--motion-black-friday-night);
+  color: var(--motion-black-friday-ink-light);
+  font-family: var(--motion-font-sans);
+  font-size: var(--motion-text-md);
+  font-weight: var(--motion-weight-medium);
+  letter-spacing: -0.01em;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    border-color var(--motion-duration-fast) var(--motion-ease-out),
+    box-shadow var(--motion-duration-fast) var(--motion-ease-out),
+    background var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.trigger:hover {
+  border-color: var(--motion-black-friday-focus);
+  box-shadow: 0 0 0 1px var(--motion-black-friday-focus), 0 6px 18px color-mix(in srgb, var(--motion-black-friday-glow) 24%, transparent);
+  text-decoration: none;
+}
+
+.trigger:focus-visible {
+  outline: 1.5px solid var(--motion-black-friday-peach);
+  outline-offset: 2px;
+}
+
+.icon {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  display: block;
+}
+
+.label {
+  color: var(--motion-black-friday-ink-light);
+  line-height: 1;
+}
+
+/* Exact featured perk gradient + dark ink from prototypes-black-friday.html */
+.badge {
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%) skewX(-8deg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 15px;
+  padding: 0 7px;
+  border-radius: var(--motion-radius-sm);
+  background: linear-gradient(135deg, var(--motion-black-friday-peach), var(--motion-black-friday-amber));
+  box-shadow:
+    0 4px 12px color-mix(in srgb, var(--motion-black-friday-glow) 24%, transparent),
+    0 0 0 1.5px var(--motion-black-friday-night);
+  pointer-events: none;
+}
+
+.badgeText {
+  display: block;
+  color: var(--motion-black-friday-ember);
+  font-family: var(--motion-font-sans);
+  font-size: 9.5px;
+  font-weight: 800;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+  transform: skewX(4deg);
+  white-space: nowrap;
+}
+
+.cornerBadge {
+  position: absolute;
+  top: -8px;
+  right: -4px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 15px;
+  padding: 0 6px;
+  border-radius: var(--motion-radius-full);
+  background: linear-gradient(135deg, var(--motion-black-friday-peach), var(--motion-black-friday-amber));
+  box-shadow:
+    0 2px 8px color-mix(in srgb, var(--motion-black-friday-glow) 28%, transparent),
+    0 0 0 1.5px var(--motion-panel);
+  pointer-events: none;
+}
+
+.cornerBadgeText {
+  display: block;
+  color: var(--motion-black-friday-ember);
+  font-family: var(--motion-font-sans);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+@container (max-width: 640px) {
+  .label {
+    display: none;
+  }
+  .trigger {
+    padding: 0 var(--motion-space-8) 1px;
+  }
+  .badge {
+    padding: 0 5px;
+  }
+  .cornerBadge {
+    right: -2px;
+    padding: 0 5px;
+  }
+}

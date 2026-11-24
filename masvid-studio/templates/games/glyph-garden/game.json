@@ -1,0 +1,26 @@
+{
+  "id": "glyph-garden",
+  "title": "Glyph Garden",
+  "description": "Trade petals. Trigger cascading blooms. Reach 2,200 points in 24 moves to wake the forgotten moon garden.",
+  "genre": "casual",
+  "style": "anime",
+  "setting": "fantasy",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "Click two adjacent blooms or swipe to swap · arrows select, Space / Enter confirm · P / Esc pause · R restart",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-20T00:00:00.000Z",
+  "updatedAt": "2026-11-20T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "符花庭园",
+      "description": "在月色下交换花朵，凑齐三朵触发消除，让连锁绽放唤醒沉睡的魔法花园。24 步内获得 2200 分即可通关。",
+      "controls": "点击相邻花朵或滑动交换 · 方向键选择，空格 / 回车确认 · P / Esc 暂停 · R 重开"
+    }
+  }
+}

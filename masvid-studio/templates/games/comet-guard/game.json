@@ -1,0 +1,26 @@
+{
+  "id": "comet-guard",
+  "title": "Comet Guard",
+  "description": "Defend a luminous orbital station in a painted starfield. Fly an interceptor, shatter molten comets and survive escalating waves.",
+  "genre": "shooter",
+  "style": "minimal",
+  "setting": "space",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "WASD / arrows move · mouse aim + hold click fire · Space auto-aim + fire · touch drag to fly + auto-fire · P / Esc pause · R restart",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-20T00:00:00.000Z",
+  "updatedAt": "2026-11-20T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "彗星守卫",
+      "description": "守护星空中发光的轨道空间站。驾驶拦截机击碎熔岩彗星，撑过一波比一波猛的攻势。",
+      "controls": "WASD / 方向键移动 · 鼠标瞄准、按住左键开火 · 空格自动瞄准开火 · 触屏拖动飞行并自动开火 · P / Esc 暂停 · R 重开"
+    }
+  }
+}

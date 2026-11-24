@@ -1,0 +1,111 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f6efe4"><link rel="icon" href="data:,"><title>Rooftop Roast</title><style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#f6efe4;color:#2b1d14;font-family:ui-rounded,"SF Pro Rounded",system-ui,sans-serif}
+canvas{position:fixed;inset:0;width:100%;height:100%;touch-action:none}button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}button:focus-visible{outline:2px solid #c2552b;outline-offset:4px}
+.bar{position:fixed;z-index:3;inset:20px 24px auto;display:flex;justify-content:space-between;gap:12px;align-items:flex-start;pointer-events:none}
+.chip{pointer-events:auto;background:#fffaf2e6;border:1px solid #2b1d1422;border-radius:30px;padding:9px 15px;font-size:13px;font-weight:600;box-shadow:0 4px 18px #2b1d1412}
+.beans{display:flex;gap:6px;align-items:center}.bean{width:14px;height:18px;border-radius:50%;background:#2b1d1420;transform:rotate(20deg)}.bean.on{background:#6b3a1f}
+.alt{position:fixed;z-index:3;right:24px;top:50%;transform:translateY(-50%);width:12px;height:42vh;background:#2b1d1414;border-radius:8px;pointer-events:none}.alt i{position:absolute;left:-4px;right:-4px;height:4px;background:#c2552b;border-radius:3px}.alt span{position:absolute;right:20px;font-size:11px;white-space:nowrap;color:#6d5a4b}
+.overlay{position:fixed;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;padding:24px;background:#f6efe4e0;text-align:center}.overlay[hidden]{display:none}
+.card{max-width:520px}.eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#c2552b;font-weight:700}h1{font-size:clamp(46px,7vw,86px);line-height:.95;margin:16px 0;letter-spacing:-.04em}p{font-size:17px;line-height:1.7;color:#5b4a3d}
+.primary{background:#2b1d14;color:#fffaf2;border:0;border-radius:40px;padding:16px 30px;font-size:15px;font-weight:700;margin:6px}.primary:hover{background:#c2552b}.hint{font-size:13px;color:#7a6656;margin-top:16px;line-height:1.8}
+.coupon{margin:18px auto;max-width:360px;border:2px dashed #c2552b;border-radius:16px;padding:18px;background:#fffaf2}.coupon b{display:block;font-size:28px;letter-spacing:-.02em}.coupon small{color:#7a6656}
+.toast{position:fixed;left:50%;top:22%;transform:translate(-50%,-50%);z-index:4;font-size:26px;font-weight:800;color:#c2552b;opacity:0;transition:opacity .15s;pointer-events:none;text-shadow:0 2px 0 #fffaf2}.toast.show{opacity:1}
+.stick{position:fixed;z-index:3;left:24px;bottom:24px;width:120px;height:120px;border-radius:50%;background:#2b1d1412;display:none}.stick i{position:absolute;left:40px;top:40px;width:40px;height:40px;border-radius:50%;background:#2b1d14aa}
+.vbtn{position:fixed;z-index:3;right:56px;display:none;width:70px;height:56px;border-radius:14px;border:1px solid #2b1d1430;background:#fffaf2d0;font-weight:700}#up{bottom:96px}#down{bottom:24px}
+@media(pointer:coarse){.stick,.vbtn{display:block}}
+</style></head><body>
+<canvas id="c"></canvas>
+<div class="bar"><div class="chip" id="shopChip">☕</div><div class="chip beans" id="beans"></div><div class="chip" id="timer">0.0s</div><button class="chip" id="pauseBtn">Pause</button></div>
+<div class="alt" id="alt"><i id="altMark"></i></div>
+<div class="toast" id="toast"></div>
+<div class="stick" id="stick"><i id="knob"></i></div><button class="vbtn" id="up">▲</button><button class="vbtn" id="down">▼</button>
+<section class="overlay" id="intro"><div class="card"><div class="eyebrow" id="eye"></div><h1 id="title">Rooftop Roast</h1><p id="desc"></p><button class="primary" id="start"></button><div class="hint" id="hint"></div></div></section>
+<section class="overlay" id="pause" hidden><div class="card"><h1 id="pTitle"></h1><button class="primary" id="resume"></button><button class="primary" id="restart"></button></div></section>
+<section class="overlay" id="end" hidden><div class="card"><div class="eyebrow" id="endEye"></div><h1 id="endTitle"></h1><p id="endText"></p><div class="coupon" id="coupon" hidden><b id="cpTitle"></b><small id="cpCode"></small></div><button class="primary" id="again"></button></div></section>
+<script>
+(()=>{
+// Edit SHOP to turn this into a promo game for any café or local business.
+const SHOP={name:'Corner Roast',zhName:'街角烘焙',prize:'Free flat white',zhPrize:'免费馥芮白一杯',code:'ROOF-'+Math.random().toString(36).slice(2,6).toUpperCase()};
+const zh=/^zh/i.test(navigator.language||'');
+const L=zh?{eye:SHOP.zhName+' · 屋顶送豆',title:'屋顶咖啡',desc:`驾驶小无人机飞过街区，收齐 5 颗咖啡豆，降落在 ${SHOP.zhName} 的屋顶，就能兑换一杯咖啡。楼越高越要飞高，别撞墙。`,start:'起飞',hint:'方向键 / WASD 飞行 · Q E 或 Shift 空格 升降 · P / Esc 暂停 · R 重开',pause:'暂停',resume:'继续',restart:'重开',crash:'撞楼了',lowTitle:'坠机',lowText:'飞得太低撞到了楼。注意右侧高度条和楼的影子。',winEye:'降落成功',winTitle:'咖啡到手',winText:s=>`用时 ${s} 秒，收齐 5 颗豆。到店出示下方券码：`,again:'再飞一次',need:n=>`还差 ${n} 颗豆`,land:'在屋顶上慢慢降落',got:'+1 豆',alt:'高度',timeout:'时间到',timeText:'60 秒没飞完。豆子会在屋顶边缘闪光，先规划路线。'}:{eye:SHOP.name+' · rooftop delivery',title:'Rooftop Roast',desc:`Fly a tiny drone across the block, collect 5 coffee beans and land on ${SHOP.name}'s roof to win a coffee. Taller buildings need more altitude — don't clip a wall.`,start:'Take off',hint:'Arrows / WASD fly · Q E or Shift Space climb / descend · P / Esc pause · R restart',pause:'Paused',resume:'Resume',restart:'Restart',crash:'Crashed',lowTitle:'Crash landing',lowText:'You flew into a building. Watch the altitude bar and the building shadows.',winEye:'Touchdown',winTitle:'Coffee earned',winText:s=>`${s}s, all 5 beans. Show this code at the counter:`,again:'Fly again',need:n=>`${n} beans to go`,land:'Ease down onto the roof',got:'+1 bean',alt:'ALT',timeout:"Time's up",timeText:'60 seconds passed. Beans glow on rooftops — plan a route first.'};
+eye.textContent=L.eye;title.textContent=L.title;desc.textContent=L.desc;start.textContent=L.start;hint.textContent=L.hint;pTitle.textContent=L.pause;resume.textContent=L.resume;restart.textContent=L.restart;again.textContent=L.again;pauseBtn.textContent=L.pause;shopChip.textContent='☕ '+(zh?SHOP.zhName:SHOP.name);if(zh)document.documentElement.lang='zh-CN';
+const c=document.getElementById('c'),x=c.getContext('2d');let W,H,D;function size(){D=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;c.width=W*D;c.height=H*D}addEventListener('resize',size);size();
+// ---- city ----
+const G=12,CELL=120,ROAD=44;let seed=11;const r=()=>(seed=(seed*16807)%2147483647)/2147483647;
+let played=0,blds=[],beans=[],cafe,drone,cam,state='intro',t=0,last=0,got,startT,keys={},vz=0,ac,fx=[];
+const pal=['#e8d5bf','#d9c2a8','#cfd8d6','#e2c9b0','#c9bfb3','#ecdcc7','#bfcfc9'];
+function build(){seed=11+Math.floor(Math.random()*999);blds=[];for(let i=0;i<G;i++)for(let j=0;j<G;j++){const bx=i*CELL+ROAD/2,by=j*CELL+ROAD/2,s=CELL-ROAD;const split=r()<.45;
+  const parts=split?[[0,0,s/2-3,s],[s/2+3,0,s/2-3,s]]:[[0,0,s,s]];parts.forEach(([ox,oy,w,h])=>{const d=Math.hypot(i-G/2,j-G/2);const hh=14+r()*34+(d<3.5?r()*40:0);blds.push({x:bx+ox,y:by+oy,w,h,z:hh,c:pal[Math.floor(r()*pal.length)],win:r()})})}
+  blds.sort((a,b)=>(a.y+a.h)-(b.y+b.h));
+  const pickB=()=>blds[Math.floor(r()*blds.length)];
+  cafe=pickB();while(Math.hypot(cafe.x-G*CELL/2,cafe.y-G*CELL/2)<300)cafe=pickB();cafe.cafe=true;cafe.z=Math.max(22,Math.min(cafe.z,36));
+  beans=[];while(beans.length<5){const b=pickB();if(b.cafe||beans.some(o=>o.b===b))continue;beans.push({b,x:b.x+b.w/2,y:b.y+b.h/2,z:b.z+14,got:false})}}
+function reset(){build();drone={x:G*CELL/2,y:G*CELL/2,z:110,vx:0,vy:0,tilt:0};cam={x:drone.x,y:drone.y};got=0;startT=t;played=0;fx=[];renderBeans()}
+function renderBeans(){beans_.innerHTML='';for(let i=0;i<5;i++){const s=document.createElement('span');s.className='bean'+(i<got?' on':'');beans_.appendChild(s)}}
+const beans_=document.getElementById('beans');
+function beep(f,d,v=.06,type='sine'){try{ac=ac||new AudioContext();const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=f;g.gain.setValueAtTime(v,ac.currentTime);g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+d);o.connect(g).connect(ac.destination);o.start();o.stop(ac.currentTime+d)}catch(e){}}
+function toast(s){toast_.textContent=s;toast_.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>toast_.classList.remove('show'),700)}const toast_=document.getElementById('toast');
+function under(px,py){let top=null;for(const b of blds)if(px>b.x&&px<b.x+b.w&&py>b.y&&py<b.y+b.h)top=b;return top}
+let stickV={x:0,y:0},vbtn=0;
+function step(dt){played+=dt;const ax=(keys.arrowright||keys.d?1:0)-(keys.arrowleft||keys.a?1:0)+stickV.x,ay=(keys.arrowdown||keys.s?1:0)-(keys.arrowup||keys.w?1:0)+stickV.y;
+  const az=(keys.e||keys[' ']?1:0)-(keys.q||keys.shift?1:0)+vbtn;
+  drone.vx+=(ax*260-drone.vx)*Math.min(1,dt*3);drone.vy+=(ay*260-drone.vy)*Math.min(1,dt*3);vz+=(az*70-vz)*Math.min(1,dt*4);
+  drone.x=Math.max(0,Math.min(G*CELL,drone.x+drone.vx*dt));drone.y=Math.max(0,Math.min(G*CELL,drone.y+drone.vy*dt));drone.z=Math.max(0,Math.min(140,drone.z+vz*dt));drone.tilt=drone.vx/260*.3;
+  cam.x+=(drone.x-cam.x)*Math.min(1,dt*4);cam.y+=(drone.y-cam.y)*Math.min(1,dt*4);
+  const b=under(drone.x,drone.y);const floor=b?b.z:0;
+  if(drone.z<floor+4){const speed=Math.hypot(drone.vx,drone.vy);
+    if(b&&b.cafe&&speed<90&&vz>-60){if(got>=5)return finish('win');toast(L.need(5-got));drone.z=floor+4;vz=0}
+    else if(drone.z<floor-6||speed>=90||vz<-60){return finish('crash')}
+    else drone.z=floor+4}
+  beans.forEach(o=>{if(!o.got&&Math.hypot(o.x-drone.x,o.y-drone.y)<26&&Math.abs(o.z-drone.z)<22){o.got=true;got++;renderBeans();toast(got<5?L.got:L.land);beep(660+got*80,.18);fx.push({x:o.x,y:o.y,z:o.z,l:.6})}});
+  fx.forEach(f=>f.l-=dt);fx=fx.filter(f=>f.l>0);
+  const el=played;timer.textContent=(60-el).toFixed(1)+'s';if(el>60)finish('time');
+  altMark.style.bottom=(drone.z/140*100)+'%'}
+function finish(k){state='end';end.hidden=false;coupon.hidden=k!=='win';
+  if(k==='win'){endEye.textContent=L.winEye;endTitle.textContent=L.winTitle;endText.textContent=L.winText(played.toFixed(1));cpTitle.textContent=zh?SHOP.zhPrize:SHOP.prize;cpCode.textContent=(zh?SHOP.zhName:SHOP.name)+' · '+SHOP.code;[523,659,784].forEach((f,i)=>setTimeout(()=>beep(f,.25,.07,'triangle'),i*120))}
+  else if(k==='crash'){endEye.textContent=L.crash;endTitle.textContent=L.lowTitle;endText.textContent=L.lowText;beep(90,.5,.12,'sawtooth')}
+  else{endEye.textContent=L.timeout;endTitle.textContent=L.timeout;endText.textContent=L.timeText}}
+// ---- render: oblique 2.5D, height pushes up the screen ----
+const K=.75;// px per height unit
+function P(wx,wy,wz){return[W/2+(wx-cam.x),H*.58+(wy-cam.y)-wz*K]}
+function box(b){const [x0,y0]=P(b.x,b.y,0);x.fillStyle='#2b1d1418';x.fillRect(x0+4,y0+4,b.w+b.z*.25,b.h);const [, yt]=P(b.x,b.y,b.z);const h=b.z*K;
+  // south face
+  x.fillStyle=shade(b.c,-.18);x.fillRect(x0,y0+b.h-h,b.w,h);
+  // windows
+  x.fillStyle=b.cafe?'#ffcf7a':'#ffffff55';for(let wy=6;wy<h-6;wy+=12)for(let wx=5;wx<b.w-6;wx+=11)if(((wx*7+wy*3+Math.floor(b.win*50))%5)!==0)x.fillRect(x0+wx,y0+b.h-h+wy,5,6);
+  // roof
+  x.fillStyle=b.cafe?'#c2552b':b.c;x.fillRect(x0,y0-h,b.w,b.h);x.strokeStyle='#2b1d1420';x.strokeRect(x0+.5,y0-h+.5,b.w-1,b.h-1);
+  if(b.cafe){x.fillStyle='#fffaf2';x.font='bold 20px system-ui';x.textAlign='center';x.fillText('☕',x0+b.w/2,y0-h+b.h/2+7);x.strokeStyle='#fffaf2';x.setLineDash([5,4]);x.lineWidth=2;x.beginPath();x.arc(x0+b.w/2,y0-h+b.h/2,Math.min(b.w,b.h)/2-6+Math.sin(t*4)*2,0,7);x.stroke();x.setLineDash([]);x.lineWidth=1;x.textAlign='left'}}
+function shade(hex,a){const n=parseInt(hex.slice(1),16);let r=n>>16,g=n>>8&255,b=n&255;const f=v=>Math.max(0,Math.min(255,Math.round(v*(1+a))));return`rgb(${f(r)},${f(g)},${f(b)})`}
+function draw(){x.setTransform(D,0,0,D,0,0);x.fillStyle='#9fb79a';x.fillRect(0,0,W,H);
+  // roads
+  const [ox,oy]=P(0,0,0);x.fillStyle='#d9d2c5';x.fillRect(ox,oy,G*CELL,G*CELL);x.strokeStyle='#fffaf2';x.lineWidth=2;x.setLineDash([10,10]);for(let i=0;i<=G;i++){x.beginPath();x.moveTo(ox+i*CELL,oy);x.lineTo(ox+i*CELL,oy+G*CELL);x.moveTo(ox,oy+i*CELL);x.lineTo(ox+G*CELL,oy+i*CELL);x.stroke()}x.setLineDash([]);
+  // drone shadow on ground/roof
+  const ub=under(drone.x,drone.y),fz=ub?ub.z:0;
+  let shadowDone=false;const dy=drone.y;
+  for(const b of blds){if(!shadowDone&&b.y+b.h>dy&&state!=='intro'){drawShadow(fz);shadowDone=true}
+    const [bx,by]=P(b.x,b.y,0);if(bx>W+20||bx+b.w<-20||by-b.z*K>H+20||by+b.h<-20)continue;box(b)}
+  if(!shadowDone&&state!=='intro')drawShadow(fz);
+  beans.forEach(o=>{if(o.got)return;const [px,py]=P(o.x,o.y,o.z+Math.sin(t*3+o.x)*4);x.fillStyle='#fff3c4aa';x.beginPath();x.arc(px,py,24+Math.sin(t*5)*4,0,7);x.fill();x.save();x.translate(px,py);x.scale(1.6,1.6);x.rotate(.4);x.fillStyle='#6b3a1f';x.beginPath();x.ellipse(0,0,7,10,0,0,7);x.fill();x.strokeStyle='#f3d3a5';x.lineWidth=2;x.beginPath();x.moveTo(0,-8);x.quadraticCurveTo(3,0,0,8);x.stroke();x.restore()});
+  fx.forEach(f=>{const [px,py]=P(f.x,f.y,f.z+(1-f.l)*60);x.fillStyle=`rgba(194,85,43,${f.l*1.5})`;x.font='bold 18px system-ui';x.fillText('+1',px-8,py)});
+  if(state!=='intro')drawDrone();
+  // off-screen arrows
+  [...beans.filter(o=>!o.got),got>=5?{x:cafe.x+cafe.w/2,y:cafe.y+cafe.h/2,z:cafe.z,cafe:1}:null].filter(Boolean).forEach(o=>{const [px,py]=P(o.x,o.y,o.z);if(px>20&&px<W-20&&py>60&&py<H-20)return;const dx=px-W/2,dy2=py-H/2,a=Math.atan2(dy2,dx),sc=Math.min((W/2-44)/Math.max(1e-3,Math.abs(dx)),(H/2-64)/Math.max(1e-3,Math.abs(dy2)));x.save();x.translate(W/2+dx*sc,H/2+dy2*sc);x.rotate(a);x.fillStyle=o.cafe?'#c2552b':'#6b3a1f';x.beginPath();x.moveTo(14,0);x.lineTo(-8,-9);x.lineTo(-8,9);x.fill();x.restore()})}
+function drawShadow(fz){const [sx,sy]=P(drone.x,drone.y,fz);const gap=drone.z-fz;x.fillStyle=`rgba(43,29,20,${Math.max(.08,.35-gap/600)})`;x.beginPath();x.ellipse(sx,sy,16+gap/18,7+gap/40,0,0,7);x.fill()}
+function drawDrone(){const [px,py]=P(drone.x,drone.y,drone.z);x.save();x.translate(px,py);x.scale(1.9,1.9);x.rotate(drone.tilt);x.strokeStyle='#2b1d14';x.lineWidth=3;x.beginPath();x.moveTo(-16,-6);x.lineTo(16,6);x.moveTo(-16,6);x.lineTo(16,-6);x.stroke();
+  [[-16,-6],[16,6],[-16,6],[16,-6]].forEach(([a,b])=>{x.fillStyle='#2b1d1430';x.beginPath();x.ellipse(a,b,10,3+Math.abs(Math.sin(t*40))*1.5,0,0,7);x.fill()});
+  x.fillStyle='#c2552b';x.beginPath();x.roundRect?x.roundRect(-9,-6,18,12,4):x.rect(-9,-6,18,12);x.fill();x.fillStyle='#fffaf2';x.fillRect(-3,-2,6,4);x.restore()}
+function loop(ts){const dt=Math.min(.05,(ts-last)/1000||0);last=ts;t+=dt;if(state==='play')step(dt);draw();requestAnimationFrame(loop)}
+function go(){reset();state='play';intro.hidden=pause.hidden=end.hidden=true;beep(440,.15)}
+function pauseT(){if(state==='play'){state='paused';pause.hidden=false}else if(state==='paused'){state='play';pause.hidden=true}}
+start.onclick=go;again.onclick=go;restart.onclick=go;resume.onclick=pauseT;pauseBtn.onclick=pauseT;
+addEventListener('keydown',e=>{const k=e.key.toLowerCase();if(k===' ')e.preventDefault();if(k==='p'||k==='escape')return pauseT();if(k==='r'&&state!=='intro')return go();if(k==='enter'&&(state==='intro'||state==='end'))return go();keys[k]=true});
+addEventListener('keyup',e=>{keys[e.key.toLowerCase()]=false});addEventListener('blur',()=>keys={});
+// touch stick
+let sid=null;stick.addEventListener('pointerdown',e=>{sid=e.pointerId;stick.setPointerCapture(sid);mv(e)});stick.addEventListener('pointermove',e=>{if(e.pointerId===sid)mv(e)});stick.addEventListener('pointerup',()=>{sid=null;stickV={x:0,y:0};knob.style.transform=''});
+function mv(e){const r=stick.getBoundingClientRect();let dx=(e.clientX-r.left-60)/50,dy=(e.clientY-r.top-60)/50;const m=Math.hypot(dx,dy);if(m>1){dx/=m;dy/=m}stickV={x:dx,y:dy};knob.style.transform=`translate(${dx*40}px,${dy*40}px)`}
+up.onpointerdown=()=>vbtn=1;down.onpointerdown=()=>vbtn=-1;up.onpointerup=down.onpointerup=up.onpointerleave=down.onpointerleave=()=>vbtn=0;
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&state==='play')pauseT()});
+reset();requestAnimationFrame(loop);
+})();
+</script></body></html>

@@ -1,0 +1,27 @@
+{
+  "id": "merge-bakery",
+  "title": "Merge Bakery",
+  "description": "Bake dough, merge matching pastries and serve customer orders to earn $250 within 90 seconds.",
+  "genre": "casual",
+  "style": "anime",
+  "setting": "modern",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "Tap the oven. Drag matching pastries together. Drag requested pastries onto customers.",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-21T00:00:00.000Z",
+  "updatedAt": "2026-11-21T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "合成小烘焙",
+      "description": "点击烤炉制作面团，拖动相同点心合成升级，交付顾客订单，90秒内赚满250金币。",
+      "controls": "点击烤炉出面团；拖动相同点心合成；把顾客要的点心拖给顾客。"
+    }
+  },
+  "orientation": "portrait"
+}

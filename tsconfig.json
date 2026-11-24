@@ -25,5 +25,5 @@
     "allowImportingTsExtensions": true,
     "noEmit": true
   },
-  "exclude": ["dist", "resources", "tmp", "captions-skill", "video-projects", "workers", "master-video-styles"]
+  "exclude": ["dist", "resources", "tmp", "captions-skill", "video-projects", "workers", "master-video-styles", "masvid-studio"]
 }

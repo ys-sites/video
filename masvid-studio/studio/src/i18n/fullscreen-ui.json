@@ -1,0 +1,72 @@
+{
+  "zh-CN": {
+    "Play or pause preview": "播放或暂停预览",
+    "Fullscreen is unavailable in this window. Open Studio in a browser and try again.": "此窗口无法进入全屏。请在浏览器中打开 Studio 后重试。",
+    "Fullscreen playback": "全屏播放",
+    "Watch the video with the player fullscreen button or F; Esc returns to editing. Position and editor zoom are preserved. Embedded hosts may block browser fullscreen.": "点击播放器全屏按钮或按 F 观看视频，按 Esc 返回编辑。播放位置和编辑缩放会保留。嵌入式宿主可能禁止浏览器全屏。",
+    "Open this project with openmotion_open_preview. I will enter fullscreen from the player. Preserve the project; do not render or edit it.": "使用 openmotion_open_preview 打开此工程。我会在播放器中进入全屏。保留工程，不要渲染或编辑。"
+  },
+  "ja": {
+    "Play or pause preview": "プレビューを再生または一時停止",
+    "Fullscreen is unavailable in this window. Open Studio in a browser and try again.": "このウィンドウでは全画面表示できません。ブラウザーで Studio を開いて再試行してください。",
+    "Fullscreen playback": "全画面再生",
+    "Watch the video with the player fullscreen button or F; Esc returns to editing. Position and editor zoom are preserved. Embedded hosts may block browser fullscreen.": "プレーヤーの全画面ボタンまたは F で動画を表示し、Esc で編集に戻ります。再生位置と編集倍率は保持されます。埋め込み環境では全画面表示が禁止される場合があります。",
+    "Open this project with openmotion_open_preview. I will enter fullscreen from the player. Preserve the project; do not render or edit it.": "openmotion_open_preview でこのプロジェクトを開いてください。プレーヤーから全画面表示にします。プロジェクトを保持し、レンダリングや編集はしないでください。"
+  },
+  "ko": {
+    "Play or pause preview": "미리보기 재생 또는 일시 정지",
+    "Fullscreen is unavailable in this window. Open Studio in a browser and try again.": "이 창에서는 전체 화면을 사용할 수 없습니다. 브라우저에서 Studio를 열고 다시 시도하세요.",
+    "Fullscreen playback": "전체 화면 재생",
+    "Watch the video with the player fullscreen button or F; Esc returns to editing. Position and editor zoom are preserved. Embedded hosts may block browser fullscreen.": "플레이어의 전체 화면 버튼이나 F를 누르면 영상을 보고 Esc를 누르면 편집으로 돌아갑니다. 재생 위치와 편집 확대 비율은 유지됩니다. 임베디드 호스트가 전체 화면을 차단할 수 있습니다.",
+    "Open this project with openmotion_open_preview. I will enter fullscreen from the player. Preserve the project; do not render or edit it.": "openmotion_open_preview로 이 프로젝트를 여세요. 플레이어에서 직접 전체 화면으로 전환하겠습니다. 프로젝트를 유지하고 렌더링하거나 편집하지 마세요."
+  },
+  "de": {
+    "Play or pause preview": "Vorschau abspielen oder pausieren",
+    "Fullscreen is unavailable in this window. Open Studio in a browser and try again.": "Vollbild ist in diesem Fenster nicht verfügbar. Öffne Studio in einem Browser und versuche es erneut.",
+    "Fullscreen playback": "Vollbildwiedergabe",
+    "Watch the video with the player fullscreen button or F; Esc returns to editing. Position and editor zoom are preserved. Embedded hosts may block browser fullscreen.": "Nutze die Vollbildtaste des Players oder F; Esc führt zur Bearbeitung zurück. Wiedergabeposition und Editor-Zoom bleiben erhalten. Eingebettete Hosts können Vollbild blockieren.",
+    "Open this project with openmotion_open_preview. I will enter fullscreen from the player. Preserve the project; do not render or edit it.": "Öffne dieses Projekt mit openmotion_open_preview. Ich aktiviere Vollbild im Player. Bewahre das Projekt unverändert; nicht rendern oder bearbeiten."
+  },
+  "fr": {
+    "Play or pause preview": "Lire ou mettre en pause l’aperçu",
+    "Fullscreen is unavailable in this window. Open Studio in a browser and try again.": "Le plein écran est indisponible dans cette fenêtre. Ouvrez Studio dans un navigateur et réessayez.",
+    "Fullscreen playback": "Lecture plein écran",
+    "Watch the video with the player fullscreen button or F; Esc returns to editing. Position and editor zoom are preserved. Embedded hosts may block browser fullscreen.": "Utilisez le bouton plein écran du lecteur ou F ; Échap revient au montage. La position de lecture et le zoom sont conservés. Un hôte intégré peut bloquer le plein écran.",
+    "Open this project with openmotion_open_preview. I will enter fullscreen from the player. Preserve the project; do not render or edit it.": "Ouvrez ce projet avec openmotion_open_preview. Je passerai en plein écran depuis le lecteur. Conservez le projet sans rendu ni modification."
+  },
+  "ru": {
+    "Play or pause preview": "Воспроизвести или приостановить предпросмотр",
+    "Fullscreen is unavailable in this window. Open Studio in a browser and try again.": "Полноэкранный режим недоступен в этом окне. Откройте Studio в браузере и повторите попытку.",
+    "Fullscreen playback": "Полноэкранное воспроизведение",
+    "Watch the video with the player fullscreen button or F; Esc returns to editing. Position and editor zoom are preserved. Embedded hosts may block browser fullscreen.": "Нажмите кнопку полного экрана в плеере или F; Esc возвращает к монтажу. Позиция воспроизведения и масштаб редактора сохраняются. Встроенный хост может блокировать полный экран.",
+    "Open this project with openmotion_open_preview. I will enter fullscreen from the player. Preserve the project; do not render or edit it.": "Откройте проект через openmotion_open_preview. Я включу полный экран в плеере. Сохраните проект без изменений; не выполняйте рендеринг или редактирование."
+  },
+  "es": {
+    "Play or pause preview": "Reproducir o pausar la vista previa",
+    "Fullscreen is unavailable in this window. Open Studio in a browser and try again.": "La pantalla completa no está disponible en esta ventana. Abre Studio en un navegador y vuelve a intentarlo.",
+    "Fullscreen playback": "Reproducción a pantalla completa",
+    "Watch the video with the player fullscreen button or F; Esc returns to editing. Position and editor zoom are preserved. Embedded hosts may block browser fullscreen.": "Usa el botón de pantalla completa del reproductor o F; Esc vuelve a la edición. Se conservan la posición y el zoom del editor. Los hosts integrados pueden bloquear la pantalla completa.",
+    "Open this project with openmotion_open_preview. I will enter fullscreen from the player. Preserve the project; do not render or edit it.": "Abre este proyecto con openmotion_open_preview. Activaré la pantalla completa desde el reproductor. Conserva el proyecto; no lo renderices ni edites."
+  },
+  "pt-BR": {
+    "Play or pause preview": "Reproduzir ou pausar a prévia",
+    "Fullscreen is unavailable in this window. Open Studio in a browser and try again.": "A tela cheia não está disponível nesta janela. Abra o Studio em um navegador e tente novamente.",
+    "Fullscreen playback": "Reprodução em tela cheia",
+    "Watch the video with the player fullscreen button or F; Esc returns to editing. Position and editor zoom are preserved. Embedded hosts may block browser fullscreen.": "Use o botão de tela cheia do player ou F; Esc retorna à edição. A posição e o zoom do editor são preservados. Hosts incorporados podem bloquear a tela cheia.",
+    "Open this project with openmotion_open_preview. I will enter fullscreen from the player. Preserve the project; do not render or edit it.": "Abra este projeto com openmotion_open_preview. Ativarei a tela cheia pelo player. Preserve o projeto; não renderize nem edite."
+  },
+  "it": {
+    "Play or pause preview": "Riproduci o metti in pausa l’anteprima",
+    "Fullscreen is unavailable in this window. Open Studio in a browser and try again.": "Lo schermo intero non è disponibile in questa finestra. Apri Studio in un browser e riprova.",
+    "Fullscreen playback": "Riproduzione a schermo intero",
+    "Watch the video with the player fullscreen button or F; Esc returns to editing. Position and editor zoom are preserved. Embedded hosts may block browser fullscreen.": "Usa il pulsante a schermo intero del lettore o F; Esc torna al montaggio. La posizione e lo zoom dell’editor vengono mantenuti. Gli host incorporati possono bloccare lo schermo intero.",
+    "Open this project with openmotion_open_preview. I will enter fullscreen from the player. Preserve the project; do not render or edit it.": "Apri questo progetto con openmotion_open_preview. Attiverò lo schermo intero dal lettore. Conserva il progetto senza renderizzarlo o modificarlo."
+  },
+  "tr": {
+    "Play or pause preview": "Önizlemeyi oynat veya duraklat",
+    "Fullscreen is unavailable in this window. Open Studio in a browser and try again.": "Bu pencerede tam ekran kullanılamıyor. Studio’yu bir tarayıcıda açıp tekrar deneyin.",
+    "Fullscreen playback": "Tam ekran oynatma",
+    "Watch the video with the player fullscreen button or F; Esc returns to editing. Position and editor zoom are preserved. Embedded hosts may block browser fullscreen.": "Oynatıcının tam ekran düğmesini veya F tuşunu kullanın; Esc düzenlemeye döndürür. Oynatma konumu ve editör yakınlaştırması korunur. Gömülü ortamlar tam ekranı engelleyebilir.",
+    "Open this project with openmotion_open_preview. I will enter fullscreen from the player. Preserve the project; do not render or edit it.": "Bu projeyi openmotion_open_preview ile açın. Oynatıcıdan tam ekrana geçeceğim. Projeyi koruyun; render veya düzenleme yapmayın."
+  }
+}

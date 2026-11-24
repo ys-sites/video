@@ -1,0 +1,41 @@
+{
+  "douyin": {
+    "collection": "@iconify-json/logos@1.2.20",
+    "icon": "tiktok-icon",
+    "note": "Shared musical-note mark; Douyin is the Chinese platform."
+  },
+  "tiktok": {
+    "collection": "@iconify-json/logos@1.2.20",
+    "icon": "tiktok-icon"
+  },
+  "reels": {
+    "collection": "@iconify-json/logos@1.2.20",
+    "icon": "instagram-icon"
+  },
+  "xiaohongshu": {
+    "collection": "simple-icons@16.38.0",
+    "icon": "xiaohongshu",
+    "fill": "#FF2442"
+  },
+  "bilibili": {
+    "collection": "simple-icons@16.38.0",
+    "icon": "bilibili",
+    "fill": "#00A1D6"
+  },
+  "shorts": {
+    "collection": "simple-icons@16.38.0",
+    "icon": "youtubeshorts",
+    "fill": "#FF0000"
+  },
+  "wechat": {
+    "collection": "remixicon@4.9.1",
+    "icon": "wechat-channels-fill",
+    "fill": "#FA9D3B"
+  },
+  "x": {
+    "collection": "simple-icons@16.38.0",
+    "icon": "x",
+    "fill": "#000000",
+    "note": "Identifies posts shared on X (formerly Twitter)."
+  }
+}

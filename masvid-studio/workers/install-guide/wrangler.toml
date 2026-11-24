@@ -1,0 +1,28 @@
+name = "openmotion-install-guide"
+main = "index.ts"
+account_id = "64ad4569ffd912432d6b86d5656484c4"
+compatibility_date = "2026-11-19"
+workers_dev = true
+
+[[r2_buckets]]
+binding = "RELEASES"
+bucket_name = "open-design-releases"
+
+# Enable the test route first; add the production route in the Cloudflare deployment
+# after the stable guide contains the attribution marker.
+[[routes]]
+pattern = "open-design.powerformer.net/motion/install.md*"
+zone_name = "powerformer.net"
+# The public R2 hostname needs the same transformation for its two install-guide objects.
+# Keep the route exact so templates and other release assets continue to be served directly.
+[[routes]]
+pattern = "releases.open-design.ai/open-motion/install.md*"
+zone_name = "open-design.ai"
+
+[[routes]]
+pattern = "releases.open-design.ai/open-motion/dev/install.md*"
+zone_name = "open-design.ai"
+
+[[routes]]
+pattern = "releases.open-design.ai/motion*"
+zone_name = "open-design.ai"

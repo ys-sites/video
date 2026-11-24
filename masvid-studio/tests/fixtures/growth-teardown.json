@@ -1,0 +1,28 @@
+{
+  "company": "Example Co",
+  "domain": "example.com",
+  "lang": "en",
+  "research": { "calls": 12, "engines": ["google", "news", "youtube"], "minutes": 2 },
+  "metric": {
+    "label": "ARR",
+    "unit": "$",
+    "headline": { "value": 30000000, "note": "Mar 2026 · Example Press" },
+    "points": [
+      { "date": "2025-06", "value": 2000000, "kind": "company", "source": { "url": "https://example.com/blog/2m" } },
+      { "date": "2025-11", "value": 10000000, "kind": "press", "source": { "url": "https://example.com/press/10m" } },
+      { "date": "2026-03", "value": 30000000, "kind": "press", "source": { "url": "https://example.com/press/30m" } }
+    ]
+  },
+  "lanes": [
+    { "id": "free", "name": "Free windows", "moves": [
+      { "date": "2025-08-01", "label": "Free weekend", "source": { "url": "https://example.com/blog/free", "title": "Build anything free this weekend" } }
+    ] },
+    { "id": "search", "name": "Search", "moves": [
+      { "date": "2025-10-01", "label": "Pages in 4 languages", "card": { "type": "chips", "items": ["es", "ja", "ko", "de"] } }
+    ] }
+  ],
+  "plays": [
+    { "lane": "free", "headline": "free windows sped up growth.", "stat": { "value": 1, "label": "free weekend" }, "evidence": ["free:0"], "instruction": "Open a time-boxed free window with each launch and measure the week after." },
+    { "lane": "search", "headline": "a page in every language.", "stat": { "value": 4, "label": "languages" }, "evidence": ["search:0"], "instruction": "Translate the top pages into the languages your analytics show." }
+  ]
+}

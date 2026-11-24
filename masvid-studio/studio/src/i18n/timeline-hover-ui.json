@@ -1,0 +1,82 @@
+{
+  "zh-CN": {
+    "Timeline frame preview": "时间轴帧预览",
+    "Click the ruler to jump": "点击刻度尺跳转",
+    "Frame preview unavailable. Move away and try again.": "帧预览不可用，请移开鼠标后重试。",
+    "Inspect timeline frames": "检查时间轴画面",
+    "Pause playback, then hover over the ruler or clips to inspect a silent frame preview. Click the ruler to jump there. No model or export is needed. Moving away closes it; if loading fails, move away and try again.": "暂停播放后，将鼠标悬停在刻度尺或片段上，即可静音预览对应帧；点击刻度尺跳转。无需模型或导出。移开鼠标会关闭预览，加载失败时可移开后重试。",
+    "Open the existing project with openmotion_open_preview so I can hover over the timeline to inspect frames, then click the ruler to jump. Preserve the source and selection; do not export or generate media.": "用 openmotion_open_preview 打开现有项目，让我悬停时间轴检查画面，再点击刻度尺跳转。保留源文件和选中状态，不要导出或生成素材。"
+  },
+  "ja": {
+    "Timeline frame preview": "タイムラインのフレームプレビュー",
+    "Click the ruler to jump": "目盛りをクリックして移動",
+    "Frame preview unavailable. Move away and try again.": "プレビューできません。ポインターを離して再試行してください。",
+    "Inspect timeline frames": "タイムラインのフレームを確認",
+    "Pause playback, then hover over the ruler or clips to inspect a silent frame preview. Click the ruler to jump there. No model or export is needed. Moving away closes it; if loading fails, move away and try again.": "一時停止して目盛りやクリップにポインターを合わせると、無音でフレームを確認できます。目盛りをクリックして移動します。モデルや書き出しは不要です。ポインターを離すと閉じます。読み込みに失敗したら離して再試行してください。",
+    "Open the existing project with openmotion_open_preview so I can hover over the timeline to inspect frames, then click the ruler to jump. Preserve the source and selection; do not export or generate media.": "openmotion_open_preview で既存プロジェクトを開き、タイムラインのホバーでフレームを確認し、目盛りをクリックして移動できるようにしてください。ソースと選択を保持し、書き出しやメディア生成は行わないでください。"
+  },
+  "ko": {
+    "Timeline frame preview": "타임라인 프레임 미리보기",
+    "Click the ruler to jump": "눈금자를 클릭하여 이동",
+    "Frame preview unavailable. Move away and try again.": "프레임을 미리 볼 수 없습니다. 포인터를 옮긴 후 다시 시도하세요.",
+    "Inspect timeline frames": "타임라인 프레임 확인",
+    "Pause playback, then hover over the ruler or clips to inspect a silent frame preview. Click the ruler to jump there. No model or export is needed. Moving away closes it; if loading fails, move away and try again.": "재생을 일시 정지한 후 눈금자나 클립 위에 포인터를 올려 무음으로 프레임을 확인하세요. 눈금자를 클릭하면 이동합니다. 모델이나 내보내기가 필요하지 않습니다. 포인터를 옮기면 닫힙니다. 로드에 실패하면 포인터를 옮긴 후 다시 시도하세요.",
+    "Open the existing project with openmotion_open_preview so I can hover over the timeline to inspect frames, then click the ruler to jump. Preserve the source and selection; do not export or generate media.": "openmotion_open_preview로 기존 프로젝트를 열어 타임라인 위에 포인터를 올려 프레임을 확인하고 눈금자를 클릭해 이동하게 해 주세요. 소스와 선택을 유지하고 내보내기나 미디어 생성을 하지 마세요."
+  },
+  "de": {
+    "Timeline frame preview": "Zeitleisten-Framevorschau",
+    "Click the ruler to jump": "Zum Springen auf die Skala klicken",
+    "Frame preview unavailable. Move away and try again.": "Framevorschau nicht verfügbar. Maus wegbewegen und erneut versuchen.",
+    "Inspect timeline frames": "Zeitleisten-Frames prüfen",
+    "Pause playback, then hover over the ruler or clips to inspect a silent frame preview. Click the ruler to jump there. No model or export is needed. Moving away closes it; if loading fails, move away and try again.": "Wiedergabe pausieren und über Skala oder Clips fahren, um Frames stumm zu prüfen. Ein Klick auf die Skala springt dorthin. Kein Modell oder Export nötig. Wegbewegen schließt die Vorschau; bei Ladefehlern wegbewegen und erneut versuchen.",
+    "Open the existing project with openmotion_open_preview so I can hover over the timeline to inspect frames, then click the ruler to jump. Preserve the source and selection; do not export or generate media.": "Öffne das bestehende Projekt mit openmotion_open_preview, damit ich Frames per Maus prüfen und per Klick auf die Skala anspringen kann. Quelle und Auswahl erhalten; keine Medien exportieren oder generieren."
+  },
+  "fr": {
+    "Timeline frame preview": "Aperçu des images de la timeline",
+    "Click the ruler to jump": "Cliquez sur la règle pour accéder",
+    "Frame preview unavailable. Move away and try again.": "Aperçu indisponible. Éloignez le pointeur et réessayez.",
+    "Inspect timeline frames": "Examiner les images de la timeline",
+    "Pause playback, then hover over the ruler or clips to inspect a silent frame preview. Click the ruler to jump there. No model or export is needed. Moving away closes it; if loading fails, move away and try again.": "Mettez en pause, puis survolez la règle ou les clips pour un aperçu silencieux. Cliquez sur la règle pour accéder à cette image. Aucun modèle ni export requis. Éloignez le pointeur pour fermer ; en cas d’échec, éloignez-le et réessayez.",
+    "Open the existing project with openmotion_open_preview so I can hover over the timeline to inspect frames, then click the ruler to jump. Preserve the source and selection; do not export or generate media.": "Ouvrez le projet existant avec openmotion_open_preview pour examiner les images au survol, puis cliquer sur la règle pour y accéder. Préservez la source et la sélection ; ne générez et n’exportez aucun média."
+  },
+  "ru": {
+    "Timeline frame preview": "Предпросмотр кадра на шкале",
+    "Click the ruler to jump": "Нажмите на линейку для перехода",
+    "Frame preview unavailable. Move away and try again.": "Предпросмотр недоступен. Уведите указатель и повторите попытку.",
+    "Inspect timeline frames": "Просмотр кадров на шкале",
+    "Pause playback, then hover over the ruler or clips to inspect a silent frame preview. Click the ruler to jump there. No model or export is needed. Moving away closes it; if loading fails, move away and try again.": "Приостановите воспроизведение и наведите указатель на линейку или клипы для беззвучного просмотра кадра. Нажмите на линейку для перехода. Модель и экспорт не нужны. Уведите указатель, чтобы закрыть; при ошибке загрузки уведите его и повторите попытку.",
+    "Open the existing project with openmotion_open_preview so I can hover over the timeline to inspect frames, then click the ruler to jump. Preserve the source and selection; do not export or generate media.": "Откройте существующий проект через openmotion_open_preview для просмотра кадров при наведении и перехода щелчком по линейке. Сохраните исходники и выделение; не экспортируйте и не генерируйте медиа."
+  },
+  "es": {
+    "Timeline frame preview": "Vista previa de fotogramas",
+    "Click the ruler to jump": "Haz clic en la regla para saltar",
+    "Frame preview unavailable. Move away and try again.": "Vista previa no disponible. Aparta el cursor y vuelve a intentarlo.",
+    "Inspect timeline frames": "Inspeccionar fotogramas",
+    "Pause playback, then hover over the ruler or clips to inspect a silent frame preview. Click the ruler to jump there. No model or export is needed. Moving away closes it; if loading fails, move away and try again.": "Pausa la reproducción y pasa el cursor sobre la regla o los clips para una vista previa sin sonido. Haz clic en la regla para saltar. No requiere modelo ni exportación. Al apartar el cursor se cierra; si falla la carga, apártalo y reintenta.",
+    "Open the existing project with openmotion_open_preview so I can hover over the timeline to inspect frames, then click the ruler to jump. Preserve the source and selection; do not export or generate media.": "Abre el proyecto existente con openmotion_open_preview para inspeccionar fotogramas al pasar el cursor y saltar al hacer clic en la regla. Conserva el código fuente y la selección; no exportes ni generes medios."
+  },
+  "pt-BR": {
+    "Timeline frame preview": "Prévia de quadros da linha do tempo",
+    "Click the ruler to jump": "Clique na régua para ir ao quadro",
+    "Frame preview unavailable. Move away and try again.": "Prévia indisponível. Afaste o ponteiro e tente novamente.",
+    "Inspect timeline frames": "Inspecionar quadros",
+    "Pause playback, then hover over the ruler or clips to inspect a silent frame preview. Click the ruler to jump there. No model or export is needed. Moving away closes it; if loading fails, move away and try again.": "Pause a reprodução e passe o ponteiro sobre a régua ou os clipes para uma prévia sem som. Clique na régua para ir ao quadro. Não requer modelo nem exportação. Afastar o ponteiro fecha a prévia; se falhar, afaste-o e tente novamente.",
+    "Open the existing project with openmotion_open_preview so I can hover over the timeline to inspect frames, then click the ruler to jump. Preserve the source and selection; do not export or generate media.": "Abra o projeto existente com openmotion_open_preview para inspecionar quadros ao passar o ponteiro e ir até eles clicando na régua. Preserve a fonte e a seleção; não exporte nem gere mídia."
+  },
+  "it": {
+    "Timeline frame preview": "Anteprima dei fotogrammi",
+    "Click the ruler to jump": "Fai clic sul righello per spostarti",
+    "Frame preview unavailable. Move away and try again.": "Anteprima non disponibile. Allontana il puntatore e riprova.",
+    "Inspect timeline frames": "Esaminare i fotogrammi",
+    "Pause playback, then hover over the ruler or clips to inspect a silent frame preview. Click the ruler to jump there. No model or export is needed. Moving away closes it; if loading fails, move away and try again.": "Metti in pausa e passa il puntatore sul righello o sui clip per un’anteprima senza audio. Fai clic sul righello per spostarti. Non servono modelli né esportazioni. Allontana il puntatore per chiudere; se il caricamento fallisce, allontanalo e riprova.",
+    "Open the existing project with openmotion_open_preview so I can hover over the timeline to inspect frames, then click the ruler to jump. Preserve the source and selection; do not export or generate media.": "Apri il progetto esistente con openmotion_open_preview per esaminare i fotogrammi passando il puntatore e spostarmi facendo clic sul righello. Conserva sorgente e selezione; non esportare né generare contenuti multimediali."
+  },
+  "tr": {
+    "Timeline frame preview": "Zaman çizelgesi kare önizlemesi",
+    "Click the ruler to jump": "Atlamak için cetvele tıklayın",
+    "Frame preview unavailable. Move away and try again.": "Kare önizlemesi kullanılamıyor. İşaretçiyi uzaklaştırıp tekrar deneyin.",
+    "Inspect timeline frames": "Zaman çizelgesi karelerini incele",
+    "Pause playback, then hover over the ruler or clips to inspect a silent frame preview. Click the ruler to jump there. No model or export is needed. Moving away closes it; if loading fails, move away and try again.": "Oynatmayı duraklatın, sessiz kare önizlemesi için cetvelin veya kliplerin üzerine gelin. Atlamak için cetvele tıklayın. Model veya dışa aktarma gerekmez. İşaretçiyi uzaklaştırmak önizlemeyi kapatır; yükleme başarısızsa uzaklaştırıp tekrar deneyin.",
+    "Open the existing project with openmotion_open_preview so I can hover over the timeline to inspect frames, then click the ruler to jump. Preserve the source and selection; do not export or generate media.": "Mevcut projeyi openmotion_open_preview ile açın; zaman çizelgesinin üzerine gelerek kareleri inceleyip cetvele tıklayarak atlayabileyim. Kaynağı ve seçimi koruyun; medya oluşturmayın veya dışa aktarmayın."
+  }
+}

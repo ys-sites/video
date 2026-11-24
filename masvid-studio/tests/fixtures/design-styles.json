@@ -1,0 +1,14 @@
+{
+  "style": "swiss",
+  "title": "OpenMotion 0.1 launch",
+  "seconds": 15,
+  "brandColors": { "brand": "#3B5BFF" },
+  "colors": ["#F5F4F0", "#111111", "#E30613"],
+  "scenes": [
+    { "id": "open",  "seconds": 2.5, "headline": "OpenMotion", "body": "Video, written as code.", "move": "grid lines draw, wordmark snaps into column 1", "rule": 1 },
+    { "id": "one",   "seconds": 3,   "headline": "One timeline", "move": "numerals slide by whole columns", "rule": 4 },
+    { "id": "two",   "seconds": 3,   "headline": "Any agent",    "move": "flush-left list builds line by line", "rule": 3 },
+    { "id": "three", "seconds": 3,   "headline": "Open source",  "move": "red block arrives on the beat", "rule": 4 },
+    { "id": "end",   "seconds": 3.5, "headline": "Made with OpenMotion", "body": "github.com/nexu-io/openmotion", "move": "everything slides out by columns, credit holds", "rule": 5 }
+  ]
+}

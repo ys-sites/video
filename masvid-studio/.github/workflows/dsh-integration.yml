@@ -1,0 +1,101 @@
+name: DSH integration
+
+on:
+  pull_request:
+    paths:
+      - 'integrations/dsh/**'
+      - '*.ts'
+      - 'shared/**'
+      - 'gateway/**'
+      - 'scripts/runtime-*.mjs'
+      - 'scripts/runtime-lock.json'
+      - 'scripts/release-version.mjs'
+      - '.github/scripts/motion-release.mjs'
+      - '.github/scripts/motion-scan.mjs'
+      - '.github/workflows/motion-candidate.yml'
+      - '.github/workflows/motion-publish-test.yml'
+      - 'install.md'
+      - 'docs/install.md'
+      - 'tests/dsh-integration.test.ts'
+      - 'tests/dsh-distribution.test.ts'
+      - 'tests/dsh-release.test.ts'
+      - 'tests/dsh-template-cards.test.ts'
+      - 'packages/design-system/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/dsh-integration.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'integrations/dsh/**'
+      - '*.ts'
+      - 'shared/**'
+      - 'gateway/**'
+      - 'scripts/runtime-*.mjs'
+      - 'scripts/runtime-lock.json'
+      - 'scripts/release-version.mjs'
+      - '.github/scripts/motion-release.mjs'
+      - '.github/scripts/motion-scan.mjs'
+      - '.github/workflows/motion-candidate.yml'
+      - '.github/workflows/motion-publish-test.yml'
+      - 'install.md'
+      - 'docs/install.md'
+      - 'tests/dsh-integration.test.ts'
+      - 'tests/dsh-distribution.test.ts'
+      - 'tests/dsh-release.test.ts'
+      - 'tests/dsh-template-cards.test.ts'
+      - 'packages/design-system/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/dsh-integration.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dsh-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  plugin:
+    name: Optional DSH plugin
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6.0.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '26.11.1'
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            integrations/dsh/package-lock.json
+      - name: Install application build tools
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Install optional host dependencies
+        run: npm ci --prefix integrations/dsh --ignore-scripts --no-audit --no-fund
+      - name: Check and package the optional plugin
+        run: |
+          npm run typecheck --prefix integrations/dsh
+          npm run pack --prefix integrations/dsh
+          npm run test --prefix integrations/dsh
+          node --test tests/dsh-integration.test.ts tests/dsh-distribution.test.ts tests/dsh-release.test.ts tests/dsh-template-cards.test.ts
+      - name: Retain the plugin for PR testing
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: openmotion-dsh
+          path: integrations/dsh/dist/*.tgz
+          if-no-files-found: error
+      - name: Publish verified main plugin downloads
+        if: github.repository == 'nexu-io/openmotion' && github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.CLOUDFLARE_R2_RELEASES_AK }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.CLOUDFLARE_R2_RELEASES_SK }}
+          AWS_EC2_METADATA_DISABLED: 'true'
+          AWS_PAGER: ''
+          MOTION_R2_ENDPOINT: ${{ vars.CLOUDFLARE_R2_RELEASES_URL }}
+          MOTION_R2_BUCKET: ${{ vars.CLOUDFLARE_R2_RELEASES_BUCKET }}
+        run: node integrations/dsh/publish.ts

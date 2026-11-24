@@ -1,0 +1,26 @@
+{
+  "id": "neon-drift",
+  "title": "Neon Drift",
+  "description": "Take a painted neon night drive on a rain-slick elevated highway. Weave through traffic, recharge your boost and chase a new distance record.",
+  "genre": "racing",
+  "style": "3d",
+  "setting": "cyberpunk",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "Left / Right or A / D steer · Up / W / Space boost · click / tap left or right to steer · touch BOOST · P / Esc pause · R restart",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-20T00:00:00.000Z",
+  "updatedAt": "2026-11-20T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "霓虹漂移",
+      "description": "雨夜高架上的霓虹夜驰。穿梭车流、蓄满加速，刷新你的最远距离。",
+      "controls": "← → 或 A / D 转向 · ↑ / W / 空格加速 · 点击屏幕左右两侧转向 · 触屏 BOOST 加速 · P / Esc 暂停 · R 重开"
+    }
+  }
+}

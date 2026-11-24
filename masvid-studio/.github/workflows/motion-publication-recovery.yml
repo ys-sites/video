@@ -1,0 +1,47 @@
+name: Motion snapshot recovery
+
+on:
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: 'Channel of the existing version; snapshots only, no tag or default-guide changes'
+        type: choice
+        options: [test, stable]
+        default: test
+      version:
+        description: 'Exact existing candidate version; the identical package must already be public on npm'
+        type: string
+        required: true
+      candidate_run_id:
+        description: 'Optional exact candidate run ID when multiple candidates have this version'
+        type: string
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  select-ref:
+    if: github.repository == 'nexu-io/openmotion'
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Require Motion integration branch
+        run: |
+          if [ "$GITHUB_REF" != 'refs/heads/main' ]; then
+            echo '::error::Select main in Run workflow for Motion operations.'
+            exit 1
+          fi
+  recover:
+    needs: select-ref
+    permissions:
+      # Reusable-workflow permission ceiling; its Release job is skipped for archive-only.
+      contents: write
+      actions: read
+      id-token: write
+    uses: ./.github/workflows/motion-publish-test.yml
+    with:
+      channel: ${{ inputs.channel || 'test' }}
+      version: ${{ inputs.version }}
+      candidate_run_id: ${{ inputs.candidate_run_id }}
+      archive_only: true
+    secrets: inherit

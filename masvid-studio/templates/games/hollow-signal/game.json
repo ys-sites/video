@@ -1,0 +1,26 @@
+{
+  "id": "hollow-signal",
+  "title": "Hollow Signal",
+  "description": "The town has gone quiet. Tune through the static and hold four clear signals before your sanity fades.",
+  "genre": "horror",
+  "style": "minimal",
+  "setting": "modern",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "A / D or left / right tune · mouse/touch drag tuning dial · hold Space or Hold Signal to rescue · P / Esc pause · R restart",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-20T00:00:00.000Z",
+  "updatedAt": "2026-11-20T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "空镇回声",
+      "description": "雾锁小镇里还有人在呼救。转动电台旋钮，穿过杂音寻找四名幸存者，在理智耗尽前锁定信号并引导他们脱险。",
+      "controls": "A / D 或左右方向键调频 · 鼠标或触屏拖动调频旋钮 · 按住空格或“锁定信号”救援 · P / Esc 暂停 · R 重开"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "openmotion-dsh-integration",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node start.ts",
+    "build": "node build.ts",
+    "typecheck": "../../node_modules/.bin/tsc -p tsconfig.json",
+    "pack": "node build.ts && npm pack ./dist/plugin --pack-destination ./dist",
+    "test": "vitest run --config vitest.config.ts"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh": "0.2.2-rc.1",
+    "yaml": "2.9.1"
+  }
+}

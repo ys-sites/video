@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 196 32" width="196" height="32" role="img" aria-label="Masvid Studio">
+  <rect x="0" y="0" width="32" height="32" rx="8" fill="#000"/>
+  <g fill="#fff">
+    <rect x="6" y="8.5" width="11" height="3.5" rx="1.75"/><rect x="6" y="14.25" width="20" height="3.5" rx="1.75"/>
+    <rect x="6" y="20" width="8" height="3.5" rx="1.75"/><rect x="19.5" y="5.5" width="2.5" height="21" rx="1.25"/>
+    <rect x="17.25" y="5.5" width="7" height="2.5" rx="1.25"/>
+  </g>
+  <text x="42" y="23" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#000">Masvid Studio</text>
+</svg>

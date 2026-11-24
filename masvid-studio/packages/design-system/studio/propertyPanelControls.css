@@ -1,0 +1,255 @@
+[data-menu-panel].motion-color-picker {
+  width: 260px;
+  min-width: 0;
+  gap: var(--motion-space-8);
+  padding: var(--motion-space-12);
+  background-color: light-dark(var(--motion-neutral-n0), var(--motion-editor-menu-bg));
+}
+
+[data-menu-panel].motion-color-picker [role="combobox"] {
+  width: auto;
+  height: var(--motion-control-sm);
+  padding-inline: var(--motion-space-8);
+}
+
+.motion-color-picker-spectrum {
+  aspect-ratio: 5 / 4;
+  border-radius: var(--motion-radius-sm);
+  background-image: linear-gradient(to top, black, transparent),
+    linear-gradient(to right, var(--motion-neutral-n0), transparent);
+}
+
+.motion-color-picker-track {
+  position: absolute;
+  inset-inline: 0;
+  top: 50%;
+  height: var(--motion-space-16);
+  transform: translateY(-50%);
+  overflow: hidden;
+  border-radius: var(--motion-radius-full);
+  pointer-events: none;
+}
+
+.motion-color-checkerboard {
+  background: conic-gradient(var(--motion-neutral-n0) 25%, var(--motion-neutral-n4) 0 50%,
+    var(--motion-neutral-n0) 0 75%, var(--motion-neutral-n4) 0) 0 0 / 8px 8px;
+}
+
+.motion-color-picker-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border: 3px solid var(--motion-neutral-n0);
+  border-radius: var(--motion-radius-full);
+  box-shadow: var(--motion-shadow-sm);
+  pointer-events: none;
+}
+
+/* Inspector-only surfaces and M-sized fields; preserve control behavior. */
+:root[data-motion-ui] [data-motion-inspector] {
+  --inspector-control-fill: var(--studio-form-fill);
+  --inspector-control-hover: var(--studio-form-hover);
+  --inspector-control-focus: var(--studio-form-focus);
+}
+
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] :is(
+  [data-flat-textarea-boxed],
+  [data-flat-row-boxed],
+  [data-flat-font-trigger],
+  [data-flat-select-trigger]
+) {
+  background-color: var(--inspector-control-fill);
+  border-color: transparent;
+  border-radius: var(--motion-radius-editor-control);
+}
+
+/* M-sized single-line fields; keep row order, labels and column widths intact. */
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] :is(
+  [data-flat-row-boxed],
+  [data-flat-font-trigger],
+  [data-flat-select-trigger]
+) {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding-block: 0;
+  padding-inline: 12px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+/* Color and font controls share one fixed value-column width. */
+:root[data-motion-ui][data-motion-studio] [data-flat-color-trigger][data-form-control="boxed"],
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] [data-flat-font-trigger] {
+  inline-size: 130px;
+  flex: 0 0 130px;
+  padding-inline: var(--motion-space-8);
+}
+
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] :is(
+  [data-flat-row-boxed] input,
+  [data-flat-font-trigger] > span,
+  [data-flat-select-trigger] > span,
+  [data-flat-select-trigger] > select
+) {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] :is(
+  [data-flat-textarea-boxed],
+  [data-flat-row-boxed],
+  [data-flat-font-trigger],
+  [data-flat-select-trigger]
+):not(:disabled):not(:has(:disabled)):not(:has([data-inspector-step]:hover)):hover {
+  background-color: var(--inspector-control-hover);
+}
+
+/* Outlines do not change field bounds; keep keyboard and nested-input focus visible. */
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] :is(
+  [data-flat-textarea-boxed],
+  [data-flat-row-boxed],
+  [data-flat-font-trigger],
+  [data-flat-select-trigger]
+):is(:focus-within, [aria-expanded="true"]) {
+  outline: 1px solid var(--inspector-control-focus);
+  outline-offset: 1px;
+  box-shadow: none;
+}
+
+/* The outer field owns focus; suppress the global ring on its nested editor. */
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] :is(
+  [data-flat-row-boxed],
+  [data-flat-textarea-boxed],
+  [data-flat-select-trigger]
+) :is(input, textarea, select):focus {
+  outline: none;
+  box-shadow: none;
+}
+
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] [data-flat-segment-filled] {
+  border-radius: var(--motion-radius-editor-control);
+}
+
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] [data-flat-segment-filled][aria-pressed="true"] {
+  background-color: var(--inspector-control-fill);
+}
+
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] [data-flat-segment-filled]:enabled:hover {
+  background-color: var(--inspector-control-hover);
+}
+
+.motion-slider-stop {
+  position: absolute;
+  inset-block: 0;
+  display: grid;
+  place-items: center;
+  width: var(--motion-space-8);
+  transform: translateX(-50%);
+}
+
+.motion-slider-stop::before {
+  content: "";
+  width: var(--motion-space-4);
+  height: var(--motion-space-4);
+  border-radius: var(--motion-radius-full);
+  background: var(--motion-dim);
+}
+
+[data-flat-slider-track]:not([aria-disabled="true"]) .motion-slider-stop:hover::before {
+  background: var(--motion-strong);
+}
+
+/* Click-to-type slider readouts keep their unboxed resting state. */
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] :is(
+  [data-flat-slider-input],
+  [data-flat-slider-value]
+) {
+  border-radius: var(--motion-radius-editor-control);
+}
+
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] [data-flat-slider-input] {
+  background-color: var(--inspector-control-fill);
+}
+
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] [data-flat-slider-input]:not([aria-invalid="true"]):focus {
+  border-color: transparent;
+  outline: 1px solid var(--inspector-control-focus);
+  outline-offset: 1px;
+}
+
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] :is(input, textarea)::placeholder {
+  color: var(--motion-neutral-n6);
+  opacity: 1;
+}
+
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] :is(
+  [data-flat-font-trigger], [data-flat-select-trigger]
+):disabled {
+  color: var(--motion-neutral-n6);
+  opacity: 1;
+}
+
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] [data-select-arrow] {
+  color: var(--studio-form-arrow);
+  transform-origin: center;
+  transform-box: view-box;
+}
+
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] :is(
+  [data-flat-select-trigger]:has(select:open)
+) [data-select-arrow] {
+  transform: rotate(180deg);
+}
+
+/* Preserve the 12px button boxes; replace only the visible glyph with an 8x5 triangle. */
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] [data-inspector-step] {
+  display: grid;
+  place-items: center;
+  width: 12px;
+  height: 12px;
+  background: transparent;
+  color: var(--motion-neutral-n7);
+  opacity: 1;
+}
+
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] [data-inspector-step] > svg {
+  display: none;
+}
+
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] [data-inspector-step]::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+}
+
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] [data-inspector-step="1"]::before {
+  border-top: 0;
+  border-bottom: 5px solid currentColor;
+}
+
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] [data-inspector-step]:enabled:hover {
+  background: transparent;
+  color: light-dark(var(--motion-neutral-n9), var(--motion-neutral-n3));
+}
+
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] [data-inspector-step]:enabled:active {
+  background: transparent;
+  color: var(--inspector-control-focus);
+}
+
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] [data-inspector-step]:focus-visible {
+  background: transparent;
+  outline-color: var(--inspector-control-focus);
+}
+
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] [data-inspector-step]:disabled {
+  color: var(--motion-neutral-n5);
+}
+
+:root[data-motion-ui][data-motion-studio] [data-motion-inspector] :is([data-flat-font-trigger], [data-flat-select-trigger]):disabled :is(span, svg) {
+  color: inherit;
+}

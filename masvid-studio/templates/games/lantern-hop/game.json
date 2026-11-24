@@ -1,0 +1,26 @@
+{
+  "id": "lantern-hop",
+  "title": "Lantern Hop",
+  "description": "Guide a scarf-wearing pixel fox across layered moonlit rooftops. Double-jump the gaps and gather glowing paper lanterns in an endless night run.",
+  "genre": "platformer",
+  "style": "pixel",
+  "setting": "fantasy",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "Space / Up / W / click / tap jump · hold for height · jump again in air · P / Esc pause · R restart",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-20T00:00:00.000Z",
+  "updatedAt": "2026-11-20T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "灯笼跳跃",
+      "description": "带着围巾的像素小狐狸在月光屋顶上奔跑。二段跳越过缺口，收集发光的纸灯笼，夜跑没有尽头。",
+      "controls": "空格 / ↑ / W / 点击 跳跃 · 按住跳更高 · 空中再按一次二段跳 · P / Esc 暂停 · R 重开"
+    }
+  }
+}

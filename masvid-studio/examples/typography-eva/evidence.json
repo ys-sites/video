@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "experimentDate": "2026-11-13",
+  "model": "gpt-6.1-sol",
+  "reasoningEffort": "high",
+  "codexAppServer": "0.166.0",
+  "runtimeBase": "8c7ff7d388de34200163f3c3f2a7d00e6e514045",
+  "catalogAtExperiment": 20,
+  "catalogInThisPR": 40,
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "seconds": 24,
+  "finalOrigin": "Agent-curated synthesis after blinded model review, not a fresh autonomous new-Skill output",
+  "styleOnlyDifference": true,
+  "originalCopyPreserved": true,
+  "artworkTimelineAndAudioPreserved": true,
+  "blindFramesSeconds": [
+    2,
+    7,
+    12,
+    17,
+    22
+  ],
+  "blindFrameWidth": 960,
+  "blindFrameHeight": 540,
+  "reviewer1": "All five full frames plus contacts",
+  "reviewer2": "Full 2/12/17/22-second frames; 7 seconds via contacts",
+  "exports": [
+    {
+      "case": "eva_edit-baseline",
+      "sha256": "d0ae5e8ca8f5368ed958bb6e5bb0179c953f260853c3e90da06258f6322e58ca",
+      "bytes": 11816246,
+      "technicalStatus": "passed",
+      "decodedPcmSha256": "6c04060012f4b065972f2e3f49c8654e85a5e02d83a3355485dc249578dc4886"
+    },
+    {
+      "case": "eva_edit-candidate",
+      "sha256": "81b6c05368effdcdab65a0a2960c39d5e2c545aee977bb09163ab483e2aa0c40",
+      "bytes": 11818751,
+      "technicalStatus": "passed",
+      "decodedPcmSha256": "6c04060012f4b065972f2e3f49c8654e85a5e02d83a3355485dc249578dc4886"
+    },
+    {
+      "case": "eva_familyonly-control",
+      "sha256": "9f7e101bff592f5351b323f4e305b3d5d2cb4232651e286b8805134b72a2e56c",
+      "bytes": 11963959,
+      "technicalStatus": "passed",
+      "decodedPcmSha256": "6c04060012f4b065972f2e3f49c8654e85a5e02d83a3355485dc249578dc4886"
+    },
+    {
+      "case": "eva_final-control",
+      "sha256": "5d41d249e3af97a6e68d7e9fe96c457e12ff493c649683575104bb63823c170b",
+      "bytes": 11888676,
+      "technicalStatus": "passed",
+      "decodedPcmSha256": "6c04060012f4b065972f2e3f49c8654e85a5e02d83a3355485dc249578dc4886"
+    },
+    {
+      "case": "eva_finish-baseline",
+      "sha256": "cbed2217398bc2bae270e633049ab7b390ce0cf028bb3e09883039b9498f4795",
+      "bytes": 11692601,
+      "technicalStatus": "passed",
+      "decodedPcmSha256": "6c04060012f4b065972f2e3f49c8654e85a5e02d83a3355485dc249578dc4886"
+    },
+    {
+      "case": "eva_finish-candidate",
+      "sha256": "a1b3b8a953c72606df2226242f13cfc8f88c2fec9bcd2ab52d554615ff33576a",
+      "bytes": 11842663,
+      "technicalStatus": "passed",
+      "decodedPcmSha256": "6c04060012f4b065972f2e3f49c8654e85a5e02d83a3355485dc249578dc4886"
+    },
+    {
+      "case": "eva_fixture-baseline",
+      "sha256": "7166b201fd6e4528da50dcc9263682afd1352c148e16ee9265be12bf8cfb59ac",
+      "bytes": 12012133,
+      "technicalStatus": "passed",
+      "decodedPcmSha256": "6c04060012f4b065972f2e3f49c8654e85a5e02d83a3355485dc249578dc4886"
+    },
+    {
+      "case": "eva_treatmentonly-control",
+      "sha256": "78da06d6ea38c78fad3aa008d208d04092cf846214af250073962a0164eb7775",
+      "bytes": 11766635,
+      "technicalStatus": "passed",
+      "decodedPcmSha256": "6c04060012f4b065972f2e3f49c8654e85a5e02d83a3355485dc249578dc4886"
+    }
+  ],
+  "files": {
+    "before.html": {
+      "bytes": 35321,
+      "sha256": "dc702f923cee5d4d6ae9ff4de3e6d5a48a1b0874832746e8b0a5a016bffc3a82"
+    },
+    "after.html": {
+      "bytes": 37217,
+      "sha256": "94b2d747f9ab4102eed25132cc64c10bc214c09a112d8467cfc0822613f148c4"
+    },
+    "comparison-12s.png": {
+      "bytes": 597084,
+      "sha256": "846c6dba562bd047ff88a4e414354f1814418acc6946b464a18e4b35c65c1602"
+    },
+    "synchronized-comparison.mp4": {
+      "bytes": 4733431,
+      "sha256": "d5005998f085ae9c6657aac4a31667294d59652b5e898717173fb533501641f9"
+    },
+    "typography.patch": {
+      "bytes": 2410,
+      "sha256": "55203cd667b57869cc828ac8bad182e54d8d0e3d0259631e01598717e40552ec"
+    }
+  },
+  "runtimeBaseMeaning": "Underlying checkout commit; historical baseline/candidate Skill snapshots contained uncommitted changes. This is not a claim that the films were created from a clean commit or the current PR head."
+}

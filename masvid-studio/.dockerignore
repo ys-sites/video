@@ -1,0 +1,20 @@
+# Build context for deploy/Dockerfile. Dependencies and the Studio bundle are
+# produced inside the image; local data and credentials never enter it.
+.git
+.github
+node_modules
+**/node_modules
+studio/build
+mcp-ui/template-recommendations/build
+web/inline-video.html
+.motion-data
+.motion-data-dev
+.artifacts
+.tools
+dist
+.env
+.env.*
+*.log
+.DS_Store
+tests
+deploy/.env

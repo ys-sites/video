@@ -1,0 +1,317 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { fixture } from './fixtures.ts';
+import { Phase1Service } from '../phase1.ts';
+import { pluginRoot } from '../hyperframes.ts';
+
+const origin = 'http://127.0.0.1:4173';
+function api(store: any, openProject = async () => { throw new Error('The host must explicitly open the preview'); }) { return new Phase1Service(store, pluginRoot, {
+  origin: () => origin, nativeUrl: () => undefined,
+  openProject,
+  mutation: async task => task(), cancel: async () => {},
+}); }
+async function create(service: Phase1Service) {
+  return service.call('openmotion_create_project', { requestId: crypto.randomUUID(), projectType: 'natural_language', title: 'Preview handoff', requirements: 'An editable film' });
+}
+async function edit(service: Phase1Service, p: any, text: string, presentation?: string) {
+  return service.call('openmotion_edit_project', { projectId: p.projectId, expectedRevision: p.revision, expectedVersionId: p.version.versionId,
+    requestId: crypto.randomUUID(), files: [{ path: 'note.txt', content: text }], ...(presentation ? { presentation } : {}) });
+}
+function display(saved: any, visibility = 'visible', contentVerified = true) {
+  return { projectId: saved.projectId, requestId: crypto.randomUUID(), action: 'record_display', display: {
+    revision: saved.revision, versionId: saved.version.versionId, previewUrl: saved.previewHandoff.previewUrl,
+    visibility, contentVerified, evidence: 'Host panel visibility read back; inspected the edited text in the live preview at 1s.' } };
+}
+
+test('template library opens without a bound project or initializing source, preserving existing work', async () => {
+  for (const initialized of [false, true]) await fixture(async store => {
+    const service = api(store), before = await store.get(), catalog = store.projectCatalog();
+    const opened = await service.call('openmotion_open_preview', { target: 'templates' });
+    assert.equal(opened.projectCreated, false);
+    assert.equal(opened.projectId, undefined);
+    assert.equal(new URL(opened.previewUrl).searchParams.get('templates'), '1');
+    assert.equal(new URL(opened.previewUrl).searchParams.has('project'), false);
+    assert.equal(opened.previewHandoff.nextAction.kind, 'host');
+    assert.equal(opened.previewHandoff.openedByHost, false);
+    assert.equal(opened.previewHandoff.focusPolicy, 'preserve_current_chat');
+    assert.deepEqual(await store.get(), before);
+    assert.deepEqual(store.projectCatalog(), catalog);
+    await assert.rejects(service.call('openmotion_open_preview', { target: 'templates', projectId: 'project' }), /INVALID_ARGUMENT/);
+    await assert.rejects(service.call('openmotion_open_preview', { target: 'templates', action: 'record_display' }), /INVALID_ARGUMENT/);
+  }, initialized);
+});
+
+test('provider setup opens without a project and preserves workspace state', async () => {
+  for (const initialized of [false, true]) await fixture(async store => {
+    const service = api(store), before = await store.get(), catalog = store.projectCatalog();
+    for (const presentation of ['foreground', 'background', 'now']) {
+      const opened = await service.call('openmotion_open_preview', { target: 'providers', presentation });
+      const url = new URL(opened.previewUrl);
+      assert.equal(url.pathname, '/settings/providers');
+      assert.equal(url.searchParams.has('page'), false);
+      assert.equal(url.searchParams.has('section'), false);
+      assert.equal(url.searchParams.get('entry_from'), 'agent_providers');
+      assert.equal(url.searchParams.has('provider'), false);
+      assert.equal(url.searchParams.has('project'), false);
+      assert.equal(opened.target, 'providers');
+      assert.equal(opened.projectCreated, false);
+      assert.equal(opened.previewHandoff.openedByHost, false);
+      assert.equal(opened.previewHandoff.hostActionRequired, presentation !== 'background');
+      assert.match(opened.previewHandoff.instructions, /Model providers/);
+      assert.match(opened.previewHandoff.instructions, /Sign in with OpenDesign or Upgrade to Plus directly on the opened OpenDesign page/);
+      assert.match(opened.previewHandoff.instructions, /OpenDesign Plus or above/);
+      assert.doesNotMatch(opened.previewHandoff.instructions, /Settings > Account|Subscription & usage/);
+    }
+    for (const entry of ['agent_media_signed_out', 'agent_media_upgrade_free', 'agent_media_upgrade_go', 'agent_media_balance_low', 'agent_media_key_rejected', 'agent_media_handbook']) {
+      const handoff = await service.call('openmotion_open_preview', { target: 'providers', entry });
+      const url = new URL(handoff.previewUrl);
+      assert.equal(url.searchParams.get('entry_from'), entry);
+      assert.equal(url.searchParams.get('embed'), '1');
+      assert.equal(url.searchParams.get('provider'), entry === 'agent_media_key_rejected' || entry === 'agent_media_handbook' ? null : 'account');
+      assert.equal(handoff.previewHandoff.nextAction.previewUrl, handoff.previewUrl);
+    }
+    assert.deepEqual(await store.get(), before);
+    assert.deepEqual(store.projectCatalog(), catalog);
+    for (const args of [{ projectId: 'project' }, { sessionId: 'session' }, { action: 'begin' }, { action: 'record_display' }, { entry: 'PRIVATE_ENTRY' }]) {
+      await assert.rejects(service.call('openmotion_open_preview', { target: 'providers', ...args }), /INVALID_ARGUMENT/);
+    }
+    await assert.rejects(service.call('openmotion_open_preview', { target: 'templates', entry: 'agent_media_signed_out' }), /INVALID_ARGUMENT/);
+    const project = await service.call('openmotion_create_project', { requestId: crypto.randomUUID(), projectType: 'natural_language', title: 'Entry guard', requirements: 'Reject provider entry on project previews' });
+    await assert.rejects(service.call('openmotion_open_preview', { target: 'project', action: 'begin', projectId: project.projectId, requestId: crypto.randomUUID(), mode: 'create', entry: 'agent_media_upgrade_free' }), /INVALID_ARGUMENT/);
+    await assert.rejects(service.call('openmotion_open_preview', { action: 'begin', projectId: project.projectId, requestId: crypto.randomUUID(), mode: 'create', entry: 'agent_media_upgrade_free' }), /INVALID_ARGUMENT/);
+    assert.deepEqual(new Set(store.projectCatalog().projects.map(item => item.id)), new Set([...catalog.projects.map(item => item.id), project.projectId]));
+  }, initialized);
+});
+
+test('confirmed inactive-chat deferral preserves the current chat and resolves the latest version on return', () => fixture(async store => {
+  const service = api(store, async () => {}), p = await create(service), first = await edit(service, p, 'first');
+  const opened = await service.call('openmotion_open_preview', first.previewHandoff.nextAction.arguments);
+  assert.equal(opened.previewHandoff.focusPolicy, 'preserve_current_chat');
+  assert.equal(opened.previewHandoff.nextAction.codex.recovery.tool, undefined);
+  const queued = display(first, 'queued', false);
+  queued.display = { ...queued.display, hostStatus: 'queued', evidence: 'Host confirms the calling chat is inactive; preview is queued for its return.' } as any;
+  const pending = await service.call('openmotion_open_preview', queued);
+  assert.equal(pending.previewHandoff.state, 'pending');
+  assert.equal(pending.previewHandoff.nextAction.operation, 'wait_for_calling_chat');
+  const second = await edit(service, first, 'second');
+  const resume = pending.previewHandoff.nextAction.onReturn;
+  const latest = await service.call(resume.tool, resume.arguments);
+  assert.equal(latest.currentVersionId, second.version.versionId);
+  assert.equal(latest.previewHandoff.focusPolicy, 'preserve_current_chat');
+  await assert.rejects(service.call('openmotion_open_preview', display(first)), /VERSION_CONFLICT/);
+  assert.equal((await service.call('openmotion_open_preview', display({ ...second, previewHandoff: latest.previewHandoff }))).previewHandoff.state, 'confirmed');
+}, false));
+
+test('a queued acknowledgment with a hidden or unavailable panel retains presentation recovery', () => fixture(async store => {
+  const service = api(store, async () => {}), p = await create(service), saved = await edit(service, p, 'complete film');
+  const nativeTabId = crypto.randomUUID();
+  for (const visibility of ['hidden', 'unavailable']) {
+    const receipt = display(saved, visibility, true);
+    receipt.display = { ...receipt.display, hostStatus: 'queued', hostTabId: nativeTabId } as any;
+    const result = await service.call('openmotion_open_preview', receipt);
+    assert.equal(result.previewHandoff.state, 'pending');
+    assert.equal(result.previewHandoff.openedByHost, false);
+    assert.equal(result.previewHandoff.nextAction.operation, 'present_preview');
+    assert.equal(result.previewHandoff.nextAction.codex.arguments.target.url, saved.previewHandoff.previewUrl);
+    assert.equal(result.previewHandoff.nextAction.codex.arguments.target.tabId, nativeTabId);
+    assert.equal(result.previewHandoff.nextAction.codex.recovery.when, 'calling_chat_confirmed_inactive');
+    assert.equal(result.previewHandoff.nextAction.codex.recovery.tool, undefined, 'ordinary display recovery must not navigate chats');
+  }
+}, false));
+
+test('every edit returns a version-bound foreground handoff without claiming the host opened', () => fixture(async store => {
+  const service = api(store), p = await create(service);
+  const first = await edit(service, p, 'first');
+  assert.equal(first.previewHandoff.state, 'pending');
+  assert.equal(first.previewHandoff.revision, first.revision);
+  assert.equal(first.previewHandoff.versionId, first.version.versionId);
+  assert.equal(first.previewHandoff.placement, 'right');
+  assert.equal(first.previewHandoff.reuseExistingTab, true);
+  assert.equal(first.previewHandoff.openedByHost, false);
+  const firstPreviewUrl = new URL(first.previewHandoff.previewUrl);
+  assert.equal(firstPreviewUrl.pathname, `/editor/${p.projectId}`);
+  assert.equal(firstPreviewUrl.hash, `#project/${p.projectId}`);
+  const args = display(first);
+  const confirmed = await service.call('openmotion_open_preview', args);
+  assert.equal(confirmed.previewHandoff.state, 'confirmed');
+  assert.equal(confirmed.previewHandoff.confirmationSource, 'host_reported');
+  assert.equal((await service.call('openmotion_open_preview', args)).replayed, true);
+  const second = await edit(service, first, 'second');
+  assert.equal(second.previewHandoff.state, 'pending');
+  assert.notEqual(second.previewHandoff.versionId, first.previewHandoff.versionId);
+  await assert.rejects(service.call('openmotion_open_preview', display(first)), /VERSION_CONFLICT/);
+  await assert.rejects(service.call('openmotion_open_preview', args), /VERSION_CONFLICT/, 'replaying an old confirmation must not confirm the new version');
+  await assert.rejects(service.call('openmotion_open_preview', { projectId: p.projectId, expectedRevision: first.revision, expectedVersionId: first.version.versionId }), /VERSION_CONFLICT/);
+  const detail = await service.call('openmotion_get_project', { projectId: p.projectId });
+  assert.equal(detail.previewDisplay.isCurrentVersion, false);
+  assert.equal(detail.previewDisplay.liveVisibilityVerified, false);
+}, false));
+
+test('queued, hidden, unavailable and unverified content remain pending; background is explicit', () => fixture(async store => {
+  const service = api(store), p = await create(service), saved = await edit(service, p, 'first');
+  for (const visibility of ['queued', 'hidden', 'unavailable']) {
+    const result = await service.call('openmotion_open_preview', display(saved, visibility));
+    assert.equal(result.previewHandoff.state, 'pending');
+    assert.equal(result.previewHandoff.openedByHost, false);
+    assert.equal(result.previewHandoff.nextAction.kind, 'host');
+  }
+  assert.equal((await service.call('openmotion_open_preview', display(saved, 'visible', false))).previewHandoff.state, 'pending');
+  const bad = display(saved); bad.display.previewUrl = origin + '/?project=' + crypto.randomUUID();
+  await assert.rejects(service.call('openmotion_open_preview', bad), /PREVIEW_TARGET_MISMATCH/);
+  const badPath = display(saved); badPath.display.previewUrl = origin + '/editor/' + crypto.randomUUID();
+  await assert.rejects(service.call('openmotion_open_preview', badPath), /PREVIEW_TARGET_MISMATCH/);
+  const badSurface = display(saved); badSurface.display.previewUrl = origin + '/explore';
+  await assert.rejects(service.call('openmotion_open_preview', badSurface), /PREVIEW_TARGET_MISMATCH/);
+  // Legacy /?project=:id receipts remain accepted alongside canonical /editor/:id URLs.
+  const legacySession = new URL(saved.previewHandoff.previewUrl).searchParams.get('session')!;
+  const legacyReceipt = display(saved);
+  legacyReceipt.display.previewUrl = `${origin}/?session=${legacySession}&project=${p.projectId}&embed=1#project/${p.projectId}`;
+  assert.equal((await service.call('openmotion_open_preview', legacyReceipt)).previewHandoff.state, 'confirmed');
+  const background = await edit(service, saved, 'background', 'background');
+  assert.equal(background.previewHandoff.state, 'background');
+  assert.equal(background.previewHandoff.hostActionRequired, false);
+  assert.equal(background.previewHandoff.openedByHost, false);
+  // The API defaults to foreground; the host must keep passing an active background preference.
+  const foreground = await edit(service, background, 'foreground');
+  assert.equal(foreground.previewHandoff.hostActionRequired, true);
+}, false));
+
+test('restoring identical content still requires a new display confirmation', () => fixture(async store => {
+  const service = api(store), p = await create(service), first = await edit(service, p, 'first');
+  await service.call('openmotion_open_preview', display(first));
+  const second = await edit(service, first, 'second');
+  const restored = await service.call('openmotion_restore_version', { projectId: p.projectId, requestId: crypto.randomUUID(),
+    versionId: first.version.versionId, expectedRevision: second.revision, expectedVersionId: second.version.versionId });
+  assert.equal(restored.previewHandoff.state, 'pending');
+  assert.equal(restored.previewHandoff.versionId, restored.version.versionId);
+  assert.equal(restored.revision, first.revision);
+  assert.notEqual(restored.version.versionId, first.version.versionId);
+  await assert.rejects(service.call('openmotion_open_preview', display(first)), /VERSION_CONFLICT/);
+  assert.equal((await service.call('openmotion_get_project', { projectId: p.projectId })).previewDisplay.isCurrentVersion, false);
+}, false));
+
+test('opening prepares the host action without recursively reopening and preserves full-workspace links', () => fixture(async store => {
+  let opened = 0;
+  const service = api(store, async () => { opened++; }), p = await create(service);
+  const saved = await edit(service, p, 'first');
+  const result = await service.call('openmotion_open_preview', { ...saved.previewHandoff.nextAction.arguments, embedded: false });
+  assert.equal(opened, 1);
+  assert.equal(result.previewHandoff.nextAction.kind, 'host');
+  assert.equal(result.previewHandoff.nextAction.codex.arguments.placement, 'right');
+  assert.equal(result.previewHandoff.nextAction.codex.recovery.tool, undefined);
+  assert.equal(result.previewHandoff.nextAction.codex.recovery.operation, 'wait_for_calling_chat');
+  assert.equal(result.previewHandoff.nextAction.codex.arguments.threadId, undefined);
+  assert.match(result.previewHandoff.nextAction.codex.tabIdentity, /providerTabId/);
+  assert.deepEqual(result.previewHandoff.nextAction.codex.visibilitySync, {
+    capability: 'visibility', method: 'set', value: true,
+    when: 'after_binding_native_tab', scope: 'calling_chat_only', navigation: false,
+  });
+  assert.deepEqual(result.previewHandoff.nextAction.codex.observation, {
+    visibility: 'get', settleTimeoutMs: 6000, content: 'latest_live_preview',
+    recheckVisibilityAfterContent: true,
+  });
+  assert.equal(result.previewHandoff.previewUrl, result.previewUrl);
+  assert.equal(new URL(result.previewUrl).searchParams.has('embed'), false);
+  assert.equal(result.openedByHost, false);
+  const receipt = display({ ...saved, previewHandoff: result.previewHandoff });
+  assert.equal((await service.call('openmotion_open_preview', receipt)).previewHandoff.state, 'confirmed');
+}, false));
+
+test('only an explicit now request permits switching and it does not persist into the next turn', () => fixture(async store => {
+  const service = api(store, async () => {}), p = await create(service), saved = await edit(service, p, 'show now', 'now');
+  assert.equal(saved.previewHandoff.focusPolicy, 'switch_to_calling_chat');
+  assert.equal(saved.previewHandoff.nextAction.arguments.presentation, 'now');
+  const opened = await service.call('openmotion_open_preview', saved.previewHandoff.nextAction.arguments);
+  assert.equal(opened.previewHandoff.nextAction.codex.recovery.tool, 'navigate_to_codex_page');
+  assert.equal(opened.previewHandoff.nextAction.codex.recovery.scope, 'calling_chat_only');
+  const pending = await service.call('openmotion_open_preview', { ...display(saved, 'hidden', false), presentation: 'now' });
+  assert.equal(pending.previewHandoff.focusPolicy, 'switch_to_calling_chat');
+  assert.equal(pending.previewHandoff.nextAction.codex.recovery.tool, 'navigate_to_codex_page');
+  const next = await edit(service, saved, 'next ordinary edit');
+  assert.equal(next.previewHandoff.focusPolicy, 'preserve_current_chat');
+  const restored = await service.call('openmotion_restore_version', { projectId: p.projectId, requestId: crypto.randomUUID(),
+    versionId: saved.version.versionId, expectedRevision: next.revision, expectedVersionId: next.version.versionId, presentation: 'now' });
+  assert.equal(restored.previewHandoff.nextAction.arguments.presentation, 'now');
+  assert.equal((await service.call('openmotion_open_preview', { projectId: p.projectId })).previewHandoff.focusPolicy, 'preserve_current_chat');
+}, false));
+
+test('a queued host acknowledgment can confirm an actually visible current preview', () => fixture(async store => {
+  const service = api(store, async () => {}), p = await create(service), saved = await edit(service, p, 'latest');
+  const nativeTabId = crypto.randomUUID();
+  const visible = { ...display(saved), display: { ...display(saved).display, hostStatus: 'queued', hostTabId: nativeTabId } };
+  const confirmed = await service.call('openmotion_open_preview', visible);
+  assert.equal(confirmed.previewHandoff.state, 'confirmed');
+  assert.equal(confirmed.display.hostStatus, 'queued');
+  const second = await edit(service, saved, 'second');
+  assert.equal(second.previewHandoff.state, 'pending');
+  const reopened = await service.call('openmotion_open_preview', second.previewHandoff.nextAction.arguments);
+  assert.equal(reopened.previewHandoff.nextAction.codex.arguments.target.tabId, nativeTabId);
+  assert.equal(reopened.previewHandoff.nextAction.codex.arguments.target.url, reopened.previewUrl);
+  assert.equal(reopened.previewHandoff.state, 'pending', 'reusing a native tab must not reuse its old content confirmation');
+  const hidden = { ...display(second, 'hidden'), display: { ...display(second, 'hidden').display, hostStatus: 'queued' } };
+  const pending = await service.call('openmotion_open_preview', hidden);
+  assert.equal(pending.previewHandoff.state, 'pending');
+  assert.equal(pending.previewHandoff.openedByHost, false);
+}, false));
+
+test('public MCP round trips expose the handoff and reject a stale host receipt', { timeout: 60_000 }, () => fixture(async store => {
+  const { startServer } = await import('../server.ts');
+  const { rpc } = await import('../mcp.ts');
+  const { writeFile } = await import('node:fs/promises');
+  const { join } = await import('node:path');
+  const running = await startServer(store, 0, { editor: false });
+  const address = running.server.address(); assert.ok(address && typeof address !== 'string');
+  await writeFile(join(store.directory, 'preview.json'), JSON.stringify({ port: address.port }));
+  const call = async (name: string, args: any) => {
+    const response: any = await rpc({ jsonrpc: '2.0', id: crypto.randomUUID(), method: 'tools/call', params: { name, arguments: args } }, store);
+    return response.result;
+  };
+  try {
+    const library = await call('openmotion_open_preview', { target: 'templates' });
+    assert.equal(library.isError, undefined);
+    assert.equal(library.structuredContent.projectCreated, false);
+    assert.equal((await store.get()).project, null);
+    const created = await call('openmotion_create_project', { requestId: crypto.randomUUID(), projectType: 'natural_language', title: 'RPC preview', requirements: 'Check a two-turn editing handoff' });
+    assert.equal(created.isError, undefined);
+    const p = created.structuredContent;
+    const settings = await call('openmotion_open_preview', { target: 'providers' });
+    assert.equal(settings.isError, undefined, 'A bound project must not leak into provider setup');
+    assert.equal(new URL(settings.structuredContent.previewUrl).pathname, '/settings/providers');
+    assert.equal(settings.structuredContent.projectId, undefined);
+    const boundLibrary = await call('openmotion_open_preview', { target: 'templates' });
+    assert.equal(boundLibrary.isError, undefined, 'A project binding must not leak into the template library target');
+    assert.equal(boundLibrary.structuredContent.projectId, undefined);
+    const save = async (current: any, content: string) => call('openmotion_edit_project', { projectId: p.projectId, requestId: crypto.randomUUID(),
+      expectedRevision: current.revision, expectedVersionId: current.version.versionId, files: [{ path: 'note.txt', content }] });
+    const first = await save(p, 'first'); assert.equal(first.isError, undefined);
+    assert.equal(first.structuredContent.previewHandoff.state, 'pending');
+    const receipt = await call('openmotion_open_preview', display(first.structuredContent, 'queued', false));
+    assert.equal(receipt.isError, undefined); assert.equal(receipt.structuredContent.previewHandoff.state, 'pending');
+    const second = await save(first.structuredContent, 'second'); assert.equal(second.isError, undefined);
+    assert.equal(second.structuredContent.previewHandoff.state, 'pending');
+    const stale = await call('openmotion_open_preview', display(first.structuredContent));
+    assert.equal(stale.isError, true); assert.match(JSON.stringify(stale), /VERSION_CONFLICT/);
+    const unchanged = await call('openmotion_get_project', { projectId: p.projectId });
+    assert.equal(unchanged.structuredContent.currentVersionId, second.structuredContent.version.versionId);
+  } finally { await running.close(); }
+}, false));
+
+test('content changes during opening require rereading before a new preview handoff', () => fixture(async store => {
+  const { writeFile } = await import('node:fs/promises');
+  const { join } = await import('node:path');
+  let changed = false;
+  let projectId: string;
+  const service = api(store, async () => {
+    if (!changed) { changed = true; await writeFile(join(store.projectDirectoryFor(projectId), 'note.txt'), 'Changed while opening'); }
+  });
+  const p = await create(service); projectId = p.projectId;
+  const saved = await edit(service, p, 'first');
+  await assert.rejects(service.call('openmotion_open_preview', saved.previewHandoff.nextAction.arguments), /VERSION_CONFLICT/);
+  const current = await service.call('openmotion_get_project', { projectId });
+  assert.notEqual(current.currentVersionId, saved.version.versionId);
+  const opened = await service.call('openmotion_open_preview', { projectId, expectedRevision: current.revision, expectedVersionId: current.currentVersionId });
+  assert.equal(opened.previewHandoff.versionId, current.currentVersionId);
+  await assert.rejects(service.call('openmotion_open_preview', display(saved)), /VERSION_CONFLICT/);
+  const receipt = await service.call('openmotion_open_preview', display({ ...current, previewHandoff: opened.previewHandoff }));
+  assert.equal(receipt.previewHandoff.state, 'confirmed');
+}, false));

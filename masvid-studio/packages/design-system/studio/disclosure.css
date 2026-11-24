@@ -1,0 +1,122 @@
+/* Open Design ProjectGroup row states adapted to Studio's neutral palette. */
+:root[data-motion-ui][data-motion-studio] {
+  --studio-disclosure-row-height: calc(var(--motion-space-32) + var(--motion-space-4));
+}
+
+:root[data-motion-ui][data-motion-studio] .motion-session-search[data-form-field] {
+  --studio-form-height: var(--studio-disclosure-row-height);
+}
+
+[data-motion-studio] .om-disclosure-row {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding-inline-end: var(--motion-space-6);
+  border-radius: var(--motion-radius-xl);
+  background: transparent;
+  transition: background-color var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+[data-motion-studio] :is(.om-disclosure-row, .motion-session-heading > span) {
+  color: light-dark(var(--motion-neutral-n8), var(--motion-neutral-n5));
+}
+
+[data-motion-studio] .om-disclosure-row:is(:hover, :has(.om-disclosure-row-action [aria-expanded="true"])) {
+  background: light-dark(var(--motion-neutral-n2), var(--motion-neutral-n10));
+}
+
+[data-motion-studio] .om-disclosure-row[data-active="true"] {
+  background: light-dark(var(--motion-neutral-n3), var(--motion-neutral-n9));
+  color: var(--motion-strong);
+}
+
+:root[data-motion-ui][data-motion-studio] .om-disclosure-row .om-disclosure-row-label {
+  flex: 1;
+  min-width: 0;
+  min-height: var(--studio-disclosure-row-height);
+  padding: 0 var(--motion-space-12);
+  border-radius: var(--motion-radius-xl);
+  background: transparent;
+  color: inherit;
+}
+
+[data-motion-studio] :is(.om-disclosure-row-label strong, .motion-session-heading > span) {
+  font-size: var(--motion-text-md);
+  font-weight: var(--motion-weight-medium);
+}
+
+:root[data-motion-ui][data-motion-studio] .om-disclosure-row:has(.om-disclosure-row-label:focus-visible) {
+  outline: 1px solid var(--studio-form-focus);
+  outline-offset: -1px;
+}
+
+:root[data-motion-ui][data-motion-studio] .om-disclosure-row .om-disclosure-row-label:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+[data-motion-studio] .om-disclosure-row-action {
+  display: flex;
+  flex: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+[data-motion-studio] .om-disclosure-row:is(:hover, :focus-within, :has(.om-disclosure-row-action [aria-expanded="true"])) .om-disclosure-row-action {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+:root[data-motion-ui][data-motion-studio] .om-disclosure-row-action > button {
+  width: var(--motion-space-24);
+  height: var(--motion-space-24);
+  border-radius: var(--motion-radius-sm);
+  color: inherit;
+}
+
+/* Sidebar footer actions match DisclosureRow geometry and opaque chrome states. */
+:root[data-motion-ui][data-motion-studio] .motion-sidebar-footer .om-nav-item {
+  width: 100%;
+  min-height: var(--studio-disclosure-row-height);
+  padding: var(--motion-space-6) var(--motion-space-12);
+  gap: var(--motion-space-10);
+  border-radius: var(--motion-radius-xl);
+  font-weight: var(--motion-weight-medium);
+  color: light-dark(var(--motion-neutral-n8), var(--motion-neutral-n5));
+  transition: background-color var(--motion-duration-fast) var(--motion-ease-out), color var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+:root[data-motion-ui][data-motion-studio] .motion-sidebar-footer .om-nav-item > svg {
+  flex-shrink: 0;
+  color: var(--motion-chrome-icon);
+  transition: color var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+:root[data-motion-ui][data-motion-studio] .motion-sidebar-footer .om-nav-item:not(:disabled):hover {
+  color: var(--motion-strong);
+  background: var(--motion-chrome-hover);
+}
+
+:root[data-motion-ui][data-motion-studio] .motion-sidebar-footer .om-nav-item:not(:disabled):is(:active, [data-active="true"], [aria-expanded="true"], [aria-current="page"]) {
+  color: var(--motion-strong);
+  background: var(--motion-chrome-active);
+}
+
+:root[data-motion-ui][data-motion-studio] .motion-sidebar-footer .om-nav-item:not(:disabled):is(:hover, :active, [data-active="true"], [aria-expanded="true"], [aria-current="page"]) > svg {
+  color: currentColor;
+}
+
+:root[data-motion-ui][data-motion-studio] .motion-sidebar-footer .om-nav-item:focus-visible {
+  outline: 1px solid var(--studio-form-focus);
+  outline-offset: -1px;
+}
+
+@media (hover: none) {
+  [data-motion-studio] .om-disclosure-row-action { opacity: 1; pointer-events: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-motion-studio] :is(.om-disclosure-row, .om-disclosure-row-action, .motion-sidebar-footer .om-nav-item, .motion-sidebar-footer .om-nav-item > svg) { transition: none; }
+}

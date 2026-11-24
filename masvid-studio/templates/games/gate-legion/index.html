@@ -1,0 +1,211 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><link rel="icon" href="data:,"><title>Gate Legion</title><style>/* Standalone authored game artwork; independent of Studio chrome. */
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#090f1c;touch-action:none}body{display:flex;align-items:center;justify-content:center}canvas{display:block;width:min(100vw,56.25vh);height:min(100vh,177.77778vw);width:min(100vw,56.25dvh);height:min(100dvh,177.77778vw);touch-action:none;user-select:none;image-rendering:pixelated}</style></head><body><canvas aria-label="Gate Legion"></canvas><script>
+const META = { "id": "gate-legion", "title": "Gate Legion", "zh": "草原军团", "hint": "左右拖动带领军团", "enHint": "Drag left and right to choose gates." };
+const canvas = document.querySelector('canvas'), c = canvas.getContext('2d');
+const zh = navigator.language.toLowerCase().startsWith('zh'), T = (a, b) => zh ? a : b;
+document.documentElement.lang = zh ? 'zh-CN' : 'en';
+document.title = T(META.zh, META.title);
+const W = 360, H = 640;
+let phase = 'ready', elapsed = 0, score = 0, last = 0, shake = 0, muted = false, audio = null, activePointer = null, px = 180, py = 520;
+// All artwork is local. Incomplete/failed image loads retain the playable canvas fallback.
+const art = Array.from({ length: 16 }, (_, i) => { const im = new Image(); im.src = './assets/' + String(i).padStart(2, '0') + '.webp'; return im; });
+let flash = 0;
+function sprite(i, x, y, w, h, alpha = 1) { const im = art[i]; if (!im.complete || !im.naturalWidth)
+    return false; c.save(); c.globalAlpha = alpha; c.imageSmoothingEnabled = META.id !== 'gate-legion' && META.id !== 'lane-turret'; c.drawImage(im, x, y, w, h); c.restore(); return true; }
+function tile(i, x, y, w, h, size = 96, offset = 0) { const im = art[i]; if (!im.complete || !im.naturalWidth)
+    return false; c.save(); c.beginPath(); c.rect(x, y, w, h); c.clip(); for (let yy = y - size + offset % size; yy < y + h; yy += size)
+    for (let xx = x; xx < x + w; xx += size)
+        c.drawImage(im, xx, yy, size, size); c.restore(); return true; }
+function impact(x, y, color = '#fff4b0', amount = 24) { burst(x, y, color, amount); flash = reduced ? 0 : .11; shake = reduced ? 0 : Math.max(shake, 4); }
+function tutorial(ms) { if (!(phase === 'ready' || phase === 'playing' && elapsed < 3))
+    return; let x = 180 + (reduced ? 0 : Math.sin(ms / 400) * 53); panel(36, 461, 288, 37, '#112236'); text(T(META.hint, META.enHint), 180, 485, 11, '#fff8d4'); if (!sprite(13, x - 18, 501, 48, 58))
+    text('☝', x, 540, 40); text('↔', 180, 548, 28, '#ffe49c'); }
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let particles = [], labels = [], result = '', hint = META.hint;
+function fit() { let d = Math.min(devicePixelRatio || 1, 2), r = canvas.getBoundingClientRect(); canvas.width = Math.round(r.width * d); canvas.height = Math.round(r.height * d); }
+addEventListener('resize', fit);
+fit();
+function wake() { if (!audio) {
+    const A = window.AudioContext || window.webkitAudioContext;
+    if (A)
+        try {
+            audio = new A();
+        }
+        catch { }
+} if (audio?.state === 'suspended')
+    audio.resume().catch(() => { }); }
+function tone(f = 520) { if (muted || !audio || audio.state !== 'running')
+    return; let o = audio.createOscillator(), g = audio.createGain(); o.type = 'triangle'; o.frequency.setValueAtTime(f, audio.currentTime); o.frequency.exponentialRampToValueAtTime(f * .5, audio.currentTime + .16); g.gain.setValueAtTime(.045, audio.currentTime); g.gain.exponentialRampToValueAtTime(.001, audio.currentTime + .18); o.connect(g); g.connect(audio.destination); o.start(); o.stop(audio.currentTime + .2); }
+function burst(x, y, color = '#ffe296', n = 14) { for (let i = 0; i < n; i++)
+    particles.push({ x, y, vx: (Math.random() - .5) * 170, vy: (Math.random() - .7) * 160, t: .65, color }); if (particles.length > 220)
+    particles.splice(0, particles.length - 220); }
+function pop(text, x = 180, y = 330, color = '#fff0a8') { labels.push({ text, x, y, color, t: 1 }); tone(); }
+function hit() { shake = reduced ? 0 : 10; flash = reduced ? 0 : .16; tone(130); }
+function end(win, text) { phase = win ? 'won' : 'lost'; result = text; activePointer = null; tone(win ? 780 : 140); }
+function start() { if (phase === 'ready')
+    phase = 'playing'; }
+function restart() { phase = 'ready'; elapsed = 0; score = 0; particles = []; labels = []; shake = 0; flash = 0; result = ''; activePointer = null; px = 180; py = 520; init(); }
+function rect(x, y, w, h, color) { c.fillStyle = color; c.fillRect(x, y, w, h); }
+function circle(x, y, r, color) { c.fillStyle = color; c.beginPath(); c.arc(x, y, r, 0, Math.PI * 2); c.fill(); }
+function text(s, x, y, size = 18, color = '#f8f5e7', align = 'center') { c.save(); c.fillStyle = color; c.font = `800 ${size}px system-ui,sans-serif`; c.textAlign = align; c.lineJoin = 'round'; c.strokeStyle = '#132131'; c.lineWidth = Math.max(2, size * .14); c.strokeText(s, x, y); c.fillText(s, x, y); c.restore(); }
+function panel(x, y, w, h, color = '#17243e') { c.fillStyle = color; c.beginPath(); c.roundRect(x, y, w, h, 12); c.fill(); }
+function person(x, y, color = '#67c7ff', s = 1) { rect(x - 3 * s, y - 9 * s, 6 * s, 6 * s, '#ffe1b0'); rect(x - 5 * s, y - 3 * s, 10 * s, 9 * s, color); rect(x - 5 * s, y + 6 * s, 3 * s, 5 * s, color); rect(x + 2 * s, y + 6 * s, 3 * s, 5 * s, color); }
+function pointer(e) { let r = canvas.getBoundingClientRect(); return { x: (e.clientX - r.left) * W / r.width, y: (e.clientY - r.top) * H / r.height }; }
+canvas.addEventListener('pointerdown', e => { e.preventDefault(); if (activePointer !== null)
+    return; wake(); const p = pointer(e); if (p.x > 302 && p.y < 58) {
+    muted = !muted;
+    return;
+} if (phase === 'won' || phase === 'lost') {
+    if (p.y > 380 && p.y < 454) {
+        restart();
+        start();
+    }
+    return;
+} activePointer = e.pointerId; canvas.setPointerCapture(e.pointerId); px = p.x; py = p.y; start(); input(p, true); });
+canvas.addEventListener('pointermove', e => { if (e.pointerId !== activePointer)
+    return; let p = pointer(e); px = p.x; py = p.y; if (phase === 'playing')
+    input(p, false); });
+for (const event of ['pointerup', 'pointercancel', 'lostpointercapture'])
+    canvas.addEventListener(event, e => { if (e.pointerId === activePointer)
+        activePointer = null; });
+window.__omGame = { state: () => ({ phase, score, elapsed: Number(elapsed.toFixed(2)), muted, assetsReady: art.filter(im => im.complete && im.naturalWidth).length, ...snapshot() }), start, restart };
+function frame(ms) {
+    const dt = document.hidden ? 0 : Math.min(.033, Math.max(0, (ms - last) / 1000 || 0));
+    last = ms;
+    if (phase === 'playing') {
+        elapsed += dt;
+        update(dt);
+    }
+    c.setTransform(canvas.width / W, 0, 0, canvas.height / H, 0, 0);
+    c.save();
+    if (shake > 0) {
+        c.translate((Math.random() - .5) * shake, (Math.random() - .5) * shake);
+        shake = Math.max(0, shake - dt * 28);
+    }
+    draw();
+    for (let i = particles.length - 1; i >= 0; i--) {
+        let p = particles[i];
+        p.t -= dt;
+        p.x += p.vx * dt;
+        p.y += p.vy * dt;
+        p.vy += 200 * dt;
+        if (p.t <= 0) {
+            particles.splice(i, 1);
+            continue;
+        }
+        circle(p.x, p.y, 2, p.color);
+    }
+    for (let i = labels.length - 1; i >= 0; i--) {
+        let p = labels[i];
+        p.t -= dt;
+        p.y -= dt * 50;
+        text(p.text, p.x, p.y, 23 + Math.sin(Math.min(1, (1 - p.t) * 4) * Math.PI) * 8, p.color);
+        if (p.t <= 0)
+            labels.splice(i, 1);
+    }
+    c.restore();
+    if (flash > 0) {
+        c.save();
+        c.globalAlpha = Math.min(.38, flash * 2);
+        rect(0, 100, 360, 540, '#ffffff');
+        c.restore();
+        flash = Math.max(0, flash - dt);
+    }
+    panel(10, 10, 340, 48, '#101b2d');
+    sprite(12, 8, 7, 344, 55);
+    panel(24, 64, 312, 29, '#17283d');
+    text(T(META.zh, META.title), 22, 39, 16, '#ffffff', 'left');
+    text(muted ? T('静音', 'OFF') : T('声音', 'SND'), 325, 39, 12);
+    text(hud(), 180, 84, 16);
+    tutorial(ms);
+    if (phase === 'ready') {
+        panel(14, 565, 332, 58);
+        text(T('触摸即可开始', 'Touch to begin'), 180, 604, 14, '#8fe6bd');
+    }
+    if (phase === 'won' || phase === 'lost') {
+        rect(0, 100, 360, 540, '#06101fe8');
+        text(phase === 'won' ? T('挑战成功', 'SUCCESS') : T('挑战结束', 'RUN OVER'), 180, 270, 30);
+        text(result, 180, 320, 16);
+        text(T('得分 ', 'SCORE ') + score, 180, 354, 22, '#ffe299');
+        panel(65, 386, 230, 60, '#23745b');
+        text(T('再来一局 ↻', 'PLAY AGAIN ↻'), 180, 423, 21);
+    }
+    requestAnimationFrame(frame);
+}
+let army, runnerX, gates, battle, battleClock, enemies, originalArmy, targetEnemy, maxArmy, battleCarry;
+const pairs = [['+10', '−5'], ['×2', '÷2'], ['−8', '+18'], ['÷3', '×2'], ['+22', '−15'], ['×2', '÷2'], ['−20', '+16'], ['÷2', '×2']];
+function init() { army = 12; runnerX = 180; battle = false; battleClock = 0; maxArmy = pairs.reduce((n, p) => Math.max(...p.map(op => apply(op, n))), 12); targetEnemy = Math.floor(maxArmy * .72); enemies = targetEnemy; originalArmy = 0; battleCarry = 0; gates = pairs.map((p, i) => ({ y: -i * 410 - 160, ops: i % 2 ? [...p].reverse() : p, done: false })); }
+function input(p) { runnerX = Math.max(62, Math.min(298, p.x)); }
+function snapshot() { return { army, enemies, targetEnemy, maxArmy, gatesPassed: gates.filter(g => g.done).length, battle }; }
+function hud() { return T('军团 ', 'ARMY ') + army + '   ·   ' + gates.filter(g => g.done).length + '/8'; }
+function apply(op, n) { let a = Number(op.slice(1)); return Math.max(0, Math.min(999, op[0] === '+' ? n + a : op[0] === '−' ? n - a : op[0] === '×' ? n * a : Math.floor(n / a))); }
+function update(dt) { if (!battle) {
+    for (let g of gates) {
+        g.y += 92 * dt;
+        if (!g.done && g.y >= 470) {
+            g.done = true;
+            let old = army, op = g.ops[runnerX < 180 ? 0 : 1];
+            army = apply(op, army);
+            score = army;
+            pop(op + ' → ' + army, runnerX, 430);
+            impact(runnerX, 475);
+            if (army < old)
+                hit();
+            if (!army) {
+                end(false, T('军团耗尽', 'No soldiers remain'));
+                return;
+            }
+        }
+    }
+    if (gates.every(g => g.done) && gates.at(-1).y > 640) {
+        battle = true;
+        originalArmy = army;
+        pop(T('终点对撞！', 'FINAL CLASH!'));
+    }
+}
+else {
+    battleClock += dt;
+    battleCarry += Math.max(originalArmy, targetEnemy) / 3 * dt;
+    const loss = Math.min(army, enemies, Math.floor(battleCarry));
+    battleCarry -= loss;
+    if (loss) {
+        army -= loss;
+        enemies -= loss;
+        burst(180, 380, '#ffd58b', 3);
+    }
+    if (!army || !enemies) {
+        score = Math.max(0, army);
+        end(army > enemies, T('终点余兵 ', 'Survivors ') + army + ' : ' + enemies);
+    }
+    if (battleClock > 8)
+        end(originalArmy > targetEnemy, T('军团战结束', 'Battle complete'));
+} }
+function squad(n, x, y, color) { const red = color === '#be4e54', size = n > 180 ? 12 : 17; for (let i = 0; i < n; i++) {
+    const a = i * 2.399963, rad = Math.sqrt(i) * 3.1, xx = Math.max(49, Math.min(311, x + Math.cos(a) * rad)), yy = y + Math.sin(a) * rad * .58;
+    let bounce = reduced ? 0 : Math.sin(elapsed * 12 + i) * 1.2;
+    if (!sprite((red ? 4 : 2) + (Math.floor(elapsed * 7 + i) % 2), xx - size / 2, yy - size + bounce, size, size * 1.45))
+        person(xx, yy, color, .8);
+} panel(x - 36, y - Math.sqrt(n) * 2 - 39, 72, 30, '#142a35'); text(n, x, y - Math.sqrt(n) * 2 - 17, 23, '#fff2b1'); }
+function draw() { rect(0, 0, 360, 640, '#518542'); tile(0, 0, 95, 360, 545, 110, elapsed * 55); rect(43, 95, 274, 545, '#b69664'); tile(1, 43, 95, 274, 545, 100, elapsed * 92); for (let i = 0; i < 10; i++) {
+    sprite(10, 3, (i * 113 + elapsed * 92) % 700 - 30, 34, 38);
+    sprite(10, 324, (i * 97 + elapsed * 92) % 700 - 30, 35, 40);
+} if (!battle) {
+    sprite(8, 125, 112, 110, 85);
+    panel(87, 103, 186, 27, '#422c30');
+    text(T('敌军营地 ', 'ENEMY CAMP ') + targetEnemy, 180, 122, 13);
+    for (const g of gates)
+        if (!g.done && g.y > -80 && g.y < 650)
+            g.ops.forEach((op, i) => { const bad = op[0] === '−' || op[0] === '÷', x = 45 + i * 136; rect(x + 7, g.y - 33, 118, 56, bad ? '#a24e50' : '#367ba0'); sprite(bad ? 7 : 6, x, g.y - 50, 132, 100); text(op, x + 66, g.y + 1, 29); });
+    squad(army, runnerX, 490, '#3383c8');
+}
+else {
+    sprite(8, 93, 104, 174, 132);
+    squad(enemies, 180, 275, '#be4e54');
+    squad(army, 180, 450, '#3383c8');
+    if (battleClock > 0)
+        sprite(14, 140, 340, 80, 80, .85);
+    text('⚔', 180, 389, 39);
+} }
+init();
+requestAnimationFrame(frame);
+</script></body></html>

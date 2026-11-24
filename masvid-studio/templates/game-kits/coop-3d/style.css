@@ -1,0 +1,19 @@
+/* Authored game artwork and HUD, independent from the Studio application theme. */
+:root { color-scheme: dark; font-family: system-ui, sans-serif; color: #edf4ff; background: #132033; }
+body { margin: 0; overflow: hidden; } canvas { display: block; width: 100vw; height: 100dvh; touch-action: none; }
+#lobby, #hud, #help, #restart, #mute { position: fixed; padding: 12px; background: #1e3049; border-radius: 12px; }
+#lobby { top: 12px; left: 12px; max-width: min(400px, calc(100vw - 48px)); } #lobby h1 { margin: 0; }
+button, input { font: inherit; padding: 8px; border: 1px solid #8aa4c5; border-radius: 8px; background: #263d5b; color: inherit; margin: 3px; }
+button { cursor: pointer; } button:disabled { opacity: .5; } :focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+#hud { right: 12px; top: 12px; max-width: min(430px,calc(100vw - 48px)); } #hud p { margin: 4px 0; } #hud progress { width: 160px; accent-color: #64e7b3; } #skills { display:flex; flex-wrap:wrap; } #help { bottom: 0; left: 12px; right: 12px; pointer-events: none; }
+#restart { top: 64px; right: 12px; } #mute { bottom: 80px; right: 12px; }
+#toast { position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%); padding: 12px; background: #263d5b; border-radius: 12px; pointer-events: none; }
+#joystick { display: none; position: fixed; bottom: 100px; left: 24px; width: 112px; height: 112px; border: 2px solid #8aa4c5; border-radius: 50%; touch-action: none; background: #263d5b; }
+#joystick span { position: absolute; width: 32px; height: 32px; left: 40px; top: 40px; border-radius: 50%; background: #edf4ff; pointer-events: none; }
+@media (pointer: coarse) { #joystick { display: block; } #help { font-size: 12px; } }
+@media (max-width: 600px) { #hud { top: auto; bottom: 250px; left: 12px; right: auto; } #lobby { font-size: 13px; } }
+
+#wave-banner { position:fixed; top:25%; left:50%; transform:translateX(-50%); text-align:center; font-size:clamp(20px,4vw,42px); font-weight:800; color:#ffdf9e; text-shadow:0 3px 0 #132033; pointer-events:none; }
+@media(max-width:600px){#hud{bottom:auto;top:8px;left:8px;right:8px;font-size:12px;max-width:none;}#lobby{top:170px;}#restart{top:135px;}#wave-banner{top:45%;}#skills button{min-height:44px;}#help{max-height:42px;overflow:hidden;}}
+
+#debug { position:fixed; left:12px; bottom:65px; max-width:calc(100vw - 48px); padding:8px; border-radius:8px; background:#1e3049; color:#edf4ff; font-size:12px; white-space:pre-wrap; pointer-events:none; }

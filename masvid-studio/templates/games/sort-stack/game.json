@@ -1,0 +1,27 @@
+{
+  "id": "sort-stack",
+  "title": "Sort Stack",
+  "description": "Pour matching top rings between poles, undo mistakes and solve five increasingly complex sorting puzzles.",
+  "genre": "casual",
+  "style": "minimal",
+  "setting": "retro",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "Tap a source pole, then a target pole. Only matching top colors can stack. Tap Undo to reverse a move.",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-21T00:00:00.000Z",
+  "updatedAt": "2026-11-21T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "色环归位",
+      "description": "点选起点再点终点，将同色圆环归到一柱，支持撤销，90秒挑战由易到难的五关。",
+      "controls": "点起点柱再点终点柱，同色才能叠放，空柱可接任意颜色；点击撤销回退一步。"
+    }
+  },
+  "orientation": "portrait"
+}

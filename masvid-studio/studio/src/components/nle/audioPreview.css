@@ -1,0 +1,64 @@
+.motion-asset-audio-preview {
+  border-color: var(--motion-audio-preview-line);
+  border-radius: var(--motion-radius-xl);
+  background: var(--motion-audio-preview-surface);
+}
+.motion-asset-audio-preview .motion-audio-preview-header { padding: var(--motion-space-16) var(--motion-space-20); }
+.motion-audio-preview-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--motion-space-32);
+  height: var(--motion-space-32);
+  border-radius: var(--motion-radius-step-10);
+  background: var(--motion-audio-preview-icon-well);
+  color: var(--motion-audio-preview-ink);
+}
+.motion-asset-audio-preview .motion-audio-preview-surface {
+  margin: 0 var(--motion-space-20);
+  border-radius: var(--motion-radius-step-10);
+  background: var(--motion-audio-preview-well);
+}
+.motion-audio-preview-waveform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: var(--motion-space-10) var(--motion-space-18);
+  color: var(--motion-audio-preview-ink);
+}
+.motion-audio-preview-track { width: 100%; height: 100%; max-height: 120px; }
+.motion-audio-preview-track svg { display: block; width: 100%; height: 100%; }
+.motion-asset-audio-preview .motion-audio-preview-controls { padding: var(--motion-space-4) var(--motion-space-20) var(--motion-space-16); }
+/* The track layout belongs to the shared row recipe: the preview only adds the
+ * `motion-player-control-row-lg` modifier for its 40px primary action. */
+.motion-audio-preview-controls .motion-player-control-row {
+  min-height: var(--motion-space-40);
+  margin-top: var(--motion-space-2);
+}
+:root[data-motion-ui] .motion-audio-preview-controls button.motion-audio-preview-play,
+:root[data-motion-ui] .motion-audio-preview-controls button.motion-audio-preview-play:enabled {
+  width: var(--motion-space-40);
+  height: var(--motion-space-40);
+  border-radius: var(--motion-radius-full);
+  background: var(--motion-audio-preview-action);
+  color: var(--motion-audio-preview-on-action);
+}
+:root[data-motion-ui] .motion-audio-preview-controls button.motion-audio-preview-play:focus-visible {
+  outline: var(--motion-space-2) solid var(--motion-audio-preview-ink);
+  outline-offset: 3px;
+}
+:root[data-motion-ui] .motion-audio-preview-controls button.motion-audio-preview-play:enabled:hover {
+  background: var(--motion-audio-preview-action-hover);
+  color: var(--motion-audio-preview-on-action);
+}
+:root[data-motion-ui] .motion-audio-preview-controls input[data-studio-control="seek-preview"]::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, var(--motion-audio-preview-ink) 0 var(--preview-progress, 0%), var(--motion-audio-preview-line) var(--preview-progress, 0%) 100%);
+}
+:root[data-motion-ui] .motion-audio-preview-controls input[data-studio-control="seek-preview"]::-moz-range-track {
+  background: linear-gradient(to right, var(--motion-audio-preview-ink) 0 var(--preview-progress, 0%), var(--motion-audio-preview-line) var(--preview-progress, 0%) 100%);
+}
+:root[data-motion-ui] .motion-audio-preview-controls input[data-studio-control="seek-preview"]::-webkit-slider-thumb { background: var(--motion-audio-preview-ink); }
+:root[data-motion-ui] .motion-audio-preview-controls input[data-studio-control="seek-preview"]::-moz-range-thumb { background: var(--motion-audio-preview-ink); }

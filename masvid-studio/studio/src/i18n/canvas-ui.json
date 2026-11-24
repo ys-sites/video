@@ -1,0 +1,102 @@
+{
+  "zh-CN": {
+    "Content fit": "内容适配",
+    "Letterbox": "留边",
+    "Canvas updated": "画幅已更新",
+    "Canvas update failed": "画幅更新失败",
+    "Caption track is empty": "字幕轨道为空",
+    "Canvas and caption controls": "画幅与字幕控制",
+    "Change the current canvas from the timeline and use CC On / Off. No model is required. First enabling creates an empty caption track; adding captions fills it. Locked tracks must be unlocked. Conflicts require reloading the latest project. Framing uses letterbox or center crop, without automatic subject detection.": "在时间轴切换当前画幅，并用 CC 开/关控制字幕，无需模型。首次开启创建空字幕轨道，添加字幕后填入该轨道。请先解锁锁定的轨道；发生冲突时重新读取最新工程。画面采用留边或居中裁切，不会自动识别主体。",
+    "Read this project and its current revision/version. Use openmotion_edit_project with canvas={compositionPath:\"index.html\",ratio:\"9:16\",fit:\"contain\"} to change the canvas. Then reread the revision/version and enable captions with openmotion_assets_use(action=transcript, transcript.command=caption_toggle, visible=true, compositionPath=\"index.html\"). Use a stable requestId for each operation. Preserve content, respect locked tracks and stop to reread after conflicts. Open the saved preview and verify the canvas and C1 track. This needs no model and creates no transcript or invented captions.": "读取当前工程及其 revision/version，保持现有内容。先调用 openmotion_edit_project(canvas={compositionPath:\"index.html\",ratio:\"9:16\",fit:\"contain\"}). 随后重新读取版本身份，再调用 openmotion_assets_use(action=transcript, transcript.command=caption_toggle, visible=true, compositionPath=\"index.html\"). 每次操作使用稳定的 requestId 和最新 expectedRevision、expectedVersionId；尊重轨道锁定，冲突后重读。打开已保存预览并检查画幅和 C1 轨道。无需模型，不生成文稿或编造字幕。"
+  },
+  "ja": {
+    "Content fit": "コンテンツの合わせ方",
+    "Letterbox": "余白を付ける",
+    "Canvas updated": "画面比率を更新しました",
+    "Canvas update failed": "画面比率の更新に失敗しました",
+    "Caption track is empty": "字幕トラックは空です",
+    "Canvas and caption controls": "画面比率と字幕の操作",
+    "Change the current canvas from the timeline and use CC On / Off. No model is required. First enabling creates an empty caption track; adding captions fills it. Locked tracks must be unlocked. Conflicts require reloading the latest project. Framing uses letterbox or center crop, without automatic subject detection.": "タイムラインで画面比率を変更し、CC のオン／オフを切り替えます。モデルは不要です。初回は空の字幕トラックを作り、字幕を追加するとそのトラックに入ります。ロックを解除してから操作してください。競合時は最新のプロジェクトを読み直します。余白または中央切り抜きを使用し、被写体は自動検出しません。",
+    "Read this project and its current revision/version. Use openmotion_edit_project with canvas={compositionPath:\"index.html\",ratio:\"9:16\",fit:\"contain\"} to change the canvas. Then reread the revision/version and enable captions with openmotion_assets_use(action=transcript, transcript.command=caption_toggle, visible=true, compositionPath=\"index.html\"). Use a stable requestId for each operation. Preserve content, respect locked tracks and stop to reread after conflicts. Open the saved preview and verify the canvas and C1 track. This needs no model and creates no transcript or invented captions.": "現在のプロジェクトと revision/version を読み、内容を保持します。最初に呼び出す操作： openmotion_edit_project(canvas={compositionPath:\"index.html\",ratio:\"9:16\",fit:\"contain\"}). 版情報を読み直してから呼び出す操作： openmotion_assets_use(action=transcript, transcript.command=caption_toggle, visible=true, compositionPath=\"index.html\"). 操作ごとに固定の requestId と最新の expectedRevision、expectedVersionId を使用します。ロックを尊重し、競合後は再読込します。保存済みプレビューで画面比率と C1 を確認します。モデル不要で、文稿や架空の字幕は生成しません。"
+  },
+  "ko": {
+    "Content fit": "콘텐츠 맞춤",
+    "Letterbox": "여백 유지",
+    "Canvas updated": "화면 비율이 업데이트되었습니다",
+    "Canvas update failed": "화면 비율 업데이트 실패",
+    "Caption track is empty": "자막 트랙이 비어 있습니다",
+    "Canvas and caption controls": "화면 비율 및 자막 제어",
+    "Change the current canvas from the timeline and use CC On / Off. No model is required. First enabling creates an empty caption track; adding captions fills it. Locked tracks must be unlocked. Conflicts require reloading the latest project. Framing uses letterbox or center crop, without automatic subject detection.": "타임라인에서 화면 비율을 변경하고 CC를 켜거나 끕니다. 모델은 필요 없습니다. 처음 켜면 빈 자막 트랙이 생성되며 추가한 자막이 채워집니다. 잠긴 트랙은 먼저 잠금을 해제하세요. 충돌 시 최신 프로젝트를 다시 불러오세요. 여백 유지 또는 중앙 자르기를 사용하며 피사체를 자동 감지하지 않습니다.",
+    "Read this project and its current revision/version. Use openmotion_edit_project with canvas={compositionPath:\"index.html\",ratio:\"9:16\",fit:\"contain\"} to change the canvas. Then reread the revision/version and enable captions with openmotion_assets_use(action=transcript, transcript.command=caption_toggle, visible=true, compositionPath=\"index.html\"). Use a stable requestId for each operation. Preserve content, respect locked tracks and stop to reread after conflicts. Open the saved preview and verify the canvas and C1 track. This needs no model and creates no transcript or invented captions.": "현재 프로젝트와 revision/version을 읽고 내용을 유지하세요. 먼저 호출: openmotion_edit_project(canvas={compositionPath:\"index.html\",ratio:\"9:16\",fit:\"contain\"}). 버전 정보를 다시 읽은 뒤 호출: openmotion_assets_use(action=transcript, transcript.command=caption_toggle, visible=true, compositionPath=\"index.html\"). 각 작업에 고정 requestId와 최신 expectedRevision, expectedVersionId를 사용하세요. 잠금을 존중하고 충돌 후 다시 읽으세요. 저장된 미리보기에서 화면 비율과 C1을 확인하세요. 모델이 필요 없으며 대본이나 가짜 자막을 생성하지 않습니다."
+  },
+  "de": {
+    "Content fit": "Inhalt anpassen",
+    "Letterbox": "Mit Rändern",
+    "Canvas updated": "Bildformat aktualisiert",
+    "Canvas update failed": "Bildformat konnte nicht aktualisiert werden",
+    "Caption track is empty": "Die Untertitelspur ist leer",
+    "Canvas and caption controls": "Bildformat und Untertitel",
+    "Change the current canvas from the timeline and use CC On / Off. No model is required. First enabling creates an empty caption track; adding captions fills it. Locked tracks must be unlocked. Conflicts require reloading the latest project. Framing uses letterbox or center crop, without automatic subject detection.": "Ändere das Bildformat in der Zeitleiste und schalte CC ein oder aus. Kein Modell erforderlich. Beim ersten Einschalten entsteht eine leere Untertitelspur, die neue Untertitel aufnimmt. Gesperrte Spuren zuerst entsperren. Bei Konflikten das aktuelle Projekt neu laden. Mit Rändern oder mittigem Zuschnitt, ohne automatische Motiverkennung.",
+    "Read this project and its current revision/version. Use openmotion_edit_project with canvas={compositionPath:\"index.html\",ratio:\"9:16\",fit:\"contain\"} to change the canvas. Then reread the revision/version and enable captions with openmotion_assets_use(action=transcript, transcript.command=caption_toggle, visible=true, compositionPath=\"index.html\"). Use a stable requestId for each operation. Preserve content, respect locked tracks and stop to reread after conflicts. Open the saved preview and verify the canvas and C1 track. This needs no model and creates no transcript or invented captions.": "Lies das aktuelle Projekt und revision/version, behalte den Inhalt. Zuerst aufrufen: openmotion_edit_project(canvas={compositionPath:\"index.html\",ratio:\"9:16\",fit:\"contain\"}). Lies die Versionsdaten erneut, dann aufrufen: openmotion_assets_use(action=transcript, transcript.command=caption_toggle, visible=true, compositionPath=\"index.html\"). Pro Vorgang stabile requestId und aktuelle expectedRevision/expectedVersionId verwenden. Sperren beachten, bei Konflikten neu lesen. Gespeicherte Vorschau, Bildformat und C1 prüfen. Kein Modell, kein Transkript und keine erfundenen Untertitel."
+  },
+  "fr": {
+    "Content fit": "Ajustement du contenu",
+    "Letterbox": "Avec bandes",
+    "Canvas updated": "Format mis à jour",
+    "Canvas update failed": "Échec de la mise à jour du format",
+    "Caption track is empty": "La piste de sous-titres est vide",
+    "Canvas and caption controls": "Format et sous-titres",
+    "Change the current canvas from the timeline and use CC On / Off. No model is required. First enabling creates an empty caption track; adding captions fills it. Locked tracks must be unlocked. Conflicts require reloading the latest project. Framing uses letterbox or center crop, without automatic subject detection.": "Modifiez le format dans la timeline et activez ou désactivez CC. Aucun modèle requis. La première activation crée une piste vide que les nouveaux sous-titres remplissent. Déverrouillez les pistes verrouillées. En cas de conflit, rechargez le projet actuel. Bandes ou recadrage centré, sans détection automatique du sujet.",
+    "Read this project and its current revision/version. Use openmotion_edit_project with canvas={compositionPath:\"index.html\",ratio:\"9:16\",fit:\"contain\"} to change the canvas. Then reread the revision/version and enable captions with openmotion_assets_use(action=transcript, transcript.command=caption_toggle, visible=true, compositionPath=\"index.html\"). Use a stable requestId for each operation. Preserve content, respect locked tracks and stop to reread after conflicts. Open the saved preview and verify the canvas and C1 track. This needs no model and creates no transcript or invented captions.": "Lisez le projet actuel et revision/version, en préservant le contenu. Appelez d’abord : openmotion_edit_project(canvas={compositionPath:\"index.html\",ratio:\"9:16\",fit:\"contain\"}). Relisez les identifiants de version, puis appelez : openmotion_assets_use(action=transcript, transcript.command=caption_toggle, visible=true, compositionPath=\"index.html\"). Utilisez un requestId stable par opération et les valeurs actuelles expectedRevision/expectedVersionId. Respectez les verrouillages, relisez après conflit. Vérifiez le format et C1 dans l’aperçu enregistré. Aucun modèle, transcription ou sous-titre inventé."
+  },
+  "ru": {
+    "Content fit": "Размещение содержимого",
+    "Letterbox": "С полями",
+    "Canvas updated": "Формат кадра обновлён",
+    "Canvas update failed": "Не удалось обновить формат кадра",
+    "Caption track is empty": "Дорожка субтитров пуста",
+    "Canvas and caption controls": "Формат кадра и субтитры",
+    "Change the current canvas from the timeline and use CC On / Off. No model is required. First enabling creates an empty caption track; adding captions fills it. Locked tracks must be unlocked. Conflicts require reloading the latest project. Framing uses letterbox or center crop, without automatic subject detection.": "Меняйте формат кадра на таймлайне и включайте или выключайте CC. Модель не нужна. Первое включение создаёт пустую дорожку для добавляемых субтитров. Сначала разблокируйте закрытые дорожки. При конфликте загрузите актуальный проект. Используются поля или обрезка по центру без автоматического обнаружения объекта.",
+    "Read this project and its current revision/version. Use openmotion_edit_project with canvas={compositionPath:\"index.html\",ratio:\"9:16\",fit:\"contain\"} to change the canvas. Then reread the revision/version and enable captions with openmotion_assets_use(action=transcript, transcript.command=caption_toggle, visible=true, compositionPath=\"index.html\"). Use a stable requestId for each operation. Preserve content, respect locked tracks and stop to reread after conflicts. Open the saved preview and verify the canvas and C1 track. This needs no model and creates no transcript or invented captions.": "Прочитайте текущий проект и revision/version, сохраняя содержимое. Сначала вызовите: openmotion_edit_project(canvas={compositionPath:\"index.html\",ratio:\"9:16\",fit:\"contain\"}). Повторно прочитайте версии, затем вызовите: openmotion_assets_use(action=transcript, transcript.command=caption_toggle, visible=true, compositionPath=\"index.html\"). Используйте стабильный requestId для каждой операции и актуальные expectedRevision/expectedVersionId. Учитывайте блокировки, перечитывайте после конфликта. Проверьте кадр и C1 в сохранённом предпросмотре. Модель не нужна; не создавайте выдуманный текст."
+  },
+  "es": {
+    "Content fit": "Ajuste del contenido",
+    "Letterbox": "Con bandas",
+    "Canvas updated": "Formato actualizado",
+    "Canvas update failed": "No se pudo actualizar el formato",
+    "Caption track is empty": "La pista de subtítulos está vacía",
+    "Canvas and caption controls": "Formato y subtítulos",
+    "Change the current canvas from the timeline and use CC On / Off. No model is required. First enabling creates an empty caption track; adding captions fills it. Locked tracks must be unlocked. Conflicts require reloading the latest project. Framing uses letterbox or center crop, without automatic subject detection.": "Cambia el formato en la línea de tiempo y activa o desactiva CC. No requiere modelo. La primera activación crea una pista vacía que se llena al añadir subtítulos. Desbloquea primero las pistas bloqueadas. En caso de conflicto, recarga el proyecto actual. Usa bandas o recorte central, sin detección automática del sujeto.",
+    "Read this project and its current revision/version. Use openmotion_edit_project with canvas={compositionPath:\"index.html\",ratio:\"9:16\",fit:\"contain\"} to change the canvas. Then reread the revision/version and enable captions with openmotion_assets_use(action=transcript, transcript.command=caption_toggle, visible=true, compositionPath=\"index.html\"). Use a stable requestId for each operation. Preserve content, respect locked tracks and stop to reread after conflicts. Open the saved preview and verify the canvas and C1 track. This needs no model and creates no transcript or invented captions.": "Lee el proyecto actual y revision/version, preservando el contenido. Primero llama: openmotion_edit_project(canvas={compositionPath:\"index.html\",ratio:\"9:16\",fit:\"contain\"}). Vuelve a leer los identificadores de versión y llama: openmotion_assets_use(action=transcript, transcript.command=caption_toggle, visible=true, compositionPath=\"index.html\"). Usa un requestId estable por operación y expectedRevision/expectedVersionId actuales. Respeta bloqueos y relee tras conflictos. Comprueba el formato y C1 en la vista previa guardada. Sin modelo, transcripción ni subtítulos inventados."
+  },
+  "pt-BR": {
+    "Content fit": "Ajuste do conteúdo",
+    "Letterbox": "Com faixas",
+    "Canvas updated": "Formato atualizado",
+    "Canvas update failed": "Falha ao atualizar o formato",
+    "Caption track is empty": "A faixa de legendas está vazia",
+    "Canvas and caption controls": "Formato e legendas",
+    "Change the current canvas from the timeline and use CC On / Off. No model is required. First enabling creates an empty caption track; adding captions fills it. Locked tracks must be unlocked. Conflicts require reloading the latest project. Framing uses letterbox or center crop, without automatic subject detection.": "Altere o formato na linha do tempo e ative ou desative CC. Não exige modelo. A primeira ativação cria uma faixa vazia que recebe as legendas adicionadas. Desbloqueie as faixas bloqueadas. Em conflitos, recarregue o projeto atual. Usa faixas ou corte central, sem detecção automática do assunto.",
+    "Read this project and its current revision/version. Use openmotion_edit_project with canvas={compositionPath:\"index.html\",ratio:\"9:16\",fit:\"contain\"} to change the canvas. Then reread the revision/version and enable captions with openmotion_assets_use(action=transcript, transcript.command=caption_toggle, visible=true, compositionPath=\"index.html\"). Use a stable requestId for each operation. Preserve content, respect locked tracks and stop to reread after conflicts. Open the saved preview and verify the canvas and C1 track. This needs no model and creates no transcript or invented captions.": "Leia o projeto atual e revision/version, preservando o conteúdo. Primeiro chame: openmotion_edit_project(canvas={compositionPath:\"index.html\",ratio:\"9:16\",fit:\"contain\"}). Leia novamente as versões e chame: openmotion_assets_use(action=transcript, transcript.command=caption_toggle, visible=true, compositionPath=\"index.html\"). Use um requestId estável por operação e expectedRevision/expectedVersionId atuais. Respeite bloqueios e releia após conflitos. Confira o formato e C1 na prévia salva. Sem modelo, transcrição ou legendas inventadas."
+  },
+  "it": {
+    "Content fit": "Adattamento contenuto",
+    "Letterbox": "Con bande",
+    "Canvas updated": "Formato aggiornato",
+    "Canvas update failed": "Impossibile aggiornare il formato",
+    "Caption track is empty": "La traccia dei sottotitoli è vuota",
+    "Canvas and caption controls": "Formato e sottotitoli",
+    "Change the current canvas from the timeline and use CC On / Off. No model is required. First enabling creates an empty caption track; adding captions fills it. Locked tracks must be unlocked. Conflicts require reloading the latest project. Framing uses letterbox or center crop, without automatic subject detection.": "Cambia formato nella timeline e attiva o disattiva CC. Non serve un modello. La prima attivazione crea una traccia vuota che verrà riempita aggiungendo sottotitoli. Sblocca prima le tracce bloccate. In caso di conflitto ricarica il progetto attuale. Usa bande o ritaglio centrale, senza rilevamento automatico del soggetto.",
+    "Read this project and its current revision/version. Use openmotion_edit_project with canvas={compositionPath:\"index.html\",ratio:\"9:16\",fit:\"contain\"} to change the canvas. Then reread the revision/version and enable captions with openmotion_assets_use(action=transcript, transcript.command=caption_toggle, visible=true, compositionPath=\"index.html\"). Use a stable requestId for each operation. Preserve content, respect locked tracks and stop to reread after conflicts. Open the saved preview and verify the canvas and C1 track. This needs no model and creates no transcript or invented captions.": "Leggi il progetto attuale e revision/version, preservando i contenuti. Prima chiama: openmotion_edit_project(canvas={compositionPath:\"index.html\",ratio:\"9:16\",fit:\"contain\"}). Rileggi le versioni, poi chiama: openmotion_assets_use(action=transcript, transcript.command=caption_toggle, visible=true, compositionPath=\"index.html\"). Usa un requestId stabile per operazione e expectedRevision/expectedVersionId aggiornati. Rispetta i blocchi e rileggi dopo conflitti. Controlla formato e C1 nella preview salvata. Nessun modello, trascrizione o sottotitolo inventato."
+  },
+  "tr": {
+    "Content fit": "İçeriği sığdır",
+    "Letterbox": "Kenar boşluğu",
+    "Canvas updated": "Çerçeve güncellendi",
+    "Canvas update failed": "Çerçeve güncellenemedi",
+    "Caption track is empty": "Altyazı kanalı boş",
+    "Canvas and caption controls": "Çerçeve ve altyazı kontrolleri",
+    "Change the current canvas from the timeline and use CC On / Off. No model is required. First enabling creates an empty caption track; adding captions fills it. Locked tracks must be unlocked. Conflicts require reloading the latest project. Framing uses letterbox or center crop, without automatic subject detection.": "Zaman çizelgesinden çerçeveyi değiştirin ve CC özelliğini açıp kapatın. Model gerekmez. İlk açılışta boş bir altyazı kanalı oluşturulur; eklenen altyazılar bu kanalı doldurur. Önce kilitli kanalların kilidini açın. Çakışmada güncel projeyi yeniden yükleyin. Kenar boşluğu veya ortadan kırpma kullanılır; konu otomatik algılanmaz.",
+    "Read this project and its current revision/version. Use openmotion_edit_project with canvas={compositionPath:\"index.html\",ratio:\"9:16\",fit:\"contain\"} to change the canvas. Then reread the revision/version and enable captions with openmotion_assets_use(action=transcript, transcript.command=caption_toggle, visible=true, compositionPath=\"index.html\"). Use a stable requestId for each operation. Preserve content, respect locked tracks and stop to reread after conflicts. Open the saved preview and verify the canvas and C1 track. This needs no model and creates no transcript or invented captions.": "Geçerli projeyi ve revision/version bilgisini okuyup içeriği koruyun. Önce çağırın: openmotion_edit_project(canvas={compositionPath:\"index.html\",ratio:\"9:16\",fit:\"contain\"}). Sürüm bilgilerini yeniden okuyup çağırın: openmotion_assets_use(action=transcript, transcript.command=caption_toggle, visible=true, compositionPath=\"index.html\"). Her işlemde sabit requestId ve güncel expectedRevision/expectedVersionId kullanın. Kilitlere uyun ve çakışma sonrası yeniden okuyun. Kaydedilen önizlemede çerçeveyi ve C1 kanalını kontrol edin. Model, döküm veya uydurma altyazı oluşturmayın."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "@openmotion/motion-package",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Local authoring tools for portable Motion Packages",
+  "engines": { "node": ">=22.18.0" },
+  "exports": { ".": "./index.mjs", "./schema": "./schema.json" }
+}

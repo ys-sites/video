@@ -1,0 +1,21 @@
+{
+  "name": "openmotion",
+  "version": "0.0.1",
+  "description": "Plan, create, animate, edit, preview, and export motion graphics and motion videos in OpenMotion, including original videos on a user-supplied topic, template-based creation, and reference video recreation.",
+  "skills": ["./skills/", "./.codex-plugin/onboarding/"],
+  "mcpServers": "./.mcp.json",
+  "requires_local_executor": true,
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./.codex-plugin/onboarding/SKILL.md"
+    }
+  },
+  "interface": {
+    "displayName": "OpenMotion",
+    "shortDescription": "Create, recreate, and edit motion videos with OpenMotion",
+    "composerIcon": "./docs/readme/opendesign-symbol-auto.svg",
+    "composerIconDark": "./docs/readme/opendesign-symbol-dark.svg",
+    "logo": "./docs/readme/opendesign-symbol-auto.svg",
+    "logoDark": "./docs/readme/opendesign-symbol-dark.svg"
+  }
+}

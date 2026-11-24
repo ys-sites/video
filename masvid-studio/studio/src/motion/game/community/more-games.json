@@ -1,0 +1,486 @@
+[
+  {
+    "id": "starry-nightrider",
+    "title": "Starry Nightrider",
+    "description": "Ride through Van Gogh's Starry Night, collect glowing orbs and carry them to the church steeple.",
+    "genre": "casual",
+    "style": "3d",
+    "url": "https://starrynightrider.com",
+    "author": "@ebbyamir",
+    "postUrl": "https://x.com/ebbyamir/status/2120284261089673376",
+    "model": "Claude Fable 5.2",
+    "views": {
+      "value": 1985196,
+      "label": "X 浏览 · 2026-11-20"
+    },
+    "likes": 17963,
+    "postedAt": "Tue Nov 10 22:35:35 +0000 2026",
+    "ipRisk": "改编梵高《星月夜》（1889，画作已进入公有领域）",
+    "embeddable": false,
+    "zh": {
+      "title": "星月夜骑行",
+      "description": "在梵高《星月夜》里骑行，收集光球送进教堂尖顶。"
+    },
+    "cover": "community/starry-nightrider.jpg",
+    "secondary": "试玩页显示 59,199 位玩家进入画作 · 2026-11-20"
+  },
+  {
+    "id": "uno-com-escada",
+    "title": "Uno com Escada",
+    "description": "Drive a 1996 Fiat Uno with a ladder on the roof around a race circuit; car, forest and engine sound all generated in code.",
+    "genre": "racing",
+    "style": "3d",
+    "url": "https://viktorkav.com.br/apoio/uno-com-escada/fable/",
+    "author": "@ViktorKav",
+    "postUrl": "https://x.com/ViktorKav/status/2122647483281015155",
+    "model": "Claude Fable 5.2",
+    "views": {
+      "value": 607153,
+      "label": "X 浏览 · 2026-11-20"
+    },
+    "likes": 9204,
+    "postedAt": "Tue Nov 17 11:06:11 +0000 2026",
+    "ipRisk": "出现真实车型 Fiat Uno（菲亚特）外观，无游戏 IP 模仿",
+    "embeddable": false,
+    "zh": {
+      "title": "车顶扛梯子的 Uno 赛车",
+      "description": "开着车顶绑梯子的 1996 年菲亚特 Uno 跑赛道，车、树林和引擎声都由代码生成。"
+    },
+    "cover": "community/uno-com-escada.jpg"
+  },
+  {
+    "id": "what-the-water-keeps",
+    "title": "What the Water Keeps",
+    "description": "A slow first-person boat ride through eight dreamlike worlds in one night, steering with WASD.",
+    "genre": "story",
+    "style": "3d",
+    "url": "https://what-the-water-keeps.vercel.app/",
+    "author": "@kevin_t_ngo",
+    "postUrl": "https://x.com/kevin_t_ngo/status/2119868968307695818",
+    "model": "Claude Fable 5.2",
+    "views": {
+      "value": 513615,
+      "label": "X 浏览 · 2026-11-20"
+    },
+    "likes": 4278,
+    "postedAt": "Mon Nov 09 19:05:21 +0000 2026",
+    "ipRisk": "无",
+    "embeddable": true,
+    "zh": {
+      "title": "水留下的东西",
+      "description": "第一人称乘小船一夜穿过八个梦境般的场景，WASD 划船转向。"
+    },
+    "cover": "community/what-the-water-keeps.jpg"
+  },
+  {
+    "id": "evensong",
+    "title": "Evensong",
+    "description": "A dark-fantasy souls-like boss fight with roll, block, lock-on and healing flasks.",
+    "genre": "shooter",
+    "style": "3d",
+    "url": "https://evensong-phi.vercel.app/",
+    "author": "@kevin_t_ngo",
+    "postUrl": "https://x.com/kevin_t_ngo/status/2120238844754923874",
+    "model": "Claude Fable 5.2",
+    "views": {
+      "value": 489153,
+      "label": "X 浏览 · 2026-11-20"
+    },
+    "likes": 1801,
+    "postedAt": "Tue Nov 10 19:35:07 +0000 2026",
+    "ipRisk": "玩法模仿魂系（FromSoftware《黑暗之魂》类）Boss 战",
+    "embeddable": true,
+    "zh": {
+      "title": "晚祷",
+      "description": "黑暗奇幻魂系 Boss 战：翻滚、格挡、锁定、喝药。"
+    },
+    "cover": "community/evensong.jpg"
+  },
+  {
+    "id": "mirror-earth",
+    "title": "Mirror Earth",
+    "description": "Pick any real place on Earth and walk, drive or fly a helicopter through it, with live real-world weather; press B to destroy what you look at.",
+    "genre": "casual",
+    "style": "voxel",
+    "url": "https://www.spawn.co/@mattshumer/earth?room=local",
+    "author": "@mattshumer_",
+    "postUrl": "https://x.com/mattshumer_/status/2119877065701036047",
+    "model": "Claude Fable 5.2（Spawn 平台）",
+    "views": {
+      "value": 429819,
+      "label": "X 浏览 · 2026-11-20"
+    },
+    "likes": 2416,
+    "postedAt": "Mon Nov 09 19:37:32 +0000 2026",
+    "ipRisk": "用开放地图数据重建真实地点，无游戏 IP 模仿",
+    "embeddable": false,
+    "zh": {
+      "title": "镜像地球",
+      "description": "任选地球上的真实地点步行、开车或开直升机，天气与现实同步，按 B 可破坏眼前建筑。"
+    },
+    "cover": "community/mirror-earth.jpg",
+    "coverSource": "原帖视频第 6 秒画面（自动化浏览器里只加载到地图读取阶段）"
+  },
+  {
+    "id": "tennis-go-wild",
+    "title": "Tennis (Go Wild)",
+    "description": "Looks like a Pong clone until you play it: Fable 5.2's answer to 'go wild making a game'.",
+    "genre": "casual",
+    "style": "minimal",
+    "url": "https://tennis.sixfingerpunch.com/",
+    "author": "@photonstorm",
+    "postUrl": "https://x.com/photonstorm/status/2120330010112434313",
+    "model": "Claude Fable 5.2",
+    "views": {
+      "value": 416621,
+      "label": "X 浏览 · 2026-11-20"
+    },
+    "likes": 3107,
+    "postedAt": "Wed Nov 11 01:37:22 +0000 2026",
+    "ipRisk": "外观模仿雅达利《Pong》",
+    "embeddable": true,
+    "zh": {
+      "title": "网球（放飞版）",
+      "description": "看着像《Pong》，玩起来才发现玩法会不断变化。"
+    },
+    "cover": "community/tennis-go-wild.jpg"
+  },
+  {
+    "id": "mist-locked-mountain-gate",
+    "title": "Mist-Locked Mountain Gate",
+    "description": "A Chinese-ink 3D action game: fight with sword combos, dodge and restore the stone statues; one 30 MB HTML file.",
+    "genre": "shooter",
+    "style": "3d",
+    "url": "https://op7418.github.io/guizang-game-skill/",
+    "author": "@op7418",
+    "postUrl": "https://x.com/op7418/status/2120694045299327187",
+    "model": "Claude Fable 5.2（guizang-game-skill）",
+    "views": {
+      "value": 298067,
+      "label": "X 浏览 · 2026-11-20"
+    },
+    "likes": 1167,
+    "postedAt": "Thu Nov 12 01:43:55 +0000 2026",
+    "ipRisk": "无",
+    "embeddable": true,
+    "zh": {
+      "title": "雾锁山门",
+      "description": "水墨风 3D 动作游戏，连招、闪避、让石像归位，全部打包在一个 30MB 的 HTML 里。"
+    },
+    "cover": "community/mist-locked-mountain-gate.jpg"
+  },
+  {
+    "id": "omw-castle-valley",
+    "title": "omw: Castle Valley",
+    "description": "First-person walk through a castle valley rendered as oil-paint brush strokes, with torch and sword.",
+    "genre": "story",
+    "style": "3d",
+    "url": "https://omw-game.kimaki.dev",
+    "author": "@__morse",
+    "postUrl": "https://x.com/__morse/status/2122013410309153042",
+    "model": "Claude Fable 5.2",
+    "views": {
+      "value": 232675,
+      "label": "X 浏览 · 2026-11-20"
+    },
+    "likes": 4487,
+    "postedAt": "Sun Nov 15 17:06:36 +0000 2026",
+    "ipRisk": "画面改编自 @de5imulate 的像素画帖子「omw」",
+    "embeddable": true,
+    "zh": {
+      "title": "油画城堡山谷",
+      "description": "第一人称拿火把和剑走进油画笔触的城堡山谷，可挥剑、跳跃。"
+    },
+    "cover": "community/omw-castle-valley.jpg"
+  },
+  {
+    "id": "lanternfall",
+    "title": "LANTERNFALL",
+    "description": "Isometric squad action: lead a warden, reaver, fletcher and lamplighter through the dark moor.",
+    "genre": "shooter",
+    "style": "3d",
+    "url": "https://loktar00.github.io/lanternfall/",
+    "author": "@loktar00",
+    "postUrl": "https://x.com/loktar00/status/2120192761542615271",
+    "model": "Claude Fable 5.2",
+    "views": {
+      "value": 202298,
+      "label": "X 浏览 · 2026-11-20"
+    },
+    "likes": 1431,
+    "postedAt": "Tue Nov 10 16:32:00 +0000 2026",
+    "ipRisk": "无",
+    "embeddable": true,
+    "zh": {
+      "title": "灯落",
+      "description": "斜视角小队战斗，带四名职业角色在黑暗荒原中点灯推进。"
+    },
+    "cover": "community/lanternfall.jpg"
+  },
+  {
+    "id": "maad-maxxing",
+    "title": "MAAD MAXXING",
+    "description": "Desert car-combat runner: steer, slam and boost through raiders; 100% code with no models or textures.",
+    "genre": "racing",
+    "style": "3d",
+    "url": "https://maad-maxxing.vercel.app/",
+    "author": "@Andrew_Blumson",
+    "postUrl": "https://x.com/Andrew_Blumson/status/2120599812512833557",
+    "model": "Claude Fable 5.2 + ElevenLabs（音效）",
+    "views": {
+      "value": 122637,
+      "label": "X 浏览 · 2026-11-20"
+    },
+    "likes": 247,
+    "postedAt": "Wed Nov 11 19:29:28 +0000 2026",
+    "ipRisk": "名字与画风模仿电影《疯狂的麦克斯》（Mad Max）",
+    "embeddable": true,
+    "zh": {
+      "title": "疯狂麦克斯式狂飙",
+      "description": "沙漠战车跑酷：转向、撞击、加速冲过掠夺者，没有任何模型和贴图，全是代码。"
+    },
+    "cover": "community/maad-maxxing.jpg"
+  },
+  {
+    "id": "gilt-and-gutter",
+    "title": "Gilt & Gutter",
+    "description": "A 1v1 first-person shooter with two playable characters, each with their own weapon.",
+    "genre": "shooter",
+    "style": "3d",
+    "url": "https://gilt-and-gutter.vercel.app/",
+    "author": "@kevin_t_ngo",
+    "postUrl": "https://x.com/kevin_t_ngo/status/2119900487688622171",
+    "model": "Claude Fable 5.2",
+    "views": {
+      "value": 108646,
+      "label": "X 浏览 · 2026-11-20"
+    },
+    "likes": 332,
+    "postedAt": "Mon Nov 09 21:10:36 +0000 2026",
+    "ipRisk": "无",
+    "embeddable": true,
+    "zh": {
+      "title": "镀金与阴沟",
+      "description": "1 对 1 第一人称射击，两名可选角色各有武器。"
+    },
+    "cover": "community/gilt-and-gutter.jpg"
+  },
+  {
+    "id": "papertrails",
+    "title": "Papertrails",
+    "description": "Walk an endless pop-up papercraft world where trees, houses and hills fold up around you.",
+    "genre": "casual",
+    "style": "3d",
+    "url": "https://xikhar.github.io/papertrails/",
+    "author": "@xikhar",
+    "postUrl": "https://x.com/xikhar/status/2122682962647122403",
+    "model": "Claude Fable 5.2 + Opus 5.5",
+    "views": {
+      "value": 104179,
+      "label": "X 浏览 · 2026-11-20"
+    },
+    "likes": 2247,
+    "postedAt": "Tue Nov 17 13:27:10 +0000 2026",
+    "ipRisk": "无",
+    "embeddable": true,
+    "zh": {
+      "title": "纸艺小径",
+      "description": "在无尽的立体书纸艺世界里散步，树、房子、山丘从地面折叠升起。"
+    },
+    "cover": "community/papertrails.jpg"
+  },
+  {
+    "id": "vice-86",
+    "title": "VICE '86",
+    "description": "Open-world driving in a neon 1986 Miami with its own WebGL2 renderer; rain, cars and engine sounds all from code.",
+    "genre": "racing",
+    "style": "3d",
+    "url": "https://heat.pplx.app",
+    "author": "@AravSrinivas",
+    "postUrl": "https://x.com/AravSrinivas/status/2122338465648103676",
+    "model": "Claude Fable 5.2（Perplexity Teammate）",
+    "views": {
+      "value": 84644,
+      "label": "X 浏览 · 2026-11-20"
+    },
+    "likes": 1270,
+    "postedAt": "Mon Nov 16 14:38:16 +0000 2026",
+    "ipRisk": "模仿《GTA：罪恶都市》（Rockstar）1986 迈阿密霓虹风格",
+    "embeddable": false,
+    "zh": {
+      "title": "罪恶 '86",
+      "description": "1986 年霓虹迈阿密的开放世界驾驶，自写 WebGL2 渲染器，雨、车、引擎声都是代码生成。"
+    },
+    "cover": "community/vice-86.jpg"
+  },
+  {
+    "id": "starfall-moba",
+    "title": "Starfall",
+    "description": "A 5v5 MOBA in the browser: one human player plus nine AI heroes, all art and sound procedurally generated.",
+    "genre": "shooter",
+    "style": "3d",
+    "url": "https://sanwan.ai/games/xingyun-moba/",
+    "author": "@FuSheng_0306",
+    "postUrl": "https://x.com/FuSheng_0306/status/2121237878097207583",
+    "model": "Claude Fable 5.2",
+    "views": {
+      "value": 75056,
+      "label": "X 浏览 · 2026-11-20"
+    },
+    "likes": 247,
+    "postedAt": "Fri Nov 13 13:44:55 +0000 2026",
+    "ipRisk": "玩法模仿《王者荣耀》（腾讯）MOBA，原帖直接对标",
+    "embeddable": true,
+    "zh": {
+      "title": "星陨战纪",
+      "description": "浏览器里的 5v5 MOBA：1 名真人加 9 名 AI 英雄，美术和音效全部程序生成。"
+    },
+    "cover": "community/starfall-moba.jpg",
+    "secondary": "试玩页显示 27,948 位召唤师、累计访问 43,791 次 · 2026-11-20"
+  },
+  {
+    "id": "goku-four-star-road",
+    "title": "Goku: Four-Star Road",
+    "description": "Fan action game: kid Goku fights through the Red Ribbon Army camp to find the four-star Dragon Ball.",
+    "genre": "platformer",
+    "style": "3d",
+    "url": "https://app.usecrayon.ai/play/76dbd04f-0684-4486-8cc4-eae0585295e8",
+    "author": "@aniketjart",
+    "postUrl": "https://x.com/aniketjart/status/2121793239175119279",
+    "model": "Claude Fable 5.2 + three.js（Crayon 平台）",
+    "views": {
+      "value": 68349,
+      "label": "X 浏览 · 2026-11-20"
+    },
+    "likes": 1366,
+    "postedAt": "Sun Nov 15 02:31:43 +0000 2026",
+    "ipRisk": "同人作品，使用《龙珠》（鸟山明 / 集英社）角色与红缎带军剧情",
+    "embeddable": false,
+    "zh": {
+      "title": "悟空：四星珠之路",
+      "description": "《龙珠》同人动作游戏，小悟空闯红缎带军营地寻找四星珠。"
+    },
+    "cover": "community/goku-four-star-road.jpg",
+    "secondary": "Crayon 页面显示 15,155 次游玩 · 2026-11-20"
+  },
+  {
+    "id": "rug-racers",
+    "title": "Rug Racers",
+    "description": "Toy-car racing on the childhood play rug: drift, boost and jump through 3 laps against AI cars.",
+    "genre": "racing",
+    "style": "3d",
+    "url": "https://noclipepe.pages.dev/rug/",
+    "author": "@noclipepe",
+    "postUrl": "https://x.com/noclipepe/status/2119728047754547326",
+    "model": "GPT-6.2 Sol / Claude Fable 5.2（帖子对比两版同提示词作品，试玩页未注明是哪版）",
+    "views": {
+      "value": 63006,
+      "label": "X 浏览 · 2026-11-20"
+    },
+    "likes": 429,
+    "postedAt": "Mon Nov 09 09:45:23 +0000 2026",
+    "ipRisk": "无",
+    "embeddable": true,
+    "zh": {
+      "title": "地毯赛车",
+      "description": "在儿时的游戏地毯上开玩具车，漂移、加速、跳跃，与 AI 赛三圈。"
+    },
+    "cover": "community/rug-racers.jpg"
+  },
+  {
+    "id": "rambo-dino",
+    "title": "Dino Run: Locked In",
+    "description": "The Chrome offline T-Rex runner rebuilt in 3D with a Rambo headband: jump and duck past cacti in the desert.",
+    "genre": "platformer",
+    "style": "3d",
+    "url": "https://noclipepe.pages.dev/dino",
+    "author": "@noclipepe",
+    "postUrl": "https://x.com/noclipepe/status/2119927838321328577",
+    "model": "Claude Fable 5.2",
+    "views": {
+      "value": 39408,
+      "label": "X 浏览 · 2026-11-20"
+    },
+    "likes": 183,
+    "postedAt": "Mon Nov 09 22:59:17 +0000 2026",
+    "ipRisk": "模仿 Chrome 断网小恐龙（Google）+ 兰博（Rambo）形象",
+    "embeddable": true,
+    "zh": {
+      "title": "兰博小恐龙",
+      "description": "把 Chrome 断网小恐龙做成 3D，绑上兰博头巾，在沙漠里跳跃、下蹲躲仙人掌。"
+    },
+    "cover": "community/rambo-dino.jpg"
+  },
+  {
+    "id": "hadal",
+    "title": "HADAL",
+    "description": "Dive from a sunlit reef into the Mariana Trench: swim, board a submarine and find 18 hidden discoveries as you descend.",
+    "genre": "story",
+    "style": "3d",
+    "url": "https://mariana.pplx.app",
+    "author": "@AravSrinivas",
+    "postUrl": "https://x.com/AravSrinivas/status/2122713692324384793",
+    "model": "Claude Fable 5.2（Perplexity Teammate）",
+    "views": {
+      "value": 34542,
+      "label": "X 浏览 · 2026-11-20"
+    },
+    "likes": 363,
+    "postedAt": "Tue Nov 17 15:29:17 +0000 2026",
+    "ipRisk": "无",
+    "embeddable": false,
+    "zh": {
+      "title": "深渊潜航",
+      "description": "从阳光礁石潜入马里亚纳海沟，游泳、登上潜艇，下潜途中寻找 18 处发现。"
+    },
+    "cover": "community/hadal.jpg"
+  },
+  {
+    "id": "i-would-have-gotten-away",
+    "title": "I Would Have Gotten Away With It",
+    "description": "Reverse Scooby-Doo: you are the villain, dress up as a monster and scare visitors off your manor before the kids unmask you.",
+    "genre": "horror",
+    "style": "anime",
+    "url": "https://i-would-have-gotten-away-with-it.netlify.app/",
+    "author": "@emollick",
+    "postUrl": "https://x.com/emollick/status/2119876449494540554",
+    "model": "Claude Fable 5.2",
+    "views": {
+      "value": 34191,
+      "label": "X 浏览 · 2026-11-20"
+    },
+    "likes": 518,
+    "postedAt": "Mon Nov 09 19:35:05 +0000 2026",
+    "ipRisk": "戏仿《史酷比》（Scooby-Doo，华纳兄弟）桥段，作者自称原创戏仿",
+    "embeddable": true,
+    "zh": {
+      "title": "本来我能逃掉的",
+      "description": "反向《史酷比》：你扮成怪物当反派，把访客吓出庄园，别被孩子们揭穿面具。"
+    },
+    "cover": "community/i-would-have-gotten-away.jpg"
+  },
+  {
+    "id": "turbo-tails",
+    "title": "Turbo Tails",
+    "description": "Cartoon 3D kart racer with 6 animal racers, drifting, ramps, coins and turbo; single player or multiplayer.",
+    "genre": "racing",
+    "style": "3d",
+    "url": "https://turbo-tails.vercel.app",
+    "author": "@petergyang",
+    "postUrl": "https://x.com/petergyang/status/2119901658394358005",
+    "model": "Claude Fable 5.2",
+    "views": {
+      "value": 33123,
+      "label": "X 浏览 · 2026-11-20"
+    },
+    "likes": 142,
+    "postedAt": "Mon Nov 09 21:15:15 +0000 2026",
+    "ipRisk": "玩法模仿《马里奥赛车》类卡丁车，角色原创",
+    "embeddable": true,
+    "zh": {
+      "title": "涡轮尾巴",
+      "description": "卡通 3D 卡丁车，6 个动物车手，漂移、跳台、吃金币攒涡轮，支持单人和多人。"
+    },
+    "cover": "community/turbo-tails.jpg"
+  }
+]

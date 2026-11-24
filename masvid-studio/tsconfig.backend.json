@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "erasableSyntaxOnly": true,
+    "target": "es2024",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "allowImportingTsExtensions": true,
+    "allowJs": true,
+    "checkJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "types": ["node"]
+  },
+  "include": [
+    "*.ts",
+    "shared/**/*.ts",
+    "gateway/**/*.ts",
+    "tracking/**/*.ts",
+    "scripts/**/*.ts",
+    "packages/design-system/*.js",
+    "packages/motion-package/*.mjs"
+  ]
+}

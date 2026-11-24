@@ -1,0 +1,26 @@
+{
+  "id": "skyline-courier",
+  "title": "Skyline Courier",
+  "description": "One courier. Three last deliveries. Run, leap and kick off walls to deliver all three parcels in 90 seconds.",
+  "genre": "platformer",
+  "style": "3d",
+  "setting": "cyberpunk",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "A / D or arrows move · W / Up / Space jump and wall-jump · mouse/touch hold direction pads and tap Jump · P / Esc pause · R restart",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-20T00:00:00.000Z",
+  "updatedAt": "2026-11-20T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "天际快递员",
+      "description": "穿过霓虹雨夜，在屋顶间奔跑、跳跃和蹬墙，90 秒内将三个包裹送达城市高处。",
+      "controls": "A / D 或方向键移动 · W / 上方向键 / 空格跳跃、蹬墙跳 · 鼠标或触屏按住方向按钮，点击跳跃 · P / Esc 暂停 · R 重开"
+    }
+  }
+}

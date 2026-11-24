@@ -1,0 +1,93 @@
+/* Page geometry only; visual recipes belong to the shared design system. */
+.om-mcp-page { flex: 1; min-width: 0; min-height: 0; overflow: auto; container-type: inline-size; }
+.om-mcp-page[data-in-settings] { overflow: visible; }
+.om-mcp-page > :is(.om-mcp-content, .om-workspace-breadcrumb) { width: min(100%, 1248px); margin-inline: auto; padding-inline: var(--motion-space-32); }
+.om-mcp-content { padding-block-end: var(--motion-space-32); }
+.om-mcp-page > .om-workspace-breadcrumb { padding-block-start: var(--motion-space-8); }
+.om-mcp-section { padding-block: var(--motion-space-28); scroll-margin-top: var(--motion-space-24); }
+.om-mcp-hero.om-mcp-section { text-align: center; padding-top: var(--motion-space-16); }
+.om-mcp-art { position: relative; display: flex; align-items: center; justify-content: center; gap: var(--motion-space-24); height: 180px; width: min(100%, 320px); margin: 0 auto var(--motion-space-24); }
+.om-mcp-art-tile { flex: none; display: grid; place-items: center; }
+.om-mcp-art-left { width: 98px; height: 98px; transform: rotate(-15deg); }
+.om-mcp-art-center { width: 142px; height: 142px; transform: rotate(-6deg); z-index: 1; }
+[data-motion-studio] .om-mcp-art .om-avatar { width: 68px; height: 68px; }
+.om-mcp-art-center img { width: 72px; height: 72px; }
+.om-mcp-client-row { width: 100%; }
+.om-mcp-client-viewport { overflow-x: auto; scroll-padding-inline: calc(var(--motion-control) + var(--motion-space-8)); }
+.om-mcp-client-tabs { display: flex; width: max-content; min-width: 100%; }
+.om-mcp-setup-tray { margin-top: var(--motion-space-24); }
+.om-mcp-client-tabs [role=tab] { flex: none; gap: var(--motion-space-8); }
+/* Center the tabs when they fit while keeping both ends reachable on overflow. */
+.om-mcp-client-tabs > [role=tab]:first-child { margin-inline-start: auto; }
+.om-mcp-client-tabs > [role=tab]:last-child { margin-inline-end: auto; }
+[data-motion-studio] .om-mcp-client-tabs .om-avatar { width: 24px; height: 24px; }
+.om-mcp-client-tabs .om-avatar > svg { width: var(--motion-space-16); height: var(--motion-space-16); }
+.om-mcp-section-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--motion-space-16); }
+.om-mcp-setup-grid, .om-mcp-policy-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--motion-space-16); }
+.om-mcp-step { min-width: 0; text-align: left; display: flex; flex-direction: column; align-items: flex-start; gap: var(--motion-space-20); }
+.om-mcp-step > * { max-width: 100%; }
+.om-mcp-step > [data-orientation] { width: 100%; min-width: 0; }
+.om-mcp-step [role="tablist"] { max-width: 100%; flex-wrap: wrap; }
+.om-mcp-step [role="tab"] { max-width: 100%; white-space: normal; overflow-wrap: anywhere; min-height: var(--motion-control-sm); height: auto; }
+.om-mcp-instruction { display: flex; flex-direction: column; align-items: stretch; gap: var(--motion-space-16); padding-top: var(--motion-space-20); }
+.om-mcp-step h2 { display: flex; align-items: center; gap: var(--motion-space-12); margin-bottom: 0; }
+.om-mcp-step-number { width: 28px; height: 28px; flex: none; display: grid; place-items: center; }
+.om-mcp-step .om-code-block { white-space: pre-wrap; overflow-wrap: anywhere; min-height: 104px; max-height: 220px; overflow: auto; }
+.om-mcp-starters { display: grid; grid-template-columns: 1fr 1fr; gap: var(--motion-space-8); margin: 0; }
+.om-mcp-starters button { white-space: normal; text-align: left; }
+.om-mcp-actions { display: flex; align-items: center; flex-wrap: wrap; gap: var(--motion-space-8); }
+.om-mcp-section-heading { margin-bottom: var(--motion-space-24); }
+.om-mcp-benefit-grid, .om-mcp-capability-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--motion-space-16); margin-top: var(--motion-space-24); }
+.om-mcp-feature { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: var(--motion-space-12); }
+.om-mcp-feature p { margin: 0; }
+.om-mcp-feature .om-text-link { margin-top: auto; padding-top: var(--motion-space-8); }
+.om-mcp-benefit-grid .om-mcp-feature[data-featured=true] { grid-column: span 2; }
+#mcp-capabilities .om-mcp-feature:last-child { grid-column: 1 / -1; }
+.om-mcp-template-grid { columns: 3; column-gap: var(--motion-space-20); margin-top: var(--motion-space-24); }
+.om-mcp-template-grid .om-gallery-card { margin-bottom: var(--motion-space-24); }
+.om-mcp-template-skeleton { display: inline-block; width: 100%; aspect-ratio: 16/11; margin-bottom: var(--motion-space-24); }
+.om-mcp-template-toolbar { display: flex; align-items: center; gap: var(--motion-space-16); }
+.om-mcp-category-tabs { display: flex; flex: 1; min-width: 0; overflow-x: auto; }
+.om-mcp-category-tabs [role=tab] { flex: none; }
+.om-mcp-template-caption { display: flex; justify-content: space-between; align-items: center; gap: var(--motion-space-12); padding: var(--motion-space-12) var(--motion-space-2) 0; }
+.om-mcp-template-caption > div { min-width: 0; }
+.om-mcp-template-caption h3 { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.om-mcp-template-caption button { flex: none; width: var(--motion-control); height: var(--motion-control); padding: 0; }
+.om-mcp-unavailable { padding: var(--motion-space-24); text-align: center; }
+.om-mcp-unavailable pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+.om-mcp-table-wrap { overflow: auto; margin-top: var(--motion-space-24); }
+.om-mcp-table { width: 100%; min-width: 700px; }
+.om-mcp-table th:first-child { width: 27%; }
+.om-mcp-tool-details { margin-top: var(--motion-space-24); }
+.om-mcp-tool-list { display: grid; grid-template-columns: 1fr 1fr; gap: var(--motion-space-16); padding: var(--motion-space-16); }
+.om-mcp-tool-list code { overflow-wrap: anywhere; }
+.om-mcp-policy-grid { gap: var(--motion-space-48); }
+.om-mcp-policy-grid ul { padding-left: var(--motion-space-20); margin-block: var(--motion-space-24); }
+.om-mcp-faq { display: grid; grid-template-columns: 1fr 2fr; gap: var(--motion-space-48); }
+.om-mcp-faq summary { display: flex; align-items: center; justify-content: space-between; gap: var(--motion-space-16); }
+.om-mcp-contact { display: flex; flex-direction: column; align-items: flex-start; gap: var(--motion-space-12); margin-top: var(--motion-space-32); }
+.om-mcp-faq-intro { align-self: start; }
+.om-mcp-footer { margin-top: var(--motion-space-12); display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--motion-space-48); }
+.om-mcp-footer-intro { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: var(--motion-space-20); overflow-wrap: anywhere; }
+.om-mcp-footer-intro > * { max-width: 100%; }
+.om-mcp-footer-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--motion-space-24); align-content: start; }
+.om-mcp-footer-links > div { min-width: 0; overflow-wrap: anywhere; display: flex; flex-direction: column; align-items: flex-start; gap: var(--motion-space-16); }
+.om-mcp-table td > svg { display: inline; margin-right: var(--motion-space-6); vertical-align: middle; }
+
+@container (max-width: 800px) {
+  .om-mcp-page > :is(.om-mcp-content, .om-workspace-breadcrumb) { padding-inline: var(--motion-space-20); }
+  .om-mcp-setup-grid, .om-mcp-faq, .om-mcp-footer { grid-template-columns: minmax(0, 1fr); }
+  .om-mcp-template-grid { columns: 2; }
+  .om-mcp-benefit-grid, .om-mcp-capability-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@container (max-width: 500px) {
+  .om-mcp-page > :is(.om-mcp-content, .om-workspace-breadcrumb) { padding-inline: var(--motion-space-12); }
+  .om-mcp-section { padding-block: var(--motion-space-16); }
+  .om-mcp-template-grid { columns: 1; }
+  .om-mcp-footer-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .om-mcp-benefit-grid, .om-mcp-capability-grid, .om-mcp-policy-grid, .om-mcp-tool-list { grid-template-columns: 1fr; }
+  .om-mcp-benefit-grid .om-mcp-feature[data-featured=true] { grid-column: auto; }
+  [data-motion-studio] .om-mcp-step { padding: var(--motion-space-16); }
+  [data-motion-studio] .om-mcp-footer { padding: var(--motion-space-24); }
+  .om-mcp-starters { grid-template-columns: 1fr; }
+}

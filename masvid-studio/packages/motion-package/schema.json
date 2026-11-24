@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Motion Package 0.2",
+  "description": "Portable creative context; not an executable timeline or npm manifest.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["specVersion", "name", "version", "description", "license", "licenseFile", "motion", "design", "files"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "specVersion": { "const": "0.2" },
+    "name": { "type": "string", "maxLength": 64, "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "version": { "$ref": "#/$defs/version" },
+    "description": { "type": "string", "minLength": 1, "maxLength": 1024 },
+    "license": { "type": "string", "minLength": 1 },
+    "licenseFile": { "$ref": "#/$defs/path" },
+    "motion": { "$ref": "#/$defs/path" },
+    "design": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "format"],
+      "properties": {
+        "path": { "$ref": "#/$defs/path" },
+        "format": { "enum": ["design-md", "markdown"] },
+        "specVersion": { "type": "string", "minLength": 1 }
+      }
+    },
+    "skill": { "$ref": "#/$defs/path" },
+    "inputs": { "$ref": "#/$defs/path" },
+    "extends": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/path" } },
+    "tags": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["name", "kind", "version", "source"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "kind": { "enum": ["tool", "library", "motion-package"] },
+          "version": { "$ref": "#/$defs/version" },
+          "source": { "type": "string", "pattern": "^https://[^\\s]+$" },
+          "path": { "$ref": "#/$defs/path" }
+        }
+      }
+    },
+    "files": {
+      "type": "array", "minItems": 3,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["path", "role", "sha256"],
+        "properties": {
+          "path": { "$ref": "#/$defs/path" },
+          "role": { "enum": ["motion", "design", "skill", "inputs", "source", "asset", "material", "script", "preset", "reference", "preview", "evidence", "license", "documentation", "dependency"] },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "license": { "type": "string", "minLength": 1 },
+          "source": { "type": "string", "pattern": "^https://[^\\s]+$" }
+        }
+      }
+    },
+    "extensions": {
+      "type": "object",
+      "description": "Namespaced, optional metadata. Never changes core interpretation.",
+      "propertyNames": { "pattern": "^[a-z0-9-]+(?:\\.[a-z0-9-]+)+$" }
+    }
+  },
+  "$defs": {
+    "path": {
+      "type": "string", "minLength": 1,
+      "description": "Package-relative POSIX file path. Filesystem and portability checks also apply.",
+      "pattern": "^(?!/)(?!.*(?:^|/)[.]{1,2}(?:/|$))[^\\\\:#?%\\s]+$"
+    },
+    "version": { "type": "string", "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$" }
+  }
+}

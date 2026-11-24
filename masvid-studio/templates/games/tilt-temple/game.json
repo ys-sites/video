@@ -1,0 +1,27 @@
+{
+  "id": "tilt-temple",
+  "title": "Tilt Temple",
+  "description": "Tilt a floating labyrinth, collect the key and guide a rolling orb to the portal across three timed stages.",
+  "genre": "casual",
+  "style": "3d",
+  "setting": "fantasy",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "Hold and drag to tilt; release to brake. Collect the key, then reach the portal.",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-21T00:00:00.000Z",
+  "updatedAt": "2026-11-21T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "倾斜神庙",
+      "description": "拖动倾斜悬浮迷宫，让小球避开陷阱、取得钥匙并进入出口，挑战三关计时星级。",
+      "controls": "按住拖动倾斜迷宫，松手减速。先吃钥匙，再到出口。"
+    }
+  },
+  "orientation": "portrait"
+}

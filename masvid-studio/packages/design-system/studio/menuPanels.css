@@ -1,0 +1,101 @@
+/* RailRecentMenu geometry with OpenMotion's neutral and semantic color tokens. */
+[data-menu-panel].motion-menu-panel {
+  min-width: max(var(--studio-menu-min-width, 140px), var(--anchor-width, 0px));
+  max-width: calc(100vw - var(--motion-space-16));
+  display: flex;
+  flex-direction: column;
+  gap: var(--motion-space-2);
+  padding: var(--motion-space-4);
+  border: 1px solid var(--motion-editor-menu-border);
+  border-radius: var(--motion-radius-xl);
+  background: var(--motion-editor-menu-bg);
+  color: var(--motion-editor-menu-ink);
+  box-shadow: var(--motion-shadow-md);
+  font: var(--motion-weight-regular) var(--motion-text-md)/16px var(--motion-font-sans);
+}
+
+[data-menu-panel].motion-positioned-menu {
+  max-height: var(--studio-menu-max-height, var(--available-height));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-padding-block: var(--motion-space-4);
+}
+
+[data-menu-panel] :is([role="group"], [role="radiogroup"], [role="listbox"], .motion-menu-group) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--motion-space-2);
+}
+
+[data-menu-panel] :is([role="group"], .motion-menu-group):empty { display: none; }
+[data-menu-panel] [role="group"]:not(:empty) { padding-block-end: var(--motion-space-2); }
+
+[data-menu-panel]:not([data-menu-layout="custom"]) > button,
+[data-menu-panel] :is([role="menuitem"], [role="menuitemradio"], [role="menuitemcheckbox"], [role="option"], [data-menu-row]) {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  min-width: 0;
+  width: 100%;
+  height: auto;
+  gap: var(--motion-space-8);
+  padding: 7px var(--motion-space-8);
+  border-radius: var(--motion-radius-xl);
+  background: transparent;
+  color: var(--studio-menu-item-ink, var(--motion-editor-menu-ink));
+  font: inherit;
+  text-align: start;
+  text-decoration: none;
+}
+
+[data-menu-panel] [role="menuitem"] > .truncate { flex: 1; }
+[data-menu-panel] :is([data-menu-tone="danger"], .text-danger-ink) {
+  --studio-menu-item-ink: var(--motion-danger);
+  --studio-menu-item-hover: var(--motion-danger-soft);
+}
+
+[data-menu-panel]:not([data-menu-layout="custom"]) > button:not(:disabled):is(:hover, :focus-visible, [data-highlighted]),
+[data-menu-panel] :is([role="menuitem"], [role="menuitemradio"], [role="menuitemcheckbox"], [role="option"], [data-menu-row]):not(:disabled, [data-disabled], [aria-disabled="true"]):is(:hover, :focus-visible, [data-highlighted], [data-preview-state="hover"], [aria-checked="true"], [aria-pressed="true"], [data-selected]) {
+  background: var(--studio-menu-item-hover, var(--motion-editor-menu-hover));
+  color: var(--studio-menu-item-ink, var(--motion-strong));
+}
+
+/* Image picker popups live in a portal outside the composer. */
+:root[data-motion-ui][data-motion-studio]:not([data-theme="paper"]) .om-image-form-popup [role="option"]:not(
+  :disabled, [data-disabled], [aria-disabled="true"]
+):is(:hover, :focus-visible, [data-highlighted], [aria-selected="true"]) {
+  background-color: var(--motion-neutral-n11);
+}
+
+[data-menu-panel] :is(button, [role="menuitem"], [role="menuitemradio"], [role="menuitemcheckbox"], [role="option"]):is(:disabled, [data-disabled], [aria-disabled="true"]) {
+  color: var(--motion-control-disabled);
+  background: transparent;
+  opacity: 1;
+}
+
+[data-menu-panel] :is([role="group"], .motion-menu-separator, [role="separator"]) {
+  border-color: var(--motion-editor-menu-border);
+}
+
+[data-menu-panel] :is(.motion-menu-separator, [role="separator"]) {
+  flex: none;
+  height: 0;
+  margin-block: var(--motion-space-2);
+  border-block-start: 1px solid var(--motion-editor-menu-border);
+}
+
+[data-menu-panel] :is(.motion-menu-icon, .truncate > svg, .om-menu-label > svg, [role="menuitem"] > svg, [role="menuitemradio"] > svg, [role="menuitemcheckbox"] > svg) {
+  flex: none;
+  color: inherit;
+}
+
+[data-menu-panel] .motion-menu-icon {
+  display: grid;
+  place-items: center;
+  width: 14px;
+  height: 14px;
+}
+
+[data-menu-panel] :is(.text-neutral-500, .text-text-4) { color: var(--motion-editor-menu-muted); }
+
+[data-menu-panel] .om-select-icon { flex: none; }

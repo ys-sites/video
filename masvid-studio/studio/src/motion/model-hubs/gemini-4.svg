@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <radialGradient id="a" cx="62%" cy="45%" r="60%"><stop offset="0" stop-color="#8ab4ff"/><stop offset=".45" stop-color="#4c6ef5"/><stop offset="1" stop-color="#0b1020"/></radialGradient>
+    <radialGradient id="b" cx="78%" cy="70%" r="40%"><stop offset="0" stop-color="#c58cff" stop-opacity=".85"/><stop offset="1" stop-color="#c58cff" stop-opacity="0"/></radialGradient>
+    <radialGradient id="c" cx="48%" cy="22%" r="30%"><stop offset="0" stop-color="#5eead4" stop-opacity=".7"/><stop offset="1" stop-color="#5eead4" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="#0b1020"/>
+  <rect width="1200" height="675" fill="url(#a)"/>
+  <rect width="1200" height="675" fill="url(#b)"/>
+  <rect width="1200" height="675" fill="url(#c)"/>
+  <g fill="none" stroke="#fff" stroke-opacity=".22">
+    <circle cx="760" cy="320" r="120"/><circle cx="760" cy="320" r="200"/><circle cx="760" cy="320" r="290"/><circle cx="760" cy="320" r="390"/>
+  </g>
+  <path d="M760 170c10 92 58 140 150 150-92 10-140 58-150 150-10-92-58-140-150-150 92-10 140-58 150-150z" fill="#fff" fill-opacity=".92"/>
+  <text x="1110" y="610" text-anchor="end" font-family="system-ui, sans-serif" font-size="120" font-weight="700" fill="#fff" fill-opacity=".18">4</text>
+</svg>

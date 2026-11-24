@@ -1,0 +1,205 @@
+/* Feature geometry; shared controls and materials belong to the design system. */
+.om-brand-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--motion-space-16);
+  flex-wrap: wrap;
+}
+.om-brand-heading > div:first-child {
+  display: grid;
+  gap: var(--motion-space-8);
+  min-width: 0;
+}
+.om-brand-heading h1 {
+  overflow-wrap: anywhere;
+}
+.om-brand-heading a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--motion-space-4);
+  width: fit-content;
+}
+.om-brand-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--motion-space-8);
+}
+.om-brand-loading {
+  aspect-ratio: 16 / 9;
+}
+.om-brand-create { display: grid; align-content: start; gap: var(--motion-space-24); width: 100%; max-width: 680px; }
+.om-brand-create form { display: flex; flex-direction: column; align-items: stretch; width: 100%; gap: var(--motion-space-12); }
+.om-brand-create form .om-field { min-width: 0; }
+.om-brand-task-card {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: var(--motion-space-12);
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  cursor: pointer;
+}
+.om-brand-task-card strong {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.om-brand-task-card .om-progress {
+  width: min(200px, 100%);
+}
+.om-brand-video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  overflow: hidden;
+}
+.om-brand-inspection {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--motion-space-20);
+}
+.om-brand-inspection .om-card {
+  min-width: 0;
+}
+.om-brand-swatches {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--motion-space-12);
+}
+.om-brand-swatches > div {
+  display: grid;
+  gap: var(--motion-space-8);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.om-brand-swatch {
+  display: block;
+  aspect-ratio: 1;
+}
+.om-brand-background {
+  width: 100%;
+  aspect-ratio: 4 / 1;
+}
+.om-brand-fact {
+  display: grid;
+  gap: var(--motion-space-4);
+  overflow-wrap: anywhere;
+}
+.om-brand-logo {
+  max-width: 200px;
+  padding: var(--motion-space-16);
+}
+.om-brand-logo img {
+  max-width: 100%;
+  max-height: 70px;
+  object-fit: contain;
+}
+.om-brand-edit {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--motion-space-16);
+}
+.om-brand-edit label {
+  display: grid;
+  gap: var(--motion-space-8);
+  min-width: 0;
+}
+.om-brand-edit > :is(label:first-child, p, div:last-child) {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 680px) {
+  .om-brand-inspection,
+  .om-brand-edit {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .om-brand-create {
+    padding: var(--motion-space-24);
+    min-height: 420px;
+  }
+  .om-brand-create form {
+    flex-direction: column;
+  }
+  .om-brand-create form > :is(.om-field, .om-button) {
+    width: 100%;
+    flex: auto;
+  }
+  .om-brand-actions {
+    justify-content: flex-start;
+  }
+  .om-brand-swatches {
+    gap: var(--motion-space-8);
+  }
+}
+
+.om-brand-heading > div > .om-badge { justify-self: start; }
+
+.om-brand-inspector { display: grid; gap: var(--motion-space-16); min-width: 0; }
+.om-brand-section-nav { display: flex; flex-wrap: wrap; gap: var(--motion-space-4); }
+.om-brand-section-nav > button { white-space: nowrap; }
+.om-brand-detail-panel { min-width: 0; }
+.om-brand-detail-panel :is(code, a, span) { overflow-wrap: anywhere; }
+.om-brand-material-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: var(--motion-space-16); }
+.om-brand-material-grid > * { min-width: 0; margin: 0; }
+.om-brand-material-preview { min-height: 120px; display: grid; place-items: center; padding: var(--motion-space-24); overflow: hidden; }
+.om-brand-material-preview > div { padding: var(--motion-space-16) var(--motion-space-24); max-width: 100%; overflow-wrap: anywhere; }
+.om-brand-shape { width: 80px; height: 80px; margin: var(--motion-space-16); }
+.om-brand-context-actions { flex-wrap: wrap; }
+.om-brand-context-row { display: flex; align-items: center; gap: var(--motion-space-8); }
+.om-brand-context-row > :first-child { flex: 1; min-width: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.om-brand-context-row > button { flex: none; }
+.om-brand-token-list { display: grid; gap: var(--motion-space-16); padding-top: var(--motion-space-16); }
+.om-brand-detail-panel textarea { width: 100%; min-width: 0; resize: vertical; }
+.om-brand-detail { position: relative; min-height: 0; }
+.om-brand-detail-body > .om-control-row { margin-block: var(--motion-space-16); }
+.om-brand-detail-body > .om-card { margin-block: var(--motion-space-16); }
+.om-brand-detail-body > .om-brand-inspector { margin-top: var(--motion-space-24); }
+.om-brand-detail .om-brand-video { width: min(100%, calc(var(--stage-media-height) * 16 / 9)); }
+.om-brand-preview-poster { display: block; width: 100%; height: 100%; object-fit: contain; }
+.om-brand-video > iframe[hidden] { display: none; }
+.om-brand-preview-transport { position: absolute; inset: auto auto var(--motion-space-12) var(--motion-space-12); }
+.om-brand-preview-placeholder { display: grid; place-content: center; justify-items: center; gap: var(--motion-space-16); height: 100%; }
+.om-brand-preview-skeleton { width: 120px; height: var(--motion-space-4); }
+.om-brand-detail .om-brand-section-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.om-brand-detail .om-brand-section-nav > button { white-space: normal; min-width: 0; justify-content: space-between; }
+.om-brand-detail .om-brand-swatches { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.om-brand-library .om-gallery-header .om-gallery-collection-tabs { flex-shrink: 0; }
+/* Row-major CSS grid with fixed card geometry prevents multi-column rebalancing and jitter while artwork loads or paginates. */
+.om-brand-library .om-gallery-masonry {
+  columns: auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--motion-space-12);
+  align-items: start;
+}
+.om-brand-library .om-gallery-masonry > :is(.om-gallery-card, .om-gallery-intro, .om-gallery-skeleton) {
+  margin-bottom: 0;
+}
+.om-brand-library .om-gallery-card {
+  contain: layout style;
+}
+@media (min-width: 1800px) {
+  .om-brand-library .om-gallery-masonry { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+@media (max-width: 1199px) {
+  .om-brand-library .om-gallery-masonry { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 849px) {
+  .om-brand-library .om-gallery-masonry { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 420px) {
+  .om-brand-library .om-gallery-masonry { gap: var(--motion-space-8); }
+}
+@media (min-width: 700px) {
+  .om-brand-library .om-gallery-header > .om-gallery-header-actions { flex-basis: 540px; }
+}
+/* Preserve the scroll range and return-focus target behind the detail dialog. */
+.om-brand-list-suspended { visibility: hidden; pointer-events: none; }
+.om-brand-detail .om-brand-heading { flex-wrap: nowrap; align-items: flex-start; }
+.om-brand-detail .om-brand-heading > h1 { flex: 1; }
+.om-brand-detail .om-brand-heading > button { flex: none; }
+.om-brand-detail .om-brand-create { padding: 0; min-height: 0; }
+.om-brand-detail .om-brand-create > svg { display: none; }
+@media (max-width: 699px) { .om-brand-library .om-gallery-header .om-gallery-collection-tabs { order: 4; width: 100%; } .om-brand-library .om-gallery-header > .om-gallery-wordmark { margin-inline-end: auto; } }

@@ -1,0 +1,9 @@
+Masvid Studio
+Copyright 2026 Sharafath (modifications)
+
+This product is a modified version of OpenMotion
+(https://github.com/nexu-io/openmotion, commit 74a3d1e79d599673bc49e5e93aaa8707f1041804),
+Copyright the OpenMotion authors, licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Modifications are listed in MASVID.md and in the git history of ys-sites/video under masvid-studio/.
+"OpenMotion" and "OpenDesign" are names of their respective owners; Masvid Studio is not affiliated with them.

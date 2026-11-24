@@ -1,0 +1,72 @@
+{
+  "zh-CN": {
+    "UI inspector": "UI 调试",
+    "Select to outline mounted controls.": "点选以标出页面中已挂载的控件。",
+    "Native buttons": "原生按钮",
+    "Native sliders": "原生滑杆",
+    "Drag or use arrow keys to move": "拖动或用方向键移动"
+  },
+  "ja": {
+    "UI inspector": "UI インスペクター",
+    "Select to outline mounted controls.": "選択するとページ内のコントロールを枠で表示します。",
+    "Native buttons": "ネイティブボタン",
+    "Native sliders": "ネイティブスライダー",
+    "Drag or use arrow keys to move": "ドラッグまたは矢印キーで移動"
+  },
+  "ko": {
+    "UI inspector": "UI 검사기",
+    "Select to outline mounted controls.": "선택하면 페이지에 마운트된 컨트롤에 테두리를 표시합니다.",
+    "Native buttons": "기본 버튼",
+    "Native sliders": "기본 슬라이더",
+    "Drag or use arrow keys to move": "드래그하거나 방향키로 이동"
+  },
+  "de": {
+    "UI inspector": "UI-Inspektor",
+    "Select to outline mounted controls.": "Eingebundene Elemente zum Umranden auswählen.",
+    "Native buttons": "Native Schaltflächen",
+    "Native sliders": "Native Schieberegler",
+    "Drag or use arrow keys to move": "Zum Verschieben ziehen oder Pfeiltasten verwenden"
+  },
+  "fr": {
+    "UI inspector": "Inspecteur UI",
+    "Select to outline mounted controls.": "Sélectionnez les contrôles montés à encadrer.",
+    "Native buttons": "Boutons natifs",
+    "Native sliders": "Curseurs natifs",
+    "Drag or use arrow keys to move": "Déplacez par glisser ou avec les flèches"
+  },
+  "ru": {
+    "UI inspector": "Инспектор UI",
+    "Select to outline mounted controls.": "Выберите элементы страницы, чтобы выделить их рамкой.",
+    "Native buttons": "Нативные кнопки",
+    "Native sliders": "Нативные ползунки",
+    "Drag or use arrow keys to move": "Перетащите или используйте клавиши со стрелками"
+  },
+  "es": {
+    "UI inspector": "Inspector de UI",
+    "Select to outline mounted controls.": "Selecciona los controles montados que quieras resaltar.",
+    "Native buttons": "Botones nativos",
+    "Native sliders": "Deslizadores nativos",
+    "Drag or use arrow keys to move": "Arrastra o usa las flechas para mover"
+  },
+  "pt-BR": {
+    "UI inspector": "Inspetor de UI",
+    "Select to outline mounted controls.": "Selecione os controles montados para destacá-los.",
+    "Native buttons": "Botões nativos",
+    "Native sliders": "Controles deslizantes nativos",
+    "Drag or use arrow keys to move": "Arraste ou use as setas para mover"
+  },
+  "it": {
+    "UI inspector": "Ispettore UI",
+    "Select to outline mounted controls.": "Seleziona i controlli montati da evidenziare.",
+    "Native buttons": "Pulsanti nativi",
+    "Native sliders": "Cursori nativi",
+    "Drag or use arrow keys to move": "Trascina o usa i tasti freccia per spostare"
+  },
+  "tr": {
+    "UI inspector": "Arayüz denetçisi",
+    "Select to outline mounted controls.": "Sayfadaki denetimleri çerçevelemek için seçin.",
+    "Native buttons": "Yerel düğmeler",
+    "Native sliders": "Yerel kaydırıcılar",
+    "Drag or use arrow keys to move": "Taşımak için sürükleyin veya ok tuşlarını kullanın"
+  }
+}

@@ -1,0 +1,47 @@
+name: Update README star history
+
+on:
+  schedule:
+    - cron: '17 0 * * *' # 08:17 in Shanghai
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: readme-star-history
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.repository == 'nexu-io/openmotion' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Check out chart generator
+        uses: actions/checkout@v6.0.2
+        with:
+          persist-credentials: false
+          sparse-checkout: .github/scripts
+      - name: Check out chart data
+        uses: actions/checkout@v6.0.2
+        with:
+          ref: readme-charts
+          path: chart-data
+      - name: Read the current star count and update the chart
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          stars=$(gh api "repos/$GITHUB_REPOSITORY" --jq '.stargazers_count')
+          python3 .github/scripts/update-star-history.py chart-data "$(date -u +%F)" "$stars"
+      - name: Publish changed data and chart together
+        working-directory: chart-data
+        run: |
+          set -euo pipefail
+          git add -- stars.csv star-history.svg
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'docs: refresh OpenMotion star history'
+          git push origin HEAD:refs/heads/readme-charts

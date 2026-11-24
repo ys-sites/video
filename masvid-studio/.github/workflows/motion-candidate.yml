@@ -1,0 +1,196 @@
+name: Motion candidate build
+run-name: Motion candidate · ${{ inputs.channel || 'test' }} · ${{ inputs.version || 'auto' }}
+
+on:
+  workflow_call:
+    inputs:
+      channel:
+        type: string
+        required: true
+      version:
+        type: string
+        required: false
+        default: ''
+      source_sha:
+        type: string
+        required: false
+        default: ''
+    outputs:
+      artifact_id:
+        value: ${{ jobs.candidate.outputs.artifact_id }}
+      version:
+        value: ${{ jobs.candidate.outputs.version }}
+      sha256:
+        value: ${{ jobs.candidate.outputs.sha256 }}
+      attempt:
+        value: ${{ jobs.candidate.outputs.attempt }}
+
+permissions:
+  contents: read
+
+jobs:
+  candidate:
+    name: Build immutable candidate
+    if: github.repository == 'nexu-io/openmotion'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    outputs:
+      artifact_id: ${{ steps.artifact.outputs.artifact-id }}
+      version: ${{ steps.source.outputs.version }}
+      sha256: ${{ steps.seal.outputs.tgz_sha256 }}
+      attempt: ${{ github.run_attempt }}
+    env:
+      MOTION_RELEASE_CHANNEL: ${{ inputs.channel || 'test' }}
+      MOTION_TEMPLATE_ENVIRONMENT: ${{ inputs.channel == 'stable' && 'prod' || 'dev' }}
+      MOTION_SOURCE_SHA: ${{ inputs.source_sha }}
+      MOTION_VERSION: ${{ inputs.version }}
+      OPENMOTION_TELEMETRY: '0'
+      HYPERFRAMES_BROWSER_PATH: /usr/bin/google-chrome
+      HYPERFRAMES_FFMPEG_PATH: /usr/bin/ffmpeg
+      HYPERFRAMES_FFPROBE_PATH: /usr/bin/ffprobe
+    steps:
+      - name: Require Motion integration branch
+        run: |
+          if [ "$GITHUB_REF" != 'refs/heads/main' ]; then
+            echo '::error::Select main in Run workflow for Motion operations.'
+            exit 1
+          fi
+      - uses: actions/checkout@v6.0.2
+        with:
+          path: control
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '26.11.1'
+      - name: Resolve and freeze the integrated source
+        id: source
+        run: |
+          git -C control fetch origin main:refs/remotes/origin/main
+          node control/.github/scripts/motion-release.mjs source control
+      - uses: actions/checkout@v6.0.2
+        with:
+          path: source
+          ref: ${{ steps.source.outputs.source_sha }}
+          persist-credentials: false
+      - name: Cache optional LFS media
+        uses: actions/cache@v4
+        with:
+          path: source/.git/lfs/objects
+          key: optional-lfs-${{ runner.os }}-${{ hashFiles('source/**/*.mp4', 'source/**/*.motion', 'source/library/templates/catalog/**') }}
+          restore-keys: optional-lfs-${{ runner.os }}-
+      - name: Download full-bundle media explicitly
+        working-directory: source
+        run: |
+          git lfs pull --include="docs/readme/**,library/**,examples/**" --exclude=""
+          node scripts/repository-media.ts
+      - name: Scan tracked source before dependency installation
+        run: |
+          node control/.github/scripts/motion-scan.mjs install "$RUNNER_TEMP/scanner"
+          node control/.github/scripts/motion-scan.mjs source source "$RUNNER_TEMP/source-scan.json" "$RUNNER_TEMP/scanner/gitleaks"
+      - name: Select rendering package cache version
+        id: rendering-cache
+        run: echo "version=${ImageVersion:-$(date -u +%G-W%V)}" >> "$GITHUB_OUTPUT"
+      - name: Restore rendering package downloads
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/motion-rendering-apt/*.deb
+          # Reuse packages across runs of the same runner image; refresh when the image changes.
+          key: rendering-apt-ubuntu24.04-${{ runner.arch }}-zip-unzip-ffmpeg-fonts-noto-core-v2-${{ steps.rendering-cache.outputs.version }}
+          restore-keys: |
+            rendering-apt-ubuntu24.04-${{ runner.arch }}-zip-unzip-ffmpeg-fonts-noto-core-v2-
+            rendering-apt-ubuntu24.04-${{ runner.arch }}-zip-unzip-ffmpeg-fonts-noto-core-
+      - name: Install rendering test tools
+        run: |
+          # The hosted Ubuntu image provides Chrome; avoid Ubuntu's desktop Chromium snap.
+          "$HYPERFRAMES_BROWSER_PATH" --version
+          missing=()
+          for package in zip unzip ffmpeg fonts-noto-core; do
+            if [ "$(dpkg-query -W -f='${Status}' "$package" 2>/dev/null)" != 'install ok installed' ]; then
+              missing+=("$package")
+            fi
+          done
+          if ((${#missing[@]})); then
+            mkdir -p "$RUNNER_TEMP/motion-rendering-apt/partial"
+            apt_options=(-o Acquire::Retries=2 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30
+              -o "Dir::Cache::archives=$RUNNER_TEMP/motion-rendering-apt" -o APT::Keep-Downloaded-Packages=true)
+            # Hosted runners already have package indexes. Refresh only if installation needs it.
+            if ! sudo apt-get "${apt_options[@]}" install -y --no-install-recommends "${missing[@]}"; then
+              sudo apt-get "${apt_options[@]}" update
+              sudo apt-get "${apt_options[@]}" install -y --no-install-recommends "${missing[@]}"
+            fi
+            du -sh "$RUNNER_TEMP/motion-rendering-apt/"*.deb
+          fi
+      - name: Check the selected source
+        working-directory: source
+        run: |
+          npm ci --no-audit --no-fund
+          npm run check
+          npm run typecheck:studio
+          npm run build:studio
+          npm run build:tracking
+          node --experimental-strip-types --test tests/tracking.test.ts tests/install.test.ts tests/npm-installer.test.ts tests/native-runtime.test.ts tests/npm-package.test.ts tests/test-package.test.ts tests/source-install.test.ts tests/bootstrap.test.ts tests/mcp-registry.test.ts tests/mcp-runtime.test.ts tests/mcp-upgrade.test.ts tests/preview.test.ts tests/phase1.test.ts tests/preview-handoff.test.ts tests/adapters.test.ts tests/package.test.ts tests/library-install.test.mjs tests/recreate-measure.test.ts tests/workflow.test.ts tests/catalog.test.ts tests/prism-templates.test.ts tests/extension-boundary.test.ts tests/connections.test.ts tests/install-guide.test.ts
+          npm run test:studio -- --maxWorkers=2
+          node --experimental-strip-types scripts/package.ts --mcp-profile=phase1
+          archive="$PWD/dist/openmotion-$(node -p "require('./package.json').version")-phase1.zip"
+          node tests/phase1-package.mjs "$archive" "$RUNNER_TEMP/phase1-e2e"
+      - name: Build the final application tgz once and scan both archives
+        env:
+          MOTION_SOURCE_SHA: ${{ steps.source.outputs.source_sha }}
+          MOTION_VERSION: ${{ steps.source.outputs.version }}
+        run: |
+          node source/scripts/package-npm.mjs "$RUNNER_TEMP/build" "$MOTION_VERSION" --template-env="$MOTION_TEMPLATE_ENVIRONMENT"
+          budget=()
+          if [[ ! -f source/.github/scripts/npm-package-size.py ]]; then budget=(--report-only); fi
+          python3 control/.github/scripts/npm-package-size.py "$RUNNER_TEMP/build/openmotion-app-$MOTION_VERSION.tgz" "${budget[@]}"
+          cp "$RUNNER_TEMP/source-scan.json" "$RUNNER_TEMP/build/source-scan.json"
+          node control/.github/scripts/motion-scan.mjs package "$RUNNER_TEMP/build/openmotion-app-$MOTION_VERSION.tgz" "$RUNNER_TEMP/build/package-scan.json" "$RUNNER_TEMP/scanner/gitleaks"
+      - name: Prepare read-only release notes for this exact candidate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MOTION_SOURCE_SHA: ${{ steps.source.outputs.source_sha }}
+          MOTION_VERSION: ${{ steps.source.outputs.version }}
+        run: node control/.github/scripts/motion-release-notes.mjs prepare "$RUNNER_TEMP/build"
+      - name: Check the optional DSH integration from the frozen source
+        if: ${{ hashFiles('source/integrations/dsh/build.ts') != '' }}
+        working-directory: source
+        run: |
+          npm ci --prefix integrations/dsh --ignore-scripts --no-audit --no-fund
+          npm run typecheck --prefix integrations/dsh
+          npm run test --prefix integrations/dsh
+          node --test tests/dsh-integration.test.ts tests/dsh-distribution.test.ts tests/dsh-release.test.ts tests/dsh-template-cards.test.ts
+      - name: Freeze and scan the matching DSH plugin once
+        if: ${{ hashFiles('source/integrations/dsh/build.ts') != '' }}
+        env:
+          MOTION_SOURCE_SHA: ${{ steps.source.outputs.source_sha }}
+          MOTION_VERSION: ${{ steps.source.outputs.version }}
+        run: |
+          node control/integrations/dsh/release.ts prepare "$RUNNER_TEMP/build" source
+          node control/.github/scripts/motion-scan.mjs plugin "$RUNNER_TEMP/build/openmotion-dsh-$MOTION_VERSION.tgz" "$RUNNER_TEMP/build/dsh-package-scan.json" "$RUNNER_TEMP/scanner/gitleaks"
+      - name: Seal the package and notes together
+        id: seal
+        env:
+          MOTION_SOURCE_SHA: ${{ steps.source.outputs.source_sha }}
+          MOTION_VERSION: ${{ steps.source.outputs.version }}
+        run: node control/.github/scripts/motion-release.mjs seal "$RUNNER_TEMP/build" "$RUNNER_TEMP/candidate" source
+      - name: Retain the immutable candidate
+        id: artifact
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: motion-candidate-${{ steps.source.outputs.version }}
+          path: ${{ runner.temp }}/candidate/
+          retention-days: 30
+          if-no-files-found: error
+      - name: Show candidate download and tester instructions
+        run: |
+          node --input-type=module <<'JS'
+          import { readFileSync, appendFileSync, statSync } from 'node:fs';
+          const c = JSON.parse(readFileSync(process.env.RUNNER_TEMP + '/candidate/candidate.json'));
+          const notes = readFileSync(process.env.RUNNER_TEMP + '/candidate/release-notes.md', 'utf8');
+          const size = statSync(process.env.RUNNER_TEMP + '/candidate/' + c.tgz).size;
+          const run = `https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`;
+          appendFileSync(process.env.GITHUB_STEP_SUMMARY, `## Candidate ready for acceptance\n\nVersion: ${c.version}\n\nSource: ${c.sourceCommit}\n\nTGZ SHA256: ${c.tgzSHA256}\nNpm package: ${(size / 1024 ** 2).toFixed(2)} MiB (${size} bytes)\n\n[Download motion-candidate-${c.version}](${run}#artifacts), extract it and give the folder to your Agent with this instruction:\n\n> Follow candidate-install.md in this folder to install this exact local candidate into an isolated test profile, application home, project data and Skills directory. Verify host loading without waiting for background video-component preparation. Run prepare only when explicitly asked to wait or before requested media/capture/export acceptance checks. Record actual results in a private copy of acceptance.md; mark unrun checks NOT RUN. Do not publish.\n\nUse candidate-install.md before publication, not the sibling registry install.md. To publish these bytes, open Motion package and release, select publish, and enter candidate run ID ${c.workflow.runId} and version ${c.version}; no acceptance checkbox is required.\n`);
+          appendFileSync(process.env.GITHUB_STEP_SUMMARY, `\n\n---\n\n## Candidate release notes (unpublished)\n\n${notes}`);
+          if (c.schemaVersion >= 4) appendFileSync(process.env.GITHUB_STEP_SUMMARY, `\nThe same artifact includes openmotion-dsh-${c.version}.tgz, dsh-plugin.json and its scan. The plugin shares the application version and source commit; use the source-checkout DSH guide to test it.\n`);
+          JS

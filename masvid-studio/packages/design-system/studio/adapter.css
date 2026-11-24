@@ -1,0 +1,51 @@
+/* Native Studio uses paper for light and no attribute for dark. */
+:root[data-motion-ui][data-motion-studio]:not([data-theme="paper"]) { --color-on-accent: var(--motion-inset); }
+
+:root[data-motion-ui] :is([data-motion-template-library], [data-motion-template-detail]) {
+  --motion-floating-surface: var(--motion-gallery-surface);
+  --color-text-0: var(--motion-strong);
+  --color-text-1: var(--motion-strong);
+  --color-hover: var(--motion-hover);
+  --color-border-input: var(--motion-gallery-border);
+}
+
+/* Media fills one rounded clip. A translucent inner edge stays quiet on both
+   bright posters and dark video frames without adding a second outer border. */
+:root[data-motion-ui] .motion-gallery-card-cover {
+  overflow: hidden;
+  isolation: isolate;
+  border: 0;
+  border-radius: var(--motion-radius-lg);
+  background: var(--motion-gallery-control);
+}
+:root[data-motion-ui] .motion-gallery-card-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px var(--motion-gallery-media-border);
+  pointer-events: none;
+}
+
+/* Pointer focus must not leave a second frame around boxed controls. */
+:root[data-motion-ui] :focus-visible { outline: 1px solid var(--motion-focus); outline-offset: 1px; }
+:root[data-motion-ui] [data-panel-search-input]:focus-visible { outline: none; }
+:root[data-motion-ui] .hf-od-field:focus-within { outline: none; }
+:root[data-motion-ui] .hf-od-field:focus-visible { outline: none; }
+:root[data-motion-ui] .hf-od-field:is(:focus-visible, :has(:focus-visible)) {
+  border-color: var(--motion-focus);
+  background: var(--motion-inset);
+}
+
+/* Header actions share one softly rounded rectangle, including neutral links. */
+:root[data-motion-ui][data-motion-studio] :is(.motion-studio-header-compact, .om-app-header) :is(button, a) {
+  border-radius: var(--motion-radius-md);
+}
+
+/* One tooltip surface across navigation, editor controls and modal dialogs. */
+:root[data-motion-ui] .studio-tooltip {
+  background: var(--motion-tooltip-bg);
+  color: var(--motion-tooltip-fg);
+  border-color: var(--motion-tooltip-bg);
+  font-size: var(--motion-text-sm);
+}

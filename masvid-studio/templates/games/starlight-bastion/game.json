@@ -1,0 +1,26 @@
+{
+  "id": "starlight-bastion",
+  "title": "Starlight Bastion",
+  "description": "Defend a luminous crystal against five waves of voxel invaders. Move, aim and hold the line; between waves, choose the upgrade that keeps your small world alive.",
+  "genre": "shooter",
+  "style": "voxel",
+  "setting": "space",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "WASD / arrows move · Mouse aims + hold click fires · Space auto-aims + fires · Touch: drag to move + auto-fire · FIRE button auto-aims · 1–3 choose upgrades · P / Esc pause · R restart",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-20T00:00:00.000Z",
+  "updatedAt": "2026-11-20T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "星辉堡垒",
+      "description": "守护发光的晶核，击退五波体素敌人。边移动边瞄准射击，每波结束后选择升级，让这座小小的堡垒继续闪耀。",
+      "controls": "WASD / 方向键移动 · 鼠标瞄准并按住左键射击 · 空格自动瞄准射击 · 触屏拖动移动并自动开火 · FIRE 按钮自动瞄准射击 · 1–3 选择升级 · P / Esc 暂停 · R 重开"
+    }
+  }
+}

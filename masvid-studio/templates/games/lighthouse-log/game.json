@@ -1,0 +1,26 @@
+{
+  "id": "lighthouse-log",
+  "title": "Lighthouse Log",
+  "description": "Keep a lighthouse alive through seven stormy nights. Spend the last fuel, answer impossible calls and decide whose names will make it into the morning log.",
+  "genre": "story",
+  "style": "anime",
+  "setting": "retro",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "Mouse / touch: select a choice · 1–3 choose · Enter continues · Read each consequence before deciding. Your supplies and earlier rescues change later outcomes. · P / Esc pause · R restart",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-20T00:00:00.000Z",
+  "updatedAt": "2026-11-20T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "灯塔手记",
+      "description": "独自守住灯塔，熬过七个风暴之夜。分配最后的燃料，回应海上的求救；你的选择将决定谁能活着等到黎明。",
+      "controls": "鼠标 / 触屏点选选项 · 1–3 选择 · Enter 翻页 · 留意资源消耗与前夜救援对后续事件的影响 · P / Esc 暂停 · R 重开"
+    }
+  }
+}

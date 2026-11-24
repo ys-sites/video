@@ -1,0 +1,114 @@
+/* MCP onboarding shares Studio surfaces, type, controls and brand artwork. */
+[data-motion-studio] .om-mcp-page { background: var(--motion-workspace); color: var(--motion-strong); }
+.om-mcp-content { font-size: var(--motion-text-body); line-height: var(--motion-leading-body); }
+.om-mcp-policy-grid, .om-mcp-faq { border-top: 1px solid var(--motion-border-subtle); }
+.om-mcp-content h1, .om-mcp-content h2, .om-mcp-content h3 { margin: 0; color: var(--motion-strong); font-weight: var(--motion-weight-semibold); }
+.om-mcp-content h1 { font-size: clamp(var(--motion-text-display), 4vw, var(--motion-text-display-lg)); line-height: var(--motion-leading-tight); letter-spacing: -.035em; outline: none; }
+.om-mcp-content h2 { font-size: var(--motion-text-section); line-height: var(--motion-leading-tight); }
+.om-mcp-content h3 { font-size: var(--motion-text-heading); line-height: var(--motion-leading-body); }
+.om-mcp-content p { margin: var(--motion-space-12) 0; }
+.om-mcp-content .om-muted, .om-mcp-feature p, .om-mcp-policy-grid li { color: var(--motion-muted); }
+.om-mcp-eyebrow { font-size: var(--motion-text-sm); font-weight: var(--motion-weight-semibold); color: var(--motion-muted); letter-spacing: .08em; }
+.om-mcp-lead { font-size: var(--motion-text-heading); color: var(--motion-muted); }
+.om-mcp-art-tile { border: 1px solid var(--motion-border-subtle); border-radius: var(--motion-radius-xl); background: var(--motion-brand-surface); box-shadow: var(--motion-shadow-md); }
+[data-motion-studio] .om-mcp-art-tile .om-avatar { border: 0; background: transparent; }
+[data-motion-studio] .om-mcp-client-tabs .om-mcp-generic-icon { border-radius: var(--motion-radius-md); }
+.om-mcp-art-center { color: var(--motion-strong); background: var(--motion-panel); }
+[data-motion-studio] .om-mcp-client-tabs { background: transparent; padding: var(--motion-space-8); gap: var(--motion-space-8); }
+[data-motion-studio] .om-mcp-client-tabs [role=tab] { position: relative; height: auto; padding: var(--motion-space-10) var(--motion-space-12); background: transparent; font-size: var(--motion-text-body); }
+[data-motion-studio] .om-mcp-client-tabs [aria-selected=true]::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inline-size: var(--motion-space-32);
+  margin-inline: auto;
+  bottom: 0;
+  border-bottom: 2px solid var(--motion-accent);
+}
+.om-mcp-setup-tray { padding: var(--motion-space-12); background: var(--motion-panel); border-radius: var(--motion-radius-xl); }
+[data-motion-studio] .om-mcp-step { padding: var(--motion-space-24); border: 1px solid var(--motion-border-subtle); border-radius: var(--motion-radius-lg); }
+.om-mcp-step h2 { font-size: var(--motion-text-heading); }
+.om-mcp-step-number { border-radius: var(--motion-radius-full); color: var(--motion-muted); background: var(--motion-panel); font-size: var(--motion-text-sm); }
+[data-motion-studio] .om-mcp-step .om-code-block { background: var(--motion-panel); padding: var(--motion-space-16); font-size: var(--motion-text-sm); line-height: var(--motion-leading-prose); }
+.om-mcp-feature { background: var(--motion-panel); border-radius: var(--motion-radius-xl); }
+.om-mcp-feature { padding: var(--motion-space-24); border: 1px solid transparent; }
+.om-mcp-feature[data-featured=true] { border-color: var(--motion-border); }
+.om-mcp-feature > svg { color: var(--motion-muted); }
+[data-motion-studio] .om-mcp-category-tabs { background: transparent; padding: var(--motion-space-4); gap: var(--motion-space-6); }
+[data-motion-studio] .om-mcp-category-tabs [role=tab] { min-height: var(--motion-control); padding-inline: var(--motion-space-12); border-radius: var(--motion-radius-full); font-size: var(--motion-text-body); font-weight: var(--motion-weight-medium); }
+[data-motion-studio] .om-mcp-category-tabs [aria-selected=true] { color: var(--color-template-selected-text); background: var(--color-template-selected); }
+.om-mcp-template-caption h3 { font-size: var(--motion-text-body); }
+.om-mcp-template-caption span { font-size: var(--motion-text-sm); color: var(--motion-muted); }
+.om-mcp-table-wrap { border: 1px solid var(--motion-border-subtle); border-radius: var(--motion-radius-xl); }
+.om-mcp-table { border-collapse: collapse; font-size: var(--motion-text-md); }
+.om-mcp-table th, .om-mcp-table td { padding: var(--motion-space-16); text-align: left; border-bottom: 1px solid var(--motion-border-subtle); }
+.om-mcp-table th { font-weight: var(--motion-weight-medium); }
+.om-mcp-table thead { background: var(--motion-panel); }
+.om-mcp-table td { color: var(--motion-muted); }
+.om-mcp-table tbody tr:last-child > * { border-bottom: 0; }
+.om-mcp-tool-details, .om-mcp-faq details { border-bottom: 1px solid var(--motion-border-subtle); }
+.om-mcp-tool-details summary, .om-mcp-faq summary { cursor: pointer; padding: var(--motion-space-20) var(--motion-space-8); font-weight: var(--motion-weight-medium); border-radius: var(--motion-radius-md); }
+.om-mcp-faq summary { list-style: none; }
+.om-mcp-faq summary::-webkit-details-marker { display: none; }
+.om-mcp-faq details[open] summary svg { transform: rotate(180deg); }
+.om-mcp-tool-details summary:hover, .om-mcp-faq summary:hover { background: var(--motion-hover); }
+.om-mcp-page :is(summary, .om-mcp-table-wrap):focus-visible { outline: 2px solid var(--motion-accent); outline-offset: 2px; }
+.om-mcp-tool-list code { font-family: var(--motion-font-mono); font-size: var(--motion-text-sm); }
+.om-mcp-policy-grid ul { list-style: disc; }
+.om-mcp-policy-grid li { margin-bottom: var(--motion-space-16); line-height: var(--motion-leading-prose); }
+.om-mcp-faq details > p { padding: 0 var(--motion-space-8) var(--motion-space-16); }
+[data-motion-studio] .om-mcp-footer { background: var(--motion-panel); border: 1px solid var(--motion-border-subtle); border-radius: var(--motion-radius-xl); padding: var(--motion-space-40); }
+.om-mcp-footer-intro h2 { font-size: var(--motion-text-display); max-width: 15em; }
+.om-mcp-footer-intro > p { color: var(--motion-muted); margin: 0; }
+.om-mcp-footer-links h3 { font-size: var(--motion-text-body); }
+.om-mcp-footer-links :is(button, a) { padding: 0; background: transparent; border: 0; color: var(--motion-muted); font: inherit; text-align: left; text-decoration: none; cursor: pointer; }
+.om-mcp-footer-links :is(button, a):hover { color: var(--motion-strong); text-decoration: underline; text-underline-offset: 4px; }
+.om-mcp-footer-links :is(button, a):focus-visible { outline: 2px solid var(--motion-accent); outline-offset: 4px; border-radius: var(--motion-radius-xs); }
+.om-mcp-content .om-mcp-footnote { color: var(--motion-muted); font-size: var(--motion-text-sm); margin-top: var(--motion-space-16); }
+.om-mcp-table[data-featured=true] tr > :nth-child(2) { background: var(--motion-panel); color: var(--motion-strong); }
+.om-mcp-table td > svg { color: var(--motion-accent); }
+[data-motion-studio] .om-mcp-step p { margin: 0; }
+.om-mcp-contact { padding: var(--motion-space-24); border-radius: var(--motion-radius-lg); background: var(--motion-panel); }
+.om-mcp-contact p { padding: 0; margin: 0; color: var(--motion-muted); }
+.om-mcp-contact .om-text-link { display: inline-flex; }
+
+.om-mcp-page button:disabled { color: var(--motion-control-disabled); cursor: not-allowed; }
+
+[data-motion-studio] .om-mcp-content .om-muted { font-size: var(--motion-text-body); line-height: var(--motion-leading-prose); }
+.om-mcp-art-left { border-radius: var(--motion-radius-full); background: var(--motion-asset-logo-bg); color: var(--motion-asset-logo-ink); }
+[data-motion-studio] .om-mcp-art .om-mcp-generic-icon { color: var(--motion-asset-logo-ink); }
+[data-motion-studio] .om-mcp-art .om-mcp-generic-icon > svg { width: 82%; height: 82%; }
+[data-motion-studio] .om-mcp-art .om-provider-avatar[data-provider="codex"] img { width: 82%; height: 82%; translate: 0 calc(-1 * var(--motion-space-2)); }
+.om-mcp-art-right { border-radius: 50%; background: linear-gradient(145deg, var(--motion-brand-surface), color-mix(in srgb, var(--motion-border) 20%, var(--motion-brand-surface))); }
+.om-mcp-art-center { border-radius: var(--motion-radius-full); background: radial-gradient(circle at 30% 20%, var(--motion-brand-surface), color-mix(in srgb, var(--motion-accent) 18%, var(--motion-brand-surface)) 30%, color-mix(in srgb, var(--motion-accent) 65%, var(--motion-brand-surface))); }
+.om-mcp-art::after { content: ''; position: absolute; width: var(--motion-space-16); height: var(--motion-space-16); border-radius: var(--motion-radius-full); background: var(--motion-brand); box-shadow: var(--motion-shadow-md); left: 28%; bottom: 0; }
+
+@keyframes om-mcp-client-enter {
+  from { opacity: 0; transform: scale(.9) rotate(-18deg); }
+  to { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+@keyframes om-mcp-brand-turn {
+  from { transform: rotate(-18deg); }
+  to { transform: rotate(0); }
+}
+
+@keyframes om-mcp-orb-float {
+  0%, 100% { translate: 0 0; }
+  25% { translate: 0 calc(-1 * var(--motion-space-6)); }
+  75% { translate: 0 var(--motion-space-2); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .om-mcp-art-left > .om-avatar { animation: om-mcp-client-enter var(--motion-duration-slow) var(--motion-ease-out); }
+  .om-mcp-art-center > img { animation: om-mcp-brand-turn var(--motion-duration-slow) var(--motion-ease-out); }
+  .om-mcp-art-tile { animation: om-mcp-orb-float calc(var(--motion-duration-slow) * 7) var(--motion-ease-standard) 2; transition: transform var(--motion-duration-slow) var(--motion-ease-out); }
+  .om-mcp-art-center { animation-delay: var(--motion-duration-slow); animation-direction: reverse; }
+  .om-mcp-art::after { animation: om-mcp-orb-float calc(var(--motion-duration-slow) * 7) var(--motion-ease-standard) calc(var(--motion-duration-slow) / 2) 2 reverse; transition: transform var(--motion-duration-slow) var(--motion-ease-out); }
+}
+
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  .om-mcp-art:hover .om-mcp-art-left { transform: translateY(calc(-1 * var(--motion-space-4))) rotate(-11deg); }
+  .om-mcp-art:hover .om-mcp-art-center { transform: translateY(calc(-1 * var(--motion-space-6))) rotate(-3deg); }
+  .om-mcp-art:hover::after { transform: translateY(calc(-1 * var(--motion-space-2))); }
+}

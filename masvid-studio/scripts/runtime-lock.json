@@ -1,0 +1,96 @@
+{
+  "node": "26.11.1",
+  "chromium": "156.0.8078.47",
+  "ffmpeg": "9.0.2",
+  "hyperframes": "0.9.7",
+  "targets": {
+    "mac-arm64": {
+      "platform": "darwin",
+      "arch": "arm64",
+      "node": {
+        "url": "https://nodejs.org/dist/v26.11.1/node-v26.11.1-darwin-arm64.tar.gz",
+        "sha256": "d916511b55965e91be7a88e17f88d895b6793ceaba3e6c9b194aefe51c2c65ac",
+        "directory": "node-v26.11.1-darwin-arm64"
+      },
+      "browser": {
+        "url": "https://storage.googleapis.com/chrome-for-testing-public/156.0.8078.47/mac-arm64/chrome-mac-arm64.zip",
+        "sha256": "ad7f2b49a4dc679af286b1b1b386670d93ca7868079f69012d21ba0ac8293df3",
+        "executable": "chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing"
+      },
+      "ffmpeg": {
+        "url": "https://ffmpeg.martin-riedl.de/download/macos/arm64/1789931890_9.0.2/ffmpeg.zip",
+        "filename": "ffmpeg-9.0.2-mac-arm64.zip",
+        "sha256": "c8ed4c4e6978a03c485edbfe4e0a5dc2380f8a30bba5150531b31b094492d924",
+        "executable": "ffmpeg"
+      },
+      "ffprobe": {
+        "url": "https://ffmpeg.martin-riedl.de/download/macos/arm64/1789931890_9.0.2/ffprobe.zip",
+        "filename": "ffprobe-9.0.2-mac-arm64.zip",
+        "sha256": "fcbe839537485eaee7a7a8bc5cbc0f90d53617e80943e8a5b2e31cb851197ea6",
+        "executable": "ffprobe"
+      },
+      "vision": {
+        "python": {
+          "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.13.18%2B20261110-aarch64-apple-darwin-install_only.tar.gz",
+          "sha256": "1afd3983237c2a10277345f235be730e9cb49a123e0574ed252dbf3a841a24e4",
+          "executable": "python/bin/python3"
+        },
+        "sitePackages": "python/lib/python3.13/site-packages",
+        "wheels": [
+          {
+            "url": "https://files.pythonhosted.org/packages/dc/9e/14520dc3dadf3c803473bd07e9b2bd1b69bc583cb2497b47000fed2fa92f/numpy-2.2.6-cp313-cp313-macosx_11_0_arm64.whl",
+            "sha256": "287cc3162b6f01463ccd86be154f284d0893d2b3ed7292439ea97eafa8170e0b"
+          },
+          {
+            "url": "https://files.pythonhosted.org/packages/f7/7d/414e243c5c8216a5277afd104a319cc1291c5e23f5eeef512db5629ee7f4/opencv_python_headless-4.12.0.88-cp37-abi3-macosx_13_0_arm64.whl",
+            "sha256": "1e58d664809b3350c1123484dd441e1667cd7bed3086db1b9ea1b6f6cb20b50e"
+          }
+        ],
+        "minimumDarwinMajor": 22
+      }
+    },
+    "win-x64": {
+      "platform": "win32",
+      "arch": "x64",
+      "minimumOS": "Windows 11",
+      "node": {
+        "url": "https://nodejs.org/dist/v26.11.1/node-v26.11.1-win-x64.zip",
+        "sha256": "97f36a8a9684ff0d3e35758b4610fef5b628a5880e96f2ccc11240e5daf9934e",
+        "directory": "node-v26.11.1-win-x64"
+      },
+      "browser": {
+        "url": "https://storage.googleapis.com/chrome-for-testing-public/156.0.8078.47/win64/chrome-headless-shell-win64.zip",
+        "sha256": "e0af9b23f8051cca4f37ca49cd425e8055701bfc0383c198d67f8d5cc5884249",
+        "executable": "chrome-headless-shell-win64/chrome-headless-shell.exe"
+      },
+      "media": {
+        "url": "https://github.com/GyanD/codexffmpeg/releases/download/9.0.2/ffmpeg-9.0.2-essentials_build.zip",
+        "sha256": "60f467265b1e312373dbcd92200c2618a74850f98d3d078e94296bb3fa2047ba",
+        "directory": "ffmpeg-9.0.2-essentials_build"
+      },
+      "vision": {
+        "python": {
+          "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.13.18%2B20261110-x86_64-pc-windows-msvc-install_only.tar.gz",
+          "sha256": "7e93813bd362c6413f30788b248590e2f169df2d17dcac81aafbcc7a6eeb542c",
+          "executable": "python/python.exe"
+        },
+        "sitePackages": "python/Lib/site-packages",
+        "wheels": [
+          {
+            "url": "https://files.pythonhosted.org/packages/cb/3b/d58c12eafcb298d4e6d0d40216866ab15f59e55d148a5658bb3132311fcf/numpy-2.2.6-cp313-cp313-win_amd64.whl",
+            "sha256": "b0544343a702fa80c95ad5d3d608ea3599dd54d4632df855e4c8d24eb6ecfa1c"
+          },
+          {
+            "url": "https://files.pythonhosted.org/packages/f2/35/0858e9e71b36948eafbc5e835874b63e515179dc3b742cbe3d76bc683439/opencv_python_headless-4.12.0.88-cp37-abi3-win_amd64.whl",
+            "sha256": "86b413bdd6c6bf497832e346cd5371995de148e579b9774f8eba686dee3f5528"
+          }
+        ]
+      }
+    }
+  },
+  "vision": {
+    "python": "3.13.18",
+    "numpy": "2.2.6",
+    "opencv": "4.12.0.88"
+  }
+}

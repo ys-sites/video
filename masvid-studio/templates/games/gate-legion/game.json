@@ -1,0 +1,27 @@
+{
+  "id": "gate-legion",
+  "title": "Gate Legion",
+  "description": "Lead your squad through arithmetic gates and defeat the final army.",
+  "genre": "casual",
+  "style": "pixel",
+  "setting": "medieval",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "Drag left and right to choose gates.",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-21T00:00:00.000Z",
+  "updatedAt": "2026-11-21T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "草原军团",
+      "description": "拖动军团选择算术门，壮大队伍，在终点击败敌军。",
+      "controls": "左右拖动带领军团"
+    }
+  },
+  "orientation": "portrait"
+}

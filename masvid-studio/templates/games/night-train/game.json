@@ -1,0 +1,26 @@
+{
+  "id": "night-train",
+  "title": "Night Train Letters",
+  "description": "Three unsent letters, a rain-soaked night train and a journey to the sea. Follow a quiet branching story of estranged sisters, a blue bicycle and the courage to be forgiven.",
+  "genre": "story",
+  "style": "minimal",
+  "setting": "retro",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "Click / tap choices, or press 1–2. Click the passage or press Space to reveal it; Space again takes the first choice. Tab / Enter for buttons. P / Escape to pause. R to restart.",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-20T00:00:00.000Z",
+  "updatedAt": "2026-11-20T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "夜行列车的信",
+      "description": "三封没寄出的信、一列雨夜列车、一段去海边的旅程。一个关于疏远的姐妹、一辆蓝色自行车和被原谅的勇气的分支故事。",
+      "controls": "点击选项或按 1–2 · 点击段落或按空格显示全文，再按空格选第一项 · P / Esc 暂停 · R 重开"
+    }
+  }
+}

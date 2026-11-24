@@ -1,0 +1,165 @@
+/* Skills page geometry. Materials, controls and colors come from the design-system package. */
+.om-skills-host { flex: 1; display: flex; min-width: 0; min-height: 0; overflow: hidden; }
+.om-skills-host[hidden] { display: none; }
+/* The shared discovery surface sits inside the workspace on this page. */
+.om-skills-page.om-skills-library { position: relative; inset: auto; height: auto; flex: 1; display: flex; min-width: 0; min-height: 0; overflow: hidden; }
+.om-skills-main { flex: 1; min-width: 0; overflow-y: auto; overscroll-behavior: contain; container-type: inline-size; }
+.om-skills-library .om-skills-grid { columns: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--motion-space-16); align-items: stretch; }
+.om-skills-library .om-skills-grid > * { margin-bottom: 0; }
+[data-motion-studio] .om-skills-library .om-studio-skills-heading { display: flex; flex-direction: column; gap: var(--motion-space-8); margin-bottom: var(--motion-space-12); }
+[data-motion-studio] .om-skills-library .om-studio-skills-heading :is(h2, p) { margin: 0; }
+@container (max-width: 1059px) { .om-skills-library .om-skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@container (max-width: 679px) { .om-skills-library .om-skills-grid { grid-template-columns: minmax(0, 1fr); } }
+.om-gallery-toolbar.om-skills-toolbar { padding: var(--motion-space-12) 0; column-gap: var(--motion-space-24); }
+.om-skills-toolbar > .om-category-strip { flex: 1 1 0; }
+.om-skills-toolbar > .om-search-field { flex: 0 1 min(30%, 240px); min-width: 0; margin-inline-start: auto; }
+@container (max-width: 720px) {
+  .om-skills-toolbar > :is(.om-category-strip, .om-search-field) { flex-basis: 100%; }
+}
+@container (max-width: 480px) {
+  .om-skills-toolbar .om-search-field kbd { display: none; }
+}
+.om-skills-library .om-gallery-card-caption small { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.45; opacity: .85; }
+.om-skills-library .om-gallery-cover { border-radius: var(--motion-radius-lg); overflow: hidden; background: var(--motion-inset); }
+.om-skills-library .om-gallery-cover .om-skill-cover { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; border-radius: 0; }
+.om-skill-cover[data-playing="false"] * { animation-play-state: paused; }
+.om-skills-library .om-gallery-cover .om-skill-cover svg { width: 100%; height: 100%; }
+.om-skill-media { position: absolute; inset: 0; display: block; overflow: hidden; background: var(--motion-inset); }
+.om-skill-media[data-large="true"] { position: relative; display: block; aspect-ratio: 16 / 9; border-radius: var(--motion-radius-lg); }
+.om-skill-media :is(img, video) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+@media (prefers-reduced-motion: no-preference) { .om-skill-media video { transition: opacity var(--motion-duration-normal); } }
+
+/* Cover illustrations draw in the accent token over the shared media surface. */
+.om-skill-cover { display: block; aspect-ratio: 16 / 9; width: 100%; overflow: hidden; color: var(--motion-accent); }
+.om-skill-cover svg { display: block; width: 100%; height: 100%; }
+.om-skill-cover .om-skill-line { fill: none; stroke: var(--motion-border); stroke-width: 2; }
+.om-skill-cover .om-skill-stroke { fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; }
+.om-skill-cover .om-skill-fill, .om-skill-cover .om-skill-dot { fill: currentColor; stroke: none; }
+.om-skill-cover .om-skill-pulse { fill: currentColor; }
+.om-skill-dot { opacity: .35; }
+@media (prefers-reduced-motion: no-preference) {
+  .om-skill-cover :is(.om-skill-dot, .om-skill-pulse, .om-skill-slide, .om-skill-morph, .om-skill-draw, .om-skill-spin, .om-skill-scrub, .om-skill-float, .om-skill-frame, .om-skill-drag, .om-skill-burst, .om-skill-wave, .om-skill-turn, .om-skill-grow, .om-skill-orbit) { animation-duration: 2.4s; animation-iteration-count: infinite; animation-timing-function: cubic-bezier(.65, 0, .35, 1); transform-box: fill-box; transform-origin: center; }
+  .om-skill-dot { animation-name: om-skill-stagger; animation-direction: alternate; }
+  .om-skill-pulse { animation-name: om-skill-pulse; }
+  .om-skill-slide { animation-name: om-skill-slide; animation-direction: alternate; }
+  .om-skill-morph { animation-name: om-skill-morph; animation-direction: alternate; transform-origin: left top; }
+  .om-skill-draw { stroke-dasharray: 260; animation-name: om-skill-draw; }
+  .om-skill-spin { animation-name: om-skill-spin; animation-timing-function: linear; }
+  .om-skill-scrub { animation-name: om-skill-scrub; animation-direction: alternate; }
+  .om-skill-float { animation-name: om-skill-float; animation-direction: alternate; }
+  .om-skill-frame { animation-name: om-skill-frame; animation-timing-function: steps(3, jump-none); animation-direction: alternate; }
+  .om-skill-drag { animation-name: om-skill-drag; animation-direction: alternate; }
+  .om-skill-burst { animation-name: om-skill-burst; transform-box: view-box; }
+  .om-skill-wave { animation-name: om-skill-wave; animation-direction: alternate; transform-origin: left bottom; }
+  .om-skill-turn { animation-name: om-skill-turn; animation-direction: alternate; }
+  .om-skill-grow { animation-name: om-skill-grow; transform-origin: left center; }
+  .om-skill-orbit { animation-name: om-skill-orbit; animation-timing-function: linear; transform-box: view-box; transform-origin: 80px 45px; }
+}
+@keyframes om-skill-stagger { to { opacity: 1; transform: translateY(-6px); } }
+@keyframes om-skill-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.35); } }
+@keyframes om-skill-slide { to { transform: translateX(-44px); } }
+@keyframes om-skill-morph { to { transform: scale(1.15, .42); } }
+@keyframes om-skill-draw { from { stroke-dashoffset: 260; } to { stroke-dashoffset: 0; } }
+@keyframes om-skill-spin { to { transform: rotate(360deg); } }
+@keyframes om-skill-scrub { to { transform: translateX(120px); } }
+@keyframes om-skill-float { to { transform: translateY(-8px); } }
+@keyframes om-skill-frame { to { transform: translateX(72px); } }
+@keyframes om-skill-drag { to { transform: translate(70px, 16px); } }
+@keyframes om-skill-wave { to { transform: rotate(-35deg); } }
+@keyframes om-skill-turn { to { transform: scaleX(.2); } }
+@keyframes om-skill-grow { from { transform: scaleX(.05); } to { transform: scaleX(1); } }
+@keyframes om-skill-orbit { to { transform: rotate(360deg) scaleY(1); } }
+@keyframes om-skill-burst { from { transform: rotate(var(--angle)) translateX(0); opacity: 1; } to { transform: rotate(var(--angle)) translateX(56px); opacity: 0; } }
+
+.om-skill-detail { width: 400px; max-width: 46%; flex: none; border-left: 1px solid var(--color-template-line); background: var(--color-template-surface); display: flex; flex-direction: column; gap: var(--motion-space-12); padding: var(--motion-space-20); overflow-y: auto; }
+.om-skill-detail > * { flex-shrink: 0; }
+.om-skill-detail-header { position: sticky; top: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; gap: var(--motion-space-8); margin: 0 calc(var(--motion-space-20) * -1) calc(var(--motion-space-12) * -1); padding: var(--motion-space-20) var(--motion-space-20) var(--motion-space-12); background: var(--color-template-surface); }
+.om-skill-cover[data-large="true"] { border-radius: var(--motion-radius-lg); }
+.om-skill-source { display: flex; align-items: center; gap: var(--motion-space-8); min-width: 0; margin: 0; color: var(--motion-muted); font-size: var(--motion-text-xs); text-decoration: none; }
+a.om-skill-source { color: var(--motion-strong); }
+.om-skill-source > svg, .om-skill-license { flex-shrink: 0; }
+.om-skill-license { margin-inline-start: auto; }
+.om-skill-provenance { display: grid; gap: var(--motion-space-8); margin-top: auto; padding-top: var(--motion-space-16); border-top: 1px solid var(--motion-border-subtle); }
+.om-skill-source > span:first-of-type { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.om-skill-source:hover > span:first-of-type { text-decoration: underline; }
+.om-skill-credit { margin: 0; color: var(--motion-muted); font-size: var(--motion-text-xs); overflow-wrap: anywhere; }
+.om-skill-credit > span { margin-inline-end: var(--motion-space-8); }
+.om-skill-credit a { color: inherit; }
+.om-skill-form { display: grid; gap: var(--motion-space-16); }
+.om-skill-form label, .om-skill-form fieldset { display: grid; gap: var(--motion-space-8); margin: 0; padding: 0; border: 0; min-width: 0; }
+.om-skill-form :is(label > span:first-child, legend) { padding: 0; }
+[data-motion-studio] .om-skill-form .om-field textarea { height: 64px; min-height: 64px; max-height: 64px; resize: none; overflow-y: auto; }
+.om-skill-form fieldset { display: block; }
+.om-skill-form legend.om-subtitle { margin-bottom: var(--motion-space-8); }
+.om-skill-prompt { display: grid; gap: var(--motion-space-6); }
+.om-skill-prompt pre { max-height: 120px; overflow: auto; margin: 0; padding: var(--motion-space-12); white-space: pre-wrap; overflow-wrap: anywhere; font-family: var(--motion-font-mono); font-size: var(--motion-text-sm); line-height: 1.6; color: var(--motion-text); background: var(--motion-inset); border-radius: var(--motion-radius-md); user-select: text; }
+.om-skill-detail { padding-block: 0; }
+.om-collection-skill { display: flex; flex: none; width: 400px; max-width: 46%; min-height: 0; }
+.om-collection-skill > .om-skill-detail { width: 100%; max-width: none; }
+/* The copy and connect actions stay pinned to the panel bottom while the brief scrolls. */
+.om-skill-footer { position: sticky; bottom: 0; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--motion-space-8); margin-top: auto; margin-inline: calc(var(--motion-space-20) * -1); padding: var(--motion-space-12) var(--motion-space-20) var(--motion-space-16); background: var(--color-template-surface); border-top: 1px solid var(--color-template-line); }
+.om-skill-actions { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--motion-space-8); }
+[data-motion-studio] .om-skill-actions .om-button { justify-content: center; }
+
+@media (max-width: 999px) {
+  .om-skills-page:has(.om-skill-detail:not([hidden])) .om-skills-main { display: none; }
+  .om-skill-detail { width: 100%; max-width: none; }
+  .om-collection-skill { flex: 1; width: 100%; max-width: none; }
+  [data-workspace-gallery]:has(+ .om-collection-skill) { display: none; }
+}
+.om-skill-shortcut { display: grid; gap: var(--motion-space-8); width: min(380px, calc(100vw - 32px)); }
+.om-skill-shortcut p { margin: 0; }
+.om-skill-shortcut pre { margin: 0; padding: var(--motion-space-12); max-height: 200px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; font-family: var(--motion-font-mono); font-size: var(--motion-text-sm); line-height: 1.6; color: var(--motion-text); background: var(--motion-inset); border-radius: var(--motion-radius-md); user-select: text; }
+[data-motion-studio] .om-skill-shortcut .om-button { justify-content: center; }
+/* Split before/after cover: the source video holds both versions side by side.
+   Each half shows the centre of its own version, filling one side of the card. */
+/* Doubled class beats the large-media display rule so the detail panel keeps both halves. */
+.om-skill-media.om-skill-split { display: grid; grid-template-columns: 1fr 1fr; }
+.om-skill-split-half { position: relative; overflow: hidden; }
+.om-skill-split-half :is(img, video) { position: absolute; top: 0; left: 50%; width: auto; height: 100%; max-width: none; object-fit: cover; }
+.om-skill-split-half[data-side="before"] :is(img, video) { transform: translateX(-25%); }
+.om-skill-split-half[data-side="after"] :is(img, video) { transform: translateX(-75%); }
+.om-skill-split { background: var(--motion-video-ink); }
+.om-skill-split-divider { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; transform: translateX(-50%); background: var(--motion-overlay-ink); }
+/* The skill's action sits on the divider, like an upscale preview. */
+.om-skill-split-label { position: absolute; top: 50%; left: 50%; z-index: 1; display: inline-flex; align-items: center; gap: var(--motion-space-6); transform: translate(-50%, -50%); padding: var(--motion-space-6) var(--motion-space-12); border-radius: var(--motion-radius-md); font-size: var(--motion-text-sm); font-weight: var(--motion-weight-semibold); white-space: nowrap; color: var(--motion-overlay-ink); background: var(--motion-video-overlay); backdrop-filter: blur(10px); box-shadow: 0 0 0 1px var(--motion-gallery-border); }
+/* Before / After are written on the footage: plain white type over a light bottom shade. */
+.om-skill-split-half::after { content: ""; position: absolute; inset: 55% 0 0; background: linear-gradient(transparent, var(--motion-video-overlay)); pointer-events: none; }
+.om-skill-split-caption { position: absolute; bottom: var(--motion-space-12); z-index: 1; font-size: var(--motion-text-md); font-weight: var(--motion-weight-semibold); color: var(--motion-overlay-ink); text-shadow: 0 1px 3px var(--motion-video-overlay); }
+.om-skill-split-caption[data-side="before"] { left: var(--motion-space-12); }
+.om-skill-split-caption[data-side="after"] { left: calc(50% + var(--motion-space-12)); }
+[data-motion-studio] .om-skills-library .om-skill-gallery-card { display: grid; grid-template-columns: minmax(0, 44%) minmax(0, 1fr); align-items: stretch; gap: 0; min-width: 0; width: 100%; padding: 0; overflow: hidden; border-radius: calc(var(--motion-radius-lg) + var(--motion-space-8)); text-align: start; cursor: pointer; }
+.om-skill-card-meta { display: grid; align-content: center; gap: var(--motion-space-6); min-width: 0; width: 100%; padding: var(--motion-space-16); }
+.om-skill-card-heading { display: flex; align-items: flex-start; gap: var(--motion-space-8); min-width: 0; }
+/* Card titles stay on one line; use cases below are capped at two lines. */
+.om-skill-card-heading strong { flex: 1; min-width: 0; font-size: var(--motion-text-body); font-weight: var(--motion-weight-semibold); line-height: var(--motion-leading-body); color: var(--motion-strong); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.om-skill-card-purpose { white-space: normal; overflow-wrap: anywhere; font-size: var(--motion-text-sm); line-height: var(--motion-leading-body); color: var(--motion-muted); min-height: calc(2 * var(--motion-text-sm) * var(--motion-leading-body)); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.om-skills-library .om-skill-card-demo { position: relative; display: block; width: 100%; height: 100%; aspect-ratio: 16 / 9; margin: 0; border-radius: 0; }
+.om-skill-card-demo .om-skill-split-label { display: none; }
+.om-skill-card-demo .om-skill-split-caption { bottom: var(--motion-space-4); font-size: var(--motion-text-xs); }
+.om-skill-card-demo .om-skill-split-caption[data-side="before"] { left: var(--motion-space-4); }
+.om-skill-card-demo .om-skill-split-caption[data-side="after"] { left: calc(50% + var(--motion-space-4)); }
+.om-skills-intro { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--motion-space-16); }
+.om-skills-heading-actions { display: flex; align-items: flex-start; justify-content: flex-end; gap: var(--motion-space-8); align-self: start; margin-top: var(--motion-space-4); }
+@container (max-width: 480px) {
+  .om-skills-intro { grid-template-columns: minmax(0, 1fr); }
+  .om-skills-heading-actions { grid-row: 3; justify-content: space-between; }
+}
+
+/* Release the list width as the detail exits so both sides settle together. */
+.om-skill-detail[data-ending-style] { position: absolute; inset-block: 0; inset-inline-end: 0; }
+
+.om-specialty-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: var(--motion-space-24); margin-block: var(--motion-space-24); background: var(--motion-inset); border-radius: var(--motion-radius-lg); overflow: hidden; }
+@container (max-width: 600px) { .om-specialty-intro { margin-block-start: var(--motion-space-16); } }
+.om-specialty-intro > div { display: grid; grid-template-columns: minmax(0, 1fr); overflow-wrap: anywhere; justify-items: start; gap: var(--motion-space-16); padding: var(--motion-space-24); }
+.om-specialty-actions { display: flex; flex-wrap: wrap; gap: var(--motion-space-8); }
+.om-specialty-status { margin: 0; padding: var(--motion-space-6) var(--motion-space-16); border-radius: var(--motion-radius-full); background: var(--motion-panel); color: var(--motion-muted); font-size: var(--motion-text-sm); font-weight: var(--motion-weight-medium); }
+.om-specialty-intro h1 { display: flex; align-items: center; gap: var(--motion-space-8); font-size: var(--motion-text-display); }
+.om-specialty-feature { position: relative; align-self: stretch; min-width: 0; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.om-specialty-feature .om-button { position: absolute; inset-inline-start: var(--motion-space-12); bottom: var(--motion-space-12); max-width: calc(100% - var(--motion-space-24)); }
+.om-specialty-intro img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 2; }
+@media (max-width: 700px) {
+  .om-specialty-intro { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .om-specialty-feature { grid-row: 1; }
+  .om-specialty-intro img { aspect-ratio: 3; }
+}

@@ -1,0 +1,137 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#efe6d2"><link rel="icon" href="data:,"><title>Jingyang Ridge · 景阳冈</title><style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#efe6d2;color:#1d1a16;font-family:"Songti SC","STSong","Noto Serif SC",Georgia,serif}
+canvas{position:fixed;inset:0;width:100%;height:100%;touch-action:none}
+button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}button:focus-visible{outline:2px solid #a32a1c;outline-offset:4px}
+.bar{position:fixed;z-index:3;inset:22px 28px auto;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;pointer-events:none}
+.brand{font-size:22px;letter-spacing:.2em}.seal{display:inline-block;margin-left:10px;padding:2px 6px;border:2px solid #a32a1c;color:#a32a1c;font-size:12px;letter-spacing:.1em;vertical-align:4px}
+.tools{display:flex;gap:8px;pointer-events:auto}.tool{border:1px solid #1d1a1640;background:#efe6d2cc;padding:9px 14px;border-radius:30px;font:12px system-ui;letter-spacing:.08em}
+.hud{position:fixed;z-index:3;left:28px;right:28px;top:76px;display:flex;justify-content:space-between;gap:20px;pointer-events:none;font:12px/1.5 system-ui;letter-spacing:.14em}
+.meter{width:min(38vw,320px)}.meter b{display:block;margin-bottom:6px;font-weight:600}.track{height:8px;background:#1d1a1618;border-radius:6px;overflow:hidden}.fill{height:100%;background:#1d1a16;transition:width .15s}.tiger .fill{background:#a32a1c;margin-left:auto}.tiger{text-align:right}
+.overlay{position:fixed;inset:0;z-index:5;display:flex;align-items:center;padding:8vw;background:linear-gradient(90deg,#efe6d2f2,#efe6d2c0 55%,#efe6d200)}.overlay[hidden]{display:none}
+.intro{max-width:540px}h1{font-size:clamp(54px,8vw,112px);font-weight:400;letter-spacing:.08em;line-height:1;margin:18px 0}.eyebrow{font:12px system-ui;letter-spacing:.3em;color:#a32a1c}
+p{font-size:17px;line-height:1.85;max-width:430px;color:#3a332b}.primary{background:#1d1a16;color:#efe6d2;border:0;padding:16px 30px;min-width:190px;border-radius:2px;font:14px system-ui;letter-spacing:.24em}.primary:hover{background:#a32a1c}
+.hint{font:12px/1.9 system-ui;letter-spacing:.08em;color:#5a5047;margin-top:20px}
+.center{justify-content:center;text-align:center;background:#efe6d2e8}.center p{margin-inline:auto}.center .primary{margin:8px}
+.toast{position:fixed;top:30%;left:50%;transform:translate(-50%,-50%);z-index:4;font-size:44px;letter-spacing:.2em;color:#a32a1c;pointer-events:none;opacity:0;transition:opacity .15s;text-shadow:0 2px 0 #efe6d2}.toast.show{opacity:1}
+.pads{position:fixed;z-index:3;bottom:22px;left:0;right:0;display:none;justify-content:center;gap:12px}.pads button{width:96px;height:64px;border-radius:14px;border:1px solid #1d1a1650;background:#efe6d2d0;font-size:18px;letter-spacing:.1em}
+@media(pointer:coarse){.pads{display:flex}}@media(max-width:600px){.bar{inset:16px 16px auto}.hud{left:16px;right:16px;top:64px}.overlay{padding:24px}}
+</style></head><body>
+<canvas id="c"></canvas>
+<div class="bar"><div class="brand" id="brand">景阳冈<span class="seal">水浒</span></div><div class="tools"><button class="tool" id="pauseBtn">暂停</button></div></div>
+<div class="hud"><div class="meter"><b id="pLabel">武松</b><div class="track"><div class="fill" id="pHp" style="width:100%"></div></div></div><div class="meter tiger"><b id="tLabel">吊睛白额虎</b><div class="track"><div class="fill" id="tHp" style="width:100%"></div></div></div></div>
+<div class="toast" id="toast"></div>
+<div class="pads"><button id="padL">← 闪</button><button id="padA">打</button><button id="padR">闪 →</button></div>
+<section class="overlay" id="intro"><div class="intro"><div class="eyebrow" id="eye">水浒传 · 第二十三回</div><h1 id="title">景阳冈</h1><p id="desc">十八碗酒下肚，武松提着哨棒上冈。猛虎一扑、一掀、一剪——看清来势再闪，趁它落空时出拳。连击越多，拳越重。</p><button class="primary" id="start">上冈</button><div class="hint" id="hint">← → / A D 闪避 · 空格 / J / 点击 出拳 · P / Esc 暂停 · R 重开</div></div></section>
+<section class="overlay center" id="pause" hidden><div><h1 id="pTitle">歇口气</h1><button class="primary" id="resume">继续</button><button class="primary" id="restart">重开</button></div></section>
+<section class="overlay center" id="end" hidden><div><div class="eyebrow" id="endEye"></div><h1 id="endTitle"></h1><p id="endText"></p><button class="primary" id="again">再上一次冈</button></div></section>
+<script>
+(()=>{
+const zh=/^zh/i.test(navigator.language||'');
+const T=zh?{pause:'暂停',resume:'继续',restart:'重开',win:'打虎英雄',lose:'败走景阳冈',winEye:'阳谷县 · 传遍',loseEye:'酒醒再来',winText:s=>`用时 ${s} 秒，最高连击 ${best} 。景阳冈从此太平。`,loseText:'猛虎占了上风。看准它扑、掀、剪的起手，再闪再打。',dodge:'闪！',hit:'打！',miss:'落空',perfect:'好拳',stagger:'虎晕了'}:{pause:'Pause',resume:'Resume',restart:'Restart',win:'Tiger Slayer',lose:'Driven Off',winEye:'Yanggu County cheers',loseEye:'Sober up and try again',winText:s=>`Won in ${s}s with a best combo of ${best}. The ridge is safe again.`,loseText:'The tiger won this round. Read the pounce, swipe and tail-sweep tells, then dodge and strike.',dodge:'Dodge!',hit:'Strike!',miss:'Too early',perfect:'Clean hit',stagger:'Stunned'};
+if(!zh){document.documentElement.lang='en';brand.firstChild.textContent='Jingyang Ridge';document.querySelector('.seal').textContent='Water Margin';pLabel.textContent='Wu Song';tLabel.textContent='White-browed Tiger';eye.textContent='Water Margin · Chapter 23';title.textContent='Jingyang Ridge';desc.textContent='Eighteen bowls of wine down, Wu Song climbs the ridge with his staff. The tiger pounces, swipes and sweeps its tail — read the tell, dodge, then punish while it recovers. Longer combos hit harder.';start.textContent='Climb the ridge';hint.textContent='← → / A D dodge · Space / J / click strike · P / Esc pause · R restart';pTitle.textContent='Catch your breath';padL.textContent='← Dodge';padA.textContent='Strike';padR.textContent='Dodge →';}
+pauseBtn.textContent=T.pause;resume.textContent=T.resume;restart.textContent=T.restart;
+const c=document.getElementById('c'),x=c.getContext('2d');let W,H,D;
+function size(){D=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;c.width=W*D;c.height=H*D;x.setTransform(D,0,0,D,0,0)}addEventListener('resize',size);size();
+let played=0,state='intro',t=0,last=0,hp,thp,combo,best,player,tiger,fx,shake,startT,ac;
+const lanes=[-1,0,1];
+function reset(){hp=100;thp=100;combo=0;best=0;player={lane:0,x:0,dodge:0,atk:0,hurt:0};tiger={phase:'idle',timer:1.4,move:null,lane:0,x:0,stun:0,hurt:0,anger:0};fx=[];shake=0;startT=t;played=0;combo=0;window.combo=0;upd()}
+const moves=[{k:'pounce',tell:.75,act:.32,dmg:24,hit:l=>true,miss:d=>d!==0},{k:'swipe',tell:.6,act:.28,dmg:16,dir:1},{k:'swipe',tell:.6,act:.28,dmg:16,dir:-1},{k:'sweep',tell:.85,act:.36,dmg:20}];
+function pick(){const ph=thp<35?2:thp<70?1:0;const m=moves[Math.floor(Math.random()*moves.length)];const sp=1-ph*.14;return {...m,tell:m.tell*sp,act:m.act}}
+function beep(f,d,type='triangle',v=.08){try{ac=ac||new AudioContext();const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=f;g.gain.setValueAtTime(v,ac.currentTime);g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+d);o.connect(g).connect(ac.destination);o.start();o.stop(ac.currentTime+d)}catch(e){}}
+function toast(s){const el=document.getElementById('toast');el.textContent=s;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('show'),450)}
+function upd(){pHp.style.width=Math.max(0,hp)+'%';tHp.style.width=Math.max(0,thp)+'%'}
+// which lanes does the active move hit
+function danger(m){if(!m)return[];if(m.k==='pounce')return[0];if(m.k==='swipe')return m.dir>0?[0,1]:[-1,0];if(m.k==='sweep')return[-1,1];return[]}
+function dodge(d){if(state!=='play')return;player.lane=Math.max(-1,Math.min(1,player.lane+d));player.dodge=.18;beep(520,.06,'sine',.04)}
+function strike(){if(state!=='play'||player.atk>0)return;player.atk=.22;
+  const open=tiger.phase==='recover'||tiger.stun>0;const close=Math.abs(player.lane-tiger.lane)<1;
+  if(open&&close){combo++;best=Math.max(best,combo);window.combo=best;const dmg=6+Math.min(combo,8)*1.6+(tiger.stun>0?4:0);thp-=dmg;tiger.hurt=.2;shake=6;fx.push({k:'ink',x:0,y:0,l:.5,s:dmg});beep(140,.12,'square',.1);toast(combo>2?`${T.hit} ×${combo}`:T.hit);
+    if(combo%5===0){tiger.stun=1.2;toast(T.stagger)}
+    if(thp<=0)finish(true)}
+  else{combo=0;toast(T.miss);beep(220,.08,'sine',.04);if(tiger.phase==='idle')tiger.timer=Math.min(tiger.timer,.25)}
+  upd()}
+function finish(win){state='end';const s=played.toFixed(1);endEye.textContent=win?T.winEye:T.loseEye;endTitle.textContent=win?T.win:T.lose;endText.textContent=win?T.winText(s):T.loseText;document.getElementById('end').hidden=false;beep(win?660:110,.6,'triangle',.1)}
+function step(dt){played+=dt;
+  player.dodge=Math.max(0,player.dodge-dt);player.atk=Math.max(0,player.atk-dt);player.hurt=Math.max(0,player.hurt-dt);tiger.hurt=Math.max(0,tiger.hurt-dt);shake=Math.max(0,shake-dt*30);
+  player.x+=(player.lane-player.x)*Math.min(1,dt*18);tiger.x+=(tiger.lane-tiger.x)*Math.min(1,dt*6);
+  if(tiger.stun>0){tiger.stun-=dt;return}
+  tiger.timer-=dt;
+  if(tiger.timer<=0){
+    if(tiger.phase==='idle'){tiger.move=pick();tiger.phase='tell';tiger.timer=tiger.move.tell;tiger.lane=0;beep(90,.25,'sawtooth',.05)}
+    else if(tiger.phase==='tell'){tiger.phase='act';tiger.timer=tiger.move.act;
+      const hit=danger(tiger.move).includes(player.lane);
+      if(hit){hp-=tiger.move.dmg;player.hurt=.35;shake=12;combo=0;beep(70,.3,'sawtooth',.12);fx.push({k:'claw',l:.4});if(hp<=0){upd();finish(false);return}}
+      else{toast(T.dodge);fx.push({k:'wind',l:.35})}
+      upd()}
+    else if(tiger.phase==='act'){tiger.phase='recover';tiger.timer=.9-(thp<35?.25:0);tiger.lane=player.lane}
+    else{tiger.phase='idle';tiger.timer=.5+Math.random()*.7*(thp<50?.6:1)}
+  }
+  fx.forEach(f=>f.l-=dt);fx=fx.filter(f=>f.l>0)}
+// ---------- drawing (ink wash) ----------
+const rnd=(s=>()=>(s=(s*16807)%2147483647)/2147483647)(7);const hills=[...Array(3)].map((_,i)=>[...Array(40)].map(()=>rnd()));
+function ink(a){return `rgba(29,26,22,${a})`}
+function drawBg(){const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#f3ecdc');g.addColorStop(1,'#e4d7bd');x.fillStyle=g;x.fillRect(0,0,W,H);
+  // sun seal
+  x.fillStyle='#a32a1c22';x.beginPath();x.arc(W*.78,H*.2,Math.min(W,H)*.08,0,7);x.fill();
+  hills.forEach((h,i)=>{x.fillStyle=ink(.08+i*.07);x.beginPath();x.moveTo(0,H);const base=H*(.48+i*.09);for(let k=0;k<=39;k++){const px=k/39*W;x.lineTo(px,base-h[k]*H*.12*(1.4-i*.3)-Math.sin(k*.5+i)*12)}x.lineTo(W,H);x.fill()});
+  // pines
+  for(let i=0;i<9;i++){const px=(i*137+40)%W,py=H*.66+((i*53)%40);x.strokeStyle=ink(.35);x.lineWidth=2;x.beginPath();x.moveTo(px,py);x.lineTo(px,py-60);x.stroke();for(let j=0;j<4;j++){x.fillStyle=ink(.25);x.beginPath();x.ellipse(px+(j%2?10:-8),py-60+j*12,18-j*2,5,0,0,7);x.fill()}}
+  x.fillStyle=ink(.12);x.fillRect(0,H*.78,W,H*.22);
+  // stone tablet
+  x.fillStyle=ink(.55);x.fillRect(W*.08,H*.62,26,70);x.fillStyle='#efe6d2';x.font='12px serif';x.save();x.translate(W*.08+13,H*.62+8);for(const [i,ch] of [...(zh?'三碗不过冈':'3 BOWLS')].entries())x.fillText(ch,-6,i*13+4);x.restore()}
+function laneX(l){return W/2+l*Math.min(W*.22,220)}
+function drawTiger(){const m=tiger.move,ph=tiger.phase;const bx=laneX(tiger.x),by=H*.6;let sc=Math.min(W,H)/700;let lift=0,lean=0;
+  if(ph==='tell'){lift=-8*Math.sin(t*30);lean=m.k==='swipe'?m.dir*14:0}
+  if(ph==='act'){sc*=m.k==='pounce'?1.35:1.12;lift=m.k==='pounce'?-30:0}
+  if(tiger.stun>0)lean=Math.sin(t*20)*10;
+  x.save();x.translate(bx+(tiger.hurt?Math.sin(t*90)*6:0),by+lift);x.scale(sc,sc);x.rotate(lean*Math.PI/180);
+  // danger lanes tell
+  if(ph==='tell'||ph==='act'){danger(m).forEach(l=>{x.save();x.setTransform(D,0,0,D,0,0);x.fillStyle=ph==='act'?'#a32a1c40':'#a32a1c1c';const lx=laneX(l),w=Math.min(W*.2,200);x.fillRect(lx-w/2,H*.72,w,H*.2);x.restore()})}
+  // body
+  x.fillStyle='#d58a2c';x.strokeStyle=ink(.95);x.lineWidth=5;
+  x.beginPath();x.ellipse(0,0,150,62,0,0,7);x.fill();x.stroke();
+  x.strokeStyle=ink(.9);x.lineWidth=9;for(let i=-3;i<=3;i++){x.beginPath();x.moveTo(i*38,-58);x.quadraticCurveTo(i*38+12,-20,i*38-4,8);x.stroke()}
+  // head
+  x.fillStyle='#e19a3a';x.lineWidth=5;x.beginPath();x.ellipse(0,-30,74,64,0,0,7);x.fill();x.stroke();
+  x.fillStyle='#f3ecdc';x.beginPath();x.ellipse(0,-4,40,26,0,0,7);x.fill();
+  x.strokeStyle=ink(1);x.lineWidth=6;x.beginPath();x.moveTo(-14,-74);x.lineTo(0,-60);x.lineTo(14,-74);x.moveTo(0,-90);x.lineTo(0,-62);x.stroke();// 王
+  x.fillStyle=ph==='tell'?'#a32a1c':ink(1);[-28,28].forEach(e=>{x.beginPath();x.ellipse(e,-36,11,ph==='recover'||tiger.stun>0?3:8,0,0,7);x.fill()});
+  x.fillStyle=ink(1);x.beginPath();x.moveTo(-10,-12);x.lineTo(10,-12);x.lineTo(0,-2);x.fill();
+  if(ph==='act'||ph==='tell'){x.fillStyle='#7a1d12';x.beginPath();x.ellipse(0,14,22,ph==='act'?16:8,0,0,7);x.fill()}
+  [-60,60].forEach(e=>{x.fillStyle='#e19a3a';x.beginPath();x.moveTo(e-18,-70);x.lineTo(e,-100);x.lineTo(e+18,-70);x.fill();x.stroke()});
+  // tail
+  x.strokeStyle=ink(.95);x.lineWidth=10;x.beginPath();const tw=m&&m.k==='sweep'&&ph!=='idle'?Math.sin(t*14)*80:Math.sin(t*2)*20;x.moveTo(140,10);x.quadraticCurveTo(220,-40+tw,200,-110);x.stroke();
+  x.restore();
+  if(tiger.stun>0){x.fillStyle='#a32a1c';x.font='20px serif';for(let i=0;i<3;i++)x.fillText('✶',bx+Math.cos(t*5+i*2)*60-8,by-120*sc+Math.sin(t*5+i*2)*12)}}
+function drawPlayer(){const px=laneX(player.x),py=H*.86;const s=Math.min(W,H)/800;x.save();x.translate(px,py);x.scale(s,s);
+  if(player.hurt)x.translate(Math.sin(t*80)*8,0);
+  x.fillStyle=ink(.25);x.beginPath();x.ellipse(0,40,70,14,0,0,7);x.fill();
+  x.fillStyle=player.hurt?'#a32a1c':ink(.92);
+  // back view figure
+  x.beginPath();x.moveTo(-46,40);x.lineTo(-34,-50);x.quadraticCurveTo(0,-74,34,-50);x.lineTo(46,40);x.closePath();x.fill();
+  x.beginPath();x.arc(0,-82,24,0,7);x.fill();x.fillRect(-6,-112,12,14);
+  x.fillStyle='#efe6d2';x.fillRect(-36,-10,72,8);// sash
+  // arm / staff
+  x.strokeStyle=ink(.92);x.lineCap='round';x.lineWidth=16;const a=player.atk>0?1-player.atk/.22:0;
+  x.beginPath();x.moveTo(30,-40);x.lineTo(30+Math.sin(a*Math.PI)*30,-40-Math.sin(a*Math.PI)*120);x.stroke();
+  x.beginPath();x.moveTo(-30,-40);x.lineTo(-52,10);x.stroke();
+  x.strokeStyle='#7b5a33';x.lineWidth=7;x.beginPath();x.moveTo(-60,30);x.lineTo(-40,-120);x.stroke();
+  x.restore()}
+function drawFx(){fx.forEach(f=>{if(f.k==='ink'){x.fillStyle=`rgba(163,42,28,${f.l})`;for(let i=0;i<8;i++){x.beginPath();x.arc(laneX(tiger.x)+Math.cos(i*.8)*(1-f.l)*160,H*.56+Math.sin(i*.8)*(1-f.l)*90,10*f.l+3,0,7);x.fill()}}
+  if(f.k==='claw'){x.strokeStyle=`rgba(163,42,28,${f.l*2})`;x.lineWidth=10;for(let i=0;i<3;i++){x.beginPath();x.moveTo(W*.3+i*40,H*.3);x.lineTo(W*.55+i*40,H*.8);x.stroke()}}
+  if(f.k==='wind'){x.strokeStyle=ink(f.l);x.lineWidth=3;for(let i=0;i<5;i++){x.beginPath();x.arc(W/2,H*.7,120+i*30+(1-f.l)*80,Math.PI*1.1,Math.PI*1.9);x.stroke()}}})}
+function draw(){x.save();if(shake)x.translate((Math.random()-.5)*shake,(Math.random()-.5)*shake);drawBg();if(state!=='intro'){drawTiger();drawFx();drawPlayer()}else{tiger.phase='idle';tiger.x=0;drawTiger()}
+  if(state==='play'&&combo>1){x.fillStyle='#a32a1c';x.font=`${28+Math.min(combo,10)*2}px serif`;x.textAlign='center';x.fillText((zh?'连击 ':'Combo ')+combo,W/2,H*.2);x.textAlign='left'}
+  // drunk vignette
+  const v=x.createRadialGradient(W/2,H/2,Math.min(W,H)*.3,W/2,H/2,Math.max(W,H)*.75);v.addColorStop(0,'#0000');v.addColorStop(1,ink(.28));x.fillStyle=v;x.fillRect(0,0,W,H);x.restore()}
+function loop(ts){const dt=Math.min(.05,(ts-last)/1000||0);last=ts;t+=dt;if(state==='play')step(dt);draw();requestAnimationFrame(loop)}
+function go(){reset();state='play';['intro','end','pause'].forEach(i=>document.getElementById(i).hidden=true);beep(330,.2)}
+function pauseT(){if(state==='play'){state='paused';pause.hidden=false}else if(state==='paused'){state='play';pause.hidden=true}}
+start.onclick=go;again.onclick=go;restart.onclick=go;resume.onclick=pauseT;pauseBtn.onclick=pauseT;
+addEventListener('keydown',e=>{const k=e.key.toLowerCase();if(['arrowleft','a'].includes(k))dodge(-1);else if(['arrowright','d'].includes(k))dodge(1);else if([' ','j','enter'].includes(k)){e.preventDefault();if(state==='intro'||state==='end')go();else strike()}else if(k==='p'||k==='escape')pauseT();else if(k==='r'&&state!=='intro')go()});
+c.addEventListener('pointerdown',e=>{if(state!=='play')return;if(matchMedia('(pointer:coarse)').matches)return;strike()});
+padL.onpointerdown=e=>{e.preventDefault();dodge(-1)};padR.onpointerdown=e=>{e.preventDefault();dodge(1)};padA.onpointerdown=e=>{e.preventDefault();strike()};
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&state==='play')pauseT()});
+reset();requestAnimationFrame(loop);
+})();
+</script></body></html>

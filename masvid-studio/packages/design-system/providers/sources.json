@@ -1,0 +1,368 @@
+{
+  "lobe": {
+    "repository": "https://github.com/lobehub/lobe-icons",
+    "revision": "55746b0b082258211121c70bd26e6878fd3bd292",
+    "license": "lobe-icons-LICENSE.txt"
+  },
+  "cherry": {
+    "repository": "https://github.com/CherryHQ/cherry-studio",
+    "revision": "d7e53eaf196dc86343c20779f86a0f90f6f8d498",
+    "license": "cherry-ui-LICENSE.txt"
+  },
+  "files": {
+    "cherry-cherryin.svg": {
+      "source": "cherry",
+      "path": "packages/ui/src/components/icons/providers/cherryin/light.tsx"
+    },
+    "siliconcloud-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/siliconcloud-color.svg"
+    },
+    "aihubmix-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/aihubmix-color.svg"
+    },
+    "cherry-intel.svg": {
+      "source": "cherry",
+      "path": "packages/ui/src/components/icons/providers/intel/light.tsx"
+    },
+    "cherry-ocoolai.svg": {
+      "source": "cherry",
+      "path": "packages/ui/src/components/icons/providers/ocoolai/light.tsx"
+    },
+    "zhipu-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/zhipu-color.svg"
+    },
+    "deepseek-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/deepseek-color.svg"
+    },
+    "cherry-alayanew.svg": {
+      "source": "cherry",
+      "path": "packages/ui/src/components/icons/providers/alayanew/light.tsx"
+    },
+    "cherry-dmxapi.svg": {
+      "source": "cherry",
+      "path": "packages/ui/src/components/icons/providers/dmxapi/light.tsx"
+    },
+    "cherry-ai-only.svg": {
+      "source": "cherry",
+      "path": "packages/ui/src/components/icons/providers/ai-only/light.tsx"
+    },
+    "burncloud-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/burncloud-color.svg"
+    },
+    "ai302-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/ai302-color.svg"
+    },
+    "cherry-lanyun.svg": {
+      "source": "cherry",
+      "path": "packages/ui/src/components/icons/providers/lanyun/light.tsx"
+    },
+    "cherry-ph8.svg": {
+      "source": "cherry",
+      "path": "packages/ui/src/components/icons/providers/ph8/light.tsx"
+    },
+    "sophnet-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/sophnet-color.svg"
+    },
+    "ppio-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/ppio-color.svg"
+    },
+    "qiniu-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/qiniu-color.svg"
+    },
+    "openrouter-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/openrouter-color.svg"
+    },
+    "ollama.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/ollama.svg"
+    },
+    "amdradeoncloud-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/amdradeoncloud-color.svg"
+    },
+    "cherry-tokendance.svg": {
+      "source": "cherry",
+      "path": "packages/ui/src/components/icons/providers/tokendance/light.tsx"
+    },
+    "newapi-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/newapi-color.svg"
+    },
+    "lmstudio.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/lmstudio.svg"
+    },
+    "cherry-litellm.svg": {
+      "source": "cherry",
+      "path": "packages/ui/src/components/icons/providers/litellm/light.tsx"
+    },
+    "anthropic.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/anthropic.svg"
+    },
+    "claudecode-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/claudecode-color.svg"
+    },
+    "codex-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/codex-color.svg"
+    },
+    "grok.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/grok.svg"
+    },
+    "cherry-omlx.svg": {
+      "source": "cherry",
+      "path": "packages/ui/src/components/icons/providers/omlx/light.tsx"
+    },
+    "cherry-rapid-mlx.svg": {
+      "source": "cherry",
+      "path": "packages/ui/src/components/icons/providers/rapid-mlx/light.tsx"
+    },
+    "openai.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/openai.svg"
+    },
+    "opencode.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/opencode.svg"
+    },
+    "azure-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/azure-color.svg"
+    },
+    "gemini-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/gemini-color.svg"
+    },
+    "vertexai-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/vertexai-color.svg"
+    },
+    "githubcopilot.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/githubcopilot.svg"
+    },
+    "moonshot.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/moonshot.svg"
+    },
+    "baichuan-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/baichuan-color.svg"
+    },
+    "bailian-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/bailian-color.svg"
+    },
+    "qwen-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/qwen-color.svg"
+    },
+    "stepfun-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/stepfun-color.svg"
+    },
+    "doubao-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/doubao-color.svg"
+    },
+    "minimax-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/minimax-color.svg"
+    },
+    "groq.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/groq.svg"
+    },
+    "together-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/together-color.svg"
+    },
+    "fireworks-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/fireworks-color.svg"
+    },
+    "nvidia-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/nvidia-color.svg"
+    },
+    "mistral-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/mistral-color.svg"
+    },
+    "jina.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/jina.svg"
+    },
+    "perplexity-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/perplexity-color.svg"
+    },
+    "modelscope-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/modelscope-color.svg"
+    },
+    "cherry-xirang.svg": {
+      "source": "cherry",
+      "path": "packages/ui/src/components/icons/providers/xirang/light.tsx"
+    },
+    "baiducloud-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/baiducloud-color.svg"
+    },
+    "cherry-gpustack.svg": {
+      "source": "cherry",
+      "path": "packages/ui/src/components/icons/providers/gpustack/light.tsx"
+    },
+    "voyage-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/voyage-color.svg"
+    },
+    "bedrock-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/bedrock-color.svg"
+    },
+    "poe-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/poe-color.svg"
+    },
+    "longcat-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/longcat-color.svg"
+    },
+    "huggingface-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/huggingface-color.svg"
+    },
+    "vercel.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/vercel.svg"
+    },
+    "cerebras-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/cerebras-color.svg"
+    },
+    "comfyui-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/comfyui-color.svg"
+    },
+    "xiaomimimo.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/xiaomimimo.svg"
+    },
+    "zai.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/zai.svg"
+    },
+    "fal-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/fal-color.svg"
+    },
+    "atlascloud.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/atlascloud.svg"
+    },
+    "wavespeed.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/wavespeed.svg"
+    },
+    "models/bytedance-color.svg": {
+      "source": "readmeModelMarks",
+      "path": "docs/readme/models/seedance.svg"
+    },
+    "models/flux.svg": {
+      "source": "readmeModelMarks",
+      "path": "docs/readme/models/flux.svg"
+    },
+    "models/suno.svg": {
+      "source": "readmeModelMarks",
+      "path": "docs/readme/models/suno.svg"
+    },
+    "models/nano-banana-color.svg": {
+      "source": "readmeModelMarks",
+      "path": "docs/readme/models/nano-banana.svg"
+    },
+    "models/elevenlabs.svg": {
+      "source": "readmeModelMarks",
+      "path": "docs/readme/models/elevenlabs.svg"
+    },
+    "models/alibaba-color.svg": {
+      "source": "readmeModelMarks",
+      "path": "docs/readme/models/wan.svg"
+    },
+    "models/google-color.svg": {
+      "source": "readmeModelMarks",
+      "path": "docs/readme/models/veo.svg"
+    },
+    "amp-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/amp-color.svg"
+    },
+    "antigravity-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/antigravity-color.svg"
+    },
+    "cline.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/cline.svg"
+    },
+    "codebuddy-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/codebuddy-color.svg"
+    },
+    "cursor.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/cursor.svg"
+    },
+    "devin-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/devin-color.svg"
+    },
+    "hermesagent.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/hermesagent.svg"
+    },
+    "kilocode.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/kilocode.svg"
+    },
+    "kimi-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/kimi-color.svg"
+    },
+    "kiro-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/kiro-color.svg"
+    },
+    "pi-text.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/pi-text.svg"
+    },
+    "qoder-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/qoder-color.svg"
+    },
+    "trae-color.svg": {
+      "source": "lobe",
+      "path": "packages/static-svg/icons/trae-color.svg"
+    }
+  },
+  "readmeModelMarks": {
+    "repository": "https://github.com/lobehub/lobe-icons",
+    "package": "@lobehub/icons-static-svg",
+    "version": "1.102.0",
+    "license": "lobe-icons-LICENSE.txt"
+  }
+}

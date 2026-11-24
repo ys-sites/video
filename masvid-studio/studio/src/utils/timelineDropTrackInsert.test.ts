@@ -1,0 +1,181 @@
+import { describe, expect, it } from "vitest";
+import type { TimelineElement } from "../player";
+import {
+  applyTrackRenumbers,
+  planDropTrackInsert,
+  resolveDropTrack,
+} from "./timelineDropTrackInsert";
+
+function clip(id: string, track: number, start: number): TimelineElement {
+  return {
+    id,
+    key: id,
+    tag: "div",
+    start,
+    duration: 2,
+    track,
+    authoredTrack: track,
+    hfId: `hf-${id}`,
+    domId: id,
+    // Main-document elements carry no sourceFile, as in production.
+  };
+}
+
+const trackOrder = [0, 1, 2];
+const dropped = { id: "new", tag: "img", start: 5, duration: 3 };
+const elements = [clip("a", 0, 0), clip("b", 1, 0), clip("c", 2, 0)];
+const source = elements
+  .map(
+    (e) =>
+      `<div data-hf-id="${e.hfId}" id="${e.id}" data-start="0" data-track-index="${e.track}"></div>`,
+  )
+  .join("\n");
+
+describe("planDropTrackInsert", () => {
+  it("opens a lane between two rows and pushes the lanes below down", () => {
+    const plan = planDropTrackInsert({ elements, trackOrder, insertRow: 1, dropped });
+    expect(plan?.track).toBe(1);
+    expect(plan?.renumbers.map((r) => [r.element.id, r.track])).toEqual([
+      ["b", 2],
+      ["c", 3],
+    ]);
+  });
+
+  it("opens a lane above the first row", () => {
+    const plan = planDropTrackInsert({ elements, trackOrder, insertRow: 0, dropped });
+    expect(plan?.track).toBe(0);
+    expect(plan?.renumbers.map((r) => [r.element.id, r.track])).toEqual([
+      ["a", 1],
+      ["b", 2],
+      ["c", 3],
+    ]);
+  });
+
+  it("still renumbers when the peers' own sourceFile is a real path, not undefined", () => {
+    const subComp = elements.map((e) => ({ ...e, sourceFile: "sub.html" }));
+    const plan = planDropTrackInsert({ elements: subComp, trackOrder, insertRow: 1, dropped });
+    expect(plan?.track).toBe(1);
+    expect(plan?.renumbers.map((r) => [r.element.id, r.track])).toEqual([
+      ["b", 2],
+      ["c", 3],
+    ]);
+  });
+});
+
+describe("planDropTrackInsert against the display row order", () => {
+  it("counts an audio-group anchor row the way a clip drag does", () => {
+    // Rows shown: group anchor (-0.5), track 0, track 1. Row boundary 2 is between 0 and 1.
+    const grouped = elements.slice(0, 2).map((e) => (e.id === "a" ? { ...e, audioGroup: "g" } : e));
+    const plan = planDropTrackInsert({
+      elements: grouped,
+      trackOrder: [-0.5, 0, 1],
+      insertRow: 2,
+      dropped,
+    });
+    expect(plan?.track).toBe(1);
+    expect(plan?.renumbers.map((r) => [r.element.id, r.track])).toEqual([["b", 2]]);
+  });
+});
+
+describe("applyTrackRenumbers", () => {
+  it("rewrites only the renumbered clips' data-track-index", () => {
+    const plan = planDropTrackInsert({ elements, trackOrder, insertRow: 1, dropped });
+    const out = applyTrackRenumbers(source, plan!);
+    const tracks = [...out.matchAll(/id="(\w)"[^>]*data-track-index="(\d+)"/g)].map((m) => [
+      m[1],
+      +m[2],
+    ]);
+    expect(tracks).toEqual([
+      ["a", 0],
+      ["b", 2],
+      ["c", 3],
+    ]);
+  });
+
+  it("throws when a clip's opening tag is missing", () => {
+    const plan = planDropTrackInsert({ elements, trackOrder, insertRow: 1, dropped });
+    expect(() => applyTrackRenumbers("<div></div>", plan!)).toThrow(/Cannot renumber/);
+  });
+});
+
+describe("resolveDropTrack", () => {
+  it("keeps the aimed lane and the source when no insert is asked for", () => {
+    const out = resolveDropTrack({
+      source,
+      elements,
+      placement: { track: 2, start: dropped.start },
+      dropped,
+    });
+    expect(out).toEqual({ source, track: 2, start: 5 });
+  });
+
+  it("writes the resolved display row to its authored track and keeps the landing time", () => {
+    const peers = [clip("a", 0, 0), { ...clip("b", 1, 0), authoredTrack: 4 }];
+    const sparseSource = source.replace('id="b" data-start="0" data-track-index="1"', 'id="b" data-start="0" data-track-index="4"');
+    const out = resolveDropTrack({
+      source: sparseSource,
+      elements: peers,
+      placement: { track: 1, start: dropped.start },
+      dropped,
+    });
+    expect(out).toEqual({ source: sparseSource, track: 4, start: dropped.start });
+  });
+
+  it("returns the new lane and the source with the lanes below pushed down", () => {
+    const out = resolveDropTrack({
+      source,
+      elements,
+      placement: { track: 1, start: dropped.start, insertRow: 1, trackOrder },
+      dropped,
+    });
+    expect(out.track).toBe(1);
+    expect(out.start).toBe(5);
+    expect(out.source).toContain('id="b" data-start="0" data-track-index="2"');
+  });
+
+  it("refuses to insert when a locked clip would have to move", () => {
+    const locked = elements.map((e) => (e.id === "b" ? { ...e, timelineLocked: true } : e));
+    expect(() =>
+      resolveDropTrack({
+        source,
+        elements: locked,
+        placement: { track: 1, start: dropped.start, insertRow: 1, trackOrder },
+        dropped,
+      }),
+    ).toThrow(/locked/);
+  });
+});
+
+describe("one-click top-track placement", () => {
+  const placement = { start: 1, track: 0, newTrack: "top" as const };
+  it("opens a separate top track without moving the requested playhead time", () => {
+    const result = resolveDropTrack({ source, elements, placement, dropped: { ...dropped, start: 1 } });
+    expect(result.track).toBe(0);
+    expect(result.start).toBe(1);
+    expect(result.source).toContain('id="a" data-start="0" data-track-index="1"');
+  });
+
+  it("reads saved tracks when a second insertion overtakes the preview reload", () => {
+    const first = resolveDropTrack({ source, elements, placement, dropped });
+    const firstClip = clip("new", 0, 5);
+    const saved = first.source + '<div data-hf-id="hf-new" id="new" data-start="5" data-track-index="0"></div>';
+    const second = resolveDropTrack({ source: saved, elements, placed: [firstClip], placement, dropped: { ...dropped, id: "next" } });
+    expect(second.track).toBe(0);
+    expect(second.source).toContain('id="new" data-start="5" data-track-index="1"');
+    expect(second.source).toContain('id="a" data-start="0" data-track-index="2"');
+    expect(second.source).toContain('id="c" data-start="0" data-track-index="4"');
+  });
+
+  it("inserts audio at the top of the audio section without renumbering visuals", () => {
+    const music = { ...clip("music", 3, 0), tag: "audio", authoredTrack: 0 };
+    const audioSource = source + '<audio data-hf-id="hf-music" id="music" data-start="0" data-track-index="0"></audio>';
+    const result = resolveDropTrack({ source: audioSource, elements: [...elements, music], placement, dropped: { ...dropped, tag: "audio" } });
+    expect(result.track).toBe(0);
+    expect(result.source).toContain(source);
+    expect(result.source).toContain('id="music" data-start="0" data-track-index="1"');
+  });
+
+  it("refuses to move a locked peer", () => {
+    expect(() => resolveDropTrack({ source, elements: elements.map(e => ({ ...e, timelineLocked: true })), placement, dropped })).toThrow(/locked/);
+  });
+});

@@ -1,0 +1,26 @@
+{
+  "id": "harbor-skirmish",
+  "title": "Harbor Skirmish",
+  "description": "A hand-drawn 3D first-person shooter on a tiny curved island. Run, double jump, slide, dash and grapple across Seabreeze Harbor while you fend off the rabbit invasion.",
+  "genre": "shooter",
+  "style": "3d",
+  "setting": "fantasy",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "WASD move · mouse look · click fire · Space jump / double jump · Shift dash · Ctrl / C slide · E grapple · Esc pause · touch controls on phones",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-23T00:00:00.000Z",
+  "updatedAt": "2026-11-23T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "海港突击",
+      "description": "手绘风 3D 第一人称射击，战场是一座弯曲的小岛。跑酷、二段跳、滑铲、冲刺、钩索全都有，守住海风港，打退兔子大军。",
+      "controls": "WASD 移动 · 鼠标转视角 · 点击射击 · 空格跳跃 / 二段跳 · Shift 冲刺 · Ctrl / C 滑铲 · E 钩索 · Esc 暂停 · 手机支持触屏操作"
+    }
+  }
+}

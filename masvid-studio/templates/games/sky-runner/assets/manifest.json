@@ -1,0 +1,90 @@
+{
+  "generator": "Built-in image_gen",
+  "originalArtwork": true,
+  "atlasLayout": "4 x 4",
+  "processing": "Cell extraction, alpha cleanup, WebP compression; cover normalized without cropping title. Sprites downscaled to 192 x 192 and cover to 400 px wide to fit the default npm package size budget.",
+  "atlasPrompt": "Use case: stylized-concept. Production videogame asset ATLAS. Square 1024x1024 strictly divided into a uniform 4 by 4 grid of 256x256 cells. No grid lines, no labels, no text. Premium vibrant neon cyberpunk videogame, original characters only, clean readable silhouettes, high detail. Transparent background around isolated objects, terrain fills its cell. Cell objects must never overlap or leave their own cell, generous transparent margins around sprites. Row1 left to right: seamless dark blue neon circuit texture; futuristic asphalt road texture; teenage skateboarder rear view wearing teal jacket purple helmet standing on orange hoverboard; same skater leaning on hoverboard. Row2: pink striped road barrier front view; menacing hovering drone front view; bright gold coin; cyan lightning boost pickup. Row3: neon purple skyscraper; neon cyan skyscraper; orange traffic cone; cyan speed burst. Row4: dark navy futuristic cyan edged UI panel blank; white pointing hand tutorial cursor; pink impact spark; holographic chevron arrow. Render exactly 16 separate assets. No logos or watermarks.",
+  "coverPrompt": "Use case: ads-marketing. Original premium mobile game COVER illustration, portrait 9:16 around 768x1360. Vibrant cyberpunk neon night city, dynamic rear three-quarter view of an original teenage skateboarder in teal jacket purple helmet and orange hoverboard speeding toward a dramatic vanishing point on a three lane neon cyan edged track. Gold coins, pink road barriers, hovering drone obstacles. Rich deep violet skyline, high contrast luminous rim lighting. Highly finished game promotional art with depth, tactile material details and lively motion, not abstract primitive shapes. Main action occupies middle 75%, keep top 15% for a beautifully crafted title reading exactly \"SKY RUNNER\". No other text. Crisp readable composition at phone size. No existing game characters, logos or brands.",
+  "files": [
+    {
+      "file": "00.webp",
+      "cell": 0,
+      "bytes": 7308
+    },
+    {
+      "file": "01.webp",
+      "cell": 1,
+      "bytes": 11672
+    },
+    {
+      "file": "02.webp",
+      "cell": 2,
+      "bytes": 18484
+    },
+    {
+      "file": "03.webp",
+      "cell": 3,
+      "bytes": 21938
+    },
+    {
+      "file": "04.webp",
+      "cell": 4,
+      "bytes": 20000
+    },
+    {
+      "file": "05.webp",
+      "cell": 5,
+      "bytes": 19240
+    },
+    {
+      "file": "06.webp",
+      "cell": 6,
+      "bytes": 21474
+    },
+    {
+      "file": "07.webp",
+      "cell": 7,
+      "bytes": 24576
+    },
+    {
+      "file": "08.webp",
+      "cell": 8,
+      "bytes": 21288
+    },
+    {
+      "file": "09.webp",
+      "cell": 9,
+      "bytes": 18602
+    },
+    {
+      "file": "10.webp",
+      "cell": 10,
+      "bytes": 19918
+    },
+    {
+      "file": "11.webp",
+      "cell": 11,
+      "bytes": 15044
+    },
+    {
+      "file": "12.webp",
+      "cell": 12,
+      "bytes": 13954
+    },
+    {
+      "file": "13.webp",
+      "cell": 13,
+      "bytes": 20442
+    },
+    {
+      "file": "14.webp",
+      "cell": 14,
+      "bytes": 27618
+    },
+    {
+      "file": "15.webp",
+      "cell": 15,
+      "bytes": 19716
+    }
+  ]
+}

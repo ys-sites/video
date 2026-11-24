@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "types": [
+      "node",
+      "react",
+      "vite/client"
+    ]
+  },
+  "include": [
+    "*.ts",
+    "plugin/src/**/*.ts",
+    "plugin/src/**/*.tsx"
+  ]
+}

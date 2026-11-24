@@ -1,0 +1,270 @@
+import { IconButton } from "open-design-ui/icon-button";
+import { Button } from "open-design-ui/button";
+import { RemixIcon } from "../../icons/RemixIcons";
+import { clickMethod, trackStudioClick } from "../../motion/editorTracking";
+import { useMvpEditor } from "../../motion/StudioHost";
+import { useI18n } from "../../i18n/I18n";
+import { useRef, useEffect, memo, type ReactNode } from "react";
+import gsap from "gsap";
+import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+import { formatFrameTime, formatTime } from "../lib/time";
+import { liveTime, usePlayerStore } from "../store/playerStore";
+import { trackStudioEvent } from "../../utils/studioTelemetry";
+import { Tooltip } from "../../components/ui";
+import { useMountEffect } from "../../hooks/useMountEffect";
+import { useLinkedClipPreferences } from "../../utils/linkedClipPreferences";
+import { ShortcutsButton } from "./ShortcutsPanel";
+import { keyHint, useStudioKeys, type ShortcutSection } from "./studioShortcuts";
+import { SpeedMenu } from "./SpeedMenu";
+import { VolumeControl } from "./VolumeControl";
+import { PreviewSeekBar } from "./PreviewSeekBar";
+
+/* ── Icon sub-components ─────────────────────────────────────────── */
+
+gsap.registerPlugin(MorphSVGPlugin);
+
+// A centered, upright play triangle, sharing a coordinate space with pause.
+const PLAY_BLADE_D = "M55 27L91 49.5L55 72Z";
+const PAUSE_BARS_D = "M56 28H67V71H56Z M73 28H84V71H73Z";
+
+// Morph the play blade <-> pause bars on toggle via GSAP MorphSVG. Both glyphs
+// are one path whose `d` tweens; the initial render matches `playing` with no
+// animation, and prefers-reduced-motion snaps instead of tweening.
+function PlayPauseMorphIcon({ playing }: { playing: boolean }) {
+  const pathRef = useRef<SVGPathElement>(null);
+  const isFirstRun = useRef(true);
+  useEffect(() => {
+    const el = pathRef.current;
+    if (!el) return;
+    const target = playing ? PAUSE_BARS_D : PLAY_BLADE_D;
+    const reduceMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (isFirstRun.current || reduceMotion) {
+      isFirstRun.current = false;
+      gsap.set(el, { morphSVG: target });
+      return;
+    }
+    const tween = gsap.to(el, { duration: 0.28, ease: "power2.inOut", morphSVG: target });
+    return () => {
+      tween.kill();
+    };
+  }, [playing]);
+  return (
+    <span className="relative inline-flex h-3 w-3 items-center justify-center" aria-hidden="true">
+      <svg width="12" height="12" viewBox="46 21 54 56" fill="currentColor">
+        <path ref={pathRef} d={playing ? PAUSE_BARS_D : PLAY_BLADE_D} />
+      </svg>
+    </span>
+  );
+}
+
+/* ── Button sub-components ───────────────────────────────────────── */
+
+const LoopButton = memo(function LoopButton({
+  loopEnabled,
+  disabled,
+  setLoopEnabled,
+}: {
+  loopEnabled: boolean;
+  disabled: boolean;
+  setLoopEnabled: (v: boolean) => void;
+}) {
+  const { t } = useI18n();
+  return (
+    <Tooltip label={t("Loop playback")}>
+      <IconButton variant="plain"
+        type="button"
+        onClick={(event) => {
+          trackStudioEvent("playback", { action: "loop_toggle", enabled: !loopEnabled });
+          trackStudioClick("preview", "loop_toggle", undefined, clickMethod(event), loopEnabled ? "off" : "on");
+          setLoopEnabled(!loopEnabled);
+        }}
+        disabled={disabled}
+        className={`flex h-7 w-7 items-center justify-center rounded-md transition-colors disabled:opacity-30 ${
+          loopEnabled ? "text-accent-ink" : "text-neutral-500 hover:text-neutral-200"
+        }`}
+        aria-label={loopEnabled ? t("Disable loop playback") : t("Enable loop playback")}
+        aria-pressed={loopEnabled}
+        icon={<RemixIcon name="repeat-line" size={16} />}
+      />
+    </Tooltip>
+  );
+});
+
+const FullscreenButton = memo(function FullscreenButton({
+  isFullscreen,
+  onToggleFullscreen,
+}: {
+  isFullscreen: boolean;
+  onToggleFullscreen: () => void;
+}) {
+  const { t } = useI18n();
+  const fsKey = keyHint("fullscreen", useStudioKeys());
+  return (
+    <Tooltip label={isFullscreen ? t("Exit fullscreen ({fsKey})", { fsKey: fsKey }) : t("Enter fullscreen ({fsKey})", { fsKey: fsKey })}>
+      <IconButton variant="plain"
+        type="button"
+        onClick={() => {
+          trackStudioEvent("playback", { action: "fullscreen_toggle", active: !isFullscreen });
+          onToggleFullscreen();
+        }}
+        className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-md transition-colors ${
+          isFullscreen ? "text-accent-ink" : "text-neutral-500 hover:text-neutral-200"
+        }`}
+        aria-label={isFullscreen ? t("Exit fullscreen") : t("Enter fullscreen")}
+        icon={<RemixIcon name={isFullscreen ? "fullscreen-exit-line" : "fullscreen-line"} size={16} />}
+      />
+    </Tooltip>
+  );
+});
+
+/* ── Main component ──────────────────────────────────────────────── */
+
+interface PlayerControlsProps {
+  onTogglePlay: () => void;
+  onSeek: (time: number) => void;
+  disabled?: boolean;
+  isFullscreen?: boolean;
+  onToggleFullscreen?: () => void;
+  /** Replaces the shortcuts panel's list, e.g. DEFAULT_SHORTCUT_SECTIONS with entries dropped or relabelled. */
+  shortcutSections?: readonly ShortcutSection[];
+  reviewControls?: ReactNode;
+}
+
+const compositionFps = () => useLinkedClipPreferences.getState().compositionFps;
+
+export const PlayerControls = memo(function PlayerControls({
+  onTogglePlay,
+  onSeek,
+  disabled = false,
+  isFullscreen = false,
+  onToggleFullscreen,
+  shortcutSections,
+  reviewControls,
+}: PlayerControlsProps) {
+  const mvp = useMvpEditor();
+  const { t } = useI18n();
+  const isPlaying = usePlayerStore((s) => s.isPlaying);
+  const duration = usePlayerStore((s) => s.duration);
+  const timelineReady = usePlayerStore((s) => s.timelineReady);
+  const playbackRate = usePlayerStore((s) => s.playbackRate);
+  const audioMuted = usePlayerStore((s) => s.audioMuted);
+  const audioVolume = usePlayerStore((s) => s.audioVolume);
+  const loopEnabled = usePlayerStore((s) => s.loopEnabled);
+  const setPlaybackRate = usePlayerStore.getState().setPlaybackRate;
+  const setAudioMuted = usePlayerStore.getState().setAudioMuted;
+  const setAudioVolume = usePlayerStore.getState().setAudioVolume;
+  const setLoopEnabled = usePlayerStore.getState().setLoopEnabled;
+  const storedTimeDisplayMode = usePlayerStore((s) => s.timeDisplayMode);
+  const timeDisplayMode = mvp ? "time" : storedTimeDisplayMode;
+  const setTimeDisplayMode = usePlayerStore.getState().setTimeDisplayMode;
+
+  const timeDisplayRef = useRef<HTMLSpanElement>(null);
+  const currentTimeRef = useRef(0);
+  const timeDisplayModeRef = useRef(timeDisplayMode);
+  timeDisplayModeRef.current = timeDisplayMode;
+
+  const durationRef = useRef(duration);
+  durationRef.current = duration;
+  const controlsDisabled = disabled || !timelineReady;
+
+  useEffect(() => {
+    if (!timeDisplayRef.current) return;
+    const t = currentTimeRef.current;
+    timeDisplayRef.current.textContent =
+      timeDisplayMode === "frame" ? formatFrameTime(t, duration, compositionFps()) : formatTime(t);
+  }, [duration, timeDisplayMode]);
+
+  useMountEffect(() => {
+    const updateTime = (time: number) => {
+      currentTimeRef.current = time;
+      if (!timeDisplayRef.current) return;
+      const currentDuration = durationRef.current;
+      const text =
+        timeDisplayModeRef.current === "frame"
+          ? formatFrameTime(time, currentDuration, compositionFps())
+          : formatTime(time);
+      if (timeDisplayRef.current.textContent !== text) timeDisplayRef.current.textContent = text;
+    };
+    const unsubscribe = liveTime.subscribe(updateTime);
+    updateTime(usePlayerStore.getState().currentTime);
+    return unsubscribe;
+  });
+
+  return (
+    <div className={`motion-player-controls relative z-20 ${mvp ? "motion-player-responsive" : ""}`}>
+      <PreviewSeekBar duration={duration} disabled={controlsDisabled} onSeek={onSeek} />
+      <div
+        className={mvp ? "motion-player-control-row px-3" : "grid h-7 grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center px-3"}
+        aria-disabled={disabled || undefined}
+        style={{
+          paddingBottom: "env(safe-area-inset-bottom)",
+        }}
+      >
+        {mvp ? <div className="flex min-w-0 items-center gap-2">{reviewControls}<span className="min-w-0 justify-self-start whitespace-nowrap font-mono text-[11px] tabular-nums text-neutral-400">
+          <span ref={timeDisplayRef}>{formatTime(0)}</span><span className="mx-0.5">/</span><span>{formatTime(duration)}</span>
+        </span></div> : <Tooltip
+          label={timeDisplayMode === "time" ? t("Switch to frame display") : t("Switch to time display")}
+        >
+          <Button variant="plain"
+            type="button"
+            onClick={() => setTimeDisplayMode(timeDisplayMode === "time" ? "frame" : "time")}
+            disabled={disabled}
+            className="min-w-0 justify-self-start whitespace-nowrap font-mono text-[11px] tabular-nums text-neutral-400 transition-colors hover:text-neutral-200 disabled:pointer-events-none"
+          >
+            <span ref={timeDisplayRef}>{formatTime(0)}</span>
+            {timeDisplayMode === "time" ? (
+              <>
+                <span className="mx-0.5 text-text-off">/</span>
+                <span className="text-neutral-600">{formatTime(duration)}</span>
+              </>
+            ) : null}
+          </Button>
+        </Tooltip>}
+
+        <Tooltip label={isPlaying ? t("Pause") : t("Play")}>
+          <IconButton variant="plain"
+            type="button"
+            data-studio-control="playback"
+            aria-label={isPlaying ? t("Pause") : t("Play")}
+            onClick={(event) => {
+              trackStudioEvent("playback", { action: isPlaying ? "pause" : "play" });
+              trackStudioClick("preview", isPlaying ? "pause" : "play", undefined, clickMethod(event));
+              onTogglePlay();
+            }}
+            disabled={controlsDisabled}
+            className="flex h-7 w-8 items-center justify-center justify-self-center rounded-md text-neutral-100 transition-colors hover:text-white disabled:pointer-events-none disabled:opacity-30"
+            icon={mvp ? <RemixIcon name={isPlaying ? "pause-fill" : "play-fill"} size={20} /> : <PlayPauseMorphIcon playing={isPlaying} />}
+          />
+        </Tooltip>
+
+        <div className={`flex min-w-0 items-center justify-self-end ${mvp ? "motion-player-secondary" : ""}`}>
+          <VolumeControl
+            audioMuted={audioMuted}
+            audioVolume={audioVolume}
+            disabled={controlsDisabled}
+            setAudioMuted={setAudioMuted}
+            setAudioVolume={setAudioVolume}
+          />
+          <span className="flex items-center gap-[inherit]">
+          <SpeedMenu
+            playbackRate={playbackRate}
+            setPlaybackRate={setPlaybackRate}
+            disabled={disabled}
+          />
+          <LoopButton
+            loopEnabled={loopEnabled}
+            disabled={disabled}
+            setLoopEnabled={setLoopEnabled}
+          />
+          </span>
+          {onToggleFullscreen && (
+            <FullscreenButton isFullscreen={isFullscreen} onToggleFullscreen={onToggleFullscreen} />
+          )}
+          {!mvp && <ShortcutsButton disabled={disabled} onSeek={onSeek} sections={shortcutSections} />}
+        </div>
+      </div>
+    </div>
+  );
+});

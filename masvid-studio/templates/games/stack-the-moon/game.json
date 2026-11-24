@@ -1,0 +1,26 @@
+{
+  "id": "stack-the-moon",
+  "title": "Stack the Moon",
+  "description": "Build a moonlit observatory above the clouds, one perfectly timed stone at a time. Chain perfect landings to restore your tower and climb into the stars.",
+  "genre": "casual",
+  "style": "minimal",
+  "setting": "modern",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "Click, tap or Space to stack. P / Escape to pause. R to restart. Sound starts after your first input.",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-20T00:00:00.000Z",
+  "updatedAt": "2026-11-20T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "叠叠月",
+      "description": "在云上一块一块叠起月光天文台，时机准就完美落位。连续完美落位能修复塔身，一路叠进星空。",
+      "controls": "点击、轻触或空格放下石块 · P / Esc 暂停 · R 重开 · 第一次操作后开启声音"
+    }
+  }
+}

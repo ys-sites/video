@@ -1,0 +1,224 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><link rel="icon" href="data:,"><title>Sky Runner</title><style>/* Standalone authored game artwork; independent of Studio chrome. */
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#090f1c;touch-action:none}body{display:flex;align-items:center;justify-content:center}canvas{display:block;width:min(100vw,56.25vh);height:min(100vh,177.77778vw);width:min(100vw,56.25dvh);height:min(100dvh,177.77778vw);touch-action:none;user-select:none;image-rendering:auto}</style></head><body><canvas aria-label="Sky Runner"></canvas><script>
+const META = { "id": "sky-runner", "title": "Sky Runner", "zh": "霓虹天际跑者", "hint": "左右拖动换道，躲障碍，三次碰撞结束", "enHint": "Drag to change lanes. Three hits ends the run." };
+const canvas = document.querySelector('canvas'), c = canvas.getContext('2d');
+const zh = navigator.language.toLowerCase().startsWith('zh'), T = (a, b) => zh ? a : b;
+document.documentElement.lang = zh ? 'zh-CN' : 'en';
+document.title = T(META.zh, META.title);
+const W = 360, H = 640;
+let phase = 'ready', elapsed = 0, score = 0, last = 0, shake = 0, muted = false, audio = null, activePointer = null, px = 180, py = 520;
+// All artwork is local. Incomplete/failed image loads retain the playable canvas fallback.
+const art = Array.from({ length: 16 }, (_, i) => { const im = new Image(); im.src = './assets/' + String(i).padStart(2, '0') + '.webp'; return im; });
+let flash = 0;
+function sprite(i, x, y, w, h, alpha = 1) { const im = art[i]; if (!im.complete || !im.naturalWidth)
+    return false; c.save(); c.globalAlpha = alpha; c.imageSmoothingEnabled = META.id !== 'gate-legion' && META.id !== 'lane-turret'; c.drawImage(im, x, y, w, h); c.restore(); return true; }
+function tile(i, x, y, w, h, size = 96, offset = 0) { const im = art[i]; if (!im.complete || !im.naturalWidth)
+    return false; c.save(); c.beginPath(); c.rect(x, y, w, h); c.clip(); for (let yy = y - size + offset % size; yy < y + h; yy += size)
+    for (let xx = x; xx < x + w; xx += size)
+        c.drawImage(im, xx, yy, size, size); c.restore(); return true; }
+function impact(x, y, color = '#fff4b0', amount = 24) { burst(x, y, color, amount); flash = reduced ? 0 : .11; shake = reduced ? 0 : Math.max(shake, 4); }
+function tutorial(ms) { if (!(phase === 'ready' || phase === 'playing' && elapsed < 3))
+    return; let x = 180 + (reduced ? 0 : Math.sin(ms / 400) * 53); panel(36, 461, 288, 37, '#112236'); text(T(META.hint, META.enHint), 180, 485, 11, '#fff8d4'); if (!sprite(13, x - 18, 501, 48, 58))
+    text('☝', x, 540, 40); text('↔', 180, 548, 28, '#ffe49c'); }
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let particles = [], labels = [], result = '', hint = META.hint;
+function fit() { let d = Math.min(devicePixelRatio || 1, 2), r = canvas.getBoundingClientRect(); canvas.width = Math.round(r.width * d); canvas.height = Math.round(r.height * d); }
+addEventListener('resize', fit);
+fit();
+function wake() { if (!audio) {
+    const A = window.AudioContext || window.webkitAudioContext;
+    if (A)
+        try {
+            audio = new A();
+        }
+        catch { }
+} if (audio?.state === 'suspended')
+    audio.resume().catch(() => { }); }
+function tone(f = 520) { if (muted || !audio || audio.state !== 'running')
+    return; let o = audio.createOscillator(), g = audio.createGain(); o.type = 'triangle'; o.frequency.setValueAtTime(f, audio.currentTime); o.frequency.exponentialRampToValueAtTime(f * .5, audio.currentTime + .16); g.gain.setValueAtTime(.045, audio.currentTime); g.gain.exponentialRampToValueAtTime(.001, audio.currentTime + .18); o.connect(g); g.connect(audio.destination); o.start(); o.stop(audio.currentTime + .2); }
+function burst(x, y, color = '#ffe296', n = 14) { for (let i = 0; i < n; i++)
+    particles.push({ x, y, vx: (Math.random() - .5) * 170, vy: (Math.random() - .7) * 160, t: .65, color }); if (particles.length > 220)
+    particles.splice(0, particles.length - 220); }
+function pop(text, x = 180, y = 330, color = '#fff0a8') { labels.push({ text, x, y, color, t: 1 }); tone(); }
+function hit() { shake = reduced ? 0 : 10; flash = reduced ? 0 : .16; tone(130); }
+function end(win, text) { phase = win ? 'won' : 'lost'; result = text; activePointer = null; tone(win ? 780 : 140); }
+function start() { if (phase === 'ready')
+    phase = 'playing'; }
+function restart() { phase = 'ready'; elapsed = 0; score = 0; particles = []; labels = []; shake = 0; flash = 0; result = ''; activePointer = null; px = 180; py = 520; init(); }
+function rect(x, y, w, h, color) { c.fillStyle = color; c.fillRect(x, y, w, h); }
+function circle(x, y, r, color) { c.fillStyle = color; c.beginPath(); c.arc(x, y, r, 0, Math.PI * 2); c.fill(); }
+function text(s, x, y, size = 18, color = '#f8f5e7', align = 'center') { c.save(); c.fillStyle = color; c.font = `800 ${size}px system-ui,sans-serif`; c.textAlign = align; c.lineJoin = 'round'; c.strokeStyle = '#132131'; c.lineWidth = Math.max(2, size * .14); c.strokeText(s, x, y); c.fillText(s, x, y); c.restore(); }
+function panel(x, y, w, h, color = '#17243e') { c.fillStyle = color; c.beginPath(); c.roundRect(x, y, w, h, 12); c.fill(); }
+function person(x, y, color = '#67c7ff', s = 1) { rect(x - 3 * s, y - 9 * s, 6 * s, 6 * s, '#ffe1b0'); rect(x - 5 * s, y - 3 * s, 10 * s, 9 * s, color); rect(x - 5 * s, y + 6 * s, 3 * s, 5 * s, color); rect(x + 2 * s, y + 6 * s, 3 * s, 5 * s, color); }
+function pointer(e) { let r = canvas.getBoundingClientRect(); return { x: (e.clientX - r.left) * W / r.width, y: (e.clientY - r.top) * H / r.height }; }
+canvas.addEventListener('pointerdown', e => { e.preventDefault(); if (activePointer !== null)
+    return; wake(); const p = pointer(e); if (p.x > 302 && p.y < 58) {
+    muted = !muted;
+    return;
+} if (phase === 'won' || phase === 'lost') {
+    if (p.y > 380 && p.y < 454) {
+        restart();
+        start();
+    }
+    return;
+} activePointer = e.pointerId; canvas.setPointerCapture(e.pointerId); px = p.x; py = p.y; start(); input(p, true); });
+canvas.addEventListener('pointermove', e => { if (e.pointerId !== activePointer)
+    return; let p = pointer(e); px = p.x; py = p.y; if (phase === 'playing')
+    input(p, false); });
+for (const event of ['pointerup', 'pointercancel', 'lostpointercapture'])
+    canvas.addEventListener(event, e => { if (e.pointerId === activePointer)
+        activePointer = null; });
+window.__omGame = { state: () => ({ phase, score, elapsed: Number(elapsed.toFixed(2)), muted, assetsReady: art.filter(im => im.complete && im.naturalWidth).length, ...snapshot() }), start, restart };
+function frame(ms) {
+    const dt = document.hidden ? 0 : Math.min(.033, Math.max(0, (ms - last) / 1000 || 0));
+    last = ms;
+    if (phase === 'playing') {
+        elapsed += dt;
+        update(dt);
+    }
+    c.setTransform(canvas.width / W, 0, 0, canvas.height / H, 0, 0);
+    c.save();
+    if (shake > 0) {
+        c.translate((Math.random() - .5) * shake, (Math.random() - .5) * shake);
+        shake = Math.max(0, shake - dt * 28);
+    }
+    draw();
+    for (let i = particles.length - 1; i >= 0; i--) {
+        let p = particles[i];
+        p.t -= dt;
+        p.x += p.vx * dt;
+        p.y += p.vy * dt;
+        p.vy += 200 * dt;
+        if (p.t <= 0) {
+            particles.splice(i, 1);
+            continue;
+        }
+        circle(p.x, p.y, 2, p.color);
+    }
+    for (let i = labels.length - 1; i >= 0; i--) {
+        let p = labels[i];
+        p.t -= dt;
+        p.y -= dt * 50;
+        text(p.text, p.x, p.y, 23 + Math.sin(Math.min(1, (1 - p.t) * 4) * Math.PI) * 8, p.color);
+        if (p.t <= 0)
+            labels.splice(i, 1);
+    }
+    c.restore();
+    if (flash > 0) {
+        c.save();
+        c.globalAlpha = Math.min(.38, flash * 2);
+        rect(0, 100, 360, 540, '#ffffff');
+        c.restore();
+        flash = Math.max(0, flash - dt);
+    }
+    panel(10, 10, 340, 48, '#101b2d');
+    sprite(12, 8, 7, 344, 55);
+    panel(24, 64, 312, 29, '#17283d');
+    text(T(META.zh, META.title), 22, 39, 16, '#ffffff', 'left');
+    text(muted ? T('静音', 'OFF') : T('声音', 'SND'), 325, 39, 12);
+    text(hud(), 180, 84, 16);
+    tutorial(ms);
+    if (phase === 'ready') {
+        panel(14, 565, 332, 58);
+        text(T('触摸即可开始', 'Touch to begin'), 180, 604, 14, '#8fe6bd');
+    }
+    if (phase === 'won' || phase === 'lost') {
+        rect(0, 100, 360, 540, '#06101fe8');
+        text(phase === 'won' ? T('挑战成功', 'SUCCESS') : T('挑战结束', 'RUN OVER'), 180, 270, 30);
+        text(result, 180, 320, 16);
+        text(T('得分 ', 'SCORE ') + score, 180, 354, 22, '#ffe299');
+        panel(65, 386, 230, 60, '#23745b');
+        text(T('再来一局 ↻', 'PLAY AGAIN ↻'), 180, 423, 21);
+    }
+    requestAnimationFrame(frame);
+}
+let lane, items, spawn, hits, coins, boost, invuln, distance;
+function init() { lane = 1; items = []; spawn = .5; hits = 0; coins = 0; boost = 0; invuln = 0; distance = 0; }
+function input(p) { lane = Math.max(0, Math.min(2, Math.floor(p.x / 120))); }
+function snapshot() { return { lane, hits, coins, boost: Math.max(0, boost), distance: Math.floor(distance), remaining: Math.max(0, 60 - elapsed), speed: Number((.31 + elapsed * .004 + (boost > 0 ? .15 : 0)).toFixed(2)) }; }
+function hud() { return '♥'.repeat(3 - hits) + '   ' + T('金币 ', 'COINS ') + coins + '   ' + Math.ceil(Math.max(0, 60 - elapsed)) + 's'; }
+function update(dt) { boost = Math.max(0, boost - dt); invuln = Math.max(0, invuln - dt); let speed = .31 + elapsed * .004 + (boost > 0 ? .15 : 0); distance += speed * dt * 120; score = Math.floor(distance) + coins * 10; spawn -= dt; if (spawn <= 0) {
+    spawn = elapsed < 5 ? 1 : elapsed < 15 ? 2.2 : .95 - Math.min(.28, (elapsed - 15) * .004);
+    let obstacleLane = Math.floor(Math.random() * 3);
+    if (elapsed >= 5)
+        items.push({ lane: obstacleLane, z: 0, type: 'block', variant: Math.random() < .35 ? 'drone' : 'barrier', done: false });
+    let rewardLane = (obstacleLane + 1 + Math.floor(Math.random() * 2)) % 3;
+    items.push({ lane: rewardLane, z: 0, type: Math.random() < .16 ? 'boost' : 'coin', done: false });
+} for (let o of items) {
+    o.z += speed * dt;
+    if (!o.done && o.z >= .88) {
+        o.done = true;
+        if (o.lane === lane) {
+            if (o.type === 'block') {
+                if (!invuln) {
+                    hits++;
+                    invuln = 1.1;
+                    boost = 0;
+                    hit();
+                    pop(T('碰撞！', 'HIT!'), 180, 390, '#ff9ba8');
+                    if (hits >= 3) {
+                        end(false, T('三次碰撞 · 距离 ', 'Three hits · distance ') + Math.floor(distance));
+                        return;
+                    }
+                }
+            }
+            else {
+                if (o.type === 'coin') {
+                    coins++;
+                    pop('+10', 180, 400);
+                    impact(180 + 120 * (lane - 1), 500, '#ffe48b', 22);
+                }
+                else {
+                    boost = 4;
+                    pop(T('加速！', 'BOOST!'));
+                    tone(900);
+                }
+            }
+        }
+    }
+} items = items.filter(o => o.z < 1.2); if (elapsed >= 60)
+    end(true, T('成功抵达天际', 'Skyline reached')); }
+function point(l, z) { return { x: 180 + (l - 1) * (18 + 112 * z), y: 160 + 390 * z * z }; }
+function draw() { rect(0, 0, 360, 640, '#13152e'); tile(0, 0, 95, 360, 545, 160); for (let i = 0; i < 12; i++) {
+    const x = i % 2 ? 285 + (i % 3) * 22 : -25 + (i % 4) * 23, h = 90 + (i * 37) % 120;
+    sprite(i % 2 ? 8 : 9, x, 180 - h, 62, h);
+} c.fillStyle = '#202639'; c.beginPath(); c.moveTo(149, 160); c.lineTo(211, 160); c.lineTo(385, 640); c.lineTo(-25, 640); c.fill(); for (const edge of [-1.5, -.5, .5, 1.5]) {
+    c.save();
+    c.strokeStyle = Math.abs(edge) > 1 ? '#63f8f1' : '#9056ce';
+    c.lineWidth = Math.abs(edge) > 1 ? 3 : 1;
+    c.shadowColor = c.strokeStyle;
+    c.shadowBlur = 9;
+    c.beginPath();
+    c.moveTo(180 + edge * 19, 160);
+    c.lineTo(180 + edge * 150, 640);
+    c.stroke();
+    c.restore();
+} for (let i = 0; i < 16; i++) {
+    const z = (i / 16 + distance * .004) % 1, y = 160 + 480 * z * z;
+    rect(180 - 155 * z, y, 310 * z, 1, '#477288');
+} for (const o of [...items].sort((a, b) => a.z - b.z)) {
+    if (o.z < 0 || o.z > 1.12)
+        continue;
+    const p = point(o.lane, o.z), s = 12 + o.z * 49;
+    let idx = o.type === 'coin' ? 6 : o.type === 'boost' ? 7 : o.variant === 'drone' ? 5 : 4;
+    sprite(idx, p.x - s * .55, p.y - s, s * 1.1, s);
+    if (o.type !== 'block') {
+        c.save();
+        c.shadowColor = o.type === 'coin' ? '#ffe496' : '#7bfff1';
+        c.shadowBlur = 14;
+        circle(p.x, p.y - 5, 2, c.shadowColor);
+        c.restore();
+    }
+} const p = point(lane, .93); if (invuln <= 0 || Math.floor(elapsed * 12) % 2)
+    sprite(2 + (Math.floor(elapsed * 6) % 2), p.x - 35, p.y - 61, 70, 85); if (boost > 0) {
+    sprite(11, p.x - 42, p.y - 14, 84, 68);
+    text(T('加速中', 'BOOSTING'), 180, 136, 18, '#6ef7e2');
+    for (let i = 0; i < 8; i++)
+        rect(i % 2 ? 330 : 26, (i * 83 + elapsed * 580) % 640, 3, 40, '#74ebe9');
+} if (elapsed < 5 && phase === 'playing') {
+    panel(77, 112, 206, 28, '#26374f');
+    text(T('安全起步 · 收集金币', 'SAFE START · COLLECT COINS'), 180, 131, 11);
+} }
+init();
+requestAnimationFrame(frame);
+</script></body></html>

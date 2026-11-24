@@ -1,0 +1,90 @@
+{
+  "generator": "Built-in image_gen",
+  "originalArtwork": true,
+  "atlasLayout": "4 x 4",
+  "processing": "Cell extraction, alpha cleanup, WebP compression; cover normalized without cropping title. Sprites downscaled to 192 x 192 and cover to 400 px wide to fit the default npm package size budget.",
+  "atlasPrompt": "Use case: stylized-concept. Production videogame asset ATLAS. Square 1024x1024 strictly divided into a uniform 4 by 4 grid of 256x256 cells. No grid lines, no labels, no text. Bright polished cartoon fantasy game, original characters only, clean readable silhouettes, high detail. Transparent background around isolated objects, terrain fills its cell. Cell objects must never overlap or leave their own cell, generous transparent margins around sprites. Row1 left to right: seamless pale warm stone wall texture; stone floor tile; cheerful young treasure keeper front view smiling; same keeper celebrating. Row2: glowing orange lava orb; translucent aqua water orb; gold coin pile; cooled gray stone chunk. Row3: arched empty stone reservoir frame; golden horizontal pull pin with ring; leather treasure satchel; magical sparkle. Row4: ornate warm stone UI panel blank; white pointing hand tutorial cursor; scared treasure keeper; gold treasure chest. Render exactly 16 separate assets. No logos or watermarks.",
+  "coverPrompt": "Use case: ads-marketing. Original premium mobile game COVER illustration, portrait 9:16 around 768x1360. Bright charming cartoon fantasy treasure vault. Stone walled puzzle reservoirs contain translucent aqua water and luminous orange lava, held by shiny golden pull pins. A pile of sparkling gold coins above a cheerful young adventurer with expressive face. Water meets lava turning it into gray stone. Readable polished playful composition. Highly finished game promotional art with depth, tactile material details and lively motion, not abstract primitive shapes. Main action occupies middle 75%, keep top 15% for a beautifully crafted title reading exactly \"PIN RESCUE\". No other text. Crisp readable composition at phone size. No existing game characters, logos or brands.",
+  "files": [
+    {
+      "file": "00.webp",
+      "cell": 0,
+      "bytes": 9936
+    },
+    {
+      "file": "01.webp",
+      "cell": 1,
+      "bytes": 8144
+    },
+    {
+      "file": "02.webp",
+      "cell": 2,
+      "bytes": 21844
+    },
+    {
+      "file": "03.webp",
+      "cell": 3,
+      "bytes": 27138
+    },
+    {
+      "file": "04.webp",
+      "cell": 4,
+      "bytes": 30392
+    },
+    {
+      "file": "05.webp",
+      "cell": 5,
+      "bytes": 28424
+    },
+    {
+      "file": "06.webp",
+      "cell": 6,
+      "bytes": 23724
+    },
+    {
+      "file": "07.webp",
+      "cell": 7,
+      "bytes": 24362
+    },
+    {
+      "file": "08.webp",
+      "cell": 8,
+      "bytes": 32064
+    },
+    {
+      "file": "09.webp",
+      "cell": 9,
+      "bytes": 11888
+    },
+    {
+      "file": "10.webp",
+      "cell": 10,
+      "bytes": 29892
+    },
+    {
+      "file": "11.webp",
+      "cell": 11,
+      "bytes": 21836
+    },
+    {
+      "file": "12.webp",
+      "cell": 12,
+      "bytes": 24350
+    },
+    {
+      "file": "13.webp",
+      "cell": 13,
+      "bytes": 18516
+    },
+    {
+      "file": "14.webp",
+      "cell": 14,
+      "bytes": 30884
+    },
+    {
+      "file": "15.webp",
+      "cell": 15,
+      "bytes": 30120
+    }
+  ]
+}

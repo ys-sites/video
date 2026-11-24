@@ -1,0 +1,841 @@
+[
+  {
+    "id": "cherryin",
+    "label": "CherryIN",
+    "protocol": "openai",
+    "baseUrl": "https://open.cherryin.net/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://open.cherryin.ai/console/token",
+    "docs": "https://open.cherryin.ai"
+  },
+  {
+    "id": "silicon",
+    "label": "SiliconFlow",
+    "protocol": "openai",
+    "baseUrl": "https://api.siliconflow.cn/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://cloud.siliconflow.cn/i/d1nTBKXU",
+    "docs": "https://docs.siliconflow.cn/"
+  },
+  {
+    "id": "aihubmix",
+    "label": "AiHubMix",
+    "protocol": "openai",
+    "baseUrl": "https://aihubmix.com/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://aihubmix.com",
+    "docs": "https://doc.aihubmix.com/"
+  },
+  {
+    "id": "ovms",
+    "label": "OpenVINO Model Server",
+    "protocol": "openai",
+    "baseUrl": "http://localhost:8000/v3",
+    "kinds": [
+      "text"
+    ],
+    "category": "local",
+    "website": "https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html",
+    "docs": "https://docs.openvino.ai/2025/model-server/ovms_what_is_openvino_model_server.html",
+    "setupRequired": true
+  },
+  {
+    "id": "ocoolai",
+    "label": "ocoolAI",
+    "protocol": "openai",
+    "baseUrl": "https://api.ocoolai.com/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://one.ocoolai.com/token",
+    "docs": "https://docs.ocoolai.com/"
+  },
+  {
+    "id": "zhipu",
+    "label": "BigModel",
+    "protocol": "openai",
+    "baseUrl": "https://open.bigmodel.cn/api/paas/v4",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://open.bigmodel.cn/apikey/platform",
+    "docs": "https://docs.bigmodel.cn/"
+  },
+  {
+    "id": "deepseek",
+    "label": "DeepSeek",
+    "protocol": "openai",
+    "baseUrl": "https://api.deepseek.com/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://platform.deepseek.com/api_keys",
+    "docs": "https://api-docs.deepseek.com/"
+  },
+  {
+    "id": "alayanew",
+    "label": "Alaya NeW",
+    "protocol": "openai",
+    "baseUrl": "https://deepseek.alayanew.com/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://www.alayanew.com/",
+    "docs": "https://docs.alayanew.com/docs/modelService/interview"
+  },
+  {
+    "id": "dmxapi",
+    "label": "DMXAPI",
+    "protocol": "openai",
+    "baseUrl": "https://www.dmxapi.cn/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://www.dmxapi.cn/",
+    "docs": "https://doc.dmxapi.cn/"
+  },
+  {
+    "id": "aionly",
+    "label": "AiOnly",
+    "protocol": "openai",
+    "baseUrl": "https://api.aiionly.com/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://maas.aiionly.com/keyApi",
+    "docs": "https://maas.aiionly.com/document"
+  },
+  {
+    "id": "burncloud",
+    "label": "BurnCloud",
+    "protocol": "openai",
+    "baseUrl": "https://ai.burncloud.com/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://ai.burncloud.com/token",
+    "docs": "https://ai.burncloud.com/docs"
+  },
+  {
+    "id": "302ai",
+    "label": "302.AI",
+    "protocol": "openai",
+    "baseUrl": "https://api.302.ai/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://dash.302.ai/apis/list",
+    "docs": "https://302ai.apifox.cn/api-147522039"
+  },
+  {
+    "id": "lanyun",
+    "label": "LANYUN",
+    "protocol": "openai",
+    "baseUrl": "https://maas-api.lanyun.net/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://maas.lanyun.net/#/system/apiKey",
+    "docs": "https://archive.lanyun.net/#/maas/"
+  },
+  {
+    "id": "ph8",
+    "label": "PH8",
+    "protocol": "openai",
+    "baseUrl": "https://ph8.co/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://ph8.co/apiKey"
+  },
+  {
+    "id": "sophnet",
+    "label": "SophNet",
+    "protocol": "openai",
+    "baseUrl": "https://www.sophnet.com/api/open-apis/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://sophnet.com/#/project/key",
+    "docs": "https://sophnet.com/docs/component/introduce.html"
+  },
+  {
+    "id": "ppio",
+    "label": "PPIO",
+    "protocol": "openai",
+    "baseUrl": "https://api.ppinfra.com/v3/openai",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://ppio.com/settings/key-management",
+    "docs": "https://cherryai.com/docs/en/pre-basic/providers/"
+  },
+  {
+    "id": "qiniu",
+    "label": "Qiniu AI",
+    "protocol": "openai",
+    "baseUrl": "https://api.qnaigc.com/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://portal.qiniu.com/ai-inference/api-key",
+    "docs": "https://developer.qiniu.com/aitokenapi"
+  },
+  {
+    "id": "openrouter",
+    "label": "OpenRouter",
+    "protocol": "openai",
+    "baseUrl": "https://openrouter.ai/api/v1",
+    "kinds": [
+      "text",
+      "image"
+    ],
+    "category": "multimodal",
+    "website": "https://openrouter.ai/settings/keys",
+    "docs": "https://openrouter.ai/docs/quick-start"
+  },
+  {
+    "id": "ollama",
+    "label": "Ollama",
+    "protocol": "anthropic",
+    "baseUrl": "http://localhost:11434/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "local",
+    "website": "https://ollama.com/",
+    "docs": "https://github.com/ollama/ollama/tree/main/docs",
+    "setupRequired": true
+  },
+  {
+    "id": "radeon-cloud",
+    "label": "AMD GPU Cloud",
+    "protocol": "openai",
+    "baseUrl": "https://developer.amd.com.cn/radeon/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://developer.amd.com.cn/radeon/tokenfactory?source=cherry-studio",
+    "docs": "https://developer.amd.com.cn/radeon/"
+  },
+  {
+    "id": "tokendance",
+    "label": "TokenDance",
+    "protocol": "openai",
+    "baseUrl": "https://tokendance.space/gateway/v1",
+    "kinds": [
+      "text",
+      "image"
+    ],
+    "category": "multimodal",
+    "website": "https://tokendance.space/keys",
+    "docs": "https://tokendance.space/docs/cherry-studio"
+  },
+  {
+    "id": "new-api",
+    "label": "New API",
+    "protocol": "anthropic",
+    "baseUrl": "",
+    "kinds": [
+      "text",
+      "image"
+    ],
+    "category": "multimodal",
+    "website": "https://docs.newapi.pro/",
+    "docs": "https://docs.newapi.pro"
+  },
+  {
+    "id": "lmstudio",
+    "label": "LM Studio",
+    "protocol": "openai",
+    "baseUrl": "http://localhost:1234",
+    "kinds": [
+      "text"
+    ],
+    "category": "local",
+    "website": "https://lmstudio.ai/",
+    "docs": "https://lmstudio.ai/docs",
+    "setupRequired": true
+  },
+  {
+    "id": "litellm",
+    "label": "LiteLLM",
+    "protocol": "openai",
+    "baseUrl": "http://localhost:4000",
+    "kinds": [
+      "text"
+    ],
+    "category": "local",
+    "website": "https://docs.litellm.ai/docs/proxy/virtual_keys",
+    "docs": "https://docs.litellm.ai/docs/proxy/quick_start",
+    "setupRequired": true
+  },
+  {
+    "id": "anthropic",
+    "label": "Anthropic",
+    "protocol": "anthropic",
+    "baseUrl": "https://api.anthropic.com/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://console.anthropic.com/settings/keys",
+    "docs": "https://docs.anthropic.com/en/docs"
+  },
+  {
+    "id": "claude-code",
+    "label": "Claude Code",
+    "protocol": "anthropic",
+    "baseUrl": "https://api.anthropic.com/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "local",
+    "website": "https://www.anthropic.com/claude-code",
+    "docs": "https://docs.claude.com/en/docs/claude-code/overview",
+    "setupRequired": true
+  },
+  {
+    "id": "openai-codex",
+    "label": "OpenAI Codex",
+    "protocol": "openai",
+    "baseUrl": "https://chatgpt.com/backend-api/codex",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://openai.com/codex",
+    "docs": "https://platform.openai.com/docs/codex",
+    "setupRequired": true
+  },
+  {
+    "id": "grok-cli",
+    "label": "Grok CLI",
+    "protocol": "openai",
+    "baseUrl": "https://cli-chat-proxy.grok.com/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://x.ai",
+    "docs": "https://docs.x.ai",
+    "setupRequired": true
+  },
+  {
+    "id": "omlx",
+    "label": "oMLX",
+    "protocol": "openai",
+    "baseUrl": "http://localhost:8000",
+    "kinds": [
+      "text"
+    ],
+    "category": "local",
+    "website": "https://omlx.ai",
+    "docs": "https://github.com/jundot/omlx",
+    "setupRequired": true
+  },
+  {
+    "id": "rapid-mlx",
+    "label": "Rapid-MLX",
+    "protocol": "openai",
+    "baseUrl": "http://localhost:8000",
+    "kinds": [
+      "text"
+    ],
+    "category": "local",
+    "website": "https://rapidmlx.com",
+    "docs": "https://github.com/raullenchai/Rapid-MLX",
+    "setupRequired": true
+  },
+  {
+    "id": "openai",
+    "label": "OpenAI",
+    "protocol": "openai",
+    "baseUrl": "https://api.openai.com/v1",
+    "kinds": [
+      "text",
+      "image",
+      "audio",
+      "transcription"
+    ],
+    "category": "multimodal",
+    "website": "https://platform.openai.com/api-keys",
+    "docs": "https://platform.openai.com/docs"
+  },
+  {
+    "id": "opencode",
+    "label": "OpenCode Go",
+    "protocol": "openai",
+    "baseUrl": "https://opencode.ai/zen/go/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://opencode.ai/auth",
+    "docs": "https://opencode.ai/docs/go/"
+  },
+  {
+    "id": "azure-openai",
+    "label": "Azure OpenAI",
+    "protocol": "openai",
+    "baseUrl": "",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://portal.azure.com/",
+    "docs": "https://learn.microsoft.com/en-us/azure/ai-services/openai/",
+    "setupRequired": true
+  },
+  {
+    "id": "gemini",
+    "label": "Gemini",
+    "protocol": "google",
+    "baseUrl": "https://generativelanguage.googleapis.com/v1beta",
+    "kinds": [
+      "text",
+      "image"
+    ],
+    "category": "multimodal",
+    "website": "https://aistudio.google.com/app/apikey",
+    "docs": "https://ai.google.dev/gemini-api/docs"
+  },
+  {
+    "id": "vertexai",
+    "label": "VertexAI",
+    "protocol": "google",
+    "baseUrl": "",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://console.cloud.google.com/apis/credentials",
+    "docs": "https://cloud.google.com/vertex-ai/generative-ai/docs",
+    "setupRequired": true
+  },
+  {
+    "id": "copilot",
+    "label": "Github Copilot",
+    "protocol": "openai",
+    "baseUrl": "https://api.githubcopilot.com/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://github.com/features/copilot",
+    "docs": "",
+    "setupRequired": true
+  },
+  {
+    "id": "moonshot",
+    "label": "Moonshot AI",
+    "protocol": "openai",
+    "baseUrl": "https://api.moonshot.cn/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://platform.moonshot.cn/console/api-keys",
+    "docs": "https://platform.moonshot.cn/docs/"
+  },
+  {
+    "id": "moonshot-global",
+    "label": "Moonshot",
+    "protocol": "openai",
+    "baseUrl": "https://api.moonshot.ai/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://platform.moonshot.ai/console/api-keys",
+    "docs": "https://platform.moonshot.ai/docs/"
+  },
+  {
+    "id": "baichuan",
+    "label": "BAICHUAN AI",
+    "protocol": "openai",
+    "baseUrl": "https://api.baichuan-ai.com/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://platform.baichuan-ai.com/console/apikey",
+    "docs": "https://platform.baichuan-ai.com/docs"
+  },
+  {
+    "id": "dashscope",
+    "label": "Qianwen AI platform - CN",
+    "protocol": "openai",
+    "baseUrl": "https://maas.qianwenaiapi.com/compatible-mode/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://platform.qianwenai.com/home/api-keys?utm_content=g_20000003252",
+    "docs": "https://platform.qianwenai.com/docs/developer-guides/getting-started/first-api-call"
+  },
+  {
+    "id": "qwencloud",
+    "label": "Qwen Cloud",
+    "protocol": "openai",
+    "baseUrl": "https://maas.qwencloudapi.com/compatible-mode/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://home.qwencloud.com/api-keys?utm_content=g_20000003254",
+    "docs": "https://docs.qwencloud.com/developer-guides/getting-started/introduction"
+  },
+  {
+    "id": "stepfun",
+    "label": "StepFun",
+    "protocol": "openai",
+    "baseUrl": "https://api.stepfun.com/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://platform.stepfun.com/interface-key",
+    "docs": "https://platform.stepfun.com/docs/overview/concept"
+  },
+  {
+    "id": "doubao",
+    "label": "Doubao",
+    "protocol": "openai",
+    "baseUrl": "https://ark.cn-beijing.volces.com/api/v3",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://www.volcengine.com/experience/ark",
+    "docs": "https://console.volcengine.com/ark/region:cn-beijing/docs/82379/1099455?lang=zh"
+  },
+  {
+    "id": "minimax",
+    "label": "MiniMax",
+    "protocol": "openai",
+    "baseUrl": "https://api.minimaxi.com/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://platform.minimaxi.com/user-center/basic-information/interface-key",
+    "docs": "https://platform.minimaxi.com/docs/api-reference/text-openai-api"
+  },
+  {
+    "id": "groq",
+    "label": "Groq",
+    "protocol": "openai",
+    "baseUrl": "https://api.groq.com/openai/v1",
+    "kinds": [
+      "text",
+      "transcription"
+    ],
+    "category": "language",
+    "website": "https://console.groq.com/keys",
+    "docs": "https://console.groq.com/docs/quickstart"
+  },
+  {
+    "id": "together",
+    "label": "Together",
+    "protocol": "openai",
+    "baseUrl": "https://api.together.ai/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://api.together.ai/settings/projects/~current/api-keys",
+    "docs": "https://docs.together.ai/intro"
+  },
+  {
+    "id": "fireworks",
+    "label": "Fireworks",
+    "protocol": "openai",
+    "baseUrl": "https://api.fireworks.ai/inference/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://fireworks.ai/account/api-keys",
+    "docs": "https://docs.fireworks.ai/getting-started/introduction"
+  },
+  {
+    "id": "nvidia",
+    "label": "NVIDIA",
+    "protocol": "openai",
+    "baseUrl": "https://integrate.api.nvidia.com/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://build.nvidia.com/meta/llama-3_1-405b-instruct",
+    "docs": "https://docs.api.nvidia.com/nim/reference/llm-apis"
+  },
+  {
+    "id": "grok",
+    "label": "Grok",
+    "protocol": "openai",
+    "baseUrl": "https://api.x.ai/v1",
+    "kinds": [
+      "text",
+      "image"
+    ],
+    "category": "multimodal",
+    "website": "https://x.ai/",
+    "docs": "https://docs.x.ai/"
+  },
+  {
+    "id": "mistral",
+    "label": "Mistral",
+    "protocol": "openai",
+    "baseUrl": "https://api.mistral.ai/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://console.mistral.ai/api-keys/",
+    "docs": "https://docs.mistral.ai"
+  },
+  {
+    "id": "jina",
+    "label": "Jina",
+    "protocol": "openai",
+    "baseUrl": "https://api.jina.ai/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://jina.ai/",
+    "docs": "https://api.jina.ai/scalar"
+  },
+  {
+    "id": "perplexity",
+    "label": "Perplexity",
+    "protocol": "openai",
+    "baseUrl": "https://api.perplexity.ai",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://www.perplexity.ai/settings/api",
+    "docs": "https://docs.perplexity.ai/home"
+  },
+  {
+    "id": "modelscope",
+    "label": "ModelScope",
+    "protocol": "openai",
+    "baseUrl": "https://api-inference.modelscope.cn/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://modelscope.cn/my/myaccesstoken",
+    "docs": "https://modelscope.cn/docs/model-service/API-Inference/intro"
+  },
+  {
+    "id": "xirang",
+    "label": "Xirang",
+    "protocol": "openai",
+    "baseUrl": "https://wishub-x1.ctyun.cn/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://huiju.ctyun.cn/service/serviceGroup",
+    "docs": "https://www.ctyun.cn/products/ctxirang"
+  },
+  {
+    "id": "tokenhub",
+    "label": "TokenHub",
+    "protocol": "openai",
+    "baseUrl": "https://tokenhub.tencentmaas.com/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://console.cloud.tencent.com/tokenhub/apikey",
+    "docs": "https://cloud.tencent.com/document/product/1823"
+  },
+  {
+    "id": "baidu-cloud",
+    "label": "Baidu Cloud",
+    "protocol": "openai",
+    "baseUrl": "https://qianfan.baidubce.com/v2",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://console.bce.baidu.com/iam/#/iam/apikey/list",
+    "docs": "https://cloud.baidu.com/doc/index.html"
+  },
+  {
+    "id": "gpustack",
+    "label": "GPUStack",
+    "protocol": "openai",
+    "baseUrl": "",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://gpustack.ai/",
+    "docs": "https://docs.gpustack.ai/latest/"
+  },
+  {
+    "id": "voyageai",
+    "label": "VoyageAI",
+    "protocol": "openai",
+    "baseUrl": "https://api.voyageai.com/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://dashboard.voyageai.com/organization/api-keys",
+    "docs": "https://docs.voyageai.com/docs"
+  },
+  {
+    "id": "aws-bedrock",
+    "label": "AWS Bedrock",
+    "protocol": "anthropic",
+    "baseUrl": "",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://docs.aws.amazon.com/bedrock/latest/userguide/security-iam.html",
+    "docs": "https://docs.aws.amazon.com/bedrock/",
+    "setupRequired": true
+  },
+  {
+    "id": "poe",
+    "label": "Poe",
+    "protocol": "openai",
+    "baseUrl": "https://api.poe.com/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://poe.com/api/keys",
+    "docs": "https://creator.poe.com/docs"
+  },
+  {
+    "id": "longcat",
+    "label": "LongCat",
+    "protocol": "openai",
+    "baseUrl": "https://api.longcat.chat/openai",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://longcat.chat/platform/api_keys",
+    "docs": "https://longcat.chat/platform/docs/zh/"
+  },
+  {
+    "id": "huggingface",
+    "label": "Hugging Face",
+    "protocol": "openai",
+    "baseUrl": "https://router.huggingface.co/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://huggingface.co/settings/tokens",
+    "docs": "https://huggingface.co/docs"
+  },
+  {
+    "id": "gateway",
+    "label": "Vercel AI Gateway",
+    "protocol": "openai",
+    "baseUrl": "https://ai-gateway.vercel.sh/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://vercel.com/",
+    "docs": "https://vercel.com/docs/ai-gateway"
+  },
+  {
+    "id": "cerebras",
+    "label": "Cerebras AI",
+    "protocol": "openai",
+    "baseUrl": "https://api.cerebras.ai/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://cloud.cerebras.ai",
+    "docs": "https://inference-docs.cerebras.ai/introduction"
+  },
+  {
+    "id": "comfyui",
+    "label": "ComfyUI",
+    "protocol": "openai",
+    "baseUrl": "http://localhost:8188",
+    "kinds": [
+      "text",
+      "image"
+    ],
+    "category": "local",
+    "website": "https://www.comfy.org",
+    "docs": "https://docs.comfy.org",
+    "setupRequired": true
+  },
+  {
+    "id": "mimo",
+    "label": "Xiaomi MiMo",
+    "protocol": "openai",
+    "baseUrl": "https://api.xiaomimimo.com/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://platform.xiaomimimo.com/",
+    "docs": "https://mimo.mi.com/docs/zh-CN"
+  },
+  {
+    "id": "zai",
+    "label": "Z.AI",
+    "protocol": "openai",
+    "baseUrl": "https://api.z.ai/api/paas/v4",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://z.ai/manage-apikey/apikey-list",
+    "docs": "https://docs.z.ai/"
+  },
+  {
+    "id": "minimax-global",
+    "label": "MiniMax Global",
+    "protocol": "openai",
+    "baseUrl": "https://api.minimax.io/v1",
+    "kinds": [
+      "text"
+    ],
+    "category": "language",
+    "website": "https://platform.minimax.io/user-center/basic-information/interface-key",
+    "docs": "https://platform.minimax.io/docs/api-reference/text-openai-api"
+  }
+]

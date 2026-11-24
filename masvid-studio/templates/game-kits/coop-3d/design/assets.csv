@@ -1,0 +1,7 @@
+asset,role,source,license,cost,status
+Mage.glb,animated player,characters/Mage.glb,CC0 - Kay Lousberg KayKit Adventurers 1.0,0,bundled
+Knight.glb,optional alternate player,characters/Knight.glb,CC0 - Kay Lousberg KayKit Adventurers 1.0,0,bundled
+three modules,rendering and animation,vendor/,MIT - Three.js Authors,0,bundled with license
+arena and enemies,game world,client.js procedural geometry,project-authored - follow project license,0,implemented
+feedback sounds,hit hurt wave win lose,client.js WebAudio oscillators,project-authored - follow project license,0,implemented; audible acceptance pending
+cover.png,gameplay cover,openmotion_game_capture_cover,project gameplay capture,0 API generation cost,pending server capture

@@ -1,0 +1,49 @@
+name: Publish hosted template catalog
+run-name: Hosted template catalog · ${{ github.sha }}
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'library/templates/**'
+      - 'library/skills/**'
+      - 'studio/src/motion/skillCatalog.ts'
+      - 'shared/library-skill-catalog.ts'
+      - '.github/scripts/publish-template-catalog.mjs'
+      - '.github/workflows/publish-template-catalog.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hosted-template-catalog-main
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.repository == 'nexu-io/openmotion' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout trusted main source
+        uses: actions/checkout@v6.0.2
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '26.11.1'
+      - name: Fetch catalog LFS sources only
+        run: git lfs pull --include="library/templates/catalog/**,library/skills/**" --exclude=""
+      - name: Publish the content-addressed main catalog
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.CLOUDFLARE_R2_RELEASES_AK }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.CLOUDFLARE_R2_RELEASES_SK }}
+          AWS_EC2_METADATA_DISABLED: 'true'
+          AWS_PAGER: ''
+          MOTION_R2_ENDPOINT: ${{ vars.CLOUDFLARE_R2_RELEASES_URL }}
+          MOTION_R2_BUCKET: ${{ vars.CLOUDFLARE_R2_RELEASES_BUCKET }}
+          MOTION_INSTALL_PUBLIC_ORIGIN: ${{ vars.CLOUDFLARE_R2_RELEASES_PUBLIC_ORIGIN }}
+        run: node .github/scripts/publish-template-catalog.mjs main

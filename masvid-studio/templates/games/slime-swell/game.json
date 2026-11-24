@@ -1,0 +1,27 @@
+{
+  "id": "slime-swell",
+  "title": "Slime Swell",
+  "description": "Eat smaller city objects and outrank three rival slimes in sixty seconds.",
+  "genre": "casual",
+  "style": "minimal",
+  "setting": "modern",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "Drag to eat smaller objects and grow. Rival contact does not reduce your volume.",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-21T00:00:00.000Z",
+  "updatedAt": "2026-11-21T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "史莱姆膨胀城",
+      "description": "拖动史莱姆吞掉较小物体，60 秒内与三个对手争夺体积排名。",
+      "controls": "拖动吞吃小物体成长；接触对手不会损失体积。"
+    }
+  },
+  "orientation": "portrait"
+}

@@ -1,0 +1,654 @@
+{
+  "Adobe": {
+    "videoInsight": "让同一个标志穿行于设计、摄影与立体材质，用创作媒介的变化体现 Creative Cloud 的丰富工具。",
+    "evidenceTemplateIds": [
+      "motion-e62d4e85-ccf4-4e3e-8388-ae70143cb3dc",
+      "motion-d1af6c0e-6066-4444-9b25-8773ad6cf2f8"
+    ]
+  },
+  "Airtable": {
+    "videoInsight": "把需求与生成的业务应用并排展示，用一次操作后的明确反馈讲清 AI 如何落到工作里。",
+    "evidenceTemplateIds": [
+      "motion-a8969c13-c7db-4e76-aa48-cfcb0674cf99",
+      "motion-3b1813cf-f2fe-4d8a-add4-8f3a49d06982"
+    ]
+  },
+  "Alibaba": {
+    "videoInsight": "让通义模型的三瓣标志在不同材质间保持辨识，再把视觉焦点交给模型名称与关键参数。",
+    "evidenceTemplateIds": [
+      "motion-38b9c70f-cf58-4555-a50e-30c17479ba1e"
+    ]
+  },
+  "Anduril": {
+    "videoInsight": "用工程标线、定位点与硬切节奏包装无人机赛事，让自主技术的精密感成为活动的视觉语言。",
+    "evidenceTemplateIds": [
+      "motion-7524e275-4fe8-44a9-b210-7b353b8e80ab"
+    ]
+  },
+  "Anthropic": {
+    "videoInsight": "沿扫描、发现到修复逐步推进，让 Claude 的复杂能力通过可追溯的任务结果被看懂。",
+    "evidenceTemplateIds": [
+      "motion-4ac56dc1-dd84-452a-9d74-7388e49b7dbd",
+      "motion-feeeda96-c525-4c1c-889b-98774759ecfc"
+    ]
+  },
+  "Apple": {
+    "videoInsight": "保持设备与界面稳定，把变化集中在选择、输入和粘贴，让跨端能力融进自然的操作。",
+    "evidenceTemplateIds": [
+      "motion-2cd7fd99-8dff-4c2c-8577-719c51ae9e5c",
+      "motion-dc52ebb8-adb7-442a-b57b-8e647e68863f"
+    ]
+  },
+  "Beautiful.ai": {
+    "videoInsight": "把主题、大纲到成套幻灯片拆成两次清楚的生成，让 AI 演示工具的结构能力可见。",
+    "evidenceTemplateIds": [
+      "motion-9cb4728d-4bb7-4b85-bcf9-9abd33006649"
+    ]
+  },
+  "Bluevine": {
+    "videoInsight": "从字标构造到应用图标复用同一组圆弧，让金融品牌的识别在几何变化中保持一致。",
+    "evidenceTemplateIds": [
+      "motion-45cca1f4-13dd-44f1-a782-552f2d4469fd"
+    ]
+  },
+  "Bolt": {
+    "videoInsight": "先给具体需求，再进入可浏览的网站与改造结果，让应用生成能力由完整案例证明。",
+    "evidenceTemplateIds": [
+      "motion-8605acf7-c0e9-465b-858a-114c49764c3d",
+      "motion-7d2376c5-2148-44ae-9720-330bc5f64ca9"
+    ]
+  },
+  "Butterfly": {
+    "videoInsight": "用花园、蜂群与微型进程比喻计算系统，让抽象架构有一个能跟随的视觉世界。",
+    "evidenceTemplateIds": [
+      "motion-a653c6bb-3e85-420c-8b4a-3353b8fd8fbf"
+    ]
+  },
+  "Canva": {
+    "videoInsight": "在同一编辑器里切换网站、白板与演示稿，用真实修改动作证明多种创作可以共存。",
+    "evidenceTemplateIds": [
+      "motion-b4a2bd67-b577-4e6a-8475-966edd41d474"
+    ]
+  },
+  "Cash App": {
+    "videoInsight": "用鲜明绿与稳定网格串联账户、储蓄和费用，让金融利益点逐项被读懂。",
+    "evidenceTemplateIds": [
+      "motion-d4e8028e-fa9e-439f-8072-690f9b36845b",
+      "motion-55c5fe84-fe5f-4be0-aadf-42fbb1c9b9db"
+    ]
+  },
+  "Cloudera": {
+    "videoInsight": "把企业数据的困惑编成有障碍、有汇流的旅程，用人物与道路解释共同解决问题的方向。",
+    "evidenceTemplateIds": [
+      "motion-c6e0520b-c6a6-47c6-9905-23ba6d04cc86"
+    ]
+  },
+  "CodeRabbit": {
+    "videoInsight": "先呈现排队催审的压力，再用排序看板与风险焦点讲清代码审查如何找到最该处理的一项。",
+    "evidenceTemplateIds": [
+      "motion-4a137574-5ea8-4e6f-82bd-11ef77c03c55"
+    ]
+  },
+  "Cognition": {
+    "videoInsight": "每段聚焦一个操作与结果，把 Devin 的会话、终端、测试到 PR 串成完整开发过程。",
+    "evidenceTemplateIds": [
+      "motion-342251b9-26fe-45a6-a4fa-697f234c9755"
+    ]
+  },
+  "Cohere": {
+    "videoInsight": "用克制扫光揭开 North 名称，再接两句能力承诺，让企业 AI 的发布信息有清楚的阅读重心。",
+    "evidenceTemplateIds": [
+      "motion-491b2d70-61d6-41e5-84ba-ee611ea9c409"
+    ]
+  },
+  "Comfy": {
+    "videoInsight": "把开放创作的态度做成连通字块与虹彩形体，用同一轮廓完成口号到品牌名的转换。",
+    "evidenceTemplateIds": [
+      "motion-5ec91ccc-4243-445b-8bf3-d7d85e65a309",
+      "motion-250d244e-c34b-42b9-9da9-22d9983c48f5"
+    ]
+  },
+  "Cursor": {
+    "videoInsight": "让代理指令与设备响应同屏出现，用可追踪的操作证明 AI 编程可以跨越代码与应用。",
+    "evidenceTemplateIds": [
+      "motion-e2b86338-8508-40c5-ba89-084eca9e0f25",
+      "motion-927b643f-10c5-4c96-b2fe-f06bed85c9b8"
+    ]
+  },
+  "Cyera": {
+    "videoInsight": "从标志与字体的构造走到网页应用，让数据安全品牌的抽象图形与实际触点相互呼应。",
+    "evidenceTemplateIds": [
+      "motion-f9bf74bb-fb65-4430-97b9-71ae5d7b3397"
+    ]
+  },
+  "Databricks": {
+    "videoInsight": "从 Lakehouse 的真实模型列表选中新品，再同步到发布标题，把模型公告接回使用入口。",
+    "evidenceTemplateIds": [
+      "motion-b929be12-85e8-4c21-aae1-740250454e39"
+    ]
+  },
+  "Deezer": {
+    "videoInsight": "让独立声波汇成心形，节奏持续变化而标题稳定，用音乐本身塑造品牌识别。",
+    "evidenceTemplateIds": [
+      "motion-24e46588-504b-4efd-ac28-6ffc407fc33a",
+      "motion-cbe77bbc-94d8-4035-9507-103deaa025bc"
+    ]
+  },
+  "Descript": {
+    "videoInsight": "把选预设、交视频、给品牌指南到不同画幅的结果串起来，让 AI 剪辑的交接过程一目了然。",
+    "evidenceTemplateIds": [
+      "motion-74408712-50e0-43ac-a167-1a11297cdae0"
+    ]
+  },
+  "Dub": {
+    "videoInsight": "先看一个伙伴的收益，再展开招募漏斗与明细，用个人结果解释推荐平台的数据价值。",
+    "evidenceTemplateIds": [
+      "motion-56a6a8d9-48b7-42b7-8293-5533a0ee633f"
+    ]
+  },
+  "ElevenLabs": {
+    "videoInsight": "从漏接电话的具体困境进入问答，再用可见的文本变化说明语音能力如何完成任务。",
+    "evidenceTemplateIds": [
+      "motion-6100365a-945f-43b4-b476-7e8d30e2db32",
+      "motion-d86700fa-19e5-4f8c-900a-a03429cc89b4"
+    ]
+  },
+  "EliseAI": {
+    "videoInsight": "用提出时间、提供选项到确认预约的一段对话，让 AI 助理的价值落在一次完成的服务里。",
+    "evidenceTemplateIds": [
+      "motion-887d2d40-3cf1-4a2c-8e38-c5162a0d1598"
+    ]
+  },
+  "Emergent": {
+    "videoInsight": "让生成后的手机应用真正动起来，用连续操作与不同业务界面证明构建的范围。",
+    "evidenceTemplateIds": [
+      "motion-652fa397-9dcc-441d-80cb-3a806d132e96",
+      "motion-6a90052f-c0f7-4a05-9a21-0a84a341af46"
+    ]
+  },
+  "Exa": {
+    "videoInsight": "先提需要外部资料的问题，再展示搜索调用与结构化答案，让网页搜索能力成为任务的一环。",
+    "evidenceTemplateIds": [
+      "motion-4bd122ac-c538-4fc6-a9b4-bfc1357a3f10"
+    ]
+  },
+  "Factory": {
+    "videoInsight": "把软件生产工序与后续工作台逐项对应，让发布片的主张在真实开发指标里找到依据。",
+    "evidenceTemplateIds": [
+      "motion-478a2c75-2a13-435a-9b44-d730aca6c67c"
+    ]
+  },
+  "Faculty": {
+    "videoInsight": "用缓慢流动的色域承托简短主张，仅在换句时改变字形，让 AI 品牌叙事保持阅读节奏。",
+    "evidenceTemplateIds": [
+      "motion-9e5e7ea7-05f9-4ad0-9007-692af38ccc55"
+    ]
+  },
+  "Figma": {
+    "videoInsight": "先用作品吸引，再展示画布操作如何改变结果，让设计工具的卖点由可见的前后变化证明。",
+    "evidenceTemplateIds": [
+      "motion-e6ac921a-f56f-4170-a2be-938cec5d028b",
+      "motion-dfb1a35a-a70e-489f-8e02-b74068fc0b8c"
+    ]
+  },
+  "Firecrawl": {
+    "videoInsight": "把数据规模接到查询与结构化结果，用来源、字段和任务的对应说明网页数据能怎么用。",
+    "evidenceTemplateIds": [
+      "motion-a4339fcf-8c17-4b3b-9d19-4735444bc160",
+      "motion-133fd03a-4447-4e39-9b68-a74439ab34c0"
+    ]
+  },
+  "Framer": {
+    "videoInsight": "在真实网页编辑与抽象玻璃符号间切换，让建站能力与品牌质感共享同一套蓝色线索。",
+    "evidenceTemplateIds": [
+      "motion-5805e419-651f-45b7-90be-302c93f79b21",
+      "motion-2208d0c1-6565-4b69-89cb-581e7206ac12"
+    ]
+  },
+  "Genspark": {
+    "videoInsight": "一段短标题接一个真实场景，把工作流、会议与语音分段讲清，让多能力工作台易于跟随。",
+    "evidenceTemplateIds": [
+      "motion-b3c16f52-d4d1-4686-b95b-41af9f5889ed"
+    ]
+  },
+  "GitHub": {
+    "videoInsight": "让大会标志从暗处展开为多彩几何世界，再收回中心，用一次收放建立开发者活动的视觉记忆。",
+    "evidenceTemplateIds": [
+      "motion-343ccb64-5c8e-4101-b65e-463aec3a7c35",
+      "motion-9e426bb2-2a58-41bb-9619-5f700d5228ed"
+    ]
+  },
+  "Glean": {
+    "videoInsight": "从一个工作请求扩展到人员、项目和数据关系，再回到结果，让企业上下文成为看得见的能力。",
+    "evidenceTemplateIds": [
+      "motion-f6f244d1-c549-4081-8a5d-f0e1e3660044",
+      "motion-e8b823ee-4201-4eda-a07b-e615407eb80e"
+    ]
+  },
+  "Goodfire": {
+    "videoInsight": "把模型检查展开为对象、计划、进度与发现，让 AI 研究工具通过完整过程建立理解。",
+    "evidenceTemplateIds": [
+      "motion-c3a91b2d-1618-4d3c-9446-4f316797dcd9"
+    ]
+  },
+  "Goodnotes": {
+    "videoInsight": "固定品牌名，让图标、版本与后缀接力变化，用简短的视觉演变回顾笔记产品的成长。",
+    "evidenceTemplateIds": [
+      "motion-3ce7f525-08cd-4ccb-b3f6-92dc168c28ce"
+    ]
+  },
+  "Google": {
+    "videoInsight": "用点、胶囊与搜索框贯穿不同能力，每项更新只突出一个主体和反馈，让丰富功能仍好理解。",
+    "evidenceTemplateIds": [
+      "motion-1da97ff4-695c-404a-8c47-c0a0ab2921aa",
+      "motion-60b66835-4999-48ad-b942-4872ea012b85"
+    ]
+  },
+  "Granola": {
+    "videoInsight": "让录音胶囊与同一份笔记贯穿输入和跨设备变化，用稳定的内容锚点解释记录体验。",
+    "evidenceTemplateIds": [
+      "motion-a28f0e5d-aa8b-45a7-87f9-9afcac65a09b",
+      "motion-12cf27b7-0c82-4ccc-8a9a-7eaed902ca19"
+    ]
+  },
+  "Harvey": {
+    "videoInsight": "用纸面几何与文档卡的聚散连接任务和资源，让法律工作中的复杂上下文获得清楚的空间层次。",
+    "evidenceTemplateIds": [
+      "motion-2d4e10c0-c178-4f7c-a365-e51b5e30b455",
+      "motion-4cab572a-4d2a-4058-8a06-84cf3fda0df0"
+    ]
+  },
+  "HeyGen": {
+    "videoInsight": "用短促状态词切入清晰标志，再把时间留给品牌与字幕，让视频工具的发布重点容易被记住。",
+    "evidenceTemplateIds": [
+      "motion-fac0e564-4bc2-4c97-be24-3847cbdcdbb5"
+    ]
+  },
+  "Higgsfield": {
+    "videoInsight": "让醒目数字紧跟口径、余额变化与使用条件，把 AI 视频平台的活动利益讲得具体。",
+    "evidenceTemplateIds": [
+      "motion-a6f31f7b-f6af-44be-8bf4-881e70057f63",
+      "motion-730d0690-8a79-483e-aa72-28452f10dcca"
+    ]
+  },
+  "Humans&": {
+    "videoInsight": "从一张个体海报扩展为差异化样本，再让粒子跨界互动，用同一象征物解释人的模拟模型。",
+    "evidenceTemplateIds": [
+      "motion-13ba3942-fd15-40ee-9638-03d1376514db"
+    ]
+  },
+  "IBM": {
+    "videoInsight": "用同一细丝材质串起 ai、data 与 governance，让平台的不同能力在统一视觉中分组展开。",
+    "evidenceTemplateIds": [
+      "motion-d151cc2c-40bc-4765-a767-3957bdee6ec2",
+      "motion-5071dcd7-d5f0-456a-ac4c-37b2b442eb1c"
+    ]
+  },
+  "Identity Digital": {
+    "videoInsight": "把域名中的句点放大为行业场景，让地址后缀从技术字符变成容易理解的业务身份。",
+    "evidenceTemplateIds": [
+      "motion-b8332d8d-385e-4199-b6f3-e0cc340bc41f"
+    ]
+  },
+  "Ideogram": {
+    "videoInsight": "沿同一图形细节持续放大，用始终平滑的边缘直接证明矢量生成的价值。",
+    "evidenceTemplateIds": [
+      "motion-f1c07057-890b-4fdf-af1c-52d7cb621b65"
+    ]
+  },
+  "Jitter": {
+    "videoInsight": "把操作要求与画布变化放在一起，再扩展到尺寸与语言，让动画工具的控制力由结果说话。",
+    "evidenceTemplateIds": [
+      "motion-f53dad52-9f20-42c5-b5c3-00743ea475b3"
+    ]
+  },
+  "Kimi": {
+    "videoInsight": "让墨字、粒子与知识网络逐层展开，用数量和材质的递进给模型预告建立期待。",
+    "evidenceTemplateIds": [
+      "motion-0c10d4de-a147-4a1b-8938-4c2d4a94a207",
+      "motion-a3fec53a-a603-4486-9ec0-f7a6f926ab8d"
+    ]
+  },
+  "Krea": {
+    "videoInsight": "从链接整理出品牌素材，再展开整套广告，让生成能力表现为有共同来源的一组成果。",
+    "evidenceTemplateIds": [
+      "motion-9fc27ae8-90f1-4745-af4f-00f390c206a2",
+      "motion-6b037a5c-ee23-47ce-b312-ba285d5e7ef4"
+    ]
+  },
+  "Lark": {
+    "videoInsight": "让同一份文档与协作者穿行于桌面、平板和手机，用内容连续性讲清跨端协作。",
+    "evidenceTemplateIds": [
+      "motion-1e48dea5-903d-48f6-b10e-99a70f1c183d"
+    ]
+  },
+  "Linear": {
+    "videoInsight": "在项目、依据与代理对话间移动焦点，让 AI 能力始终围绕同一项产品工作推进。",
+    "evidenceTemplateIds": [
+      "motion-3b955ba8-2f6f-47ef-910c-79115843bd6b",
+      "motion-b3e82855-5bf8-48c5-8153-fd43d09b30ed"
+    ]
+  },
+  "Lovable": {
+    "videoInsight": "先用成品建立审美期待，再展示具体选择与修改，让自然语言建站的过程配得上结果。",
+    "evidenceTemplateIds": [
+      "motion-46f34492-8ba1-4ba5-ac6e-4b4a13c80373",
+      "motion-d96e83db-9460-4d75-8e13-0a899f647087"
+    ]
+  },
+  "Manus": {
+    "videoInsight": "把一条请求展开为有结构的页面或可复用技能，让代理的产出既能看见，也能继续使用。",
+    "evidenceTemplateIds": [
+      "motion-4f6f4723-0010-4efd-b13d-d2dabf899e88",
+      "motion-6169c2d0-a372-445e-96a3-e5eb43b00656"
+    ]
+  },
+  "Mercor": {
+    "videoInsight": "让同一位候选人贯穿筛选、面试、聘用到付款，用连续的人物主线讲清招聘流程。",
+    "evidenceTemplateIds": [
+      "motion-788325cf-3104-4912-904d-ada6ea4615b9"
+    ]
+  },
+  "Meta": {
+    "videoInsight": "从生活消息进入具体任务，把执行状态与需要用户确认的决定分开，让个人助理更易理解。",
+    "evidenceTemplateIds": [
+      "motion-b6889c36-8aff-446f-8f2d-f958a8951a4c"
+    ]
+  },
+  "Mintlify": {
+    "videoInsight": "从页面上的轻量入口展开提问、回答与资料来源，让文档助手自然融入原有阅读流程。",
+    "evidenceTemplateIds": [
+      "motion-be0354b4-c4d9-4c81-bb67-ac16dc065184"
+    ]
+  },
+  "Miro": {
+    "videoInsight": "用同一个项目贯穿目标、研究、设计与开发，让白板的多种视图成为持续推进的协作故事。",
+    "evidenceTemplateIds": [
+      "motion-e3fe6179-acf0-4e3f-a8fe-27efd50a6d1d",
+      "motion-4aaa2afc-a75f-4ce4-a3c5-eb620ed706e5"
+    ]
+  },
+  "Mistral": {
+    "videoInsight": "先给具体问题，再展示相符的答案或运行结果，让助手的能力切换由任务带动。",
+    "evidenceTemplateIds": [
+      "motion-7b4b6492-416e-4c84-8be0-5dcade56adb6",
+      "motion-82aab926-a9a1-4f08-835f-4e9089877ef9"
+    ]
+  },
+  "Modyfi": {
+    "videoInsight": "让文字和效果按钮像可操作模块一样拆分归位，用尺度与对齐展示创作工具的动感。",
+    "evidenceTemplateIds": [
+      "motion-9b6da843-20d6-40cc-994e-8e1d38561b5c",
+      "motion-d887324f-64c4-4394-a9f7-1504dbfed419"
+    ]
+  },
+  "Nothing": {
+    "videoInsight": "固定玻璃，让手与物体从后方经过，用真实的折射变化把材料质感变成产品主角。",
+    "evidenceTemplateIds": [
+      "motion-1f1a40cc-f473-46f7-badb-953b2fb140c2"
+    ]
+  },
+  "Notion": {
+    "videoInsight": "先让杂务堆起来，再看 Agent 将任务整理完成，用拥挤到有序的反差讲清工作空间的效率。",
+    "evidenceTemplateIds": [
+      "motion-c74e1725-6fd2-4885-be7f-f1f705e9af66",
+      "motion-a325ecf0-23a5-4f4b-a888-c5a8f4517126"
+    ]
+  },
+  "Nous Research": {
+    "videoInsight": "用终端、云与设备之间的空间关系表达接入，让模型生态的技术连接有清晰的视觉路径。",
+    "evidenceTemplateIds": [
+      "motion-0053d84c-c358-4a52-9baa-8d3381e2ca1e",
+      "motion-d7eb1cbe-ded7-416a-8772-f4830f41e5a7"
+    ]
+  },
+  "OKX": {
+    "videoInsight": "从一个人扩展到一组代理，再进入服务与履约，用连续的行动主线解释 AI 的工作场景。",
+    "evidenceTemplateIds": [
+      "motion-13466eb7-e76a-4f7c-8c4a-cdaa1bac24d8"
+    ]
+  },
+  "OpenAI": {
+    "videoInsight": "让星场、光与尺度变化承接模型名称，把复杂能力发布收束为一个鲜明的视觉主张。",
+    "evidenceTemplateIds": [
+      "motion-a1c471ae-a235-40ba-b24e-9a502a00cb33",
+      "motion-3237a979-1718-4b54-9581-4cd639377cd8"
+    ]
+  },
+  "OpenMotion": {
+    "videoInsight": "用信号归位带出标题与行动入口，六秒内讲清一个产品想法，并保留可替换的创作输入。",
+    "evidenceTemplateIds": [
+      "motion-orbit-launch"
+    ]
+  },
+  "Palantir": {
+    "videoInsight": "把极近的标志与短句快速拉回黑场，用尺度反差和大片留白强化生产主题的号召。",
+    "evidenceTemplateIds": [
+      "motion-a36b6646-29bc-4602-8e0b-2139b21f3bf5"
+    ]
+  },
+  "Parallel Web Systems": {
+    "videoInsight": "把业务问题拆成事实，再汇成可行动表格，用节点与焦点色解释 AI 访问网页后的价值。",
+    "evidenceTemplateIds": [
+      "motion-3ac3bd45-8732-4ce3-8331-ca6e96e2aed2",
+      "motion-c8db7c7c-819c-486f-b807-a56864837620"
+    ]
+  },
+  "Perplexity": {
+    "videoInsight": "从统一提问入口进入可继续操作的图表，用聚焦与具体反馈证明答案可以被探索。",
+    "evidenceTemplateIds": [
+      "motion-fbb00c6a-6153-4a88-b8fe-fc15ad81d15b",
+      "motion-2b0dd9d6-eea1-46a7-9c02-bcbef4782e18"
+    ]
+  },
+  "Polymarket": {
+    "videoInsight": "先建立赛事或地图的整体概念，再进入规则、概率和局部变化，让密集信息有参与顺序。",
+    "evidenceTemplateIds": [
+      "motion-0220cd62-09db-43d7-87f7-494ec9ee0441",
+      "motion-797418c0-9781-4a86-a8fd-b3cbcb86037e"
+    ]
+  },
+  "Prime Intellect": {
+    "videoInsight": "先给代码与运行状态，再看任务结果与汇总数字，让长任务代理的机制与成果对应。",
+    "evidenceTemplateIds": [
+      "motion-c1930878-a770-486d-b697-a1d0f10089ce"
+    ]
+  },
+  "QuiverAI": {
+    "videoInsight": "从可编辑路径到作品类别，再到真实应用载体，用三个尺度说明矢量生成的用途。",
+    "evidenceTemplateIds": [
+      "motion-71722e89-6acc-44eb-95fd-2e7cb5f2df08"
+    ]
+  },
+  "Ramp": {
+    "videoInsight": "用同一笔消费串起卡片、账单与报表，让财务平台的多种视图读起来仍是一条业务线。",
+    "evidenceTemplateIds": [
+      "motion-81a64f50-815d-4e91-846d-9f018e2326be"
+    ]
+  },
+  "Raycast": {
+    "videoInsight": "让图片跟随光标进入笔记、窗口随内容增高，用一次自然拖放讲清一个小更新。",
+    "evidenceTemplateIds": [
+      "motion-5a047c70-9589-404f-a761-03273bc226ad"
+    ]
+  },
+  "Replit": {
+    "videoInsight": "让网站、演示稿与发布图共享内容和视觉，用成果的一致性证明上下文可以延续。",
+    "evidenceTemplateIds": [
+      "motion-315c1cab-71b0-4bec-a20c-b57f2418e88c",
+      "motion-1994f1f9-b8ea-4083-8846-1e96e3f05fff"
+    ]
+  },
+  "Resend": {
+    "videoInsight": "先把可读的收件箱推到前景，再用大标题完成揭示，让开发者邮件产品拥有明确的发布时刻。",
+    "evidenceTemplateIds": [
+      "motion-58419346-fa3c-4f7f-8179-9456c2962ef9"
+    ]
+  },
+  "Revolut": {
+    "videoInsight": "让双币在同一托盘交换位置，说明文字始终稳定，用克制运动突出金融产品的核心对象。",
+    "evidenceTemplateIds": [
+      "motion-af77653d-96a4-4987-8cca-222a0bdd80d8"
+    ]
+  },
+  "Rive": {
+    "videoInsight": "让游戏、控件与音序器真正发生状态变化，用每次可见的响应证明交互动画的能力。",
+    "evidenceTemplateIds": [
+      "motion-594cffdc-980f-4c79-a85b-3d01b60e871e"
+    ]
+  },
+  "Runway": {
+    "videoInsight": "用同一产品贯穿页面、场景和多尺寸素材，让 AI 视频与图像生成形成连贯的品牌成果。",
+    "evidenceTemplateIds": [
+      "motion-7f4c8c30-d91d-4e75-b930-057ff030376b"
+    ]
+  },
+  "Slack": {
+    "videoInsight": "把旧图形拆成最小单元，再以同组颜色聚成新标志，让品牌更新保留熟悉的协作识别。",
+    "evidenceTemplateIds": [
+      "motion-d3b9d255-d01d-4f27-a62e-6b68189721a1"
+    ]
+  },
+  "Stripe": {
+    "videoInsight": "让同一笔费用与商户跨对话、账户和手机确认重复出现，把复杂支付过程串得清楚可信。",
+    "evidenceTemplateIds": [
+      "motion-80dceb1d-5219-4e1f-9394-6baacf5d0166",
+      "motion-c1bd6fc5-060a-4807-82e3-d3b059a82f53"
+    ]
+  },
+  "Suki": {
+    "videoInsight": "让两组细线从协作隐喻进入真实照护场景，用统一线索连接临床人员与 AI 工具。",
+    "evidenceTemplateIds": [
+      "motion-35e8438f-f8e5-4989-a508-fbef1676e739"
+    ]
+  },
+  "Suno": {
+    "videoInsight": "从录音按钮到波形增长，再展开多条音轨，用声音创作的真实顺序解释音乐工作台。",
+    "evidenceTemplateIds": [
+      "motion-734ef479-a7b7-458a-b488-ad0f6a0498b4",
+      "motion-23671bf9-0ae8-49d4-be77-62949eaef616"
+    ]
+  },
+  "Supabase": {
+    "videoInsight": "把查询、保存和连接器逐项演示，每句能力说明紧邻操作结果，让数据开发流程容易跟随。",
+    "evidenceTemplateIds": [
+      "motion-2ca7c87b-23e8-4517-b197-cb5178e8fa76",
+      "motion-713872a8-8a62-4e4f-abc1-867d74c642e3"
+    ]
+  },
+  "TIDAL": {
+    "videoInsight": "把短词按语义重音放大与接续，用文字节奏连接音乐、创作者与听众的品牌立场。",
+    "evidenceTemplateIds": [
+      "motion-cfd6f6b6-2f3f-4e53-957d-1e87cfebe777",
+      "motion-2fd3fc6b-eec2-4bfb-9a49-6eb04acc5fae"
+    ]
+  },
+  "Telegram": {
+    "videoInsight": "在固定手机中走完创建、测试与查看资料，用连续点击反馈说明 AI 机器人的使用方式。",
+    "evidenceTemplateIds": [
+      "motion-f8c4cf8e-4934-46ac-9185-e43b68be4f50"
+    ]
+  },
+  "The Browser Company": {
+    "videoInsight": "让品牌图形自然变成发送箭头与输入框，把浏览器的视觉介绍接到真实操作。",
+    "evidenceTemplateIds": [
+      "motion-0ad92fd0-b2fb-4885-957c-b71152df15fd",
+      "motion-018becab-0461-43d9-8e84-79833fd1f831"
+    ]
+  },
+  "Twilio": {
+    "videoInsight": "用品牌圆点、连线与红色物件串联生活场景，让客户互动平台的不同故事共享一条线索。",
+    "evidenceTemplateIds": [
+      "motion-9c62b31c-d5e8-4027-8057-e8f1c3949f6c"
+    ]
+  },
+  "Uber": {
+    "videoInsight": "借行李箱与钱包等熟悉物件解释出行和充值，让动作本身承担产品说明。",
+    "evidenceTemplateIds": [
+      "motion-d16d6118-7d1f-4450-91b0-c7d48b041162",
+      "motion-4fdcf514-f8fe-4bcc-a037-60482375769c"
+    ]
+  },
+  "Uniqode": {
+    "videoInsight": "让同一批点阵在文字、现实场景与标记间聚散，把二维码品牌的媒介特征做成视觉语言。",
+    "evidenceTemplateIds": [
+      "motion-fe6852d3-cd2e-43f1-924e-c130b1935937",
+      "motion-de5c331a-48e6-4bdb-98da-597d76fa3d77"
+    ]
+  },
+  "Vercel": {
+    "videoInsight": "先给一句能力说明，再接对应任务与命令，让开发工具的抽象概念快速落到具体用法。",
+    "evidenceTemplateIds": [
+      "motion-12b62792-b531-40ce-858b-599564a602ac",
+      "motion-31118b3d-7967-4181-b00d-58c291793142"
+    ]
+  },
+  "Wabi": {
+    "videoInsight": "让聊天信息逐渐长成可用小应用，再汇成个人首页，用界面生长解释消息如何变成行动。",
+    "evidenceTemplateIds": [
+      "motion-c6cf01ea-4262-4297-9f62-00f975cba4df"
+    ]
+  },
+  "Webflow": {
+    "videoInsight": "让球体穿行于网页、表单与流程平面之间，用可组合的空间结构表达无代码创作。",
+    "evidenceTemplateIds": [
+      "motion-b31d078a-4e5e-461e-8b43-3101ee0a2f93",
+      "motion-e3ad4095-8f2e-4c03-b834-d2525b73e257"
+    ]
+  },
+  "Whop": {
+    "videoInsight": "从一次余额转移展开账户、图表与入金菜单，让财务能力沿一条明确的操作路径被理解。",
+    "evidenceTemplateIds": [
+      "motion-82eeddc5-21ae-40f6-8a68-a7fd352ce92b"
+    ]
+  },
+  "Wise": {
+    "videoInsight": "从字体来源走到字形与货币符号应用，让跨币种产品的品牌识别通过排字保持一致。",
+    "evidenceTemplateIds": [
+      "motion-9b6b2260-e3cc-4db4-9e0d-cc9a35057ac5"
+    ]
+  },
+  "Wix（Base44）": {
+    "videoInsight": "让同一主题生成封面、内容与讲稿，固定缩略图导航，用逐页延续的视觉证明成套输出。",
+    "evidenceTemplateIds": [
+      "motion-cf8b2e64-684d-4839-a468-64519c92be20"
+    ]
+  },
+  "Wonderful": {
+    "videoInsight": "先把融资金额做成视觉事件，再补投资方与覆盖范围，让增长公告回到产品定位。",
+    "evidenceTemplateIds": [
+      "motion-7b279560-81df-4c31-988d-473d35536c28"
+    ]
+  },
+  "Xiaomi": {
+    "videoInsight": "从材料特写进入手机界面，再扩展到组件与多设备，用一致圆角和透明层连接系统体验。",
+    "evidenceTemplateIds": [
+      "motion-d8eea6d9-b25b-4727-823d-d102070ea694"
+    ]
+  },
+  "Z.ai": {
+    "videoInsight": "让草图、图片与录屏始终和生成结果并置，用不同输入逐项证明视觉编程能力。",
+    "evidenceTemplateIds": [
+      "motion-65aa721c-db2c-49e1-a84f-1917cd0d1c1e"
+    ]
+  },
+  "Zapier": {
+    "videoInsight": "先让桌面复制失控，再用一个开关收成完成的流程，用杂乱到有序的反差解释自动化。",
+    "evidenceTemplateIds": [
+      "motion-e0faf135-a425-4c7a-a795-2d5c59b90ab3"
+    ]
+  },
+  "Zaro": {
+    "videoInsight": "让看板、代理、工具与文件问答回到同一工作对象，再拉远呈现应用网络，层层证明构建能力。",
+    "evidenceTemplateIds": [
+      "motion-9478f886-91af-4107-91f1-fb00c57d78e3"
+    ]
+  },
+  "xAI / Grok": {
+    "videoInsight": "让同一角色贯穿堆叠、邀请与用户作品，用队伍的规模变化把 AI 活动讲成连续故事。",
+    "evidenceTemplateIds": [
+      "motion-dfbe2224-d097-4f35-ac18-edd61ad7a065",
+      "motion-96f14740-8874-4048-9ba8-5abb19c7c072"
+    ]
+  }
+}

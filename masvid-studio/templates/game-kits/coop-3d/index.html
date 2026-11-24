@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Crystal Guard · Co-op Arena</title><link rel="stylesheet" href="./style.css"></head>
+<body><canvas id="arena" aria-label="Cooperative crystal defense arena"></canvas>
+<section id="lobby"><h1>Crystal Guard</h1><p>Defend the crystal through five waves. 1–4 players in one local room.</p><p id="room-line">Room <code id="room-code"></code> <button id="invite">Copy invite link</button></p><p id="roster" aria-live="polite"></p><button id="start" disabled>Start arena</button></section>
+<aside id="hud"><p id="status" aria-live="polite">Loading character…</p><label>Health <progress id="hp" max="100" value="100"></progress></label><p id="team"></p><div id="skills"><button id="dash">Dash · Space</button><button id="nova">Nova · E</button><button id="copy">Invite friends</button></div></aside><div id="wave-banner" role="status"></div><p id="help">WASD / arrows: move · Mouse: aim, hold to fire · Touch: left pad to move, auto-fire · Space: dash · E: nova · Stand near a downed ally to revive</p><button id="restart" hidden>Vote to restart</button><button id="mute">Mute</button>
+<div id="joystick" aria-label="Touch movement pad"><span></span></div><div id="toast" role="status" hidden></div>
+<script type="module" src="./client.js"></script></body></html>

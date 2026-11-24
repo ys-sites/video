@@ -1,0 +1,33 @@
+--- before.html
++++ after.html
+@@ -44,6 +44,30 @@
+ #eva-end-line{height:5px;background:#a6ff3b;width:850px;margin:34px 0 25px;transform-origin:0 0}
+ #eva-end-small{font-size:25px;letter-spacing:4px;color:#a8b79e}
+ #eva-edge{position:absolute;inset:0;border:22px solid #050609;box-sizing:border-box;pointer-events:none}
++
++@font-face{font-family:'IBM Plex Sans';src:url('assets/fonts/5b31aabe-a9cc-4ca5-abf5-a1dffb6b4ba8.ttf');font-weight:100 700;font-style:normal}
++@font-face{font-family:'Noto Serif SC';src:url('assets/fonts/5b771121-c025-44c2-b8fe-a5c3ed8022d6.ttf');font-weight:200 900;font-style:normal}
++/* Final synthesis: retain every original phrase; differentiate text jobs. */
++.eva-english:where(:not(#eva-brand):not(#eva-end-title):not(#eva-field-title)){font-family:'IBM Plex Sans','Noto Sans SC';font-weight:500}
++.eva-label{font-family:'IBM Plex Sans','Noto Sans SC';font-weight:500;letter-spacing:.6px;line-height:28px;color:#9aa596}
++#eva-brand{letter-spacing:.8px}
++.eva-topnote{font-family:'IBM Plex Sans','Noto Sans SC';font-weight:500;letter-spacing:.5px}
++#eva-number{font-family:'IBM Plex Sans';font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-3px}
++#eva-number small{font-size:31px;letter-spacing:0;margin-left:6px}
++#eva-sync-label{letter-spacing:0;font-weight:600}
++.eva-status-title{letter-spacing:0;font-weight:500}
++.eva-state{letter-spacing:0;font-weight:700}
++.eva-data-row{font-weight:500;letter-spacing:0}
++#eva-shoulder-status,#eva-chest-status{font-family:'IBM Plex Sans','Noto Sans SC';font-size:23px;font-weight:500;letter-spacing:0}
++#eva-warning{top:185px;letter-spacing:0;font-weight:500}
++#eva-event-text,#eva-field-sub,#eva-end-cn{font-family:'Noto Serif SC';font-weight:800;letter-spacing:0}
++#eva-event-en{font-family:'IBM Plex Sans','Noto Sans SC';font-size:26px;font-weight:500;letter-spacing:.4px;color:#9aa596}
++#eva-time{font-family:'IBM Plex Sans';font-weight:500;letter-spacing:.4px;font-variant-numeric:tabular-nums}
++#eva-field-title{letter-spacing:0}
++#eva-end-kicker{font-family:'IBM Plex Sans';letter-spacing:.8px;font-weight:500;line-height:35px}
++#eva-end-title{letter-spacing:0}
++#eva-end-small{font-family:'IBM Plex Sans';letter-spacing:.5px;font-weight:500}
++
+ </style>
+ <div data-hf-id="hf-xegk" id="root" data-composition-id="awakening" data-width="1920" data-height="1080">
+ <div data-hf-id="hf-zk0e" id="eva-background"></div>

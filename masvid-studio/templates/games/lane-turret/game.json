@@ -1,0 +1,27 @@
+{
+  "id": "lane-turret",
+  "title": "Lane Turret",
+  "description": "Aim an automatic turret, collect upgrade cards and survive ten waves.",
+  "genre": "shooter",
+  "style": "pixel",
+  "setting": "space",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "Drag to aim. Tap one of three upgrade cards.",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-21T00:00:00.000Z",
+  "updatedAt": "2026-11-21T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "星港三线炮台",
+      "description": "拖动自动炮台瞄准，拾取升级卡三选一，撑过十波敌军。",
+      "controls": "左右拖动瞄准，拾取卡片后三选一升级"
+    }
+  },
+  "orientation": "portrait"
+}

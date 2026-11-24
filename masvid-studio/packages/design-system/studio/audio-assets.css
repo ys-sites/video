@@ -1,0 +1,91 @@
+/* Audio library controls share the editor's theme roles in both appearances. */
+.motion-audio-row {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  align-content: center;
+  align-items: center;
+  column-gap: var(--motion-space-12);
+  row-gap: var(--motion-space-4);
+  width: 100%;
+  min-width: 0;
+  min-height: 88px;
+  margin-bottom: var(--motion-space-4);
+  padding: var(--motion-space-12);
+  border-radius: var(--motion-radius-step-6);
+  color: var(--motion-strong);
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--motion-duration-fast);
+}
+.motion-audio-row:is(:hover, [data-playing="true"]) { background: var(--motion-inset); }
+.motion-audio-play-button {
+  grid-row: 1 / 3;
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--motion-border-strong);
+  border-radius: 50%;
+  color: var(--motion-strong);
+  background: var(--motion-hover);
+  cursor: pointer;
+  transition: background var(--motion-duration-fast), border-color var(--motion-duration-fast), transform var(--motion-duration-fast);
+}
+.motion-audio-play-button:hover { background: var(--motion-border); border-color: var(--motion-muted); }
+.motion-audio-play-button:active { transform: scale(.95); }
+.motion-audio-play-button svg { pointer-events: none; }
+.motion-audio-content { display: contents; }
+.motion-audio-heading { grid-column: 2; display: flex; align-items: center; gap: var(--motion-space-8); min-width: 0; }
+.motion-audio-heading > :first-child { flex: 1; min-width: 0; overflow: hidden; }
+.motion-audio-name {
+  display: block;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: var(--motion-text-body);
+  font-weight: var(--motion-weight-medium);
+  line-height: 1.5;
+}
+.motion-audio-row .motion-audio-menu-button {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: var(--motion-space-24);
+  height: var(--motion-space-24);
+  padding: 0;
+  border-radius: var(--motion-radius-step-6);
+  color: var(--motion-muted);
+}
+.motion-audio-row .motion-audio-menu-button:hover { background: var(--motion-hover); color: var(--motion-strong); }
+.motion-audio-used {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 var(--motion-space-6);
+  border-radius: var(--motion-radius-sm);
+  background: var(--motion-accent-soft);
+  color: var(--motion-accent);
+  font-size: var(--motion-text-xs);
+  font-weight: var(--motion-weight-medium);
+  line-height: 1.5;
+}
+.motion-audio-detail { grid-column: 2; display: flex; align-items: center; gap: var(--motion-space-8); min-width: 0; }
+.motion-audio-usages { display: flex; flex: 1; min-width: 0; flex-wrap: wrap; align-items: center; gap: var(--motion-space-4); }
+.motion-audio-unused { color: var(--motion-muted); font-size: var(--motion-text-xs); }
+.motion-audio-usage-range, .motion-audio-usage-toggle { padding: 0; border: 0; border-radius: var(--motion-radius-step-6); background: transparent; color: var(--motion-muted); font-size: var(--motion-text-xs); font-variant-numeric: tabular-nums; white-space: nowrap; cursor: pointer; text-decoration: underline; text-decoration-color: var(--motion-border-strong); text-underline-offset: 2px; }
+.motion-audio-usage-list { display: flex; flex-basis: 100%; flex-wrap: wrap; gap: var(--motion-space-4); }
+.motion-audio-usage-list[hidden] { display: none; }
+.motion-audio-time { flex: none; color: var(--motion-muted); font-size: var(--motion-text-sm); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.motion-audio-row:focus-visible,
+.motion-audio-row button:focus-visible { outline: 1px solid var(--motion-focus); outline-offset: 1px; }
+@media (prefers-reduced-motion: reduce) {
+  .motion-audio-row, .motion-audio-play-button { transition: none; }
+}

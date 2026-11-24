@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><title>Drift Dash</title><style>
+/* Standalone authored game artwork; independent of Studio interface themes. */
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#101725;touch-action:none}body{display:grid;place-items:center;height:100dvh}canvas{display:block;width:min(100vw,56.25dvh);height:min(100dvh,177.7778vw);touch-action:none;user-select:none;-webkit-user-select:none}
+</style></head><body><canvas width="450" height="800" aria-label="Drift Dash"></canvas><script>
+'use strict';
+const canvas=document.querySelector('canvas'), ctx=canvas.getContext('2d');
+const W=450,H=800,zh=navigator.language.toLowerCase().startsWith('zh');
+const tr=(a,b)=>zh?a:b;
+document.documentElement.lang=zh?'zh-CN':'en';
+let phase='ready',score=0,elapsed=0,last=0,muted=false,audio=null,shake=0,particles=[],floats=[],pointer=null;
+const rand=(a,b)=>a+Math.random()*(b-a),clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+function box(x,y,w,h,color,r=12){ctx.fillStyle=color;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill();}
+function circle(x,y,r,color){ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();}
+function text(s,x,y,size=20,color='#fff',align='center'){fitText(s,x,y,size,color,align==='left'?W-x-18:Math.min(414,2*Math.min(x-8,W-x-8)),align);}
+function line(x,y,a,b,color,width=3){ctx.strokeStyle=color;ctx.lineWidth=width;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(a,b);ctx.stroke();}
+
+// Authored canvas detail is independent game content, not generated image assets.
+let artTime=0,impactRings=[];
+function fitText(s,x,y,size,color,maxWidth,align='center'){
+ ctx.font=`700 ${size}px system-ui,sans-serif`;
+ while(ctx.measureText(s).width>maxWidth&&size>10){size-=.5;ctx.font=`700 ${size}px system-ui,sans-serif`;}
+ ctx.fillStyle=color;ctx.textAlign=align;ctx.textBaseline='middle';ctx.fillText(s,x,y);
+}
+function gradient(x,y,w,h,top,bottom,r=12){const g=ctx.createLinearGradient(x,y,x,y+h);g.addColorStop(0,top);g.addColorStop(1,bottom);box(x,y,w,h,g,r);}
+function confetti(x,y){for(let i=0;i<60;i++)particles.push({x,y,vx:rand(-210,210),vy:rand(-290,-90),life:rand(.7,1.3),color:['#ffcb57','#ff708c','#83e9da','#fff6ce'][i%4]});}
+function guide(x1,y1,x2,y2,label){
+ if((phase!=='ready'&&!(phase==='playing'&&elapsed<3))||pointer!==null)return;
+ const t=(artTime%2)/2, eased=t*t*(3-2*t),x=x1+(x2-x1)*eased,y=y1+(y2-y1)*eased;
+ ctx.save();ctx.globalAlpha=.75;line(x1,y1,x2,y2,'#fff5c9',3);circle(x1,y1,8,'#fff5c9');ctx.globalAlpha=1;
+ // A vector hand silhouette stays consistent across emoji/font installations.
+ ctx.translate(x,y);ctx.rotate(-.25);ctx.shadowColor='#201524';ctx.shadowBlur=5;
+ box(-8,-4,27,30,'#fff8e4',9);box(-8,-26,10,33,'#fff8e4',5);box(0,-9,10,22,'#fff8e4',5);box(8,-5,10,20,'#fff8e4',5);line(-7,20,-19,7,'#fff8e4',11);ctx.restore();
+ const by=755;box(16,729,418,53,'#17263b',14);fitText(label,225,by,16,'#fff3c5',390);
+}
+
+function tone(f=440){if(muted||!audio)return;const o=audio.createOscillator(),g=audio.createGain();o.type='triangle';o.frequency.setValueAtTime(f,audio.currentTime);o.frequency.exponentialRampToValueAtTime(f*.6,audio.currentTime+.13);g.gain.setValueAtTime(.07,audio.currentTime);g.gain.exponentialRampToValueAtTime(.001,audio.currentTime+.16);o.connect(g);g.connect(audio.destination);o.start();o.stop(audio.currentTime+.17);}
+function unlock(){if(!audio){const A=window.AudioContext||window.webkitAudioContext;if(A)try{audio=new A()}catch{}}if(audio?.state==='suspended')audio.resume().catch(()=>{});}
+function burst(x,y,color='#ffdc78',label=''){for(let i=0;i<28;i++)particles.push({x,y,vx:rand(-170,170),vy:rand(-230,70),life:.8,color});impactRings.push({x,y,life:.24});if(label)floats.push({x,y,s:label,life:1});shake=8;tone(660);}
+function finish(won){if(phase!=='playing')return;phase=won?'won':'lost';pointer=null;tone(won?880:160);}
+function start(){if(phase==='ready')phase='playing';}
+function restart(){phase='ready';score=0;elapsed=0;pointer=null;particles=[];floats=[];impactRings=[];artTime=0;shake=0;init();}
+function pill(label,x,y,w=100){box(x-w/2,y-17,w,34,'#28354c',12);text(label,x,y,16);}
+function header(title,sub){fitText(title,22,36,24,'#fff',350,'left');fitText(sub,22,70,14,'#b6c6df',406,'left');box(388,15,48,43,'#28354c');text(muted?'♪×':'♪',412,37,23);}
+function hint(s){box(16,729,418,53,'#28354c');fitText(s,225,755,16,'#ffdf8a',390);}
+function frame(ts){const dt=last?Math.min((ts-last)/1000,.04):0;last=ts;artTime+=dt;if(phase==='playing'){elapsed+=dt;update(dt);}ctx.clearRect(0,0,W,H);ctx.save();if(shake>0){ctx.translate(rand(-shake,shake),rand(-shake,shake));shake=Math.max(0,shake-dt*30);}draw();for(const r of impactRings){r.life-=dt;ctx.save();ctx.globalAlpha=Math.max(0,r.life/.24);circle(r.x,r.y,12+(1-r.life/.24)*32,'#fff8e4');ctx.restore();}impactRings=impactRings.filter(r=>r.life>0);for(const p of particles){p.life-=dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=280*dt;circle(p.x,p.y,Math.max(0,p.life)*5,p.color);}particles=particles.filter(p=>p.life>0);for(const p of floats){p.life-=dt;p.y-=dt*48;ctx.save();ctx.shadowColor='#211b32';ctx.shadowBlur=5;text(p.s,clamp(p.x,90,360),p.y,26+(1-p.life)*4,'#ffdf8a');ctx.restore();}floats=floats.filter(p=>p.life>0);ctx.restore();guide(290,572,346,604,tr('按住一侧，拖动换向','Hold a side; drag to steer'));if(phase==='won'||phase==='lost'){box(25,248,400,290,'#111c30',24);text(phase==='won'?tr('挑战成功！','YOU DID IT!'):tr('再试一次！','TRY AGAIN!'),225,299,31,'#ffdf8a');text(result(),225,353,19);text(tr('得分 ','SCORE ')+score,225,397,23);box(95,447,260,62,'#ffd077',18);text(tr('再来一局 ↻','PLAY AGAIN ↻'),225,478,24,'#322435');}requestAnimationFrame(frame);}
+function pos(e){const b=canvas.getBoundingClientRect();return{x:(e.clientX-b.left)*W/b.width,y:(e.clientY-b.top)*H/b.height};}
+canvas.addEventListener('pointerdown',e=>{e.preventDefault();if(pointer!==null)return;unlock();const p=pos(e);if(p.x>=388&&p.y<=64){muted=!muted;return;}if(phase==='won'||phase==='lost'){if(p.x>=95&&p.x<=355&&p.y>=447&&p.y<=509)restart();return;}pointer=e.pointerId;canvas.setPointerCapture?.(e.pointerId);start();down(p);});
+canvas.addEventListener('pointermove',e=>{if(pointer===e.pointerId&&phase==='playing')move(pos(e));});
+function release(e,cancel=false){if(pointer!==e.pointerId)return;pointer=null;if(phase==='playing'){if(cancel)cancelInput();else up(pos(e));}}
+canvas.addEventListener('pointerup',e=>release(e));canvas.addEventListener('pointercancel',e=>release(e,true));
+window.addEventListener('blur',()=>{pointer=null;cancelInput();last=0;});
+document.addEventListener('visibilitychange',()=>{pointer=null;cancelInput();last=0;});
+window.__omGame={state:()=>({phase,score,elapsed,...details()}),start,restart};
+
+// Three AI opponents share the player's looping course and race distance.
+let distance=0,lateral=0,speed=0,held=false,side=1,health=100,ai,offroad=0,skids=[],smoke=[],sparkClock=0;
+const lapLength=2600,roadWidth=246;
+function centerAt(s){return 225+Math.sin(s/370)*63+Math.sin(s/190)*21;}
+function init(){distance=0;lateral=0;speed=0;held=false;side=1;health=100;offroad=0;skids=[];smoke=[];sparkClock=0;ai=[{d:55,speed:139,lane:-55,color:'#79c9d6'},{d:95,speed:145,lane:0,color:'#d69df3'},{d:135,speed:150,lane:55,color:'#f0be74'}];}
+function down(p){held=true;side=p.x<W/2?-1:1;}
+function move(p){if(held)side=p.x<W/2?-1:1;}
+function up(){held=false;}function cancelInput(){held=false;}
+function rank(){return 1+ai.filter(a=>a.d>distance).length;}
+function update(dt){const old=centerAt(distance);speed+=(held?178-speed:158-speed)*dt*3;distance+=speed*dt;lateral-=centerAt(distance)-old;lateral+=(held?side*159:-lateral*2.3)*dt;lateral=clamp(lateral,-183,183);
+ if(Math.abs(lateral)>roadWidth/2-17){health-=dt*17;speed*=Math.exp(-dt*2.8);offroad+=dt;shake=3;if(offroad>.65){burst(centerAt(distance)+lateral,600,'#ff996f',tr('回赛道！','OFF ROAD!'));offroad=0;}}else offroad=0;
+ for(const a of ai){const behind=distance<a.d;a.d+=a.speed*dt;if(behind&&distance>=a.d)burst(centerAt(distance)+lateral,550,'#ffe48a',tr('漂亮超车！','OVERTAKE!'));if(Math.abs(a.d-distance)<32&&Math.abs(a.lane-lateral)<26){speed=Math.min(speed,110);lateral+=Math.sign(lateral-a.lane||1)*dt*80;health-=dt*7;}}
+ smoke.forEach(p=>{p.life-=dt;p.y+=dt*95;p.x+=p.vx*dt;});smoke=smoke.filter(p=>p.life>0);sparkClock-=dt;if(held&&sparkClock<=0){sparkClock=.055;const x=centerAt(distance)+lateral;smoke.push({x:x-side*16,y:628,vx:rand(-24,24),life:.55});for(let i=0;i<2;i++)particles.push({x:x+side*20,y:622,vx:rand(-60,60),vy:rand(60,180),life:.25,color:'#ffdb79'});}if(held){skids.push({d:distance,x:lateral,life:1});if(skids.length>80)skids.shift();}skids.forEach(s=>s.life-=dt);skids=skids.filter(s=>s.life>0);score=Math.floor(distance/10);
+ if(health<=0||elapsed>=90)finish(false);else if(distance>=lapLength*3)finish(rank()===1);
+}
+function car(x,y,color,angle=0,scale=1){ctx.save();ctx.translate(x,y);ctx.rotate(angle);ctx.scale(scale,scale);box(-20,-31,40,66,'#111b2b',0);box(-16,-35,32,62,color,0);box(-12,-14,24,19,'#2b3d52',0);box(-12,13,24,10,'#2b3d52',0);box(-19,26,38,6,color,0);box(-14,-32,8,5,'#fff3c4',0);box(6,-32,8,5,'#fff3c4',0);ctx.restore();}
+function draw(){box(0,0,450,800,'#304e4b',0);for(let y=142;y<722;y+=8){const d=distance+(600-y)*1.3,c=centerAt(d);box(c-roadWidth/2-12,y,roadWidth+24,9,Math.floor(d/42)%2?'#f2d6b2':'#d76f6b',0);box(c-roadWidth/2,y,roadWidth,9,'#37404e',0);if(Math.floor(d/36)%2){box(c-2,y,4,9,'#c2b995',0);}if(Math.floor(d/160)%2===0){box(c-roadWidth/2-47,y,20,8,'#688365',0);box(c+roadWidth/2+23,y,20,8,'#688365',0);}}
+ // World-anchored pixel scenery scrolls past with the track.
+ for(let n=Math.floor((distance-180)/125);n<(distance+660)/125;n++){const d=n*125,y=600-(d-distance)/1.3,c=centerAt(d);if(y<152||y>704)continue;for(const side of [-1,1]){const x=c+side*170;if(n%3===0){box(x-9,y-10,18,31,'#654a35',0);box(x-22,y-33,44,24,'#386e48',0);box(x-15,y-45,30,20,'#629b58',0);box(x-12,y-40,8,8,'#8abb68',0);}else if(n%3===1){box(x-24,y-12,48,33,'#70808a',0);for(let k=0;k<3;k++){box(x-22,y-10+k*9,44,5,'#b3bdb3',0);for(let j=0;j<5;j++)box(x-17+j*8,y-13+k*9,4,4,j%2?'#edb77b':'#df8183',0);}}else{box(x-23,y-28,46,28,'#eac685',0);box(x-19,y-24,38,20,'#263e52',0);text('GO!',x,y-14,14,'#ffdf87');box(x-16,y,4,20,'#7c8b82',0);box(x+12,y,4,20,'#7c8b82',0);}}}
+ // Finish/start stripes at the same world coordinate for every lap.
+ for(let n=1;n<=3;n++){const y=600-(n*lapLength-distance)/1.3;if(y>145&&y<720)for(let i=0;i<12;i++)box(centerAt(n*lapLength)-120+i*20,y,20,12,i%2?'#eee4ce':'#20283b',0);}
+ for(const s of skids){const y=600-(s.d-distance)/1.3;box(centerAt(s.d)+s.x-13,y,4,10,'#20283b',0);box(centerAt(s.d)+s.x+10,y,4,10,'#20283b',0);}
+ for(const a of ai){const y=600-(a.d-distance)/1.3;if(y>160&&y<720)car(centerAt(a.d)+a.lane,y,a.color);}
+ for(const p of smoke){ctx.save();ctx.globalAlpha=p.life*.65;box(p.x-10,p.y,14+(1-p.life)*15,12+(1-p.life)*15,'#c8d2c8',0);ctx.restore();}
+ car(centerAt(distance)+lateral,600,'#f17d7c',held?side*.32:0);box(0,0,450,140,'#1d2b3e',0);header(tr('像素漂移冲刺','DRIFT DASH'),tr('左侧按住左漂 · 右侧按住右漂','Hold left / right to drift · release to straighten'));pill(tr('圈 ','LAP ')+Math.min(3,Math.floor(distance/lapLength)+1)+'/3',78,107,126);pill(`#${rank()} / 4`,229,107);pill(`♥ ${Math.ceil(Math.max(0,health))}`,366,107,118);
+ hint(phase==='ready'?tr('☝ 按住一侧漂移，松手回正','☝ Hold either side to drift; release to straighten'):tr('跟随弯道 · 抢先完成3圈','Follow the bends · finish 3 laps first'));
+}
+function result(){return tr('排名 #','POSITION #')+rank()+tr(' · 圈数 ',' · LAPS ')+Math.min(3,Math.floor(distance/lapLength));}
+function details(){return{distance,lateral,speed,health,rank:rank(),lap:Math.min(3,Math.floor(distance/lapLength)+1),lapsCompleted:Math.min(3,Math.floor(distance/lapLength)),ai:ai.map(a=>({...a})),timeLeft:Math.max(0,90-elapsed)};}
+
+restart();requestAnimationFrame(frame);
+</script></body></html>

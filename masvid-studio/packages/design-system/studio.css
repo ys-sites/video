@@ -1,0 +1,72 @@
+/* Shared Studio presentation. Application layout and business behavior stay in Studio. */
+@import "./tokens.css";
+@import "./fonts.css";
+@import "./controls.css";
+@import "./material.css";
+@import "./studio/control-recipes.css";
+@import "./studio/adapter.css";
+@import "./studio/control-states.css";
+@import "./studio/feedback.css";
+@import "./studio/editor-workspace.css";
+@import "./studio/application.css";
+@import "./studio/primary-navigation.css";
+@import "./studio/mcp.css";
+@import "./studio/template-cards.css";
+@import "./studio/discovery.css";
+@import "./studio/media-detail.css";
+@import "./studio/audio-assets.css";
+@import "./studio/media-quick-actions.css";
+@import "./studio/formFields.css";
+@import "./studio/menuPanels.css";
+@import "./studio/propertyPanelControls.css";
+@import "./studio/disclosure.css";
+
+/* Asset geometry is shared; currentColor follows the application's selected theme. */
+.motion-brand-lockup {
+  display: inline-block;
+  flex: none;
+  height: var(--motion-space-24);
+  aspect-ratio: 196 / 32;
+  vertical-align: middle;
+  background: currentColor;
+  mask: url("./brand/masvid-wordmark.svg") center / contain no-repeat;
+}
+
+.motion-brand-lockup:where([data-brand="editor"]) {
+  color: var(--motion-strong);
+  aspect-ratio: 196 / 32;
+  mask-image: url("./brand/masvid-wordmark.svg");
+}
+
+/* Shared placement feedback: crisp target geometry and a readable live readout. */
+.motion-placement-outline {
+  border: 2px solid var(--motion-accent);
+  border-radius: var(--motion-radius-sm);
+  background: var(--motion-accent-soft);
+}
+.motion-placement-label {
+  position: absolute;
+  z-index: 65;
+  display: flex;
+  align-items: center;
+  gap: var(--motion-space-8);
+  padding: var(--motion-space-4) var(--motion-space-8);
+  border: 1px solid var(--motion-border);
+  border-radius: var(--motion-radius-sm);
+  background: var(--motion-raised);
+  color: var(--motion-strong);
+  box-shadow: var(--motion-shadow-sm);
+  font-size: var(--motion-text-xs);
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  overflow: hidden;
+}
+.motion-placement-label strong { font-family: var(--motion-font-mono); font-weight: var(--motion-weight-medium); font-variant-numeric: tabular-nums; }
+.motion-placement-label[data-snapped] { border-color: var(--motion-accent); }
+@container (max-width: 700px) {
+  .motion-brand-lockup--responsive {
+    aspect-ratio: 1;
+    mask-image: url("./brand/masvid-mark.svg");
+  }
+}

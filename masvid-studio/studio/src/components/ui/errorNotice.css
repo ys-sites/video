@@ -1,0 +1,2 @@
+/* Compatibility entry; shared styles live in packages/design-system. */
+@import "../../../../packages/design-system/studio/feedback.css";

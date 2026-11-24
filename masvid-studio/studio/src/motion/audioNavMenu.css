@@ -1,0 +1,589 @@
+/* Audio top-navigation hover popover layout, interactive visual demos and theme-aware surfaces.
+ * All interface colors reference packages/design-system tokens (--motion-*). */
+
+.om-creative-menu.om-creative-menu-audio {
+  width: min(760px, calc(100vw - var(--motion-space-24)));
+  padding: var(--motion-space-16);
+}
+
+.om-audio-menu {
+  display: grid;
+  gap: var(--motion-space-16);
+}
+
+/* Tier 1: visual feature cards */
+.om-audio-menu-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--motion-space-12);
+}
+
+.om-audio-menu-card {
+  display: grid;
+  align-content: start;
+  gap: var(--motion-space-8);
+  padding: 0;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  border-radius: var(--motion-radius-lg);
+  text-align: center;
+  cursor: pointer;
+}
+
+.om-audio-menu-card:focus-visible {
+  outline: 1px solid var(--motion-focus);
+  outline-offset: 2px;
+}
+
+.om-audio-menu-card-caption {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--motion-space-6);
+  min-width: 0;
+  padding-inline: var(--motion-space-2);
+}
+
+.om-audio-menu-card .om-audio-menu-card-caption strong {
+  display: inline-block;
+  font-size: var(--motion-text-md);
+  font-weight: var(--motion-weight-medium);
+  color: var(--motion-strong);
+  line-height: var(--motion-leading-tight);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.om-audio-menu-card:hover .om-audio-menu-card-caption strong {
+  text-decoration: none;
+}
+
+.om-audio-menu-soon {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  padding: 1px var(--motion-space-5);
+  border-radius: var(--motion-radius-sm);
+  border: 1px solid var(--motion-border-subtle);
+  background: var(--motion-panel);
+  color: var(--motion-dim);
+  font-size: var(--motion-text-step-10);
+  font-weight: var(--motion-weight-medium);
+  line-height: var(--motion-leading-tight);
+  white-space: nowrap;
+}
+
+/* Recessed studio stage for audio feature demos (matches .om-media-demo dark monitor look in both themes) */
+.om-audio-demo-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  aspect-ratio: 16 / 10.2;
+  padding: var(--motion-space-10) var(--motion-space-12);
+  border-radius: var(--motion-radius-xl);
+  background: radial-gradient(ellipse at 50% 0%, var(--motion-neutral-n10), var(--motion-on-brand) 68%, var(--motion-neutral-n11));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--motion-neutral-n0) 10%, transparent);
+  transition: box-shadow var(--motion-duration-fast) var(--motion-ease-out), transform var(--motion-duration-fast) var(--motion-ease-out);
+  text-align: start;
+}
+
+.om-audio-menu-card:hover .om-audio-demo-stage,
+.om-audio-menu-card[aria-current="page"] .om-audio-demo-stage {
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--motion-signature-band) 45%, transparent),
+    0 6px 18px color-mix(in srgb, var(--motion-neutral-n11) 34%, transparent);
+}
+
+/* Shared decorative waveform bars inside dark preview stages */
+.om-audio-demo-wave {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2px;
+  height: 28px;
+  min-width: 0;
+  flex: 1;
+}
+
+.om-audio-demo-bar {
+  display: block;
+  width: 2px;
+  min-height: 4px;
+  border-radius: var(--motion-radius-full);
+  background: color-mix(in srgb, var(--motion-neutral-n0) 24%, transparent);
+  transform-origin: center;
+  transition: background-color var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.om-audio-demo-bar[data-lit="true"] {
+  background: var(--motion-signature-band);
+}
+
+.om-audio-demo-bar[data-soft-lit="true"] {
+  background: color-mix(in srgb, var(--motion-signature-band) 55%, var(--motion-neutral-n0));
+}
+
+.om-audio-demo-playhead {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  border-radius: var(--motion-radius-full);
+  background: var(--motion-neutral-n0);
+  box-shadow: 0 0 6px color-mix(in srgb, var(--motion-neutral-n0) 55%, transparent);
+  pointer-events: none;
+}
+
+/* Demo 1: Music */
+.om-audio-demo-music-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--motion-space-6);
+}
+
+.om-audio-demo-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--motion-space-4);
+  padding: 2px var(--motion-space-6);
+  border-radius: var(--motion-radius-full);
+  background: color-mix(in srgb, var(--motion-neutral-n0) 9%, transparent);
+  color: color-mix(in srgb, var(--motion-neutral-n0) 76%, transparent);
+  font-family: var(--motion-font-mono);
+  font-size: var(--motion-text-step-9);
+  line-height: var(--motion-leading-tight);
+  letter-spacing: 0.02em;
+}
+
+.om-audio-demo-chip-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: var(--motion-radius-full);
+  background: var(--motion-signature-band);
+}
+
+.om-audio-demo-music-time {
+  font-family: var(--motion-font-mono);
+  font-size: var(--motion-text-step-9);
+  color: color-mix(in srgb, var(--motion-neutral-n0) 46%, transparent);
+  font-variant-numeric: tabular-nums;
+}
+
+.om-audio-demo-music-wave {
+  flex: none;
+  width: 100%;
+  height: 38px;
+}
+
+.om-audio-demo-music-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--motion-space-4);
+}
+
+.om-audio-demo-music-tags {
+  display: flex;
+  align-items: center;
+  gap: var(--motion-space-4);
+  font-size: var(--motion-text-step-9);
+  color: color-mix(in srgb, var(--motion-neutral-n0) 48%, transparent);
+}
+
+.om-audio-demo-music-tags span[data-active="true"] {
+  color: var(--motion-signature-band);
+  font-weight: var(--motion-weight-medium);
+}
+
+/* Demo 2: Text to speech */
+.om-audio-demo-tts-copy {
+  display: grid;
+  gap: 1px;
+  font-size: var(--motion-text-step-10);
+  line-height: 1.32;
+  color: color-mix(in srgb, var(--motion-neutral-n0) 34%, transparent);
+  overflow: hidden;
+  user-select: none;
+}
+
+.om-audio-demo-tts-copy span {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.om-audio-demo-tts-copy em {
+  font-style: normal;
+  font-weight: var(--motion-weight-medium);
+  color: var(--motion-signature-band);
+}
+
+.om-audio-demo-tts-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--motion-space-8);
+}
+
+.om-audio-demo-play-orb {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--motion-radius-full);
+  background: var(--motion-signature-band);
+  color: var(--motion-on-signature-band);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--motion-signature-band) 36%, transparent);
+}
+
+.om-audio-demo-play-orb svg {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin-inline-start: 1px;
+  fill: currentColor;
+}
+
+/* Demo 3: Voice changer (original studio avatars + morphing waveform) */
+.om-audio-demo-voice-stage {
+  justify-content: center;
+}
+
+.om-audio-demo-voice-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--motion-space-6);
+}
+
+.om-audio-demo-avatar {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--motion-radius-full);
+  overflow: hidden;
+  background: var(--motion-neutral-n10);
+  box-shadow: 0 0 0 1.5px color-mix(in srgb, var(--motion-neutral-n0) 20%, transparent);
+}
+
+.om-audio-demo-avatar[data-target="true"] {
+  background: var(--motion-neutral-n1);
+  box-shadow:
+    0 0 0 2px var(--motion-signature-band),
+    0 0 12px color-mix(in srgb, var(--motion-signature-band) 32%, transparent);
+}
+
+.om-audio-demo-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.om-audio-demo-voice-wave {
+  height: 32px;
+}
+
+/* Demo 4: Dubbing */
+.om-audio-demo-dub-phrase {
+  text-align: center;
+  font-size: var(--motion-text-xs);
+  font-weight: var(--motion-weight-medium);
+  color: color-mix(in srgb, var(--motion-neutral-n0) 64%, transparent);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.om-audio-demo-dub-wave {
+  flex: none;
+  width: 100%;
+  height: 34px;
+}
+
+.om-audio-demo-langs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--motion-space-2);
+}
+
+.om-audio-demo-lang {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px var(--motion-space-5);
+  border-radius: var(--motion-radius-sm);
+  border: 1px solid transparent;
+  font-family: var(--motion-font-mono);
+  font-size: var(--motion-text-step-9);
+  font-weight: var(--motion-weight-medium);
+  line-height: var(--motion-leading-tight);
+  color: color-mix(in srgb, var(--motion-neutral-n0) 36%, transparent);
+  letter-spacing: 0.03em;
+}
+
+.om-audio-demo-lang[data-active="true"] {
+  background: color-mix(in srgb, var(--motion-signature-band) 16%, var(--motion-neutral-n11));
+  border-color: color-mix(in srgb, var(--motion-signature-band) 68%, transparent);
+  color: var(--motion-signature-band);
+}
+
+/* Subtle hover micro-motion (gated on reduced-motion preference) */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .om-audio-menu-card:hover .om-audio-demo-bar[data-lit="true"] {
+    animation: om-audio-bar-pulse 1.15s ease-in-out infinite;
+    animation-delay: calc(var(--bar-i, 0) * 45ms);
+  }
+
+  .om-audio-menu-card:hover .om-audio-demo-play-orb {
+    animation: om-audio-orb-glow 1.4s ease-in-out infinite;
+  }
+
+  .om-audio-menu-card:hover .om-audio-demo-avatar[data-target="true"] {
+    box-shadow:
+      0 0 0 2px var(--motion-signature-band),
+      0 0 16px color-mix(in srgb, var(--motion-signature-band) 48%, transparent);
+  }
+}
+
+@keyframes om-audio-bar-pulse {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.66); }
+}
+
+@keyframes om-audio-orb-glow {
+  0%, 100% { box-shadow: 0 0 10px color-mix(in srgb, var(--motion-signature-band) 36%, transparent); }
+  50% { box-shadow: 0 0 16px color-mix(in srgb, var(--motion-signature-band) 62%, transparent); }
+}
+
+/* Tier 2: 2-column audio models directory */
+.om-audio-menu-models {
+  display: grid;
+  gap: var(--motion-space-10);
+  padding-top: var(--motion-space-14);
+  border-top: 1px solid var(--motion-border-subtle);
+}
+
+.om-audio-menu-section-label {
+  color: var(--motion-muted);
+  font-size: var(--motion-text-sm);
+  font-weight: var(--motion-weight-medium);
+  padding-inline: var(--motion-space-6);
+}
+
+.om-audio-menu-models-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--motion-space-4) var(--motion-space-16);
+}
+
+.om-audio-menu-model-item {
+  display: flex;
+  align-items: center;
+  gap: var(--motion-space-10);
+  width: 100%;
+  min-width: 0;
+  min-height: 36px;
+  padding: var(--motion-space-6) var(--motion-space-8);
+  border: 0;
+  border-radius: var(--motion-radius-md);
+  background: transparent;
+  color: var(--motion-strong);
+  text-align: start;
+  cursor: pointer;
+  transition: background-color var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.om-audio-menu-model-item:hover {
+  background: var(--motion-hover);
+}
+
+.om-audio-menu-model-item:focus-visible {
+  outline: 1px solid var(--motion-focus);
+  outline-offset: -1px;
+}
+
+.om-audio-menu-model-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+[data-motion-studio] .om-audio-menu-models .om-avatar {
+  width: var(--motion-space-24);
+  height: var(--motion-space-24);
+  border-radius: var(--motion-radius-sm);
+  border: 1px solid var(--motion-border-subtle);
+  font-size: var(--motion-text-step-10);
+}
+
+.om-audio-menu-model-name {
+  min-width: 0;
+  font-size: var(--motion-text-body);
+  font-weight: var(--motion-weight-medium);
+  color: var(--motion-strong);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.om-audio-menu-new-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  padding: var(--motion-space-2) var(--motion-space-8);
+  border-radius: var(--motion-radius-full);
+  background: var(--motion-accent-soft);
+  border: 1px solid color-mix(in srgb, var(--motion-accent) 30%, transparent);
+  color: var(--motion-accent);
+  font-size: var(--motion-text-xs);
+  font-weight: var(--motion-weight-semibold);
+  line-height: var(--motion-leading-tight);
+  white-space: nowrap;
+}
+
+/* Harmonize Dark-mode NEW badge with the signature lime stage accent while keeping high contrast. */
+[data-motion-studio]:not([data-theme="paper"]) .om-audio-menu-new-pill {
+  background: color-mix(in srgb, var(--motion-signature-band) 14%, var(--motion-bg));
+  border-color: color-mix(in srgb, var(--motion-signature-band) 36%, transparent);
+  color: var(--motion-signature-band);
+}
+
+.om-audio-menu-model-skeleton {
+  height: 36px;
+  border-radius: var(--motion-radius-md);
+}
+
+/* Tier 3: Featured audio model spotlight banner */
+.om-audio-menu-spotlight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--motion-space-12);
+  width: 100%;
+  min-width: 0;
+  padding: var(--motion-space-12) var(--motion-space-16);
+  border-radius: var(--motion-radius-lg);
+  border: 1px solid var(--motion-border-subtle);
+  background: var(--motion-panel);
+  color: var(--motion-strong);
+  text-align: start;
+  cursor: pointer;
+  transition: background-color var(--motion-duration-fast) var(--motion-ease-out), border-color var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.om-audio-menu-spotlight:hover {
+  background: var(--motion-hover);
+  border-color: var(--motion-border);
+}
+
+.om-audio-menu-spotlight:focus-visible {
+  outline: 1px solid var(--motion-focus);
+  outline-offset: -1px;
+}
+
+.om-audio-menu-spotlight-copy {
+  display: flex;
+  align-items: center;
+  gap: var(--motion-space-10);
+  min-width: 0;
+  flex: 1;
+}
+
+.om-audio-menu-spotlight-title {
+  flex: none;
+  font-size: var(--motion-text-body);
+  font-weight: var(--motion-weight-semibold);
+  color: var(--motion-strong);
+  white-space: nowrap;
+}
+
+.om-audio-menu-spotlight-desc {
+  min-width: 0;
+  font-size: var(--motion-text-md);
+  color: var(--motion-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.om-audio-menu-spotlight-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--motion-space-4);
+  flex: none;
+  font-size: var(--motion-text-md);
+  font-weight: var(--motion-weight-medium);
+  color: var(--motion-muted);
+  white-space: nowrap;
+  transition: color var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.om-audio-menu-spotlight:hover .om-audio-menu-spotlight-cta {
+  color: var(--motion-strong);
+}
+
+/* Responsive layout for narrow viewports */
+@media (max-width: 720px) {
+  .om-creative-menu.om-creative-menu-audio {
+    padding: var(--motion-space-12);
+  }
+
+  .om-audio-menu {
+    gap: var(--motion-space-12);
+  }
+
+  .om-audio-menu-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--motion-space-10);
+  }
+
+  .om-audio-menu-models {
+    gap: var(--motion-space-6);
+    padding-top: var(--motion-space-10);
+  }
+
+  .om-audio-menu-model-item {
+    min-height: 32px;
+    padding: var(--motion-space-4) var(--motion-space-6);
+  }
+
+  .om-audio-menu-spotlight {
+    flex-wrap: wrap;
+    padding: var(--motion-space-10) var(--motion-space-12);
+  }
+
+  .om-audio-menu-spotlight-copy {
+    flex-wrap: wrap;
+    row-gap: var(--motion-space-4);
+  }
+
+  .om-audio-menu-spotlight-desc {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 520px) {
+  .om-audio-menu-models-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 360px) {
+  .om-audio-menu-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

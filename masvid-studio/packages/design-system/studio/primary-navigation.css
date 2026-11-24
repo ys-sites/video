@@ -1,0 +1,66 @@
+.om-primary-navigation,
+.om-primary-navigation-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--motion-space-4);
+}
+
+.om-primary-navigation {
+  min-width: 0;
+  min-height: 0;
+  padding: var(--motion-space-8) 0 var(--motion-space-16);
+  overflow: hidden auto;
+  scrollbar-width: none;
+}
+
+.om-primary-navigation-group { flex: none; }
+.om-primary-navigation-footer { margin-top: auto; }
+
+.om-primary-navigation-button {
+  display: grid;
+  place-items: center;
+  width: var(--motion-space-40);
+  height: var(--motion-space-40);
+  padding: 0;
+  border: 0;
+  border-radius: var(--motion-radius-xl);
+  background-color: transparent;
+  color: light-dark(var(--motion-neutral-n8), var(--motion-chrome-icon));
+  cursor: pointer;
+  transition: background-color var(--motion-duration-fast) var(--motion-ease-out),
+    color var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.om-primary-navigation-button svg {
+  width: var(--motion-space-18);
+  height: var(--motion-space-18);
+}
+
+.om-primary-navigation-button:not(:disabled, [aria-disabled="true"], [data-disabled]):hover {
+  background-color: light-dark(var(--motion-neutral-n3), var(--motion-chrome-hover));
+}
+
+.om-primary-navigation-button:not(:disabled, [aria-disabled="true"], [data-disabled]):is([aria-pressed="true"], [aria-current="page"], [aria-expanded="true"]) {
+  background-color: light-dark(var(--motion-neutral-n4), var(--motion-chrome-active));
+  color: light-dark(var(--motion-neutral-n11), var(--motion-accent));
+}
+
+.om-primary-navigation-button:not(:disabled, [aria-disabled="true"], [data-disabled]):active {
+  transform: scale(0.97);
+}
+
+.om-primary-navigation-button:is(:disabled, [aria-disabled="true"], [data-disabled]) {
+  color: light-dark(var(--motion-neutral-n6), var(--motion-neutral-n8));
+  cursor: not-allowed;
+}
+
+:root[data-motion-ui] .om-primary-navigation-button:focus-visible {
+  outline: 2px solid var(--motion-selected);
+  outline-offset: -2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .om-primary-navigation-button { transition: none; }
+  .om-primary-navigation-button:not(:disabled, [aria-disabled="true"], [data-disabled]):active { transform: none; }
+}

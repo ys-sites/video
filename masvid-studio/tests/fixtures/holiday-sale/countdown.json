@@ -1,0 +1,16 @@
+{
+  "brand": {
+    "name": "Fieldwork Supply"
+  },
+  "occasion": "Black Friday",
+  "mode": "starts",
+  "postAt": "2026-11-20T09:00:00-05:00",
+  "target": {
+    "date": "2026-11-27T00:00:00-05:00",
+    "label": "Fri, Nov 27 \u00b7 12:00 am ET"
+  },
+  "teaser": "Up to 40% off sitewide",
+  "cta": "Get early access",
+  "url": "fieldworksupply.example",
+  "aspect": "9:16"
+}

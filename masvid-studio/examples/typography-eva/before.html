@@ -1,0 +1,239 @@
+<template>
+<style>
+@font-face{font-family:'Barlow Condensed';src:url('assets/fonts/23b61421-75f9-4bb1-aab1-2d7b91fedfe8.ttf');font-weight:700;font-style:normal}
+@font-face{font-family:'Noto Sans SC';src:url('assets/fonts/1f656983-934d-48db-bb7a-f00a860b5a3d.ttf');font-weight:100 900;font-style:normal}
+#root{position:absolute;inset:0;background:#06070b;color:#e9eee4;font-family:'Noto Sans SC';font-weight:500;overflow:hidden}
+.eva-english{font-family:'Barlow Condensed';font-weight:700}.eva-label{font-size:23px;letter-spacing:3px;color:#87948b}.eva-green{color:#a6ff3b}.eva-purple{color:#a57ce7}
+#eva-background{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 48%,#241532 0%,#0a0b10 52%,#06070b 80%)}
+#eva-vignette{position:absolute;inset:0;background:linear-gradient(90deg,#06070b99,transparent 26%,transparent 74%,#06070b99);pointer-events:none}
+#eva-grid{position:absolute;inset:0;opacity:.18}
+#eva-grid path{stroke:#716086;stroke-width:1;fill:none}
+#eva-machine{position:absolute;inset:0;transform-origin:960px 570px}
+#eva-machine svg,#eva-fields svg{position:absolute;inset:0;width:1920px;height:1080px;overflow:visible}
+#eva-fields{position:absolute;inset:0;pointer-events:none}
+#eva-flash{position:absolute;inset:0;background:#c7ff8f;opacity:0}
+#eva-scan{position:absolute;left:460px;top:210px;width:1000px;height:3px;box-shadow:0 0 30px #a7ff4877;background:linear-gradient(90deg,transparent,#a7ff48,transparent);opacity:.45}
+#eva-head{transform-box:view-box}
+#eva-eyes{opacity:0;filter:drop-shadow(0 0 12px #a8ff40)}
+#eva-core{opacity:0;filter:drop-shadow(0 0 30px #9dff37)}
+#eva-top{position:absolute;left:130px;right:130px;top:62px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #46513d;padding-bottom:22px}
+#eva-brand{font-size:47px;letter-spacing:4px;line-height:1}.eva-topnote{font-size:23px;letter-spacing:3px}
+#eva-telemetry{position:absolute;left:145px;top:255px;width:330px}
+#eva-number{font-size:105px;line-height:1.1;letter-spacing:1px;color:#e2e9de}
+#eva-number small{font-size:37px;color:#a6ff3b}
+.eva-rule{height:3px;width:320px;background:#303c29;margin-top:22px}
+#eva-meter{height:3px;width:320px;background:#9dff37;transform-origin:0 0}
+#eva-sync-label{font-size:40px;letter-spacing:4px;margin:18px 0 16px;color:#a6ff3b}
+#eva-right{position:absolute;left:1485px;top:255px;width:300px}
+.eva-status-title{font-size:31px;margin-top:20px;color:#b1c49d;letter-spacing:2px}
+.eva-state{font-size:56px;line-height:1.25;font-weight:700;margin-top:15px;letter-spacing:3px}
+.eva-data-row{display:flex;justify-content:space-between;border-top:1px solid #354031;margin-top:20px;padding-top:14px;font-size:24px}
+#eva-warning{position:absolute;left:146px;top:536px;font-size:34px;color:#a6ff3b;letter-spacing:2px;width:350px}
+#eva-waveform{position:absolute;inset:0;pointer-events:none}
+#eva-bottom{position:absolute;left:145px;right:145px;bottom:75px;display:flex;align-items:flex-end;justify-content:space-between}
+#eva-event-text{font-size:68px;font-weight:700;letter-spacing:7px;line-height:1.25}
+#eva-event-en{font-size:26px;letter-spacing:5px;margin-top:12px;color:#a6ff3b}
+#eva-time{font-size:27px;letter-spacing:3px;color:#84917f}
+#eva-field-caption{position:absolute;left:126px;top:205px;opacity:0}
+#eva-field-title{font-size:110px;letter-spacing:3px;line-height:1}
+#eva-field-sub{font-size:45px;letter-spacing:9px;color:#b3ff68;margin-top:16px}
+#eva-end{position:absolute;left:830px;top:310px;opacity:0;width:950px}
+#eva-end-kicker{font-size:29px;letter-spacing:9px;color:#a6ff3b}
+#eva-end-title{font-size:230px;line-height:1.07;letter-spacing:2px;margin-left:-7px}
+#eva-end-cn{font-size:64px;font-weight:700;letter-spacing:6px;margin-top:20px}
+#eva-end-line{height:5px;background:#a6ff3b;width:850px;margin:34px 0 25px;transform-origin:0 0}
+#eva-end-small{font-size:25px;letter-spacing:4px;color:#a8b79e}
+#eva-edge{position:absolute;inset:0;border:22px solid #050609;box-sizing:border-box;pointer-events:none}
+</style>
+<div data-hf-id="hf-xegk" id="root" data-composition-id="awakening" data-width="1920" data-height="1080">
+<div data-hf-id="hf-zk0e" id="eva-background"></div>
+<svg data-hf-id="hf-m5of" id="eva-grid" viewBox="0 0 1920 1080"><g data-hf-id="hf-vera"><path data-hf-id="hf-88lp" d="M 160 160 V 970"/><path data-hf-id="hf-4nlw" d="M 240 160 V 970"/><path data-hf-id="hf-b7b3" d="M 320 160 V 970"/><path data-hf-id="hf-3ltm" d="M 400 160 V 970"/><path data-hf-id="hf-zsoi" d="M 480 160 V 970"/><path data-hf-id="hf-bhbl" d="M 560 160 V 970"/><path data-hf-id="hf-911k" d="M 640 160 V 970"/><path data-hf-id="hf-h2vf" d="M 720 160 V 970"/><path data-hf-id="hf-fm6u" d="M 800 160 V 970"/><path data-hf-id="hf-tnou" d="M 880 160 V 970"/><path data-hf-id="hf-feg5" d="M 960 160 V 970"/><path data-hf-id="hf-m15n" d="M 1040 160 V 970"/><path data-hf-id="hf-1cb8" d="M 1120 160 V 970"/><path data-hf-id="hf-e2kh" d="M 1200 160 V 970"/><path data-hf-id="hf-ky21" d="M 1280 160 V 970"/><path data-hf-id="hf-ayim" d="M 1360 160 V 970"/><path data-hf-id="hf-nymf" d="M 1440 160 V 970"/><path data-hf-id="hf-86q0" d="M 1520 160 V 970"/><path data-hf-id="hf-ek4l" d="M 1600 160 V 970"/><path data-hf-id="hf-wbml" d="M 1680 160 V 970"/><path data-hf-id="hf-hqve" d="M 1760 160 V 970"/><path data-hf-id="hf-4n63" d="M 110 170 H 1810"/><path data-hf-id="hf-kf3c" d="M 110 250 H 1810"/><path data-hf-id="hf-1ujd" d="M 110 330 H 1810"/><path data-hf-id="hf-soxu" d="M 110 410 H 1810"/><path data-hf-id="hf-94oq" d="M 110 490 H 1810"/><path data-hf-id="hf-5xrr" d="M 110 570 H 1810"/><path data-hf-id="hf-mul0" d="M 110 650 H 1810"/><path data-hf-id="hf-9ewd" d="M 110 730 H 1810"/><path data-hf-id="hf-aixi" d="M 110 810 H 1810"/><path data-hf-id="hf-wiz2" d="M 110 890 H 1810"/><path data-hf-id="hf-a8rn" d="M 110 970 H 1810"/></g><g data-hf-id="hf-hfve" stroke="#97bb7b" fill="none"><path data-hf-id="hf-6gr8" d="M 120 148 v 16"/><path data-hf-id="hf-6x7u" d="M 140 148 v 7"/><path data-hf-id="hf-nlh8" d="M 160 148 v 7"/><path data-hf-id="hf-lok6" d="M 180 148 v 7"/><path data-hf-id="hf-4jad" d="M 200 148 v 7"/><path data-hf-id="hf-ht25" d="M 220 148 v 16"/><path data-hf-id="hf-pp49" d="M 240 148 v 7"/><path data-hf-id="hf-xc17" d="M 260 148 v 7"/><path data-hf-id="hf-9qjh" d="M 280 148 v 7"/><path data-hf-id="hf-9544" d="M 300 148 v 7"/><path data-hf-id="hf-eq4y" d="M 320 148 v 16"/><path data-hf-id="hf-qgq0" d="M 340 148 v 7"/><path data-hf-id="hf-tq46" d="M 360 148 v 7"/><path data-hf-id="hf-i670" d="M 380 148 v 7"/><path data-hf-id="hf-6pvv" d="M 400 148 v 7"/><path data-hf-id="hf-w3vn" d="M 420 148 v 16"/><path data-hf-id="hf-4wev" d="M 440 148 v 7"/><path data-hf-id="hf-y005" d="M 460 148 v 7"/><path data-hf-id="hf-6rmr" d="M 480 148 v 7"/><path data-hf-id="hf-c58a" d="M 500 148 v 7"/><path data-hf-id="hf-fq60" d="M 520 148 v 16"/><path data-hf-id="hf-hpwe" d="M 540 148 v 7"/><path data-hf-id="hf-w85s" d="M 560 148 v 7"/><path data-hf-id="hf-rwte" d="M 580 148 v 7"/><path data-hf-id="hf-3zld" d="M 600 148 v 7"/><path data-hf-id="hf-cp9d" d="M 620 148 v 16"/><path data-hf-id="hf-ubfx" d="M 640 148 v 7"/><path data-hf-id="hf-mvsv" d="M 660 148 v 7"/><path data-hf-id="hf-4nuh" d="M 680 148 v 7"/><path data-hf-id="hf-eiwg" d="M 700 148 v 7"/><path data-hf-id="hf-ijeu" d="M 720 148 v 16"/><path data-hf-id="hf-81d8" d="M 740 148 v 7"/><path data-hf-id="hf-tisa" d="M 760 148 v 7"/><path data-hf-id="hf-grp4" d="M 780 148 v 7"/><path data-hf-id="hf-g947" d="M 800 148 v 7"/><path data-hf-id="hf-uggn" d="M 820 148 v 16"/><path data-hf-id="hf-anbv" d="M 840 148 v 7"/><path data-hf-id="hf-revt" d="M 860 148 v 7"/><path data-hf-id="hf-c0nz" d="M 880 148 v 7"/><path data-hf-id="hf-8uzq" d="M 900 148 v 7"/><path data-hf-id="hf-vlh8" d="M 920 148 v 16"/><path data-hf-id="hf-pa1u" d="M 940 148 v 7"/><path data-hf-id="hf-n5ck" d="M 960 148 v 7"/><path data-hf-id="hf-f34u" d="M 980 148 v 7"/><path data-hf-id="hf-6j1m" d="M 1000 148 v 7"/><path data-hf-id="hf-5yjs" d="M 1020 148 v 16"/><path data-hf-id="hf-h77y" d="M 1040 148 v 7"/><path data-hf-id="hf-iu2o" d="M 1060 148 v 7"/><path data-hf-id="hf-v0cy" d="M 1080 148 v 7"/><path data-hf-id="hf-5i7v" d="M 1100 148 v 7"/><path data-hf-id="hf-r5zn" d="M 1120 148 v 16"/><path data-hf-id="hf-2ex3" d="M 1140 148 v 7"/><path data-hf-id="hf-yz5h" d="M 1160 148 v 7"/><path data-hf-id="hf-kxeb" d="M 1180 148 v 7"/><path data-hf-id="hf-snmo" d="M 1200 148 v 7"/><path data-hf-id="hf-mq2e" d="M 1220 148 v 16"/><path data-hf-id="hf-pbmk" d="M 1240 148 v 7"/><path data-hf-id="hf-zikq" d="M 1260 148 v 7"/><path data-hf-id="hf-tk6g" d="M 1280 148 v 7"/><path data-hf-id="hf-3n8h" d="M 1300 148 v 7"/><path data-hf-id="hf-ghzl" d="M 1320 148 v 16"/><path data-hf-id="hf-fly5" d="M 1340 148 v 7"/><path data-hf-id="hf-2wbz" d="M 1360 148 v 7"/><path data-hf-id="hf-wujt" d="M 1380 148 v 7"/><path data-hf-id="hf-ko5a" d="M 1400 148 v 7"/><path data-hf-id="hf-mo5g" d="M 1420 148 v 16"/><path data-hf-id="hf-wmai" d="M 1440 148 v 7"/><path data-hf-id="hf-72wc" d="M 1460 148 v 7"/><path data-hf-id="hf-3bwm" d="M 1480 148 v 7"/><path data-hf-id="hf-lxbz" d="M 1500 148 v 7"/><path data-hf-id="hf-pgpr" d="M 1520 148 v 16"/><path data-hf-id="hf-ma4z" d="M 1540 148 v 7"/><path data-hf-id="hf-314h" d="M 1560 148 v 7"/><path data-hf-id="hf-3rnr" d="M 1580 148 v 7"/><path data-hf-id="hf-q8us" d="M 1600 148 v 7"/><path data-hf-id="hf-4lj6" d="M 1620 148 v 16"/><path data-hf-id="hf-0xaw" d="M 1640 148 v 7"/><path data-hf-id="hf-byhy" d="M 1660 148 v 7"/><path data-hf-id="hf-c8uk" d="M 1680 148 v 7"/><path data-hf-id="hf-636d" d="M 1700 148 v 7"/><path data-hf-id="hf-oiz1" d="M 1720 148 v 16"/><path data-hf-id="hf-uie1" d="M 1740 148 v 7"/><path data-hf-id="hf-dqu3" d="M 1760 148 v 7"/><path data-hf-id="hf-glzh" d="M 1780 148 v 7"/><path data-hf-id="hf-wfhe" d="M 1800 148 v 7"/><path data-hf-id="hf-mggu" d="M960 180V980 M120 570H1800" stroke-dasharray="8 15"/></g></svg>
+<div data-hf-id="hf-e4cu" id="eva-machine" data-layout-allow-overflow>
+<svg data-hf-id="hf-38zu" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+<defs data-hf-id="hf-mh0t">
+<linearGradient data-hf-id="hf-f534" id="eva-purple" x1="0" y1="0" x2="1" y2=".7"><stop data-hf-id="hf-b9tn" stop-color="#9a65e5"/><stop data-hf-id="hf-yoej" offset=".45" stop-color="#6940a6"/><stop data-hf-id="hf-4eyw" offset="1" stop-color="#322046"/></linearGradient>
+<linearGradient data-hf-id="hf-khng" id="eva-metal" x1="0" y1="0" x2="0" y2="1"><stop data-hf-id="hf-nm39" stop-color="#78817d"/><stop data-hf-id="hf-pc78" offset=".15" stop-color="#3d4449"/><stop data-hf-id="hf-ymgx" offset=".8" stop-color="#1b2026"/><stop data-hf-id="hf-2bm0" offset="1" stop-color="#626867"/></linearGradient>
+<linearGradient data-hf-id="hf-m8d3" id="eva-face" x1="0" y1="0" x2="1" y2="1"><stop data-hf-id="hf-zi50" stop-color="#e6e7d5"/><stop data-hf-id="hf-0tn3" offset=".5" stop-color="#a3afa0"/><stop data-hf-id="hf-knhd" offset="1" stop-color="#555f5b"/></linearGradient>
+</defs>
+<!-- Rear suspension and rail mechanism -->
+<g data-hf-id="hf-9ocs" id="eva-gantry" fill="none" stroke="#30333a" stroke-width="22">
+<path data-hf-id="hf-qrrv" d="M466 100V1100 M1454 100V1100 M482 285H1438 M485 820H1435"/>
+<path data-hf-id="hf-8uw2" d="M437 120V1100 M1483 120V1100" stroke="#75628e" stroke-width="3"/>
+<path data-hf-id="hf-c4av" d="M480 630H1440" stroke="#24262d" stroke-width="84"/>
+</g>
+<g data-hf-id="hf-t2ku" id="eva-rig">
+<g data-hf-id="hf-1i3u" transform=""><g data-hf-id="hf-kujy" id="eva-left-arm">
+    <path data-hf-id="hf-cmmy" d="M609 545 690 539 723 718 686 829 604 805 584 666Z" fill="#111017" stroke="#050509" stroke-width="8"/>
+    <path data-hf-id="hf-tyfs" d="M604 584 663 565 686 692 657 737 604 700Z" fill="url(#eva-purple)"/>
+    <path data-hf-id="hf-tzhe" d="M590 651 610 696 653 729 642 751 600 727 580 675Z" fill="#9cff3a"/>
+    <g data-hf-id="hf-vzp4" id="eva-left-forearm">
+    <ellipse data-hf-id="hf-u2e4" cx="655" cy="789" rx="47" ry="40" fill="#1b1724" stroke="#8c62b8" stroke-width="8"/>
+    <path data-hf-id="hf-210j" d="M609 802 689 798 717 925 678 1039 589 1030 571 918Z" fill="url(#eva-purple)" stroke="#08070e" stroke-width="8"/>
+    <path data-hf-id="hf-0td5" d="M609 802 628 861 597 979 583 1000 571 918Z" fill="#9dff37"/>
+    <path data-hf-id="hf-3b4f" d="M678 833 692 927 663 1001 633 1007 655 921Z" fill="#422761"/>
+    <path data-hf-id="hf-9qxd" d="M591 1028 682 1037 685 1097 657 1130 582 1112 571 1064Z" fill="#1a1621" stroke="#08070e" stroke-width="7"/>
+    <path data-hf-id="hf-5gz6" d="M595 1047 606 1095 M619 1051 629 1101 M645 1054 653 1103" stroke="#7c55aa" stroke-width="8"/>
+    </g></g></g><g data-hf-id="hf-so7v" transform="translate(1920 0) scale(-1 1)"><g data-hf-id="hf-89nf" id="eva-right-arm">
+    <path data-hf-id="hf-mpq6" d="M609 545 690 539 723 718 686 829 604 805 584 666Z" fill="#111017" stroke="#050509" stroke-width="8"/>
+    <path data-hf-id="hf-u6eo" d="M604 584 663 565 686 692 657 737 604 700Z" fill="url(#eva-purple)"/>
+    <path data-hf-id="hf-4kw6" d="M590 651 610 696 653 729 642 751 600 727 580 675Z" fill="#9cff3a"/>
+    <g data-hf-id="hf-ebhl" id="eva-right-forearm">
+    <ellipse data-hf-id="hf-vwd0" cx="655" cy="789" rx="47" ry="40" fill="#1b1724" stroke="#8c62b8" stroke-width="8"/>
+    <path data-hf-id="hf-4uqr" d="M609 802 689 798 717 925 678 1039 589 1030 571 918Z" fill="url(#eva-purple)" stroke="#08070e" stroke-width="8"/>
+    <path data-hf-id="hf-2xzx" d="M609 802 628 861 597 979 583 1000 571 918Z" fill="#9dff37"/>
+    <path data-hf-id="hf-zzfz" d="M678 833 692 927 663 1001 633 1007 655 921Z" fill="#422761"/>
+    <path data-hf-id="hf-is5h" d="M591 1028 682 1037 685 1097 657 1130 582 1112 571 1064Z" fill="#1a1621" stroke="#08070e" stroke-width="7"/>
+    <path data-hf-id="hf-xvjq" d="M595 1047 606 1095 M619 1051 629 1101 M645 1054 653 1103" stroke="#7c55aa" stroke-width="8"/>
+    </g></g></g>
+<!-- hips and articulated abdominal plates -->
+<path data-hf-id="hf-606c" d="M837 852 1083 852 1139 1080H781Z" fill="#16131e" stroke="#08070d" stroke-width="9"/>
+<path data-hf-id="hf-cq5a" d="M856 819 1064 819 1092 901 1015 952H905L828 901Z" fill="#4d2e70" stroke="#0b0a12" stroke-width="9"/>
+<path data-hf-id="hf-wg83" d="M863 916 902 939 915 1078H795L813 998Z M1057 916 1018 939 1005 1078H1125L1107 998Z" fill="url(#eva-purple)"/>
+<path data-hf-id="hf-0p2h" d="M899 826 960 845 1021 826 1011 857 960 874 909 857Z M911 872 960 887 1009 872 1001 905 960 918 919 905Z" fill="#c1d0ae"/>
+<!-- Upper chest armor and collar -->
+<path data-hf-id="hf-j4ku" d="M767 473 842 449 1078 449 1153 473 1169 640 1103 805 1028 849H892L817 805 751 640Z" fill="url(#eva-purple)" stroke="#08070e" stroke-width="10"/>
+<path data-hf-id="hf-1kap" d="M768 474 852 477 892 587 865 724 805 695 756 603Z M1152 474 1068 477 1028 587 1055 724 1115 695 1164 603Z" fill="#211829"/>
+<path data-hf-id="hf-mp39" d="M779 489 831 497 867 589 845 642 811 623Z M1141 489 1089 497 1053 589 1075 642 1109 623Z" fill="#b0ff3f"/>
+<path data-hf-id="hf-u7p7" d="M857 456 911 431H1009L1063 456 1018 514H902Z" fill="#e08d39" stroke="#161117" stroke-width="9"/>
+<path data-hf-id="hf-noh7" d="M895 505 960 535 1025 505 1047 596 1012 648H908L873 596Z" fill="#1b1624" stroke="#0a0910" stroke-width="7"/>
+<path data-hf-id="hf-kq3t" d="M878 640 960 666 1042 640 1078 731 1029 793 960 818 891 793 842 731Z" fill="#563381" stroke="#17101f" stroke-width="8"/>
+<path data-hf-id="hf-ioij" d="M863 684 902 706 884 742 866 727Z M1057 684 1018 706 1036 742 1054 727Z" fill="#9dff37"/>
+<path data-hf-id="hf-lhpi" d="M960 674V805 M878 768 930 787 M1042 768 990 787" stroke="#a878e9" stroke-width="4"/>
+<g data-hf-id="hf-om0l" id="eva-neck"><path data-hf-id="hf-10dg" d="M906 362H1014L1032 469 960 504 888 469Z" fill="#15151b" stroke="#07070c" stroke-width="8"/>
+<path data-hf-id="hf-d91t" d="M909 408 960 428 1011 408 M903 432 960 451 1017 432 M901 456 960 475 1019 456" stroke="#71816a" stroke-width="8" fill="none"/></g>
+<g data-hf-id="hf-ru0e" transform=""><g data-hf-id="hf-k8gw" id="eva-left-shoulder">
+    <path data-hf-id="hf-fv0t" d="M690 402 650 241 600 212 541 429 557 670 661 653 735 520Z" fill="url(#eva-purple)" stroke="#0b0912" stroke-width="8"/>
+    <path data-hf-id="hf-m47a" d="M650 241 600 212 606 431 690 402Z" fill="#9862ed"/>
+    <path data-hf-id="hf-k013" d="M600 212 568 355 583 417 607 390Z" fill="#b0ff3f"/>
+    <path data-hf-id="hf-7x6q" d="M557 445 605 435 653 533 620 633 563 647Z" fill="#2d203f"/>
+    <path data-hf-id="hf-79tc" d="M569 467 601 461 634 531 618 563 585 519Z" fill="#99fa31"/>
+    <path data-hf-id="hf-ddtj" d="M620 326 637 387 661 398" fill="none" stroke="#c09aff" stroke-width="5"/>
+    <path data-hf-id="hf-czl7" d="M574 598 615 588" stroke="#67468d" stroke-width="8"/>
+    </g></g><g data-hf-id="hf-jrh7" transform="translate(1920 0) scale(-1 1)"><g data-hf-id="hf-zjs3" id="eva-right-shoulder">
+    <path data-hf-id="hf-730h" d="M690 402 650 241 600 212 541 429 557 670 661 653 735 520Z" fill="url(#eva-purple)" stroke="#0b0912" stroke-width="8"/>
+    <path data-hf-id="hf-hbyi" d="M650 241 600 212 606 431 690 402Z" fill="#9862ed"/>
+    <path data-hf-id="hf-2bpj" d="M600 212 568 355 583 417 607 390Z" fill="#b0ff3f"/>
+    <path data-hf-id="hf-96w6" d="M557 445 605 435 653 533 620 633 563 647Z" fill="#2d203f"/>
+    <path data-hf-id="hf-a154" d="M569 467 601 461 634 531 618 563 585 519Z" fill="#99fa31"/>
+    <path data-hf-id="hf-6g53" d="M620 326 637 387 661 398" fill="none" stroke="#c09aff" stroke-width="5"/>
+    <path data-hf-id="hf-ewp7" d="M574 598 615 588" stroke="#67468d" stroke-width="8"/>
+    </g></g>
+<g data-hf-id="hf-ikmq" id="eva-head">
+<!-- Horn, cranial shell, temples, white jaw and paired eye sockets -->
+<path data-hf-id="hf-a0gt" d="M937 242 958 43 982 240 972 284Z" fill="#9160d4" stroke="#110e1a" stroke-width="7"/>
+<path data-hf-id="hf-6xa5" d="M958 43 960 239 937 242Z" fill="#be8cf8"/>
+<path data-hf-id="hf-jzap" d="M874 239 904 187 960 167 1016 187 1046 239 1031 343 992 398 960 419 928 398 889 343Z" fill="url(#eva-purple)" stroke="#0b0912" stroke-width="8"/>
+<path data-hf-id="hf-h5by" d="M904 187 926 228 960 255 960 174Z" fill="#c39bf7" opacity=".6"/>
+<path data-hf-id="hf-59mt" d="M875 238 844 259 855 339 888 361 898 314Z M1045 238 1076 259 1065 339 1032 361 1022 314Z" fill="#593280" stroke="#0b0912" stroke-width="7"/>
+<path data-hf-id="hf-65fe" d="M852 272 862 322 880 331 874 273Z M1068 272 1058 322 1040 331 1046 273Z" fill="#abff43"/>
+<path data-hf-id="hf-43nh" d="M897 302 923 314 960 332 997 314 1023 302 1016 355 985 399 960 419 935 399 904 355Z" fill="url(#eva-face)" stroke="#0d0c11" stroke-width="7"/>
+<path data-hf-id="hf-7hqi" d="M960 332 972 361 960 387 948 361Z" fill="#282c2b"/>
+<path data-hf-id="hf-d7u0" d="M923 351 937 374 960 385 983 374 997 351 M935 390 960 403 985 390" stroke="#3e4743" stroke-width="6" fill="none"/>
+<path data-hf-id="hf-dydz" d="M886 259 942 276 948 300 901 289Z M1034 259 978 276 972 300 1019 289Z" fill="#050806" stroke="#120e1a" stroke-width="8"/>
+<g data-hf-id="hf-0cxu" id="eva-eyes"><path data-hf-id="hf-mtn6" d="M892 265 938 279 941 290 904 281Z M1028 265 982 279 979 290 1016 281Z" fill="#c9ff82"/><path data-hf-id="hf-k4by" d="M903 270 934 281 M1017 270 986 281" stroke="#f1ffe5" stroke-width="3"/></g>
+<path data-hf-id="hf-f34d" d="M925 217 960 235 995 217 984 254 960 270 936 254Z" fill="#7fff36"/>
+<path data-hf-id="hf-05so" d="M960 275V322" stroke="#140d21" stroke-width="10"/>
+</g>
+</g>
+<g data-hf-id="hf-s8bf" transform=""><g data-hf-id="hf-qo7x" id="eva-left-lock">
+    <path data-hf-id="hf-jmsy" d="M330 430 H555 L604 474 V552 L555 588 H330Z" fill="url(#eva-metal)" stroke="#06070b" stroke-width="8"/>
+    <path data-hf-id="hf-l4is" d="M350 460 H531 L566 487 V528 L531 558 H350Z" fill="#1b1e25" stroke="#5c6268" stroke-width="3"/>
+    <path data-hf-id="hf-yc06" d="M353 469 H522 M353 549 H522" stroke="#a8ff36" stroke-width="5"/>
+    <path data-hf-id="hf-fvzj" d="M380 476 416 536 M416 476 452 536 M452 476 488 536 M488 476 524 536" stroke="#b6c3b9" opacity=".23" stroke-width="14"/>
+    <rect data-hf-id="hf-mkta" x="542" y="481" width="17" height="47" fill="#c6ff6a"/>
+    <circle data-hf-id="hf-o0xf" cx="350" cy="445" r="6" fill="#c6c8cf"/><circle data-hf-id="hf-quu8" cx="350" cy="574" r="6" fill="#c6c8cf"/>
+    </g></g><g data-hf-id="hf-jd66" transform="translate(1920 0) scale(-1 1)"><g data-hf-id="hf-82dm" id="eva-right-lock">
+    <path data-hf-id="hf-ijna" d="M330 430 H555 L604 474 V552 L555 588 H330Z" fill="url(#eva-metal)" stroke="#06070b" stroke-width="8"/>
+    <path data-hf-id="hf-fgm4" d="M350 460 H531 L566 487 V528 L531 558 H350Z" fill="#1b1e25" stroke="#5c6268" stroke-width="3"/>
+    <path data-hf-id="hf-pglm" d="M353 469 H522 M353 549 H522" stroke="#a8ff36" stroke-width="5"/>
+    <path data-hf-id="hf-oo27" d="M380 476 416 536 M416 476 452 536 M452 476 488 536 M488 476 524 536" stroke="#b6c3b9" opacity=".23" stroke-width="14"/>
+    <rect data-hf-id="hf-ce6a" x="542" y="481" width="17" height="47" fill="#c6ff6a"/>
+    <circle data-hf-id="hf-4pw3" cx="350" cy="445" r="6" fill="#c6c8cf"/><circle data-hf-id="hf-bes8" cx="350" cy="574" r="6" fill="#c6c8cf"/>
+    </g></g>
+<g data-hf-id="hf-ymbl" id="eva-chest-lock"><path data-hf-id="hf-9uo6" d="M693 665 1227 665V762H693Z" fill="url(#eva-metal)" stroke="#0a0c10" stroke-width="8"/><path data-hf-id="hf-x660" d="M706 680H1214V745H706Z" fill="#20252b" stroke="#545e5e" stroke-width="2"/><path data-hf-id="hf-bakz" d="M838 677 862 746 M883 677 907 746 M1013 677 1037 746 M1058 677 1082 746" stroke="#a4ff3e" stroke-width="14" opacity=".8"/><rect data-hf-id="hf-fnnc" x="918" y="676" width="84" height="74" fill="#464650" stroke="#a6b09e" stroke-width="3"/><path data-hf-id="hf-b9rm" d="M935 702H985V724H935Z" fill="#a6ff3b"/></g>
+<g data-hf-id="hf-uh35" id="eva-core"><circle data-hf-id="hf-ytf6" cx="960" cy="675" r="53" fill="#a5ff42"/><circle data-hf-id="hf-mdum" cx="960" cy="675" r="23" fill="#efffdb"/><path data-hf-id="hf-a66h" d="M860 675H1060 M960 575V775" stroke="#ccff95" stroke-width="3"/></g>
+</svg></div>
+<div data-hf-id="hf-v35x" id="eva-scan"></div>
+<div data-hf-id="hf-35ew" id="eva-fields" data-layout-allow-overflow><svg data-hf-id="hf-ff52" viewBox="0 0 1920 1080"><polygon data-hf-id="hf-6z7f" id="eva-field-0" points="1283.36,687.78 1093.94,826.05 826.06,826.05 636.64,687.78 636.64,492.22 826.06,353.95 1093.94,353.95 1283.36,492.22" fill="#acf94c" fill-opacity="0.025" stroke="#b8ff53" stroke-width="5"/><polygon data-hf-id="hf-jqf2" id="eva-field-1" points="1283.36,687.78 1093.94,826.05 826.06,826.05 636.64,687.78 636.64,492.22 826.06,353.95 1093.94,353.95 1283.36,492.22" fill="#8b55df" fill-opacity="0.025" stroke="#9370e5" stroke-width="2"/><polygon data-hf-id="hf-cwkr" id="eva-field-2" points="1283.36,687.78 1093.94,826.05 826.06,826.05 636.64,687.78 636.64,492.22 826.06,353.95 1093.94,353.95 1283.36,492.22" fill="none" fill-opacity="0" stroke="#d6ffac" stroke-width="5"/><polygon data-hf-id="hf-kut5" id="eva-field-3" points="1283.36,687.78 1093.94,826.05 826.06,826.05 636.64,687.78 636.64,492.22 826.06,353.95 1093.94,353.95 1283.36,492.22" fill="#acf94c" fill-opacity="0.025" stroke="#b8ff53" stroke-width="2"/><polygon data-hf-id="hf-tsoq" id="eva-field-4" points="1283.36,687.78 1093.94,826.05 826.06,826.05 636.64,687.78 636.64,492.22 826.06,353.95 1093.94,353.95 1283.36,492.22" fill="#8b55df" fill-opacity="0.025" stroke="#9370e5" stroke-width="5"/><polygon data-hf-id="hf-g8tl" id="eva-field-5" points="1283.36,687.78 1093.94,826.05 826.06,826.05 636.64,687.78 636.64,492.22 826.06,353.95 1093.94,353.95 1283.36,492.22" fill="none" fill-opacity="0" stroke="#d6ffac" stroke-width="2"/><polygon data-hf-id="hf-z12x" id="eva-field-6" points="1283.36,687.78 1093.94,826.05 826.06,826.05 636.64,687.78 636.64,492.22 826.06,353.95 1093.94,353.95 1283.36,492.22" fill="#acf94c" fill-opacity="0.025" stroke="#b8ff53" stroke-width="5"/><polygon data-hf-id="hf-2oqc" id="eva-field-7" points="1283.36,687.78 1093.94,826.05 826.06,826.05 636.64,687.78 636.64,492.22 826.06,353.95 1093.94,353.95 1283.36,492.22" fill="#8b55df" fill-opacity="0.025" stroke="#9370e5" stroke-width="2"/><polygon data-hf-id="hf-h3k5" id="eva-field-8" points="1283.36,687.78 1093.94,826.05 826.06,826.05 636.64,687.78 636.64,492.22 826.06,353.95 1093.94,353.95 1283.36,492.22" fill="none" fill-opacity="0" stroke="#d6ffac" stroke-width="5"/></svg></div>
+<div data-hf-id="hf-wzvs" id="eva-vignette"></div>
+<div data-hf-id="hf-3lwd" id="eva-hud">
+<div data-hf-id="hf-kfi7" id="eva-top"><div data-hf-id="hf-oc3w" id="eva-brand" class="eva-english">EVA <span data-hf-id="hf-w8rs" class="eva-green">/</span> UNIT 01</div><div data-hf-id="hf-iu5e" class="eva-topnote">泛用人型决战兵器 <span data-hf-id="hf-7ohx" class="eva-green"> // </span> 觉醒记录</div></div>
+<div data-hf-id="hf-lgij" id="eva-telemetry"><div data-hf-id="hf-2hx5" class="eva-label eva-english">NEURAL LINK / 01</div><div data-hf-id="hf-8a9e" id="eva-sync-label">同步率</div><div data-hf-id="hf-31lj" id="eva-number" class="eva-english"><span data-hf-id="hf-64br" id="eva-sync-value">41.2</span><small data-hf-id="hf-ew4z"> %</small></div><div data-hf-id="hf-thg5" class="eva-rule"><div data-hf-id="hf-6esx" id="eva-meter"></div></div></div>
+<div data-hf-id="hf-ed2g" id="eva-right"><div data-hf-id="hf-41rf" class="eva-label eva-english">RESTRAINT SYSTEM</div><div data-hf-id="hf-ux7o" class="eva-status-title">拘束状态</div><div data-hf-id="hf-iofv" id="eva-lock-state" class="eva-state">已锁定</div><div data-hf-id="hf-g3d4" class="eva-data-row"><span data-hf-id="hf-ek7k">肩部</span><span data-hf-id="hf-di2r" id="eva-shoulder-status" class="eva-green">LOCKED</span></div><div data-hf-id="hf-n3b4" class="eva-data-row"><span data-hf-id="hf-dsll">胸部</span><span data-hf-id="hf-uo9q" id="eva-chest-status" class="eva-green">LOCKED</span></div><div data-hf-id="hf-lwe1" class="eva-data-row"><span data-hf-id="hf-hrmk">力场</span><span data-hf-id="hf-dcwt" id="eva-field-status" class="eva-purple">待机</span></div></div>
+<div data-hf-id="hf-4a0q" id="eva-warning"><span data-hf-id="hf-u5zu" id="eva-warning-text">神经连接稳定</span></div>
+<svg data-hf-id="hf-d22m" id="eva-waveform" viewBox="0 0 1920 1080"><path data-hf-id="hf-jnyl" d="M145 700H465 M145 790H465" fill="none" stroke="#414c3a"/><polyline data-hf-id="hf-8qjq" points="145,745.0 150,756.1693912596078 155,753.9747244355053 160,751.0832505280215 165,754.9006617417557 170,750.544755651776 175,736.6329016857889 180,732.3219809422653 185,738.3379983770883 190,738.4832935025372 195,737.119442060414 200,747.6819598695762 205,758.729311003054 210,755.4407938220003 215,749.5415957602518 220,751.3285951077701 225,747.4787707148008 230,734.3731917365996 235,730.5678976301106 240,738.7540256655196 245,741.7431113325953 250,740.8215201602649 255,750.0394506542782 260,760.3086538578383 265,755.8257018287914 270,747.1727337261303 275,747.265226506235 280,744.5055029643519 285,732.9451353581446 290,729.9691291141555 295,740.0902861647285 300,745.5313540293282 305,744.5883279312837 310,751.7815834076998 315,760.7447412050028 320,755.1487851256511 325,744.2030723285409 330,743.0597703467481 335,741.944505142391 340,732.5400223154571 345,730.5489996144807 350,742.1739744302425 355,749.5174899264773 360,748.0727474912335 365,752.681258398014 370,759.9801936259464 375,753.5347181893549 380,740.9274048275797 385,739.0737221830798 390,740.0661895681642 395,733.2512740352355 400,732.2206050374767 405,744.7521134736751 410,753.3456913202428 415,750.9629876176601 420,752.5989682374997 425,758.0689541160831 430,751.1998246634483 435,737.6795853167979 440,735.6461519556799 445,739.0645665689177" fill="none" stroke="#9dff37" stroke-width="2.5"/><rect data-hf-id="hf-rxjc" x="145" y="840" width="14" height="25" fill="#9dff37"/><rect data-hf-id="hf-pmhp" x="167" y="840" width="14" height="35" fill="#9dff37"/><rect data-hf-id="hf-9jrp" x="189" y="840" width="14" height="45" fill="#7b54ce"/><rect data-hf-id="hf-18po" x="211" y="840" width="14" height="55" fill="#39314d"/><rect data-hf-id="hf-vz5s" x="233" y="840" width="14" height="25" fill="#9dff37"/><rect data-hf-id="hf-7uil" x="255" y="840" width="14" height="35" fill="#9dff37"/><rect data-hf-id="hf-prjh" x="277" y="840" width="14" height="45" fill="#7b54ce"/><rect data-hf-id="hf-yc8c" x="299" y="840" width="14" height="55" fill="#39314d"/><rect data-hf-id="hf-pqc8" x="321" y="840" width="14" height="25" fill="#9dff37"/><rect data-hf-id="hf-7t6d" x="343" y="840" width="14" height="35" fill="#9dff37"/><rect data-hf-id="hf-1yh5" x="365" y="840" width="14" height="45" fill="#7b54ce"/><rect data-hf-id="hf-aub4" x="387" y="840" width="14" height="55" fill="#39314d"/><rect data-hf-id="hf-i855" x="409" y="840" width="14" height="25" fill="#9dff37"/><rect data-hf-id="hf-4fuh" x="431" y="840" width="14" height="35" fill="#9dff37"/></svg>
+<div data-hf-id="hf-8o3v" id="eva-bottom"><div data-hf-id="hf-yeow"><div data-hf-id="hf-ahvn" id="eva-event-text">拘束・同步监测</div><div data-hf-id="hf-1usj" id="eva-event-en" class="eva-english">NEURAL LINK ESTABLISHED</div></div><div data-hf-id="hf-yecv" id="eva-time" class="eva-english">REC <span data-hf-id="hf-l4ug" class="eva-green">●</span> <span data-hf-id="hf-67x5" id="eva-clock">00:00:00</span></div></div>
+</div>
+<div data-hf-id="hf-62jv" id="eva-field-caption"><div data-hf-id="hf-oj6f" class="eva-label eva-english">ABSOLUTE TERROR FIELD</div><div data-hf-id="hf-2ypo" id="eva-field-title" class="eva-english">A.T. FIELD</div><div data-hf-id="hf-g7xv" id="eva-field-sub">力场・全域展开</div></div>
+<div data-hf-id="hf-jhy8" id="eva-flash"></div>
+<div data-hf-id="hf-769h" id="eva-end"><div data-hf-id="hf-8aol" id="eva-end-kicker" class="eva-english">EVANGELION / AWAKENING</div><div data-hf-id="hf-ocby" id="eva-end-title" class="eva-english" data-var-text="unit">UNIT 01</div><div data-hf-id="hf-klsm" id="eva-end-cn" data-var-text="title">EVA · 初号机觉醒</div><div data-hf-id="hf-pj84" id="eva-end-line"></div><div data-hf-id="hf-xkpq" id="eva-end-small" class="eva-english">RESTRAINT RELEASED / A.T. FIELD ACTIVE</div></div>
+<div data-hf-id="hf-9h9d" id="eva-edge"></div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+// All transforms and state changes are driven by one seekable native timeline.
+tl.fromTo('#eva-machine',{scale:1,y:45,x:0},{scale:1.04,y:32,duration:5.8,ease:'none'},0);
+tl.fromTo('#eva-head',{y:38,scaleY:.84,rotation:0,svgOrigin:'960 445'},{y:38,scaleY:.84,rotation:0,svgOrigin:'960 445',duration:5.8},0);
+tl.fromTo('#eva-head',{y:38,scaleY:.84,rotation:0,svgOrigin:'960 445'},{y:-6,scaleY:1.02,rotation:0,svgOrigin:'960 445',immediateRender:false,duration:2.5,ease:'power2.inOut'},5.8);
+tl.to('#eva-head',{y:0,scaleY:1,duration:.55,ease:'power2.out'},8.3);
+tl.fromTo('#eva-neck',{opacity:0},{opacity:1,duration:1.3,ease:'power2.in'},5.8);
+tl.to('#eva-machine',{scale:1.24,y:92,duration:2.4,ease:'power2.inOut'},5.8);
+tl.fromTo('#eva-eyes',{opacity:0},{opacity:1,duration:.1},9.2);
+tl.fromTo('#eva-scan',{y:0,opacity:.45},{y:610,opacity:.12,duration:2.2,ease:'none',repeat:2},.4);
+tl.to('#eva-scan',{opacity:0,duration:.2},7.05);
+tl.to('#eva-machine',{scale:.91,y:5,duration:1.1,ease:'power2.inOut'},10.1);
+tl.to('#eva-left-lock',{x:-38,duration:.1,ease:'power3.out'},11.35);
+tl.to('#eva-left-lock',{x:-820,duration:.6,ease:'power3.in'},11.5);
+tl.to('#eva-right-lock',{x:-38,duration:.1,ease:'power3.out'},12);
+tl.to('#eva-right-lock',{x:-820,duration:.6,ease:'power3.in'},12.15);
+tl.to('#eva-chest-lock',{y:22,duration:.12},12.8);
+tl.to('#eva-chest-lock',{y:600,duration:.6,ease:'power3.in'},12.94);
+tl.to('#eva-gantry',{opacity:.2,duration:1.2},13.2);
+tl.to('#eva-left-lock',{opacity:0,duration:.1},12.2);
+tl.to('#eva-right-lock',{opacity:0,duration:.1},12.85);
+tl.to('#eva-chest-lock',{opacity:0,duration:.1},13.6);
+tl.to('#eva-left-shoulder',{rotation:-6,svgOrigin:'654 470',duration:.7,ease:'power2.out'},13.5);
+tl.to('#eva-right-shoulder',{rotation:-6,svgOrigin:'654 470',duration:.8,ease:'power2.out'},13.65);
+tl.to('#eva-left-arm',{rotation:7,svgOrigin:'654 560',duration:1,ease:'power2.inOut'},13.6);
+tl.to('#eva-right-arm',{rotation:7,svgOrigin:'654 560',duration:1.1,ease:'power2.inOut'},13.7);
+tl.to('#eva-left-forearm',{rotation:-31,svgOrigin:'655 789',duration:.95,ease:'power2.inOut'},13.8);
+tl.to('#eva-right-forearm',{rotation:-31,svgOrigin:'655 789',duration:1.1,ease:'power2.inOut'},13.9);
+tl.fromTo('#eva-core',{opacity:0,scale:.1,svgOrigin:'960 675'},{opacity:.9,scale:1.3,duration:1.6,ease:'power2.in'},14.3);
+tl.to('#eva-core',{opacity:0,scale:2.5,duration:.5,ease:'power3.out'},16.4);
+tl.to('#eva-hud',{opacity:0,duration:.4},16.3);
+tl.fromTo('#eva-field-caption',{opacity:0,x:-20},{opacity:1,x:0,duration:.45,ease:'power2.out'},16.7);
+tl.to('#eva-field-caption',{opacity:0,duration:.35},20.45);
+for(let i=0;i<9;i++){
+ const at=15.0+i*.24;
+ tl.fromTo('#eva-field-'+i,{scale:.06,opacity:0,svgOrigin:'960 590'},{scale:.9+i*.1,opacity:.82,duration:1.4,ease:'power2.in'},at);
+ tl.to('#eva-field-'+i,{scale:5.3+i*.15,opacity:0,duration:2.3,ease:'power2.in'},at+1.4);
+}
+for(const at of [16.4,18,19.2]){
+ tl.fromTo('#eva-flash',{opacity:.24},{opacity:0,duration:.42,ease:'power2.out',immediateRender:false},at);
+ tl.to('#eva-machine',{x:12,duration:.05,repeat:3,yoyo:true,ease:'none'},at);
+ tl.to('#eva-machine',{x:0,duration:.09},at+.2);
+}
+tl.to('#eva-grid',{opacity:.05,duration:1},20.2);
+tl.to('#eva-machine',{scale:.96,x:-550,y:70,duration:.85,ease:'power3.inOut'},20.6);
+tl.to('#eva-gantry',{opacity:0,duration:.4},20.6);
+tl.fromTo('#eva-end',{opacity:0,x:65},{opacity:1,x:0,duration:.65,ease:'power3.out'},21.1);
+tl.fromTo('#eva-end-line',{scaleX:0},{scaleX:1,duration:.55,ease:'power3.out'},21.3);
+// The clock and conceptual sync values are linked to deterministic scene time.
+const clock={t:0};
+const q=(id,s)=>{const e=document.getElementById(id);if(e&&e.textContent!==s)e.textContent=s;};
+function state(t){
+ let sync=t<5.8?41.2+t/5.8*48.4:t<9.2?89.6+(t-5.8)/3.4*22.3:Math.min(169.8,111.9+(t-9.2)*8.1);
+ q('eva-sync-value',t>=14.9?'---':sync.toFixed(1));
+ q('eva-clock',`00:${String(Math.floor(t)).padStart(2,'0')}:${String(Math.floor(t*30)%30).padStart(2,'0')}`);
+ q('eva-warning-text',t<5.8?'神经连接稳定':t<9.2?'同步阈值突破':t<11.35?'自主反应确认':t<13.5?'拘束信号丢失':'控制权限失效');
+ q('eva-lock-state',t<11.35?'已锁定':t<13.5?'解除中':'已解除');
+ q('eva-shoulder-status',t<11.35?'LOCKED':t<12.6?'RELEASING':'RELEASED');
+ q('eva-chest-status',t<12.8?'LOCKED':t<13.5?'RELEASING':'RELEASED');
+ q('eva-field-status',t<14.3?'待机':t<16.4?'正在充能':'全域展开');
+ const ev=t<5.8?['拘束・同步监测','NEURAL LINK ESTABLISHED']:t<9.2?['自主反应','NEURAL THRESHOLD EXCEEDED']:t<11.35?['觉醒确认','OPTICAL SIGNAL / ACTIVE']:t<13.5?['拘束解除','RESTRAINT RELEASE SEQUENCE']:['力场临界','A.T. FIELD / CHARGING'];
+ q('eva-event-text',ev[0]);q('eva-event-en',ev[1]);
+}
+tl.to(clock,{t:24,duration:24,ease:'none',onUpdate:()=>state(clock.t)},0);
+tl.fromTo('#eva-meter',{scaleX:.412},{scaleX:1,duration:9.2,ease:'none'},0);
+state(0); window.__timelines=window.__timelines||{};window.__timelines['awakening']=tl;
+</script></template>

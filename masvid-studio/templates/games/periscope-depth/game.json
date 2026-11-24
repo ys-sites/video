@@ -1,0 +1,26 @@
+{
+  "id": "periscope-depth",
+  "title": "Periscope Depth",
+  "description": "Raise the periscope, lead your torpedo onto a carrier on the horizon, then dive when a destroyer hears you and dodge depth charges on sonar. A whole submarine patrol in one HTML file.",
+  "genre": "shooter",
+  "style": "minimal",
+  "setting": "modern",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "Left / Right or A / D turn the periscope · Space / click fire · S / Down dive · arrows steer on sonar · touch buttons on phones · P / Esc pause · R restart",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-23T00:00:00.000Z",
+  "updatedAt": "2026-11-23T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "潜望深渊",
+      "description": "升起潜望镜，给海平线上的航母算好提前量再发射鱼雷；被驱逐舰听到就立刻下潜，在声呐图里躲开深水炸弹。一个 HTML 文件里的完整潜艇巡航。",
+      "controls": "← → 或 A / D 转动潜望镜 · 空格 / 点击 发射 · S / ↓ 下潜 · 声呐里方向键移动 · 手机用屏幕按钮 · P / Esc 暂停 · R 重开"
+    }
+  }
+}

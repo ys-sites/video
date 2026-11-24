@@ -1,0 +1,90 @@
+{
+  "generator": "Built-in image_gen",
+  "originalArtwork": true,
+  "atlasLayout": "4 x 4",
+  "processing": "Cell extraction, alpha cleanup, WebP compression; cover normalized without cropping title. Sprites downscaled to 192 x 192 and cover to 400 px wide to fit the default npm package size budget.",
+  "atlasPrompt": "Use case: stylized-concept. Production videogame asset ATLAS. Square 1024x1024 strictly divided into a uniform 4 by 4 grid of 256x256 cells. No grid lines, no labels, no text. Charming polished top-down cartoon city game, original characters only, clean readable silhouettes, high detail. Transparent background around isolated objects, terrain fills its cell. Cell objects must never overlap or leave their own cell, generous transparent margins around sprites. Row1 left to right: seamless grass with subtle flowers; seamless asphalt road; round mint green slime with big eyes; same slime mouth wide open eating. Row2: small orange rival slime; purple rival slime; blue rival slime; chunky leafy tree viewed overhead. Row3: small walking pedestrian; red car top-down; blue delivery van top-down; cozy red roof house viewed overhead. Row4: dark navy rounded UI panel blank; white pointing hand tutorial cursor; grassy garden bench; gold growth sparkle. Render exactly 16 separate assets. No logos or watermarks.",
+  "coverPrompt": "Use case: ads-marketing. Original premium mobile game COVER illustration, portrait 9:16 around 768x1360. Polished charming top-down city block with roads, zebra crossings, tiny cars pedestrians leafy trees and red-roofed houses. A large adorable glossy mint-green slime with expressive eyes and wide happy mouth is swallowing a little red car; three smaller orange purple blue rival slimes nearby. Highly finished game promotional art with depth, tactile material details and lively motion, not abstract primitive shapes. Main action occupies middle 75%, keep top 15% for a beautifully crafted title reading exactly \"SLIME SWELL\". No other text. Crisp readable composition at phone size. No existing game characters, logos or brands.",
+  "files": [
+    {
+      "file": "00.webp",
+      "cell": 0,
+      "bytes": 10140
+    },
+    {
+      "file": "01.webp",
+      "cell": 1,
+      "bytes": 5938
+    },
+    {
+      "file": "02.webp",
+      "cell": 2,
+      "bytes": 13684
+    },
+    {
+      "file": "03.webp",
+      "cell": 3,
+      "bytes": 16522
+    },
+    {
+      "file": "04.webp",
+      "cell": 4,
+      "bytes": 12036
+    },
+    {
+      "file": "05.webp",
+      "cell": 5,
+      "bytes": 12834
+    },
+    {
+      "file": "06.webp",
+      "cell": 6,
+      "bytes": 16768
+    },
+    {
+      "file": "07.webp",
+      "cell": 7,
+      "bytes": 21416
+    },
+    {
+      "file": "08.webp",
+      "cell": 8,
+      "bytes": 14712
+    },
+    {
+      "file": "09.webp",
+      "cell": 9,
+      "bytes": 15534
+    },
+    {
+      "file": "10.webp",
+      "cell": 10,
+      "bytes": 12708
+    },
+    {
+      "file": "11.webp",
+      "cell": 11,
+      "bytes": 26454
+    },
+    {
+      "file": "12.webp",
+      "cell": 12,
+      "bytes": 7076
+    },
+    {
+      "file": "13.webp",
+      "cell": 13,
+      "bytes": 10276
+    },
+    {
+      "file": "14.webp",
+      "cell": 14,
+      "bytes": 27486
+    },
+    {
+      "file": "15.webp",
+      "cell": 15,
+      "bytes": 19734
+    }
+  ]
+}

@@ -1,0 +1,1368 @@
+{
+  "version": 2,
+  "project": 420348,
+  "product": "openmotion",
+  "environment": "production",
+  "entrypoint": "studio",
+  "page": "studio",
+  "metric": "ui_click/template_card/open_detail",
+  "aggregation": "total",
+  "filterTestAccounts": true,
+  "window": {
+    "start": "2026-10-18T16:00:00Z",
+    "endExclusive": "2026-11-17T16:00:00Z",
+    "timezone": "Asia/Shanghai"
+  },
+  "fetchedOn": "2026-11-18",
+  "counts": {
+    "motion-e6ac921a-f56f-4170-a2be-938cec5d028b": 33,
+    "motion-98e8aea3-0e9a-45f2-9ff8-d8a323204378": 26,
+    "motion-dac924da-010f-4445-baf3-a39cb033e48f": 16,
+    "motion-5d05235e-aa1b-4c06-ad97-3ea6c41962a2": 15,
+    "motion-6a60a781-d223-4c03-96ba-88bcaafd62d3": 15,
+    "motion-c74e1725-6fd2-4885-be7f-f1f705e9af66": 15,
+    "motion-46f34492-8ba1-4ba5-ac6e-4b4a13c80373": 13,
+    "motion-d8eea6d9-b25b-4727-823d-d102070ea694": 12,
+    "motion-5805e419-651f-45b7-90be-302c93f79b21": 11,
+    "motion-d151cc2c-40bc-4765-a767-3957bdee6ec2": 11,
+    "motion-2cd7fd99-8dff-4c2c-8577-719c51ae9e5c": 10,
+    "motion-6b58e785-aace-4d84-9229-7d68d6ed247b": 10,
+    "motion-927a222e-3fcd-4565-aa63-40e97447688a": 10,
+    "motion-dfb1a35a-a70e-489f-8e02-b74068fc0b8c": 10,
+    "motion-0e3488b3-db0b-4058-b70e-b58ac6213105": 9,
+    "motion-89f2191f-bd58-48e2-a1f5-41c0cc759b59": 9,
+    "motion-be2a4af0-0183-4979-ab05-2a68413c0890": 8,
+    "motion-d75c22e1-3c2c-4df8-aece-d4f7a37d8ff0": 8,
+    "motion-38b9c70f-cf58-4555-a50e-30c17479ba1e": 7,
+    "motion-664184d9-593e-4984-b473-701248b69cfe": 7,
+    "motion-80640920-4ab0-4ac0-b66e-3b64726e7960": 7,
+    "motion-a1c471ae-a235-40ba-b24e-9a502a00cb33": 7,
+    "motion-f9bf74bb-fb65-4430-97b9-71ae5d7b3397": 7,
+    "motion-16e994b2-cdba-45e1-b328-2af68af74985": 6,
+    "motion-1e48dea5-903d-48f6-b10e-99a70f1c183d": 6,
+    "motion-3b955ba8-2f6f-47ef-910c-79115843bd6b": 6,
+    "motion-5eb6929e-d9f3-4a49-a69e-0363e45884dc": 6,
+    "motion-7427c442-35ee-408f-9c33-4280ad2d3465": 6,
+    "motion-74f06cd2-601f-434d-a616-62da95828cb5": 6,
+    "motion-9fc27ae8-90f1-4745-af4f-00f390c206a2": 6,
+    "motion-b31d078a-4e5e-461e-8b43-3101ee0a2f93": 6,
+    "motion-f6f244d1-c549-4081-8a5d-f0e1e3660044": 6,
+    "motion-0ad92fd0-b2fb-4885-957c-b71152df15fd": 5,
+    "motion-0c91857e-f630-4d75-85ab-1feec5566c46": 5,
+    "motion-3016ace9-aa52-4cc7-acc3-042e2a81088c": 5,
+    "motion-55c19bf3-dbb1-4890-98c7-5ea7fb5ee432": 5,
+    "motion-a28f0e5d-aa8b-45a7-87f9-9afcac65a09b": 5,
+    "motion-a325ecf0-23a5-4f4b-a888-c5a8f4517126": 5,
+    "motion-b3e82855-5bf8-48c5-8153-fd43d09b30ed": 5,
+    "motion-d7eb1cbe-ded7-416a-8772-f4830f41e5a7": 5,
+    "motion-dfbe2224-d097-4f35-ac18-edd61ad7a065": 5,
+    "motion-030d40f1-a081-451c-b557-a0bea9703616": 4,
+    "motion-2d4e10c0-c178-4f7c-a365-e51b5e30b455": 4,
+    "motion-3237a979-1718-4b54-9581-4cd639377cd8": 4,
+    "motion-343ccb64-5c8e-4101-b65e-463aec3a7c35": 4,
+    "motion-36c45042-6bae-4e0f-8365-7b43212eeeef": 4,
+    "motion-4d2c0503-a324-49e7-924d-0eae443f54d7": 4,
+    "motion-55c5fe84-fe5f-4be0-aadf-42fbb1c9b9db": 4,
+    "motion-9e426bb2-2a58-41bb-9619-5f700d5228ed": 4,
+    "motion-a6f31f7b-f6af-44be-8bf4-881e70057f63": 4,
+    "motion-b09ce21c-bdd4-4bf7-8d22-bb19fd40e5ab": 4,
+    "motion-c8f1a735-2a04-44c0-b2bb-fa40bbcbbf09": 4,
+    "motion-c9623fa3-6ecd-4045-9c6e-7ad574562563": 4,
+    "motion-d2c98a37-41c1-411a-a21f-fc50219b3a7a": 4,
+    "motion-f11e199c-f90b-4df1-be9c-33734ad80c26": 4,
+    "motion-ffaef2b8-7833-4612-ba45-0efd992cc43a": 4,
+    "openmotion-welcome": 4,
+    "decision-tree": 3,
+    "motion-018becab-0461-43d9-8e84-79833fd1f831": 3,
+    "motion-10adc0e0-3f63-45c9-9389-2657360c8aa0": 3,
+    "motion-1301d172-4b2d-44c8-95e6-872c82987796": 3,
+    "motion-134b4303-daa6-4e6b-9027-3287dffb1ce1": 3,
+    "motion-250d244e-c34b-42b9-9da9-22d9983c48f5": 3,
+    "motion-3ac3bd45-8732-4ce3-8331-ca6e96e2aed2": 3,
+    "motion-734ef479-a7b7-458a-b488-ad0f6a0498b4": 3,
+    "motion-76a44f60-a882-4226-9976-4dbb9f105f2c": 3,
+    "motion-80dceb1d-5219-4e1f-9394-6baacf5d0166": 3,
+    "motion-90713ad1-ac50-4d2d-ba9e-ddf718959fe2": 3,
+    "motion-94fdb751-f3cf-4c08-906b-2bcf5dd73ecd": 3,
+    "motion-9b6da843-20d6-40cc-994e-8e1d38561b5c": 3,
+    "motion-a653c6bb-3e85-420c-8b4a-3353b8fd8fbf": 3,
+    "motion-b39e4df1-4bdb-4c7b-8b33-803f53238bb5": 3,
+    "motion-b78b15b0-a413-459f-b2f2-dc7b2fa3f688": 3,
+    "motion-c1bd6fc5-060a-4807-82e3-d3b059a82f53": 3,
+    "motion-f51cf753-f530-43cd-afa5-0f178e7811b9": 3,
+    "nyt-graph": 3,
+    "motion-12cf27b7-0c82-4ccc-8a9a-7eaed902ca19": 2,
+    "motion-1f1a40cc-f473-46f7-badb-953b2fb140c2": 2,
+    "motion-2c28ef03-af00-440b-83d8-543b7c1e6fbb": 2,
+    "motion-2fd3fc6b-eec2-4bfb-9a49-6eb04acc5fae": 2,
+    "motion-342251b9-26fe-45a6-a4fa-697f234c9755": 2,
+    "motion-35e8438f-f8e5-4989-a508-fbef1676e739": 2,
+    "motion-36220499-8ac9-4a39-afb9-35bfba462abb": 2,
+    "motion-4f6f4723-0010-4efd-b13d-d2dabf899e88": 2,
+    "motion-5ec91ccc-4243-445b-8bf3-d7d85e65a309": 2,
+    "motion-60b66835-4999-48ad-b942-4872ea012b85": 2,
+    "motion-7f4c8c30-d91d-4e75-b930-057ff030376b": 2,
+    "motion-85d291f5-d569-4b9e-8143-0df9e7783fd0": 2,
+    "motion-94ac058e-ba55-4cc7-b8fd-64cb6dabc909": 2,
+    "motion-a01301cc-7413-48d0-90ff-bbb173acc167": 2,
+    "motion-a36b6646-29bc-4602-8e0b-2139b21f3bf5": 2,
+    "motion-b18272fd-07c8-4ab9-b7dc-26311fa5a29a": 2,
+    "motion-b3c16f52-d4d1-4686-b95b-41af9f5889ed": 2,
+    "motion-b4a2bd67-b577-4e6a-8475-966edd41d474": 2,
+    "motion-b852576e-fa72-453e-aae4-209a7a24a42d": 2,
+    "motion-d9104b0c-a3cb-4745-9a7e-33230c129e9b": 2,
+    "motion-dbb8ef9c-613d-4725-9328-a0c3700baa9e": 2,
+    "motion-dc52ebb8-adb7-442a-b57b-8e647e68863f": 2,
+    "motion-e0faf135-a425-4c7a-a795-2d5c59b90ab3": 2,
+    "motion-e2b86338-8508-40c5-ba89-084eca9e0f25": 2,
+    "motion-f53dad52-9f20-42c5-b5c3-00743ea475b3": 2,
+    "motion-f6663abf-b1a2-40b9-91f2-9d6efcc69f80": 2,
+    "motion-fb72e5e5-872c-4981-b137-4533a72567fe": 2,
+    "product-promo": 2,
+    "motion-0053d84c-c358-4a52-9baa-8d3381e2ca1e": 1,
+    "motion-03a1f5ca-617b-41a6-b4cb-6307ca32ff63": 1,
+    "motion-0dbe4710-8f5a-4cd2-9f05-530371fa899d": 1,
+    "motion-12b62792-b531-40ce-858b-599564a602ac": 1,
+    "motion-13ba3942-fd15-40ee-9638-03d1376514db": 1,
+    "motion-1f10a9ab-e989-4aec-80bd-4afe15280424": 1,
+    "motion-228c2d11-8827-416f-9f9f-aacf002cb7e0": 1,
+    "motion-23671bf9-0ae8-49d4-be77-62949eaef616": 1,
+    "motion-24e46588-504b-4efd-ac28-6ffc407fc33a": 1,
+    "motion-3845bb3e-dafb-4af2-9507-d32400b5aa54": 1,
+    "motion-3b1813cf-f2fe-4d8a-add4-8f3a49d06982": 1,
+    "motion-4136af75-145b-41f1-97d3-06ded1f58f2e": 1,
+    "motion-441b7b32-6bcf-43d4-8259-1b292a84e0ec": 1,
+    "motion-478a2c75-2a13-435a-9b44-d730aca6c67c": 1,
+    "motion-4ac56dc1-dd84-452a-9d74-7388e49b7dbd": 1,
+    "motion-4c3e677d-279f-4a5b-b7b4-f94e1b79a722": 1,
+    "motion-4cab572a-4d2a-4058-8a06-84cf3fda0df0": 1,
+    "motion-5071dcd7-d5f0-456a-ac4c-37b2b442eb1c": 1,
+    "motion-5aff0bef-38fd-465c-b8d0-3b0c964d8149": 1,
+    "motion-6100365a-945f-43b4-b476-7e8d30e2db32": 1,
+    "motion-6169c2d0-a372-445e-96a3-e5eb43b00656": 1,
+    "motion-63434ede-a918-4ec1-a99e-ba12e87d4063": 1,
+    "motion-6a90052f-c0f7-4a05-9a21-0a84a341af46": 1,
+    "motion-6b037a5c-ee23-47ce-b312-ba285d5e7ef4": 1,
+    "motion-6deb74b6-8f52-4b81-b971-3b68e1fffa34": 1,
+    "motion-71db3b43-bf59-43a1-b8ad-85354a44e78b": 1,
+    "motion-730d0690-8a79-483e-aa72-28452f10dcca": 1,
+    "motion-788325cf-3104-4912-904d-ada6ea4615b9": 1,
+    "motion-797418c0-9781-4a86-a8fd-b3cbcb86037e": 1,
+    "motion-7b4b6492-416e-4c84-8be0-5dcade56adb6": 1,
+    "motion-7d2376c5-2148-44ae-9720-330bc5f64ca9": 1,
+    "motion-85c4648e-b5d8-4e57-93d2-b8feb1c5d48d": 1,
+    "motion-8605acf7-c0e9-465b-858a-114c49764c3d": 1,
+    "motion-87a0c9d5-89f0-49f8-8faf-343a44f2beb7": 1,
+    "motion-887d2d40-3cf1-4a2c-8e38-c5162a0d1598": 1,
+    "motion-927b643f-10c5-4c96-b2fe-f06bed85c9b8": 1,
+    "motion-96f14740-8874-4048-9ba8-5abb19c7c072": 1,
+    "motion-9b6b2260-e3cc-4db4-9e0d-cc9a35057ac5": 1,
+    "motion-9cb4728d-4bb7-4b85-bcf9-9abd33006649": 1,
+    "motion-9f3b5395-c61e-45aa-97db-f164e762e61a": 1,
+    "motion-a09000a0-dc1b-47a8-a807-1ede9667e144": 1,
+    "motion-a3fec53a-a603-4486-9ec0-f7a6f926ab8d": 1,
+    "motion-a55bd50a-ab7b-4f47-9cff-8b6faddfadf7": 1,
+    "motion-addf1d49-2044-4959-b4e1-8e627ea00226": 1,
+    "motion-ae1ab93e-e10e-4cad-a2c4-23a397345ad5": 1,
+    "motion-af77653d-96a4-4987-8cca-222a0bdd80d8": 1,
+    "motion-b35abe81-509c-424a-9acf-347a8831b857": 1,
+    "motion-b6889c36-8aff-446f-8f2d-f958a8951a4c": 1,
+    "motion-b8332d8d-385e-4199-b6f3-e0cc340bc41f": 1,
+    "motion-b8ec3aa1-bed2-43d9-894f-e081667dcc1c": 1,
+    "motion-b9ac4d16-55e8-4498-81e8-7fb4c264119d": 1,
+    "motion-bc7b69f5-1816-4961-9501-754feba2e5b2": 1,
+    "motion-c14908dc-a53c-4f6b-a97d-a4904219902d": 1,
+    "motion-c1930878-a770-486d-b697-a1d0f10089ce": 1,
+    "motion-c2ff6df1-76b3-4045-878b-bc91f1962464": 1,
+    "motion-c6e0520b-c6a6-47c6-9905-23ba6d04cc86": 1,
+    "motion-cbe77bbc-94d8-4035-9507-103deaa025bc": 1,
+    "motion-cfd6f6b6-2f3f-4e53-957d-1e87cfebe777": 1,
+    "motion-d16d6118-7d1f-4450-91b0-c7d48b041162": 1,
+    "motion-d4b9bf2f-fae1-4311-b063-ca942de2254a": 1,
+    "motion-d4e8028e-fa9e-439f-8072-690f9b36845b": 1,
+    "motion-d558f0d8-3749-4726-84ee-63b94b1538fe": 1,
+    "motion-d887324f-64c4-4394-a9f7-1504dbfed419": 1,
+    "motion-d9149cb4-6919-4873-aecc-c71b57e848aa": 1,
+    "motion-d9465c0d-9d09-43d3-a1e7-c5617022db9d": 1,
+    "motion-db8581fb-3dc8-426e-8cc4-fd60debb5ced": 1,
+    "motion-e558c471-28db-4353-a1c8-9ce5089838b1": 1,
+    "motion-e56bae66-988c-438c-b258-adfbe1e52857": 1,
+    "motion-e62d4e85-ccf4-4e3e-8388-ae70143cb3dc": 1,
+    "motion-e637f1df-8aa8-4594-970c-7dfa666ef8f5": 1,
+    "motion-f8941c74-b760-411c-b92f-6d838250ecc9": 1,
+    "motion-f8c4cf8e-4934-46ac-9185-e43b68be4f50": 1,
+    "motion-faceb915-f2c3-4dac-972b-a146d31eef72": 1
+  },
+  "ctrDefinition": "same_identity_same_template_1h_ordered_exposure_to_click",
+  "ctrFetchedOn": "2026-11-18",
+  "ctrByTemplate": {
+    "motion-e6ac921a-f56f-4170-a2be-938cec5d028b": {
+      "exposed": 381,
+      "clicked": 22
+    },
+    "motion-98e8aea3-0e9a-45f2-9ff8-d8a323204378": {
+      "exposed": 219,
+      "clicked": 20
+    },
+    "motion-6a60a781-d223-4c03-96ba-88bcaafd62d3": {
+      "exposed": 156,
+      "clicked": 12
+    },
+    "motion-46f34492-8ba1-4ba5-ac6e-4b4a13c80373": {
+      "exposed": 229,
+      "clicked": 10
+    },
+    "motion-d151cc2c-40bc-4765-a767-3957bdee6ec2": {
+      "exposed": 215,
+      "clicked": 9
+    },
+    "motion-d8eea6d9-b25b-4727-823d-d102070ea694": {
+      "exposed": 185,
+      "clicked": 9
+    },
+    "motion-5805e419-651f-45b7-90be-302c93f79b21": {
+      "exposed": 268,
+      "clicked": 8
+    },
+    "motion-c74e1725-6fd2-4885-be7f-f1f705e9af66": {
+      "exposed": 353,
+      "clicked": 7
+    },
+    "motion-0e3488b3-db0b-4058-b70e-b58ac6213105": {
+      "exposed": 66,
+      "clicked": 7
+    },
+    "motion-a1c471ae-a235-40ba-b24e-9a502a00cb33": {
+      "exposed": 59,
+      "clicked": 7
+    },
+    "motion-16e994b2-cdba-45e1-b328-2af68af74985": {
+      "exposed": 204,
+      "clicked": 6
+    },
+    "motion-f6f244d1-c549-4081-8a5d-f0e1e3660044": {
+      "exposed": 200,
+      "clicked": 6
+    },
+    "motion-5d05235e-aa1b-4c06-ad97-3ea6c41962a2": {
+      "exposed": 134,
+      "clicked": 6
+    },
+    "motion-be2a4af0-0183-4979-ab05-2a68413c0890": {
+      "exposed": 87,
+      "clicked": 6
+    },
+    "motion-927a222e-3fcd-4565-aa63-40e97447688a": {
+      "exposed": 290,
+      "clicked": 5
+    },
+    "motion-664184d9-593e-4984-b473-701248b69cfe": {
+      "exposed": 212,
+      "clicked": 5
+    },
+    "motion-dfb1a35a-a70e-489f-8e02-b74068fc0b8c": {
+      "exposed": 168,
+      "clicked": 5
+    },
+    "motion-1e48dea5-903d-48f6-b10e-99a70f1c183d": {
+      "exposed": 135,
+      "clicked": 5
+    },
+    "motion-dac924da-010f-4445-baf3-a39cb033e48f": {
+      "exposed": 131,
+      "clicked": 5
+    },
+    "motion-38b9c70f-cf58-4555-a50e-30c17479ba1e": {
+      "exposed": 125,
+      "clicked": 5
+    },
+    "motion-7427c442-35ee-408f-9c33-4280ad2d3465": {
+      "exposed": 120,
+      "clicked": 5
+    },
+    "motion-b31d078a-4e5e-461e-8b43-3101ee0a2f93": {
+      "exposed": 103,
+      "clicked": 5
+    },
+    "motion-5eb6929e-d9f3-4a49-a69e-0363e45884dc": {
+      "exposed": 50,
+      "clicked": 5
+    },
+    "motion-74f06cd2-601f-434d-a616-62da95828cb5": {
+      "exposed": 134,
+      "clicked": 4
+    },
+    "motion-343ccb64-5c8e-4101-b65e-463aec3a7c35": {
+      "exposed": 102,
+      "clicked": 4
+    },
+    "motion-36c45042-6bae-4e0f-8365-7b43212eeeef": {
+      "exposed": 62,
+      "clicked": 4
+    },
+    "motion-030d40f1-a081-451c-b557-a0bea9703616": {
+      "exposed": 47,
+      "clicked": 4
+    },
+    "motion-3b955ba8-2f6f-47ef-910c-79115843bd6b": {
+      "exposed": 184,
+      "clicked": 3
+    },
+    "motion-9b6da843-20d6-40cc-994e-8e1d38561b5c": {
+      "exposed": 183,
+      "clicked": 3
+    },
+    "motion-2d4e10c0-c178-4f7c-a365-e51b5e30b455": {
+      "exposed": 154,
+      "clicked": 3
+    },
+    "motion-a28f0e5d-aa8b-45a7-87f9-9afcac65a09b": {
+      "exposed": 147,
+      "clicked": 3
+    },
+    "motion-f9bf74bb-fb65-4430-97b9-71ae5d7b3397": {
+      "exposed": 109,
+      "clicked": 3
+    },
+    "motion-9e426bb2-2a58-41bb-9619-5f700d5228ed": {
+      "exposed": 106,
+      "clicked": 3
+    },
+    "motion-89f2191f-bd58-48e2-a1f5-41c0cc759b59": {
+      "exposed": 98,
+      "clicked": 3
+    },
+    "motion-a6f31f7b-f6af-44be-8bf4-881e70057f63": {
+      "exposed": 97,
+      "clicked": 3
+    },
+    "motion-80dceb1d-5219-4e1f-9394-6baacf5d0166": {
+      "exposed": 96,
+      "clicked": 3
+    },
+    "motion-c8f1a735-2a04-44c0-b2bb-fa40bbcbbf09": {
+      "exposed": 95,
+      "clicked": 3
+    },
+    "motion-a325ecf0-23a5-4f4b-a888-c5a8f4517126": {
+      "exposed": 91,
+      "clicked": 3
+    },
+    "motion-c1bd6fc5-060a-4807-82e3-d3b059a82f53": {
+      "exposed": 85,
+      "clicked": 3
+    },
+    "motion-734ef479-a7b7-458a-b488-ad0f6a0498b4": {
+      "exposed": 81,
+      "clicked": 3
+    },
+    "motion-134b4303-daa6-4e6b-9027-3287dffb1ce1": {
+      "exposed": 74,
+      "clicked": 3
+    },
+    "motion-f11e199c-f90b-4df1-be9c-33734ad80c26": {
+      "exposed": 71,
+      "clicked": 3
+    },
+    "motion-d75c22e1-3c2c-4df8-aece-d4f7a37d8ff0": {
+      "exposed": 70,
+      "clicked": 3
+    },
+    "motion-d2c98a37-41c1-411a-a21f-fc50219b3a7a": {
+      "exposed": 63,
+      "clicked": 3
+    },
+    "motion-250d244e-c34b-42b9-9da9-22d9983c48f5": {
+      "exposed": 61,
+      "clicked": 3
+    },
+    "motion-9fc27ae8-90f1-4745-af4f-00f390c206a2": {
+      "exposed": 60,
+      "clicked": 3
+    },
+    "motion-b09ce21c-bdd4-4bf7-8d22-bb19fd40e5ab": {
+      "exposed": 59,
+      "clicked": 3
+    },
+    "motion-ffaef2b8-7833-4612-ba45-0efd992cc43a": {
+      "exposed": 58,
+      "clicked": 3
+    },
+    "motion-1301d172-4b2d-44c8-95e6-872c82987796": {
+      "exposed": 57,
+      "clicked": 3
+    },
+    "motion-0c91857e-f630-4d75-85ab-1feec5566c46": {
+      "exposed": 55,
+      "clicked": 3
+    },
+    "motion-dfbe2224-d097-4f35-ac18-edd61ad7a065": {
+      "exposed": 46,
+      "clicked": 3
+    },
+    "motion-55c5fe84-fe5f-4be0-aadf-42fbb1c9b9db": {
+      "exposed": 41,
+      "clicked": 3
+    },
+    "openmotion-welcome": {
+      "exposed": 23,
+      "clicked": 3
+    },
+    "motion-f53dad52-9f20-42c5-b5c3-00743ea475b3": {
+      "exposed": 214,
+      "clicked": 2
+    },
+    "motion-b39e4df1-4bdb-4c7b-8b33-803f53238bb5": {
+      "exposed": 208,
+      "clicked": 2
+    },
+    "motion-018becab-0461-43d9-8e84-79833fd1f831": {
+      "exposed": 134,
+      "clicked": 2
+    },
+    "motion-2c28ef03-af00-440b-83d8-543b7c1e6fbb": {
+      "exposed": 131,
+      "clicked": 2
+    },
+    "motion-a653c6bb-3e85-420c-8b4a-3353b8fd8fbf": {
+      "exposed": 122,
+      "clicked": 2
+    },
+    "motion-b3e82855-5bf8-48c5-8153-fd43d09b30ed": {
+      "exposed": 117,
+      "clicked": 2
+    },
+    "motion-4f6f4723-0010-4efd-b13d-d2dabf899e88": {
+      "exposed": 111,
+      "clicked": 2
+    },
+    "motion-94ac058e-ba55-4cc7-b8fd-64cb6dabc909": {
+      "exposed": 96,
+      "clicked": 2
+    },
+    "motion-d9104b0c-a3cb-4745-9a7e-33230c129e9b": {
+      "exposed": 93,
+      "clicked": 2
+    },
+    "motion-5ec91ccc-4243-445b-8bf3-d7d85e65a309": {
+      "exposed": 91,
+      "clicked": 2
+    },
+    "motion-36220499-8ac9-4a39-afb9-35bfba462abb": {
+      "exposed": 89,
+      "clicked": 2
+    },
+    "motion-12cf27b7-0c82-4ccc-8a9a-7eaed902ca19": {
+      "exposed": 82,
+      "clicked": 2
+    },
+    "motion-b3c16f52-d4d1-4686-b95b-41af9f5889ed": {
+      "exposed": 78,
+      "clicked": 2
+    },
+    "motion-dbb8ef9c-613d-4725-9328-a0c3700baa9e": {
+      "exposed": 76,
+      "clicked": 2
+    },
+    "motion-7f4c8c30-d91d-4e75-b930-057ff030376b": {
+      "exposed": 75,
+      "clicked": 2
+    },
+    "motion-a01301cc-7413-48d0-90ff-bbb173acc167": {
+      "exposed": 74,
+      "clicked": 2
+    },
+    "motion-55c19bf3-dbb1-4890-98c7-5ea7fb5ee432": {
+      "exposed": 73,
+      "clicked": 2
+    },
+    "motion-d7eb1cbe-ded7-416a-8772-f4830f41e5a7": {
+      "exposed": 71,
+      "clicked": 2
+    },
+    "motion-60b66835-4999-48ad-b942-4872ea012b85": {
+      "exposed": 66,
+      "clicked": 2
+    },
+    "motion-3016ace9-aa52-4cc7-acc3-042e2a81088c": {
+      "exposed": 61,
+      "clicked": 2
+    },
+    "motion-fb72e5e5-872c-4981-b137-4533a72567fe": {
+      "exposed": 59,
+      "clicked": 2
+    },
+    "motion-342251b9-26fe-45a6-a4fa-697f234c9755": {
+      "exposed": 59,
+      "clicked": 2
+    },
+    "motion-f51cf753-f530-43cd-afa5-0f178e7811b9": {
+      "exposed": 58,
+      "clicked": 2
+    },
+    "motion-f6663abf-b1a2-40b9-91f2-9d6efcc69f80": {
+      "exposed": 57,
+      "clicked": 2
+    },
+    "motion-85d291f5-d569-4b9e-8143-0df9e7783fd0": {
+      "exposed": 56,
+      "clicked": 2
+    },
+    "motion-10adc0e0-3f63-45c9-9389-2657360c8aa0": {
+      "exposed": 55,
+      "clicked": 2
+    },
+    "motion-c9623fa3-6ecd-4045-9c6e-7ad574562563": {
+      "exposed": 55,
+      "clicked": 2
+    },
+    "motion-90713ad1-ac50-4d2d-ba9e-ddf718959fe2": {
+      "exposed": 55,
+      "clicked": 2
+    },
+    "motion-b18272fd-07c8-4ab9-b7dc-26311fa5a29a": {
+      "exposed": 54,
+      "clicked": 2
+    },
+    "motion-dc52ebb8-adb7-442a-b57b-8e647e68863f": {
+      "exposed": 50,
+      "clicked": 2
+    },
+    "motion-a36b6646-29bc-4602-8e0b-2139b21f3bf5": {
+      "exposed": 49,
+      "clicked": 2
+    },
+    "motion-3ac3bd45-8732-4ce3-8331-ca6e96e2aed2": {
+      "exposed": 48,
+      "clicked": 2
+    },
+    "motion-1f1a40cc-f473-46f7-badb-953b2fb140c2": {
+      "exposed": 48,
+      "clicked": 2
+    },
+    "motion-3237a979-1718-4b54-9581-4cd639377cd8": {
+      "exposed": 48,
+      "clicked": 2
+    },
+    "nyt-graph": {
+      "exposed": 34,
+      "clicked": 2
+    },
+    "decision-tree": {
+      "exposed": 34,
+      "clicked": 2
+    },
+    "product-promo": {
+      "exposed": 27,
+      "clicked": 2
+    },
+    "motion-63434ede-a918-4ec1-a99e-ba12e87d4063": {
+      "exposed": 270,
+      "clicked": 1
+    },
+    "motion-76a44f60-a882-4226-9976-4dbb9f105f2c": {
+      "exposed": 160,
+      "clicked": 1
+    },
+    "motion-0ad92fd0-b2fb-4885-957c-b71152df15fd": {
+      "exposed": 150,
+      "clicked": 1
+    },
+    "motion-d887324f-64c4-4394-a9f7-1504dbfed419": {
+      "exposed": 118,
+      "clicked": 1
+    },
+    "motion-b4a2bd67-b577-4e6a-8475-966edd41d474": {
+      "exposed": 101,
+      "clicked": 1
+    },
+    "motion-a55bd50a-ab7b-4f47-9cff-8b6faddfadf7": {
+      "exposed": 100,
+      "clicked": 1
+    },
+    "motion-6169c2d0-a372-445e-96a3-e5eb43b00656": {
+      "exposed": 95,
+      "clicked": 1
+    },
+    "motion-d9149cb4-6919-4873-aecc-c71b57e848aa": {
+      "exposed": 94,
+      "clicked": 1
+    },
+    "motion-7d2376c5-2148-44ae-9720-330bc5f64ca9": {
+      "exposed": 92,
+      "clicked": 1
+    },
+    "motion-d558f0d8-3749-4726-84ee-63b94b1538fe": {
+      "exposed": 89,
+      "clicked": 1
+    },
+    "motion-71db3b43-bf59-43a1-b8ad-85354a44e78b": {
+      "exposed": 89,
+      "clicked": 1
+    },
+    "motion-441b7b32-6bcf-43d4-8259-1b292a84e0ec": {
+      "exposed": 86,
+      "clicked": 1
+    },
+    "motion-6deb74b6-8f52-4b81-b971-3b68e1fffa34": {
+      "exposed": 85,
+      "clicked": 1
+    },
+    "motion-6b58e785-aace-4d84-9229-7d68d6ed247b": {
+      "exposed": 85,
+      "clicked": 1
+    },
+    "motion-12b62792-b531-40ce-858b-599564a602ac": {
+      "exposed": 84,
+      "clicked": 1
+    },
+    "motion-478a2c75-2a13-435a-9b44-d730aca6c67c": {
+      "exposed": 83,
+      "clicked": 1
+    },
+    "motion-d4e8028e-fa9e-439f-8072-690f9b36845b": {
+      "exposed": 81,
+      "clicked": 1
+    },
+    "motion-e0faf135-a425-4c7a-a795-2d5c59b90ab3": {
+      "exposed": 79,
+      "clicked": 1
+    },
+    "motion-e62d4e85-ccf4-4e3e-8388-ae70143cb3dc": {
+      "exposed": 77,
+      "clicked": 1
+    },
+    "motion-4cab572a-4d2a-4058-8a06-84cf3fda0df0": {
+      "exposed": 75,
+      "clicked": 1
+    },
+    "motion-23671bf9-0ae8-49d4-be77-62949eaef616": {
+      "exposed": 75,
+      "clicked": 1
+    },
+    "motion-887d2d40-3cf1-4a2c-8e38-c5162a0d1598": {
+      "exposed": 74,
+      "clicked": 1
+    },
+    "motion-addf1d49-2044-4959-b4e1-8e627ea00226": {
+      "exposed": 73,
+      "clicked": 1
+    },
+    "motion-4ac56dc1-dd84-452a-9d74-7388e49b7dbd": {
+      "exposed": 71,
+      "clicked": 1
+    },
+    "motion-4c3e677d-279f-4a5b-b7b4-f94e1b79a722": {
+      "exposed": 71,
+      "clicked": 1
+    },
+    "motion-730d0690-8a79-483e-aa72-28452f10dcca": {
+      "exposed": 71,
+      "clicked": 1
+    },
+    "motion-b6889c36-8aff-446f-8f2d-f958a8951a4c": {
+      "exposed": 70,
+      "clicked": 1
+    },
+    "motion-cfd6f6b6-2f3f-4e53-957d-1e87cfebe777": {
+      "exposed": 70,
+      "clicked": 1
+    },
+    "motion-1f10a9ab-e989-4aec-80bd-4afe15280424": {
+      "exposed": 68,
+      "clicked": 1
+    },
+    "motion-b8332d8d-385e-4199-b6f3-e0cc340bc41f": {
+      "exposed": 68,
+      "clicked": 1
+    },
+    "motion-2fd3fc6b-eec2-4bfb-9a49-6eb04acc5fae": {
+      "exposed": 67,
+      "clicked": 1
+    },
+    "motion-b78b15b0-a413-459f-b2f2-dc7b2fa3f688": {
+      "exposed": 66,
+      "clicked": 1
+    },
+    "motion-7b4b6492-416e-4c84-8be0-5dcade56adb6": {
+      "exposed": 65,
+      "clicked": 1
+    },
+    "motion-788325cf-3104-4912-904d-ada6ea4615b9": {
+      "exposed": 63,
+      "clicked": 1
+    },
+    "motion-6b037a5c-ee23-47ce-b312-ba285d5e7ef4": {
+      "exposed": 63,
+      "clicked": 1
+    },
+    "motion-c14908dc-a53c-4f6b-a97d-a4904219902d": {
+      "exposed": 62,
+      "clicked": 1
+    },
+    "motion-c1930878-a770-486d-b697-a1d0f10089ce": {
+      "exposed": 62,
+      "clicked": 1
+    },
+    "motion-ae1ab93e-e10e-4cad-a2c4-23a397345ad5": {
+      "exposed": 61,
+      "clicked": 1
+    },
+    "motion-94fdb751-f3cf-4c08-906b-2bcf5dd73ecd": {
+      "exposed": 61,
+      "clicked": 1
+    },
+    "motion-85c4648e-b5d8-4e57-93d2-b8feb1c5d48d": {
+      "exposed": 61,
+      "clicked": 1
+    },
+    "motion-13ba3942-fd15-40ee-9638-03d1376514db": {
+      "exposed": 60,
+      "clicked": 1
+    },
+    "motion-d9465c0d-9d09-43d3-a1e7-c5617022db9d": {
+      "exposed": 59,
+      "clicked": 1
+    },
+    "motion-e56bae66-988c-438c-b258-adfbe1e52857": {
+      "exposed": 58,
+      "clicked": 1
+    },
+    "motion-96f14740-8874-4048-9ba8-5abb19c7c072": {
+      "exposed": 57,
+      "clicked": 1
+    },
+    "motion-af77653d-96a4-4987-8cca-222a0bdd80d8": {
+      "exposed": 56,
+      "clicked": 1
+    },
+    "motion-f8941c74-b760-411c-b92f-6d838250ecc9": {
+      "exposed": 55,
+      "clicked": 1
+    },
+    "motion-24e46588-504b-4efd-ac28-6ffc407fc33a": {
+      "exposed": 55,
+      "clicked": 1
+    },
+    "motion-a3fec53a-a603-4486-9ec0-f7a6f926ab8d": {
+      "exposed": 55,
+      "clicked": 1
+    },
+    "motion-2cd7fd99-8dff-4c2c-8577-719c51ae9e5c": {
+      "exposed": 55,
+      "clicked": 1
+    },
+    "motion-80640920-4ab0-4ac0-b66e-3b64726e7960": {
+      "exposed": 55,
+      "clicked": 1
+    },
+    "motion-9f3b5395-c61e-45aa-97db-f164e762e61a": {
+      "exposed": 54,
+      "clicked": 1
+    },
+    "motion-6100365a-945f-43b4-b476-7e8d30e2db32": {
+      "exposed": 54,
+      "clicked": 1
+    },
+    "motion-4136af75-145b-41f1-97d3-06ded1f58f2e": {
+      "exposed": 53,
+      "clicked": 1
+    },
+    "motion-b35abe81-509c-424a-9acf-347a8831b857": {
+      "exposed": 51,
+      "clicked": 1
+    },
+    "motion-0053d84c-c358-4a52-9baa-8d3381e2ca1e": {
+      "exposed": 51,
+      "clicked": 1
+    },
+    "motion-a09000a0-dc1b-47a8-a807-1ede9667e144": {
+      "exposed": 50,
+      "clicked": 1
+    },
+    "motion-db8581fb-3dc8-426e-8cc4-fd60debb5ced": {
+      "exposed": 49,
+      "clicked": 1
+    },
+    "motion-c6e0520b-c6a6-47c6-9905-23ba6d04cc86": {
+      "exposed": 45,
+      "clicked": 1
+    },
+    "motion-0dbe4710-8f5a-4cd2-9f05-530371fa899d": {
+      "exposed": 45,
+      "clicked": 1
+    },
+    "motion-5071dcd7-d5f0-456a-ac4c-37b2b442eb1c": {
+      "exposed": 43,
+      "clicked": 1
+    },
+    "motion-5aff0bef-38fd-465c-b8d0-3b0c964d8149": {
+      "exposed": 42,
+      "clicked": 1
+    },
+    "motion-797418c0-9781-4a86-a8fd-b3cbcb86037e": {
+      "exposed": 38,
+      "clicked": 1
+    },
+    "motion-d16d6118-7d1f-4450-91b0-c7d48b041162": {
+      "exposed": 38,
+      "clicked": 1
+    },
+    "motion-228c2d11-8827-416f-9f9f-aacf002cb7e0": {
+      "exposed": 36,
+      "clicked": 1
+    },
+    "motion-3b1813cf-f2fe-4d8a-add4-8f3a49d06982": {
+      "exposed": 35,
+      "clicked": 1
+    },
+    "motion-9b6b2260-e3cc-4db4-9e0d-cc9a35057ac5": {
+      "exposed": 30,
+      "clicked": 1
+    },
+    "motion-b852576e-fa72-453e-aae4-209a7a24a42d": {
+      "exposed": 28,
+      "clicked": 1
+    },
+    "motion-cbe77bbc-94d8-4035-9507-103deaa025bc": {
+      "exposed": 28,
+      "clicked": 1
+    },
+    "motion-f8c4cf8e-4934-46ac-9185-e43b68be4f50": {
+      "exposed": 27,
+      "clicked": 1
+    },
+    "motion-35e8438f-f8e5-4989-a508-fbef1676e739": {
+      "exposed": 27,
+      "clicked": 1
+    },
+    "motion-9cb4728d-4bb7-4b85-bcf9-9abd33006649": {
+      "exposed": 24,
+      "clicked": 1
+    },
+    "motion-f7b30612-b414-4a92-bd26-9f03ec1575df": {
+      "exposed": 285,
+      "clicked": 0
+    },
+    "motion-8197b521-9883-45de-be9d-6b492770b3eb": {
+      "exposed": 198,
+      "clicked": 0
+    },
+    "motion-0b5f0027-4637-4ba8-8eff-ee14ffb095a4": {
+      "exposed": 148,
+      "clicked": 0
+    },
+    "motion-8605acf7-c0e9-465b-858a-114c49764c3d": {
+      "exposed": 141,
+      "clicked": 0
+    },
+    "motion-89e97c54-0d34-4d6d-9775-133b7a0ae0fc": {
+      "exposed": 126,
+      "clicked": 0
+    },
+    "motion-c7d359a2-443b-4ee8-9f6a-f9c65d780f6d": {
+      "exposed": 124,
+      "clicked": 0
+    },
+    "motion-e637f1df-8aa8-4594-970c-7dfa666ef8f5": {
+      "exposed": 123,
+      "clicked": 0
+    },
+    "motion-c77ccf22-57cc-4afb-b398-aab0bb7617d3": {
+      "exposed": 120,
+      "clicked": 0
+    },
+    "motion-4946d023-cd88-41c1-9178-5742e92d2427": {
+      "exposed": 112,
+      "clicked": 0
+    },
+    "motion-491b2d70-61d6-41e5-84ba-ee611ea9c409": {
+      "exposed": 101,
+      "clicked": 0
+    },
+    "motion-e3fe6179-acf0-4e3f-a8fe-27efd50a6d1d": {
+      "exposed": 98,
+      "clicked": 0
+    },
+    "motion-aa9742de-5366-4283-953d-e692a2fbce12": {
+      "exposed": 98,
+      "clicked": 0
+    },
+    "motion-68d80741-c336-41ca-848e-7e6103e021e6": {
+      "exposed": 97,
+      "clicked": 0
+    },
+    "motion-c70c9db2-6726-4aa0-81a2-bcef85c19402": {
+      "exposed": 96,
+      "clicked": 0
+    },
+    "motion-2b0dd9d6-eea1-46a7-9c02-bcbef4782e18": {
+      "exposed": 95,
+      "clicked": 0
+    },
+    "motion-d17c7cfb-5ccf-4c2d-be92-e485a181671d": {
+      "exposed": 94,
+      "clicked": 0
+    },
+    "motion-4aaa2afc-a75f-4ce4-a3c5-eb620ed706e5": {
+      "exposed": 93,
+      "clicked": 0
+    },
+    "motion-4950dcca-547a-4ae7-8697-3d86f73eab62": {
+      "exposed": 92,
+      "clicked": 0
+    },
+    "motion-9c62b31c-d5e8-4027-8057-e8f1c3949f6c": {
+      "exposed": 92,
+      "clicked": 0
+    },
+    "motion-9478f886-91af-4107-91f1-fb00c57d78e3": {
+      "exposed": 87,
+      "clicked": 0
+    },
+    "motion-927b643f-10c5-4c96-b2fe-f06bed85c9b8": {
+      "exposed": 87,
+      "clicked": 0
+    },
+    "motion-b9484abe-d87d-4dec-b823-98e9a748c9d4": {
+      "exposed": 86,
+      "clicked": 0
+    },
+    "motion-4a137574-5ea8-4e6f-82bd-11ef77c03c55": {
+      "exposed": 84,
+      "clicked": 0
+    },
+    "motion-bb9fab32-b108-42a9-bb6d-f391b8d9f286": {
+      "exposed": 83,
+      "clicked": 0
+    },
+    "motion-1aaf35f0-86c4-4c56-be32-7951f4bfc797": {
+      "exposed": 83,
+      "clicked": 0
+    },
+    "motion-d1af6c0e-6066-4444-9b25-8773ad6cf2f8": {
+      "exposed": 83,
+      "clicked": 0
+    },
+    "motion-5a047c70-9589-404f-a761-03273bc226ad": {
+      "exposed": 80,
+      "clicked": 0
+    },
+    "motion-ab741f6c-6d55-4fac-9862-0a0914806c2b": {
+      "exposed": 79,
+      "clicked": 0
+    },
+    "motion-faceb915-f2c3-4dac-972b-a146d31eef72": {
+      "exposed": 79,
+      "clicked": 0
+    },
+    "motion-1da97ff4-695c-404a-8c47-c0a0ab2921aa": {
+      "exposed": 78,
+      "clicked": 0
+    },
+    "motion-60243f44-70ea-4715-b987-e10ee543887c": {
+      "exposed": 77,
+      "clicked": 0
+    },
+    "motion-4bd122ac-c538-4fc6-a9b4-bfc1357a3f10": {
+      "exposed": 77,
+      "clicked": 0
+    },
+    "motion-eb5e7505-5597-469a-81d0-af00335f029f": {
+      "exposed": 76,
+      "clicked": 0
+    },
+    "motion-133fd03a-4447-4e39-9b68-a74439ab34c0": {
+      "exposed": 76,
+      "clicked": 0
+    },
+    "motion-48a070b4-f3ee-49bb-8f18-fd071b73dc91": {
+      "exposed": 76,
+      "clicked": 0
+    },
+    "motion-5bca88f2-2a31-43ec-bf86-e43d30f93217": {
+      "exposed": 74,
+      "clicked": 0
+    },
+    "motion-fac0e564-4bc2-4c97-be24-3847cbdcdbb5": {
+      "exposed": 74,
+      "clicked": 0
+    },
+    "motion-fb18104a-3399-4531-adf1-88e48414c7dc": {
+      "exposed": 74,
+      "clicked": 0
+    },
+    "motion-bfef85b7-cef0-45ce-a596-e8dd653c8bd7": {
+      "exposed": 74,
+      "clicked": 0
+    },
+    "motion-7191c712-7794-4f62-bd5d-203293cb8f0c": {
+      "exposed": 74,
+      "clicked": 0
+    },
+    "motion-7b279560-81df-4c31-988d-473d35536c28": {
+      "exposed": 73,
+      "clicked": 0
+    },
+    "motion-31118b3d-7967-4181-b00d-58c291793142": {
+      "exposed": 73,
+      "clicked": 0
+    },
+    "motion-feeeda96-c525-4c1c-889b-98774759ecfc": {
+      "exposed": 72,
+      "clicked": 0
+    },
+    "motion-b929be12-85e8-4c21-aae1-740250454e39": {
+      "exposed": 72,
+      "clicked": 0
+    },
+    "motion-58611416-78a3-444d-9c15-181c7c36adf8": {
+      "exposed": 71,
+      "clicked": 0
+    },
+    "motion-7524e275-4fe8-44a9-b210-7b353b8e80ab": {
+      "exposed": 71,
+      "clicked": 0
+    },
+    "motion-b99bb97e-c533-4f2c-9921-48fff629d80d": {
+      "exposed": 70,
+      "clicked": 0
+    },
+    "motion-03a1f5ca-617b-41a6-b4cb-6307ca32ff63": {
+      "exposed": 67,
+      "clicked": 0
+    },
+    "motion-a4339fcf-8c17-4b3b-9d19-4735444bc160": {
+      "exposed": 65,
+      "clicked": 0
+    },
+    "motion-e2b86338-8508-40c5-ba89-084eca9e0f25": {
+      "exposed": 65,
+      "clicked": 0
+    },
+    "motion-9515f460-834f-4835-a512-f53890e27cb7": {
+      "exposed": 64,
+      "clicked": 0
+    },
+    "motion-e5959798-9c70-4f6e-b16b-4375a87adfc2": {
+      "exposed": 64,
+      "clicked": 0
+    },
+    "motion-315c1cab-71b0-4bec-a20c-b57f2418e88c": {
+      "exposed": 64,
+      "clicked": 0
+    },
+    "motion-d4b9bf2f-fae1-4311-b063-ca942de2254a": {
+      "exposed": 64,
+      "clicked": 0
+    },
+    "motion-5f7ad673-4895-4464-86d2-d08d875281b6": {
+      "exposed": 63,
+      "clicked": 0
+    },
+    "motion-3b8aa76b-7235-4cc1-b2f9-3e9bded13c27": {
+      "exposed": 62,
+      "clicked": 0
+    },
+    "motion-58419346-fa3c-4f7f-8179-9456c2962ef9": {
+      "exposed": 62,
+      "clicked": 0
+    },
+    "motion-f878182e-c863-45eb-ac54-2e472890987b": {
+      "exposed": 61,
+      "clicked": 0
+    },
+    "motion-e8b823ee-4201-4eda-a07b-e615407eb80e": {
+      "exposed": 61,
+      "clicked": 0
+    },
+    "motion-0c10d4de-a147-4a1b-8938-4c2d4a94a207": {
+      "exposed": 60,
+      "clicked": 0
+    },
+    "motion-7023f16a-1973-40da-9348-4e157ea5239e": {
+      "exposed": 60,
+      "clicked": 0
+    },
+    "motion-f79b250a-1eb7-4a38-be7e-fe955376e08e": {
+      "exposed": 60,
+      "clicked": 0
+    },
+    "motion-6a90052f-c0f7-4a05-9a21-0a84a341af46": {
+      "exposed": 59,
+      "clicked": 0
+    },
+    "motion-3845bb3e-dafb-4af2-9507-d32400b5aa54": {
+      "exposed": 59,
+      "clicked": 0
+    },
+    "motion-92cf4fa2-b65b-4ca2-a6ac-40d4bed47bdd": {
+      "exposed": 59,
+      "clicked": 0
+    },
+    "motion-cf8b2e64-684d-4839-a468-64519c92be20": {
+      "exposed": 59,
+      "clicked": 0
+    },
+    "motion-0fd96b86-9f36-4bdd-9dcb-d249e43ab164": {
+      "exposed": 58,
+      "clicked": 0
+    },
+    "motion-60f0411c-316e-4b1c-8c15-c1c56527e53a": {
+      "exposed": 58,
+      "clicked": 0
+    },
+    "motion-7bec0070-f5ea-4cf5-a22c-3a02c16535fa": {
+      "exposed": 58,
+      "clicked": 0
+    },
+    "motion-87a0c9d5-89f0-49f8-8faf-343a44f2beb7": {
+      "exposed": 57,
+      "clicked": 0
+    },
+    "motion-56ab9744-78aa-4841-bdb1-697c2df915e0": {
+      "exposed": 57,
+      "clicked": 0
+    },
+    "motion-14b59d59-5295-4014-9bf6-9103025baa0b": {
+      "exposed": 56,
+      "clicked": 0
+    },
+    "motion-60433399-faf4-4bbf-b860-19584b012213": {
+      "exposed": 56,
+      "clicked": 0
+    },
+    "motion-f4b325fd-64ba-42da-9f7e-6a6b77cfafd2": {
+      "exposed": 56,
+      "clicked": 0
+    },
+    "motion-74842385-a951-4617-aa23-67d4cbf57f22": {
+      "exposed": 54,
+      "clicked": 0
+    },
+    "motion-c3a91b2d-1618-4d3c-9446-4f316797dcd9": {
+      "exposed": 54,
+      "clicked": 0
+    },
+    "motion-82aab926-a9a1-4f08-835f-4e9089877ef9": {
+      "exposed": 54,
+      "clicked": 0
+    },
+    "motion-fbb00c6a-6153-4a88-b8fe-fc15ad81d15b": {
+      "exposed": 54,
+      "clicked": 0
+    },
+    "motion-0220cd62-09db-43d7-87f7-494ec9ee0441": {
+      "exposed": 53,
+      "clicked": 0
+    },
+    "motion-4fdfd64a-8fb2-43ee-96f6-7755f8b7b11e": {
+      "exposed": 53,
+      "clicked": 0
+    },
+    "motion-f1c07057-890b-4fdf-af1c-52d7cb621b65": {
+      "exposed": 53,
+      "clicked": 0
+    },
+    "motion-1994f1f9-b8ea-4083-8846-1e96e3f05fff": {
+      "exposed": 53,
+      "clicked": 0
+    },
+    "motion-cbb18ecc-34d6-43f2-bcd9-5d287ff82b83": {
+      "exposed": 52,
+      "clicked": 0
+    },
+    "motion-13466eb7-e76a-4f7c-8c4a-cdaa1bac24d8": {
+      "exposed": 51,
+      "clicked": 0
+    },
+    "motion-652fa397-9dcc-441d-80cb-3a806d132e96": {
+      "exposed": 51,
+      "clicked": 0
+    },
+    "motion-e3ad4095-8f2e-4c03-b834-d2525b73e257": {
+      "exposed": 51,
+      "clicked": 0
+    },
+    "motion-b954c1dc-91c2-4d5b-bc28-8cfbf156b220": {
+      "exposed": 49,
+      "clicked": 0
+    },
+    "motion-2208d0c1-6565-4b69-89cb-581e7206ac12": {
+      "exposed": 48,
+      "clicked": 0
+    },
+    "motion-c8db7c7c-819c-486f-b807-a56864837620": {
+      "exposed": 47,
+      "clicked": 0
+    },
+    "motion-89fae9c1-f9fa-4d67-a213-940bcd029782": {
+      "exposed": 47,
+      "clicked": 0
+    },
+    "motion-4d2c0503-a324-49e7-924d-0eae443f54d7": {
+      "exposed": 47,
+      "clicked": 0
+    },
+    "motion-81a64f50-815d-4e91-846d-9f018e2326be": {
+      "exposed": 47,
+      "clicked": 0
+    },
+    "motion-e558c471-28db-4353-a1c8-9ce5089838b1": {
+      "exposed": 46,
+      "clicked": 0
+    },
+    "motion-d3b9d255-d01d-4f27-a62e-6b68189721a1": {
+      "exposed": 45,
+      "clicked": 0
+    },
+    "motion-ae26dbdd-1cb7-434e-9b50-b7c9116ab46c": {
+      "exposed": 44,
+      "clicked": 0
+    },
+    "motion-ccb4e364-1666-4672-80d4-cb68fb591bad": {
+      "exposed": 44,
+      "clicked": 0
+    },
+    "motion-3ce7f525-08cd-4ccb-b3f6-92dc168c28ce": {
+      "exposed": 44,
+      "clicked": 0
+    },
+    "motion-c2ff6df1-76b3-4045-878b-bc91f1962464": {
+      "exposed": 44,
+      "clicked": 0
+    },
+    "motion-d86700fa-19e5-4f8c-900a-a03429cc89b4": {
+      "exposed": 43,
+      "clicked": 0
+    },
+    "motion-bc7b69f5-1816-4961-9501-754feba2e5b2": {
+      "exposed": 43,
+      "clicked": 0
+    },
+    "motion-ce3d2f77-5000-4546-bf66-cc6dd6be573a": {
+      "exposed": 42,
+      "clicked": 0
+    },
+    "motion-4f330399-939d-4dba-8525-fff2f84602cd": {
+      "exposed": 41,
+      "clicked": 0
+    },
+    "motion-c1de8de0-4333-46d2-be29-3e4090856170": {
+      "exposed": 40,
+      "clicked": 0
+    },
+    "motion-d214ebc1-b1cd-4615-8d40-d580632e8f29": {
+      "exposed": 40,
+      "clicked": 0
+    },
+    "motion-c6cf01ea-4262-4297-9f62-00f975cba4df": {
+      "exposed": 37,
+      "clicked": 0
+    },
+    "motion-orbit-launch": {
+      "exposed": 36,
+      "clicked": 0
+    },
+    "motion-4fdcf514-f8fe-4bcc-a037-60482375769c": {
+      "exposed": 36,
+      "clicked": 0
+    },
+    "motion-a8969c13-c7db-4e76-aa48-cfcb0674cf99": {
+      "exposed": 36,
+      "clicked": 0
+    },
+    "motion-82eeddc5-21ae-40f6-8a68-a7fd352ce92b": {
+      "exposed": 35,
+      "clicked": 0
+    },
+    "motion-65aa721c-db2c-49e1-a84f-1917cd0d1c1e": {
+      "exposed": 34,
+      "clicked": 0
+    },
+    "motion-ea3e966c-24ae-4313-b870-cd6a464935ca": {
+      "exposed": 30,
+      "clicked": 0
+    },
+    "motion-d96e83db-9460-4d75-8e13-0a899f647087": {
+      "exposed": 29,
+      "clicked": 0
+    },
+    "motion-594cffdc-980f-4c79-a85b-3d01b60e871e": {
+      "exposed": 28,
+      "clicked": 0
+    },
+    "motion-45cca1f4-13dd-44f1-a782-552f2d4469fd": {
+      "exposed": 28,
+      "clicked": 0
+    },
+    "motion-713872a8-8a62-4e4f-abc1-867d74c642e3": {
+      "exposed": 26,
+      "clicked": 0
+    },
+    "motion-27b3a44f-5c17-4bea-83f0-5e92e0ad20d9": {
+      "exposed": 26,
+      "clicked": 0
+    },
+    "motion-74408712-50e0-43ac-a167-1a11297cdae0": {
+      "exposed": 26,
+      "clicked": 0
+    },
+    "motion-81c409d2-46e9-4c90-bcde-a0de2106f81e": {
+      "exposed": 25,
+      "clicked": 0
+    },
+    "motion-b7699fbd-9519-4fa6-8d45-f42141378d93": {
+      "exposed": 24,
+      "clicked": 0
+    },
+    "motion-56a6a8d9-48b7-42b7-8293-5533a0ee633f": {
+      "exposed": 23,
+      "clicked": 0
+    },
+    "motion-2ca7c87b-23e8-4517-b197-cb5178e8fa76": {
+      "exposed": 23,
+      "clicked": 0
+    },
+    "motion-be0354b4-c4d9-4c81-bb67-ac16dc065184": {
+      "exposed": 23,
+      "clicked": 0
+    },
+    "motion-fe6852d3-cd2e-43f1-924e-c130b1935937": {
+      "exposed": 23,
+      "clicked": 0
+    },
+    "motion-b8ec3aa1-bed2-43d9-894f-e081667dcc1c": {
+      "exposed": 22,
+      "clicked": 0
+    },
+    "motion-3957ff01-8fd8-4a30-b8ac-b88705c90dbc": {
+      "exposed": 22,
+      "clicked": 0
+    },
+    "motion-71722e89-6acc-44eb-95fd-2e7cb5f2df08": {
+      "exposed": 21,
+      "clicked": 0
+    },
+    "motion-5f387971-3508-4a22-9c5a-63c05cbdb37f": {
+      "exposed": 20,
+      "clicked": 0
+    },
+    "motion-b9ac4d16-55e8-4498-81e8-7fb4c264119d": {
+      "exposed": 20,
+      "clicked": 0
+    },
+    "motion-9e5e7ea7-05f9-4ad0-9007-692af38ccc55": {
+      "exposed": 19,
+      "clicked": 0
+    },
+    "motion-de5c331a-48e6-4bdb-98da-597d76fa3d77": {
+      "exposed": 19,
+      "clicked": 0
+    },
+    "q3-launch-story": {
+      "exposed": 1,
+      "clicked": 0
+    }
+  }
+}

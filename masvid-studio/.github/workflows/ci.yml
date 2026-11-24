@@ -1,0 +1,572 @@
+name: Motion standalone checks
+
+# Motion has an independent npm lockfile and release contract; this workflow
+# validates that distribution without changing OD's application merge gate.
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      format:
+        description: 'Build self-contained npm application artifacts or complete ZIP backups'
+        type: choice
+        options: [npm, full]
+        default: npm
+      template_environment:
+        description: 'Template configuration platform used by the package'
+        type: choice
+        options: [dev, prod]
+        default: dev
+      publish:
+        description: 'Publication is disabled during migration; leave unchecked'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: motion-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  template-library:
+    name: Template library policy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout source and contribution history without LFS media
+        uses: actions/checkout@v6.0.2
+        with:
+          fetch-depth: 0
+          lfs: false
+          persist-credentials: false
+      - name: Setup pinned Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '26.11.1'
+      - name: Require Squash merges for sanitized media history
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # GraphQL variables are passed through gh fields, not expanded by the shell.
+          # shellcheck disable=SC2016
+          gh api graphql -f owner="$GITHUB_REPOSITORY_OWNER" -f repo="${GITHUB_REPOSITORY#*/}" \
+            -f query='query($owner: String!, $repo: String!) { repository(owner: $owner, name: $repo) { squashMergeAllowed mergeCommitAllowed rebaseMergeAllowed } }' \
+            --jq '.data.repository | if .squashMergeAllowed and (.mergeCommitAllowed | not) and (.rebaseMergeAllowed | not) then "Squash-only merge policy confirmed" else error("Enable Squash merge only before accepting cleaned media PRs") end'
+      - name: Check the final merge tree and media policy
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          if [[ "$BASE_SHA" =~ ^0+$ ]]; then unset BASE_SHA; fi
+          npm run templates:check -- --final-tree
+          npm run storage:check -- --final-tree
+          node --test tests/repository-storage.test.ts tests/media-transfer.test.ts
+          node --test tests/template-library.test.ts tests/ci-scope.test.mjs
+
+  maintainability:
+    name: Maintainability report
+    if: github.event_name == 'pull_request' && github.base_ref == 'main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout PR merge result
+        uses: actions/checkout@v6.0.2
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+      - name: Setup pinned Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '26.11.1'
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            .github/maintainability/package-lock.json
+      - name: Select checks for the changed boundary
+        id: scope
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: node .github/scripts/ci-scope.mjs
+      - name: Compare source against the PR base
+        if: steps.scope.outputs.maintainability == 'true'
+        shell: bash
+        env:
+          PR_HEAD_REVISION: ${{ github.event.pull_request.head.sha }}
+        run: |
+          test "$(git rev-parse HEAD^2)" = "$PR_HEAD_REVISION"
+          BASE_REVISION=$(git rev-parse HEAD^1)
+          base_dir=$(mktemp -d "$RUNNER_TEMP/motion-base.XXXXXX")
+          git archive "$BASE_REVISION" | tar -x -C "$base_dir"
+          npm ci --prefix "$base_dir" --ignore-scripts --no-audit --no-fund
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm ci --prefix .github/maintainability --ignore-scripts --no-audit --no-fund
+          node .github/maintainability/report.mjs "$base_dir" "$BASE_REVISION" >> "$GITHUB_STEP_SUMMARY"
+
+  checks:
+    name: Source checks
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+      - name: Setup pinned Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '26.11.1'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Select checks for the changed boundary
+        id: scope
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: node .github/scripts/ci-scope.mjs
+      - name: Test release controls without publication credentials
+        run: node --test tests/release-workflows.test.mjs tests/release-scan.test.mjs tests/registry-download.test.mjs tests/stable-release.test.mjs tests/release-notes.test.mjs tests/publish-template-catalog.test.mjs tests/template-registry-consumer.test.mjs
+      - name: Install locked Motion dependencies
+        if: steps.scope.outputs.full == 'true'
+        run: npm ci --no-audit --no-fund
+      - name: Check source and Studio types
+        if: steps.scope.outputs.full == 'true'
+        run: |
+          npm run check
+          npm run design:test
+          node --test tests/source-build-state.test.ts
+          npm run typecheck:studio
+          npm run typecheck:backend
+      - name: Measure component adoption and detached styles
+        if: steps.scope.outputs.full == 'true'
+        env:
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          node --test tests/ui-metrics.test.ts
+          args=()
+          if [[ -n "$PR_HEAD" ]]; then
+            test "$(git rev-parse HEAD^2)" = "$PR_HEAD"
+            args+=(--base "$(git rev-parse HEAD^1)")
+          fi
+          npm run design:metrics -- "${args[@]}"
+          cat dist/ui-metrics/report.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload UI metrics with source locations
+        if: steps.scope.outputs.full == 'true'
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: ui-metrics
+          path: dist/ui-metrics/
+          if-no-files-found: error
+      - name: Check capture failure classification and bounded recovery
+        if: steps.scope.outputs.full == 'true'
+        run: node --test tests/capture-retry.test.ts
+      - name: Check composition, discovery and install attribution
+        if: steps.scope.outputs.full == 'true'
+        run: node --test tests/composition-canvas.test.ts tests/short-form-discovery.test.ts tests/install-attribution-worker.test.ts
+
+  platform-reliability:
+    name: Workspace reliability (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-15, windows-2025]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      OPENMOTION_TELEMETRY: '0'
+    steps:
+      - uses: actions/checkout@v6.0.2
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '26.11.1'
+          cache: npm
+      - name: Select checks for the changed boundary
+        id: scope
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: node .github/scripts/ci-scope.mjs
+      - name: Install locked dependencies
+        if: steps.scope.outputs.full == 'true'
+        run: npm ci --no-audit --no-fund
+      - name: Check ownership recovery, read verification and immutable snapshots
+        if: steps.scope.outputs.full == 'true'
+        run: node --experimental-strip-types --test tests/process-lock.test.ts tests/version-reads.test.ts tests/capture-retry.test.ts tests/hyperframes-startup.test.ts tests/command-lifecycle.test.ts tests/windows-install-recovery.test.ts
+
+  studio:
+    name: Studio regression (${{ matrix.shard }}/2)
+    env:
+      OPENMOTION_TELEMETRY: '0'
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+      - name: Setup pinned Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '26.11.1'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Select checks for the changed boundary
+        id: scope
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: node .github/scripts/ci-scope.mjs
+      - name: Install locked Motion dependencies
+        if: steps.scope.outputs.full == 'true'
+        run: npm ci --no-audit --no-fund
+      - name: Studio regression
+        if: steps.scope.outputs.full == 'true'
+        run: npm run test:studio -- --maxWorkers=2 --shard=${{ matrix.shard }}/2
+
+  # Keep browser/export checks independent from package installation checks so
+  # the longest regression path does not serialize behind packaging work.
+  distribution-browser:
+    name: Distribution browser regression
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        shell: bash
+    env:
+      OPENMOTION_TELEMETRY: '0'
+      HYPERFRAMES_BROWSER_PATH: /usr/bin/google-chrome
+      HYPERFRAMES_FFMPEG_PATH: /usr/bin/ffmpeg
+      HYPERFRAMES_FFPROBE_PATH: /usr/bin/ffprobe
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+        with:
+          fetch-depth: 2
+      - name: Setup pinned Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '26.11.1'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Select checks for the changed boundary
+        id: scope
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: node .github/scripts/ci-scope.mjs
+      - name: Cache optional LFS media
+        if: steps.scope.outputs.full == 'true'
+        uses: actions/cache@v4
+        with:
+          path: .git/lfs/objects
+          key: optional-lfs-${{ runner.os }}-${{ hashFiles('**/*.mp4', '**/*.motion', 'library/templates/catalog/**') }}
+          restore-keys: optional-lfs-${{ runner.os }}-
+      - name: Download full-bundle media explicitly
+        if: steps.scope.outputs.full == 'true'
+        run: |
+          # Hosted-catalog packaging tests also need the real template audio/font bytes.
+          git lfs pull --include="docs/readme/**,library/**,examples/**" --exclude=""
+          npm run media:pull
+      - name: Select rendering package cache version
+        if: steps.scope.outputs.full == 'true'
+        id: rendering-cache
+        run: echo "version=${ImageVersion:-$(date -u +%G-W%V)}" >> "$GITHUB_OUTPUT"
+      - name: Restore rendering package downloads
+        if: steps.scope.outputs.full == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/motion-rendering-apt/*.deb
+          # Reuse packages across runs of the same runner image; refresh when the image changes.
+          key: rendering-apt-ubuntu24.04-${{ runner.arch }}-zip-unzip-ffmpeg-fonts-noto-core-v2-${{ steps.rendering-cache.outputs.version }}
+          restore-keys: |
+            rendering-apt-ubuntu24.04-${{ runner.arch }}-zip-unzip-ffmpeg-fonts-noto-core-v2-
+            rendering-apt-ubuntu24.04-${{ runner.arch }}-zip-unzip-ffmpeg-fonts-noto-core-
+      - name: Install rendering test tools
+        if: steps.scope.outputs.full == 'true'
+        run: |
+          # The hosted Ubuntu image provides Chrome; Ubuntu's chromium package pulls a desktop snap.
+          "$HYPERFRAMES_BROWSER_PATH" --version
+          missing=()
+          for package in zip unzip ffmpeg fonts-noto-core; do
+            if [ "$(dpkg-query -W -f='${Status}' "$package" 2>/dev/null)" != 'install ok installed' ]; then
+              missing+=("$package")
+            fi
+          done
+          if ((${#missing[@]})); then
+            mkdir -p "$RUNNER_TEMP/motion-rendering-apt/partial"
+            apt_options=(-o Acquire::Retries=2 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30
+              -o "Dir::Cache::archives=$RUNNER_TEMP/motion-rendering-apt" -o APT::Keep-Downloaded-Packages=true)
+            # Hosted runners already have package indexes. Refresh only if installation needs it.
+            if ! sudo apt-get "${apt_options[@]}" install -y --no-install-recommends "${missing[@]}"; then
+              sudo apt-get "${apt_options[@]}" update
+              sudo apt-get "${apt_options[@]}" install -y --no-install-recommends "${missing[@]}"
+            fi
+            du -sh "$RUNNER_TEMP/motion-rendering-apt/"*.deb
+          fi
+      - name: Install locked Motion dependencies
+        if: steps.scope.outputs.full == 'true'
+        run: npm ci --no-audit --no-fund
+      - name: Build browser regression inputs
+        if: steps.scope.outputs.full == 'true'
+        run: |
+          npm run build:studio
+          npm run build:tracking
+      - name: Related template preview browser regression
+        if: steps.scope.outputs.full == 'true'
+        run: node --experimental-strip-types tests/related-template-preview-browser.mjs "$RUNNER_TEMP/related-template-preview"
+      - name: Transcript workflow browser regression
+        if: steps.scope.outputs.full == 'true'
+        run: node tests/transcript-browser.mjs "$RUNNER_TEMP/transcript-workflow"
+      - name: Video review comments and annotation regression
+        if: steps.scope.outputs.full == 'true'
+        timeout-minutes: 5
+        run: |
+          node --test tests/review-comments.test.ts
+          node --test tests/review-comments-browser.ts
+      - name: Platform export Studio and MCP end-to-end regression
+        if: steps.scope.outputs.full == 'true'
+        timeout-minutes: 10
+        run: |
+          node --test tests/platform-export.test.ts tests/caption-export.test.ts
+          node tests/platform-export-browser.mjs "$RUNNER_TEMP/platform-export"
+      - name: Brand Kit capture, package and showcase regression
+        if: steps.scope.outputs.full == 'true'
+        run: |
+          node --test tests/brand-catalog.test.ts tests/brand-cover.test.ts tests/brand-kits.test.ts
+          node --test tests/brand-extraction.browser.test.ts tests/brand-showcase.browser.test.ts
+      - name: Repository template runtime regression
+        if: steps.scope.outputs.full == 'true'
+        run: node --test tests/repository-template-runtime.test.ts tests/hosted-template-catalog.test.ts tests/template-guide.test.ts tests/template-prompts.test.ts tests/integration-setup.test.ts
+      - name: Workspace, wrapper and session regression
+        if: steps.scope.outputs.full == 'true'
+        timeout-minutes: 10
+        run: node --experimental-strip-types --test --test-concurrency=1 tests/spa-routes.test.ts tests/server.test.ts tests/projects.test.ts tests/sessions.test.ts tests/multi-project.test.ts tests/asset-naming.test.ts tests/history.test.ts
+      - name: Built-in template playback and export regression
+        if: steps.scope.outputs.full == 'true'
+        run: node --experimental-strip-types --test tests/decision-tree.test.ts
+      - name: Game Studio service, rooms and tools regression
+        if: steps.scope.outputs.full == 'true'
+        timeout-minutes: 15
+        # Browser playtest and native trailer cases skip themselves when Chrome, loopback or native export are unavailable.
+        run: |
+          node --experimental-strip-types --test --test-concurrency=1 \
+            --test-reporter=spec --test-reporter-destination=stdout \
+            --test-reporter=./.github/scripts/game-test-failures.mjs --test-reporter-destination=stdout \
+            tests/game-projects.test.ts
+
+  distribution:
+    name: Distribution regression
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    defaults:
+      run:
+        shell: bash
+    env:
+      OPENMOTION_TELEMETRY: '0'
+      HYPERFRAMES_BROWSER_PATH: /usr/bin/google-chrome
+      HYPERFRAMES_FFMPEG_PATH: /usr/bin/ffmpeg
+      HYPERFRAMES_FFPROBE_PATH: /usr/bin/ffprobe
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+        with:
+          fetch-depth: 2
+      - name: Setup pinned Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: '26.11.1'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Select checks for the changed boundary
+        id: scope
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: node .github/scripts/ci-scope.mjs
+      - name: Cache optional LFS media
+        if: steps.scope.outputs.full == 'true'
+        uses: actions/cache@v4
+        with:
+          path: .git/lfs/objects
+          key: optional-lfs-${{ runner.os }}-${{ hashFiles('**/*.mp4', '**/*.motion', 'library/templates/catalog/**') }}
+          restore-keys: optional-lfs-${{ runner.os }}-
+      - name: Download full-bundle media explicitly
+        if: steps.scope.outputs.full == 'true'
+        run: |
+          # Hosted-catalog packaging tests also need the real template audio/font bytes.
+          git lfs pull --include="docs/readme/**,library/**,examples/**" --exclude=""
+          npm run media:pull
+      - name: Select rendering package cache version
+        if: steps.scope.outputs.full == 'true'
+        id: rendering-cache
+        run: echo "version=${ImageVersion:-$(date -u +%G-W%V)}" >> "$GITHUB_OUTPUT"
+      - name: Restore rendering package downloads
+        if: steps.scope.outputs.full == 'true'
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/motion-rendering-apt/*.deb
+          # Reuse packages across runs of the same runner image; refresh when the image changes.
+          key: rendering-apt-ubuntu24.04-${{ runner.arch }}-zip-unzip-ffmpeg-fonts-noto-core-v2-${{ steps.rendering-cache.outputs.version }}
+          restore-keys: |
+            rendering-apt-ubuntu24.04-${{ runner.arch }}-zip-unzip-ffmpeg-fonts-noto-core-v2-
+            rendering-apt-ubuntu24.04-${{ runner.arch }}-zip-unzip-ffmpeg-fonts-noto-core-
+      - name: Install rendering test tools
+        if: steps.scope.outputs.full == 'true'
+        run: |
+          # The hosted Ubuntu image provides Chrome; Ubuntu's chromium package pulls a desktop snap.
+          "$HYPERFRAMES_BROWSER_PATH" --version
+          missing=()
+          for package in zip unzip ffmpeg fonts-noto-core; do
+            if [ "$(dpkg-query -W -f='${Status}' "$package" 2>/dev/null)" != 'install ok installed' ]; then
+              missing+=("$package")
+            fi
+          done
+          if ((${#missing[@]})); then
+            mkdir -p "$RUNNER_TEMP/motion-rendering-apt/partial"
+            apt_options=(-o Acquire::Retries=2 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30
+              -o "Dir::Cache::archives=$RUNNER_TEMP/motion-rendering-apt" -o APT::Keep-Downloaded-Packages=true)
+            # Hosted runners already have package indexes. Refresh only if installation needs it.
+            if ! sudo apt-get "${apt_options[@]}" install -y --no-install-recommends "${missing[@]}"; then
+              sudo apt-get "${apt_options[@]}" update
+              sudo apt-get "${apt_options[@]}" install -y --no-install-recommends "${missing[@]}"
+            fi
+            du -sh "$RUNNER_TEMP/motion-rendering-apt/"*.deb
+          fi
+      - name: Validate manual package selection
+        env:
+          PACKAGE_FORMAT: ${{ inputs.format || 'npm' }}
+          PUBLISH: ${{ inputs.publish || false }}
+        run: |
+          if [ "$PUBLISH" = true ]; then echo 'Motion publishing is disabled during migration.' >&2; exit 1; fi
+          case "$PACKAGE_FORMAT" in
+            npm|full) ;;
+            *) echo 'Unknown package format' >&2; exit 1 ;;
+          esac
+      - name: Scan tracked source without publication credentials
+        run: |
+          node .github/scripts/motion-scan.mjs install "$RUNNER_TEMP/scanner"
+          node .github/scripts/motion-scan.mjs source . "$RUNNER_TEMP/source-scan.json" "$RUNNER_TEMP/scanner/gitleaks"
+      - name: Install locked Motion dependencies
+        if: steps.scope.outputs.full == 'true'
+        run: npm ci --no-audit --no-fund
+      - name: Build Studio and validate tracking
+        if: steps.scope.outputs.full == 'true'
+        run: |
+          npm run build:studio
+          node --test tests/design-system.test.ts
+          npm run build:tracking
+          node --experimental-strip-types --test tests/tracking.test.ts tests/tracking-device.test.ts tests/studio-tracking.test.ts tests/mcp-tracking-host.test.ts
+      - name: Validate standalone installation and packaging
+        if: steps.scope.outputs.full == 'true'
+        run: node --experimental-strip-types --test tests/onboarding-selection.test.ts tests/mcp-template-recommendations.test.ts tests/template-cards-ui.test.ts tests/diagnostics.test.ts tests/install.test.ts tests/npm-installer.test.ts tests/native-runtime.test.ts tests/npm-package.test.ts tests/test-package.test.ts tests/source-install.test.ts tests/bootstrap.test.ts tests/bundled-npm-runtime.test.ts tests/inline-onboarding.test.ts tests/inline-storyboard.test.ts tests/npm-distribution-selection.test.ts tests/onboarding-workspace.test.ts tests/prebuilt-bootstrap.test.ts tests/source-marketplace.test.ts tests/byok.test.ts tests/transcription.test.ts tests/transcription-transport.test.ts tests/generation-options.test.ts tests/asset-library.test.ts tests/gateway.test.ts tests/mcp-onboarding.test.ts tests/provider-settings.test.ts tests/local-agents.test.ts tests/mcp-registry.test.ts tests/public-names.test.ts tests/mcp-runtime.test.ts tests/mcp-upgrade.test.ts tests/preview.test.ts tests/editor-urls.test.ts tests/workspace-studio.test.ts tests/preview-fonts.test.ts tests/studio-render-attempts.test.ts tests/sync.test.ts tests/phase1.test.ts tests/project-archive.test.ts tests/project-management.test.ts tests/design-catalog.test.ts tests/design-projects.test.ts tests/design-mcp.test.ts tests/design-import-asset.test.ts tests/scenario-content.test.ts tests/scenario-runs.test.ts tests/scenario-bundle.test.ts tests/font-catalog.test.ts tests/font-import.test.ts tests/font-specimen.test.ts tests/studio-fonts.test.ts tests/webmcp.test.ts tests/preview-handoff.test.ts tests/adapters.test.ts tests/template-delivery.test.ts tests/package.test.ts tests/library-install.test.mjs tests/recreate-measure.test.ts tests/workflow.test.ts tests/catalog.test.ts tests/prism-templates.test.ts tests/inline-video.test.ts tests/extension-boundary.test.ts tests/connections.test.ts tests/install-guide.test.ts tests/readme-resources.test.ts tests/motion-design-remix.test.ts tests/motion-package.test.ts
+      - name: Build phase-one ZIP and exercise all public tools
+        if: steps.scope.outputs.full == 'true'
+        run: |
+          # Studio was built above from this same checkout; keep the public package command self-contained.
+          node --experimental-strip-types scripts/package.ts --mcp-profile=phase1
+          archive="$PWD/dist/openmotion-$(node -p "require('./package.json').version")-phase1.zip"
+          node tests/phase1-package.mjs "$archive" "$PWD/.artifacts/phase1-package-e2e"
+      - name: Validate two-round inline rendering
+        if: steps.scope.outputs.full == 'true'
+        run: node --experimental-strip-types --test --test-concurrency=1 tests/inline-video-runtime.test.ts
+      - name: Build immutable standalone artifacts
+        if: steps.scope.outputs.full == 'true'
+        env:
+          PACKAGE_FORMAT: ${{ inputs.format || 'npm' }}
+          TEMPLATE_ENVIRONMENT: ${{ inputs.template_environment || 'dev' }}
+        run: |
+          version=$(node scripts/test-package.mjs version "$GITHUB_RUN_NUMBER" "${GITHUB_RUN_ATTEMPT:-1}")
+          if [ "$PACKAGE_FORMAT" = npm ]; then
+            node scripts/package-npm.mjs "dist/$version" "$version" --template-env="$TEMPLATE_ENVIRONMENT"
+            bytes=$(wc -c < "dist/$version/openmotion-app-$version.tgz" | tr -d '[:space:]')
+            printf '## npm install package\n\nCompressed size: %s bytes\n' "$bytes" >> "$GITHUB_STEP_SUMMARY"
+          else
+            for target in mac-arm64 win-x64; do
+              node scripts/test-package.mjs prepare "$target"
+              node scripts/test-package.mjs build "$target" "$version" --template-env="$TEMPLATE_ENVIRONMENT"
+            done
+          fi
+      - name: Report default npm package size and enforce its budget
+        if: steps.scope.outputs.full == 'true' && (inputs.format || 'npm') == 'npm'
+        env:
+          TEMPLATE_ENVIRONMENT: ${{ inputs.template_environment || 'dev' }}
+        run: |
+          version=$(node scripts/test-package.mjs version "$GITHUB_RUN_NUMBER" "${GITHUB_RUN_ATTEMPT:-1}")
+          baseline=()
+          if [[ "$GITHUB_EVENT_NAME" == pull_request ]]; then
+            base_tree="$RUNNER_TEMP/package-size-base"
+            base_output="$RUNNER_TEMP/package-size-base-dist"
+            # The first parent is the exact target commit used to build this PR merge tree.
+            if git worktree add --detach "$base_tree" HEAD^1 && (
+              cd "$base_tree" &&
+              npm ci --no-audit --no-fund &&
+              npm run build:studio &&
+              node scripts/package-npm.mjs "$base_output" "$version" --template-env="$TEMPLATE_ENVIRONMENT"
+            ) > "$RUNNER_TEMP/npm-package-baseline.log" 2>&1; then
+              baseline=(--baseline "$base_output/openmotion-app-$version.tgz")
+            else
+              echo "::warning::Could not build the PR baseline. The candidate size and budget are still checked."
+              tail -40 "$RUNNER_TEMP/npm-package-baseline.log" 2>/dev/null || true
+              echo 'Package baseline unavailable. Reporting candidate size only.' >> "$GITHUB_STEP_SUMMARY"
+            fi
+          fi
+          python3 .github/scripts/npm-package-size.py "dist/$version/openmotion-app-$version.tgz" "${baseline[@]}"
+      - name: Generate candidate installation guide
+        if: steps.scope.outputs.full == 'true' && (inputs.format || 'npm') == 'npm' && (inputs.template_environment || 'dev') == 'dev'
+        run: |
+          version=$(node scripts/test-package.mjs version "$GITHUB_RUN_NUMBER" "${GITHUB_RUN_ATTEMPT:-1}")
+          candidate=$(node --input-type=module -e 'import fs from "node:fs"; const m=JSON.parse(fs.readFileSync(process.argv[1]));process.stdout.write(m.installer.url.replace(/^\.\//,""));' "dist/$version/release-npm.json")
+          node --experimental-strip-types scripts/install-guide.mjs "dist/$version/$candidate" .artifacts/install-guide --candidate
+          node .github/scripts/motion-scan.mjs package "dist/$version/$candidate" "$RUNNER_TEMP/package-scan.json" "$RUNNER_TEMP/scanner/gitleaks"
+      - name: Retain candidate installation guide for review
+        if: steps.scope.outputs.full == 'true' && (inputs.format || 'npm') == 'npm' && (inputs.template_environment || 'dev') == 'dev'
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: motion-install-guide-preview-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            .artifacts/install-guide/install.md
+            .artifacts/install-guide/install-record.json
+          include-hidden-files: true
+          retention-days: 14
+          if-no-files-found: error
+      - name: Record validation scope
+        if: steps.scope.outputs.full == 'true'
+        run: |
+          echo 'Motion artifacts were built and checked; the candidate guide is a review artifact only. No npm, R2 or Release publication occurred.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Check presentation documentation
+        if: steps.scope.outputs.full != 'true'
+        env:
+          CHANGED_DOCS: ${{ steps.scope.outputs.documents }}
+        run: |
+          node .github/scripts/ci-scope.mjs --check-docs
+          echo 'Presentation documentation checked; Studio, rendering and package checks were not needed. Source scanning and repository policy checks still ran.' >> "$GITHUB_STEP_SUMMARY"
+
+  # Keep the existing required check while every independent lane runs in parallel.
+  standalone:
+    if: ${{ always() }}
+    needs: [template-library, maintainability, checks, platform-reliability, studio, distribution-browser, distribution]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 2
+    steps:
+      - name: Require every validation lane
+        env:
+          VALIDATION_RESULTS: ${{ toJSON(needs) }}
+          ALLOW_SKIPPED_MAINTAINABILITY: ${{ github.event_name != 'pull_request' || github.base_ref != 'main' }}
+        run: |
+          node --input-type=module <<'NODE'
+          const results = JSON.parse(process.env.VALIDATION_RESULTS);
+          for (const job of ['template-library', 'maintainability', 'checks', 'platform-reliability', 'studio', 'distribution-browser', 'distribution']) {
+            const result = results[job]?.result;
+            const expected = job === 'maintainability' && process.env.ALLOW_SKIPPED_MAINTAINABILITY === 'true'
+              ? 'skipped' : 'success';
+            if (result !== expected) {
+              console.error(`${job}: expected ${expected}, received ${result ?? 'missing'}`);
+              process.exitCode = 1;
+            }
+          }
+          NODE

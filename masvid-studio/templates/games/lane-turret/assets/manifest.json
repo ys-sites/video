@@ -1,0 +1,90 @@
+{
+  "generator": "Built-in image_gen",
+  "originalArtwork": true,
+  "atlasLayout": "4 x 4",
+  "processing": "Cell extraction, alpha cleanup, WebP compression; cover normalized without cropping title. Sprites downscaled to 192 x 192 and cover to 400 px wide to fit the default npm package size budget.",
+  "atlasPrompt": "Use case: stylized-concept. Production videogame asset ATLAS. Square 1024x1024 strictly divided into a uniform 4 by 4 grid of 256x256 cells. No grid lines, no labels, no text. Premium 16-bit pixel art space shooter game, original characters only, clean readable silhouettes, high detail. Transparent background around isolated objects, terrain fills its cell. Cell objects must never overlap or leave their own cell, generous transparent margins around sprites. Row1 left to right: deep blue starfield nebula tile; metal spaceship deck tile; blue armored twin barrel turret pointing UP; upgraded blue armored triple barrel turret pointing UP. Row2: red small enemy interceptor pointing DOWN; purple broad enemy bomber pointing DOWN; orange heavy armored enemy fighter pointing DOWN; golden upgrade card. Row3: small explosion frame one; medium explosion frame two; large explosion frame three; fading explosion frame four. Row4: pixel metal blue UI panel blank; white gloved pointing hand tutorial cursor; cyan laser bolt; gold shield pickup. Render exactly 16 separate assets. No logos or watermarks.",
+  "coverPrompt": "Use case: ads-marketing. Original premium mobile game COVER illustration, portrait 9:16 around 768x1360. Rich crisp 16-bit pixel art space shooter battle. Strong blue twin-barrel turret in foreground at bottom firing brilliant cyan lasers up three space lanes, red interceptors purple bombers and orange heavy fighters descend from nebula starfield. Golden upgrade cards and spectacular pixel orange explosions. Highly finished game promotional art with depth, tactile material details and lively motion, not abstract primitive shapes. Main action occupies middle 75%, keep top 15% for a beautifully crafted title reading exactly \"LANE TURRET\". No other text. Crisp readable composition at phone size. No existing game characters, logos or brands.",
+  "files": [
+    {
+      "file": "00.webp",
+      "cell": 0,
+      "bytes": 9190
+    },
+    {
+      "file": "01.webp",
+      "cell": 1,
+      "bytes": 7812
+    },
+    {
+      "file": "02.webp",
+      "cell": 2,
+      "bytes": 19854
+    },
+    {
+      "file": "03.webp",
+      "cell": 3,
+      "bytes": 24864
+    },
+    {
+      "file": "04.webp",
+      "cell": 4,
+      "bytes": 17800
+    },
+    {
+      "file": "05.webp",
+      "cell": 5,
+      "bytes": 19202
+    },
+    {
+      "file": "06.webp",
+      "cell": 6,
+      "bytes": 23744
+    },
+    {
+      "file": "07.webp",
+      "cell": 7,
+      "bytes": 20866
+    },
+    {
+      "file": "08.webp",
+      "cell": 8,
+      "bytes": 6086
+    },
+    {
+      "file": "09.webp",
+      "cell": 9,
+      "bytes": 15718
+    },
+    {
+      "file": "10.webp",
+      "cell": 10,
+      "bytes": 28802
+    },
+    {
+      "file": "11.webp",
+      "cell": 11,
+      "bytes": 24222
+    },
+    {
+      "file": "12.webp",
+      "cell": 12,
+      "bytes": 13104
+    },
+    {
+      "file": "13.webp",
+      "cell": 13,
+      "bytes": 10544
+    },
+    {
+      "file": "14.webp",
+      "cell": 14,
+      "bytes": 7758
+    },
+    {
+      "file": "15.webp",
+      "cell": 15,
+      "bytes": 23006
+    }
+  ]
+}

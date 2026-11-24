@@ -1,0 +1,27 @@
+{
+  "id": "sky-runner",
+  "title": "Sky Runner",
+  "description": "Change lanes, gather coins and boost through an accelerating neon course.",
+  "genre": "racing",
+  "style": "3d",
+  "setting": "cyberpunk",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "Drag to change lanes. Three hits ends the run.",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-21T00:00:00.000Z",
+  "updatedAt": "2026-11-21T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "霓虹天际跑者",
+      "description": "左右拖动换道，躲避障碍、收集金币和加速道具，撞三次结束。",
+      "controls": "左右拖动换道，躲障碍，三次碰撞结束"
+    }
+  },
+  "orientation": "portrait"
+}

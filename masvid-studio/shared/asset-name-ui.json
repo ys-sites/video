@@ -1,0 +1,79 @@
+{
+  "en": {
+    "Image": "Image",
+    "Video": "Video",
+    "Audio": "Audio",
+    "Font": "Font",
+    "Use 1–200 characters without line breaks or control characters.": "Use 1–200 characters without line breaks or control characters."
+  },
+  "zh-CN": {
+    "Image": "图片",
+    "Video": "视频",
+    "Audio": "音频",
+    "Font": "字体",
+    "Use 1–200 characters without line breaks or control characters.": "请输入 1–200 个字符，不含换行或控制字符。"
+  },
+  "ja": {
+    "Image": "画像",
+    "Video": "動画",
+    "Audio": "音声",
+    "Font": "フォント",
+    "Use 1–200 characters without line breaks or control characters.": "改行や制御文字を含まない1〜200文字を入力してください。"
+  },
+  "ko": {
+    "Image": "이미지",
+    "Video": "동영상",
+    "Audio": "오디오",
+    "Font": "글꼴",
+    "Use 1–200 characters without line breaks or control characters.": "줄바꿈이나 제어 문자 없이 1~200자로 입력하세요."
+  },
+  "de": {
+    "Image": "Bild",
+    "Video": "Video",
+    "Audio": "Audio",
+    "Font": "Schrift",
+    "Use 1–200 characters without line breaks or control characters.": "Verwenden Sie 1–200 Zeichen ohne Zeilenumbrüche oder Steuerzeichen."
+  },
+  "fr": {
+    "Image": "Image",
+    "Video": "Vidéo",
+    "Audio": "Audio",
+    "Font": "Police",
+    "Use 1–200 characters without line breaks or control characters.": "Utilisez 1 à 200 caractères sans saut de ligne ni caractère de contrôle."
+  },
+  "ru": {
+    "Image": "Изображение",
+    "Video": "Видео",
+    "Audio": "Аудио",
+    "Font": "Шрифт",
+    "Use 1–200 characters without line breaks or control characters.": "Введите от 1 до 200 символов без переносов строк и управляющих символов."
+  },
+  "es": {
+    "Image": "Imagen",
+    "Video": "Vídeo",
+    "Audio": "Audio",
+    "Font": "Fuente",
+    "Use 1–200 characters without line breaks or control characters.": "Usa entre 1 y 200 caracteres sin saltos de línea ni caracteres de control."
+  },
+  "pt-BR": {
+    "Image": "Imagem",
+    "Video": "Vídeo",
+    "Audio": "Áudio",
+    "Font": "Fonte",
+    "Use 1–200 characters without line breaks or control characters.": "Use de 1 a 200 caracteres sem quebras de linha ou caracteres de controle."
+  },
+  "it": {
+    "Image": "Immagine",
+    "Video": "Video",
+    "Audio": "Audio",
+    "Font": "Carattere",
+    "Use 1–200 characters without line breaks or control characters.": "Usa da 1 a 200 caratteri senza interruzioni di riga o caratteri di controllo."
+  },
+  "tr": {
+    "Image": "Görsel",
+    "Video": "Video",
+    "Audio": "Ses",
+    "Font": "Yazı tipi",
+    "Use 1–200 characters without line breaks or control characters.": "Satır sonu veya kontrol karakteri içermeyen 1–200 karakter kullanın."
+  }
+}

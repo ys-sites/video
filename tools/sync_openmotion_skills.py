@@ -21,7 +21,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 MANIFEST = REPO / "tools" / "openmotion-skills.json"
-DEFAULT_TARGET = REPO.parent / "openmotion" / "library" / "skills"
+DEFAULT_TARGET = REPO / "masvid-studio" / "library" / "skills"  # Masvid Studio; pass --target for another OpenMotion checkout
 PREFIX = "masvid-"
 OWNED = ".masvid-sync-owned.json"  # a file, so OpenMotion's directory scan ignores it
 TEXT_EXT = {".md", ".txt", ".json", ".yaml", ".yml", ".csv", ".toml"}

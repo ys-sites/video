@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><title>Sort Stack</title><style>
+/* Standalone authored game artwork; independent of Studio interface themes. */
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#101725;touch-action:none}body{display:grid;place-items:center;height:100dvh}canvas{display:block;width:min(100vw,56.25dvh);height:min(100dvh,177.7778vw);touch-action:none;user-select:none;-webkit-user-select:none}
+</style></head><body><canvas width="450" height="800" aria-label="Sort Stack"></canvas><script>
+'use strict';
+const canvas=document.querySelector('canvas'), ctx=canvas.getContext('2d');
+const W=450,H=800,zh=navigator.language.toLowerCase().startsWith('zh');
+const tr=(a,b)=>zh?a:b;
+document.documentElement.lang=zh?'zh-CN':'en';
+let phase='ready',score=0,elapsed=0,last=0,muted=false,audio=null,shake=0,particles=[],floats=[],pointer=null;
+const rand=(a,b)=>a+Math.random()*(b-a),clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+function box(x,y,w,h,color,r=12){ctx.fillStyle=color;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill();}
+function circle(x,y,r,color){ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();}
+function text(s,x,y,size=20,color='#fff',align='center'){fitText(s,x,y,size,color,align==='left'?W-x-18:Math.min(414,2*Math.min(x-8,W-x-8)),align);}
+function line(x,y,a,b,color,width=3){ctx.strokeStyle=color;ctx.lineWidth=width;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(a,b);ctx.stroke();}
+
+// Authored canvas detail is independent game content, not generated image assets.
+let artTime=0,impactRings=[];
+function fitText(s,x,y,size,color,maxWidth,align='center'){
+ ctx.font=`700 ${size}px system-ui,sans-serif`;
+ while(ctx.measureText(s).width>maxWidth&&size>10){size-=.5;ctx.font=`700 ${size}px system-ui,sans-serif`;}
+ ctx.fillStyle=color;ctx.textAlign=align;ctx.textBaseline='middle';ctx.fillText(s,x,y);
+}
+function gradient(x,y,w,h,top,bottom,r=12){const g=ctx.createLinearGradient(x,y,x,y+h);g.addColorStop(0,top);g.addColorStop(1,bottom);box(x,y,w,h,g,r);}
+function confetti(x,y){for(let i=0;i<60;i++)particles.push({x,y,vx:rand(-210,210),vy:rand(-290,-90),life:rand(.7,1.3),color:['#ffcb57','#ff708c','#83e9da','#fff6ce'][i%4]});}
+function guide(x1,y1,x2,y2,label){
+ if((phase!=='ready'&&!(phase==='playing'&&elapsed<3))||pointer!==null)return;
+ const t=(artTime%2)/2, eased=t*t*(3-2*t),x=x1+(x2-x1)*eased,y=y1+(y2-y1)*eased;
+ ctx.save();ctx.globalAlpha=.75;line(x1,y1,x2,y2,'#fff5c9',3);circle(x1,y1,8,'#fff5c9');ctx.globalAlpha=1;
+ // A vector hand silhouette stays consistent across emoji/font installations.
+ ctx.translate(x,y);ctx.rotate(-.25);ctx.shadowColor='#201524';ctx.shadowBlur=5;
+ box(-8,-4,27,30,'#fff8e4',9);box(-8,-26,10,33,'#fff8e4',5);box(0,-9,10,22,'#fff8e4',5);box(8,-5,10,20,'#fff8e4',5);line(-7,20,-19,7,'#fff8e4',11);ctx.restore();
+ const by=755;box(16,729,418,53,'#17263b',14);fitText(label,225,by,16,'#fff3c5',390);
+}
+
+function tone(f=440){if(muted||!audio)return;const o=audio.createOscillator(),g=audio.createGain();o.type='triangle';o.frequency.setValueAtTime(f,audio.currentTime);o.frequency.exponentialRampToValueAtTime(f*.6,audio.currentTime+.13);g.gain.setValueAtTime(.07,audio.currentTime);g.gain.exponentialRampToValueAtTime(.001,audio.currentTime+.16);o.connect(g);g.connect(audio.destination);o.start();o.stop(audio.currentTime+.17);}
+function unlock(){if(!audio){const A=window.AudioContext||window.webkitAudioContext;if(A)try{audio=new A()}catch{}}if(audio?.state==='suspended')audio.resume().catch(()=>{});}
+function burst(x,y,color='#ffdc78',label=''){for(let i=0;i<28;i++)particles.push({x,y,vx:rand(-170,170),vy:rand(-230,70),life:.8,color});impactRings.push({x,y,life:.24});if(label)floats.push({x,y,s:label,life:1});shake=8;tone(660);}
+function finish(won){if(phase!=='playing')return;phase=won?'won':'lost';pointer=null;tone(won?880:160);}
+function start(){if(phase==='ready')phase='playing';}
+function restart(){phase='ready';score=0;elapsed=0;pointer=null;particles=[];floats=[];impactRings=[];artTime=0;shake=0;init();}
+function pill(label,x,y,w=100){box(x-w/2,y-17,w,34,'#28354c',12);text(label,x,y,16);}
+function header(title,sub){fitText(title,22,36,24,'#fff',350,'left');fitText(sub,22,70,14,'#b6c6df',406,'left');box(388,15,48,43,'#28354c');text(muted?'♪×':'♪',412,37,23);}
+function hint(s){box(16,729,418,53,'#28354c');fitText(s,225,755,16,'#ffdf8a',390);}
+function frame(ts){const dt=last?Math.min((ts-last)/1000,.04):0;last=ts;artTime+=dt;if(phase==='playing'){elapsed+=dt;update(dt);}ctx.clearRect(0,0,W,H);ctx.save();if(shake>0){ctx.translate(rand(-shake,shake),rand(-shake,shake));shake=Math.max(0,shake-dt*30);}draw();for(const r of impactRings){r.life-=dt;ctx.save();ctx.globalAlpha=Math.max(0,r.life/.24);circle(r.x,r.y,12+(1-r.life/.24)*32,'#fff8e4');ctx.restore();}impactRings=impactRings.filter(r=>r.life>0);for(const p of particles){p.life-=dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=280*dt;circle(p.x,p.y,Math.max(0,p.life)*5,p.color);}particles=particles.filter(p=>p.life>0);for(const p of floats){p.life-=dt;p.y-=dt*48;ctx.save();ctx.shadowColor='#211b32';ctx.shadowBlur=5;text(p.s,clamp(p.x,90,360),p.y,26+(1-p.life)*4,'#ffdf8a');ctx.restore();}floats=floats.filter(p=>p.life>0);ctx.restore();guide(99,260,150,493,tr('拖动顶环到同色柱','Drag top rings to a matching pole'));if(phase==='won'||phase==='lost'){box(25,248,400,290,'#111c30',24);text(phase==='won'?tr('挑战成功！','YOU DID IT!'):tr('再试一次！','TRY AGAIN!'),225,299,31,'#ffdf8a');text(result(),225,353,19);text(tr('得分 ','SCORE ')+score,225,397,23);box(95,447,260,62,'#ffd077',18);text(tr('再来一局 ↻','PLAY AGAIN ↻'),225,478,24,'#322435');}requestAnimationFrame(frame);}
+function pos(e){const b=canvas.getBoundingClientRect();return{x:(e.clientX-b.left)*W/b.width,y:(e.clientY-b.top)*H/b.height};}
+canvas.addEventListener('pointerdown',e=>{e.preventDefault();if(pointer!==null)return;unlock();const p=pos(e);if(p.x>=388&&p.y<=64){muted=!muted;return;}if(phase==='won'||phase==='lost'){if(p.x>=95&&p.x<=355&&p.y>=447&&p.y<=509)restart();return;}pointer=e.pointerId;canvas.setPointerCapture?.(e.pointerId);start();down(p);});
+canvas.addEventListener('pointermove',e=>{if(pointer===e.pointerId&&phase==='playing')move(pos(e));});
+function release(e,cancel=false){if(pointer!==e.pointerId)return;pointer=null;if(phase==='playing'){if(cancel)cancelInput();else up(pos(e));}}
+canvas.addEventListener('pointerup',e=>release(e));canvas.addEventListener('pointercancel',e=>release(e,true));
+window.addEventListener('blur',()=>{pointer=null;cancelInput();last=0;});
+document.addEventListener('visibilitychange',()=>{pointer=null;cancelInput();last=0;});
+window.__omGame={state:()=>({phase,score,elapsed,...details()}),start,restart};
+
+// Fixed solvable puzzles produced by reversible single-ring shuffles.
+const puzzles=[[[0,1,2,0],[1,2,0,1],[2,0,1,2],[],[]],[[0,2,1,0],[1,0,2,1],[2,1,0,2],[],[]],[[0,1,2,0],[1,2,0,1],[2,0,1,2],[],[]],[[0,1,2,3],[1,2,3,0],[2,3,0,1],[3,0,1,2],[],[]],[[0,1,2,3],[1,2,3,0],[2,3,0,1],[3,0,1,2],[],[]]];
+let level=0,rods,capacity=4,selected=-1,history=[],moves=0,cleared=0,transition=0;
+const palette=['#fb8c7e','#77d8d1','#f4d16f','#bd9cec'];
+function load(){rods=puzzles[level].map(a=>[...a]);if(level===4)rods=[ [0,2,1,3],[1,3,2,0],[2,0,3,1],[3,1,0,2],[],[] ];capacity=4;selected=-1;rodDrag=null;history=[];transition=0;}
+function init(){level=0;moves=0;cleared=0;load();}
+function rodPos(i){if(i<3)return{x:99+i*126,y:391};return{x:rods.length===5?150+(i-3)*150:99+(i-3)*126,y:626};}
+let rodDrag=null;
+
+function solved(){return rods.every(a=>a.length===0||(a.length===capacity&&a.every(v=>v===a[0])));}
+function transfer(a,b){if(a===b||!rods[a].length||rods[b].length>=capacity)return false;const v=rods[a].at(-1);if(rods[b].length&&rods[b].at(-1)!==v)return false;history.push({rods:rods.map(r=>[...r]),score});let count=0;while(rods[a].at(-1)===v&&rods[b].length<capacity){rods[b].push(rods[a].pop());count++;}moves++;score+=count*10;if(rods[b].length===capacity&&rods[b].every(c=>c===v)){const p=rodPos(b);confetti(p.x,p.y-110);}const p=rodPos(b);burst(p.x,p.y-50,palette[v],`+${count*10}`);if(solved()){cleared++;score+=100;if(level===4)finish(true);else transition=.7;}return true;}
+function down(p){if(transition)return;if(p.y>=654&&p.y<714){if(history.length){const previous=history.pop();rods=previous.rods;score=previous.score;moves=Math.max(0,moves-1);selected=-1;tone(260);}return;}for(let i=0;i<rods.length;i++){const a=rodPos(i);if(Math.abs(p.x-a.x)<48&&p.y>a.y-190&&p.y<a.y+18){if(selected<0){if(rods[i].length){selected=i;rodDrag={i,x:p.x,y:p.y,moved:false};tone(350);}}else{const a=selected;selected=-1;if(!transfer(a,i)&&rods[i].length)selected=i;}return;}}}
+function move(p){if(rodDrag){if(Math.hypot(p.x-rodDrag.x,p.y-rodDrag.y)>12)rodDrag.moved=true;rodDrag.x=p.x;rodDrag.y=p.y;}}
+function up(p){if(!rodDrag)return;const d=rodDrag;rodDrag=null;if(d.moved){for(let i=0;i<rods.length;i++){const c=rodPos(i);if(Math.abs(p.x-c.x)<48&&p.y>c.y-190&&p.y<c.y+18){transfer(d.i,i);break;}}selected=-1;}}
+function cancelInput(){rodDrag=null;selected=-1;}
+function update(dt){if(transition>0){transition-=dt;if(transition<=0){level++;load();}}if(elapsed>=90)finish(false);}
+function ring(x,y,color){box(x-43,y-12,86,33,'#101b2d',13);gradient(x-43,y-18,86,31,'#fff0dc',color,12);box(x-40,y-7,80,17,color,8);line(x-31,y-12,x+27,y-12,'#ffffff',3);box(x-7,y-18,14,10,'#7b91a6',4);}
+function draw(){gradient(0,0,450,800,'#293b55','#111e34',0);for(let i=0;i<8;i++)line(i*70,140,i*70-100,720,'#304865',1);header(tr('色环归位','SORT STACK'),tr('点起点，再点终点 · 只接同色','Tap source, then target · match top colors'));pill(`${level+1} / 5`,75,110);pill(`${moves} ↗`,225,110);pill(`${Math.ceil(90-elapsed)}s`,370,110);
+ text(tr('同色装满一柱即可归位','Fill each pole with one color'),225,176,19,'#c5d2e8');for(let i=0;i<rods.length;i++){const p=rodPos(i);box(p.x-49,p.y-189,98,211,selected===i?'#435d7b':'#243b55',16);gradient(p.x-7,p.y-177,14,183,'#e6eff4','#637c95',6);gradient(p.x-47,p.y+5,94,15,'#a1b6c8','#4b657d',6);
+ for(let k=0;k<rods[i].length;k++){const y=p.y-k*38-17;ctx.save();if(rodDrag?.moved&&rodDrag.i===i&&k===rods[i].length-1)ctx.globalAlpha=.3;ring(p.x,y,palette[rods[i][k]]);ctx.restore();}
+ if(rods[i].length===capacity&&rods[i].every(c=>c===rods[i][0]))text('✓',p.x,p.y-168,26,'#a9e8d0');}
+ if(rodDrag?.moved)ring(rodDrag.x,rodDrag.y,palette[rods[rodDrag.i].at(-1)]);
+
+ box(120,657,210,55,'#384968',14);text(tr('↶ 撤销','↶ UNDO')+` (${history.length})`,225,684,21);hint(phase==='ready'?tr('☝ 点选有圆环的柱子，再点另一柱','☝ Tap a pole, then another to pour'):tr('空柱可接任意颜色 · 90秒挑战5关','Empty poles accept any color · 5 stages / 90s'));
+}
+function result(){return tr('已归位 ','CLEARED ')+cleared+tr(' / 5关 · 步数 ',' / 5 · MOVES ')+moves;}
+function details(){return{level:level+1,rods:rods.map(r=>[...r]),capacity,moves,selected,undoCount:history.length,cleared,timeLeft:Math.max(0,90-elapsed)};}
+
+restart();requestAnimationFrame(frame);
+</script></body></html>

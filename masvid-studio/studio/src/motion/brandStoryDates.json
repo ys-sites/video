@@ -1,0 +1,226 @@
+{
+  "https://buck.co/work/ibm-watsonx": {
+    "value": "2023",
+    "precision": "year",
+    "sourceUrl": "https://buck.co/work/ibm-watsonx",
+    "basis": "project-year",
+    "evidence": "Project startDate 2023-11-01; endDate 2023-11-01. Only the year is displayed; these are not verified video posting dates."
+  },
+  "https://www.ordinaryfolk.co/project/lark-magic-share": {
+    "value": "2020",
+    "precision": "year",
+    "sourceUrl": "https://www.ordinaryfolk.co/project/lark-magic-share",
+    "basis": "project-year",
+    "evidence": "The case study explicitly lists Year 2020. Its January 1 structured-data default is not treated as an exact posting day."
+  },
+  "https://www.ordinaryfolk.co/project/webflow-a-new-era-of-no-code": {
+    "value": "2022",
+    "precision": "year",
+    "sourceUrl": "https://www.ordinaryfolk.co/project/webflow-a-new-era-of-no-code",
+    "basis": "project-year",
+    "evidence": "The case study explicitly lists Year 2022. Its January 1 structured-data default is not treated as an exact posting day."
+  },
+  "https://www.ordinaryfolk.co/project/twilio-cep": {
+    "value": "2022",
+    "precision": "year",
+    "sourceUrl": "https://www.ordinaryfolk.co/project/twilio-cep",
+    "basis": "project-year",
+    "evidence": "The case study explicitly lists Year 2022. Its January 1 structured-data default is not treated as an exact posting day."
+  },
+  "https://buck.co/work/comfy-brand-refresh": {
+    "value": "2026",
+    "precision": "year",
+    "sourceUrl": "https://buck.co/work/comfy-brand-refresh",
+    "basis": "project-year",
+    "evidence": "Project startDate 2026-08-03; endDate 2026-08-06. Only the year is displayed; these are not verified video posting dates."
+  },
+  "https://buck.co/work/github-universe-2023": {
+    "value": "2023",
+    "precision": "year",
+    "sourceUrl": "https://buck.co/work/github-universe-2023",
+    "basis": "project-year",
+    "evidence": "Project startDate 2023-10-03; endDate 2023-10-03. Only the year is displayed; these are not verified video posting dates."
+  },
+  "https://buck.co/work/cash-app-visual-identity": {
+    "value": "2024",
+    "precision": "year",
+    "sourceUrl": "https://buck.co/work/cash-app-visual-identity",
+    "basis": "project-year",
+    "evidence": "Project startDate 2023-08-09; endDate 2024-03-08. Only the year is displayed; these are not verified video posting dates."
+  },
+  "https://buck.co/work/identity-digital": {
+    "value": "2022",
+    "precision": "year",
+    "sourceUrl": "https://buck.co/work/identity-digital",
+    "basis": "project-year",
+    "evidence": "Project startDate 2022-08-23; endDate 2022-08-23. Only the year is displayed; these are not verified video posting dates."
+  },
+  "https://buck.co/work/zapier-motion-library": {
+    "value": "2023",
+    "precision": "year",
+    "sourceUrl": "https://buck.co/work/zapier-motion-library",
+    "basis": "project-year",
+    "evidence": "Project startDate 2023-05-12; endDate 2023-05-12. Only the year is displayed; these are not verified video posting dates."
+  },
+  "https://buck.co/work/adobe-creative-cloud-ident": {
+    "value": "2021",
+    "precision": "year",
+    "sourceUrl": "https://buck.co/work/adobe-creative-cloud-ident",
+    "basis": "project-year",
+    "evidence": "Project startDate 2021-12-06; endDate 2021-12-06. Only the year is displayed; these are not verified video posting dates."
+  },
+  "https://buck.co/work/tidal": {
+    "value": "2021",
+    "precision": "year",
+    "sourceUrl": "https://buck.co/work/tidal",
+    "basis": "project-year",
+    "evidence": "Project startDate 2021-12-01; endDate 2021-12-01. Only the year is displayed; these are not verified video posting dates."
+  },
+  "https://www.ordinaryfolk.co/project/webflow-welcome-to-the-age-of-no-code": {
+    "value": "2019",
+    "precision": "year",
+    "sourceUrl": "https://www.ordinaryfolk.co/project/webflow-welcome-to-the-age-of-no-code",
+    "basis": "project-year",
+    "evidence": "The case study explicitly lists Year 2019. Its January 1 structured-data default is not treated as an exact posting day."
+  },
+  "https://buck.co/work/cloudera": {
+    "value": "2023",
+    "precision": "year",
+    "sourceUrl": "https://buck.co/work/cloudera",
+    "basis": "project-year",
+    "evidence": "Project startDate 2023-12-06; endDate 2023-12-06. Only the year is displayed; these are not verified video posting dates."
+  },
+  "https://www.ordinaryfolk.co/project/google-search-on-2020": {
+    "value": "2020",
+    "precision": "year",
+    "sourceUrl": "https://www.ordinaryfolk.co/project/google-search-on-2020",
+    "basis": "project-year",
+    "evidence": "The case study explicitly lists Year 2020. Its January 1 structured-data default is not treated as an exact posting day."
+  },
+  "https://www.ordinaryfolk.co/project/gemini": {
+    "value": "2024",
+    "precision": "year",
+    "sourceUrl": "https://www.ordinaryfolk.co/project/gemini",
+    "basis": "project-year",
+    "evidence": "The case study explicitly lists Year 2024. Its January 1 structured-data default is not treated as an exact posting day."
+  },
+  "https://www.ordinaryfolk.co/project/google-doodle-salsa": {
+    "value": "2025",
+    "precision": "year",
+    "sourceUrl": "https://www.ordinaryfolk.co/project/google-doodle-salsa",
+    "basis": "project-year",
+    "evidence": "The case study explicitly lists Year 2025. Its January 1 structured-data default is not treated as an exact posting day."
+  },
+  "https://buck.co/work/ibm-think": {
+    "value": "2025",
+    "precision": "year",
+    "sourceUrl": "https://buck.co/work/ibm-think",
+    "basis": "project-year",
+    "evidence": "Project startDate 2025-06-04; endDate 2025-06-04. Only the year is displayed; these are not verified video posting dates."
+  },
+  "https://buck.co/work/bluevine": {
+    "value": "2022",
+    "precision": "year",
+    "sourceUrl": "https://buck.co/work/bluevine",
+    "basis": "project-year",
+    "evidence": "Project startDate 2022-06-28; endDate 2022-06-28. Only the year is displayed; these are not verified video posting dates."
+  },
+  "https://buck.co/work/suki": {
+    "value": "2025",
+    "precision": "year",
+    "sourceUrl": "https://buck.co/work/suki",
+    "basis": "project-year",
+    "evidence": "Project startDate 2025-12-15; endDate 2025-12-15. Only the year is displayed; these are not verified video posting dates."
+  },
+  "https://koto.com/projects/deezer": {
+    "value": "2023",
+    "precision": "year",
+    "sourceUrl": "https://koto.com/projects/deezer",
+    "basis": "project-year",
+    "evidence": "The case study lists the project year 2023."
+  },
+  "https://koto.com/projects/faculty": {
+    "value": "2024",
+    "precision": "year",
+    "sourceUrl": "https://koto.com/projects/faculty",
+    "basis": "project-year",
+    "evidence": "The case study lists the project year 2024."
+  },
+  "https://koto.com/projects/uniqode": {
+    "value": "2025",
+    "precision": "year",
+    "sourceUrl": "https://koto.com/projects/uniqode",
+    "basis": "project-year",
+    "evidence": "The case study lists the project year 2025."
+  },
+  "https://verveagency.com/work/miro": {
+    "value": "2025",
+    "precision": "year",
+    "sourceUrl": "https://verveagency.com/work/miro",
+    "basis": "case-publication",
+    "evidence": "Case-study datePublished is 2025-07-01. Only the case year is used for its undated motion excerpt."
+  },
+  "https://www.wonderful.ai/blog-articles/wonderful-raises-550m-series-c": {
+    "value": "2026-09-02",
+    "precision": "day",
+    "sourceUrl": "https://www.wonderful.ai/blog-articles/wonderful-raises-550m-series-c",
+    "basis": "announcement",
+    "evidence": "The linked financing announcement is dated Sep 2, 2026."
+  },
+  "https://studiodumbar.com/work/modyfi": {
+    "value": "2025-05",
+    "precision": "month",
+    "sourceUrl": "https://www.linkedin.com/posts/studio-dumbar_new-identity-for-modyfi-design-without-activity-7333469234926133249--PQV",
+    "basis": "announcement",
+    "evidence": "The studio announces the new identity in May 2025 (post datePublished 2025-05-28). Individual excerpts use that campaign month, not an invented day."
+  },
+  "https://studiofreight.com/work/perplexity-comet": {
+    "value": "2025",
+    "precision": "year",
+    "sourceUrl": "https://vimeo.com/1101867116",
+    "basis": "video-upload",
+    "evidence": "The film linked by the case study was uploaded on 2025-07-16; its related excerpts retain only the verified year."
+  },
+  "https://www.pentagram.com/work/slack/story/": {
+    "value": "2019",
+    "precision": "year",
+    "sourceUrl": "https://slack.com/intl/en-gb/blog/news/say-hello-new-logo",
+    "basis": "announcement",
+    "evidence": "Slack announces this identity on 16 January 2019. The case-study excerpt uses the campaign year."
+  },
+  "https://raggededge.com/partnerships/wise": {
+    "value": "2023",
+    "precision": "year",
+    "sourceUrl": "https://newsroom.wise.com/en-PAC/246541-wise-unveils-new-look-as-it-reaches-16-million-customers-served-worldwide-and-continues-global-expansion/",
+    "basis": "announcement",
+    "evidence": "Wise announces the new look on 1 March 2023. The current case page was republished later; its motion excerpt uses the campaign year."
+  },
+  "https://about.fb.com/wp-content/uploads/2026/09/Introducing-Muse_Sizzle-Video.mp4": {
+    "value": "2026-09-08",
+    "precision": "day",
+    "sourceUrl": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+    "basis": "announcement",
+    "evidence": "The official article embeds this exact MP4 and lists datePublished 2026-09-08."
+  },
+  "https://github.com/nexu-io/openmotion/tree/main/library/templates/catalog/motion-orbit-launch": {
+    "value": "2026-11-13",
+    "precision": "day",
+    "sourceUrl": "https://github.com/nexu-io/openmotion/commit/53975937",
+    "basis": "repository-added",
+    "evidence": "The template was introduced by commit 53975937 on 2026-11-13 (#347), verified with git log --diff-filter=A."
+  },
+  "https://www.linkedin.com/posts/airtable_airtableai-nocodeai-activity-7343347865622036481-yJJC": {
+    "value": "2025-06-24",
+    "precision": "day",
+    "sourceUrl": "https://www.linkedin.com/posts/airtable_airtableai-nocodeai-activity-7343347865622036481-yJJC",
+    "basis": "post-metadata",
+    "evidence": "Original post datePublished, verified 2026-11-18."
+  },
+  "https://www.linkedin.com/posts/airtable_today-were-rolling-out-ai-generated-interface-activity-7366161234095693824-buUw": {
+    "value": "2025-08-26",
+    "precision": "day",
+    "sourceUrl": "https://www.linkedin.com/posts/airtable_today-were-rolling-out-ai-generated-interface-activity-7366161234095693824-buUw",
+    "basis": "post-metadata",
+    "evidence": "Original post datePublished, verified 2026-11-18."
+  }
+}

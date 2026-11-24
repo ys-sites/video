@@ -1,0 +1,112 @@
+{
+  "zh-CN": {
+    "NEW": "新",
+    "Try now": "立即体验",
+    "Audio models": "音频模型",
+    "Loading audio models…": "正在加载音频模型…",
+    "Expressive narration with natural pacing and voice control": "表现力十足的旁白，支持自然语速与音色控制",
+    "Studio-grade background scores and instrumentals": "工作室级背景配乐与纯音乐创作",
+    "Full-arrangement music from mood and genre prompts": "按风格与情绪提示词生成完整编曲",
+    "Crisp foley, transitions and sound cues on demand": "即刻生成清脆拟音、转场与界面音效",
+    "Open in Audio workspace with this model selected": "在音频工作区中使用此模型创作"
+  },
+  "ja": {
+    "NEW": "新着",
+    "Try now": "今すぐ試す",
+    "Audio models": "オーディオモデル",
+    "Loading audio models…": "オーディオモデルを読み込み中…",
+    "Expressive narration with natural pacing and voice control": "自然なテンポと声質制御を備えた表現力豊かなナレーション",
+    "Studio-grade background scores and instrumentals": "スタジオ品質のBGMとインストゥルメンタル制作",
+    "Full-arrangement music from mood and genre prompts": "ムードやジャンルの指示からフルアレンジ楽曲を生成",
+    "Crisp foley, transitions and sound cues on demand": "フォーリー、トランジション、UI効果音を自在に生成",
+    "Open in Audio workspace with this model selected": "このモデルを選択してオーディオ作業スペースを開く"
+  },
+  "ko": {
+    "NEW": "신규",
+    "Try now": "지금 체험",
+    "Audio models": "오디오 모델",
+    "Loading audio models…": "오디오 모델 불러오는 중…",
+    "Expressive narration with natural pacing and voice control": "자연스러운 호흡과 보이스 제어를 갖춘 표현력 풍부한 내레이션",
+    "Studio-grade background scores and instrumentals": "스튜디오급 배경음악과 연주곡 제작",
+    "Full-arrangement music from mood and genre prompts": "분위기와 장르 프롬프트로 완성도 높은 편곡 생성",
+    "Crisp foley, transitions and sound cues on demand": "선명한 폴리, 전환음, UI 효과음을 즉시 생성",
+    "Open in Audio workspace with this model selected": "이 모델을 선택한 상태로 오디오 작업 공간 열기"
+  },
+  "de": {
+    "NEW": "NEU",
+    "Try now": "Jetzt testen",
+    "Audio models": "Audiomodelle",
+    "Loading audio models…": "Audiomodelle werden geladen…",
+    "Expressive narration with natural pacing and voice control": "Ausdrucksstarke Sprache mit natürlichem Tempo und Stimmenwahl",
+    "Studio-grade background scores and instrumentals": "Hintergrundmusik und Instrumentals in Studioqualität",
+    "Full-arrangement music from mood and genre prompts": "Vollständige Arrangements aus Stimmungs- und Genre-Prompts",
+    "Crisp foley, transitions and sound cues on demand": "Präzise Geräusche, Übergänge und Sound-Cues auf Abruf",
+    "Open in Audio workspace with this model selected": "Mit diesem Modell im Audio-Arbeitsbereich öffnen"
+  },
+  "fr": {
+    "NEW": "NOUVEAU",
+    "Try now": "Essayer",
+    "Audio models": "Modèles audio",
+    "Loading audio models…": "Chargement des modèles audio…",
+    "Expressive narration with natural pacing and voice control": "Narration expressive au rythme naturel et contrôle vocal",
+    "Studio-grade background scores and instrumentals": "Bandes-son et instrumentaux de qualité studio",
+    "Full-arrangement music from mood and genre prompts": "Arrangements complets à partir d’ambiances et de genres",
+    "Crisp foley, transitions and sound cues on demand": "Bruitages nets, transitions et effets sonores à la demande",
+    "Open in Audio workspace with this model selected": "Ouvrir l’espace audio avec ce modèle sélectionné"
+  },
+  "ru": {
+    "NEW": "НОВИНКА",
+    "Try now": "Попробовать",
+    "Audio models": "Аудиомодели",
+    "Loading audio models…": "Загрузка аудиомоделей…",
+    "Expressive narration with natural pacing and voice control": "Выразительная озвучка с естественным темпом и выбором голоса",
+    "Studio-grade background scores and instrumentals": "Фоновая музыка и инструменталы студийного качества",
+    "Full-arrangement music from mood and genre prompts": "Полноценные аранжировки по настроению и жанру",
+    "Crisp foley, transitions and sound cues on demand": "Чёткие шумы, переходы и звуковые акценты по запросу",
+    "Open in Audio workspace with this model selected": "Открыть в аудиопространстве с этой моделью"
+  },
+  "es": {
+    "NEW": "NUEVO",
+    "Try now": "Probar ahora",
+    "Audio models": "Modelos de audio",
+    "Loading audio models…": "Cargando modelos de audio…",
+    "Expressive narration with natural pacing and voice control": "Narración expresiva con ritmo natural y control de voz",
+    "Studio-grade background scores and instrumentals": "Bandas sonoras e instrumentales con calidad de estudio",
+    "Full-arrangement music from mood and genre prompts": "Música con arreglos completos según género y ambiente",
+    "Crisp foley, transitions and sound cues on demand": "Foley nítido, transiciones y efectos sonoros al instante",
+    "Open in Audio workspace with this model selected": "Abrir en el espacio de audio con este modelo"
+  },
+  "pt-BR": {
+    "NEW": "NOVO",
+    "Try now": "Experimentar",
+    "Audio models": "Modelos de áudio",
+    "Loading audio models…": "Carregando modelos de áudio…",
+    "Expressive narration with natural pacing and voice control": "Narração expressiva com ritmo natural e controle de voz",
+    "Studio-grade background scores and instrumentals": "Trilhas sonoras e instrumentais com qualidade de estúdio",
+    "Full-arrangement music from mood and genre prompts": "Arranjos musicais completos a partir de clima e gênero",
+    "Crisp foley, transitions and sound cues on demand": "Foley nítido, transições e efeitos sonoros sob demanda",
+    "Open in Audio workspace with this model selected": "Abrir no espaço de áudio com este modelo selecionado"
+  },
+  "it": {
+    "NEW": "NUOVO",
+    "Try now": "Prova ora",
+    "Audio models": "Modelli audio",
+    "Loading audio models…": "Caricamento modelli audio…",
+    "Expressive narration with natural pacing and voice control": "Narrazione espressiva con ritmo naturale e controllo vocale",
+    "Studio-grade background scores and instrumentals": "Colonne sonore e brani strumentali di qualità studio",
+    "Full-arrangement music from mood and genre prompts": "Brani completi da prompt di genere e atmosfera",
+    "Crisp foley, transitions and sound cues on demand": "Foley nitidi, transizioni ed effetti sonori su richiesta",
+    "Open in Audio workspace with this model selected": "Apri nello spazio audio con questo modello selezionato"
+  },
+  "tr": {
+    "NEW": "YENİ",
+    "Try now": "Hemen dene",
+    "Audio models": "Ses modelleri",
+    "Loading audio models…": "Ses modelleri yükleniyor…",
+    "Expressive narration with natural pacing and voice control": "Doğal tempo ve ses kontrolüyle etkileyici seslendirme",
+    "Studio-grade background scores and instrumentals": "Stüdyo kalitesinde fon müzikleri ve enstrümantaller",
+    "Full-arrangement music from mood and genre prompts": "Ruh hali ve tür istemlerinden tam düzenlemeli müzikler",
+    "Crisp foley, transitions and sound cues on demand": "Anında net foley, geçiş ve ses efektleri",
+    "Open in Audio workspace with this model selected": "Bu model seçili olarak Ses çalışma alanında aç"
+  }
+}

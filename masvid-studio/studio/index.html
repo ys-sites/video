@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN" data-motion-ui data-motion-studio>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- openmotion:metadata -->
+<title>Masvid Studio</title>
+<meta name="description" content="全栈 Agent 视频编辑器。把创意、品牌模板和参考视频变成可编辑作品；生成图片、视频、音乐与配音，完成剪辑、动效和动画，从灵感到成片。" />
+<meta name="application-name" content="OpenDesign Motion" />
+<meta name="apple-mobile-web-app-title" content="OpenDesign Motion" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="color-scheme" content="light dark" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="OpenDesign Motion — Create with your AI agent" />
+<meta name="twitter:description" content="全栈 Agent 视频编辑器。把创意、品牌模板和参考视频变成可编辑作品；生成图片、视频、音乐与配音，完成剪辑、动效和动画，从灵感到成片。" />
+<meta name="twitter:image" content="https://releases.open-design.ai/open-motion/media/sha256/730e1d6235820d39ba8adde42810d1165377992136a3b20290ad5d504abb527b.jpg" />
+<meta name="twitter:image:alt" content="OpenMotion video recreation: a reference beside its remake, with the editable Studio timeline below." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OpenDesign Motion" />
+<meta property="og:title" content="OpenDesign Motion — Create with your AI agent" />
+<meta property="og:description" content="全栈 Agent 视频编辑器。把创意、品牌模板和参考视频变成可编辑作品；生成图片、视频、音乐与配音，完成剪辑、动效和动画，从灵感到成片。" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image" content="https://releases.open-design.ai/open-motion/media/sha256/730e1d6235820d39ba8adde42810d1165377992136a3b20290ad5d504abb527b.jpg" />
+<meta property="og:image:secure_url" content="https://releases.open-design.ai/open-motion/media/sha256/730e1d6235820d39ba8adde42810d1165377992136a3b20290ad5d504abb527b.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1586" />
+<meta property="og:image:height" content="992" />
+<meta property="og:image:alt" content="OpenMotion video recreation: a reference beside its remake, with the editable Studio timeline below." />
+<link rel="icon" type="image/svg+xml" sizes="any" href="/design-system/brand/masvid-favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/design-system/brand/apple-touch-icon.png" />
+<meta name="theme-color" content="#0c0d0e" data-light="#f4f4f4" data-dark="#0c0d0e" />
+<!-- /openmotion:metadata -->
+    <script>
+      // Standalone defaults to Dark; embedded (embed=1) defaults to System and follows
+      // the host until the user picks a theme. Resolve before paint; main.tsx binds live changes.
+      const embedded = new URLSearchParams(location.search).get("embed") === "1";
+      let preference = embedded ? "system" : "dark";
+      try {
+        const prefs = JSON.parse(localStorage.getItem("hf-studio-ui-preferences") || "{}");
+        const saved = embedded ? prefs?.embeddedTheme : prefs?.theme;
+        if (saved === "light" || saved === "dark" || saved === "system") preference = saved;
+      } catch (e) {}
+      document.documentElement.dataset.themePreference = preference;
+      let theme = preference;
+      if (preference === "system")
+        theme = window.matchMedia?.("(prefers-color-scheme: dark)")?.matches ? "dark" : "light";
+      if (theme === "light") document.documentElement.dataset.theme = "paper";
+      else delete document.documentElement.dataset.theme;
+      const chromeColor = document.querySelector('meta[name="theme-color"]');
+      if (chromeColor) chromeColor.content = chromeColor.dataset[theme];
+    </script>
+    <link rel="stylesheet" href="/design-system/tokens.css" />
+    <link rel="stylesheet" href="/design-system/fonts.css" />
+    <link rel="stylesheet" href="/design-system/loading.css" />
+  </head>
+  <body>
+    <div id="root">
+      <div class="motion-loading" role="status">
+        <span class="motion-loading-mark" aria-hidden="true"></span>
+        <span class="motion-loading-label">正在打开项目…</span>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

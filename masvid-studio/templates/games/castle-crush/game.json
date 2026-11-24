@@ -1,0 +1,27 @@
+{
+  "id": "castle-crush",
+  "title": "Castle Crush",
+  "description": "Launch three stones per stage, topple timber and stone towers and defeat every guard across four stages.",
+  "genre": "casual",
+  "style": "anime",
+  "setting": "medieval",
+  "multiplayer": false,
+  "maxPlayers": 1,
+  "status": "published",
+  "cover": "cover.webp",
+  "entry": "index.html",
+  "controls": "Drag back and down from the sling to aim, then release. Defeat every guard with three stones per stage.",
+  "plays": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "createdAt": "2026-11-21T00:00:00.000Z",
+  "updatedAt": "2026-11-21T00:00:00.000Z",
+  "i18n": {
+    "zh-CN": {
+      "title": "弹弓攻城",
+      "description": "拖动拉弓瞄准、松手投石，击倒木石城塔并清除全部守卫，每关三发，共四关。",
+      "controls": "从弹弓向后下方拖动瞄准，松手发射；每关只有三块石头，清除所有守卫过关。"
+    }
+  },
+  "orientation": "portrait"
+}

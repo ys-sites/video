@@ -1,0 +1,57 @@
+{
+  "brand": {
+    "name": "Fieldwork Supply"
+  },
+  "occasion": "Black Friday",
+  "title": "Gifts under $100",
+  "postDate": "2026-11-26T09:00:00-05:00",
+  "products": [
+    {
+      "name": "Court Sneaker",
+      "image": "product.svg",
+      "was": 95,
+      "discount": {
+        "percent": 30
+      }
+    },
+    {
+      "name": "Rangefinder Camera",
+      "image": "product.svg",
+      "was": 140,
+      "now": 99
+    },
+    {
+      "name": "Canvas Daypack 22L",
+      "image": "product.svg",
+      "was": 89,
+      "discount": {
+        "percent": 40
+      }
+    },
+    {
+      "name": "Aviator Sunglasses",
+      "image": "product.svg",
+      "was": 60,
+      "discount": {
+        "amount": 15
+      }
+    },
+    {
+      "name": "Enamel Camp Mug",
+      "image": "product.svg",
+      "was": 18,
+      "discount": {
+        "amount": 6
+      }
+    }
+  ],
+  "currency": "USD",
+  "code": "FRIDAY40",
+  "deadline": {
+    "label": "Ends Mon, Dec 1 \u00b7 11:59 pm ET",
+    "date": "2026-12-01T23:59:00-05:00"
+  },
+  "cta": "Shop all deals",
+  "url": "fieldworksupply.example",
+  "aspect": "9:16"
+}

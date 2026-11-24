@@ -1,0 +1,52 @@
+/* A compact action over media; the artwork remains undimmed. */
+.om-media-quick-actions {
+  position: absolute;
+  right: var(--motion-space-6);
+  bottom: var(--motion-space-6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--motion-duration-fast);
+}
+.motion-asset-thumbnail:hover .om-media-quick-actions,
+.motion-asset-thumbnail:focus-within .om-media-quick-actions,
+[draggable]:focus-visible > .motion-asset-thumbnail .om-media-quick-actions,
+.om-asset-action-row:hover .om-media-quick-actions,
+.om-asset-action-row:focus-within .om-media-quick-actions,
+.om-media-quick-actions[data-busy] { opacity: 1; }
+.om-media-quick-actions .om-media-quick-add {
+  width: var(--motion-control-sm);
+  height: var(--motion-control-sm);
+  min-width: var(--motion-control-sm);
+  border-radius: var(--motion-radius-full);
+  background: var(--motion-media-action-bg);
+  color: var(--motion-neutral-n0);
+  box-shadow: var(--motion-shadow-sm);
+}
+.om-media-quick-actions .om-media-quick-add:hover {
+  background: var(--motion-neutral-n11);
+}
+.om-media-quick-actions[data-compact] .om-media-quick-add {
+  width: var(--motion-space-24);
+  height: var(--motion-space-24);
+  min-width: var(--motion-space-24);
+}
+.motion-asset-thumbnail:hover .om-media-quick-add,
+.motion-asset-thumbnail:focus-within .om-media-quick-add,
+[draggable]:focus-visible > .motion-asset-thumbnail .om-media-quick-add,
+.om-asset-action-row:hover .om-media-quick-add,
+.om-asset-action-row:focus-within .om-media-quick-add,
+.om-media-quick-actions[data-busy] .om-media-quick-add { pointer-events: auto; }
+.om-asset-action-row .om-media-quick-actions {
+  position: relative;
+  right: auto;
+  bottom: auto;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+@media (hover: none) {
+  .om-media-quick-actions { opacity: 1; }
+  .om-media-quick-actions .om-media-quick-add { pointer-events: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .om-media-quick-actions { transition: none; }
+}

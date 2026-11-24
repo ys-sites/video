@@ -1,0 +1,42 @@
+{
+  "name": "open-design-ui",
+  "version": "0.0.1",
+  "description": "React controls from Open Design and OpenMotion.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "./dist/styles.css"
+  ],
+  "exports": {
+    "./styles.css": "./dist/styles.css",
+    "./button": {
+      "types": "./dist/button.d.ts",
+      "import": "./dist/button.js"
+    },
+    "./icon-button": {
+      "types": "./dist/icon-button.d.ts",
+      "import": "./dist/icon-button.js"
+    },
+    "./slider": {
+      "types": "./dist/slider.d.ts",
+      "import": "./dist/slider.js"
+    }
+  },
+  "peerDependencies": {
+    "@base-ui/react": "^1.7.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "dependencies": {
+    "cn": "^0.2.4"
+  },
+  "scripts": {
+    "build": "node ../../scripts/build-open-design-ui.mjs",
+    "prepack": "npm run build 1>&2"
+  }
+}
