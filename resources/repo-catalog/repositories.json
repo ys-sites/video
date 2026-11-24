@@ -872,7 +872,7 @@
       "approval": {
         "date": "2026-11-23",
         "by": "user (explicit, in Claude Code session)",
-        "scope": "npm ci, npm run build:studio, Antigravity MCP registration (~/.gemini/config/mcp_config.json), openmotion Skill copy",
+        "scope": "npm ci, npm run build:studio, Antigravity MCP registration (~/.gemini/config/mcp_config.json), openmotion Skill copy; Claude Code user-scope MCP registration (requested 2026-11-23)",
         "gate_result": "BLOCKED (no independent audit)",
         "pre_install_review": "480 lockfile packages all from registry.npmjs.org; install scripts only in esbuild (+fsevents, mac-only)"
       }
