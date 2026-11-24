@@ -1,0 +1,118 @@
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@600;800&family=Poppins:wght@800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="studio/caption-studio.css">
+<main class="wrap">
+  <section class="cs-hero" style="padding-bottom:0">
+    <p class="eyebrow">Caption Studio · built on OpenMotion</p>
+    <h1>Word-timed captions, <em>styled and exported</em> in your browser</h1>
+    <p class="lede">Open a talking clip, time every word, pick Clean, Pop or Marker, and download the finished video. Your footage never leaves your device.</p>
+    <div class="cs-badges"><span>Free</span><span>No upload</span><span>MP4 export</span><span>SRT + OpenMotion composition</span></div>
+  </section>
+
+  <div id="caption-studio" tabindex="-1">
+    <div class="cs-stage">
+      <div class="cs-frame"><canvas id="cs-canvas" width="1080" height="1920" aria-label="Caption preview"></canvas></div>
+      <div class="cs-transport">
+        <button type="button" class="btn light sm" id="cs-play" aria-pressed="false">Play</button>
+        <input type="range" id="cs-scrub" min="0" max="1000" value="0" aria-label="Playhead">
+        <span id="cs-time">0:00.00 / 0:10.00</span>
+      </div>
+      <p class="cs-source">Source: <span id="cs-source-name">Demo</span></p>
+    </div>
+
+    <div class="cs-panel">
+      <div class="cs-card">
+        <h2><b>1</b>Video</h2>
+        <p class="hint">Use your own recording. It plays from your device; nothing is uploaded.</p>
+        <div class="cs-row">
+          <label class="btn light cs-file">Open a video<input type="file" id="cs-file" accept="video/*"></label>
+          <button type="button" class="btn ghost" id="cs-demo">Load the demo</button>
+        </div>
+      </div>
+
+      <div class="cs-card">
+        <h2><b>2</b>Words and timing</h2>
+        <p class="hint">Paste exactly what is said. Wrap a word in *stars* to make it a key word for Marker.</p>
+        <textarea id="cs-transcript" aria-label="Transcript" spellcheck="false"></textarea>
+        <div class="cs-row">
+          <button type="button" class="btn light" id="cs-apply">Apply</button>
+          <button type="button" class="btn ghost" id="cs-tap" aria-pressed="false">Tap to time</button>
+          <button type="button" class="btn ghost" id="cs-spread">Spread evenly</button>
+          <label class="btn ghost cs-file">Import timings<input type="file" id="cs-import" accept=".json,.srt,.vtt,application/json,text/vtt"></label>
+        </div>
+        <div id="cs-tap-panel" hidden>
+          <button type="button" id="cs-tap-big">Tap on each word</button>
+          <p>Next word: <span id="cs-tap-next"></span> · Space also taps</p>
+        </div>
+        <div id="cs-chips" aria-label="Timed words"></div>
+        <div id="cs-word" hidden>
+          <label>Word<input type="text" id="cs-word-text"></label>
+          <label>Starts at (s)<input type="number" id="cs-word-start" step="0.001" min="0"></label>
+          <div class="cs-row">
+            <button type="button" class="btn ghost" id="cs-word-minus">−1 frame</button>
+            <button type="button" class="btn ghost" id="cs-word-plus">+1 frame</button>
+            <button type="button" class="btn ghost" id="cs-word-here">Start at playhead</button>
+            <button type="button" class="btn ghost" id="cs-word-key" aria-pressed="false">Key word</button>
+          </div>
+        </div>
+        <p class="hint" style="font-size:13px">Click a word to select it and jump there; Shift-click toggles a key word. Whisper word JSON, SRT and VTT import directly.</p>
+      </div>
+
+      <div class="cs-card">
+        <h2><b>3</b>Look</h2>
+        <div class="cs-looks" role="group" aria-label="Caption look">
+          <button type="button" class="cs-look" data-style="clean" aria-pressed="false"><span class="cs-sample clean">Read one <i>page.</i></span><span class="name">Clean</span></button>
+          <button type="button" class="cs-look" data-style="pop" aria-pressed="true"><span class="cs-sample pop">Put <b>on</b></span><span class="name">Pop</span></button>
+          <button type="button" class="cs-look" data-style="marker" aria-pressed="false"><span class="cs-sample marker">one <b>breath.</b></span><span class="name">Marker</span></button>
+        </div>
+        <div class="cs-opts">
+          <label>Height on screen<input type="range" id="cs-pos" min="45" max="88" value="66"></label>
+          <label>Text size<input type="range" id="cs-size" min="70" max="140" value="100"></label>
+          <label>Pop active colour<input type="color" id="cs-accent" value="#FFE14D"></label>
+          <label>Marker box colour<input type="color" id="cs-box" value="#FF6B4A"></label>
+          <label class="check"><input type="checkbox" id="cs-safe"> Show the vertical safe zone (preview only)</label>
+        </div>
+      </div>
+
+      <div class="cs-card cs-export">
+        <h2><b>4</b>Export</h2>
+        <p class="hint">Renders every frame at its exact time and writes an MP4 with the clip's sound, right in your browser. Older browsers fall back to a real-time recording.</p>
+        <div class="cs-row">
+          <button type="button" class="btn brand" id="cs-export">Export video</button>
+          <button type="button" class="btn ghost" id="cs-cancel" hidden>Cancel</button>
+          <button type="button" class="btn ghost" id="cs-srt">SRT</button>
+          <button type="button" class="btn ghost" id="cs-json">Word timings</button>
+          <button type="button" class="btn ghost" id="cs-om">OpenMotion composition</button>
+        </div>
+        <progress id="cs-progress" max="1" value="0" hidden></progress>
+        <p id="cs-status" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="cs-made">
+      <video controls playsinline preload="none" poster="videos/openmotion-caption-styles-poster.jpg">
+        <source src="videos/openmotion-caption-styles.mp4" type="video/mp4">
+        Your browser can't play this video. <a href="videos/openmotion-caption-styles.mp4">Download it</a>.
+      </video>
+      <div>
+        <p class="eyebrow">Rendered with OpenMotion</p>
+        <h2>The three looks, frame-exact</h2>
+        <p>This 10-second habits tip was built as an OpenMotion composition and rendered by its HyperFrames engine, with each word placed on its first frame of speech (within 20 ms of the voice).</p>
+        <ul>
+          <li><b>Clean</b> — sentence case, upcoming words at 30%</li>
+          <li><b>Pop</b> — condensed caps, black outline, active word in yellow with a 180 ms overshoot</li>
+          <li><b>Marker</b> — two words at a time, key word on a coral box that wipes in</li>
+        </ul>
+        <small>Demo voice: Windows' built-in speech voice. Looks follow OpenMotion's caption-styling recipe (nexu-io/openmotion, Apache-2.0).</small>
+      </div>
+    </div>
+
+    <div class="cs-how">
+      <div><b>Quick: export here</b><p>Good for social posts. The browser records the preview exactly as you see it, with the clip's sound.</p></div>
+      <div><b>Frame-exact: OpenMotion</b><p>Download the <code>OpenMotion composition</code>, drop it into a project's <code>compositions/</code> and render it locally at any frame rate.</p></div>
+      <div><b>Better timing: Whisper</b><p>Transcribe with the local Whisper route in the skill stack, then use <code>Import timings</code> with its word JSON.</p></div>
+    </div>
+  </section>
+</main>
+<script src="studio/caption-studio.js" defer></script>
