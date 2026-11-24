@@ -853,10 +853,29 @@
       "mentions": [
         "- nexu-io/openmotion [repo named] — OpenMotion: the first full-stack agentic video generator -- reverse-engineer any video, then recreate, edit and render high-quality motion content using HTML and TypeScript, with an agentic workflo... — video vid_387 by FondPeace Crazy ⚡ Dev & AI (other_ai_video_tools): https://www.instagram.com/reel/DfnFD2bkTM0/ — https://github.com/nexu-io/openmotion"
       ],
-      "local_reference": null,
+      "local_reference": "../openmotion (sibling of this repo: Master Video Editor/openmotion)",
       "audit_status": "not_audited",
-      "execution_status": "not_approved",
-      "note": "Repository metadata and local presence are not a security verdict."
+      "execution_status": "user_approved",
+      "note": "User approval is not a security audit verdict.",
+      "category": "video-motion-mcp",
+      "description": "OpenMotion: HTML/HyperFrames motion-video templates, Studio and stdio MCP server for agents.",
+      "keywords": [
+        "motion",
+        "video",
+        "templates",
+        "hyperframes",
+        "mcp",
+        "studio"
+      ],
+      "source_revision": "74a3d1e79d599673bc49e5e93aaa8707f1041804",
+      "checkout_status": "shallow clone, LFS skipped",
+      "approval": {
+        "date": "2026-11-23",
+        "by": "user (explicit, in Claude Code session)",
+        "scope": "npm ci, npm run build:studio, Antigravity MCP registration (~/.gemini/config/mcp_config.json), openmotion Skill copy",
+        "gate_result": "BLOCKED (no independent audit)",
+        "pre_install_review": "480 lockfile packages all from registry.npmjs.org; install scripts only in esbuild (+fsevents, mac-only)"
+      }
     },
     {
       "repository": "obsproject/obs-studio",
