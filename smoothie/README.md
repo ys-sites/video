@@ -1,6 +1,6 @@
-# The smoothie: one video system, ready to install (not installed)
+# The smoothie: one video system (installed 2026-11-24)
 
-Branch `smoothie/merged-system`, not pushed. Nothing here is installed in the live system yet: the gate is you saying **"install now"**.
+Installed on 2026-11-24 after your approval and merged to `main` on your "push". The install record is in "Install status" below; the earlier dry-run and hold notes are kept for the audit trail.
 
 ## What it is
 
@@ -80,7 +80,7 @@ Source review of everything that would be installed: no malicious code found; al
 
 1. **Bitdefender custom scan** of `resources\repo-quarantine`, then **"install now"** to run the three phases above.
 2. **Keys / paid (only if you want them):** Vast.ai or RunPod account + API key for the GPU tier (a few cents to ~$0.30 per job, see GPU-TIER.md); Hypit, vox-director (Atlas Cloud), UGC-Factory/re-walkthrough/advertising-ops (Higgsfield, Apify), AutoClip and DeepTutor (LLM key) stay off unless you approve.
-3. **Access:** `ys-sites/insta-reels` is private: grant access (or add the Muse GitHub App) so Appendix D can be audited.
+3. **Appendix D:** `ys-sites/insta-reels` became reachable on 2026-11-24 and is staged in quarantine at `6c34fab` (667 files, triage clean). The item-by-item Appendix D audit is the next step; its `skills-hub` branch is not fetched yet.
 4. **Optional installs, your choice:** MiKTeX (~1 GB) for Manim equations; Blender (~0.5 GB) for the Blender modes; LosslessCut/OBS as GUI tools.
 5. **Clean-up approval** (STORAGE.md): duplicate astryx clone, stale parakeet partial, the 55 audit clones after review.
-6. **Could not verify:** `bodila51/gtavi-claudecode` and `devedevt/ffmpeg-gui-editor-windows` return 404; rendering quality of every engine on this CPU is untested until install; GPU times and costs are estimates until the first rental.
+6. **Could not verify:** `bodila51/gtavi-claudecode` and `devedevt/ffmpeg-gui-editor-windows` return "Repository not found" (checked 2026-11-23 and 2026-11-24); rendering quality of every engine on this CPU is untested until install; GPU times and costs are estimates until the first rental.

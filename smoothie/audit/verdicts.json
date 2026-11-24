@@ -165,7 +165,7 @@
   "verdict": "UNAVAILABLE",
   "merged_into": "-",
   "installed_at": "-",
-  "reason": "GitHub API 404 and clone asks for credentials on 2026-11-23: private or deleted (the brief's \"LIVE\" correction no longer holds).",
+  "reason": "GitHub API 404 and clone says \"Repository not found\" on 2026-11-23 and again 2026-11-24: private or deleted (the brief's \"LIVE\" correction no longer holds).",
   "commit": "",
   "evidence": "metadata + README review",
   "size_kb": null
@@ -282,7 +282,7 @@
   "verdict": "UNAVAILABLE",
   "merged_into": "-",
   "installed_at": "-",
-  "reason": "GitHub API 404 on 2026-11-23.",
+  "reason": "GitHub API 404 on 2026-11-23; \"Repository not found\" again 2026-11-24.",
   "commit": "",
   "evidence": "metadata + README review",
   "size_kb": null
@@ -990,12 +990,12 @@
   "size_kb": 6601
  },
  "ys-sites/insta-reels": {
-  "verdict": "UNAVAILABLE",
-  "merged_into": "-",
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-studio (catalog source)",
   "installed_at": "-",
-  "reason": "Private: needs your access grant (Appendix D).",
-  "commit": "",
-  "evidence": "metadata + README review",
+  "reason": "Your private catalog repo (reel scans, skills catalog, prompts). Access worked on 2026-11-24: staged at 6c34fab (667 files, 90 MB, no binaries); triage clean of install hooks and binaries, flags are text mentions in your own scan scripts. Appendix D item-by-item audit still to do; branch skills-hub not fetched.",
+  "commit": "6c34fab",
+  "evidence": "triage: no high-risk signals; hidden Unicode in 3 files",
   "size_kb": null
  },
  "zeative/motion-educator": {

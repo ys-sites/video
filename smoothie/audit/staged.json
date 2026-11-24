@@ -723,7 +723,16 @@
   "error": "Cloning into 'resources\\repo-quarantine\\devedevt\\ffmpeg-gui-editor-windows'...\nfatal: could not read Username for 'https://github.com': terminal prompts disabled"
  },
  "ys-sites/insta-reels": {
-  "status": "clone_failed",
-  "error": "Cloning into 'resources\\repo-quarantine\\ys-sites\\insta-reels'...\nfatal: could not read Username for 'https://github.com': terminal prompts disabled"
+  "status": "staged",
+  "path": "resources/repo-quarantine/ys-sites/insta-reels",
+  "url": "https://github.com/ys-sites/insta-reels",
+  "commit": "6c34fab794368604c15847151eb26c25f121c6af",
+  "commit_date": "2026-11-20T13:19:32Z",
+  "staged": "2026-11-24",
+  "clone": "shallow depth 1, blob filter 1 MB, sparse checkout without media/model/archive/binary files; hooks, LFS, submodules, symlinks disabled",
+  "files_in_tree": 667,
+  "checkout_ok": true,
+  "security_audit": "triage done 2026-11-24 (no install hooks, no binaries; telemetry/hidden-unicode hits are text in the owner's scan scripts and catalog)",
+  "execution": "not_approved"
  }
 }

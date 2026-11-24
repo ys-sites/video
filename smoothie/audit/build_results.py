@@ -123,9 +123,9 @@ V = {
  'a2ui-project/a2ui': (OUT, '-', '-', 'Agent UI (infra).'), 'deeplethe/sandstorm': (OUT, '-', '-', 'Sandbox infra.'),
  'Sandflow-ai': None,
  # --- unavailable ---
- 'bodila51/gtavi-claudecode': (GONE, '-', '-', 'GitHub API 404 and clone asks for credentials on 2026-11-23: private or deleted (the brief\'s "LIVE" correction no longer holds).'),
- 'devedevt/ffmpeg-gui-editor-windows': (GONE, '-', '-', 'GitHub API 404 on 2026-11-23.'),
- 'ys-sites/insta-reels': (GONE, '-', '-', 'Private: needs your access grant (Appendix D).'),
+ 'bodila51/gtavi-claudecode': (GONE, '-', '-', 'GitHub API 404 and clone says "Repository not found" on 2026-11-23 and again 2026-11-24: private or deleted (the brief\'s "LIVE" correction no longer holds).'),
+ 'devedevt/ffmpeg-gui-editor-windows': (GONE, '-', '-', 'GitHub API 404 on 2026-11-23; "Repository not found" again 2026-11-24.'),
+ 'ys-sites/insta-reels': (REF, 'vs-studio (catalog source)', '-', 'Your private catalog repo (reel scans, skills catalog, prompts). Access worked on 2026-11-24: staged at 6c34fab (667 files, 90 MB, no binaries); triage clean of install hooks and binaries, flags are text mentions in your own scan scripts. Appendix D item-by-item audit still to do; branch skills-hub not fetched.'),
 }
 V.pop('Sandflow-ai')
 

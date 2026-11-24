@@ -8,13 +8,13 @@
 | effects | ready | vs-motion, vs-real-estate |
 | talking-head-reels | reference | vs-real-estate |
 | DaVinci Resolve MCP | reference | - (needs Resolve) |
-| HyperFrames (local skills) | reference | vs-motion (HyperFrames engine) |
+| HyperFrames (local skills) | ready | vs-motion (HyperFrames engine) |
 | motionmaxxing | reference | vs-motion |
 | motion-video-director | reference | vs-director |
 | Anidoodle | reference | vs-lesson (study-video route) |
 | Bang Motion | reference | vs-lesson (study-video route; DO_NOT_INSTALL flag) |
 | Hand-drawn and whiteboard | reference | vs-lesson |
-| Manim | reference | vs-lesson |
+| Manim | ready | vs-lesson |
 | Lemo-Opuscar, Paint MV, Huashu | reference | vs-director / vs-motion (ideas) |
 | GSAP, Three.js, p5.js, Theatre.js | reference | vs-motion (GSAP + three.js installed) |
 | anatomy | ready | vs-lesson |

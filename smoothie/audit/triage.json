@@ -4699,6 +4699,87 @@
     "video.twimg.com": 166,
     "www.w3.org": 154
    }
+  },
+  "ys-sites/insta-reels": {
+   "files_scanned": 127,
+   "files_skipped_large": 1,
+   "tree_files": 667,
+   "signals": {
+    "telemetry_upload": 18,
+    "dynamic_code": 1
+   },
+   "examples": {
+    "telemetry_upload": [
+     "apply_scan_20261103.py:195",
+     "apply_scan_20261119.py:151",
+     "apply_scan_20261119.py:169",
+     "apply_scan_20261119.py:172",
+     "apply_scan_20261119.py:175",
+     "001 Main/web_essentials.txt:1058"
+    ],
+    "dynamic_code": [
+     "001 Main/web_essentials.txt:28"
+    ]
+   },
+   "hidden_unicode_files": [
+    "apply_scan_20261106.py",
+    "apply_scan_20261109.py",
+    "website/data/catalog.json"
+   ],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 12,
+   "skill_md_sample": [
+    "100644 blob b1ce1e93f912e5e1a171832366da9cad33e6402c   12983\t001 Main/Fable 5 Skill (resource)/scroll-film-studio/SKILL.md",
+    "100644 blob 3d2795c33fbbe09b3d454794800feb9a114cae72   11833\t001 Main/hyliox-pixel-perfect (1)/hyliox-pixel-perfect/SKILL.md",
+    "100644 blob 56ef712e762db5c21ead3e8b33bfd3d739401b9c   18646\t001 Main/taste-skill-main/taste-skill-main/imagegenskills/frontendwebsiteimageskill/SKILL.md",
+    "100644 blob f5375b908340e1376ed391232a31c5d82d5babfb    8456\t001 Main/taste-skill-main/taste-skill-main/skills/brutalist-skill/SKILL.md",
+    "100644 blob 03ed209b8fdc0a3cd6bccf8a5b3bfffe56aa4558    7857\t001 Main/taste-skill-main/taste-skill-main/skills/gpt-tasteskill/SKILL.md",
+    "100644 blob 1669d882798ec7eb3f3422c3bc35ff7fd79ad6f0   36449\t001 Main/taste-skill-main/taste-skill-main/skills/images-taste-skill/SKILL.md",
+    "100644 blob 44ead27ef04ffe79ade0c6df7fd696dbcf7b246b    7901\t001 Main/taste-skill-main/taste-skill-main/skills/minimalist-skill/SKILL.md",
+    "100644 blob d983bbcf040b6f433c624ce2212a2c044ad2da3c    2592\t001 Main/taste-skill-main/taste-skill-main/skills/output-skill/SKILL.md",
+    "100644 blob c8304f0c9301385e3641b052d6b25b8af11cb6c1   15060\t001 Main/taste-skill-main/taste-skill-main/skills/redesign-skill/SKILL.md",
+    "100644 blob 4038f41ec0137ec92e98ed0151fe3b7038b9329e   10561\t001 Main/taste-skill-main/taste-skill-main/skills/soft-skill/SKILL.md",
+    "100644 blob 56e1266f56d1b681c8baaeb09eb4022a89b2e336   11859\t001 Main/taste-skill-main/taste-skill-main/skills/stitch-skill/SKILL.md",
+    "100644 blob ccc3a2f84f529ee7faafcfe0a71678447675056f   21140\t001 Main/taste-skill-main/taste-skill-main/skills/taste-skill/SKILL.md"
+   ],
+   "license_files": [],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "higgsfield": 193,
+    "gemini": 67,
+    "seedance": 41,
+    "elevenlabs": 34,
+    "anthropic": 31,
+    "kling": 31,
+    "replicate": 14,
+    "heygen": 9,
+    "runway": 8,
+    "openrouter": 4
+   },
+   "gpu_mentions": 60,
+   "top_hosts": {
+    "github.com": 613,
+    "www.instagram.com": 592,
+    "fonts.googleapis.com": 19,
+    "fonts.gstatic.com": 6,
+    "huggingface.co": 5,
+    "img.shields.io": 5,
+    "reactbits.dev": 4,
+    "www.w3.org": 4,
+    "picsum.photos": 4,
+    "www.toolfk.com": 3,
+    "fondpeace.com": 2,
+    "x.com": 2,
+    "ireels.vercel.app": 2,
+    "www.npmjs.com": 2,
+    "bridge.higgsfield.ai": 2
+   }
   }
  },
  "note": "Example code lines removed (file:line kept) so antivirus heuristics do not quarantine the report; re-run tools/security/triage_staged.py to see them."
