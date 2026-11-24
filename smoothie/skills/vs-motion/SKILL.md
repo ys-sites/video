@@ -12,7 +12,7 @@ Everything here renders on the local CPU tier. Pick one engine per video and sta
 | Choose | When | Run |
 |---|---|---|
 | **Remotion** (React) | Existing Remotion projects (`video-projects/*`), data-driven or templated videos, the site's editor briefs, component kits (remocn) | Installed `remotion:*` skills; one shared workspace `video-projects/node_modules` (one install, one headless Chrome, all `@remotion/*` at one version) |
-| **HyperFrames** (HTML + CSS + GSAP, seekable timeline) | Cinematic depth shots (still-to-film), launch videos from a website (brag), scene-by-scene agent builds, anything GSAP | `npx hyperframes@0.9.87` from the shared engines workspace; render with `npx hyperframes render` |
+| **HyperFrames** (HTML + CSS + GSAP, seekable timeline) | Cinematic depth shots (still-to-film), launch videos from a website (brag), scene-by-scene agent builds, anything GSAP | The pinned binary `C:\Users\Sharafath\AI-Local\engines\video-js\node_modules\.bin\hyperframes` (0.9.87): `hyperframes init <name> --example blank --non-interactive --skip-skills`, then `hyperframes render` in the project. Never the scaffold's `npm run render` (it runs `npx --yes`). User env already set: `HYPERFRAMES_NO_TELEMETRY=1`, `HYPERFRAMES_SKIP_SKILLS=1`, `HYPERFRAMES_BROWSER_PATH` = the shared Chromium. Measured here: 10 s / 300 frames in 3 min 40 s |
 
 Do not add a third engine for one video. motlab, brief2mp4 and OpenMontage's composer are references for ideas, not engines to install.
 

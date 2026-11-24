@@ -50,6 +50,28 @@ Then the smoke tests (each must PASS before the next): site `npm run lint && npm
 
 `install.ps1` dry run: **21/21 steps PASS**, planned **2.93 GB** local of the 100 GB budget, free space 338.9 GB. Every engine's reviewed tree hash matches the scanned quarantine copy, and each pinned commit is still the upstream HEAD. Model list dry run: all 9 files found on Hugging Face with published hashes (19.2 GB already local, 47.65 GB GPU-only). GPU scripts pass `bash -n`; `comfy_job.py --dry-run` passes and refuses non-loopback servers.
 
+## Install status (2026-11-24): INSTALLED
+
+Approved by the user after a full Bitdefender scan of the quarantine (242,067 items; only 2 hits, both in `vercel-labs/agent-desktop`, which is not installed). All three phases ran: Phase 0 5/5, Phase 1 8/8, Phase 2 8/8 PASS.
+
+| Smoke test | Result |
+|---|---|
+| Site `npm run lint` + `npm run build` after adding gsap/three/lottie-web | PASS (live output `master-video-styles/editor` untouched) |
+| `video-py` imports (manim 0.19.2, torch 2.15.0+cpu hardlinked x3, skia, OpenCV) | PASS |
+| Manim 5-second scene `-ql` | PASS (480p MP4) |
+| ffmpeg-skill `probe.py` + `fit.py --aspect 9:16` | PASS (270x480) |
+| sfx-generator `sfx render bong` | PASS (0.38 s, 48 kHz stereo) |
+| cinematic-film `check_setup.py` | PASS ("ready"; scratch voice optional) |
+| motion-educator `doctor.mjs` | PASS after adding `playwright@1.65.1` (Chromium WebGL2 on the Vega 8 via Direct3D 11) |
+| HyperFrames 0.9.87 render (blank, 10 s, 300 frames) | PASS in 3 min 40 s with the shared Chromium |
+| ComfyUI LTX/Wan test clip | NOT RUN (15-40 min CPU; next step) |
+| captions-skill on a real video | NOT RUN (needs your video and your approval of the 1.5 s / 4 s / 8 s frames) |
+| still-to-film depth model | NOT RUN (downloads Depth Anything V2, 1.3 GB, on first use) |
+
+Settings made (user environment): `HYPERFRAMES_NO_TELEMETRY=1`, `DO_NOT_TRACK=1`, `HYPERFRAMES_SKIP_SKILLS=1`, `HYPERFRAMES_BROWSER_PATH` and `PLAYWRIGHT_BROWSERS_PATH` = one shared Chromium, `WHISPER_MODEL=small`.
+
+Side effect caught and reverted: `hyperframes init` installed six HyperFrames agent skills into `~/.claude/skills` and `~/.agents/skills`. They were moved (not deleted) to `AI-Local/engines/video-js/_held-skills/`; SkillSpector rated two DO_NOT_INSTALL, two CAUTION, two incomplete. They stay inactive unless reviewed and approved.
+
 ## Security review status (2026-11-24)
 
 Source review of everything that would be installed: no malicious code found; all scanner flags resolved in `RESULTS.md`. **Install on hold** until: a Bitdefender custom scan of `resources\repo-quarantine` is clean (Bitdefender flagged three audit *report* files as a stealer heuristic; no repository file was flagged), you say "install now" explicitly, and the motion-educator/stickman SkillSpector scans are retried or accepted. Record: `resources/repo-catalog/smoothie-approval-20261124.md`.

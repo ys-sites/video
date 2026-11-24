@@ -48,8 +48,8 @@
       "skills": [
         {
           "name": "HyperFrames (local skills)",
-          "where": "resources/concordia/video-motion/openmontage",
-          "status": "reference",
+          "where": "AI-Local engines/video-js (hyperframes 0.9.87) + skill vs-motion",
+          "status": "ready",
           "cost": "free",
           "does": "HTML + GSAP compositions rendered to video on your machine; the hosted HyperFrames MCP is the paid route."
         },
@@ -90,8 +90,8 @@
         },
         {
           "name": "Manim",
-          "where": "resources/motion-systems/manim-skill",
-          "status": "reference",
+          "where": "AI-Local venvs/video-py (manim 0.19.2) + skill vs-lesson",
+          "status": "ready",
           "cost": "free",
           "does": "Math and diagram animation."
         },
@@ -107,7 +107,7 @@
           "where": "resources/concordia/video-motion/openmontage, p5.js, theatre",
           "status": "reference",
           "cost": "free",
-          "does": "Timelines, 3D scenes, procedural characters and particles."
+          "does": "Timelines, 3D scenes, procedural characters and particles. GSAP 3.15.1 and three.js 0.187 are installed in the site app; p5.js and Theatre.js stay references."
         },
         {
           "name": "anatomy",

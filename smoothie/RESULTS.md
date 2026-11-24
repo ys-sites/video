@@ -2,7 +2,7 @@
 
 Verdict counts (113 repositories): INSTALL 3 · INSTALL WITH CONDITIONS 10 · ALREADY INSTALLED 7 · REFERENCE (merged, not installed) 27 · NEEDS-KEY / PAID 10 · GPU-BLOCKED (GPU tier) 1 · DO NOT INSTALL 15 · LEFT OUT (out of scope) 37 · UNAVAILABLE 3.
 
-**Nothing is installed yet.** Install is paused until (1) a Bitdefender custom scan of `resources\repo-quarantine` comes back clean, (2) you say "install now" explicitly, and (3) the two incomplete SkillSpector scans (motion-educator, stickman) are retried or you accept the manual review for them.
+**Installed 2026-11-24** (see README "Install status"). Additional verdict from the Bitdefender scan: `vercel-labs/agent-desktop` is DO NOT INSTALL (clipboard-capture probes flagged `CMD:Heur.BZC.PZQ.Boxter`). Previously: Install is paused until (1) a Bitdefender custom scan of `resources\repo-quarantine` comes back clean, (2) you say "install now" explicitly, and (3) the two incomplete SkillSpector scans (motion-educator, stickman) are retried or you accept the manual review for them.
 
 ## Scanner flags on the install candidates, resolved in source
 

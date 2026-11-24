@@ -14,7 +14,13 @@
 
 ## Approved to install
 
-STATUS: **ON HOLD (not installed).**
+STATUS: **APPROVED - installing (2026-11-24).**
+
+- Bitdefender contextual scan of `resources/repo-quarantine` (2026-11-24 00:34, 242,067 items, heuristics on, all files): 2 detections, both `CMD:Heur.BZC.PZQ.Boxter` in `vercel-labs/agent-desktop/probes/windows/*/...clipboard...probe.ps1` (clipboard-capture probes in a computer-use reference repo, not in the install set). Bitdefender deleted them (after reboot). `vercel-labs/agent-desktop` is now DO NOT INSTALL. No detection in any install-set repo.
+- User instruction (verbatim): "start installign the skils".
+- motion-educator and stickman: SkillSpector coverage incomplete; installed on the manual source review (no malicious code found).
+
+Previous hold (resolved):
 
 - Source review result: no malicious code found in the install set; every high-severity scanner flag was traced to tests, docs, defensive code or false positives (`smoothie/RESULTS.md`, "Scanner flags ... resolved in source").
 - Hold reasons:

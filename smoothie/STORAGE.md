@@ -13,6 +13,19 @@
 
 After install the system uses about **3 GB of the 100 GB budget**. Pruning the audit clones afterwards (`git clean` of the 55 staged folders, which the installer does not need because it re-fetches the reviewed commits) gives the 3.0 GB back, so the net change is about +3 GB, or about +0 GB once the duplicates below are removed.
 
+## Measured after install (2026-11-24)
+
+| Item | Size |
+|---|---|
+| `AI-Local/engines` (7 engines + shared JS workspace) | 2.31 GB (stickman-director alone 1.49 GB: its bundled reference media; motion-educator 0.54 GB) |
+| `AI-Local/browsers` (one Chromium + headless shell + Playwright ffmpeg) | 0.74 GB |
+| `AI-Local/venvs/video-py` (torch hardlinked, not copied) | 1.12 GB on disk as listed; the 0.5 GB torch is shared with ComfyUI and the uv cache |
+| Site `node_modules` (gsap, three, lottie-web) | ~0.05 GB |
+| **Total added by the install** | **about 4.2 GB of the 100 GB budget** |
+| C: free | 338.9 GB before this run → 333.1 GB after (includes the 3.0 GB audit clones) |
+
+Extra clean-up candidates found during install: an older Puppeteer Chrome in `~/.cache/puppeteer` (0.71 GB, from 2026-09-29) duplicates the shared Chromium; stickman's bundled reference media (~1.4 GB) can be pruned if you only use its code engine.
+
 ## What already exists (and is reused, never downloaded again)
 
 | Item | Size | Used by |

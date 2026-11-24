@@ -97,12 +97,20 @@ if ($Phase -in '1','all') {
   Engine 'sfx-generator' 0.01 { param($d) & $uv pip install --python "$AILocal\venvs\video-py\Scripts\python.exe" --no-deps -e $d }
   Engine 'cinematic-film' 0.01 $null
   Engine 'still-to-film' 1.31 $null     # + Depth Anything V2 Large safetensors (1.3 GB) fetched on first use; always run prep_plate.py with --no-upscale
-  Engine 'motion-educator' 0.35 { param($d) Push-Location $d; npm ci --ignore-scripts; npx playwright@1 install chromium; Pop-Location }
+  Engine 'motion-educator' 0.35 { param($d) Push-Location $d; npm ci --ignore-scripts; npm install -D --save-exact --ignore-scripts playwright@1.65.1; npx playwright install chromium; node kit/tools/doctor.mjs; if ($LASTEXITCODE) { throw 'motion-educator doctor failed' }; Pop-Location }
   Engine 'stickman-director' 0.05 $null
   Engine 'paper2video' 0.01 $null
   # Shared JS video workspace: one node_modules for HyperFrames + every Remotion project (one headless Chrome)
   $ws = "$AILocal\engines\video-js"
-  if ($Real) { New-Item -ItemType Directory -Force $ws | Out-Null; Push-Location $ws; npm init -y | Out-Null; npm install --save-exact --ignore-scripts hyperframes@0.9.87; Pop-Location }
+  if ($Real) {
+    New-Item -ItemType Directory -Force $ws | Out-Null; Push-Location $ws; npm init -y | Out-Null; npm install --save-exact --ignore-scripts hyperframes@0.9.87; Pop-Location
+    # Privacy and no side effects: no telemetry, never auto-install agent skills into ~/.claude or ~/.agents, reuse the shared Chromium
+    foreach ($kv in @(@('HYPERFRAMES_NO_TELEMETRY','1'), @('DO_NOT_TRACK','1'), @('HYPERFRAMES_SKIP_SKILLS','1'), @('WHISPER_MODEL','small'),
+                      @('PLAYWRIGHT_BROWSERS_PATH', "$AILocal\browsers"),
+                      @('HYPERFRAMES_BROWSER_PATH', "$AILocal\browsers\chromium_headless_shell-1255\chrome-headless-shell-win64\chrome-headless-shell.exe"))) {
+      [Environment]::SetEnvironmentVariable($kv[0], $kv[1], 'User')
+    }
+  }
   else { $o = npm view hyperframes@0.9.87 version scripts.postinstall --json 2>&1 | Out-String; $ok = $o -match '0.9.87' -and $o -notmatch 'postinstall' }
   Report '1.x shared JS workspace (HyperFrames 0.9.87)' ($Real -or $ok) 'npm install --save-exact --ignore-scripts hyperframes@0.9.87' 'Remotion projects later move their node_modules here (saves ~0.4 GB each)' 0.6
 }
@@ -113,8 +121,9 @@ if ($Phase -in '2','all') {
   foreach ($s in $skills) {
     $dest = "$Repo\.claude\skills\$($s.Name)"
     $ok = (Test-Path "$($s.FullName)\SKILL.md") -and ((Get-Content "$($s.FullName)\SKILL.md" -TotalCount 3) -match "^name: $($s.Name)$")
-    if ($Real) { Copy-Item -Recurse -Force $s.FullName $dest }
-    Report "2 skill $($s.Name)" $ok "copy to .claude\skills\$($s.Name)" $(if(Test-Path $dest){'already present'}else{'frontmatter ok'}) 0
+    $existed = Test-Path $dest
+    if ($Real) { if ($existed) { Remove-Item -Recurse -Force $dest }; Copy-Item -Recurse -Force $s.FullName $dest }
+    Report "2 skill $($s.Name)" $ok "copy to .claude\skills\$($s.Name)" $(if($Real){ if($existed){'updated'}else{'installed'} } elseif($existed){'present (would update)'} else {'frontmatter ok'}) 0
   }
 }
 
