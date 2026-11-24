@@ -1,0 +1,786 @@
+{
+ "alisa0808/vox-director": {
+  "name": "alisa0808/vox-director",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "apekshik/anymachine": {
+  "name": "apekshik/anymachine",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "arjun988/blender-skills": {
+  "name": "arjun988/blender-skills",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "atuizz/posewear": {
+  "name": "atuizz/posewear",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "augani/openreel-video": {
+  "name": "augani/openreel-video",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "austinz21/cinematic-skills": {
+  "name": "austinz21/cinematic-skills",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "capsoftware/cap": {
+  "name": "capsoftware/cap",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "comfy-org/comfy-desktop": {
+  "name": "comfy-org/comfy-desktop",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "devedevt/ffmpeg-gui-editor-windows": {
+  "name": "devedevt/ffmpeg-gui-editor-windows",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "dqfront/iart-ai-motion-skills": {
+  "name": "dqfront/iart-ai-motion-skills",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "google-research/pointdit": {
+  "name": "google-research/pointdit",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "heygen-com/hyperframes": {
+  "name": "heygen-com/hyperframes",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "iamaanahmad/agents-video-editing-skills": {
+  "name": "iamaanahmad/agents-video-editing-skills",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "imputnet/cobalt": {
+  "name": "imputnet/cobalt",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "inclusionai/codeworldmodel": {
+  "name": "inclusionai/codeworldmodel",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "jakeschincariol/instagram-agent-skill": {
+  "name": "jakeschincariol/instagram-agent-skill",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "kajisho5/ffmpeg-skill": {
+  "name": "kajisho5/ffmpeg-skill",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "kaomei/stickman-video-director": {
+  "name": "kaomei/stickman-video-director",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "lemomo-ai/lemo-opuscar": {
+  "name": "lemomo-ai/lemo-opuscar",
+  "bucket": "A/B",
+  "local": "resources/repo-quarantine/lemomo-ai/lemo-opuscar",
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "leonxlnx/walking-block": {
+  "name": "leonxlnx/walking-block",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "lunamos/paper2video": {
+  "name": "lunamos/paper2video",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "mifi/lossless-cut": {
+  "name": "mifi/lossless-cut",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "mromidev/claude-blender-skills": {
+  "name": "mromidev/claude-blender-skills",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "photopea/photopea": {
+  "name": "photopea/photopea",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "qualixar/brief2mp4": {
+  "name": "qualixar/brief2mp4",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "remocn/remocn": {
+  "name": "remocn/remocn",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "runesleo/claude-video-kit": {
+  "name": "runesleo/claude-video-kit",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "saranambiar/hyperframes-video-agent-skills": {
+  "name": "saranambiar/hyperframes-video-agent-skills",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "spacesdrive/twiligent": {
+  "name": "spacesdrive/twiligent",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "staryone/motlab": {
+  "name": "staryone/motlab",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "vincentwei1021/video-shotcraft": {
+  "name": "vincentwei1021/video-shotcraft",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "voyager-so/vork": {
+  "name": "voyager-so/vork",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "zeative/motion-educator": {
+  "name": "zeative/motion-educator",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "zhouxiaoka/autoclip": {
+  "name": "zhouxiaoka/autoclip",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "666ghj/mirofish": {
+  "name": "666ghj/MiroFish",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 16817,
+  "license": null
+ },
+ "academa-labs/manimgx": {
+  "name": "academa-labs/manimgx",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 159272,
+  "license": null
+ },
+ "affaan-m/ecc": {
+  "name": "affaan-m/ECC",
+  "bucket": "A/B",
+  "local": "resources/repo-quarantine/affaan-m/ECC",
+  "catalog_size_kb": 62777,
+  "license": null
+ },
+ "affaan-m/everything-claude-code": {
+  "name": "affaan-m/everything-claude-code",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 62777,
+  "license": null
+ },
+ "airbnb/lottie-android": {
+  "name": "airbnb/lottie-android",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 137398,
+  "license": null
+ },
+ "airbnb/lottie-web": {
+  "name": "airbnb/lottie-web",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 358131,
+  "license": null
+ },
+ "bangtutorial/bang-motion": {
+  "name": "bangtutorial/bang-motion",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 1925,
+  "license": null
+ },
+ "barckley75/resolve-claude-mcp": {
+  "name": "barckley75/resolve-claude-mcp",
+  "bucket": "A/B",
+  "local": "resources/concordia/video-motion/resolve-claude-mcp",
+  "catalog_size_kb": 54470,
+  "license": null
+ },
+ "bilawalsidhu/gods-eye-view": {
+  "name": "bilawalsidhu/gods-eye-view",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 210897,
+  "license": null
+ },
+ "blender/blender": {
+  "name": "blender/blender",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 1449830,
+  "license": null
+ },
+ "budgetany/budget3d": {
+  "name": "BudgetAny/Budget3D",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 650,
+  "license": null
+ },
+ "calesthio/openmontage": {
+  "name": "calesthio/OpenMontage",
+  "bucket": "A/B",
+  "local": "resources/concordia/video-motion/openmontage",
+  "catalog_size_kb": 78414,
+  "license": null
+ },
+ "charlesdove977/advertising-ops": {
+  "name": "charlesdove977/advertising-ops",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 113,
+  "license": null
+ },
+ "charlesdove977/re-walkthrough-pro": {
+  "name": "charlesdove977/re-walkthrough-pro",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 1847,
+  "license": null
+ },
+ "charlesdove977/ugc-factory": {
+  "name": "charlesdove977/UGC-Factory",
+  "bucket": "A/B",
+  "local": "resources/concordia/video-motion/ugc-factory",
+  "catalog_size_kb": 2237,
+  "license": null
+ },
+ "cloudflare/security-audit-skill": {
+  "name": "cloudflare/security-audit-skill",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 143,
+  "license": null
+ },
+ "debpalash/voicestudio": {
+  "name": "debpalash/VoiceStudio",
+  "bucket": "A/B",
+  "local": "resources/concordia/video-motion/voicestudio",
+  "catalog_size_kb": 218758,
+  "license": null
+ },
+ "deepseek-ai/deepseek-harness": {
+  "name": "deepseek-ai/deepseek-harness",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 389740,
+  "license": null
+ },
+ "dozentwelve/papermorph": {
+  "name": "dozentwelve/papermorph",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 840969,
+  "license": null
+ },
+ "ffmpeg/ffmpeg": {
+  "name": "FFmpeg/FFmpeg",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 508195,
+  "license": null
+ },
+ "ffmpegwasm/ffmpeg.wasm": {
+  "name": "ffmpegwasm/ffmpeg.wasm",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 17934,
+  "license": null
+ },
+ "godotengine/godot": {
+  "name": "godotengine/godot",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 1951744,
+  "license": null
+ },
+ "graphiteeditor/graphite": {
+  "name": "GraphiteEditor/Graphite",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 63960,
+  "license": null
+ },
+ "greensock/gsap": {
+  "name": "greensock/GSAP",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 14943,
+  "license": null
+ },
+ "handbrake/handbrake": {
+  "name": "HandBrake/HandBrake",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 125686,
+  "license": null
+ },
+ "hkuds/deeptutor": {
+  "name": "HKUDS/DeepTutor",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 258519,
+  "license": null
+ },
+ "iamtechartist/every-joule-lesson1": {
+  "name": "iamtechartist/every-joule-lesson1",
+  "bucket": "A/B",
+  "local": "resources/concordia/video-motion/every-joule-lesson1",
+  "catalog_size_kb": 1297,
+  "license": null
+ },
+ "jdhruv14/line-art-animation": {
+  "name": "JDhruv14/line-art-animation",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 7308,
+  "license": null
+ },
+ "juliangarnier/anime": {
+  "name": "juliangarnier/anime",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 185735,
+  "license": null
+ },
+ "juneyaooo/rea-video": {
+  "name": "JuneYaooo/rea-video",
+  "bucket": "A/B",
+  "local": "resources/repo-quarantine/JuneYaooo/rea-video",
+  "catalog_size_kb": 157070,
+  "license": null
+ },
+ "kde/kdenlive": {
+  "name": "KDE/kdenlive",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 5274810,
+  "license": null
+ },
+ "konvajs/konva": {
+  "name": "konvajs/konva",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 23555,
+  "license": null
+ },
+ "latent-spaces/brag": {
+  "name": "latent-spaces/brag",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 50222,
+  "license": null
+ },
+ "manimcommunity/manim": {
+  "name": "ManimCommunity/manim",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 48339,
+  "license": null
+ },
+ "mengto/skills": {
+  "name": "mengto/skills",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 84315,
+  "license": null
+ },
+ "meshy-dev/threert": {
+  "name": "meshy-dev/ThreeRT",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 94161,
+  "license": null
+ },
+ "meta/astryx": {
+  "name": "meta/astryx",
+  "bucket": "A/B",
+  "local": "resources/repo-quarantine/meta/astryx",
+  "catalog_size_kb": 1377674,
+  "license": null
+ },
+ "mltframework/shotcut": {
+  "name": "mltframework/shotcut",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 162757,
+  "license": null
+ },
+ "moh4696/cinematic-skill": {
+  "name": "Moh4696/cinematic-skill",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 1989,
+  "license": null
+ },
+ "mojs/mojs": {
+  "name": "mojs/mojs",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 140750,
+  "license": null
+ },
+ "motiondivision/motion": {
+  "name": "motiondivision/motion",
+  "bucket": "A/B",
+  "local": "resources/concordia/motion-library",
+  "catalog_size_kb": 1668024,
+  "license": null
+ },
+ "mrdoob/three.js": {
+  "name": "mrdoob/three.js",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 1703005,
+  "license": null
+ },
+ "nexu-io/openmotion": {
+  "name": "nexu-io/openmotion",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 635025,
+  "license": null
+ },
+ "obsproject/obs-studio": {
+  "name": "obsproject/obs-studio",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 87968,
+  "license": null
+ },
+ "openqodex/openqodex": {
+  "name": "openqodex/openqodex",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 14280,
+  "license": null
+ },
+ "opentoonz/opentoonz": {
+  "name": "opentoonz/opentoonz",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 128998,
+  "license": null
+ },
+ "paulirish/chrome-capture": {
+  "name": "paulirish/chrome-capture",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 310,
+  "license": null
+ },
+ "pbakaus/impeccable": {
+  "name": "pbakaus/impeccable",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 906948,
+  "license": null
+ },
+ "pixijs/pixijs": {
+  "name": "pixijs/pixijs",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 138105,
+  "license": null
+ },
+ "remotion-dev/remotion": {
+  "name": "remotion-dev/remotion",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 4472327,
+  "license": null
+ },
+ "sandflow-ai/sand3d": {
+  "name": "Sandflow-ai/sand3d",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 7699,
+  "license": null
+ },
+ "shinyobjectz/raea": {
+  "name": "shinyobjectz/raea",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 95215,
+  "license": null
+ },
+ "storytold/filmcraft": {
+  "name": "storytold/filmcraft",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 41593,
+  "license": null
+ },
+ "tejashmakwana/motionmaxxing": {
+  "name": "Tejashmakwana/motionmaxxing",
+  "bucket": "A/B",
+  "local": "resources/concordia/video-motion/motionmaxxing",
+  "catalog_size_kb": 21795,
+  "license": null
+ },
+ "tokio-rs/topcoat": {
+  "name": "tokio-rs/topcoat",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 8358,
+  "license": null
+ },
+ "tweenjs/tween.js": {
+  "name": "tweenjs/tween.js",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 18433,
+  "license": null
+ },
+ "vibha-ramprakash/claude-video-effects": {
+  "name": "Vibha-Ramprakash/claude-video-effects",
+  "bucket": "A/B",
+  "local": "resources/concordia/video-motion/claude-video-effects",
+  "catalog_size_kb": 2981,
+  "license": null
+ },
+ "videojs/video.js": {
+  "name": "videojs/video.js",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 265819,
+  "license": null
+ },
+ "vincentwei1021/anything2explainer": {
+  "name": "Vincentwei1021/anything2explainer",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 15252,
+  "license": null
+ },
+ "wulkano/kap": {
+  "name": "wulkano/Kap",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 24623,
+  "license": null
+ },
+ "xai-org/grok-build": {
+  "name": "xai-org/grok-build",
+  "bucket": "A/B",
+  "local": null,
+  "catalog_size_kb": 62238,
+  "license": null
+ },
+ "nvidia/skillspector": {
+  "name": "NVIDIA/SkillSpector",
+  "bucket": "A/B",
+  "local": "resources/repo-quarantine/NVIDIA/SkillSpector",
+  "catalog_size_kb": 15160,
+  "license": null
+ },
+ "ag-ui-protocol/ag-ui": {
+  "name": "ag-ui-protocol/ag-ui",
+  "bucket": "C:infra",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "openfilm/openfilm": {
+  "name": "openfilm/openfilm",
+  "bucket": "C:C",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "bodila51/gtavi-claudecode": {
+  "name": "bodila51/gtavi-claudecode",
+  "bucket": "C:A/C",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "deeplethe/sandstorm": {
+  "name": "deeplethe/sandstorm",
+  "bucket": "C:infra",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "a2ui-project/a2ui": {
+  "name": "a2ui-project/a2ui",
+  "bucket": "C:infra",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "hypit-ai/hypit": {
+  "name": "hypit-ai/hypit",
+  "bucket": "C:C \u2014 with (A) overlap",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "thisisvela/sfx-generator-skill": {
+  "name": "thisisvela/sfx-generator-skill",
+  "bucket": "A:v1",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "runkids/skillshare": {
+  "name": "runkids/skillshare",
+  "bucket": "A:v1",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "openclaw/clawhub": {
+  "name": "openclaw/clawhub",
+  "bucket": "A:v1",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "yian6557/eian-riso-broll": {
+  "name": "yian6557/eian-riso-broll",
+  "bucket": "A:v1",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "d3voz/openjutsu": {
+  "name": "d3voz/openjutsu",
+  "bucket": "A:v1",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "moh4696/open-3d-skills": {
+  "name": "moh4696/open-3d-skills",
+  "bucket": "A:v1",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "klad-app/klad": {
+  "name": "klad-app/klad",
+  "bucket": "A:v1",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "mohamedelaassal/youtubevideogenerator": {
+  "name": "mohamedelaassal/youtubevideogenerator",
+  "bucket": "A:v1",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "open-slide/open-slide": {
+  "name": "open-slide/open-slide",
+  "bucket": "A:v1",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ },
+ "ys-sites/insta-reels": {
+  "name": "ys-sites/insta-reels",
+  "bucket": "A:v1",
+  "local": null,
+  "catalog_size_kb": null,
+  "license": null
+ }
+}

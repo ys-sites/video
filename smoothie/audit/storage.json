@@ -1,0 +1,240 @@
+{
+ "sizes_bytes": {
+  "repo_resources": 9523338380,
+  "repo_root_other": 9024165832,
+  "AI-Local": 23675098883,
+  "workspace": null,
+  "hf_cache": 3411664688,
+  "torch_cache": null,
+  "whisper_cache": null,
+  "npm_cache": 2446121130,
+  "pip_cache": 199768456,
+  "uv_cache": 4899355267
+ },
+ "resources_sub": {
+  "concordia": 1378900195,
+  "creator-styles": 790835013,
+  "higgsfield-reference": 6929,
+  "motion-systems": 940478314,
+  "motionsmith-research": 24778,
+  "repo-catalog": 481899,
+  "repo-quarantine": 6061570942,
+  "security-tools": 977289794,
+  "skillspector-source": 30719707,
+  "skillspector-venv": 223962655,
+  "visually-research": 269737
+ },
+ "top_files": [
+  [
+   6424,
+   "C:\\Users\\Sharafath\\AI-Local\\ComfyUI\\models\\text_encoders\\umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+  ],
+  [
+   4667,
+   "C:\\Users\\Sharafath\\AI-Local\\ComfyUI\\models\\text_encoders\\t5xxl_fp8_e4m3fn.safetensors"
+  ],
+  [
+   4255,
+   "C:\\Users\\Sharafath\\AI-Local\\ComfyUI\\models\\checkpoints\\ltxv-2b-0.9.8-distilled-fp8.safetensors"
+  ],
+  [
+   2707,
+   "C:\\Users\\Sharafath\\AI-Local\\ComfyUI\\models\\diffusion_models\\wan2.1_t2v_1.3B_bf16.safetensors"
+  ],
+  [
+   2218,
+   "C:\\Users\\Sharafath\\AppData\\Local\\uv\\cache\\archive-v0\\l77mgRq8hb8cxgoC\\torch\\lib\\dnnl.lib"
+  ],
+  [
+   2218,
+   "C:\\Users\\Sharafath\\AI-Local\\OmniVoice\\.venv\\Lib\\site-packages\\torch\\lib\\dnnl.lib"
+  ],
+  [
+   2084,
+   "C:\\Users\\Sharafath\\.cache\\huggingface\\hub\\models--handy-computer--Qwen3-ASR-1.7B-gguf\\snapshots\\92282af1610a2db19d66f2bef1e260f5deca782d\\Qwen3-ASR-1.7B-Q8_0.gguf"
+  ],
+  [
+   1552,
+   ".\\concordia-popup-publish\\.git\\objects\\pack\\pack-5bdf7833c2ececc49630a53f3e0fd0e36fb18e3e.pack"
+  ],
+  [
+   706,
+   "C:\\Users\\Sharafath\\.cache\\huggingface\\hub\\models--handy-computer--parakeet-ultra-gguf\\blobs\\007a59761e9258779f189df396b50d12b83bb5b79e66df4b955c230d2f2a0a59.sync.part"
+  ],
+  [
+   624,
+   ".\\video-projects\\shawarma-moods-christmas-2026\\exports\\Owner_Pitch_5min.mp4"
+  ],
+  [
+   617,
+   ".\\video-projects\\shawarma-moods-christmas-2026\\build\\pitch_video_v2.mp4"
+  ],
+  [
+   606,
+   ".\\concordia-popup-publish\\.git\\objects\\pack\\pack-6cf56e5e90461cd502da3e73469e1a0daf8abaf7.pack"
+  ],
+  [
+   461,
+   "C:\\Users\\Sharafath\\.cache\\huggingface\\hub\\models--Systran--faster-whisper-small\\snapshots\\536b0662742c02347bc0e980a01041f333bce120\\model.bin"
+  ],
+  [
+   295,
+   "C:\\Users\\Sharafath\\AppData\\Local\\uv\\cache\\archive-v0\\HgjgzCaC_lAnfvrn\\torch\\lib\\torch_cpu.dll"
+  ],
+  [
+   295,
+   "C:\\Users\\Sharafath\\AI-Local\\ComfyUI\\.venv\\Lib\\site-packages\\torch\\lib\\torch_cpu.dll"
+  ],
+  [
+   278,
+   "resources\\repo-quarantine\\retries\\meta\\astryx\\.git\\objects\\pack\\pack-e8ef43b75a51dc5f8e6ad4a20d0ceb2d86dfda10.pack"
+  ],
+  [
+   278,
+   "resources\\repo-quarantine\\meta\\astryx\\.git\\objects\\pack\\pack-3b3b96af847462441620d612d78eb993a4780b15.pack"
+  ],
+  [
+   249,
+   ".\\video-projects\\creator-style-explainer\\node_modules\\.remotion\\chrome-headless-shell\\win64\\chrome-headless-shell-win64\\chrome-headless-shell.exe"
+  ],
+  [
+   244,
+   "C:\\Users\\Sharafath\\AppData\\Local\\uv\\cache\\archive-v0\\l77mgRq8hb8cxgoC\\torch\\lib\\torch_cpu.dll"
+  ],
+  [
+   244,
+   "C:\\Users\\Sharafath\\AI-Local\\OmniVoice\\.venv\\Lib\\site-packages\\torch\\lib\\torch_cpu.dll"
+  ],
+  [
+   242,
+   "resources\\repo-quarantine\\MeiGen-AI\\LongCat-Video-Avatar\\.git\\objects\\pack\\pack-aa0a14f226a7faf7fc37ab539aa0645fb2b87cd1.pack"
+  ],
+  [
+   242,
+   "C:\\Users\\Sharafath\\AI-Local\\ComfyUI\\models\\vae\\wan_2.1_vae.safetensors"
+  ],
+  [
+   229,
+   ".\\video-projects\\shawarma-moods-christmas-2026\\build\\segments\\pitch_00.mp4"
+  ],
+  [
+   157,
+   "resources\\repo-quarantine\\twentyhq\\twenty\\.git\\objects\\pack\\pack-b9aab68a1ccb449942d31579ccfc35aa73f85149.pack"
+  ],
+  [
+   156,
+   "resources\\motion-systems\\claude-drawing-skill\\.git\\objects\\pack\\pack-7ca782a9fd441f354171ff0c6feffe2134d0d338.pack"
+  ],
+  [
+   152,
+   "C:\\Users\\Sharafath\\AppData\\Local\\uv\\cache\\archive-v0\\fXw2Z76YP95XpbxX\\comfy_kitchen\\backends\\hip\\_C.abi3.pyd"
+  ],
+  [
+   149,
+   "C:\\Users\\Sharafath\\AppData\\Local\\uv\\cache\\archive-v0\\l77mgRq8hb8cxgoC\\torch\\lib\\libprotoc.lib"
+  ],
+  [
+   149,
+   "C:\\Users\\Sharafath\\AI-Local\\OmniVoice\\.venv\\Lib\\site-packages\\torch\\lib\\libprotoc.lib"
+  ],
+  [
+   138,
+   ".\\captions-skill\\.model-cache\\hub\\models--Systran--faster-whisper-base\\snapshots\\ebe41f70d5b6dfa9166e2c581c45c9c0cfc57b66\\model.bin"
+  ],
+  [
+   135,
+   ".\\video-projects\\shawarma-moods-christmas-2026\\build\\segments\\pitch_02.mp4"
+  ],
+  [
+   134,
+   ".\\video-projects\\shawarma-moods-christmas-2026\\build\\segments\\pitch_03.mp4"
+  ],
+  [
+   127,
+   ".\\video-projects\\shawarma-moods-christmas-2026\\exports\\Campaign_Trailer_60sec.mp4"
+  ],
+  [
+   126,
+   ".\\video-projects\\shawarma-moods-christmas-2026\\build\\trailer_video_v2.mp4"
+  ],
+  [
+   120,
+   ".\\video-projects\\shawarma-moods-christmas-2026\\build\\segments\\pitch_01.mp4"
+  ],
+  [
+   115,
+   "C:\\Users\\Sharafath\\AppData\\Local\\uv\\cache\\archive-v0\\b8umSuwsPAvfjBkR\\llvmlite\\binding\\llvmlite.dll"
+  ],
+  [
+   115,
+   "C:\\Users\\Sharafath\\AI-Local\\OmniVoice\\.venv\\Lib\\site-packages\\llvmlite\\binding\\llvmlite.dll"
+  ],
+  [
+   110,
+   "C:\\Users\\Sharafath\\AppData\\Local\\uv\\cache\\archive-v0\\l77mgRq8hb8cxgoC\\torch\\lib\\libprotobuf.lib"
+  ],
+  [
+   110,
+   "C:\\Users\\Sharafath\\AI-Local\\OmniVoice\\.venv\\Lib\\site-packages\\torch\\lib\\libprotobuf.lib"
+  ],
+  [
+   107,
+   "resources\\repo-quarantine\\lemomo-ai\\lemo-opuscar\\.git\\objects\\pack\\pack-ed07f9238657345f1a84e0fa02d6b3f81e32c0c6.pack"
+  ],
+  [
+   106,
+   "C:\\Users\\Sharafath\\AppData\\Local\\npm-cache\\_npx\\32026684e21afda6\\node_modules\\@cloudflare\\workerd-windows-64\\bin\\workerd.exe"
+  ]
+ ],
+ "duplicates": [
+  {
+   "size_mb": 295,
+   "copies": [
+    "C:\\Users\\Sharafath\\AI-Local\\ComfyUI\\.venv\\Lib\\site-packages\\torch\\lib\\torch_cpu.dll",
+    "C:\\Users\\Sharafath\\AppData\\Local\\uv\\cache\\archive-v0\\HgjgzCaC_lAnfvrn\\torch\\lib\\torch_cpu.dll"
+   ]
+  },
+  {
+   "size_mb": 115,
+   "copies": [
+    "C:\\Users\\Sharafath\\AI-Local\\OmniVoice\\.venv\\Lib\\site-packages\\llvmlite\\binding\\llvmlite.dll",
+    "C:\\Users\\Sharafath\\AppData\\Local\\uv\\cache\\archive-v0\\b8umSuwsPAvfjBkR\\llvmlite\\binding\\llvmlite.dll"
+   ]
+  },
+  {
+   "size_mb": 2218,
+   "copies": [
+    "C:\\Users\\Sharafath\\AI-Local\\OmniVoice\\.venv\\Lib\\site-packages\\torch\\lib\\dnnl.lib",
+    "C:\\Users\\Sharafath\\AppData\\Local\\uv\\cache\\archive-v0\\l77mgRq8hb8cxgoC\\torch\\lib\\dnnl.lib"
+   ]
+  },
+  {
+   "size_mb": 55,
+   "copies": [
+    "C:\\Users\\Sharafath\\AI-Local\\OmniVoice\\.venv\\Lib\\site-packages\\torch\\lib\\kineto.lib",
+    "C:\\Users\\Sharafath\\AppData\\Local\\uv\\cache\\archive-v0\\l77mgRq8hb8cxgoC\\torch\\lib\\kineto.lib"
+   ]
+  },
+  {
+   "size_mb": 110,
+   "copies": [
+    "C:\\Users\\Sharafath\\AI-Local\\OmniVoice\\.venv\\Lib\\site-packages\\torch\\lib\\libprotobuf.lib",
+    "C:\\Users\\Sharafath\\AppData\\Local\\uv\\cache\\archive-v0\\l77mgRq8hb8cxgoC\\torch\\lib\\libprotobuf.lib"
+   ]
+  },
+  {
+   "size_mb": 149,
+   "copies": [
+    "C:\\Users\\Sharafath\\AI-Local\\OmniVoice\\.venv\\Lib\\site-packages\\torch\\lib\\libprotoc.lib",
+    "C:\\Users\\Sharafath\\AppData\\Local\\uv\\cache\\archive-v0\\l77mgRq8hb8cxgoC\\torch\\lib\\libprotoc.lib"
+   ]
+  },
+  {
+   "size_mb": 244,
+   "copies": [
+    "C:\\Users\\Sharafath\\AI-Local\\OmniVoice\\.venv\\Lib\\site-packages\\torch\\lib\\torch_cpu.dll",
+    "C:\\Users\\Sharafath\\AppData\\Local\\uv\\cache\\archive-v0\\l77mgRq8hb8cxgoC\\torch\\lib\\torch_cpu.dll"
+   ]
+  }
+ ]
+}
