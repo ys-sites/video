@@ -29,6 +29,8 @@ description: Concordia lessons and educational explainers that teach one thing w
 | Research paper → explainer | **paper2video** method on **Remotion** (shared workspace) | Real figures and numbers early; independent fact-check pass; 16:9 + 9:16 from the same audio |
 | Story with characters, faceless social lesson | **Stickman code engine** (B styles) or motion-educator `stickman` template | Code engine only; the model engine needs paid generation |
 | Isometric machine / system figure | Installed `anatomy` skill | Great for process diagrams in IE topics |
+| A real 3D object to turn and explain (machine part, molecule, product, building) | **Blender** (`vs-motion` Blender mode, `kind: turntable` with a .glb/.obj/.stl) | Proof frame first; Eevee on this CPU, about 1 s per half-resolution frame |
+| Software walkthrough or screen lesson with the presenter | **OBS Studio** profile *Lesson 16x9* (see `vs-edit` desktop apps), then `vs-edit` | Record once, then cut, caption and export; vertical cut-downs with `fit.py --aspect 9:16` |
 
 ## 4. Voice, captions, assembly
 

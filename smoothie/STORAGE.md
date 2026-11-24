@@ -21,7 +21,8 @@ After install the system uses about **3 GB of the 100 GB budget**. Pruning the a
 | `AI-Local/browsers` (one Chromium + headless shell + Playwright ffmpeg) | 0.74 GB |
 | `AI-Local/venvs/video-py` (torch hardlinked, not copied) | 1.12 GB on disk as listed; the 0.5 GB torch is shared with ComfyUI and the uv cache |
 | Site `node_modules` (gsap, three, lottie-web) | ~0.05 GB |
-| **Total added by the install** | **about 4.2 GB of the 100 GB budget** |
+| `AI-Local/apps` (Blender 0.93, Kdenlive 0.62, LosslessCut 0.62, OBS 0.57; added 2026-11-24) | 2.74 GB |
+| **Total added by the install** | **about 7.0 GB of the 100 GB budget** |
 | C: free | 338.9 GB before this run → 333.1 GB after (includes the 3.0 GB audit clones) |
 
 Extra clean-up candidates found during install: an older Puppeteer Chrome in `~/.cache/puppeteer` (0.71 GB, from 2026-09-29) duplicates the shared Chromium; stickman's bundled reference media (~1.4 GB) can be pruned if you only use its code engine.
@@ -66,5 +67,6 @@ Extra clean-up candidates found during install: an older Puppeteer Chrome in `~/
 |---|---|---|
 | `resources/repo-quarantine/retries/meta/astryx` (duplicate of `meta/astryx`) | ~0.7 GB | Same repository cloned twice |
 | `~/.cache/huggingface/hub/models--handy-computer--parakeet-ultra-gguf` (`.sync.part`) | ~0.7 GB | Stale partial download from another app; check that app is not mid-download |
-| The 55 audit clones from this run (after you have reviewed the results) | 3.0 GB | Provenance and scan reports are kept in `smoothie/audit/` |
+| The 55 audit clones from this run (after you have reviewed the results) | 3.0 GB |
+| `AI-Local/downloads/apps-20261124` (the four verified app packages, already extracted) | 0.95 GB | Provenance and scan reports are kept in `smoothie/audit/` |
 | uv cache "duplicates" of torch/llvmlite (7 groups, 3.2 GB) | 0 GB | Not real duplicates: they are hardlinks (same inode) to the venv files |

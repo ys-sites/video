@@ -44,6 +44,10 @@ The Jack and agency repositories are routed by `docs/jack-agency-routing.md` and
 | ComfyUI (CPU) | `C:\Users\Sharafath\AI-Local\ComfyUI` | Installed by user 2026-11-19; first render untested | Node-based image/video generation |
 | LTX-Video 2B distilled fp8 | `ComfyUI\models\checkpoints` + T5 fp8 in `text_encoders` | Downloaded 2026-11-19, sha256-verified; render untested | Fastest local text/image→video; low res, short clips, ~15–40 min each |
 | Wan 2.1 T2V 1.3B | `ComfyUI\models\diffusion_models` + UMT5 fp8 + Wan VAE | Downloaded 2026-11-19, sha256-verified; render untested | Better motion than LTX, slower (~30–60+ min per short clip) |
+| Blender 5.3.0 (portable) | `C:\Users\Sharafath\AI-Local\apps\blender-5.3.0` | Installed 2026-11-24, hash + signature verified, headless renders PASS | Real 3D shots via `vs-motion` Blender mode (floor-plan dollhouse, turntable, 3D titles) |
+| OBS Studio 33.0.3 (portable) | `C:\Users\Sharafath\AI-Local\apps\obs-studio-33.0.3` | Installed 2026-11-24, test recording PASS; websocket off | Recording camera/screen: profiles Reel 9x16, Lesson 16x9 → `Videos\OBS-recordings` |
+| Kdenlive 26.08.3 (portable) | `C:\Users\Sharafath\AI-Local\apps\kdenlive-26.08.3` | Installed 2026-11-24; melt render PASS; OTIO import click untested | Hand-editing a cut: `vs-edit/scripts/to_otio.py` → File → Import → OpenTimelineIO |
+| LosslessCut 3.70.2 (portable) | `C:\Users\Sharafath\AI-Local\apps\losslesscut-3.70.2` | Installed 2026-11-24, launch PASS | Manual lossless trims |
 | OmniVoice | `C:\Users\Sharafath\AI-Local\OmniVoice` | Setup script ready; run `setup-tier1.ps1 -Tool omnivoice` | Local TTS / voice cloning on CPU |
 | freefield apps | `resources/repo-quarantine/neuregex/freefield` | Reviewed, not yet loaded into ComfyUI | 120 ComfyUI apps; only small-model apps are practical here |
 | inference-optimisation-skill | `resources/repo-quarantine/sybil-solutions/...` | Reviewed, not installed | Speed up local LLMs (llama.cpp + Vulkan on the iGPU) |

@@ -15,7 +15,8 @@ One system instead of 100 tools. Read the brief or footage, then route. `docs/MA
 | Real-estate / creator reel, listing tour, agent content | `vs-real-estate` | Extends `skills/creator-video` (136-reel study) |
 | Lesson, explainer, paper, concept film | `vs-lesson` | Extends `skills/study-video` |
 | Cinematic short, documentary, trailer, "make it feel like a film" | `vs-director` → `vs-motion` / `vs-generate` | Director plans every shot first |
-| Motion graphics, kinetic type, product promo, UI animation, 3D web | `vs-motion` | Code-rendered, CPU-friendly |
+| Motion graphics, kinetic type, product promo, UI animation, 3D web, Blender 3D shots (floor plans, turntables, 3D titles) | `vs-motion` | Code-rendered, CPU-friendly |
+| Record the user (camera, screen) or hand them an editable timeline | `vs-edit` desktop apps: OBS (record), Kdenlive via `.otio` (hand edit), LosslessCut (quick trims) | Portable apps in `AI-Localpps` |
 | Footage that does not exist yet (AI b-roll, image→video) | `vs-generate` | Local small models or GPU tier |
 | Narration, captions, music, sound effects | `vs-voice-captions` | Free local first |
 | Publish to TikTok / Shorts / Reels | `ecc-short-video-distribution` | Approval for every post |

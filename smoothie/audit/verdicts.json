@@ -153,12 +153,12 @@
   "size_kb": null
  },
  "blender/blender": {
-  "verdict": "LEFT OUT (out of scope)",
-  "merged_into": "vs-motion (3D, optional)",
-  "installed_at": "official installer, your choice",
-  "reason": "Desktop app (~0.5 GB); only for the Blender modes.",
+  "verdict": "INSTALL",
+  "merged_into": "vs-motion (Blender 3D mode), vs-real-estate, vs-lesson",
+  "installed_at": "C:\\Users\\Sharafath\\AI-Local\\apps\\blender-5.3.0",
+  "reason": "Installed 2026-11-24 on your request: 5.3.0 portable, SHA-256 matches download.blender.org, signed Blender Foundation; headless floor-plan/title/turntable renders PASS (Eevee, ~1 s per 540x960 frame).",
   "commit": "",
-  "evidence": "metadata + README review",
+  "evidence": "registry/metadata check",
   "size_kb": null
  },
  "bodila51/gtavi-claudecode": {
@@ -486,12 +486,12 @@
   "size_kb": 706981
  },
  "KDE/kdenlive": {
-  "verdict": "LEFT OUT (out of scope)",
-  "merged_into": "-",
-  "installed_at": "-",
-  "reason": "GUI editor, optional.",
+  "verdict": "INSTALL",
+  "merged_into": "vs-edit (editable timeline via .otio)",
+  "installed_at": "C:\\Users\\Sharafath\\AI-Local\\apps\\kdenlive-26.08.3",
+  "reason": "Installed 2026-11-24 on your request: 26.08.3 standalone, SHA-256 matches download.kde.org, kdenlive.exe signed KDE e.V. (melt.exe unsigned); melt render PASS; .otio validated with OpenTimelineIO 0.18.1; import via File menu not automated; kdenlive --render crashes in this build.",
   "commit": "",
-  "evidence": "metadata + README review",
+  "evidence": "registry/metadata check",
   "size_kb": null
  },
  "klad-app/klad": {
@@ -585,12 +585,12 @@
   "size_kb": null
  },
  "mifi/lossless-cut": {
-  "verdict": "LEFT OUT (out of scope)",
-  "merged_into": "vs-edit (GUI fallback)",
-  "installed_at": "official release, optional",
-  "reason": "GPL-2.0 GUI; optional manual tool.",
+  "verdict": "INSTALL",
+  "merged_into": "vs-edit (desktop apps)",
+  "installed_at": "C:\\Users\\Sharafath\\AI-Local\\apps\\losslesscut-3.70.2",
+  "reason": "Installed 2026-11-24 on your request: v3.70.2 portable, SHA-256 matches the GitHub release digest; Windows build is not code-signed by the project; launch test PASS.",
   "commit": "",
-  "evidence": "metadata + README review",
+  "evidence": "registry/metadata check",
   "size_kb": 31723
  },
  "mltframework/shotcut": {
@@ -684,12 +684,12 @@
   "size_kb": null
  },
  "obsproject/obs-studio": {
-  "verdict": "LEFT OUT (out of scope)",
-  "merged_into": "-",
-  "installed_at": "-",
-  "reason": "Recorder, optional official installer.",
+  "verdict": "INSTALL",
+  "merged_into": "vs-edit (desktop apps), vs-lesson",
+  "installed_at": "C:\\Users\\Sharafath\\AI-Local\\apps\\obs-studio-33.0.3",
+  "reason": "Installed 2026-11-24 on your request: 33.0.3 portable, SHA-256 matches the GitHub release digest, signed OBS Project LLC; profiles Reel 9x16 / Lesson 16x9, AMD H.264; scripted test recording PASS; obs-websocket off.",
   "commit": "",
-  "evidence": "metadata + README review",
+  "evidence": "registry/metadata check",
   "size_kb": null
  },
  "open-slide/open-slide": {

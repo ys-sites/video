@@ -25,6 +25,8 @@ description: Real-estate creator videos - listing tours from footage or from the
 4. Generated image→video (Wan i2v) only on the GPU tier and only with a yes; never add, remove or change features (truth in advertising): straight verticals, same furniture, same view.
 5. Room labels and price/beds/baths cards from `vs-motion`; music bed and captions from `vs-voice-captions`; QA and 9:16 export in `vs-edit`.
 
+**3D floor plan ("dollhouse") shot**: when the agent supplies a floor plan with room sizes, `vs-motion` Blender mode renders a slow 60° orbit of the plan with room labels (spec `kind: floorplan`, rooms in metres). Use it as the reel's layout beat (after the entry, before the rooms) or as the cover frame. Sizes come only from the agent's plan; never invent or enlarge rooms.
+
 ## Talking-head reels
 
 Captions (`pop-sticker` or `editorial-highlight`, caption gate), the installed `effects` skill for zooms, glass widgets and iMessage pop-ups (sparingly — one signature effect), b-roll cut-ins from the listing every 3–5 s, info cards for numbers (rates, prices, days on market) with the source in the notes.

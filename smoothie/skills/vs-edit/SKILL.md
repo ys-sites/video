@@ -49,9 +49,15 @@ Base layer of every job that has footage or rendered scenes. Engine: the ffmpeg-
 4. Contact sheet (`look.py --tiles 4x3`) viewed; first frame works as a thumbnail.
 5. Report what was verified and what was not (no vision → say the pixels were not inspected).
 
-## GUI fallbacks (manual, user-installed)
+## Desktop apps (installed portable in `C:\Users\Sharafath\AI-Local\apps`)
 
-LosslessCut (mifi/lossless-cut, GPL-2.0, official release) for fast manual lossless trims; Shotcut/Kdenlive for hand editing; HandBrake for batch transcodes. Not required by this skill.
+| App | Use it for | How |
+|---|---|---|
+| **OBS Studio 33.0.3** (`obs-studio-33.0.3\bin\64bit\obs64.exe`) | Recording the user: talking-head reels, screen lessons, tutorials | Portable config inside its folder. Profiles: **Reel 9x16** (1080×1920, default) and **Lesson 16x9** (1920×1080); AMD hardware H.264, hybrid MP4, saved to `C:\Users\Sharafath\Videos\OBS-recordings`. The user adds their camera/screen sources once. Remote control (obs-websocket) stays off. Start from a script only with quoted names: `--profile "Reel 9x16" --startrecording` (working dir `bin\64bit`) |
+| **Kdenlive 26.08.3** (`kdenlive-26.08.3\bin\kdenlive.exe`) | Handing the user an editable timeline to fine-tune by hand | Write the cut as an edit list, then `python scripts/to_otio.py edit.json cut.otio`; the user opens Kdenlive → File → Import → OpenTimelineIO. Opening the `.otio` directly is refused and `kdenlive --render` crashes in this build, so final renders stay in this skill (FFmpeg, or Kdenlive's `melt.exe` for an MLT timeline). The same `.otio` opens in DaVinci Resolve and Premiere |
+| **LosslessCut 3.70.2** (`losslesscut-3.70.2\LosslessCut.exe`) | The user's own quick trims and splits with no re-encode | Manual GUI tool; for scripted trims use `cut.py` |
+
+Not installed (covered elsewhere): HandBrake (export.py), Shotcut (Kdenlive), DaVinci Resolve (needs 16 GB RAM and a discrete GPU).
 
 ## Sources merged here (references only)
 

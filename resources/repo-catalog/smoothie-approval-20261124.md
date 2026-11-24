@@ -28,3 +28,16 @@ Previous hold (resolved):
   2. Claude Code's permission system blocked the install; it needs an explicit "install now" from the user (the earlier approval was conditional).
   3. SkillSpector coverage for `zeative/motion-educator` and `kaomei/stickman-video-director` is incomplete (scanner timeout); retry or explicit acceptance of the manual review.
 - Approved set once the hold clears: npm `gsap@3.15.1`, `three@0.187.0`, `lottie-web@5.13.0`, `hyperframes@0.9.87` (all `--ignore-scripts`); `video-py` venv from `smoothie/install/video-py.lock.txt`; engines at the pinned commit + tree hash in `install.ps1` (ffmpeg-skill, sfx-generator, cinematic-film, still-to-film [`--no-upscale` only], motion-educator, stickman-director [code engine only], paper2video [inside video-py]); the eight `vs-*` skills.
+
+## Addendum: desktop apps (2026-11-24)
+
+User instruction (verbatim): "yes do whatd helpful and useful", answering the proposal to add Blender, OBS Studio, Kdenlive and LosslessCut. Installed as portable official builds in `C:\Users\Sharafath\AI-Local\apps`; no system installer, no admin rights.
+
+| Package | Source | SHA-256 (verified before extraction) | Signature |
+|---|---|---|---|
+| blender-5.3.0-windows-x64.zip | download.blender.org (published .sha256) | 3ac567a63d59d9934f7b9213bfb27ba05760e1fb366f8f55c381573ec3eabfa8 | Blender Foundation, valid |
+| OBS-Studio-33.0.3-Windows-x64.zip | github.com/obsproject/obs-studio release (asset digest) | 18a68c325adbda6f6082d5281021a8d1e35a6432842800618e8690b71925c107 | OBS Project LLC, valid |
+| kdenlive-26.08.3_standalone.exe | download.kde.org (published .sha256); extracted with 7-Zip, not executed | a25427b1dff2c17e3b0386e991bb1a719382bb3176d1a90e441cdaeb6e0a967d | kdenlive.exe KDE e.V. valid; wrapper and melt.exe unsigned |
+| LosslessCut-win-x64.7z | github.com/mifi/lossless-cut v3.70.2 (asset digest) | 1740c5f17b952c04cf1b1612cf32f56c68a88105c045199526c7ea9678d309b0 | not signed by the project |
+
+Settings: Blender runs with `--factory-startup` (online access and extensions off); OBS portable mode, updater disabled, obs-websocket off; LosslessCut may check GitHub for updates on start (can be turned off in its settings). Verification used OpenTimelineIO 0.18.1 from PyPI in a throwaway `uv run --isolated` environment (not installed).

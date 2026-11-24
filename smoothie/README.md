@@ -68,6 +68,19 @@ Approved by the user after a full Bitdefender scan of the quarantine (242,067 it
 | captions-skill on a real video | NOT RUN (needs your video and your approval of the 1.5 s / 4 s / 8 s frames) |
 | still-to-film depth model | NOT RUN (downloads Depth Anything V2, 1.3 GB, on first use) |
 
+### Desktop apps added 2026-11-24 (your "yes do whatd helpful and useful")
+
+Portable, official builds in `C:\Users\Sharafath\AI-Local\apps` (2.74 GB), each SHA-256 checked against the publisher's checksum before extraction; Start Menu folder **AI-Local video apps**.
+
+| App | Signature | Smoke test | Wired into |
+|---|---|---|---|
+| Blender 5.3.0 | Valid (Blender Foundation) | PASS: headless floor-plan "dollhouse" orbit (4 s, 120 frames at 540x960 in 128 s, Eevee on the Vega 8), 3D title and turntable proof frames | `vs-motion` Blender mode (`scripts/blender_scene.py`, `references/blender.md`), `vs-real-estate`, `vs-lesson` |
+| OBS Studio 33.0.3 | Valid (OBS Project LLC) | PASS: scripted 7 s colour-card recording, AMD hardware H.264, hybrid MP4; remote control (obs-websocket) off | `vs-edit` desktop apps, `vs-lesson`; profiles Reel 9x16 (default) and Lesson 16x9, saving to `Videos\OBS-recordings` |
+| Kdenlive 26.08.3 | kdenlive.exe valid (KDE e.V.); melt.exe unsigned | PASS: MLT timeline rendered with its melt engine; `.otio` from `vs-edit/scripts/to_otio.py` validated with OpenTimelineIO 0.18.1. NOT VERIFIED: the File → Import → OpenTimelineIO click itself. `kdenlive --render` crashes in this build | `vs-edit` (hand the user an editable timeline) |
+| LosslessCut 3.70.2 | Not signed by the project (hash verified) | PASS: launches | `vs-edit` (manual quick trims) |
+
+During the Kdenlive test a keyboard-automation attempt sent Esc and Alt+F to the browser instead of Kdenlive (Windows reported the wrong window as focused) and a capture of that window was taken; the menu was closed with Esc and the capture deleted. Keyboard automation is not used again.
+
 Settings made (user environment): `HYPERFRAMES_NO_TELEMETRY=1`, `DO_NOT_TRACK=1`, `HYPERFRAMES_SKIP_SKILLS=1`, `HYPERFRAMES_BROWSER_PATH` and `PLAYWRIGHT_BROWSERS_PATH` = one shared Chromium, `WHISPER_MODEL=small`.
 
 Side effect caught and reverted: `hyperframes init` installed six HyperFrames agent skills into `~/.claude/skills` and `~/.agents/skills`. They were moved (not deleted) to `AI-Local/engines/video-js/_held-skills/`; SkillSpector rated two DO_NOT_INSTALL, two CAUTION, two incomplete. They stay inactive unless reviewed and approved.
