@@ -1,0 +1,176 @@
+{
+  "source": "https://github.com/affaan-m/ECC",
+  "commit": "4adeee6732a12d1540f49a4d50a38ce8c97f9a53",
+  "license": "MIT (Copyright (c) 2026 Affaan Mustafa)",
+  "installed_utc": "2026-11-24T04:07:52+00:00",
+  "method": "Curated copy of skill folders from resources/repo-quarantine/affaan-m/ECC; nothing executed. Frontmatter name prefixed with ecc-; a \"This workspace\" section was appended to each SKILL.md.",
+  "approval": "User request 2026-11-23: \"pull ECC and implement its skills with my system\". Covers these markdown skills only; the ECC plugin, hooks, installers, and scripts remain unapproved.",
+  "skills": {
+    "ecc-video-editing": {
+      "upstream_path": "skills/video-editing",
+      "files": {
+        "SKILL.md": "4ab8c9ef5a511e8a0de9ed375b9edbbfa74f23a0881519d2aceea67e7252b197"
+      }
+    },
+    "ecc-taste": {
+      "upstream_path": "skills/taste",
+      "files": {
+        "references/genre-taxonomy.md": "56b0a37d643c79b0b18f67053e4733ffc383f82c7c9e1134f3c6e21e295d8c77",
+        "SKILL.md": "c0aa611b4d150d2d8356fb29d0cc437e48a4e5ceeb870c609229b9afa78bb9cf"
+      }
+    },
+    "ecc-short-video-distribution": {
+      "upstream_path": "skills/short-video-distribution",
+      "files": {
+        "SKILL.md": "269ab67ee4314be16660bfa2ddf643eb1992bee972ba5a7479419cf4bd16ffc1"
+      }
+    },
+    "ecc-manim-video": {
+      "upstream_path": "skills/manim-video",
+      "files": {
+        "assets/network_graph_scene.py": "5d8ef9a5c55b244610a910229d195b10a5bb0b7d7e2add584b9915be6aa8a306",
+        "SKILL.md": "bb890b019664a995ca2bf6c08add444a85099caf4c0085de50e9ad6f62d62d5f"
+      }
+    },
+    "ecc-ui-demo": {
+      "upstream_path": "skills/ui-demo",
+      "files": {
+        "SKILL.md": "893eee77f98f52d28bffa6bbababa7481300cc13535dea519fa0cc1b0168b2f8"
+      }
+    },
+    "ecc-motion-foundations": {
+      "upstream_path": "skills/motion-foundations",
+      "files": {
+        "SKILL.md": "ac0dd6de088e8cf2bff57230b365469e893c5f3a9578815a7f113689d0401972"
+      }
+    },
+    "ecc-motion-patterns": {
+      "upstream_path": "skills/motion-patterns",
+      "files": {
+        "SKILL.md": "9d78bcd2c3b52abdb6fb29162f289b9c709547de264ad064b12e00bedb031907"
+      }
+    },
+    "ecc-motion-advanced": {
+      "upstream_path": "skills/motion-advanced",
+      "files": {
+        "SKILL.md": "1ee09b942bf328ffa97148bed838ecc8789c1891ca441abccdca52b4c47a9742"
+      }
+    },
+    "ecc-frontend-design-direction": {
+      "upstream_path": "skills/frontend-design-direction",
+      "files": {
+        "scripts/check-evidence.js": "f1cefbb0c2e15ea42b82f1b11d063c54cf949acc12b5574046025c62549b6db6",
+        "SKILL.md": "71a40f7bc4a28da01b54527fe5590f6055c93adc630e6ceee8c892b35c980893"
+      }
+    },
+    "ecc-frontend-patterns": {
+      "upstream_path": "skills/frontend-patterns",
+      "files": {
+        "SKILL.md": "a5b971eb9e74cd763c7e3308bfd888e0d9cf69f8b88477659889d77182479740"
+      }
+    },
+    "ecc-react-patterns": {
+      "upstream_path": "skills/react-patterns",
+      "files": {
+        "SKILL.md": "f3208d44a5d553038c42e046cec4dc16e4a3d90a9dbf931f883a2e21919a64a9"
+      }
+    },
+    "ecc-react-testing": {
+      "upstream_path": "skills/react-testing",
+      "files": {
+        "SKILL.md": "51c18b4e28285bb876ef469e47c6f53108b5a9f900950a60e897c3c24826a65e"
+      }
+    },
+    "ecc-vite-patterns": {
+      "upstream_path": "skills/vite-patterns",
+      "files": {
+        "SKILL.md": "2238d353196b6732ba897e32f1872078fde7a9d11f5aca43b53da8bfc7e3917d"
+      }
+    },
+    "ecc-typescript-patterns": {
+      "upstream_path": "skills/typescript-patterns",
+      "files": {
+        "SKILL.md": "826b574c2dfc0421143e65a2808e753f2341677be7c925e4bf0ee4d3a0c3c301"
+      }
+    },
+    "ecc-seo": {
+      "upstream_path": "skills/seo",
+      "files": {
+        "SKILL.md": "4b744d2ff5c9313e903e4e5139322cc98adb9f9778a7231d4826216ab0f6873a"
+      }
+    },
+    "ecc-make-interfaces-feel-better": {
+      "upstream_path": "skills/make-interfaces-feel-better",
+      "files": {
+        "SKILL.md": "aff91aef917cba9c65681ae77197cee93ce9b697ee8916ea684ef8537c99fb52"
+      }
+    },
+    "ecc-accessibility": {
+      "upstream_path": "skills/accessibility",
+      "files": {
+        "SKILL.md": "09910fdadf0d7e6ce8a40708f02909491b22a1964aa5f71f7fa3258921c6d300"
+      }
+    },
+    "ecc-frontend-a11y": {
+      "upstream_path": "skills/frontend-a11y",
+      "files": {
+        "SKILL.md": "e00991a3f4d47fcf1529dd74a080afcf46137dc5061e70dc6e3da7b27f2ae3f3"
+      }
+    },
+    "ecc-design-system": {
+      "upstream_path": "skills/design-system",
+      "files": {
+        "SKILL.md": "1969e4cb6cd13cdafff5f84353047d6e55cebc24e1a595ec48e6e2c666f3d8b1"
+      }
+    },
+    "ecc-e2e-testing": {
+      "upstream_path": "skills/e2e-testing",
+      "files": {
+        "SKILL.md": "b0e00e7e17cb259101139900816c5528aed18dd10bcf5f9cb42cfc35baf8a755"
+      }
+    },
+    "ecc-verification-loop": {
+      "upstream_path": "skills/verification-loop",
+      "files": {
+        "SKILL.md": "9ee288d426660b0c785f534a003a4960fb4d8083a21302d8a4fd9b035b2edbb1"
+      }
+    },
+    "ecc-browser-qa": {
+      "upstream_path": "skills/browser-qa",
+      "files": {
+        "SKILL.md": "6226f5fb711aca989a3c7fec9e0eeab15049741b54dc5bbe4165fc95a1e1d967"
+      }
+    },
+    "ecc-web-perimeter-owasp-2025-audit": {
+      "upstream_path": "skills/web-perimeter-owasp-2025-audit",
+      "files": {
+        "SKILL.md": "ab3ff77ec3d557d24a38819ff83af926510146a7400dc17b66353f03dff6c1b7"
+      }
+    },
+    "ecc-content-engine": {
+      "upstream_path": "skills/content-engine",
+      "files": {
+        "SKILL.md": "a1ccc0ecfe30ae53db26a73159a80ecad8c63a6a96c461a297789d889bf9ad2c"
+      }
+    },
+    "ecc-brand-voice": {
+      "upstream_path": "skills/brand-voice",
+      "files": {
+        "references/voice-profile-schema.md": "3c5c2b04fd4b68642d2d3279829541bc56d211fdefc3498e86c1486abee8261b",
+        "SKILL.md": "57c7f8440b7bd4c91c0d325640b5c6fb7a3dc7fc05595946c7bc705761a987a7"
+      }
+    },
+    "ecc-marketing-campaign": {
+      "upstream_path": "skills/marketing-campaign",
+      "files": {
+        "SKILL.md": "f4d2501b1abb19f7ef5f73b21afa5a7ea51c5dc3d766e8dbd239ec548899213f"
+      }
+    },
+    "ecc-search-first": {
+      "upstream_path": "skills/search-first",
+      "files": {
+        "SKILL.md": "76835db48dd910061d2e4271b1151793d2fddbabeb2d2866eed068b3580c55d5"
+      }
+    }
+  }
+}

@@ -24,7 +24,7 @@ def words(value: str) -> set[str]:
 
 def skill_index() -> list[dict]:
     result = []
-    for folder, dirs, files in itertools.chain(os.walk(LIBRARY, followlinks=False), os.walk(ROOT / 'resources' / 'motion-systems', followlinks=False)):
+    for folder, dirs, files in itertools.chain(os.walk(LIBRARY, followlinks=False), os.walk(ROOT / 'resources' / 'motion-systems', followlinks=False), os.walk(ROOT / '.claude' / 'skills', followlinks=False)):
         base = Path(folder)
         dirs[:] = [d for d in dirs if d not in {'.git', 'node_modules', '.venv', 'venv', 'dist', 'build', '__pycache__'} and not (base / d).is_symlink()]
         if 'SKILL.md' not in files: continue
@@ -35,7 +35,7 @@ def skill_index() -> list[dict]:
         fm = text.split('---', 2)[1] if text.startswith('---') and text.count('---') >= 2 else ''
         name = re.search(r'^name:\s*["\']?([^\r\n"\']+)', fm, re.M)
         desc = re.search(r'^description:\s*["\']?([^\r\n"\']+)', fm, re.M)
-        result.append({'name': name.group(1).strip() if name else base.name, 'description': desc.group(1).strip() if desc else '', 'path': str(path.relative_to(ROOT)).replace('\\', '/'), 'status': 'unreviewed_reference'})
+        result.append({'name': name.group(1).strip() if name else base.name, 'description': desc.group(1).strip() if desc else '', 'path': str(path.relative_to(ROOT)).replace('\\', '/'), 'status': 'installed_project_skill' if base.parent == ROOT / '.claude' / 'skills' else 'unreviewed_reference'})
     return sorted(result, key=lambda x: x['path'].lower())
 
 def repositories() -> list[dict]:

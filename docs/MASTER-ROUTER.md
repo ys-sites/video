@@ -25,6 +25,7 @@ One map of every tool, skill, repo and asset in this workspace. For any request 
 | Website (live: masvid.vercel.app, Vercel project `master-video-styles`, root directory `master-video-styles/`, no build step) | Pages are generated: edit `master-video-styles/data/*.json` or `scripts/build.py`, then `python master-video-styles/scripts/build.py` (index, styles, skills, reels). The AI Editor at `/editor/` is the Vite app (`src/App.tsx`, `src/components/AIEditorStudio.tsx`): `npm run lint`, then `npm run build:live` and commit `master-video-styles/editor/`. Home layout follows opus.pro/ai-video-editor (`docs/ai-editor-research.md`) | Vercel deploys from `main` |
 | Security check of the website | 20-attack prompt (static SPA: none apply today); hardening = headers in `vercel.json`, no keys in `vite.config.ts` `define` | — |
 | Security check of a new repo | §4 | `resources/repo-catalog/` |
+| ECC add-ons: footage cutting, music-video taste, Manim, UI demo videos, posting Shorts/Reels/TikTok; website design, motion, React/Vite, a11y, SEO, QA, passive security; content, brand voice, campaigns | `docs/ecc-skills-routing.md` → project skills `.claude/skills/ecc-*` (layer them on the routes above, never in place of them) | Per skill; posting always needs approval |
 | Automation (watch feeds, auto-post, notify) | Huginn (`resources/repo-quarantine/huginn/huginn`) — needs Docker; not installed | — |
 
 Unsure which skill fits? `python tools/resource_catalog.py route "<task>"` suggests candidates (it never runs them).
@@ -47,6 +48,7 @@ Unsure which skill fits? `python tools/resource_catalog.py route "<task>"` sugge
 | open-higgsfield-ai, Open-Generative-AI | `resources/repo-quarantine/...` | Reviewed; front ends for paid **muapi.ai** API | Hosted image/video generation with a muapi key |
 | FreeVideo (MiniMax H3, `FlashML-org/FreeVideo` 2259974) | `resources/repo-quarantine/FlashML-org/FreeVideo` | Triaged 2026-11-20, no malicious indicators, **not approved**. Hard-requires NVIDIA RTX 30+ (≥ 8 GB VRAM) or Apple-silicon Mac; refuses this PC | Best open text/image→video with audio, ~60 s, drama/shot tools; has its own MCP + Claude skill. Cloud GPU only |
 | HunyuanVideo, Open-Sora, LongCat-Video-Avatar, HeyGem, WanGP (large models) | `resources/repo-quarantine/...` | Too large for this PC | Cloud GPU route (§3) |
+| ECC skills (27, `affaan-m/ECC` 4adeee6, MIT) | `.claude/skills/ecc-*`; source `resources/repo-quarantine/affaan-m/ECC` | Installed 2026-11-23 at the user's request: markdown skills only, triaged (`resources/repo-catalog/quarantine-triage-20261123-ecc.md`), checksums in `.claude/skills/ECC-PROVENANCE.json`. ECC plugin, 56 hooks, installers and scripts **not** installed | See `docs/ecc-skills-routing.md` |
 | 12 security tools | `resources/security-tools/*`, `resources/skillspector-source` | Source staged; SkillSpector installed in WSL | §4 |
 
 ## 3. Local AI stack
