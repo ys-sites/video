@@ -1,0 +1,2765 @@
+{
+ "created_utc": "2026-11-24T05:14:29+00:00",
+ "isolation": "bwrap --unshare-all (no network), prlimit, --no-llm",
+ "results": [
+  {
+   "repository": "AustinZ21/cinematic-skills",
+   "skill_path": "skills/shot-director",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 7,
+   "recommendation": "CAUTION",
+   "issue_count": 1,
+   "issues": [
+    {
+     "rule": "OH3",
+     "severity": "MEDIUM",
+     "file": "references/moves.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "AustinZ21/cinematic-skills",
+   "skill_path": "skills/still-to-film",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 62,
+   "recommendation": "DO_NOT_INSTALL",
+   "issue_count": 9,
+   "issues": [
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/contact_sheet.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/contact_sheet.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/finish.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/finish.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/flash_check.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/flash_check.py",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "Moh4696/cinematic-skill",
+   "skill_path": "skills/cinematic-film",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 42,
+   "recommendation": "CAUTION",
+   "issue_count": 19,
+   "issues": [
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/build_narration.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/mix_soundtrack.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/split_takes.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/build_sfx.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/burn_captions.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/burn_captions.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/burn_captions.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/burn_captions.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/burn_captions.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/render.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/check_setup.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/check_setup.py",
+     "message": ""
+    },
+    {
+     "rule": "AST3",
+     "severity": "MEDIUM",
+     "file": "scripts/render.py",
+     "message": ""
+    },
+    {
+     "rule": "AST3",
+     "severity": "MEDIUM",
+     "file": "scripts/render.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/render.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/render.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/tts_say.py",
+     "message": ""
+    },
+    {
+     "rule": "AST7",
+     "severity": "LOW",
+     "file": "scripts/captions.py",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "iamaanahmad/agents-video-editing-skills",
+   "skill_path": "skills/audio-mixing",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "iamaanahmad/agents-video-editing-skills",
+   "skill_path": "skills/captions-subtitles",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "iamaanahmad/agents-video-editing-skills",
+   "skill_path": "skills/ffmpeg-essentials",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "iamaanahmad/agents-video-editing-skills",
+   "skill_path": "skills/motion-design-craft",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "iamaanahmad/agents-video-editing-skills",
+   "skill_path": "skills/moviepy-python-video",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "iamaanahmad/agents-video-editing-skills",
+   "skill_path": "skills/platform-export",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 18,
+   "recommendation": "SAFE",
+   "issue_count": 2,
+   "issues": [
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/export_platforms.py",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "iamaanahmad/agents-video-editing-skills",
+   "skill_path": "skills/remotion-programmatic-video",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 15,
+   "recommendation": "SAFE",
+   "issue_count": 4,
+   "issues": [
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "iamaanahmad/agents-video-editing-skills",
+   "skill_path": "skills/screen-recording-demos",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "iamaanahmad/agents-video-editing-skills",
+   "skill_path": "skills/thumbnails",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "iamaanahmad/agents-video-editing-skills",
+   "skill_path": "skills/vertical-shorts",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "iamaanahmad/agents-video-editing-skills",
+   "skill_path": "skills/video-editing-router",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "iamaanahmad/agents-video-editing-skills",
+   "skill_path": "skills/video-planning",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "iamaanahmad/agents-video-editing-skills",
+   "status": "partial",
+   "note": "14 SKILL.md folders; first 12 scanned"
+  },
+  {
+   "repository": "ffmpeg-skill/skills",
+   "skill_path": "ffmpeg-skill",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 41,
+   "recommendation": "CAUTION",
+   "issue_count": 2,
+   "issues": [
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "saranambiar/hyperframes-video-agent-skills",
+   "skill_path": "skills/audio-sync-assembly",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "saranambiar/hyperframes-video-agent-skills",
+   "skill_path": "skills/captions-and-music-bed",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "saranambiar/hyperframes-video-agent-skills",
+   "skill_path": "skills/end-to-end-video-playbook",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "saranambiar/hyperframes-video-agent-skills",
+   "skill_path": "skills/hyperframes-scene-builder",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 15,
+   "recommendation": "SAFE",
+   "issue_count": 3,
+   "issues": [
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "saranambiar/hyperframes-video-agent-skills",
+   "skill_path": "skills/motion-design-systems",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 9,
+   "recommendation": "SAFE",
+   "issue_count": 1,
+   "issues": [
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "saranambiar/hyperframes-video-agent-skills",
+   "skill_path": "skills/product-demo-integration",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "saranambiar/hyperframes-video-agent-skills",
+   "skill_path": "skills/render-qa-and-surgical-changes",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "saranambiar/hyperframes-video-agent-skills",
+   "skill_path": "skills/scene-continuity-and-transitions",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "saranambiar/hyperframes-video-agent-skills",
+   "skill_path": "skills/video-intake-and-storyboard",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 18,
+   "recommendation": "SAFE",
+   "issue_count": 2,
+   "issues": [
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "EA2",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "runesleo/claude-video-kit",
+   "skill_path": "skills/video-explainer",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 25,
+   "recommendation": "CAUTION",
+   "issue_count": 4,
+   "issues": [
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/setup-and-doctor.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "vincentwei1021/video-shotcraft",
+   "skill_path": ".",
+   "status": "scanner_incomplete",
+   "exit_code": 137,
+   "error": ""
+  },
+  {
+   "repository": "zeative/motion-educator",
+   "skill_path": ".",
+   "status": "scanner_incomplete",
+   "exit_code": 137,
+   "error": ""
+  },
+  {
+   "repository": "lunamos/paper2video",
+   "skill_path": "skills/paper2video",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 100,
+   "recommendation": "DO_NOT_INSTALL",
+   "issue_count": 80,
+   "issues": [
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "PE3",
+     "severity": "HIGH",
+     "file": "scripts/common.py",
+     "message": ""
+    },
+    {
+     "rule": "AST5",
+     "severity": "HIGH",
+     "file": "scripts/common.py",
+     "message": ""
+    },
+    {
+     "rule": "TM2",
+     "severity": "HIGH",
+     "file": "scripts/finalize.sh",
+     "message": ""
+    },
+    {
+     "rule": "PE3",
+     "severity": "HIGH",
+     "file": "scripts/new_video.sh",
+     "message": ""
+    },
+    {
+     "rule": "PE3",
+     "severity": "HIGH",
+     "file": "scripts/new_video.sh",
+     "message": ""
+    },
+    {
+     "rule": "PE3",
+     "severity": "HIGH",
+     "file": "scripts/new_video.sh",
+     "message": ""
+    },
+    {
+     "rule": "PE3",
+     "severity": "HIGH",
+     "file": "scripts/new_video.sh",
+     "message": ""
+    },
+    {
+     "rule": "PE3",
+     "severity": "HIGH",
+     "file": "scripts/new_video.sh",
+     "message": ""
+    },
+    {
+     "rule": "PE3",
+     "severity": "HIGH",
+     "file": "scripts/vo.py",
+     "message": ""
+    },
+    {
+     "rule": "TM1",
+     "severity": "HIGH",
+     "file": "scripts/new_video.sh",
+     "message": ""
+    },
+    {
+     "rule": "YR4",
+     "severity": "HIGH",
+     "file": "scripts/zh_font_subset.py",
+     "message": ""
+    },
+    {
+     "rule": "TM1",
+     "severity": "HIGH",
+     "file": "template/README.md",
+     "message": ""
+    },
+    {
+     "rule": "OH1",
+     "severity": "HIGH",
+     "file": "template/src/components/core.tsx",
+     "message": ""
+    },
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "template/README.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "scripts/new_video.sh",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "template/README.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "kaomei/stickman-video-director",
+   "skill_path": "skills/directing-stickman-videos",
+   "status": "scanner_incomplete",
+   "exit_code": 137,
+   "error": ""
+  },
+  {
+   "repository": "qualixar/brief2mp4",
+   "skill_path": "plugin/skills/brief2mp4",
+   "status": "scanner_incomplete",
+   "exit_code": 137,
+   "error": ""
+  },
+  {
+   "repository": "staryone/motlab",
+   "skill_path": "skills/motlab",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 100,
+   "recommendation": "DO_NOT_INSTALL",
+   "issue_count": 30,
+   "issues": [
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "P2",
+     "severity": "HIGH",
+     "file": "templates/font-specimen.html",
+     "message": ""
+    },
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/compose_into_clip.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/compose_into_clip.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/compose_into_clip.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/cut_pauses.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/cut_pauses.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/cut_pauses.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/cut_pauses.py",
+     "message": ""
+    },
+    {
+     "rule": "E1",
+     "severity": "MEDIUM",
+     "file": "scripts/get_sfx.py",
+     "message": ""
+    },
+    {
+     "rule": "TT2",
+     "severity": "MEDIUM",
+     "file": "scripts/get_sfx.py",
+     "message": ""
+    },
+    {
+     "rule": "TT2",
+     "severity": "MEDIUM",
+     "file": "scripts/get_sfx.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/mix.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/mix.py",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "staryone/motlab",
+   "skill_path": "skills/motlab-assets",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 66,
+   "recommendation": "DO_NOT_INSTALL",
+   "issue_count": 4,
+   "issues": [
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "hypit-ai/hypit",
+   "skill_path": "skills/hypit",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 67,
+   "recommendation": "DO_NOT_INSTALL",
+   "issue_count": 7,
+   "issues": [
+    {
+     "rule": "P6",
+     "severity": "HIGH",
+     "file": "references/playbooks/craft/image-direction.md",
+     "message": ""
+    },
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/environment/distribution.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/environment/distribution.md",
+     "message": ""
+    },
+    {
+     "rule": "EA2",
+     "severity": "MEDIUM",
+     "file": "references/environment/model-and-provider.md",
+     "message": ""
+    },
+    {
+     "rule": "EA2",
+     "severity": "MEDIUM",
+     "file": "references/playbooks/craft/video-direction.md",
+     "message": ""
+    },
+    {
+     "rule": "EA2",
+     "severity": "MEDIUM",
+     "file": "references/production/track-authoring.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "yian6557/eian-riso-broll",
+   "skill_path": ".",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 100,
+   "recommendation": "DO_NOT_INSTALL",
+   "issue_count": 10,
+   "issues": [
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": ".github/workflows/ci.yml",
+     "message": ""
+    },
+    {
+     "rule": "TM2",
+     "severity": "HIGH",
+     "file": ".github/workflows/ci.yml",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": ".gitignore",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "PE2",
+     "severity": "MEDIUM",
+     "file": ".github/workflows/ci.yml",
+     "message": ""
+    },
+    {
+     "rule": "PE2",
+     "severity": "MEDIUM",
+     "file": ".github/workflows/ci.yml",
+     "message": ""
+    },
+    {
+     "rule": "PE2",
+     "severity": "MEDIUM",
+     "file": ".github/workflows/ci.yml",
+     "message": ""
+    },
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "thisisvela/sfx-generator-skill",
+   "skill_path": ".agents/skills/create-sound-recipe",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 0,
+   "recommendation": "CAUTION",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "thisisvela/sfx-generator-skill",
+   "skill_path": ".agents/skills/make-sound-effect",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 88,
+   "recommendation": "DO_NOT_INSTALL",
+   "issue_count": 8,
+   "issues": [
+    {
+     "rule": "AR2",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AR2",
+     "severity": "HIGH",
+     "file": "references/lessons.md",
+     "message": ""
+    },
+    {
+     "rule": "AR2",
+     "severity": "HIGH",
+     "file": "references/lessons.md",
+     "message": ""
+    },
+    {
+     "rule": "AR2",
+     "severity": "HIGH",
+     "file": "references/lessons.md",
+     "message": ""
+    },
+    {
+     "rule": "AR2",
+     "severity": "HIGH",
+     "file": "references/lessons.md",
+     "message": ""
+    },
+    {
+     "rule": "AR2",
+     "severity": "HIGH",
+     "file": "references/lessons.md",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE4",
+     "severity": "MEDIUM",
+     "file": "references/blocks.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "thisisvela/sfx-generator-skill",
+   "skill_path": "skills/create-sound-recipe",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 0,
+   "recommendation": "CAUTION",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "thisisvela/sfx-generator-skill",
+   "skill_path": "skills/make-sound-effect",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 88,
+   "recommendation": "DO_NOT_INSTALL",
+   "issue_count": 8,
+   "issues": [
+    {
+     "rule": "AR2",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AR2",
+     "severity": "HIGH",
+     "file": "references/lessons.md",
+     "message": ""
+    },
+    {
+     "rule": "AR2",
+     "severity": "HIGH",
+     "file": "references/lessons.md",
+     "message": ""
+    },
+    {
+     "rule": "AR2",
+     "severity": "HIGH",
+     "file": "references/lessons.md",
+     "message": ""
+    },
+    {
+     "rule": "AR2",
+     "severity": "HIGH",
+     "file": "references/lessons.md",
+     "message": ""
+    },
+    {
+     "rule": "AR2",
+     "severity": "HIGH",
+     "file": "references/lessons.md",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE4",
+     "severity": "MEDIUM",
+     "file": "references/blocks.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "alisa0808/vox-director",
+   "skill_path": ".",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 100,
+   "recommendation": "DO_NOT_INSTALL",
+   "issue_count": 82,
+   "issues": [
+    {
+     "rule": "TT3",
+     "severity": "CRITICAL",
+     "file": "scripts/atlas_cloud.py",
+     "message": ""
+    },
+    {
+     "rule": "TT3",
+     "severity": "CRITICAL",
+     "file": "vox-director.skill!/vox-director/scripts/atlas_cloud.py",
+     "message": ""
+    },
+    {
+     "rule": "TT3",
+     "severity": "CRITICAL",
+     "file": "scripts/atlas_cloud.py",
+     "message": ""
+    },
+    {
+     "rule": "TT3",
+     "severity": "CRITICAL",
+     "file": "vox-director.skill!/vox-director/scripts/atlas_cloud.py",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": ".gitignore",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": "vox-director.skill",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": "vox-director.skill!/vox-director/scripts/aroll_assemble.py",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": "vox-director.skill!/vox-director/scripts/aroll_clips.py",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": "vox-director.skill!/vox-director/scripts/asr_beats.py",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": "vox-director.skill!/vox-director/scripts/assemble.py",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": "vox-director.skill!/vox-director/scripts/atlas_cloud.py",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": "vox-director.skill!/vox-director/scripts/audio.py",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": "vox-director.skill!/vox-director/scripts/clips.py",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": "vox-director.skill!/vox-director/scripts/confetti.py",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": "vox-director.skill!/vox-director/scripts/croll_keyframes.py",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": "vox-director.skill!/vox-director/scripts/extract_elements.py",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": "vox-director.skill!/vox-director/scripts/host.py",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": "vox-director.skill!/vox-director/scripts/host_clips.py",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": "vox-director.skill!/vox-director/scripts/host_plates.py",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": "vox-director.skill!/vox-director/scripts/kenburns.py",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": "vox-director.skill!/vox-director/scripts/keyframes.py",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": "vox-director.skill!/vox-director/scripts/lipsync_score.py",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": "vox-director.skill!/vox-director/scripts/mg_scrapbook.py",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": "vox-director.skill!/vox-director/scripts/motion.py",
+     "message": ""
+    },
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": "vox-director.skill!/vox-director/scripts/provider.py",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "zhouxiaoka/autoclip",
+   "skill_path": "skills/autoclip",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 23,
+   "recommendation": "CAUTION",
+   "issue_count": 3,
+   "issues": [
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AS3",
+     "severity": "MEDIUM",
+     "file": "references/legacy.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "zhouxiaoka/autoclip",
+   "skill_path": "skills/product-board",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "jakeschincariol/instagram-agent-skill",
+   "skill_path": "skills/ig-audit",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "jakeschincariol/instagram-agent-skill",
+   "skill_path": "skills/ig-caption",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "jakeschincariol/instagram-agent-skill",
+   "skill_path": "skills/ig-carousel",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "jakeschincariol/instagram-agent-skill",
+   "skill_path": "skills/ig-comment",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "jakeschincariol/instagram-agent-skill",
+   "skill_path": "skills/ig-dm",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "jakeschincariol/instagram-agent-skill",
+   "skill_path": "skills/ig-human",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 9,
+   "recommendation": "SAFE",
+   "issue_count": 1,
+   "issues": [
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "jakeschincariol/instagram-agent-skill",
+   "skill_path": "skills/ig-plan",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 7,
+   "recommendation": "SAFE",
+   "issue_count": 1,
+   "issues": [
+    {
+     "rule": "RA2",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "jakeschincariol/instagram-agent-skill",
+   "skill_path": "skills/ig-profile",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "jakeschincariol/instagram-agent-skill",
+   "skill_path": "skills/ig-reel",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "jakeschincariol/instagram-agent-skill",
+   "skill_path": "skills/ig-reply",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "jakeschincariol/instagram-agent-skill",
+   "skill_path": "skills/ig-repurpose",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "jakeschincariol/instagram-agent-skill",
+   "skill_path": "skills/ig-story",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "jakeschincariol/instagram-agent-skill",
+   "status": "partial",
+   "note": "13 SKILL.md folders; first 12 scanned"
+  },
+  {
+   "repository": "mromidev/claude-blender-skills",
+   "skill_path": "skills/blender-car-film",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 100,
+   "recommendation": "DO_NOT_INSTALL",
+   "issue_count": 11,
+   "issues": [
+    {
+     "rule": "TT3",
+     "severity": "CRITICAL",
+     "file": "scripts/gen_sfx.py",
+     "message": ""
+    },
+    {
+     "rule": "TT3",
+     "severity": "CRITICAL",
+     "file": "scripts/gen_sfx.py",
+     "message": ""
+    },
+    {
+     "rule": "AST8",
+     "severity": "CRITICAL",
+     "file": "tools/bridge.py",
+     "message": ""
+    },
+    {
+     "rule": "AST1",
+     "severity": "HIGH",
+     "file": "tools/bridge.py",
+     "message": ""
+    },
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AST3",
+     "severity": "MEDIUM",
+     "file": "scripts/07_anim.py",
+     "message": ""
+    },
+    {
+     "rule": "AST3",
+     "severity": "MEDIUM",
+     "file": "scripts/07_anim.py",
+     "message": ""
+    },
+    {
+     "rule": "E1",
+     "severity": "MEDIUM",
+     "file": "scripts/dl_ph.py",
+     "message": ""
+    },
+    {
+     "rule": "E1",
+     "severity": "MEDIUM",
+     "file": "scripts/gen_sfx.py",
+     "message": ""
+    },
+    {
+     "rule": "E1",
+     "severity": "MEDIUM",
+     "file": "scripts/gen_sfx.py",
+     "message": ""
+    },
+    {
+     "rule": "AST6",
+     "severity": "MEDIUM",
+     "file": "tools/bridge.py",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "mromidev/claude-blender-skills",
+   "skill_path": "skills/blender-film",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 100,
+   "recommendation": "DO_NOT_INSTALL",
+   "issue_count": 39,
+   "issues": [
+    {
+     "rule": "AST8",
+     "severity": "CRITICAL",
+     "file": "scripts/02_path_empty.py",
+     "message": ""
+    },
+    {
+     "rule": "AST8",
+     "severity": "CRITICAL",
+     "file": "scripts/03_camera.py",
+     "message": ""
+    },
+    {
+     "rule": "AST8",
+     "severity": "CRITICAL",
+     "file": "scripts/03b_camera_noise.py",
+     "message": ""
+    },
+    {
+     "rule": "AST8",
+     "severity": "CRITICAL",
+     "file": "scripts/04_drone_attitude.py",
+     "message": ""
+    },
+    {
+     "rule": "AST8",
+     "severity": "CRITICAL",
+     "file": "scripts/05_realism.py",
+     "message": ""
+    },
+    {
+     "rule": "AST8",
+     "severity": "CRITICAL",
+     "file": "scripts/06_night.py",
+     "message": ""
+    },
+    {
+     "rule": "AST8",
+     "severity": "CRITICAL",
+     "file": "scripts/07_shakify_cams.py",
+     "message": ""
+    },
+    {
+     "rule": "AST8",
+     "severity": "CRITICAL",
+     "file": "scripts/08_lens_look.py",
+     "message": ""
+    },
+    {
+     "rule": "AST8",
+     "severity": "CRITICAL",
+     "file": "scripts/09_render_opt.py",
+     "message": ""
+    },
+    {
+     "rule": "AST8",
+     "severity": "CRITICAL",
+     "file": "scripts/11_motion_data.py",
+     "message": ""
+    },
+    {
+     "rule": "AST8",
+     "severity": "CRITICAL",
+     "file": "scripts/13_aerial_cam.py",
+     "message": ""
+    },
+    {
+     "rule": "AST8",
+     "severity": "CRITICAL",
+     "file": "tools/bridge.py",
+     "message": ""
+    },
+    {
+     "rule": "AST1",
+     "severity": "HIGH",
+     "file": "scripts/02_path_empty.py",
+     "message": ""
+    },
+    {
+     "rule": "AST1",
+     "severity": "HIGH",
+     "file": "scripts/03_camera.py",
+     "message": ""
+    },
+    {
+     "rule": "AST1",
+     "severity": "HIGH",
+     "file": "scripts/03b_camera_noise.py",
+     "message": ""
+    },
+    {
+     "rule": "AST1",
+     "severity": "HIGH",
+     "file": "scripts/04_drone_attitude.py",
+     "message": ""
+    },
+    {
+     "rule": "AST1",
+     "severity": "HIGH",
+     "file": "scripts/05_realism.py",
+     "message": ""
+    },
+    {
+     "rule": "AST1",
+     "severity": "HIGH",
+     "file": "scripts/06_night.py",
+     "message": ""
+    },
+    {
+     "rule": "AST1",
+     "severity": "HIGH",
+     "file": "scripts/07_shakify_cams.py",
+     "message": ""
+    },
+    {
+     "rule": "AST1",
+     "severity": "HIGH",
+     "file": "scripts/08_lens_look.py",
+     "message": ""
+    },
+    {
+     "rule": "AST1",
+     "severity": "HIGH",
+     "file": "scripts/09_render_opt.py",
+     "message": ""
+    },
+    {
+     "rule": "AST1",
+     "severity": "HIGH",
+     "file": "scripts/11_motion_data.py",
+     "message": ""
+    },
+    {
+     "rule": "AST1",
+     "severity": "HIGH",
+     "file": "scripts/13_aerial_cam.py",
+     "message": ""
+    },
+    {
+     "rule": "TT1",
+     "severity": "HIGH",
+     "file": "scripts/02_path_empty.py",
+     "message": ""
+    },
+    {
+     "rule": "TT1",
+     "severity": "HIGH",
+     "file": "scripts/03_camera.py",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "mromidev/claude-blender-skills",
+   "skill_path": "skills/blender-forest",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 80,
+   "recommendation": "DO_NOT_INSTALL",
+   "issue_count": 5,
+   "issues": [
+    {
+     "rule": "TT3",
+     "severity": "CRITICAL",
+     "file": "scripts/gen_sfx.py",
+     "message": ""
+    },
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "E1",
+     "severity": "MEDIUM",
+     "file": "scripts/gen_sfx.py",
+     "message": ""
+    },
+    {
+     "rule": "AST7",
+     "severity": "LOW",
+     "file": "scripts/build_world.py",
+     "message": ""
+    },
+    {
+     "rule": "AST7",
+     "severity": "LOW",
+     "file": "scripts/build_world.py",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "moh4696/open-3d-skills",
+   "skill_path": "skills/alpha-cutout",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 18,
+   "recommendation": "SAFE",
+   "issue_count": 2,
+   "issues": [
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/key.py",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "moh4696/open-3d-skills",
+   "skill_path": "skills/cursor-rig",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 18,
+   "recommendation": "SAFE",
+   "issue_count": 2,
+   "issues": [
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/build_rig.py",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "moh4696/open-3d-skills",
+   "skill_path": "skills/exploded-view",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 32,
+   "recommendation": "CAUTION",
+   "issue_count": 1,
+   "issues": [
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "moh4696/open-3d-skills",
+   "skill_path": "skills/frame-capture",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 25,
+   "recommendation": "CAUTION",
+   "issue_count": 4,
+   "issues": [
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/compare.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/compare.py",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/record.py",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "moh4696/open-3d-skills",
+   "skill_path": "skills/motion-assets",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 18,
+   "recommendation": "SAFE",
+   "issue_count": 2,
+   "issues": [
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/loop_check.py",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "moh4696/open-3d-skills",
+   "skill_path": "skills/scroll-film",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 50,
+   "recommendation": "CAUTION",
+   "issue_count": 3,
+   "issues": [
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AST4",
+     "severity": "MEDIUM",
+     "file": "scripts/prep.py",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "moh4696/open-3d-skills",
+   "skill_path": "skills/site-check",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 9,
+   "recommendation": "SAFE",
+   "issue_count": 1,
+   "issues": [
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "moh4696/open-3d-skills",
+   "skill_path": "skills/threejs-scene",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "JDhruv14/line-art-animation",
+   "skill_path": ".",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 100,
+   "recommendation": "DO_NOT_INSTALL",
+   "issue_count": 39,
+   "issues": [
+    {
+     "rule": "SC9",
+     "severity": "HIGH",
+     "file": ".gitignore",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "TM2",
+     "severity": "HIGH",
+     "file": "examples/village/sky.ts",
+     "message": ""
+    },
+    {
+     "rule": "TM2",
+     "severity": "HIGH",
+     "file": "examples/village/sky.ts",
+     "message": ""
+    },
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "scripts/capture.ts",
+     "message": ""
+    },
+    {
+     "rule": "SC4",
+     "severity": "LOW",
+     "file": "package-lock.json",
+     "message": ""
+    },
+    {
+     "rule": "SC4",
+     "severity": "LOW",
+     "file": "package.json",
+     "message": ""
+    },
+    {
+     "rule": "SC1",
+     "severity": "LOW",
+     "file": "package-lock.json",
+     "message": ""
+    },
+    {
+     "rule": "SC1",
+     "severity": "LOW",
+     "file": "package.json",
+     "message": ""
+    },
+    {
+     "rule": "SC1",
+     "severity": "LOW",
+     "file": "package-lock.json",
+     "message": ""
+    },
+    {
+     "rule": "SC1",
+     "severity": "LOW",
+     "file": "package.json",
+     "message": ""
+    },
+    {
+     "rule": "SC1",
+     "severity": "LOW",
+     "file": "package-lock.json",
+     "message": ""
+    },
+    {
+     "rule": "SC1",
+     "severity": "LOW",
+     "file": "package.json",
+     "message": ""
+    },
+    {
+     "rule": "SC1",
+     "severity": "LOW",
+     "file": "package-lock.json",
+     "message": ""
+    },
+    {
+     "rule": "SC1",
+     "severity": "LOW",
+     "file": "package-lock.json",
+     "message": ""
+    },
+    {
+     "rule": "SC1",
+     "severity": "LOW",
+     "file": "package-lock.json",
+     "message": ""
+    },
+    {
+     "rule": "SC1",
+     "severity": "LOW",
+     "file": "package-lock.json",
+     "message": ""
+    },
+    {
+     "rule": "SC1",
+     "severity": "LOW",
+     "file": "package-lock.json",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "latent-spaces/brag",
+   "skill_path": "skills/brag",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 64,
+   "recommendation": "DO_NOT_INSTALL",
+   "issue_count": 18,
+   "issues": [
+    {
+     "rule": "SC2",
+     "severity": "HIGH",
+     "file": "slim.md",
+     "message": ""
+    },
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/audio.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/step-2-plan.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/step-3-compose.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/step-3-compose.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/step-3-compose.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/step-4-deliver.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/step-4-deliver.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/step-4-deliver.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/step-4-deliver.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/step-4-deliver.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/step-4-deliver.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/step-4-deliver.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "scripts/analyze_music_cues.py",
+     "message": ""
+    },
+    {
+     "rule": "SC4",
+     "severity": "LOW",
+     "file": "scripts/pyproject.toml",
+     "message": ""
+    },
+    {
+     "rule": "SC4",
+     "severity": "LOW",
+     "file": "scripts/uv.lock",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "latent-spaces/brag",
+   "skill_path": "skills/brag-slim",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 38,
+   "recommendation": "CAUTION",
+   "issue_count": 2,
+   "issues": [
+    {
+     "rule": "SC2",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "academa-labs/manimgx",
+   "skill_path": "skills/manimgx",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "remocn/plugins",
+   "skill_path": "remocn/skills/add",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 15,
+   "recommendation": "SAFE",
+   "issue_count": 3,
+   "issues": [
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "remocn/plugins",
+   "skill_path": "remocn/skills/changelog",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 9,
+   "recommendation": "SAFE",
+   "issue_count": 1,
+   "issues": [
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "remocn/plugins",
+   "skill_path": "remocn/skills/remocn",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 25,
+   "recommendation": "CAUTION",
+   "issue_count": 4,
+   "issues": [
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/archetypes/cli-tool-demo.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/archetypes/oss-showcase.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "remocn/plugins",
+   "skill_path": "remocn/skills/setup",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 15,
+   "recommendation": "SAFE",
+   "issue_count": 4,
+   "issues": [
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "remocn/plugins",
+   "skill_path": "remocn/skills/video",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 15,
+   "recommendation": "SAFE",
+   "issue_count": 8,
+   "issues": [
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/storyboard.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "vork/skills",
+   "skill_path": "vork",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "openfilm/packages",
+   "skill_path": "openfilm/manual/film",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "openfilm/packages",
+   "skill_path": "openfilm/manual/media",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "openfilm/packages",
+   "skill_path": "openfilm/plugins/canvas/skills/canvas",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "openfilm/packages",
+   "skill_path": "openfilm/plugins/color/skills/color",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "hyperframes/.agents",
+   "skill_path": "skills/captions-overlay",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "hyperframes/.agents",
+   "skill_path": "skills/changelog-video",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 24,
+   "recommendation": "CAUTION",
+   "issue_count": 4,
+   "issues": [
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "hyperframes/.agents",
+   "skill_path": "skills/cut-the-curve",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "hyperframes/.agents",
+   "skill_path": "skills/motion-doctrine",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 67,
+   "recommendation": "DO_NOT_INSTALL",
+   "issue_count": 6,
+   "issues": [
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE4",
+     "severity": "MEDIUM",
+     "file": "scripts/seam-gate.mjs",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "scripts/seam-gate.mjs",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "scripts/seam-gate.mjs",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "scripts/seam-gate.mjs",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "hyperframes/.agents",
+   "skill_path": "skills/oversized-cursor",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "hyperframes/.agents",
+   "skill_path": "skills/seam-craft",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 0,
+   "recommendation": "SAFE",
+   "issue_count": 0,
+   "issues": []
+  },
+  {
+   "repository": "charlesdove977/advertising-ops",
+   "skill_path": "skill",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 42,
+   "recommendation": "CAUTION",
+   "issue_count": 3,
+   "issues": [
+    {
+     "rule": "AS2",
+     "severity": "HIGH",
+     "file": "tasks/run-pipeline.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "frameworks/apify-ad-scraping.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "tasks/run-pipeline.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "charlesdove977/re-walkthrough-pro",
+   "skill_path": "skill",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 24,
+   "recommendation": "CAUTION",
+   "issue_count": 1,
+   "issues": [
+    {
+     "rule": "LP1",
+     "severity": "HIGH",
+     "file": "frameworks/apify-zillow-actors.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "ThreeRT/.claude",
+   "skill_path": "skills/threert-scene-authoring",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 66,
+   "recommendation": "DO_NOT_INSTALL",
+   "issue_count": 6,
+   "issues": [
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "AE4",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "E1",
+     "severity": "MEDIUM",
+     "file": "references/assets.md",
+     "message": ""
+    },
+    {
+     "rule": "OH3",
+     "severity": "MEDIUM",
+     "file": "references/assets.md",
+     "message": ""
+    },
+    {
+     "rule": "AE4",
+     "severity": "MEDIUM",
+     "file": "references/review-and-performance.md",
+     "message": ""
+    },
+    {
+     "rule": "AE4",
+     "severity": "MEDIUM",
+     "file": "references/ue-port.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "papermorph/.claude",
+   "skill_path": "skills/papermorph",
+   "status": "scanner_incomplete",
+   "exit_code": 137,
+   "error": ""
+  }
+ ]
+}

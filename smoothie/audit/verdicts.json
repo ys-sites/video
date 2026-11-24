@@ -1,0 +1,1019 @@
+{
+ "666ghj/MiroFish": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Not video (gated via DM).",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "a2ui-project/a2ui": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Agent UI (infra).",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": 313682
+ },
+ "academa-labs/manimgx": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-lesson",
+  "installed_at": "-",
+  "reason": "ManimGL fork; Manim Community covers it.",
+  "commit": "1fb4dd7",
+  "evidence": "triage: download_execute 3, unsafe_weights 1; 1 binaries/weights in tree; SkillSpector 1/1 folders: SAFE",
+  "size_kb": null
+ },
+ "affaan-m/ECC": {
+  "verdict": "ALREADY INSTALLED",
+  "merged_into": "ecc-* (27 skills)",
+  "installed_at": ".claude/skills/ecc-*",
+  "reason": "Installed 2026-11-23 (markdown skills only).",
+  "commit": "",
+  "evidence": "registry/metadata check",
+  "size_kb": null
+ },
+ "affaan-m/everything-claude-code": {
+  "verdict": "DO NOT INSTALL",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Duplicate of affaan-m/ECC (same repository).",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "ag-ui-protocol/ag-ui": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Agent UI protocol (infra).",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": 89849
+ },
+ "airbnb/lottie-android": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Android/iOS library.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "airbnb/lottie-web": {
+  "verdict": "INSTALL",
+  "merged_into": "vs-motion",
+  "installed_at": "package.json lottie-web@5.13.0",
+  "reason": "MIT, no install hooks; plays After Effects/Bodymovin exports.",
+  "commit": "",
+  "evidence": "registry/metadata check",
+  "size_kb": null
+ },
+ "alisa0808/vox-director": {
+  "verdict": "NEEDS-KEY / PAID",
+  "merged_into": "vs-lesson (ideas)",
+  "installed_at": "-",
+  "reason": "Generation via paid Atlas Cloud.",
+  "commit": "6a85a7c",
+  "evidence": "triage: no high-risk signals; SkillSpector 1/1 folders: DO_NOT_INSTALL",
+  "size_kb": 53626
+ },
+ "apekshik/anymachine": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-motion (3D, Blender)",
+  "installed_at": "-",
+  "reason": "Needs Blender; reference.",
+  "commit": "81ec090",
+  "evidence": "triage: no high-risk signals",
+  "size_kb": 265101
+ },
+ "arjun988/blender-skills": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-director (style prompts)",
+  "installed_at": "-",
+  "reason": "188 style prompt skills; overlap with director modes.",
+  "commit": "904f095",
+  "evidence": "triage: download_execute 3",
+  "size_kb": 729
+ },
+ "atuizz/posewear": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Anime outfit prompt pack for image generation.",
+  "commit": "0c97ab4",
+  "evidence": "triage: no high-risk signals",
+  "size_kb": 133116
+ },
+ "augani/openreel-video": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Standalone web editor app; overlaps vs-edit.",
+  "commit": "b358fab",
+  "evidence": "triage: no high-risk signals; 1 binaries/weights in tree; hidden Unicode in 9 files",
+  "size_kb": 46351
+ },
+ "AustinZ21/cinematic-skills": {
+  "verdict": "INSTALL WITH CONDITIONS",
+  "merged_into": "vs-director, vs-generate",
+  "installed_at": "C:\\Users\\Sharafath\\AI-Local\\engines\\still-to-film@0e5b3fe",
+  "reason": "Shot-director rules merged; still-to-film scripts installed. Depth model (Depth Anything V2) only from its official Hugging Face repo, no trust_remote_code.",
+  "commit": "0e5b3fe",
+  "evidence": "triage: no high-risk signals; SkillSpector 2/2 folders: CAUTION/DO_NOT_INSTALL",
+  "size_kb": 2042
+ },
+ "bangtutorial/bang-motion": {
+  "verdict": "DO NOT INSTALL",
+  "merged_into": "study-video route (reference)",
+  "installed_at": "-",
+  "reason": "Earlier SkillSpector DO_NOT_INSTALL flag still holds; reference only.",
+  "commit": "",
+  "evidence": "triage: no high-risk signals",
+  "size_kb": null
+ },
+ "barckley75/resolve-claude-mcp": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Needs DaVinci Resolve (not installed).",
+  "commit": "",
+  "evidence": "triage: download_execute 2",
+  "size_kb": null
+ },
+ "bilawalsidhu/gods-eye-view": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "3D globe web app.",
+  "commit": "43c1b11",
+  "evidence": "triage: prompt_injection 6, secret_literal 1; hidden Unicode in 20 files",
+  "size_kb": null
+ },
+ "blender/blender": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "vs-motion (3D, optional)",
+  "installed_at": "official installer, your choice",
+  "reason": "Desktop app (~0.5 GB); only for the Blender modes.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "bodila51/gtavi-claudecode": {
+  "verdict": "UNAVAILABLE",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "GitHub API 404 and clone says \"Repository not found\" on 2026-11-23 and again 2026-11-24: private or deleted (the brief's \"LIVE\" correction no longer holds).",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "BudgetAny/Budget3D": {
+  "verdict": "NEEDS-KEY / PAID",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Paid cloud compute per model.",
+  "commit": "9f78f30",
+  "evidence": "triage: unsafe_weights 15",
+  "size_kb": null
+ },
+ "calesthio/OpenMontage": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "all (ideas)",
+  "installed_at": "-",
+  "reason": "AGPL-3.0: ideas only, no text or code copied. 139 skill-index rows point here.",
+  "commit": "",
+  "evidence": "triage: prompt_injection 2, download_execute 1, install_hook 1; hidden Unicode in 3 files",
+  "size_kb": null
+ },
+ "capsoftware/cap": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Screen recorder app (official installer, optional); Playwright capture covers demos.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": 1008379
+ },
+ "charlesdove977/advertising-ops": {
+  "verdict": "NEEDS-KEY / PAID",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Meta Ad Library scraping via Apify + paid Higgsfield.",
+  "commit": "980cd60",
+  "evidence": "triage: no high-risk signals; SkillSpector 1/1 folders: CAUTION",
+  "size_kb": null
+ },
+ "charlesdove977/re-walkthrough-pro": {
+  "verdict": "NEEDS-KEY / PAID",
+  "merged_into": "vs-real-estate (idea)",
+  "installed_at": "-",
+  "reason": "Zillow scraping via Apify + paid Higgsfield; replaced by agent-supplied photos + local depth parallax.",
+  "commit": "537dbf1",
+  "evidence": "triage: no high-risk signals; SkillSpector 1/1 folders: CAUTION",
+  "size_kb": null
+ },
+ "charlesdove977/UGC-Factory": {
+  "verdict": "NEEDS-KEY / PAID",
+  "merged_into": "vs-generate (prompt styles)",
+  "installed_at": "-",
+  "reason": "Styles call paid Seedance/Higgsfield.",
+  "commit": "",
+  "evidence": "triage: no high-risk signals",
+  "size_kb": null
+ },
+ "cloudflare/security-audit-skill": {
+  "verdict": "ALREADY INSTALLED",
+  "merged_into": "security (not video)",
+  "installed_at": "Codex skill + Claude plugin",
+  "reason": "Partial: MCP needs OAuth. Not part of the smoothie.",
+  "commit": "",
+  "evidence": "registry/metadata check",
+  "size_kb": null
+ },
+ "comfy-org/comfy-desktop": {
+  "verdict": "DO NOT INSTALL",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Duplicate: ComfyUI is already installed at the reviewed commit.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": 143214
+ },
+ "d3voz/openjutsu": {
+  "verdict": "GPU-BLOCKED (GPU tier)",
+  "merged_into": "vs-generate (GPU tier)",
+  "installed_at": "rented box only",
+  "reason": "Needs 16 GB VRAM and 64 GB system RAM; consent of anyone replaced.",
+  "commit": "7fe118b",
+  "evidence": "triage: no high-risk signals",
+  "size_kb": 69979
+ },
+ "debpalash/VoiceStudio": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-voice-captions",
+  "installed_at": "-",
+  "reason": "Duplicate brain of OmniVoice/Piper.",
+  "commit": "",
+  "evidence": "triage: download_execute 57, unsafe_weights 7, extra_index 3, trust_remote_code 5, prompt_injection 12, install_hook 108, secret_literal 7; 2 binaries/weights in tree; hidden Unicode in 20 files",
+  "size_kb": null
+ },
+ "deeplethe/sandstorm": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Sandbox infra.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": 10851
+ },
+ "deepseek-ai/deepseek-harness": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Not video.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "devedevt/ffmpeg-gui-editor-windows": {
+  "verdict": "UNAVAILABLE",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "GitHub API 404 on 2026-11-23; \"Repository not found\" again 2026-11-24.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "dozentwelve/papermorph": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-lesson",
+  "installed_at": "-",
+  "reason": "PDF\u2192narrated page idea.",
+  "commit": "839a62c",
+  "evidence": "triage: no high-risk signals; hidden Unicode in 1 files",
+  "size_kb": null
+ },
+ "dqfront/iart-ai-motion-skills": {
+  "verdict": "DO NOT INSTALL",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Repo has no skills: a README, showcase GIFs and verify scripts only.",
+  "commit": "9b9ce04",
+  "evidence": "triage: no high-risk signals",
+  "size_kb": 5040
+ },
+ "FFmpeg/FFmpeg": {
+  "verdict": "ALREADY INSTALLED",
+  "merged_into": "vs-edit",
+  "installed_at": "system ffmpeg (N-126374)",
+  "reason": "One shared FFmpeg for every skill.",
+  "commit": "",
+  "evidence": "registry/metadata check",
+  "size_kb": null
+ },
+ "ffmpegwasm/ffmpeg.wasm": {
+  "verdict": "DO NOT INSTALL",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Duplicate of native FFmpeg; only if the site ever needs in-browser processing.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "godotengine/godot": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Game engine.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "google-research/pointdit": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Research 3D geometry model, not a production tool.",
+  "commit": "11f53a3",
+  "evidence": "triage: unsafe_weights 5",
+  "size_kb": 3660
+ },
+ "GraphiteEditor/Graphite": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "2D editor app.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "greensock/GSAP": {
+  "verdict": "INSTALL WITH CONDITIONS",
+  "merged_into": "vs-motion",
+  "installed_at": "package.json (Vite app) gsap@3.15.1",
+  "reason": "GSAP Standard \"no charge\" licence (not OSI): fine for the site; read the licence before reselling templates.",
+  "commit": "",
+  "evidence": "registry/metadata check",
+  "size_kb": null
+ },
+ "HandBrake/HandBrake": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "GUI transcoder; vs-edit export covers it.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "heygen-com/hyperframes": {
+  "verdict": "INSTALL WITH CONDITIONS",
+  "merged_into": "vs-motion",
+  "installed_at": "C:\\Users\\Sharafath\\AI-Local\\engines\\video-js (npm hyperframes@0.9.87)",
+  "reason": "Engine #2 of vs-motion: npm 0.9.87, Apache-2.0, no install hooks; `--ignore-scripts`, exact pin. Repo skills used as references.",
+  "commit": "8cdf5b2",
+  "evidence": "triage: install_hook 2, secret_literal 5, unsafe_weights 3, download_execute 8, prompt_injection 3, extra_index 1; 42 binaries/weights in tree; hidden Unicode in 3 files",
+  "size_kb": 554647
+ },
+ "HKUDS/DeepTutor": {
+  "verdict": "NEEDS-KEY / PAID",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Learning app needing an LLM API key.",
+  "commit": "1284116",
+  "evidence": "triage: download_execute 8, install_hook 18, prompt_injection 10, unsafe_weights 2; hidden Unicode in 18 files",
+  "size_kb": null
+ },
+ "hypit-ai/hypit": {
+  "verdict": "NEEDS-KEY / PAID",
+  "merged_into": "vs-generate, vs-real-estate (ideas)",
+  "installed_at": "-",
+  "reason": "Modified Apache licence; generation through paid HiAPI/Pollo (referral links).",
+  "commit": "9a6f688",
+  "evidence": "triage: no high-risk signals; hidden Unicode in 1 files; SkillSpector 1/1 folders: DO_NOT_INSTALL",
+  "size_kb": 179916
+ },
+ "iamaanahmad/agents-video-editing-skills": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-edit, vs-voice-captions, vs-director",
+  "installed_at": "-",
+  "reason": "MIT. Recipes merged (export, QA, vertical, audio, planning); 14 overlapping skills not installed.",
+  "commit": "981466b",
+  "evidence": "triage: no high-risk signals; SkillSpector 12/13 folders: SAFE",
+  "size_kb": 50
+ },
+ "iamtechartist/every-joule-lesson1": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-lesson",
+  "installed_at": "-",
+  "reason": "Lesson reference.",
+  "commit": "",
+  "evidence": "triage: no high-risk signals",
+  "size_kb": null
+ },
+ "imputnet/cobalt": {
+  "verdict": "DO NOT INSTALL",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Downloads other people's videos (rights risk); the REA MCP covers reference study.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": 18177
+ },
+ "inclusionai/codeworldmodel": {
+  "verdict": "DO NOT INSTALL",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Needs an 8-GPU Linux node; vendored CC BY-NC parts. Not a single-rental job.",
+  "commit": "88fc349",
+  "evidence": "triage: unsafe_weights 104, download_execute 3, extra_index 16, trust_remote_code 66, install_hook 5; hidden Unicode in 1 files",
+  "size_kb": 359438
+ },
+ "jakeschincariol/instagram-agent-skill": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-real-estate",
+  "installed_at": "-",
+  "reason": "MIT. Hook formulas and reel planning merged; drafts only, never auto-posts.",
+  "commit": "d03c56b",
+  "evidence": "triage: no high-risk signals; SkillSpector 12/13 folders: SAFE",
+  "size_kb": 75
+ },
+ "JDhruv14/line-art-animation": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-motion",
+  "installed_at": "-",
+  "reason": "Line-art draw-on technique merged.",
+  "commit": "c43d698",
+  "evidence": "triage: no high-risk signals; SkillSpector 1/1 folders: DO_NOT_INSTALL",
+  "size_kb": null
+ },
+ "juliangarnier/anime": {
+  "verdict": "DO NOT INSTALL",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Duplicate brain of motion + GSAP.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "JuneYaooo/rea-video": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-director (reference analysis)",
+  "installed_at": "-",
+  "reason": "Its ChatCut section tells the agent to curl|sh a paid app with a referral tag: never follow it.",
+  "commit": "",
+  "evidence": "triage: unsafe_weights 1, download_execute 2",
+  "size_kb": null
+ },
+ "kajisho5/ffmpeg-skill": {
+  "verdict": "INSTALL WITH CONDITIONS",
+  "merged_into": "vs-edit",
+  "installed_at": "C:\\Users\\Sharafath\\AI-Local\\engines\\ffmpeg-skill@bad487c",
+  "reason": "Engine of vs-edit: 48 stdlib Python tools, no network. Copy the pinned commit; do not run `npx ffmpeg-skill` (it may install ffmpeg); never open Claude Code at that repo root (its .claude/settings.json enables a third-party plugin marketplace).",
+  "commit": "bad487c",
+  "evidence": "triage: prompt_injection 2; hidden Unicode in 6 files",
+  "size_kb": 135088
+ },
+ "kaomei/stickman-video-director": {
+  "verdict": "INSTALL WITH CONDITIONS",
+  "merged_into": "vs-lesson",
+  "installed_at": "C:\\Users\\Sharafath\\AI-Local\\engines\\stickman-director@8394bec",
+  "reason": "Code engine (B styles) only; model engine (A styles) needs paid generation: spend gate.",
+  "commit": "8394bec",
+  "evidence": "triage: prompt_injection 3; hidden Unicode in 2 files; SkillSpector 0/1 folders: incomplete",
+  "size_kb": 706981
+ },
+ "KDE/kdenlive": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "GUI editor, optional.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "klad-app/klad": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Drawing app, licence unstated.",
+  "commit": "7e6f4bb",
+  "evidence": "triage: no high-risk signals",
+  "size_kb": 38320
+ },
+ "konvajs/konva": {
+  "verdict": "DO NOT INSTALL",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Canvas framework not needed by any job.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "latent-spaces/brag": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-motion",
+  "installed_at": "-",
+  "reason": "Launch-video-from-website flow merged.",
+  "commit": "0637943",
+  "evidence": "triage: download_execute 2; SkillSpector 2/2 folders: CAUTION/DO_NOT_INSTALL",
+  "size_kb": null
+ },
+ "lemomo-ai/lemo-opuscar": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-director, vs-motion",
+  "installed_at": "-",
+  "reason": "Licence NOASSERTION: style ideas only.",
+  "commit": "",
+  "evidence": "triage: no high-risk signals; 2 binaries/weights in tree",
+  "size_kb": 216416
+ },
+ "leonxlnx/walking-block": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-motion (3D)",
+  "installed_at": "-",
+  "reason": "No licence: ideas only.",
+  "commit": "54bd15b",
+  "evidence": "triage: no high-risk signals",
+  "size_kb": 82663
+ },
+ "lunamos/paper2video": {
+  "verdict": "INSTALL WITH CONDITIONS",
+  "merged_into": "vs-lesson",
+  "installed_at": "C:\\Users\\Sharafath\\AI-Local\\engines\\paper2video@a8c966b",
+  "reason": "Method + Remotion template in the shared JS workspace; skip its `npx -y skills add` step (Remotion skills are already installed).",
+  "commit": "a8c966b",
+  "evidence": "triage: unsafe_weights 1; hidden Unicode in 1 files; SkillSpector 1/1 folders: DO_NOT_INSTALL",
+  "size_kb": 1575
+ },
+ "ManimCommunity/manim": {
+  "verdict": "INSTALL WITH CONDITIONS",
+  "merged_into": "vs-lesson",
+  "installed_at": "C:\\Users\\Sharafath\\AI-Local\\venvs\\video-py (manim 0.19.2)",
+  "reason": "MathTex needs LaTeX (MiKTeX ~1 GB): ask before installing it.",
+  "commit": "",
+  "evidence": "registry/metadata check",
+  "size_kb": null
+ },
+ "mengto/skills": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "217 design skills; ECC design skills already cover it.",
+  "commit": "409b4d0",
+  "evidence": "triage: no high-risk signals; 1 binaries/weights in tree; hidden Unicode in 1 files",
+  "size_kb": null
+ },
+ "meshy-dev/ThreeRT": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Real-time ray tracing needs a local RTX display; a rented GPU does not help.",
+  "commit": "5534dab",
+  "evidence": "triage: no high-risk signals",
+  "size_kb": null
+ },
+ "meta/astryx": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Design system, not video; cloned twice in quarantine (~0.7 GB duplicate).",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "mifi/lossless-cut": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "vs-edit (GUI fallback)",
+  "installed_at": "official release, optional",
+  "reason": "GPL-2.0 GUI; optional manual tool.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": 31723
+ },
+ "mltframework/shotcut": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "GUI editor, optional.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "Moh4696/cinematic-skill": {
+  "verdict": "INSTALL WITH CONDITIONS",
+  "merged_into": "vs-director, vs-lesson",
+  "installed_at": "C:\\Users\\Sharafath\\AI-Local\\engines\\cinematic-film@bf43556",
+  "reason": "Documentary-board engine (skia, CPU). Its font and Wikimedia fetchers use the network: allow per project.",
+  "commit": "bf43556",
+  "evidence": "triage: download_execute 2; SkillSpector 1/1 folders: CAUTION",
+  "size_kb": null
+ },
+ "moh4696/open-3d-skills": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-motion, vs-generate",
+  "installed_at": "-",
+  "reason": "MIT. Frame capture, exploded view, motion-assets cost planning merged.",
+  "commit": "53beb89",
+  "evidence": "triage: download_execute 2; SkillSpector 8/8 folders: CAUTION/SAFE",
+  "size_kb": 1715
+ },
+ "mohamedelaassal/youtubevideogenerator": {
+  "verdict": "NEEDS-KEY / PAID",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Generator app built on hosted AI APIs.",
+  "commit": "fe864be",
+  "evidence": "triage: no high-risk signals",
+  "size_kb": 198
+ },
+ "mojs/mojs": {
+  "verdict": "DO NOT INSTALL",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Duplicate brain of motion + GSAP.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "motiondivision/motion": {
+  "verdict": "ALREADY INSTALLED",
+  "merged_into": "vs-motion",
+  "installed_at": "package.json motion@^12",
+  "reason": "Already in the Vite app.",
+  "commit": "",
+  "evidence": "registry/metadata check",
+  "size_kb": null
+ },
+ "mrdoob/three.js": {
+  "verdict": "INSTALL",
+  "merged_into": "vs-motion",
+  "installed_at": "package.json three@0.187.0",
+  "reason": "MIT, no install hooks.",
+  "commit": "",
+  "evidence": "registry/metadata check",
+  "size_kb": null
+ },
+ "mromidev/claude-blender-skills": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-motion (3D, Blender)",
+  "installed_at": "-",
+  "reason": "MIT; usable once Blender is installed (optional, your choice).",
+  "commit": "567116b",
+  "evidence": "triage: no high-risk signals; SkillSpector 3/3 folders: DO_NOT_INSTALL",
+  "size_kb": 825
+ },
+ "nexu-io/openmotion": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "431 skills incl. BYOK providers: duplicate of the merged system; not installed.",
+  "commit": "74a3d1e",
+  "evidence": "triage: prompt_injection 7, download_execute 1, secret_literal 1; hidden Unicode in 6 files",
+  "size_kb": null
+ },
+ "NVIDIA/SkillSpector": {
+  "verdict": "ALREADY INSTALLED",
+  "merged_into": "security (this audit)",
+  "installed_at": "WSL /opt/skillspector-2.12",
+  "reason": "Used offline in bwrap for this audit. Not a video skill.",
+  "commit": "",
+  "evidence": "registry/metadata check",
+  "size_kb": null
+ },
+ "obsproject/obs-studio": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Recorder, optional official installer.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "open-slide/open-slide": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Slides tool; not video.",
+  "commit": "69e72aa",
+  "evidence": "triage: download_execute 1, install_hook 1",
+  "size_kb": 63238
+ },
+ "openclaw/clawhub": {
+  "verdict": "DO NOT INSTALL",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Skill registry: adds a supply-chain path; Claude Code skills need none.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": 371218
+ },
+ "openfilm/openfilm": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-director",
+  "installed_at": "-",
+  "reason": "MIT film-agent; overlaps the merged director/motion skills.",
+  "commit": "327ef4c",
+  "evidence": "triage: download_execute 23, secret_literal 1, install_hook 1, prompt_injection 1; hidden Unicode in 6 files",
+  "size_kb": 76845
+ },
+ "openqodex/openqodex": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Code reviewer, not video.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "opentoonz/opentoonz": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "2D animation app, optional.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "paulirish/chrome-capture": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Tab recorder; frame-exact capture is in vs-motion.",
+  "commit": "c489edf",
+  "evidence": "triage: no high-risk signals",
+  "size_kb": null
+ },
+ "pbakaus/impeccable": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Design critique; ECC design skills cover it.",
+  "commit": "b49177d",
+  "evidence": "triage: secret_literal 4, install_hook 30, prompt_injection 3; hidden Unicode in 2 files",
+  "size_kb": null
+ },
+ "photopea/photopea": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Browser image editor; nothing to install.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": 71
+ },
+ "pixijs/pixijs": {
+  "verdict": "DO NOT INSTALL",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "80 MB package; not needed by any job.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "qualixar/brief2mp4": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-motion",
+  "installed_at": "-",
+  "reason": "Third engine avoided; its install scripts not run.",
+  "commit": "9935db4",
+  "evidence": "triage: install_hook 6, download_execute 1, unsafe_weights 1; SkillSpector 0/1 folders: incomplete",
+  "size_kb": 34733
+ },
+ "remocn/remocn": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-motion",
+  "installed_at": "on demand into a Remotion project",
+  "reason": "MIT component registry: add single components to a project when needed, no global install.",
+  "commit": "995f1be",
+  "evidence": "triage: prompt_injection 3, install_hook 1; hidden Unicode in 3 files",
+  "size_kb": 49563
+ },
+ "remotion-dev/remotion": {
+  "verdict": "ALREADY INSTALLED",
+  "merged_into": "vs-motion",
+  "installed_at": "remotion:* Claude skills + video-projects",
+  "reason": "Engine #1 of vs-motion. Planned: one shared node_modules for all Remotion projects.",
+  "commit": "",
+  "evidence": "registry/metadata check",
+  "size_kb": null
+ },
+ "runesleo/claude-video-kit": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-edit",
+  "installed_at": "-",
+  "reason": "MIT. Final-artifact gates merged into vs-edit QA.",
+  "commit": "3a908d8",
+  "evidence": "triage: no high-risk signals; SkillSpector 1/1 folders: CAUTION",
+  "size_kb": 1267
+ },
+ "runkids/skillshare": {
+  "verdict": "DO NOT INSTALL",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Skill sync tool: same reason.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": 145130
+ },
+ "Sandflow-ai/sand3d": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Third 3D engine.",
+  "commit": "5678220",
+  "evidence": "triage: no high-risk signals",
+  "size_kb": null
+ },
+ "saranambiar/hyperframes-video-agent-skills": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-motion, vs-edit, vs-director",
+  "installed_at": "-",
+  "reason": "Apache-2.0. Scene builder, sync assembly, surgical re-render QA merged.",
+  "commit": "f6b043d",
+  "evidence": "triage: no high-risk signals; SkillSpector 9/9 folders: SAFE",
+  "size_kb": 69
+ },
+ "shinyobjectz/raea": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Rust creative engine.",
+  "commit": "66eb154",
+  "evidence": "triage: download_execute 49, secret_literal 1, unsafe_weights 2; 1 binaries/weights in tree; hidden Unicode in 4 files",
+  "size_kb": null
+ },
+ "spacesdrive/twiligent": {
+  "verdict": "NEEDS-KEY / PAID",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Social analytics dashboard app needing platform API keys; optional.",
+  "commit": "2898f7c",
+  "evidence": "triage: no high-risk signals; hidden Unicode in 1 files",
+  "size_kb": 62281
+ },
+ "staryone/motlab": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-motion",
+  "installed_at": "-",
+  "reason": "Third engine avoided (Remotion + HyperFrames cover it).",
+  "commit": "fd2bfda",
+  "evidence": "triage: no high-risk signals; SkillSpector 2/2 folders: DO_NOT_INSTALL",
+  "size_kb": 3491
+ },
+ "storytold/filmcraft": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Rust NLE (build from source).",
+  "commit": "ba6fe10",
+  "evidence": "triage: no high-risk signals",
+  "size_kb": null
+ },
+ "Tejashmakwana/motionmaxxing": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-motion",
+  "installed_at": "-",
+  "reason": "Motion principles merged.",
+  "commit": "",
+  "evidence": "triage: no high-risk signals",
+  "size_kb": null
+ },
+ "thisisvela/sfx-generator-skill": {
+  "verdict": "INSTALL",
+  "merged_into": "vs-voice-captions",
+  "installed_at": "C:\\Users\\Sharafath\\AI-Local\\engines\\sfx-generator@a7c25d5",
+  "reason": "numpy synthesis, Apache-2.0, no network; editable install into video-py.",
+  "commit": "a7c25d5",
+  "evidence": "triage: no high-risk signals; SkillSpector 4/4 folders: CAUTION/DO_NOT_INSTALL",
+  "size_kb": 837
+ },
+ "tokio-rs/topcoat": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Rust web framework.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "tweenjs/tween.js": {
+  "verdict": "DO NOT INSTALL",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Duplicate brain of motion + GSAP.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "Vibha-Ramprakash/claude-video-effects": {
+  "verdict": "ALREADY INSTALLED",
+  "merged_into": "vs-motion, vs-real-estate",
+  "installed_at": "Claude skill `effects`",
+  "reason": "The installed effects skill is this source; no second copy.",
+  "commit": "",
+  "evidence": "triage: no high-risk signals",
+  "size_kb": null
+ },
+ "videojs/video.js": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Player; the site plays video natively.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "Vincentwei1021/anything2explainer": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-lesson (via study-video)",
+  "installed_at": "-",
+  "reason": "Stays on the study-video route.",
+  "commit": "",
+  "evidence": "triage: no high-risk signals",
+  "size_kb": null
+ },
+ "vincentwei1021/video-shotcraft": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-director, vs-motion",
+  "installed_at": "-",
+  "reason": "Apache-2.0. Product-promo modes and shot cards merged; its Freesound search needs a key.",
+  "commit": "59f3e9b",
+  "evidence": "triage: install_hook 1; SkillSpector 0/1 folders: incomplete",
+  "size_kb": 205223
+ },
+ "voyager-so/vork": {
+  "verdict": "INSTALL WITH CONDITIONS",
+  "merged_into": "vs-generate (3D, optional)",
+  "installed_at": "not in this install plan",
+  "reason": "Vulkan engine (Vega 8 has Vulkan 1.3: test first); source-available preview licence, not open source.",
+  "commit": "bc228cb",
+  "evidence": "triage: download_execute 3; 10 binaries/weights in tree; hidden Unicode in 5 files",
+  "size_kb": 28734
+ },
+ "w01fb0ss/pibot": {
+  "verdict": "DO NOT INSTALL",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Broad agent platform with email/Gmail plugins; not video.",
+  "commit": "152425f",
+  "evidence": "triage: install_hook 3, secret_literal 1, download_execute 6, prompt_injection 1; hidden Unicode in 4 files",
+  "size_kb": null
+ },
+ "wulkano/Kap": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "macOS only.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "xai-org/grok-build": {
+  "verdict": "LEFT OUT (out of scope)",
+  "merged_into": "-",
+  "installed_at": "-",
+  "reason": "Not video.",
+  "commit": "",
+  "evidence": "metadata + README review",
+  "size_kb": null
+ },
+ "yian6557/eian-riso-broll": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-motion",
+  "installed_at": "-",
+  "reason": "No licence file: ideas only (riso info b-roll), nothing copied.",
+  "commit": "e782ad7",
+  "evidence": "triage: no high-risk signals; SkillSpector 1/1 folders: DO_NOT_INSTALL",
+  "size_kb": 6601
+ },
+ "ys-sites/insta-reels": {
+  "verdict": "REFERENCE (merged, not installed)",
+  "merged_into": "vs-studio (catalog source)",
+  "installed_at": "-",
+  "reason": "Your private catalog repo (reel scans, skills catalog, prompts). Access worked on 2026-11-24: staged at 6c34fab (667 files, 90 MB, no binaries); triage clean of install hooks and binaries, flags are text mentions in your own scan scripts. Appendix D item-by-item audit still to do; branch skills-hub not fetched.",
+  "commit": "6c34fab",
+  "evidence": "triage: no high-risk signals; hidden Unicode in 3 files",
+  "size_kb": null
+ },
+ "zeative/motion-educator": {
+  "verdict": "INSTALL WITH CONDITIONS",
+  "merged_into": "vs-lesson",
+  "installed_at": "C:\\Users\\Sharafath\\AI-Local\\engines\\motion-educator@7ff07ee",
+  "reason": "16 lesson templates + seek-exact engine. `npm ci --ignore-scripts`; Playwright Chromium in the shared browsers folder; paid voice API not used (local take + Whisper words).",
+  "commit": "7ff07ee",
+  "evidence": "triage: no high-risk signals; SkillSpector 0/1 folders: incomplete",
+  "size_kb": 346040
+ },
+ "zhouxiaoka/autoclip": {
+  "verdict": "NEEDS-KEY / PAID",
+  "merged_into": "vs-edit (long\u2192shorts recipe)",
+  "installed_at": "-",
+  "reason": "Needs an LLM API key; the flow is rebuilt with vs-edit tools.",
+  "commit": "dd1f5da",
+  "evidence": "triage: unsafe_weights 1, install_hook 3, secret_literal 9, extra_index 3, download_execute 1; SkillSpector 2/2 folders: CAUTION/SAFE",
+  "size_kb": 104176
+ }
+}

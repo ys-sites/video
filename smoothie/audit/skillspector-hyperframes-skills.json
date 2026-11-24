@@ -1,0 +1,592 @@
+{
+ "created_utc": "2026-11-24T05:59:38+00:00",
+ "isolation": "bwrap --unshare-all (no network), prlimit, --no-llm",
+ "results": [
+  {
+   "repository": "_held-skills/claude",
+   "skill_path": "hyperframes",
+   "status": "scanner_incomplete",
+   "exit_code": 137,
+   "error": ""
+  },
+  {
+   "repository": "_held-skills/claude",
+   "skill_path": "hyperframes-cli",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 100,
+   "recommendation": "DO_NOT_INSTALL",
+   "issue_count": 192,
+   "issues": [
+    {
+     "rule": "AE1",
+     "severity": "HIGH",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "TM1",
+     "severity": "HIGH",
+     "file": "references/cloud.md",
+     "message": ""
+    },
+    {
+     "rule": "PE3",
+     "severity": "HIGH",
+     "file": "references/lambda.md",
+     "message": ""
+    },
+    {
+     "rule": "PE3",
+     "severity": "HIGH",
+     "file": "references/unattended.md",
+     "message": ""
+    },
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/beats.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/beats.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/beats.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/beats.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/beats.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/cloud.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/cloud.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/cloud.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/cloud.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "_held-skills/claude",
+   "skill_path": "hyperframes-registry",
+   "status": "scanner_completed",
+   "exit_code": 1,
+   "score": 51,
+   "recommendation": "DO_NOT_INSTALL",
+   "issue_count": 35,
+   "issues": [
+    {
+     "rule": "AR2",
+     "severity": "HIGH",
+     "file": "references/component-quality-bar.md",
+     "message": ""
+    },
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/contributing.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/contributing.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/contributing.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/discovery.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/discovery.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/discovery.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/discovery.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/discovery.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/discovery.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/discovery.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/discovery.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/discovery.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/search.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/search.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/search.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/search.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/search.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "_held-skills/claude",
+   "skill_path": "media-use",
+   "status": "scanner_incomplete",
+   "exit_code": 137,
+   "error": ""
+  },
+  {
+   "repository": "_held-skills/claude",
+   "skill_path": "reverse-any-video",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 28,
+   "recommendation": "CAUTION",
+   "issue_count": 28,
+   "issues": [
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/animated.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/animated.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/match.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/people.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/people.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/people.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/people.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/people.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/start.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/start.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/start.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/start.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/start.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/start.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/start.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/start.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/start.md",
+     "message": ""
+    }
+   ]
+  },
+  {
+   "repository": "_held-skills/claude",
+   "skill_path": "style-sampling",
+   "status": "scanner_completed",
+   "exit_code": 0,
+   "score": 25,
+   "recommendation": "CAUTION",
+   "issue_count": 13,
+   "issues": [
+    {
+     "rule": "LP3",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "SKILL.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/remix.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/remix.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/remix.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/remix.md",
+     "message": ""
+    },
+    {
+     "rule": "RP1",
+     "severity": "MEDIUM",
+     "file": "references/remix.md",
+     "message": ""
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,4786 @@
+{
+ "created_utc": "2026-11-24T05:02:02+00:00",
+ "warning": "Text signals are leads for review, not findings or clearance.",
+ "results": {
+  "atuizz/posewear": {
+   "files_scanned": 41,
+   "files_skipped_large": 0,
+   "tree_files": 60,
+   "signals": {
+    "dynamic_code": 25
+   },
+   "examples": {
+    "dynamic_code": [
+     "tests/v12.js:17",
+     "tests/v13.js:24",
+     "tests/v13.js:28",
+     "tests/v13.js:29",
+     "tests/v13.js:33",
+     "tests/v13.js:34"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 0,
+   "skill_md_sample": [],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "gemini": 46,
+    "openai.com": 7
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "x.com": 37,
+    "posewear.pages.dev": 25,
+    "ai-pose-depth-gallery.pages.dev": 18,
+    "github.com": 17,
+    "img.shields.io": 12,
+    "ai-pose-gallery.pages.dev": 9,
+    "ai-costume-gallery.pages.dev": 9,
+    "ai-costume-anime-gallery.pages.dev": 9,
+    "ai-portrait-gallery.pages.dev": 9,
+    "creativecommons.org": 5,
+    "api.openai.com": 4,
+    "example.com": 4,
+    "schema.org": 3,
+    "pages.cloudflare.com": 3,
+    "www.w3.org": 3
+   }
+  },
+  "google-research/pointdit": {
+   "files_scanned": 50,
+   "files_skipped_large": 0,
+   "tree_files": 52,
+   "signals": {
+    "dynamic_code": 2,
+    "unsafe_weights": 5
+   },
+   "examples": {
+    "dynamic_code": [
+     "DATASETS.md:56",
+     "engine.py:339"
+    ],
+    "unsafe_weights": [
+     "main.py:709",
+     "main.py:741",
+     "main.py:772",
+     "dataloader/img_depth_intrinsics.py:751",
+     "dataloader/img_depth_intrinsics.py:766"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 0,
+   "skill_md_sample": [],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": true,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "stability": 3
+   },
+   "gpu_mentions": 42,
+   "top_hosts": {
+    "www.apache.org": 44,
+    "github.com": 39,
+    "huggingface.co": 19,
+    "haofeixu.github.io": 3,
+    "scholar.google.com": 3,
+    "cla.developers.google.com": 2,
+    "robotvault.bitbucket.io": 2,
+    "europe.naverlabs.com": 2,
+    "www.urbansyn.org": 2,
+    "synscapes.on.liu.se": 2,
+    "theairlab.org": 2,
+    "lhoangan.github.io": 2,
+    "dynamic-stereo.github.io": 2,
+    "phuang17.github.io": 2,
+    "tartanair.org": 2
+   }
+  },
+  "AustinZ21/cinematic-skills": {
+   "files_scanned": 40,
+   "files_skipped_large": 0,
+   "tree_files": 54,
+   "signals": {
+    "dynamic_code": 1
+   },
+   "examples": {
+    "dynamic_code": [
+     "skills/still-to-film/scripts/prep_plate.py:37"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 2,
+   "skill_md_sample": [
+    "skills/shot-director/SKILL.md",
+    "skills/still-to-film/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "heygen": 4,
+    "kling": 3,
+    "runway": 3,
+    "seedance": 1,
+    "stability": 1
+   },
+   "gpu_mentions": 8,
+   "top_hosts": {
+    "github.com": 30,
+    "x.com": 13,
+    "img.shields.io": 8,
+    "hyperframes.heygen.com": 1,
+    "cdn.jsdelivr.net": 1
+   }
+  },
+  "alisa0808/vox-director": {
+   "files_scanned": 42,
+   "files_skipped_large": 0,
+   "tree_files": 52,
+   "signals": {
+    "telemetry_upload": 13
+   },
+   "examples": {
+    "telemetry_upload": [
+     "SKILL.md:98",
+     "SKILL.md:251",
+     "references/prompt-guide.md:151",
+     "references/prompt-guide.md:166",
+     "references/prompt-guide.md:177",
+     "scripts/clips.py:46"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "seedance": 59,
+    "atlascloud": 46,
+    "kling": 42,
+    "gemini": 40,
+    "atlas cloud": 32,
+    "higgsfield": 6,
+    "stability": 5,
+    "runway": 5,
+    "openai.com": 2
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "atlas-media.oss-us-west-1.aliyuncs.com": 41,
+    "github.com": 17,
+    "www.atlascloud.ai": 10,
+    "x.com": 8,
+    "api.atlascloud.ai": 7,
+    "img.shields.io": 6,
+    "atlas-img.oss-accelerate-overseas.aliyuncs.com": 5,
+    "www.vox.com": 2,
+    "developers.openai.com": 2,
+    "static.atlascloud.ai": 1,
+    "deepmind.google": 1,
+    "docs.ideogram.ai": 1,
+    "docs.bfl.ml": 1,
+    "docs.midjourney.com": 1,
+    "help.runwayml.com": 1
+   }
+  },
+  "jakeschincariol/instagram-agent-skill": {
+   "files_scanned": 28,
+   "files_skipped_large": 0,
+   "tree_files": 28,
+   "signals": {},
+   "examples": {},
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 13,
+   "skill_md_sample": [
+    "skills/ig-audit/SKILL.md",
+    "skills/ig-caption/SKILL.md",
+    "skills/ig-carousel/SKILL.md",
+    "skills/ig-comment/SKILL.md",
+    "skills/ig-dm/SKILL.md",
+    "skills/ig-human/SKILL.md",
+    "skills/ig-plan/SKILL.md",
+    "skills/ig-profile/SKILL.md",
+    "skills/ig-reel/SKILL.md",
+    "skills/ig-reply/SKILL.md",
+    "skills/ig-repurpose/SKILL.md",
+    "skills/ig-story/SKILL.md",
+    "skills/ig-viral/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "anthropic": 1
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "github.com": 6,
+    "opusjake.ai": 3,
+    "www.youtube.com": 2,
+    "help.instagram.com": 1,
+    "anthropic.com": 1
+   }
+  },
+  "dqfront/iart-ai-motion-skills": {
+   "files_scanned": 8,
+   "files_skipped_large": 0,
+   "tree_files": 10,
+   "signals": {},
+   "examples": {},
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 0,
+   "skill_md_sample": [],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "gemini": 1
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "github.com": 19,
+    "www.iart.ai": 6,
+    "fonts.googleapis.com": 3,
+    "app.iart.ai": 2,
+    "fonts.gstatic.com": 1,
+    "www.w3.org": 1,
+    "cdnjs.cloudflare.com": 1
+   }
+  },
+  "iamaanahmad/agents-video-editing-skills": {
+   "files_scanned": 31,
+   "files_skipped_large": 0,
+   "tree_files": 31,
+   "signals": {},
+   "examples": {},
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 14,
+   "skill_md_sample": [
+    "skills/audio-mixing/SKILL.md",
+    "skills/captions-subtitles/SKILL.md",
+    "skills/ffmpeg-essentials/SKILL.md",
+    "skills/motion-design-craft/SKILL.md",
+    "skills/moviepy-python-video/SKILL.md",
+    "skills/platform-export/SKILL.md",
+    "skills/remotion-programmatic-video/SKILL.md",
+    "skills/screen-recording-demos/SKILL.md",
+    "skills/thumbnails/SKILL.md",
+    "skills/vertical-shorts/SKILL.md",
+    "skills/video-editing-router/SKILL.md",
+    "skills/video-planning/SKILL.md",
+    "skills/video-qa/SKILL.md",
+    "skills/voiceover-tts/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "gemini": 20,
+    "elevenlabs": 6,
+    "stability": 1
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "github.com": 12,
+    "api.star-history.com": 3,
+    "img.shields.io": 1,
+    "agentskills.io": 1,
+    "www.star-history.com": 1,
+    "example.com": 1,
+    "api.elevenlabs.io": 1
+   }
+  },
+  "mromidev/claude-blender-skills": {
+   "files_scanned": 89,
+   "files_skipped_large": 0,
+   "tree_files": 96,
+   "signals": {
+    "dynamic_code": 2,
+    "telemetry_upload": 1
+   },
+   "examples": {
+    "dynamic_code": [
+     "skills/blender-car-film/tools/bridge.py:21",
+     "skills/blender-film/tools/bridge.py:21"
+    ],
+    "telemetry_upload": [
+     "skills/blender-film/scripts/12_build_sfx.py:143"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 3,
+   "skill_md_sample": [
+    "skills/blender-car-film/SKILL.md",
+    "skills/blender-film/SKILL.md",
+    "skills/blender-forest/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "elevenlabs": 14
+   },
+   "gpu_mentions": 11,
+   "top_hosts": {
+    "www.youtube.com": 4,
+    "api.elevenlabs.io": 3,
+    "github.com": 2,
+    "www.instagram.com": 1,
+    "sketchfab.com": 1,
+    "creativecommons.org": 1,
+    "api.polyhaven.com": 1
+   }
+  },
+  "leonxlnx/walking-block": {
+   "files_scanned": 29,
+   "files_skipped_large": 0,
+   "tree_files": 109,
+   "signals": {},
+   "examples": {},
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 0,
+   "skill_md_sample": [],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {},
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "registry.npmjs.org": 86,
+    "github.com": 7,
+    "www.patreon.com": 3,
+    "feross.org": 3,
+    "www.scottbuckley.com.au": 2,
+    "freesound.org": 2
+   }
+  },
+  "saranambiar/hyperframes-video-agent-skills": {
+   "files_scanned": 46,
+   "files_skipped_large": 0,
+   "tree_files": 48,
+   "signals": {},
+   "examples": {},
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 9,
+   "skill_md_sample": [
+    "skills/audio-sync-assembly/SKILL.md",
+    "skills/captions-and-music-bed/SKILL.md",
+    "skills/end-to-end-video-playbook/SKILL.md",
+    "skills/hyperframes-scene-builder/SKILL.md",
+    "skills/motion-design-systems/SKILL.md",
+    "skills/product-demo-integration/SKILL.md",
+    "skills/render-qa-and-surgical-changes/SKILL.md",
+    "skills/scene-continuity-and-transitions/SKILL.md",
+    "skills/video-intake-and-storyboard/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "heygen": 3
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "www.apache.org": 2
+   }
+  },
+  "lunamos/paper2video": {
+   "files_scanned": 71,
+   "files_skipped_large": 0,
+   "tree_files": 88,
+   "signals": {
+    "unsafe_weights": 1
+   },
+   "examples": {
+    "unsafe_weights": [
+     "skills/paper2video/reference/voice.md:67"
+    ]
+   },
+   "hidden_unicode_files": [
+    "skills/paper2video/scripts/zh_font_subset.py"
+   ],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "skills/paper2video/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "elevenlabs": 70,
+    "stability": 25
+   },
+   "gpu_mentions": 1,
+   "top_hosts": {
+    "arxiv.org": 7,
+    "github.com": 4,
+    "fishaudio.org": 3,
+    "api.elevenlabs.io": 3,
+    "youtu.be": 2,
+    "www.bilibili.com": 2,
+    "www.remotion.dev": 1,
+    "lunamos.github.io": 1,
+    "flas-ai.github.io": 1,
+    "export.arxiv.org": 1,
+    "docs.astral.sh": 1,
+    "fonts.googleapis.com": 1,
+    "remotion.dev": 1
+   }
+  },
+  "arjun988/blender-skills": {
+   "files_scanned": 576,
+   "files_skipped_large": 0,
+   "tree_files": 579,
+   "signals": {
+    "telemetry_upload": 8,
+    "download_execute": 3
+   },
+   "examples": {
+    "telemetry_upload": [
+     ".mcp.json:16",
+     ".claude/skills/lighting/references/horror-lighting-setups.md:53",
+     ".cursor/mcp.json:16",
+     ".cursor/skills/lighting/references/horror-lighting-setups.md:53",
+     "docs/BLENDER_MCP_SETUP.md:117",
+     "site/package-lock.json:940"
+    ],
+    "download_execute": [
+     "docs/BLENDER_MCP_SETUP.md:16",
+     "site/src/app/(docs)/getting-started/page.tsx:127",
+     "site/src/app/(docs)/getting-started/page.tsx:130"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 188,
+   "skill_md_sample": [
+    ".claude/skills/analog-found-footage-horror/SKILL.md",
+    ".claude/skills/animation/SKILL.md",
+    ".claude/skills/anime-style/SKILL.md",
+    ".claude/skills/apocalypse-worlds/SKILL.md",
+    ".claude/skills/archviz/SKILL.md",
+    ".claude/skills/asset-optimization/SKILL.md",
+    ".claude/skills/biome-worlds/SKILL.md",
+    ".claude/skills/blender-director/SKILL.md",
+    ".claude/skills/blender-modeler/SKILL.md",
+    ".claude/skills/body-horror-style/SKILL.md",
+    ".claude/skills/brutalist-mood/SKILL.md",
+    ".claude/skills/camera-cinematography/SKILL.md",
+    ".claude/skills/cartoon-style/SKILL.md",
+    ".claude/skills/character-archetypes/SKILL.md",
+    ".claude/skills/character-artist/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "stability": 4,
+    "anthropic": 2,
+    "openai.com": 1
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "github.com": 253,
+    "registry.npmjs.org": 120,
+    "img.shields.io": 9,
+    "opencollective.com": 9,
+    "tidelift.com": 6,
+    "blender-skills.vercel.app": 4,
+    "docs.astral.sh": 3,
+    "api.star-history.com": 3,
+    "astral.sh": 3,
+    "www.patreon.com": 2,
+    "feross.org": 2,
+    "semver.org": 1,
+    "cursor.com": 1,
+    "docs.anthropic.com": 1,
+    "kiro.dev": 1
+   }
+  },
+  "runesleo/claude-video-kit": {
+   "files_scanned": 122,
+   "files_skipped_large": 0,
+   "tree_files": 127,
+   "signals": {
+    "telemetry_upload": 2
+   },
+   "examples": {
+    "telemetry_upload": [
+     "README.md:263",
+     "remotion/src/presets.ts:23"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "skills/video-explainer/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "heygen": 17,
+    "suno": 5,
+    "anthropic": 1
+   },
+   "gpu_mentions": 7,
+   "top_hosts": {
+    "registry.npmmirror.com": 247,
+    "github.com": 50,
+    "opencollective.com": 13,
+    "x.com": 9,
+    "hyperframes.heygen.com": 8,
+    "www.contributor-covenant.org": 4,
+    "tidelift.com": 4,
+    "fish.audio": 3,
+    "cdn.jsdelivr.net": 3,
+    "img.shields.io": 2,
+    "hol.org": 2,
+    "polymarket.com": 2,
+    "leolabs.me": 2,
+    "developer.apple.com": 2,
+    "raw.githubusercontent.com": 2
+   }
+  },
+  "apekshik/anymachine": {
+   "files_scanned": 269,
+   "files_skipped_large": 0,
+   "tree_files": 587,
+   "signals": {
+    "dynamic_code": 3,
+    "telemetry_upload": 1
+   },
+   "examples": {
+    "dynamic_code": [
+     "backpacks/scripts/cuttest.py:21",
+     "backpacks/scripts/export.py:96",
+     "backpacks/scripts/export.py:192"
+    ],
+    "telemetry_upload": [
+     "spider/scripts/spider_lib.py:35"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 0,
+   "skill_md_sample": [],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "fal_key": 16
+   },
+   "gpu_mentions": 5,
+   "top_hosts": {
+    "v3b.fal.media": 11,
+    "github.com": 3,
+    "fal.run": 2,
+    "queue.fal.run": 1
+   }
+  },
+  "staryone/motlab": {
+   "files_scanned": 151,
+   "files_skipped_large": 0,
+   "tree_files": 155,
+   "signals": {
+    "telemetry_upload": 4
+   },
+   "examples": {
+    "telemetry_upload": [
+     "bench/README.md:23",
+     "bench/run.mjs:18",
+     "bench/run.mjs:19",
+     "docs/rendering.md:214"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 2,
+   "skill_md_sample": [
+    "skills/motlab-assets/SKILL.md",
+    "skills/motlab/SKILL.md"
+   ],
+   "license_files": [],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "gemini": 16,
+    "suno": 12,
+    "elevenlabs": 8,
+    "heygen": 4
+   },
+   "gpu_mentions": 26,
+   "top_hosts": {
+    "registry.npmjs.org": 409,
+    "github.com": 90,
+    "opencollective.com": 40,
+    "cdn.jsdelivr.net": 10,
+    "www.w3.org": 5,
+    "tidelift.com": 4,
+    "viewer.example.com": 4,
+    "clipwing.pro": 3,
+    "api.star-history.com": 3,
+    "fonts.googleapis.com": 3,
+    "www.apache.org": 2,
+    "img.shields.io": 2,
+    "hyperframes.heygen.com": 2,
+    "raw.githubusercontent.com": 2,
+    "caddyserver.com": 2
+   }
+  },
+  "qualixar/brief2mp4": {
+   "files_scanned": 379,
+   "files_skipped_large": 0,
+   "tree_files": 514,
+   "signals": {
+    "telemetry_upload": 25,
+    "install_hook": 6,
+    "dynamic_code": 1,
+    "download_execute": 1,
+    "unsafe_weights": 1
+   },
+   "examples": {
+    "telemetry_upload": [
+     "docs/3d-walkthrough.md:148",
+     "docs/3d-walkthrough.md:150",
+     "docs/3d-walkthrough.md:155",
+     "plugin/skills/brief2mp4/references/blender-live.md:26",
+     "plugin/skills/brief2mp4/references/blender-live.md:27",
+     "plugin/skills/brief2mp4/references/blender-live.md:29"
+    ],
+    "install_hook": [
+     "plugin/skills/brief2mp4/3d/b2m3d/doctor.py:64",
+     "plugin/skills/brief2mp4/3d/b2m3d/doctor.py:70",
+     "plugin/skills/brief2mp4/3d/b2m3d/doctor.py:78",
+     "plugin/skills/brief2mp4/scripts/gen3d.py:49",
+     "plugin/skills/brief2mp4/scripts/gen3d.py:66",
+     "plugin/skills/brief2mp4/scripts/gen3d.py:141"
+    ],
+    "dynamic_code": [
+     "plugin/skills/brief2mp4/edit/recipes/_lib.sh:38"
+    ],
+    "download_execute": [
+     "plugin/skills/brief2mp4/references/blender-live.md:36"
+    ],
+    "unsafe_weights": [
+     "tests/test_blender_docs.py:97"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "plugin/skills/brief2mp4/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "heygen": 15
+   },
+   "gpu_mentions": 28,
+   "top_hosts": {
+    "en.wikipedia.org": 267,
+    "github.com": 192,
+    "registry.npmjs.org": 52,
+    "example.org": 43,
+    "creativecommons.org": 32,
+    "opencollective.com": 27,
+    "api.openverse.org": 26,
+    "commons.wikimedia.org": 23,
+    "www.flickr.com": 22,
+    "upload.wikimedia.org": 18,
+    "developer.mozilla.org": 14,
+    "www.blender.org": 11,
+    "qualixar.com": 9,
+    "example.invalid": 7,
+    "img.shields.io": 6
+   }
+  },
+  "thisisvela/sfx-generator-skill": {
+   "files_scanned": 189,
+   "files_skipped_large": 0,
+   "tree_files": 229,
+   "signals": {
+    "telemetry_upload": 13
+   },
+   "examples": {
+    "telemetry_upload": [
+     ".agents/skills/make-sound-effect/references/blocks.md:47",
+     ".agents/skills/make-sound-effect/references/lessons.md:14",
+     ".agents/skills/make-sound-effect/references/lessons.md:219",
+     ".agents/skills/make-sound-effect/references/lessons.md:342",
+     ".agents/skills/make-sound-effect/references/nature-acoustics.md:159",
+     "skills/make-sound-effect/references/blocks.md:47"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 4,
+   "skill_md_sample": [
+    ".agents/skills/create-sound-recipe/SKILL.md",
+    ".agents/skills/make-sound-effect/SKILL.md",
+    "skills/create-sound-recipe/SKILL.md",
+    "skills/make-sound-effect/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": true,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {},
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "github.com": 20,
+    "thisisvela.github.io": 6,
+    "www.apache.org": 5,
+    "schema.org": 4,
+    "www.w3.org": 2,
+    "www.googletagmanager.com": 1,
+    "www.sitemaps.org": 1,
+    "evil.example": 1
+   }
+  },
+  "yian6557/eian-riso-broll": {
+   "files_scanned": 47,
+   "files_skipped_large": 0,
+   "tree_files": 58,
+   "signals": {},
+   "examples": {},
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "gemini": 8
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "github.com": 12,
+    "gsap.com": 5,
+    "scripts.sil.org": 4,
+    "semver.org": 2,
+    "nodejs.org": 2,
+    "ffmpeg.org": 2,
+    "www.agensi.io": 2,
+    "www.adobe.com": 2,
+    "keepachangelog.com": 1,
+    "openfontlicense.org": 1,
+    "www.w3.org": 1
+   }
+  },
+  "d3voz/openjutsu": {
+   "files_scanned": 71,
+   "files_skipped_large": 0,
+   "tree_files": 103,
+   "signals": {
+    "telemetry_upload": 7
+   },
+   "examples": {
+    "telemetry_upload": [
+     "next.config.ts:3",
+     "next.config.ts:4",
+     "next.config.ts:5",
+     "package-lock.json:1183",
+     "package-lock.json:1191",
+     "start_openjutsu.bat:5"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 0,
+   "skill_md_sample": [],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "suno": 5
+   },
+   "gpu_mentions": 15,
+   "top_hosts": {
+    "registry.npmjs.org": 84,
+    "github.com": 48,
+    "opencollective.com": 29,
+    "huggingface.co": 18,
+    "openjutsu.example": 5,
+    "example.com": 4,
+    "tidelift.com": 2,
+    "other.test": 2,
+    "nextjs.org": 1,
+    "www.npmjs.com": 1,
+    "attacker.example": 1
+   }
+  },
+  "moh4696/open-3d-skills": {
+   "files_scanned": 56,
+   "files_skipped_large": 0,
+   "tree_files": 64,
+   "signals": {
+    "download_execute": 2
+   },
+   "examples": {
+    "download_execute": [
+     "install.sh:5",
+     "README.md:103"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 8,
+   "skill_md_sample": [
+    "skills/alpha-cutout/SKILL.md",
+    "skills/cursor-rig/SKILL.md",
+    "skills/exploded-view/SKILL.md",
+    "skills/frame-capture/SKILL.md",
+    "skills/motion-assets/SKILL.md",
+    "skills/scroll-film/SKILL.md",
+    "skills/site-check/SKILL.md",
+    "skills/threejs-scene/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": true,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "gemini": 17,
+    "higgsfield": 3,
+    "kling": 2,
+    "seedance": 1,
+    "runway": 1
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "github.com": 19,
+    "x.com": 4,
+    "cdn.jsdelivr.net": 4,
+    "img.shields.io": 3,
+    "raw.githubusercontent.com": 2,
+    "www.w3.org": 2
+   }
+  },
+  "spacesdrive/twiligent": {
+   "files_scanned": 945,
+   "files_skipped_large": 0,
+   "tree_files": 1392,
+   "signals": {
+    "telemetry_upload": 2
+   },
+   "examples": {
+    "telemetry_upload": [
+     "docs/platform-v2/research/mcp.md:421",
+     "docs/workflows/SECURITY_REVIEW.md:56"
+    ]
+   },
+   "hidden_unicode_files": [
+    "docs/architecture/OVERVIEW.md"
+   ],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 0,
+   "skill_md_sample": [],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "anthropic": 17,
+    "suno": 6,
+    "elevenlabs": 3,
+    "openai_api_key": 2,
+    "stability": 1,
+    "gemini": 1
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "registry.npmjs.org": 856,
+    "github.com": 206,
+    "opencollective.com": 175,
+    "cdn.example": 127,
+    "graph.instagram.com": 120,
+    "www.instagram.com": 119,
+    "www.googleapis.com": 57,
+    "example.com": 53,
+    "twiligent.ujjwal.fyi": 50,
+    "app.twiligent.ujjwal.fyi": 46,
+    "www.youtube.com": 38,
+    "developers.google.com": 31,
+    "res.cloudinary.com": 30,
+    "app.example.com": 29,
+    "api.example.com": 22
+   }
+  },
+  "vincentwei1021/video-shotcraft": {
+   "files_scanned": 1041,
+   "files_skipped_large": 0,
+   "tree_files": 1226,
+   "signals": {
+    "telemetry_upload": 18,
+    "install_hook": 1,
+    "dynamic_code": 5
+   },
+   "examples": {
+    "telemetry_upload": [
+     "assets/lib/helpers/motion.ts:6",
+     "assets/lib/helpers/motion.ts:24",
+     "assets/lib/helpers/motion.ts:37",
+     "assets/lib/helpers/shake.ts:4",
+     "assets/lib/helpers/__tests__/helpers.test.ts:133",
+     "assets/lib/helpers/__tests__/helpers.test.ts:167"
+    ],
+    "install_hook": [
+     "workbench/package.json:11"
+    ],
+    "dynamic_code": [
+     "workbench/scripts/gen-index.mjs:162",
+     "workbench/scripts/test-legacy.mjs:54",
+     "workbench/scripts/test-platform.mjs:36",
+     "workbench/scripts/test-platform.mjs:226",
+     "workbench/scripts/test-platform.mjs:367"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "suno": 20,
+    "runway": 13,
+    "gemini": 5,
+    "heygen": 3
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "registry.npmjs.org": 688,
+    "vincentwei1021.github.io": 178,
+    "github.com": 109,
+    "img.shields.io": 52,
+    "opencollective.com": 35,
+    "apinebula.ai": 16,
+    "aws.amazon.com": 16,
+    "www.remotion.dev": 15,
+    "api.star-history.com": 15,
+    "atomgit.com": 14,
+    "freesound.org": 14,
+    "x.com": 14,
+    "trendshift.io": 10,
+    "assets.mixkit.co": 10,
+    "tidelift.com": 9
+   }
+  },
+  "mohamedelaassal/youtubevideogenerator": {
+   "files_scanned": 46,
+   "files_skipped_large": 0,
+   "tree_files": 114,
+   "signals": {},
+   "examples": {},
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 0,
+   "skill_md_sample": [],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": true
+   },
+   "paid_service_mentions": {
+    "gemini": 23,
+    "elevenlabs": 6,
+    "suno": 5,
+    "openai.com": 3,
+    "stability": 1,
+    "openai_api_key": 1
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "registry.npmjs.org": 215,
+    "github.com": 52,
+    "opencollective.com": 8,
+    "tidelift.com": 5,
+    "pixabay.com": 4,
+    "img.shields.io": 4,
+    "www.youtube.com": 4,
+    "unsplash.com": 3,
+    "www.googleapis.com": 3,
+    "platform.openai.com": 2,
+    "www.pexels.com": 2,
+    "makersuite.google.com": 2,
+    "www.patreon.com": 2,
+    "feross.org": 2,
+    "getcomposer.org": 1
+   }
+  },
+  "kaomei/stickman-video-director": {
+   "files_scanned": 637,
+   "files_skipped_large": 1,
+   "tree_files": 2085,
+   "signals": {
+    "dynamic_code": 3,
+    "prompt_injection": 3,
+    "telemetry_upload": 4
+   },
+   "examples": {
+    "dynamic_code": [
+     "skills/directing-stickman-videos/assets/b6/hong-kong-v90/source/work/hk-1990s-overhaul-v57/animate.py:56",
+     "skills/directing-stickman-videos/scripts/b6_motion_review.py:238",
+     "skills/directing-stickman-videos/scripts/b6_production.py:100"
+    ],
+    "prompt_injection": [
+     "skills/directing-stickman-videos/references/b4-audio-direction.md:15",
+     "skills/directing-stickman-videos/references/b4-opening-direction.md:24",
+     "skills/directing-stickman-videos/tests/b4-audio-policy.test.mjs:28"
+    ],
+    "telemetry_upload": [
+     "skills/directing-stickman-videos/references/b5-character-explainer.md:51",
+     "skills/directing-stickman-videos/scripts/b5-visual-review.mjs:20",
+     "skills/directing-stickman-videos/tests/b4-opening-audio-check.test.mjs:9",
+     "skills/directing-stickman-videos/tests/b4-opening-audio-check.test.mjs:11"
+    ]
+   },
+   "hidden_unicode_files": [
+    "docs/audio-license-archive/evidence/kevin-rimshot/kdum-keesh-license.html.txt",
+    "docs/audio-license-archive/evidence/owlish-home-202/source.html.txt"
+   ],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "skills/directing-stickman-videos/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "gemini": 135,
+    "elevenlabs": 22,
+    "stability": 19,
+    "seedance": 2,
+    "heygen": 1,
+    "kling": 1
+   },
+   "gpu_mentions": 8,
+   "top_hosts": {
+    "opengameart.org": 1923,
+    "kenney.nl": 801,
+    "cdn.jsdelivr.net": 488,
+    "creativecommons.org": 367,
+    "www.w3.org": 232,
+    "incompetech.com": 199,
+    "github.com": 126,
+    "www.youtube.com": 69,
+    "freesound.org": 69,
+    "purl.org": 58,
+    "rdfs.org": 58,
+    "cdn.freesound.org": 56,
+    "lpc.opengameart.org": 52,
+    "thumb.wikimedia.org": 51,
+    "dga.wikipedia.org": 49
+   }
+  },
+  "kajisho5/ffmpeg-skill": {
+   "files_scanned": 328,
+   "files_skipped_large": 0,
+   "tree_files": 498,
+   "signals": {
+    "telemetry_upload": 13,
+    "dynamic_code": 3,
+    "permission_bypass": 3,
+    "prompt_injection": 2
+   },
+   "examples": {
+    "telemetry_upload": [
+     "PRIVACY.md:6",
+     "demos/build.py:1957",
+     "docs/demos.md:706",
+     "references/scripts.md:599",
+     "scripts/audio.py:150",
+     "scripts/waveform.py:10"
+    ],
+    "dynamic_code": [
+     "README.md:518",
+     "docs/roadmap.md:484",
+     "tests/test_contract.py:6624"
+    ],
+    "permission_bypass": [
+     "docs/design-decisions.md:4623",
+     "evals/run_agents_25.sh:87",
+     "evals/results/iteration-25.json:14"
+    ],
+    "prompt_injection": [
+     "tests/test_contract.py:9492",
+     "tests/test_contract.py:9496"
+    ]
+   },
+   "hidden_unicode_files": [
+    "CHANGELOG.md",
+    "fuzz/seeds/json_input/bom.json",
+    "references/gotchas.md",
+    "scripts/_ass_overlay.py",
+    "scripts/_common/emoji.py",
+    "tests/test_picture.py"
+   ],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 19,
+   "skill_md_sample": [
+    ".claude/skills/build-artifacts/SKILL.md",
+    ".claude/skills/ci-pipeline-synthesizer/SKILL.md",
+    ".claude/skills/code-review/SKILL.md",
+    ".claude/skills/concurrent-branches/SKILL.md",
+    ".claude/skills/cross-surface-changes/SKILL.md",
+    ".claude/skills/defect-reports/SKILL.md",
+    ".claude/skills/destructive-operations/SKILL.md",
+    ".claude/skills/edge-probe/SKILL.md",
+    ".claude/skills/first-try-probe/SKILL.md",
+    ".claude/skills/git-hygiene/SKILL.md",
+    ".claude/skills/github-actions/SKILL.md",
+    ".claude/skills/mcp-server-design/SKILL.md",
+    ".claude/skills/release-management/SKILL.md",
+    ".claude/skills/reproducing-ci-locally/SKILL.md",
+    ".claude/skills/review-page-ui/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": true
+   },
+   "paid_service_mentions": {
+    "stability": 46,
+    "gemini": 24,
+    "anthropic": 4
+   },
+   "gpu_mentions": 37,
+   "top_hosts": {
+    "github.com": 109,
+    "www.youtube.com": 21,
+    "kajisho5.github.io": 19,
+    "ffmpeg.org": 16,
+    "archive.org": 6,
+    "www.npmjs.com": 5,
+    "img.shields.io": 5,
+    "registry.modelcontextprotocol.io": 3,
+    "example.com": 3,
+    "glama.ai": 2,
+    "trendshift.io": 2,
+    "doi.org": 2,
+    "static.modelcontextprotocol.io": 2,
+    "api.example.com": 2,
+    "registry.npmjs.org": 2
+   }
+  },
+  "klad-app/klad": {
+   "files_scanned": 434,
+   "files_skipped_large": 0,
+   "tree_files": 990,
+   "signals": {
+    "dynamic_code": 1
+   },
+   "examples": {
+    "dynamic_code": [
+     "crates/core/src/look.rs:646"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 3,
+   "skill_md_sample": [
+    "docs/skill/SKILL.md",
+    "docs/skill/drawing/SKILL.md",
+    "docs/skill/pixel/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": true,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {},
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "github.com": 459,
+    "scripts.sil.org": 44,
+    "www.apache.org": 31,
+    "klad.studio": 10,
+    "openfontlicense.org": 8,
+    "spdx.org": 6,
+    "www.ijg.org": 4,
+    "api.github.com": 4,
+    "www.jmsole.cl": 3,
+    "rustup.rs": 2,
+    "polyformproject.org": 2,
+    "libspng.org": 2,
+    "www.iso.org": 2,
+    "www.itu.int": 2,
+    "www.w3.org": 2
+   }
+  },
+  "hypit-ai/hypit": {
+   "files_scanned": 1485,
+   "files_skipped_large": 0,
+   "tree_files": 1723,
+   "signals": {
+    "telemetry_upload": 30,
+    "dynamic_code": 1
+   },
+   "examples": {
+    "telemetry_upload": [
+     "examples/complex-explainer/packages/opening-system/README.md:6",
+     "examples/complex-explainer/packages/opening-system/README.md:7",
+     "examples/complex-explainer/packages/opening-system/README.md:34",
+     "examples/complex-explainer/packages/opening-system/src/definition.js:32",
+     "examples/complex-explainer/packages/opening-system/src/definition.js:36",
+     "examples/complex-explainer/packages/opening-system/src/flag-cloth.js:25"
+    ],
+    "dynamic_code": [
+     "packages/html-program/src/html-visual.ts:65"
+    ]
+   },
+   "hidden_unicode_files": [
+    "packages/text-fine/test/text-fine.test.ts"
+   ],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "skills/hypit/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "seedance": 967,
+    "elevenlabs": 97,
+    "suno": 38,
+    "higgsfield": 11,
+    "stability": 7,
+    "kling": 3,
+    "openrouter": 2,
+    "gemini": 1
+   },
+   "gpu_mentions": 4,
+   "top_hosts": {
+    "registry.npmjs.org": 1250,
+    "github.com": 241,
+    "opencollective.com": 240,
+    "liberapay.com": 114,
+    "hypit.ai": 66,
+    "storage.googleapis.com": 21,
+    "img.shields.io": 18,
+    "example.test": 17,
+    "trendshift.io": 12,
+    "tokendance.space": 12,
+    "monid.ai": 12,
+    "www.w3.org": 12,
+    "assets.example": 12,
+    "www.hiapi.ai": 11,
+    "example.com": 11
+   }
+  },
+  "JDhruv14/line-art-animation": {
+   "files_scanned": 33,
+   "files_skipped_large": 0,
+   "tree_files": 37,
+   "signals": {
+    "telemetry_upload": 2
+   },
+   "examples": {
+    "telemetry_upload": [
+     "references/matching.md:49",
+     "scripts/clip.ts:9"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "suno": 5
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "registry.npmjs.org": 67,
+    "github.com": 6,
+    "opencollective.com": 1,
+    "tidelift.com": 1,
+    "www.w3.org": 1,
+    "cdn.syndication.twimg.com": 1
+   }
+  },
+  "open-slide/open-slide": {
+   "files_scanned": 721,
+   "files_skipped_large": 0,
+   "tree_files": 823,
+   "signals": {
+    "telemetry_upload": 195,
+    "download_execute": 1,
+    "install_hook": 1,
+    "permission_bypass": 1
+   },
+   "examples": {
+    "telemetry_upload": [
+     "pnpm-lock.yaml:27",
+     "pnpm-lock.yaml:71",
+     "pnpm-lock.yaml:73",
+     "pnpm-lock.yaml:125",
+     "pnpm-lock.yaml:128",
+     "pnpm-lock.yaml:131"
+    ],
+    "download_execute": [
+     "apps/demo/slides/stackyard-cli-launch/index.tsx:2735"
+    ],
+    "install_hook": [
+     "apps/web/package.json:10"
+    ],
+    "permission_bypass": [
+     "packages/core/src/agent/providers/sdk-types.ts:19"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 15,
+   "skill_md_sample": [
+    ".agents/skills/apple-design/SKILL.md",
+    ".agents/skills/emil-design-eng/SKILL.md",
+    ".agents/skills/frontend-design/SKILL.md",
+    ".agents/skills/review-animations/SKILL.md",
+    ".agents/skills/shadcn/SKILL.md",
+    ".agents/skills/vercel-composition-patterns/SKILL.md",
+    ".agents/skills/vercel-react-best-practices/SKILL.md",
+    ".agents/skills/web-design-guidelines/SKILL.md",
+    ".claude/skills/changelog-entry/SKILL.md",
+    ".claude/skills/ui-screenshots/SKILL.md",
+    "packages/core/skills/apply-comments/SKILL.md",
+    "packages/core/skills/create-slide/SKILL.md",
+    "packages/core/skills/create-theme/SKILL.md",
+    "packages/core/skills/current-slide/SKILL.md",
+    "packages/core/skills/slide-authoring/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "anthropic": 45,
+    "gemini": 11,
+    "runway": 9,
+    "suno": 8,
+    "openai.com": 1
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "github.com": 667,
+    "react.dev": 44,
+    "fonts.googleapis.com": 31,
+    "vercel.com": 20,
+    "nextjs.org": 19,
+    "www.w3.org": 18,
+    "open-slide.dev": 13,
+    "example.com": 13,
+    "www.npmjs.com": 9,
+    "ui.shadcn.com": 9,
+    "swr.vercel.app": 7,
+    "schema.org": 6,
+    "schemas.openxmlformats.org": 5,
+    "www.contributor-covenant.org": 4,
+    "buymeacoffee.com": 4
+   }
+  },
+  "latent-spaces/brag": {
+   "files_scanned": 65,
+   "files_skipped_large": 0,
+   "tree_files": 373,
+   "signals": {
+    "telemetry_upload": 1,
+    "download_execute": 2
+   },
+   "examples": {
+    "telemetry_upload": [
+     "PRODUCT.md:29"
+    ],
+    "download_execute": [
+     "skills/brag/slim.md:100",
+     "skills/brag-slim/SKILL.md:100"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 2,
+   "skill_md_sample": [
+    "skills/brag-slim/SKILL.md",
+    "skills/brag/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "heygen": 4,
+    "gemini": 4
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "github.com": 24,
+    "fonts.googleapis.com": 24,
+    "fonts.gstatic.com": 12,
+    "latent-spaces.github.io": 8,
+    "letsbrag.app": 5,
+    "hyperframes.heygen.com": 4,
+    "ende.app": 4,
+    "images.unsplash.com": 4,
+    "api.star-history.com": 3,
+    "www.skills.sh": 2,
+    "kenney.nl": 2,
+    "agent-plugins.org": 1,
+    "impeccable.style": 1,
+    "www.star-history.com": 1,
+    "www.w3.org": 1
+   }
+  },
+  "paulirish/chrome-capture": {
+   "files_scanned": 31,
+   "files_skipped_large": 0,
+   "tree_files": 31,
+   "signals": {
+    "telemetry_upload": 21
+   },
+   "examples": {
+    "telemetry_upload": [
+     "benchmarks/barcode-canvas.html:326",
+     "benchmarks/barcode-canvas.html:411",
+     "benchmarks/mpv_telemetry.lua:4",
+     "benchmarks/mpv_telemetry.lua:8",
+     "benchmarks/mpv_telemetry.lua:9",
+     "benchmarks/mpv_telemetry.lua:13"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 0,
+   "skill_md_sample": [],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "suno": 4,
+    "gemini": 2
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "paulirish.github.io": 13,
+    "github.com": 10,
+    "sam1983aing.github.io": 6,
+    "www.apache.org": 2,
+    "chromedevtools.github.io": 2,
+    "chromium-review.googlesource.com": 2,
+    "registry.npmjs.org": 2,
+    "www.w3.org": 2,
+    "img.shields.io": 1,
+    "www.npmjs.com": 1,
+    "source.chromium.org": 1,
+    "example.com": 1
+   }
+  },
+  "zhouxiaoka/autoclip": {
+   "files_scanned": 1617,
+   "files_skipped_large": 0,
+   "tree_files": 2046,
+   "signals": {
+    "unsafe_weights": 1,
+    "telemetry_upload": 1381,
+    "install_hook": 3,
+    "secret_literal": 9,
+    "dynamic_code": 3,
+    "extra_index": 3,
+    "download_execute": 1
+   },
+   "examples": {
+    "unsafe_weights": [
+     ".gitignore:60"
+    ],
+    "telemetry_upload": [
+     "AGENTS.md:8",
+     "AGENTS.md:15",
+     "CHANGELOG.md:210",
+     "CHANGELOG.md:211",
+     "CHANGELOG.md:231",
+     "CHANGELOG.md:235"
+    ],
+    "install_hook": [
+     "setup.py:17",
+     "backend/cli.py:541",
+     "scripts/packaging_frame_benchmark.py:720"
+    ],
+    "secret_literal": [
+     "backend/tests/test_diagnostics_upload.py:78",
+     "backend/tests/test_diagnostics_upload.py:104",
+     "backend/tests/test_diagnostics_upload.py:550",
+     "backend/tests/test_log_redaction.py:11",
+     "backend/tests/test_log_redaction.py:62",
+     "backend/tests/test_log_redaction.py:92"
+    ],
+    "dynamic_code": [
+     "frontend/tests/failure-hint.test.cjs:12",
+     "scripts/lib/desktop_build_common.sh:256",
+     "scripts/lib/desktop_build_common.sh:257"
+    ],
+    "extra_index": [
+     "scripts/lib/desktop_build_common.sh:169",
+     "scripts/lib/desktop_build_common.sh:170",
+     "scripts/lib/desktop_build_common.sh:174"
+    ],
+    "download_execute": [
+     "scripts/tests/test_prepare_windows_python_crt.ps1:21"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 2,
+   "skill_md_sample": [
+    "skills/autoclip/SKILL.md",
+    "skills/product-board/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": true,
+    "cargo": false,
+    "dockerfile": true
+   },
+   "paid_service_mentions": {
+    "gemini": 872,
+    "anthropic": 151,
+    "openrouter": 138,
+    "openai.com": 98,
+    "openai_api_key": 49,
+    "seedance": 20,
+    "heygen": 9,
+    "stability": 6,
+    "suno": 5,
+    "kling": 3
+   },
+   "gpu_mentions": 54,
+   "top_hosts": {
+    "www.youtube.com": 506,
+    "registry.npmjs.org": 475,
+    "github.com": 419,
+    "pub-3fb92949b9c2480b89feec5ec03f3540.r2.dev": 304,
+    "x.com": 152,
+    "gw.example": 111,
+    "www.bilibili.com": 104,
+    "88api.ai": 66,
+    "api.deepseek.com": 61,
+    "go.apimart.ai": 60,
+    "zhouxiaoka.github.io": 54,
+    "api.openai.com": 54,
+    "api.88api.ai": 49,
+    "dashscope.aliyuncs.com": 46,
+    "app.upload-post.com": 45
+   }
+  },
+  "zeative/motion-educator": {
+   "files_scanned": 347,
+   "files_skipped_large": 3,
+   "tree_files": 897,
+   "signals": {},
+   "examples": {},
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "elevenlabs": 98,
+    "gemini": 3,
+    "suno": 2,
+    "replicate": 2,
+    "stability": 2
+   },
+   "gpu_mentions": 2,
+   "top_hosts": {
+    "www.w3.org": 2236,
+    "assets.mixkit.co": 104,
+    "mixkit.co": 54,
+    "github.com": 33,
+    "registry.npmjs.org": 22,
+    "img.shields.io": 5,
+    "gsap.com": 4,
+    "motionedu.kejaa.id": 3,
+    "en.wikipedia.org": 3,
+    "elevenlabs.io": 2,
+    "threejs.org": 2,
+    "api.elevenlabs.io": 2,
+    "www.npr.org": 2,
+    "agentskills.io": 1,
+    "dbarchive.biosciencedbc.jp": 1
+   }
+  },
+  "Sandflow-ai/sand3d": {
+   "files_scanned": 114,
+   "files_skipped_large": 2,
+   "tree_files": 157,
+   "signals": {
+    "dynamic_code": 2
+   },
+   "examples": {
+    "dynamic_code": [
+     "tests/test_errors.py:12",
+     "tests/test_nothing_cut.py:160"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 0,
+   "skill_md_sample": [],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": true,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {},
+   "gpu_mentions": 2,
+   "top_hosts": {
+    "huggingface.co": 135,
+    "github.com": 29,
+    "raw.githubusercontent.com": 18,
+    "sand3d.sandflow.ai": 12,
+    "www.contributor-covenant.org": 7,
+    "sandflow.ai": 6,
+    "img.shields.io": 3,
+    "www.apache.org": 2,
+    "pypi.org": 1
+   }
+  },
+  "academa-labs/manimgx": {
+   "files_scanned": 2724,
+   "files_skipped_large": 0,
+   "tree_files": 4532,
+   "signals": {
+    "download_execute": 3,
+    "dynamic_code": 11,
+    "telemetry_upload": 6,
+    "unsafe_weights": 1
+   },
+   "examples": {
+    "download_execute": [
+     "pyproject.toml:140",
+     ".github/workflows/create-executables.yaml:64",
+     "docs/zensical.toml:170"
+    ],
+    "dynamic_code": [
+     "browser/src/director.ts:160",
+     "docs/render.py:27",
+     "src/manimgx/mobjects/text.py:1243",
+     "src/manimgx/mobjects/text.py:1254",
+     "src/manimgx/mobjects/text.py:1263",
+     "src/manimgx/mobjects/text.py:1507"
+    ],
+    "telemetry_upload": [
+     "src/manimgx/animation/motion.py:1999",
+     "src/manimgx/animation/motion.py:2005",
+     "src/manimgx/animation/motion.py:2020",
+     "src/manimgx/animation/motion.py:2030",
+     "src/manimgx/animation/motion.py:2037",
+     "tests/integration/cases/applying_waves/scene.py:9"
+    ],
+    "unsafe_weights": [
+     "src/manimgx/drawing/typesetting.py:187"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [
+    "rust/engine/src/dfg.bin"
+   ],
+   "binary_count": 1,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "skills/manimgx/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": true,
+    "cargo": false,
+    "dockerfile": true
+   },
+   "paid_service_mentions": {
+    "gemini": 14,
+    "elevenlabs": 13,
+    "fal.ai": 12,
+    "fal_key": 12,
+    "stability": 3,
+    "anthropic": 2
+   },
+   "gpu_mentions": 6,
+   "top_hosts": {
+    "github.com": 287,
+    "www.apache.org": 98,
+    "manimgx.academa.ai": 72,
+    "www.videolan.org": 32,
+    "raw.githubusercontent.com": 18,
+    "pypi.org": 15,
+    "opensource.org": 12,
+    "www.w3.org": 11,
+    "academa.ai": 11,
+    "example.test": 10,
+    "www.contributor-covenant.org": 8,
+    "llvm.org": 7,
+    "img.shields.io": 7,
+    "docs.github.com": 7,
+    "docs.astral.sh": 7
+   }
+  },
+  "openfilm/openfilm": {
+   "files_scanned": 2140,
+   "files_skipped_large": 3,
+   "tree_files": 3634,
+   "signals": {
+    "telemetry_upload": 33,
+    "permission_bypass": 3,
+    "download_execute": 23,
+    "secret_literal": 1,
+    "install_hook": 1,
+    "prompt_injection": 1,
+    "dynamic_code": 1
+   },
+   "examples": {
+    "telemetry_upload": [
+     "pnpm-lock.yaml:551",
+     "pnpm-lock.yaml:4334",
+     "pnpm-lock.yaml:4400",
+     "apps/desktop/CHANGELOG.md:720",
+     "apps/desktop/chat/src/i18n/locales/en-US.ts:371",
+     "apps/desktop/chat/src/i18n/locales/en-US.ts:375"
+    ],
+    "permission_bypass": [
+     "apps/desktop/chat/src/state/local-agent-store.ts:331",
+     "apps/desktop/chat/src/state/local-agent-store.ts:334",
+     "apps/desktop/src/agents.mjs:93"
+    ],
+    "download_execute": [
+     "apps/desktop/src/agent-installation.mjs:672",
+     "apps/desktop/src/agent-installation.mjs:674",
+     "apps/desktop/src/agent-installation.mjs:676",
+     "apps/desktop/src/agent-installation.mjs:678",
+     "apps/desktop/src/agent-installation.mjs:681",
+     "apps/desktop/src/agent-installation.mjs:682"
+    ],
+    "secret_literal": [
+     "apps/desktop/src/turn-notices.test.mjs:15"
+    ],
+    "install_hook": [
+     "packages/openfilm/package.json:89"
+    ],
+    "prompt_injection": [
+     "packages/openfilm/src/community-scan.mjs:49"
+    ],
+    "dynamic_code": [
+     "packages/openfilm/studio/server/exports.test.mjs:128"
+    ]
+   },
+   "hidden_unicode_files": [
+    "apps/desktop/bench/prompt-pills.tsx",
+    "packages/openfilm/src/captions.mjs",
+    "packages/openfilm/src/publish-cli.test.mjs",
+    "packages/openfilm/studio/server/get.test.mjs",
+    "packages/openfilm/studio/server/providers/openfilm.test.mjs",
+    "packages/shared/src/prompt-reference.ts"
+   ],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 5,
+   "skill_md_sample": [
+    "packages/openfilm/manual/film/SKILL.md",
+    "packages/openfilm/manual/media/SKILL.md",
+    "packages/openfilm/plugins/canvas/skills/canvas/SKILL.md",
+    "packages/openfilm/plugins/color/skills/color/SKILL.md",
+    "skills/openfilm/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "elevenlabs": 277,
+    "seedance": 192,
+    "gemini": 160,
+    "openrouter": 156,
+    "anthropic": 146,
+    "kling": 97,
+    "replicate": 62,
+    "fal.ai": 39,
+    "heygen": 31,
+    "openai.com": 23
+   },
+   "gpu_mentions": 22,
+   "top_hosts": {
+    "github.com": 3478,
+    "openfilm.dev": 70,
+    "img.shields.io": 66,
+    "www.w3.org": 46,
+    "api.star-history.com": 44,
+    "example.com": 33,
+    "www.npmjs.com": 24,
+    "discord.gg": 24,
+    "www.youtube.com": 22,
+    "www.star-history.com": 22,
+    "relay.example": 22,
+    "api.deepseek.com": 17,
+    "raw.githubusercontent.com": 15,
+    "cursor.com": 13,
+    "api.openai.com": 12
+   }
+  },
+  "BudgetAny/Budget3D": {
+   "files_scanned": 52,
+   "files_skipped_large": 1,
+   "tree_files": 61,
+   "signals": {
+    "dynamic_code": 11,
+    "unsafe_weights": 15
+   },
+   "examples": {
+    "dynamic_code": [
+     "budget3d/models/load.py:38",
+     "budget3d/models/load.py:90",
+     "budget3d/models/load.py:101",
+     "budget3d/sampling/sampler.py:31",
+     "scripts/convert_dinov3_to_hf.py:262",
+     "scripts/convert_dinov3_to_hf.py:290"
+    ],
+    "unsafe_weights": [
+     "budget3d/models/load.py:64",
+     "scripts/bench_infer.py:73",
+     "scripts/bench_infer.py:107",
+     "scripts/bench_infer.py:148",
+     "scripts/convert_dinov3_to_hf.py:264",
+     "scripts/eval_budget.py:69"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 0,
+   "skill_md_sample": [],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": true,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {},
+   "gpu_mentions": 68,
+   "top_hosts": {
+    "huggingface.co": 17,
+    "github.com": 16,
+    "budgetany.github.io": 5,
+    "arxiv.org": 2,
+    "objaverse.allenai.org": 1,
+    "www.apache.org": 1,
+    "images.cocodataset.org": 1
+   }
+  },
+  "charlesdove977/advertising-ops": {
+   "files_scanned": 17,
+   "files_skipped_large": 0,
+   "tree_files": 18,
+   "signals": {},
+   "examples": {},
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "skill/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "higgsfield": 29,
+    "anthropic": 1
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "github.com": 10,
+    "img.shields.io": 5,
+    "www.charlieautomates.com": 3,
+    "console.apify.com": 3,
+    "higgsfield.ai": 3,
+    "www.youtube.com": 3,
+    "www.npmjs.com": 2,
+    "fonts.googleapis.com": 2,
+    "claude.ai": 1,
+    "www.skool.com": 1,
+    "charlieautomates.com": 1,
+    "fonts.gstatic.com": 1
+   }
+  },
+  "charlesdove977/re-walkthrough-pro": {
+   "files_scanned": 13,
+   "files_skipped_large": 0,
+   "tree_files": 14,
+   "signals": {},
+   "examples": {},
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "skill/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "higgsfield": 44,
+    "seedance": 33,
+    "kling": 6,
+    "anthropic": 1
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "github.com": 9,
+    "img.shields.io": 5,
+    "www.charlieautomates.com": 4,
+    "www.npmjs.com": 4,
+    "www.skool.com": 2,
+    "charlieautomates.com": 2,
+    "www.zillow.com": 2,
+    "claude.ai": 1,
+    "higgsfield.ai": 1,
+    "www.apify.com": 1,
+    "console.apify.com": 1
+   }
+  },
+  "mengto/skills": {
+   "files_scanned": 1285,
+   "files_skipped_large": 8,
+   "tree_files": 1921,
+   "signals": {
+    "telemetry_upload": 77,
+    "dynamic_code": 4
+   },
+   "examples": {
+    "telemetry_upload": [
+     "agent-skills/3d/3d-cloth-material/PROMPT.md:24",
+     "agent-skills/3d/3d-harbour-water/SKILL.md:43",
+     "agent-skills/3d/3d-harbour-water/demo/assets/harbour-water.js:4",
+     "agent-skills/3d/3d-harbour-water/demo/assets/harbour-water.js:5",
+     "agent-skills/3d/3d-paper-material/SKILL.md:33",
+     "agent-skills/3d/3d-paper-material/SKILL.md:41"
+    ],
+    "dynamic_code": [
+     "agent-skills/game-combat/game-dev-combat-animation/scripts/tools/play.js:10",
+     "agent-skills/game-combat/game-dev-combat-animation/scripts/tools/shot.js:10",
+     "agent-skills/illustration/illustration-halftone-line/scripts/halftone.mjs:202",
+     "agent-skills/video-editing/making-of-film/scripts/fix-onsets.mjs:14"
+    ]
+   },
+   "hidden_unicode_files": [
+    "agent-skills/3d/3d-ultra-realistic-water/demo/build.mjs"
+   ],
+   "shipped_binaries_or_weights": [
+    "agent-skills/game-combat/water-crystal-skill-vfx/demo/layout/layout.bin"
+   ],
+   "binary_count": 1,
+   "skill_md_files": 217,
+   "skill_md_sample": [
+    "agent-skills/3d/3d-cloth-material/SKILL.md",
+    "agent-skills/3d/3d-construction-sequence/SKILL.md",
+    "agent-skills/3d/3d-falling-leaves/SKILL.md",
+    "agent-skills/3d/3d-four-seasons/SKILL.md",
+    "agent-skills/3d/3d-harbour-water/SKILL.md",
+    "agent-skills/3d/3d-high-poly-models/SKILL.md",
+    "agent-skills/3d/3d-high-resolution-textures/SKILL.md",
+    "agent-skills/3d/3d-kasumidera-ultra-realism/SKILL.md",
+    "agent-skills/3d/3d-metal-material/SKILL.md",
+    "agent-skills/3d/3d-modular-buildings/SKILL.md",
+    "agent-skills/3d/3d-orbit-inspect-demo/SKILL.md",
+    "agent-skills/3d/3d-paper-material/SKILL.md",
+    "agent-skills/3d/3d-retina-resolution/SKILL.md",
+    "agent-skills/3d/3d-sky-background/SKILL.md",
+    "agent-skills/3d/3d-sky-rays/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "elevenlabs": 166,
+    "heygen": 127,
+    "higgsfield": 73,
+    "seedance": 73,
+    "stability": 28,
+    "gemini": 4,
+    "runway": 2,
+    "kling": 1
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "hoirqrkdgbmvpwutwuwj.supabase.co": 150,
+    "neuform.ai": 117,
+    "fonts.googleapis.com": 89,
+    "www.w3.org": 66,
+    "cdnjs.cloudflare.com": 64,
+    "github.com": 60,
+    "threejs.org": 38,
+    "cdn.tailwindcss.com": 38,
+    "code.iconify.design": 38,
+    "fonts.gstatic.com": 32,
+    "developer.mozilla.org": 31,
+    "unsplash.com": 25,
+    "x.com": 24,
+    "images.unsplash.com": 22,
+    "polyhaven.com": 16
+   }
+  },
+  "dozentwelve/papermorph": {
+   "files_scanned": 946,
+   "files_skipped_large": 10,
+   "tree_files": 7753,
+   "signals": {
+    "telemetry_upload": 30,
+    "permission_bypass": 1
+   },
+   "examples": {
+    "telemetry_upload": [
+     ".claude/skills/papermorph/references/picture-books/puppets.md:43",
+     ".claude/skills/papermorph/scripts/sfx.py:214",
+     "site/joke-collection/ch03/scene4.js:36",
+     "site/science/ch15/index.html:23",
+     "site/science/ch15/index.html:281",
+     "site/science/ch15/index.html:283"
+    ],
+    "permission_bypass": [
+     "site/cwtfigo-promo/ch01/scene5.js:21"
+    ]
+   },
+   "hidden_unicode_files": [
+    ".claude/skills/papermorph/references/lessons/maths.md"
+   ],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    ".claude/skills/papermorph/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "openrouter": 57,
+    "elevenlabs": 41,
+    "openai_api_key": 8,
+    "kling": 7,
+    "anthropic": 7,
+    "openai.com": 1,
+    "runway": 1,
+    "gemini": 1
+   },
+   "gpu_mentions": 5,
+   "top_hosts": {
+    "commons.wikimedia.org": 227,
+    "papermorph.diamonddoge.org": 71,
+    "www.w3.org": 65,
+    "github.com": 37,
+    "creativecommons.org": 23,
+    "www.naturalearthdata.com": 17,
+    "ourworldindata.org": 17,
+    "ja.wikipedia.org": 13,
+    "scripts.sil.org": 12,
+    "openfontlicense.org": 11,
+    "openrouter.ai": 9,
+    "www.adlnet.org": 8,
+    "opengameart.org": 6,
+    "www.imsglobal.org": 5,
+    "www.archives.go.jp": 5
+   }
+  },
+  "Moh4696/cinematic-skill": {
+   "files_scanned": 47,
+   "files_skipped_large": 0,
+   "tree_files": 50,
+   "signals": {
+    "download_execute": 2,
+    "telemetry_upload": 1
+   },
+   "examples": {
+    "download_execute": [
+     "install.sh:5",
+     "README.md:71"
+    ],
+    "telemetry_upload": [
+     "skills/cinematic-film/scripts/engine.py:345"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "skills/cinematic-film/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": true,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "gemini": 14,
+    "elevenlabs": 3,
+    "higgsfield": 2
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "github.com": 18,
+    "cdn.jsdelivr.net": 6,
+    "raw.githubusercontent.com": 4,
+    "x.com": 4,
+    "img.shields.io": 2,
+    "catalog.archives.gov": 1,
+    "commons.wikimedia.org": 1
+   }
+  },
+  "voyager-so/vork": {
+   "files_scanned": 1798,
+   "files_skipped_large": 2,
+   "tree_files": 2622,
+   "signals": {
+    "download_execute": 3,
+    "telemetry_upload": 264,
+    "dynamic_code": 180
+   },
+   "examples": {
+    "download_execute": [
+     "install.sh:2",
+     "crates/vork-cli/src/update_notice.rs:145",
+     "scripts/test-installer.py:509"
+    ],
+    "telemetry_upload": [
+     "README.md:709",
+     "crates/moda-assets/src/decode.rs:138",
+     "crates/moda-assets/src/engine_seam.rs:193",
+     "crates/moda-assets/src/fetch.rs:69",
+     "crates/moda-assets/src/fetch.rs:81",
+     "crates/moda-assets/src/fetch.rs:98"
+    ],
+    "dynamic_code": [
+     "crates/moda-scene/src/envelope.rs:229",
+     "crates/moda-scene/src/envelope.rs:237",
+     "crates/moda-scene/src/envelope.rs:238",
+     "crates/moda-scene/src/envelope.rs:239",
+     "crates/moda-scene/src/envelope.rs:240",
+     "crates/moda-scene/src/envelope.rs:314"
+    ]
+   },
+   "hidden_unicode_files": [
+    "crates/moda-text/src/degraded.rs",
+    "crates/moda-text/src/emoji.rs",
+    "crates/moda-text/src/host.rs",
+    "crates/moda-text/src/vector/ops.rs",
+    "vendor/harfrust/MODA-PATCH.md"
+   ],
+   "shipped_binaries_or_weights": [
+    "crates/vork-render/tests/fixtures/bb107/written.json.buffers.d96f3574-6ead-4ef7-afd8-376969e42ec3.bin",
+    "crates/vork-render/tests/fixtures/boundary-meshes.bin",
+    "crates/vork-render/tests/fixtures/cloth/rim-patch.bin",
+    "crates/vork-render/tests/fixtures/geometry.bin",
+    "examples/assets/starter-geometry.bin",
+    "examples/black-hole/assets/corinth/scene.bin",
+    "examples/black-hole/scene.std.bin",
+    "examples/fog-interior.json.geometry.bin",
+    "examples/murmuration/assets/birds/birds.bin",
+    "examples/water/scene.std.bin"
+   ],
+   "binary_count": 10,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "skills/vork/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": true,
+    "dockerfile": true
+   },
+   "paid_service_mentions": {
+    "replicate": 6,
+    "gemini": 2,
+    "stability": 2
+   },
+   "gpu_mentions": 176,
+   "top_hosts": {
+    "cdn.moda.app": 2142,
+    "wasm-bindgen.github.io": 991,
+    "github.com": 559,
+    "developer.mozilla.org": 404,
+    "gpuweb.github.io": 192,
+    "www.w3.org": 56,
+    "developer.apple.com": 51,
+    "raw.githubusercontent.com": 45,
+    "registry.khronos.org": 44,
+    "creativecommons.org": 40,
+    "dl.polyhaven.org": 37,
+    "polyhaven.com": 32,
+    "registry.npmjs.org": 31,
+    "docs.rs": 30,
+    "notofonts.github.io": 22
+   }
+  },
+  "video-motion/claude-video-effects": {
+   "files_scanned": 17,
+   "files_skipped_large": 0,
+   "tree_files": 29,
+   "signals": {},
+   "examples": {},
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": true,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {},
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "github.com": 8,
+    "scripts.sil.org": 5,
+    "instagram.com": 2,
+    "ai.google.dev": 2,
+    "www.apache.org": 2,
+    "openfontlicense.org": 2
+   }
+  },
+  "video-motion/motionmaxxing": {
+   "files_scanned": 80,
+   "files_skipped_large": 1,
+   "tree_files": 105,
+   "signals": {
+    "telemetry_upload": 1,
+    "dynamic_code": 27
+   },
+   "examples": {
+    "telemetry_upload": [
+     "references/type.md:132"
+    ],
+    "dynamic_code": [
+     "scripts/brand.mjs:489",
+     "scripts/brand.mjs:491",
+     "scripts/brand.mjs:493",
+     "scripts/brand.mjs:496",
+     "scripts/brand.mjs:511",
+     "scripts/brand.mjs:524"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "elevenlabs": 51,
+    "stability": 4,
+    "replicate": 1,
+    "anthropic": 1
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "github.com": 69,
+    "www.w3.org": 18,
+    "www.microsoft.com": 18,
+    "img.shields.io": 9,
+    "docs.microsoft.com": 8,
+    "gsap.com": 5,
+    "unicode.org": 4,
+    "my-cnd-server.com": 4,
+    "cdn.jsdelivr.net": 4,
+    "opentype.js.org": 3,
+    "x.com": 3,
+    "finalmotion.video": 3,
+    "developer.apple.com": 3,
+    "www.apache.org": 2,
+    "threejs.org": 2
+   }
+  },
+  "video-motion/ugc-factory": {
+   "files_scanned": 28,
+   "files_skipped_large": 0,
+   "tree_files": 30,
+   "signals": {
+    "telemetry_upload": 1
+   },
+   "examples": {
+    "telemetry_upload": [
+     "skill/styles/03-cartoon/SKILL.md:1040"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 16,
+   "skill_md_sample": [
+    "skill/SKILL.md",
+    "skill/styles/01-cinematic/SKILL.md",
+    "skill/styles/02-3d-cgi/SKILL.md",
+    "skill/styles/03-cartoon/SKILL.md",
+    "skill/styles/04-comic-to-video/SKILL.md",
+    "skill/styles/05-fight-scenes/SKILL.md",
+    "skill/styles/06-motion-design-ad/SKILL.md",
+    "skill/styles/07-ecommerce-ad/SKILL.md",
+    "skill/styles/08-anime-action/SKILL.md",
+    "skill/styles/09-product-360/SKILL.md",
+    "skill/styles/10-music-video/SKILL.md",
+    "skill/styles/11-social-hook/SKILL.md",
+    "skill/styles/12-brand-story/SKILL.md",
+    "skill/styles/13-fashion-lookbook/SKILL.md",
+    "skill/styles/14-food-beverage/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "seedance": 865,
+    "higgsfield": 838,
+    "runway": 8,
+    "replicate": 4,
+    "stability": 3,
+    "kling": 1
+   },
+   "gpu_mentions": 1,
+   "top_hosts": {
+    "github.com": 4,
+    "img.shields.io": 3,
+    "higgsfield.ai": 3,
+    "www.npmjs.com": 2,
+    "claude.com": 2,
+    "www.youtube.com": 2,
+    "charlieautomates.com": 1
+   }
+  },
+  "w01fb0ss/pibot": {
+   "files_scanned": 4791,
+   "files_skipped_large": 0,
+   "tree_files": 5450,
+   "signals": {
+    "telemetry_upload": 58,
+    "install_hook": 3,
+    "permission_bypass": 8,
+    "secret_literal": 1,
+    "download_execute": 6,
+    "dynamic_code": 2,
+    "prompt_injection": 1
+   },
+   "examples": {
+    "telemetry_upload": [
+     "AGENTS.md:66",
+     "CLAUDE.md:69",
+     "CONTRIBUTING.md:9",
+     "pnpm-lock.yaml:2782",
+     "pnpm-lock.yaml:8898",
+     "pnpm-lock.yaml:8912"
+    ],
+    "install_hook": [
+     "apps/desktop/src/main/updates/app-updater.ts:293",
+     "packages/brain/src/runtime/queue/brain-sleep.ts:299",
+     "tools/pibot-dev/index.ts:558"
+    ],
+    "permission_bypass": [
+     "packages/execution/src/git/git-entry-tables.ts:102",
+     "packages/execution/src/git/git-network.ts:120",
+     "packages/execution/src/git/git-program.ts:10",
+     "packages/execution/src/git/git-write-direct.ts:21",
+     "packages/execution/src/git/git-write.ts:131",
+     "packages/execution/src/managed/managed-folder.ts:223"
+    ],
+    "secret_literal": [
+     "packages/models/src/brain/auth/cloud-credentials.ts:15"
+    ],
+    "download_execute": [
+     "packages/policy/src/commands/script-loads.ts:182",
+     "packages/policy/src/core/windows-command-exceptions.ts:16",
+     "packages/policy/test/fixtures/command.ts:110",
+     "packages/policy/test/fixtures/command.ts:115",
+     "tools/dev/policy-matrix/matrix.ts:181",
+     "tools/dev/policy-matrix/scripts.ts:39"
+    ],
+    "dynamic_code": [
+     "tools/dev/cdp/page.ts:113",
+     "tools/dev/cdp/page.ts:149"
+    ],
+    "prompt_injection": [
+     "tools/vendor/pi-mcp-adapter/config.ts.txt:1051"
+    ]
+   },
+   "hidden_unicode_files": [
+    "packages/plugins/src/brain/discovery/formats.ts",
+    "packages/plugins/src/host/import-host.ts",
+    "packages/policy/src/commands/script-purity.ts",
+    "packages/protocol-base/src/skills/skill-file.ts"
+   ],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 125,
+   "skill_md_sample": [
+    "apps/plugins/gmail/plugin/skills/gmail/SKILL.md",
+    "packages/teams/builtin/groups/dev-lite.pibot/skills/code-reviewer/code-review-checklist/en/SKILL.md",
+    "packages/teams/builtin/groups/dev-lite.pibot/skills/code-reviewer/code-review-checklist/zh/SKILL.md",
+    "packages/teams/builtin/groups/dev-lite.pibot/skills/code-reviewer/review-report/en/SKILL.md",
+    "packages/teams/builtin/groups/dev-lite.pibot/skills/code-reviewer/review-report/zh/SKILL.md",
+    "packages/teams/builtin/groups/dev-lite.pibot/skills/code-reviewer/security-review/en/SKILL.md",
+    "packages/teams/builtin/groups/dev-lite.pibot/skills/code-reviewer/security-review/zh/SKILL.md",
+    "packages/teams/builtin/groups/dev-lite.pibot/skills/fullstack-dev/api-design-review/en/SKILL.md",
+    "packages/teams/builtin/groups/dev-lite.pibot/skills/fullstack-dev/api-design-review/zh/SKILL.md",
+    "packages/teams/builtin/groups/dev-lite.pibot/skills/fullstack-dev/bugfix-flow/en/SKILL.md",
+    "packages/teams/builtin/groups/dev-lite.pibot/skills/fullstack-dev/bugfix-flow/zh/SKILL.md",
+    "packages/teams/builtin/groups/dev-lite.pibot/skills/fullstack-dev/change-report/en/SKILL.md",
+    "packages/teams/builtin/groups/dev-lite.pibot/skills/fullstack-dev/change-report/zh/SKILL.md",
+    "packages/teams/builtin/groups/dev-lite.pibot/skills/fullstack-dev/development-workflow/en/SKILL.md",
+    "packages/teams/builtin/groups/dev-lite.pibot/skills/fullstack-dev/development-workflow/zh/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": true
+   },
+   "paid_service_mentions": {
+    "anthropic": 208,
+    "openrouter": 114,
+    "openai_api_key": 51,
+    "gemini": 46,
+    "openai.com": 35,
+    "suno": 12,
+    "stability": 5,
+    "replicate": 1
+   },
+   "gpu_mentions": 2,
+   "top_hosts": {
+    "registry.npmjs.org": 109,
+    "example.com": 69,
+    "github.com": 61,
+    "pibot.space": 45,
+    "fred.stlouisfed.org": 42,
+    "schemas.openxmlformats.org": 31,
+    "img.shields.io": 15,
+    "purl.oclc.org": 11,
+    "api.star-history.com": 9,
+    "www.w3.org": 9,
+    "api.openai.com": 9,
+    "json-schema.org": 8,
+    "openrouter.ai": 7,
+    "auth.openai.com": 7,
+    "schemas.microsoft.com": 5
+   }
+  },
+  "Augani/openreel-video": {
+   "files_scanned": 4009,
+   "files_skipped_large": 1,
+   "tree_files": 10883,
+   "signals": {
+    "telemetry_upload": 344,
+    "dynamic_code": 11
+   },
+   "examples": {
+    "telemetry_upload": [
+     "pnpm-lock.yaml:359",
+     "pnpm-lock.yaml:1945",
+     "pnpm-lock.yaml:1949",
+     "pnpm-lock.yaml:1953",
+     "pnpm-lock.yaml:1957",
+     "pnpm-lock.yaml:1959"
+    ],
+    "dynamic_code": [
+     "apps/web/e2e/sequence-par-geometry-lib.ts:68",
+     "apps/web/e2e/timeline-perf-lib.ts:102",
+     "apps/web/e2e/timeline-perf-lib.ts:143",
+     "creating-views/project/support.js:715",
+     "creating-views/project/support.js:1062",
+     "docs/superpowers/plans/2026-05-31-keyframe-any-parameter.md:643"
+    ]
+   },
+   "hidden_unicode_files": [
+    "packages/core/src/captions/mcc.ts",
+    "packages/core/src/captions/plain-transcript.ts",
+    "packages/core/src/captions/scc-import.ts",
+    "packages/core/src/color/cube-lut.ts",
+    "packages/core/src/color/ocio/yaml.ts",
+    "packages/core/src/media/xmp.test.ts",
+    "packages/core/src/media/xmp.ts",
+    "packages/core/src/review/review-comments.test.ts",
+    "packages/core/src/review/review-comments.ts"
+   ],
+   "shipped_binaries_or_weights": [
+    "apps/desktop/resources/aurora/libcreation_core.dylib"
+   ],
+   "binary_count": 1,
+   "skill_md_files": 0,
+   "skill_md_sample": [],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "anthropic": 202,
+    "elevenlabs": 98,
+    "replicate": 25,
+    "suno": 17,
+    "openai.com": 17,
+    "stability": 12,
+    "openrouter": 11,
+    "kling": 6,
+    "openai_api_key": 5,
+    "gemini": 2
+   },
+   "gpu_mentions": 23,
+   "top_hosts": {
+    "registry.npmjs.org": 106,
+    "ui.shadcn.com": 99,
+    "www.w3.org": 99,
+    "github.com": 28,
+    "filters.openreel.video": 22,
+    "example.com": 21,
+    "opencollective.com": 20,
+    "app.openreel.video": 19,
+    "api.openai.com": 15,
+    "gateway.example": 15,
+    "api.anthropic.com": 14,
+    "ns.adobe.com": 13,
+    "fonts.googleapis.com": 12,
+    "openreel.video": 10,
+    "dl.openreel.video": 9
+   }
+  },
+  "remocn/remocn": {
+   "files_scanned": 5721,
+   "files_skipped_large": 2,
+   "tree_files": 6833,
+   "signals": {
+    "prompt_injection": 3,
+    "telemetry_upload": 194,
+    "install_hook": 1
+   },
+   "examples": {
+    "prompt_injection": [
+     "CLAUDE.md:82",
+     "lib/describe/off-topic.test.ts:12",
+     "lib/describe/off-topic.test.ts:23"
+    ],
+    "telemetry_upload": [
+     "Dockerfile:6",
+     "app/(home)/inspired-by/credits-config.ts:43",
+     "components/docs/examples/index.tsx:538",
+     "components/docs/examples/index.tsx:615",
+     "components/docs/examples/line-boil-example.tsx:11",
+     "components/docs/examples/line-boil-example.tsx:30"
+    ],
+    "install_hook": [
+     "package.json:51"
+    ]
+   },
+   "hidden_unicode_files": [
+    "registry/remocn/search-reveal/__tests__/search-reveal.test.ts",
+    "registry/remocn-templates/brand-guidelines/__tests__/brand-guidelines.test.ts",
+    "registry/remocn-templates/release-teaser/__tests__/release-teaser.test.ts"
+   ],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 5,
+   "skill_md_sample": [
+    "plugins/remocn/skills/add/SKILL.md",
+    "plugins/remocn/skills/changelog/SKILL.md",
+    "plugins/remocn/skills/remocn/SKILL.md",
+    "plugins/remocn/skills/setup/SKILL.md",
+    "plugins/remocn/skills/video/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": true
+   },
+   "paid_service_mentions": {
+    "anthropic": 27,
+    "gemini": 16,
+    "heygen": 6,
+    "suno": 4,
+    "replicate": 3,
+    "runway": 2
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "ui.shadcn.com": 952,
+    "remocn.dev": 195,
+    "avatars.githubusercontent.com": 180,
+    "www.w3.org": 33,
+    "x.com": 25,
+    "cdn.remocn.dev": 24,
+    "github.com": 22,
+    "unavatar.io": 16,
+    "openshaders.com": 8,
+    "fonts.gstatic.com": 8,
+    "remocn.studio": 7,
+    "schema.org": 7,
+    "www.creem.io": 5,
+    "shieldcn.dev": 3,
+    "llmstxt.org": 3
+   }
+  },
+  "video-motion/every-joule-lesson1": {
+   "files_scanned": 17,
+   "files_skipped_large": 0,
+   "tree_files": 36,
+   "signals": {},
+   "examples": {},
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 0,
+   "skill_md_sample": [],
+   "license_files": [],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {},
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "assets.publishing.service.gov.uk": 19,
+    "freesound.org": 11,
+    "filestore.aqa.org.uk": 9,
+    "spark.iop.org": 6,
+    "www.ocr.org.uk": 5,
+    "cbseacademic.nic.in": 5,
+    "www.cambridgeinternational.org": 4,
+    "www.energystar.gov": 4,
+    "fdc.nal.usda.gov": 4,
+    "www.w3.org": 3,
+    "web.archive.org": 3,
+    "www.gov.uk": 3,
+    "www.itftennis.com": 3,
+    "www.cse.org.uk": 2,
+    "bregroup.com": 2
+   }
+  },
+  "video-motion/resolve-claude-mcp": {
+   "files_scanned": 10,
+   "files_skipped_large": 0,
+   "tree_files": 14,
+   "signals": {
+    "download_execute": 2
+   },
+   "examples": {
+    "download_execute": [
+     "README.md:107",
+     "README.md:110"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 0,
+   "skill_md_sample": [],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": true,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "anthropic": 3
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "modelcontextprotocol.io": 2,
+    "astral.sh": 2,
+    "github.com": 2
+   }
+  },
+  "motion-systems/bang-motion": {
+   "files_scanned": 30,
+   "files_skipped_large": 0,
+   "tree_files": 45,
+   "signals": {},
+   "examples": {},
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "higgsfield": 25,
+    "gemini": 2
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "www.w3.org": 13,
+    "github.com": 12,
+    "youtube.com": 12,
+    "fonts.googleapis.com": 8,
+    "cdnjs.cloudflare.com": 6,
+    "img.shields.io": 4,
+    "cdn.jsdelivr.net": 3,
+    "fonts.gstatic.com": 1,
+    "d2ol7oe51mr4n9.cloudfront.net": 1
+   }
+  },
+  "storytold/filmcraft": {
+   "files_scanned": 1069,
+   "files_skipped_large": 0,
+   "tree_files": 1265,
+   "signals": {
+    "permission_bypass": 1,
+    "telemetry_upload": 79,
+    "dynamic_code": 72
+   },
+   "examples": {
+    "permission_bypass": [
+     "AGENTS.md:59"
+    ],
+    "telemetry_upload": [
+     "apps/filmcraft-cli/tests/it/workflows.rs:243",
+     "apps/filmcraft-web/tests/import-collision.mjs:6",
+     "crates/audio-dsp/src/biquad.rs:161",
+     "crates/audio-dsp/src/lib.rs:221",
+     "crates/audio-dsp/src/lib.rs:227",
+     "crates/audio-dsp/src/lib.rs:289"
+    ],
+    "dynamic_code": [
+     "crates/audio-dsp/src/design.rs:230",
+     "crates/gpu/src/fx_tests.rs:407",
+     "crates/gpu/src/fx_tests.rs:444",
+     "crates/gpu/src/fx_tests.rs:467",
+     "crates/gpu/src/fx_tests.rs:516",
+     "crates/gpu/src/fx_tests.rs:552"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 0,
+   "skill_md_sample": [],
+   "license_files": [],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": true,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "stability": 19,
+    "anthropic": 10,
+    "replicate": 5,
+    "gemini": 2
+   },
+   "gpu_mentions": 147,
+   "top_hosts": {
+    "github.com": 179,
+    "getartcraft.com": 31,
+    "example.com": 24,
+    "raw.githubusercontent.com": 18,
+    "discord.gg": 10,
+    "huggingface.co": 8,
+    "img.shields.io": 8,
+    "archive.org": 4,
+    "nfpm.goreleaser.com": 4,
+    "scripts.sil.org": 3,
+    "coderabbit.ai": 2,
+    "images.nasa.gov": 2,
+    "www.apache.org": 2,
+    "specifications.freedesktop.org": 2,
+    "www.w3.org": 2
+   }
+  },
+  "motion-systems/handdraw-skill": {
+   "files_scanned": 38,
+   "files_skipped_large": 0,
+   "tree_files": 65,
+   "signals": {},
+   "examples": {},
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "suno": 5
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "registry.npmjs.org": 214,
+    "github.com": 21,
+    "opencollective.com": 12,
+    "tidelift.com": 4,
+    "remotion.dev": 1,
+    "patreon.com": 1
+   }
+  },
+  "motion-systems/anything2explainer": {
+   "files_scanned": 170,
+   "files_skipped_large": 0,
+   "tree_files": 211,
+   "signals": {
+    "dynamic_code": 1
+   },
+   "examples": {
+    "dynamic_code": [
+     "template/scripts/test_portable_scripts.py:96"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "anthropic": 82,
+    "gemini": 17,
+    "openai.com": 5,
+    "heygen": 2,
+    "runway": 1
+   },
+   "gpu_mentions": 4,
+   "top_hosts": {
+    "arxiv.org": 61,
+    "github.com": 18,
+    "www.anthropic.com": 12,
+    "img.shields.io": 8,
+    "claude.com": 6,
+    "remotion.dev": 6,
+    "api.star-history.com": 6,
+    "developers.llamaindex.ai": 6,
+    "openai.com": 4,
+    "www.trychroma.com": 4,
+    "www.pinecone.io": 4,
+    "en.wikipedia.org": 4,
+    "genai.owasp.org": 3,
+    "huggingface.co": 3,
+    "qwenlm.github.io": 3
+   }
+  },
+  "motion-systems/paint-mv-skills": {
+   "files_scanned": 39,
+   "files_skipped_large": 0,
+   "tree_files": 45,
+   "signals": {},
+   "examples": {},
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 4,
+   "skill_md_sample": [
+    "skills/paint-mv/SKILL.md",
+    "skills/paint-mv-animate/SKILL.md",
+    "skills/paint-mv-render/SKILL.md",
+    "skills/paint-mv-storyboard/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {},
+   "gpu_mentions": 1,
+   "top_hosts": {
+    "registry.npmjs.org": 46,
+    "github.com": 22,
+    "noiz.ai": 3,
+    "hf-mirror.com": 2,
+    "docs.astral.sh": 1,
+    "p5js.org": 1,
+    "linux.do": 1,
+    "opencollective.com": 1
+   }
+  },
+  "motion-systems/javascript-animation-skills": {
+   "files_scanned": 28,
+   "files_skipped_large": 0,
+   "tree_files": 30,
+   "signals": {},
+   "examples": {},
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 2,
+   "skill_md_sample": [
+    "skills/javascript-animation/SKILL.md",
+    "skills/soundtrack/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "openrouter": 4
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "github.com": 22,
+    "x.com": 4,
+    "www.iart.ai": 3,
+    "iart.ai": 3,
+    "www.aao.org": 1,
+    "www.allaboutvision.com": 1,
+    "opg.optica.org": 1,
+    "onlinelibrary.wiley.com": 1,
+    "openrouter.ai": 1
+   }
+  },
+  "motion-systems/manim-skill": {
+   "files_scanned": 160,
+   "files_skipped_large": 0,
+   "tree_files": 160,
+   "signals": {
+    "telemetry_upload": 60
+   },
+   "examples": {
+    "telemetry_upload": [
+     "skills/manim-composer/references/scene-examples.md:109",
+     "skills/manim-composer/references/scene-examples.md:113",
+     "skills/manimce-best-practices/examples/graph_plotting.py:237",
+     "skills/manimce-best-practices/examples/graph_plotting.py:238",
+     "skills/manimce-best-practices/examples/graph_plotting.py:240",
+     "skills/manimce-best-practices/examples/graph_plotting.py:243"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 3,
+   "skill_md_sample": [
+    "skills/manim-composer/SKILL.md",
+    "skills/manimce-best-practices/SKILL.md",
+    "skills/manimgl-best-practices/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "replicate": 7,
+    "stability": 2,
+    "anthropic": 1
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "github.com": 11,
+    "img.shields.io": 4,
+    "www.manim.community": 4,
+    "docs.manim.community": 2,
+    "www.youtube.com": 2,
+    "creativecommons.org": 2,
+    "upload.wikimedia.org": 2,
+    "visitor-badge.laobi.icu": 1,
+    "ffmpeg.org": 1,
+    "miktex.org": 1,
+    "skills.sh": 1,
+    "3b1b.github.io": 1,
+    "www.3blue1brown.com": 1
+   }
+  },
+  "JuneYaooo/rea-video": {
+   "files_scanned": 155,
+   "files_skipped_large": 0,
+   "tree_files": 943,
+   "signals": {
+    "unsafe_weights": 1,
+    "download_execute": 2
+   },
+   "examples": {
+    "unsafe_weights": [
+     "scripts/bench_transitions.py:218"
+    ],
+    "download_execute": [
+     "skills/rea-video/references/chatcut.md:24",
+     "skills/rea-video/references/chatcut.md:25"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    "skills/rea-video/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": true,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "kling": 198,
+    "seedance": 159,
+    "gemini": 97,
+    "replicate": 59,
+    "suno": 56,
+    "heygen": 42,
+    "runway": 41,
+    "elevenlabs": 16,
+    "fal.ai": 16,
+    "higgsfield": 9
+   },
+   "gpu_mentions": 1,
+   "top_hosts": {
+    "github.com": 173,
+    "img.shields.io": 86,
+    "chatcut.io": 53,
+    "videomd.github.io": 49,
+    "www.reavideo.ai": 24,
+    "trendshift.io": 24,
+    "discord.gg": 24,
+    "kling.ai": 20,
+    "help.aliyun.com": 17,
+    "fal.ai": 14,
+    "linux.do": 13,
+    "docs.volcengine.com": 13,
+    "x.com": 12,
+    "reavideo.ai": 12,
+    "api.star-history.com": 12
+   }
+  },
+  "meshy-dev/ThreeRT": {
+   "files_scanned": 1424,
+   "files_skipped_large": 0,
+   "tree_files": 1839,
+   "signals": {
+    "telemetry_upload": 14,
+    "dynamic_code": 12
+   },
+   "examples": {
+    "telemetry_upload": [
+     "docs/ROADMAP.md:4554",
+     "docs/ROADMAP.md:4574",
+     "packages/scene/src/effects.ts:585",
+     "packages/scene/src/effects.ts:670",
+     "renderer/third_party/wgpu-core/src/global.rs:37",
+     "renderer/third_party/wgpu-core/src/global.rs:41"
+    ],
+    "dynamic_code": [
+     "renderer/src/script.rs:1201",
+     "renderer/src/script.rs:1217",
+     "renderer/src/script.rs:1257",
+     "renderer/src/script.rs:1321",
+     "renderer/src/script.rs:1343",
+     "renderer/src/script.rs:1371"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    ".claude/skills/threert-scene-authoring/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "stability": 10,
+    "replicate": 7,
+    "suno": 5
+   },
+   "gpu_mentions": 38,
+   "top_hosts": {
+    "wasm-bindgen.github.io": 1134,
+    "developer.mozilla.org": 479,
+    "github.com": 290,
+    "registry.npmjs.org": 110,
+    "gpuweb.github.io": 92,
+    "www.w3.org": 45,
+    "threert.dev": 41,
+    "polyhaven.com": 40,
+    "threert.app": 36,
+    "opencollective.com": 28,
+    "img.shields.io": 20,
+    "discord.gg": 13,
+    "www.npmjs.com": 10,
+    "x.com": 9,
+    "docs.rs": 9
+   }
+  },
+  "video-motion/openmontage": {
+   "files_scanned": 2027,
+   "files_skipped_large": 0,
+   "tree_files": 2171,
+   "signals": {
+    "prompt_injection": 2,
+    "telemetry_upload": 245,
+    "dynamic_code": 3,
+    "download_execute": 1,
+    "install_hook": 1
+   },
+   "examples": {
+    "prompt_injection": [
+     "AGENT_GUIDE.md:720",
+     "docs/PR_REVIEW_GUIDE.md:87"
+    ],
+    "telemetry_upload": [
+     ".agents/skills/avatar-video/references/webhooks.md:347",
+     ".agents/skills/avatar-video/references/webhooks.md:350",
+     ".agents/skills/avatar-video/references/webhooks.md:351",
+     ".agents/skills/avatar-video/references/webhooks.md:353",
+     ".agents/skills/avatar-video/references/webhooks.md:354",
+     ".agents/skills/create-video/references/webhooks.md:347"
+    ],
+    "dynamic_code": [
+     ".agents/skills/hyperframes-media/scripts/lib/bgm.mjs:210",
+     "lib/clip_embedder.py:52",
+     "tools/graphics/math_animate.py:251"
+    ],
+    "download_execute": [
+     ".agents/skills/media-use/SKILL.md:119"
+    ],
+    "install_hook": [
+     "tools/graphics/threejs_asset_catalog.py:132"
+    ]
+   },
+   "hidden_unicode_files": [
+    ".agents/skills/remotion-best-practices/rules/maps.md",
+    ".claude/skills/remotion-best-practices/rules/maps.md",
+    "skills/INDEX.md"
+   ],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 139,
+   "skill_md_sample": [
+    ".agents/skills/3d-asset-generation/SKILL.md",
+    ".agents/skills/acestep/SKILL.md",
+    ".agents/skills/agents/SKILL.md",
+    ".agents/skills/ai-video-gen/SKILL.md",
+    ".agents/skills/atlas-cloud/SKILL.md",
+    ".agents/skills/avatar-video/SKILL.md",
+    ".agents/skills/azure-speech-to-text/SKILL.md",
+    ".agents/skills/azure-text-to-speech/SKILL.md",
+    ".agents/skills/beautiful-mermaid/SKILL.md",
+    ".agents/skills/bfl-api/SKILL.md",
+    ".agents/skills/canvas-procedural-animation/SKILL.md",
+    ".agents/skills/character-animation-qa/SKILL.md",
+    ".agents/skills/character-rigging/SKILL.md",
+    ".agents/skills/comfyui/SKILL.md",
+    ".agents/skills/create-video/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": true,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "heygen": 2071,
+    "elevenlabs": 1177,
+    "kling": 1005,
+    "gemini": 522,
+    "seedance": 479,
+    "stability": 247,
+    "fal.ai": 214,
+    "runway": 131,
+    "fal_key": 110,
+    "replicate": 97
+   },
+   "gpu_mentions": 153,
+   "top_hosts": {
+    "api.heygen.com": 453,
+    "example.com": 347,
+    "registry.npmjs.org": 244,
+    "github.com": 146,
+    "cdn.jsdelivr.net": 102,
+    "react.dev": 74,
+    "files.heygen.ai": 70,
+    "api.bfl.ai": 58,
+    "fonts.googleapis.com": 57,
+    "upload.heygen.com": 48,
+    "fal.ai": 42,
+    "api.elevenlabs.io": 40,
+    "remotion.media": 40,
+    "www.w3.org": 39,
+    "vercel.com": 30
+   }
+  },
+  "bilawalsidhu/gods-eye-view": {
+   "files_scanned": 4691,
+   "files_skipped_large": 7,
+   "tree_files": 5098,
+   "signals": {
+    "telemetry_upload": 596,
+    "permission_bypass": 1,
+    "dynamic_code": 90,
+    "prompt_injection": 6,
+    "secret_literal": 1
+   },
+   "examples": {
+    "telemetry_upload": [
+     "DATA_SOURCES.md:38",
+     "DATA_SOURCES.md:39",
+     "DATA_SOURCES.md:40",
+     "DATA_SOURCES.md:253",
+     "index.html:29",
+     "README.md:94"
+    ],
+    "permission_bypass": [
+     "Dockerfile:32"
+    ],
+    "dynamic_code": [
+     "scripts/qa-action-buttons.mjs:161",
+     "scripts/qa-action-buttons.mjs:249",
+     "scripts/qa-action-buttons.mjs:267",
+     "scripts/qa-action-buttons.mjs:319",
+     "scripts/qa-camera-controls.mjs:115",
+     "scripts/qa-camera-controls.mjs:128"
+    ],
+    "prompt_injection": [
+     "src/data/radioCountry.test.mjs:55",
+     "src/voice/gevActions.test.mjs:3670",
+     "src/voice/gevActions.test.mjs:3740",
+     "src/voice/osmActions.test.mjs:436",
+     "src/voice/osmActions.test.mjs:443",
+     "src/voice/pointerContext.test.mjs:212"
+    ],
+    "secret_literal": [
+     "src/search/placeSuggestions.test.mjs:170"
+    ]
+   },
+   "hidden_unicode_files": [
+    "src/data/geoFileImport.js",
+    "src/data/geoFileImport.test.mjs",
+    "src/data/local_data/natural_earth/populated_places.json",
+    "src/data/local_data/wof_neighborhoods/0.json",
+    "src/data/local_data/wof_neighborhoods/12.json",
+    "src/data/local_data/wof_neighborhoods/200.json",
+    "src/data/local_data/wof_neighborhoods/2030.json",
+    "src/data/local_data/wof_neighborhoods/20312.json",
+    "src/data/local_data/wof_neighborhoods/203130.json",
+    "src/data/local_data/wof_neighborhoods/203131.json",
+    "src/data/local_data/wof_neighborhoods/203210.json",
+    "src/data/local_data/wof_neighborhoods/203211.json",
+    "src/data/local_data/wof_neighborhoods/20321201.json",
+    "src/data/local_data/wof_neighborhoods/20321202.json",
+    "src/data/local_data/wof_neighborhoods/20321203.json",
+    "src/data/local_data/wof_neighborhoods/20331.json",
+    "src/data/local_data/wof_neighborhoods/20332.json",
+    "src/data/local_data/wof_neighborhoods/20333.json",
+    "src/data/local_data/wof_neighborhoods/21200.json",
+    "src/data/local_data/wof_neighborhoods/21202.json"
+   ],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 1,
+   "skill_md_sample": [
+    ".agents/skills/community-pr/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": true
+   },
+   "paid_service_mentions": {
+    "gemini": 1540,
+    "openai_api_key": 210,
+    "runway": 28,
+    "stability": 22,
+    "openai.com": 19,
+    "suno": 7,
+    "replicate": 2,
+    "kling": 1
+   },
+   "gpu_mentions": 1,
+   "top_hosts": {
+    "ristmikud.tallinn.ee": 514,
+    "registry.npmjs.org": 303,
+    "github.com": 169,
+    "example.test": 93,
+    "example.com": 86,
+    "www.youtube.com": 68,
+    "overturemaps-us-west-2.s3.us-west-2.amazonaws.com": 64,
+    "imagery-registry.netlify.app": 61,
+    "evil.example": 58,
+    "creativecommons.org": 49,
+    "www.w3.org": 40,
+    "x.com": 37,
+    "inciweb.wildfire.gov": 35,
+    "www.cctv-database.com": 35,
+    "gev.example": 30
+   }
+  },
+  "video-motion/lemo-opuscar": {
+   "files_scanned": 1928,
+   "files_skipped_large": 1,
+   "tree_files": 2478,
+   "signals": {
+    "telemetry_upload": 41,
+    "dynamic_code": 10
+   },
+   "examples": {
+    "telemetry_upload": [
+     "styles/ascii-crt/DEMO.md:76",
+     "styles/backrooms/DEMO.md:49",
+     "styles/backrooms/STYLE.md:45",
+     "styles/blueprint/demo/mix.py:18",
+     "styles/briefing-board/demo/kit/README.md:56",
+     "styles/circuit-board/STYLE.md:77"
+    ],
+    "dynamic_code": [
+     "styles/cel-anime-80s/demo/tools/srt.py:10",
+     "styles/city-symphony/demo/tools/render.py:178",
+     "styles/living-screencast/demo/film.js:59",
+     "styles/living-screencast/demo/film.js:99",
+     "styles/living-screencast/demo/film.js:235",
+     "styles/living-screencast/demo/main.js:44"
+    ]
+   },
+   "hidden_unicode_files": [],
+   "shipped_binaries_or_weights": [
+    "core/assets/polyhaven/desk_lamp_arm_01/desk_lamp_arm_01.bin",
+    "core/assets/polyhaven/tea_set_01/tea_set_01.bin"
+   ],
+   "binary_count": 2,
+   "skill_md_files": 2,
+   "skill_md_sample": [
+    "plugin/skills/lemo-opuscar/SKILL.md",
+    "tools/directory/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": true,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "gemini": 113,
+    "anthropic": 24,
+    "runway": 8,
+    "suno": 5,
+    "replicate": 2
+   },
+   "gpu_mentions": 0,
+   "top_hosts": {
+    "github.com": 227,
+    "commons.wikimedia.org": 171,
+    "scripts.sil.org": 127,
+    "lemomo-ai.github.io": 72,
+    "creativecommons.org": 70,
+    "archive.org": 65,
+    "upload.wikimedia.org": 46,
+    "fonts.googleapis.com": 29,
+    "images.nasa.gov": 26,
+    "images-api.nasa.gov": 25,
+    "x.com": 22,
+    "www.adobe.com": 19,
+    "polyhaven.com": 16,
+    "tile.loc.gov": 13,
+    "hdl.loc.gov": 13
+   }
+  },
+  "pbakaus/impeccable": {
+   "files_scanned": 4674,
+   "files_skipped_large": 24,
+   "tree_files": 4943,
+   "signals": {
+    "telemetry_upload": 239,
+    "permission_bypass": 4,
+    "dynamic_code": 84,
+    "secret_literal": 4,
+    "install_hook": 30,
+    "prompt_injection": 3
+   },
+   "examples": {
+    "telemetry_upload": [
+     "CLAUDE.md:96",
+     "README.md:232",
+     ".agent/skills/impeccable/reference/new-work-comp.md:9",
+     ".agents/skills/impeccable/reference/new-work-comp.md:9",
+     ".claude/skills/impeccable/reference/new-work-comp.md:9",
+     ".cursor/skills/impeccable/reference/new-work-comp.md:9"
+    ],
+    "permission_bypass": [
+     "README.md:72",
+     "crates/live/src/copy_edit_agent.rs:1552",
+     "docs/CLI-CONTRACT.md:2075",
+     "tests/live-reference.test.mjs:202"
+    ],
+    "dynamic_code": [
+     "crates/browser/tests/cdp_attach.rs:168",
+     "crates/browser/tests/cdp_attach.rs:277",
+     "crates/browser/tests/cdp_attach.rs:278",
+     "crates/browser/tests/cdp_attach.rs:279",
+     "crates/browser/tests/cdp_attach.rs:310",
+     "crates/browser/tests/cdp_attach.rs:315"
+    ],
+    "secret_literal": [
+     "crates/cli/tests/foundations.rs:246",
+     "crates/cli/tests/foundations.rs:247",
+     "crates/cli/tests/foundations.rs:248",
+     "crates/cli/tests/foundations.rs:273"
+    ],
+    "install_hook": [
+     "tests/framework-fixtures/README.md:41",
+     "tests/framework-fixtures/astro-vite7/fixture.json:28",
+     "tests/framework-fixtures/monorepo-nested-vite/fixture.json:26",
+     "tests/framework-fixtures/nextjs-app-router/fixture.json:19",
+     "tests/framework-fixtures/nuxt-vite7/fixture.json:19",
+     "tests/framework-fixtures/tanstack-router-vite/fixture.json:26"
+    ],
+    "prompt_injection": [
+     "tests/framework-fixtures/vite8-react-plain/fixture.json:80",
+     "tests/framework-fixtures/vite8-react-plain/fixture.json:82",
+     "tests/skill-behavior/scenarios.test.mjs:513"
+    ]
+   },
+   "hidden_unicode_files": [
+    "crates/html/tests/fixtures/css-rules.json",
+    "tests/live-e2e/agent.mjs"
+   ],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 26,
+   "skill_md_sample": [
+    ".agent/skills/impeccable/SKILL.md",
+    ".agents/skills/impeccable/SKILL.md",
+    ".claude/skills/impeccable/SKILL.md",
+    ".cursor/skills/impeccable/SKILL.md",
+    ".devin/skills/impeccable/SKILL.md",
+    ".dsh/skills/impeccable/SKILL.md",
+    ".gemini/skills/impeccable/SKILL.md",
+    ".github/skills/impeccable/SKILL.md",
+    ".grok/skills/impeccable/SKILL.md",
+    ".hermes/skills/impeccable/SKILL.md",
+    ".kiro/skills/impeccable/SKILL.md",
+    ".omp/skills/impeccable/SKILL.md",
+    ".opencode/skills/impeccable/SKILL.md",
+    ".pi/skills/impeccable/SKILL.md",
+    ".qoder/skills/impeccable/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": true,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "gemini": 584,
+    "anthropic": 102,
+    "replicate": 46,
+    "openai_api_key": 35,
+    "stability": 24,
+    "openai.com": 22,
+    "deepgram": 2,
+    "runway": 1
+   },
+   "gpu_mentions": 1,
+   "top_hosts": {
+    "github.com": 343,
+    "www.w3.org": 274,
+    "impeccable.style": 245,
+    "example.com": 128,
+    "www.githubstatus.com": 54,
+    "shop.example": 28,
+    "api.impeccable.style": 24,
+    "a.example": 24,
+    "cards.example": 24,
+    "raw.githubusercontent.com": 23,
+    "fonts.googleapis.com": 23,
+    "example.test": 21,
+    "app.impeccable.style": 20,
+    "api.staging.impeccable.style": 19,
+    "x.test": 19
+   }
+  },
+  "heygen-com/hyperframes": {
+   "files_scanned": 9175,
+   "files_skipped_large": 84,
+   "tree_files": 10765,
+   "signals": {
+    "telemetry_upload": 2390,
+    "install_hook": 2,
+    "secret_literal": 5,
+    "unsafe_weights": 3,
+    "download_execute": 8,
+    "dynamic_code": 161,
+    "prompt_injection": 3,
+    "permission_bypass": 6,
+    "extra_index": 1
+   },
+   "examples": {
+    "telemetry_upload": [
+     ".oxlintrc.json:30",
+     ".oxlintrc.json:35",
+     ".github/workflows/catalog-previews.yml:6",
+     ".github/workflows/catalog-previews.yml:7",
+     ".github/workflows/catalog-previews.yml:9",
+     ".github/workflows/catalog-publish.yml:18"
+    ],
+    "install_hook": [
+     "package.json:70",
+     "packages/share/package.json:110"
+    ],
+    "secret_literal": [
+     "examples/aws-lambda/scripts/check-sam-deploy.sh:18",
+     "packages/cli/src/capture/contentExtractor.test.ts:579",
+     "packages/cli/src/telemetry/agent_runtime.test.ts:739",
+     "packages/cli/src/telemetry/agent_runtime.test.ts:748",
+     "packages/cli/src/telemetry/agent_runtime.ts:546"
+    ],
+    "unsafe_weights": [
+     "packages/cli/src/audio/analysis/providers/beatThis.ts:24",
+     "packages/cli/src/audio/analysis/providers/localProviders.test.ts:35",
+     "packages/cli/src/audio/analysis/providers/localProviders.test.ts:54"
+    ],
+    "download_execute": [
+     "packages/cli/src/capture/agentPromptGenerator.test.ts:34",
+     "packages/cli/src/commands/templates.test.ts:170",
+     "packages/cli/src/commands/templates.test.ts:172",
+     "packages/cli/src/commands/templates.test.ts:180",
+     "packages/cli/src/commands/templates.test.ts:182",
+     "packages/cli/src/utils/powershellFootprint.test.ts:53"
+    ],
+    "dynamic_code": [
+     "packages/cli/src/capture/captureCompositionFrame.test.ts:558",
+     "packages/cli/src/capture/captureProxy.browser.test.ts:99",
+     "packages/cli/src/capture/designStyleExtractor.shadows.test.ts:11",
+     "packages/cli/src/capture/localPage.browser.test.ts:115",
+     "packages/cli/src/commands/contrast-occlusion.browser.test.ts:32",
+     "packages/cli/src/commands/contrast-occlusion.browser.test.ts:33"
+    ],
+    "prompt_injection": [
+     "packages/cli/src/commands/auth/login.test.ts:341",
+     "packages/cli/src/utils/appHistory.test.ts:301",
+     "packages/core/src/runtime/applyVariableBindings.ts:60"
+    ],
+    "permission_bypass": [
+     "plans/audio-groups-session-handoff.md:45",
+     "plans/audio-groups-session-handoff.md:47",
+     "plans/audio-groups-session-handoff.md:436",
+     "plans/webaudio-stack-handoff.md:222",
+     "scripts/test-skills-fresh.sh:15",
+     "scripts/test-skills-fresh.sh:89"
+    ],
+    "extra_index": [
+     "skills/hyperframes/scripts/plugin-cli.test.mjs:284"
+    ]
+   },
+   "hidden_unicode_files": [
+    "DOCS_GUIDELINES.md",
+    "packages/producer/tests/maplibre-adapter/output/compiled.html",
+    "packages/studio/src/components/editor/inlineTextStyleRange.test.ts"
+   ],
+   "shipped_binaries_or_weights": [
+    "registry/catalog-artifact/local-vectors.bin",
+    "registry/catalog-artifact/media-vectors.bin",
+    "scripts/catalog-fetch-mirror/0529bdbdcf740f78d5b9e331.bin",
+    "scripts/catalog-fetch-mirror/13ea284e2ea4ac4ab37c98e5.bin",
+    "scripts/catalog-fetch-mirror/21363c70fe0f5ada0387fc10.bin",
+    "scripts/catalog-fetch-mirror/2427868cae6e8cf32d2e8d8b.bin",
+    "scripts/catalog-fetch-mirror/30d4b72c02fd3924be31f70d.bin",
+    "scripts/catalog-fetch-mirror/33e36a8542f94c359351e55c.bin",
+    "scripts/catalog-fetch-mirror/36535127950d69fb03da1a51.bin",
+    "scripts/catalog-fetch-mirror/41acfa6f109d3a5946f742d9.bin",
+    "scripts/catalog-fetch-mirror/42e5ad0b3cee71d5f01953d8.bin",
+    "scripts/catalog-fetch-mirror/4319419b25fdd00a2b54650a.bin",
+    "scripts/catalog-fetch-mirror/47d5160342b9998840916131.bin",
+    "scripts/catalog-fetch-mirror/57dacd2ef96ca543d3e0e6a3.bin",
+    "scripts/catalog-fetch-mirror/5905d90fd449470dac1b291d.bin",
+    "scripts/catalog-fetch-mirror/68c23b7290680c2b6ef37032.bin",
+    "scripts/catalog-fetch-mirror/6ea12fa77b5d9e7cef868d13.bin",
+    "scripts/catalog-fetch-mirror/728492d30bf60f21ae04abd1.bin",
+    "scripts/catalog-fetch-mirror/73f0f6259c8c64e613d401f4.bin",
+    "scripts/catalog-fetch-mirror/788a403350b85d98aec587a3.bin",
+    "scripts/catalog-fetch-mirror/852b31c7d0aecc0f1843bc09.bin",
+    "scripts/catalog-fetch-mirror/89a83af9f5863c5898d0ba50.bin",
+    "scripts/catalog-fetch-mirror/8bfba0d6e85d9f059d9b5982.bin",
+    "scripts/catalog-fetch-mirror/95061b23401efc9ba7409666.bin",
+    "scripts/catalog-fetch-mirror/9fca1e9095ed294968aa18f7.bin",
+    "scripts/catalog-fetch-mirror/ae13656ef251eb2b9f869407.bin",
+    "scripts/catalog-fetch-mirror/ae40a5f8f9f604f443e21213.bin",
+    "scripts/catalog-fetch-mirror/b13fa08305318ea628453cec.bin",
+    "scripts/catalog-fetch-mirror/b7ee14896537ab8f9ffaa90b.bin",
+    "scripts/catalog-fetch-mirror/bed471e981d73b3db0c86a41.bin",
+    "scripts/catalog-fetch-mirror/bf2af2f207d8289f5d95f4ba.bin",
+    "scripts/catalog-fetch-mirror/c01c545a99d9d5e629e4e793.bin",
+    "scripts/catalog-fetch-mirror/c174bfce53a729418d57a8ad.bin",
+    "scripts/catalog-fetch-mirror/c356c27cca02fa3bfd0c2bef.bin",
+    "scripts/catalog-fetch-mirror/d3b6c159f462183ba7796270.bin",
+    "scripts/catalog-fetch-mirror/d446a78da686ab7e4cd84394.bin",
+    "scripts/catalog-fetch-mirror/d46936f54ebde49ebb44d3a9.bin",
+    "scripts/catalog-fetch-mirror/e3292e3f83690316b015865b.bin",
+    "scripts/catalog-fetch-mirror/e3c9ceb1da81254fab3982d1.bin",
+    "scripts/catalog-fetch-mirror/e59d60b150022666efbc6da6.bin"
+   ],
+   "binary_count": 42,
+   "skill_md_files": 29,
+   "skill_md_sample": [
+    ".agents/skills/captions-overlay/SKILL.md",
+    ".agents/skills/changelog-video/SKILL.md",
+    ".agents/skills/cut-the-curve/SKILL.md",
+    ".agents/skills/motion-doctrine/SKILL.md",
+    ".agents/skills/oversized-cursor/SKILL.md",
+    ".agents/skills/seam-craft/SKILL.md",
+    ".claude/skills/captions-overlay/SKILL.md",
+    ".claude/skills/changelog-video/SKILL.md",
+    ".claude/skills/cut-the-curve/SKILL.md",
+    ".claude/skills/motion-doctrine/SKILL.md",
+    ".claude/skills/oversized-cursor/SKILL.md",
+    ".claude/skills/seam-craft/SKILL.md",
+    "registry/blocks/canopy-part-title/SKILL.md",
+    "registry/blocks/code-slice-hero/SKILL.md",
+    "registry/blocks/cuboid-carousel/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": true
+   },
+   "paid_service_mentions": {
+    "heygen": 14831,
+    "gemini": 499,
+    "elevenlabs": 147,
+    "openrouter": 98,
+    "google_api_key": 64,
+    "stability": 58,
+    "suno": 12,
+    "anthropic": 12,
+    "replicate": 11,
+    "openai.com": 10
+   },
+   "gpu_mentions": 105,
+   "top_hosts": {
+    "github.com": 10128,
+    "static.heygen.ai": 1595,
+    "cdn.jsdelivr.net": 1369,
+    "hyperframes.heygen.com": 594,
+    "fonts.googleapis.com": 465,
+    "example.com": 287,
+    "www.w3.org": 228,
+    "cdn.example.com": 203,
+    "fonts.gstatic.com": 183,
+    "cdn.example": 177,
+    "registry.npmjs.org": 146,
+    "example.test": 95,
+    "hyperframes.dev": 85,
+    "www.apache.org": 74,
+    "cdnjs.cloudflare.com": 72
+   }
+  },
+  "HKUDS/DeepTutor": {
+   "files_scanned": 4458,
+   "files_skipped_large": 2,
+   "tree_files": 4674,
+   "signals": {
+    "download_execute": 8,
+    "install_hook": 18,
+    "telemetry_upload": 46,
+    "prompt_injection": 10,
+    "unsafe_weights": 2,
+    "dynamic_code": 15,
+    "permission_bypass": 15
+   },
+   "examples": {
+    "download_execute": [
+     "Dockerfile:92",
+     "assets/releases/past_releases/ver1-5-7.md:17",
+     "deeptutor/services/cli_apps/models.py:10",
+     "deeptutor/services/cli_apps/vendor/catalog.json:63",
+     "deeptutor/services/cli_apps/vendor/catalog.json:523",
+     "deeptutor/services/cli_apps/vendor/catalog.json:985"
+    ],
+    "install_hook": [
+     "setup.py:12",
+     "deeptutor/modules/lifecycle.py:181",
+     "tests/modules/test_modules.py:196",
+     "tests/modules/test_modules.py:211",
+     "tests/services/cli_apps/test_models.py:146",
+     "web/components/settings/ModulesPanel.tsx:30"
+    ],
+    "telemetry_upload": [
+     "apps/desktop/scripts/build-runtime.mjs:28",
+     "apps/desktop/src/runtime.mjs:135",
+     "assets/releases/past_releases/ver-1-0-0-beta1.md:26",
+     "assets/releases/past_releases/ver-1-0-0-beta1.md:114",
+     "assets/releases/past_releases/ver-1-0-0-beta1.md:136",
+     "assets/releases/past_releases/ver-1-0-0-beta1.md:162"
+    ],
+    "prompt_injection": [
+     "deeptutor/reading/store.py:450",
+     "tests/multi_user/test_learner_profile.py:38",
+     "tests/multi_user/test_learner_profile.py:52",
+     "tests/multi_user/test_learner_profile.py:57",
+     "tests/multi_user/test_learner_profile.py:58",
+     "tests/runtime/providers/test_text.py:9"
+    ],
+    "unsafe_weights": [
+     "deeptutor/runtime/isolated_worker.py:87",
+     "deeptutor/runtime/worker_process.py:53"
+    ],
+    "dynamic_code": [
+     "deeptutor/runtime/coordination/redis.py:219",
+     "deeptutor/runtime/coordination/redis.py:245",
+     "deeptutor/runtime/coordination/redis.py:263",
+     "deeptutor/runtime/coordination/redis.py:320",
+     "deeptutor/runtime/coordination/redis.py:376",
+     "deeptutor/runtime/coordination/redis.py:434"
+    ],
+    "permission_bypass": [
+     "deeptutor/services/subagent/antigravity.py:28",
+     "deeptutor/services/subagent/antigravity.py:75",
+     "deeptutor/services/subagent/antigravity.py:171",
+     "deeptutor/services/subagent/config.py:51",
+     "deeptutor/services/subagent/config.py:54",
+     "deeptutor/services/subagent/config.py:67"
+    ]
+   },
+   "hidden_unicode_files": [
+    "README.md",
+    "assets/README/README_AR.md",
+    "assets/README/README_CN.md",
+    "assets/README/README_ES.md",
+    "assets/README/README_FR.md",
+    "assets/README/README_HI.md",
+    "assets/README/README_JA.md",
+    "assets/README/README_PL.md",
+    "assets/README/README_PT.md",
+    "assets/README/README_RU.md",
+    "assets/README/README_TH.md",
+    "assets/README/README_TW.md",
+    "deeptutor/runtime/agentic/labels.py",
+    "tests/runtime/providers/test_text.py",
+    "tests/services/cli_apps/test_provider.py",
+    "tests/tools/test_web_fetch.py",
+    "tests/utils/test_text_decoding.py",
+    "web/locales/it/app.json"
+   ],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 6,
+   "skill_md_sample": [
+    "SKILL.md",
+    "deeptutor/skills/builtin/docx/SKILL.md",
+    "deeptutor/skills/builtin/pdf/SKILL.md",
+    "deeptutor/skills/builtin/pptx/SKILL.md",
+    "deeptutor/skills/builtin/skill-creator/SKILL.md",
+    "deeptutor/skills/builtin/xlsx/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": true,
+    "cargo": false,
+    "dockerfile": true
+   },
+   "paid_service_mentions": {
+    "gemini": 575,
+    "anthropic": 575,
+    "openrouter": 261,
+    "stability": 153,
+    "openai.com": 111,
+    "openai_api_key": 44,
+    "seedance": 38,
+    "atlascloud": 32,
+    "suno": 21,
+    "elevenlabs": 18
+   },
+   "gpu_mentions": 94,
+   "top_hosts": {
+    "github.com": 1468,
+    "registry.npmjs.org": 1175,
+    "example.com": 304,
+    "img.shields.io": 216,
+    "opencollective.com": 166,
+    "api.star-history.com": 108,
+    "docs.deeptutor.info": 102,
+    "api.openai.com": 98,
+    "deeptutor.info": 65,
+    "example.test": 62,
+    "arxiv.org": 53,
+    "openrouter.ai": 50,
+    "dashscope.aliyuncs.com": 48,
+    "api.minimax.io": 47,
+    "youtu.be": 43
+   }
+  },
+  "inclusionAI/codeworldmodel": {
+   "files_scanned": 6864,
+   "files_skipped_large": 3,
+   "tree_files": 7646,
+   "signals": {
+    "unsafe_weights": 104,
+    "download_execute": 3,
+    "extra_index": 16,
+    "telemetry_upload": 165,
+    "dynamic_code": 346,
+    "trust_remote_code": 66,
+    "install_hook": 5,
+    "permission_bypass": 1
+   },
+   "examples": {
+    "unsafe_weights": [
+     ".gitignore:14",
+     "src/sglang/projects/minimax_h3/data/causal_text_only.py:185",
+     "src/sglang/projects/minimax_h3/frameworks/raven/common/data.py:137",
+     "src/sglang/projects/minimax_h3/frameworks/raven/common/persistence.py:329",
+     "src/sglang/projects/minimax_h3/frameworks/raven/common/distributed/unified_parallel.py:971",
+     "src/sglang/projects/minimax_h3/frameworks/raven/common/model/weights.py:31"
+    ],
+    "download_execute": [
+     "src/sglang/3rdparty/amd/wheel/README.md:72",
+     "src/sglang/scripts/ci/slurm/analyze_logs_with_modal.py:157",
+     "src/sglang/scripts/ci/slurm/launch_gb200.sh:81"
+    ],
+    "extra_index": [
+     "src/sglang/3rdparty/amd/wheel/sgl-kernel/build_rocm.sh:33",
+     "src/sglang/projects/minimax_h3/frameworks/sglang-omni/pyproject_xpu.toml:36",
+     "src/sglang/python/sglang/kernels/aot/Dockerfile:103",
+     "src/sglang/python/sglang/kernels/aot/Dockerfile:104",
+     "src/sglang/scripts/update_deepgemm_whl_index.py:4",
+     "src/sglang/scripts/update_nightly_whl_index.py:155"
+    ],
+    "telemetry_upload": [
+     "src/sglang/3rdparty/amd/wheel/sglang/pyproject.toml:138",
+     "src/sglang/3rdparty/amd/wheel/sglang/pyproject.toml:139",
+     "src/sglang/3rdparty/amd/wheel/sglang/pyproject.toml:140",
+     "src/sglang/3rdparty/amd/wheel/sglang/pyproject.toml:141",
+     "src/sglang/projects/minimax_h3/frameworks/raven/modeling/reward_models/videoalign.py:82",
+     "src/sglang/projects/minimax_h3/frameworks/raven/modeling/reward_models/videoalign.py:118"
+    ],
+    "dynamic_code": [
+     "src/sglang/projects/minimax_h3/frameworks/raven/modeling/reward_models/unifiedreward.py:666",
+     "src/sglang/projects/minimax_h3/frameworks/raven/modeling/reward_models/unifiedreward.py:713",
+     "src/sglang/projects/minimax_h3/frameworks/raven/modeling/reward_models/vbench_imaging_reward.py:117",
+     "src/sglang/projects/minimax_h3/frameworks/raven/modeling/reward_models/vbench_imaging_reward.py:272",
+     "src/sglang/projects/minimax_h3/frameworks/raven/modeling/reward_models/vbench_motion_smoothness_reward.py:30",
+     "src/sglang/projects/minimax_h3/frameworks/raven/modeling/reward_models/vbench_raft_reward.py:48"
+    ],
+    "trust_remote_code": [
+     "src/sglang/projects/minimax_h3/frameworks/sglang-omni/sglang_omni/models/arkasr/configuration_arkasr.py:8",
+     "src/sglang/projects/minimax_h3/frameworks/sglang-omni/sglang_omni/models/arkasr/engine_builder.py:130",
+     "src/sglang/projects/minimax_h3/frameworks/sglang-omni/sglang_omni/models/arkasr/engine_builder.py:133",
+     "src/sglang/projects/minimax_h3/frameworks/sglang-omni/sglang_omni/models/fun_asr/engine_builder.py:119",
+     "src/sglang/projects/minimax_h3/frameworks/sglang-omni/sglang_omni/models/fun_asr/engine_builder.py:122",
+     "src/sglang/projects/minimax_h3/frameworks/sglang-omni/sglang_omni/models/llada2_uni/bootstrap.py:111"
+    ],
+    "install_hook": [
+     "src/sglang/projects/minimax_h3/frameworks/sglang-omni/sglang_omni/models/llada2_uni/config.py:177",
+     "src/sglang/python/setup.py:244",
+     "src/sglang/python/sglang/kernels/aot/setup_metal.py:297",
+     "src/sglang/python/sglang/kernels/aot/setup_musa.py:234",
+     "src/sglang/python/sglang/kernels/aot/setup_rocm.py:129"
+    ],
+    "permission_bypass": [
+     "src/sglang/scripts/ci/slurm/analyze_logs_with_modal.py:286"
+    ]
+   },
+   "hidden_unicode_files": [
+    "src/sglang/python/sglang/srt/distributed/device_communicators/cuda_wrapper.py"
+   ],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 0,
+   "skill_md_sample": [],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": true
+   },
+   "paid_service_mentions": {
+    "replicate": 1430,
+    "anthropic": 296,
+    "stability": 83,
+    "openai_api_key": 24,
+    "openai.com": 12,
+    "openrouter": 4,
+    "kling": 2,
+    "runway": 1,
+    "elevenlabs": 1
+   },
+   "gpu_mentions": 9795,
+   "top_hosts": {
+    "github.com": 1160,
+    "www.apache.org": 514,
+    "huggingface.co": 142,
+    "arxiv.org": 85,
+    "docs.sglang.io": 50,
+    "raw.githubusercontent.com": 47,
+    "example.com": 47,
+    "sgl-project.github.io": 43,
+    "api.github.com": 23,
+    "img.shields.io": 13,
+    "gitcode.com": 13,
+    "cdn.example": 13,
+    "kvcache-ai.github.io": 12,
+    "docs.nvidia.com": 11,
+    "openaipublic.blob.core.windows.net": 11
+   }
+  },
+  "video-motion/voicestudio": {
+   "files_scanned": 3721,
+   "files_skipped_large": 0,
+   "tree_files": 4346,
+   "signals": {
+    "telemetry_upload": 388,
+    "download_execute": 57,
+    "permission_bypass": 7,
+    "unsafe_weights": 7,
+    "extra_index": 3,
+    "trust_remote_code": 5,
+    "dynamic_code": 15,
+    "prompt_injection": 12,
+    "install_hook": 108,
+    "secret_literal": 7
+   },
+   "examples": {
+    "telemetry_upload": [
+     ".gitleaks.toml:3",
+     ".gitleaks.toml:5",
+     ".gitleaks.toml:7",
+     ".gitleaks.toml:22",
+     ".gitleaksignore:4",
+     "CHANGELOG.md:1327"
+    ],
+    "download_execute": [
+     "CHANGELOG.md:1737",
+     "README.md:68",
+     "README.md:71",
+     "README.md:74",
+     "README.md:77",
+     "README.md:80"
+    ],
+    "permission_bypass": [
+     ".github/workflows/docker.yml:155",
+     ".github/workflows/docker.yml:337",
+     ".github/workflows/docker.yml:484",
+     "electron/src/main/repair-agents.test.ts:108",
+     "mobile/ios/VoiceStudioKit/Sources/VSNative/Lame/ChangeLog:23159",
+     "tests/test_commit_identities.py:41"
+    ],
+    "unsafe_weights": [
+     "backend/api/routers/setup/models.py:288",
+     "backend/services/hf_cache_repair.py:44",
+     "omnivoice/eval/mos/utmos.py:125",
+     "omnivoice/eval/speaker_similarity/sim.py:133",
+     "omnivoice/scripts/denoise_audio.py:543",
+     "omnivoice/scripts/denoise_audio.py:662"
+    ],
+    "extra_index": [
+     "backend/engines/cosyvoice_subprocess/requirements.txt:6",
+     "backend/services/engine_env.py:160",
+     "docs/performance.md:90"
+    ],
+    "trust_remote_code": [
+     "backend/engines/moss_tts_v15/main.py:267",
+     "backend/engines/moss_tts_v15/main.py:277",
+     "backend/services/tts_backend.py:2285",
+     "backend/services/tts_backend.py:2346",
+     "tests/test_moss_tts_v15.py:176"
+    ],
+    "dynamic_code": [
+     "backend/engines/moss_tts_v15/main.py:281",
+     "backend/services/watermark.py:224",
+     "backend/services/watermark.py:240",
+     "docs/ROADMAP.md:253",
+     "omnivoice/eval/models/ecapa_tdnn_wavlm.py:114",
+     "omnivoice/eval/mos/utmos.py:132"
+    ],
+    "prompt_injection": [
+     "backend/engines/_echo/main.py:193",
+     "backend/services/ffmpeg_utils.py:416",
+     "backend/tests/test_capture_ws.py:51",
+     "docs/specs/2026-08-13-remote-admin-session-hardening.md:107",
+     "electron/src/renderer/src/components/backend-gate.test.tsx:192",
+     "electron/src/renderer/src/components/backend-gate.test.tsx:208"
+    ],
+    "install_hook": [
+     "electron/src/renderer/src/i18n/locales/ar.json:387",
+     "electron/src/renderer/src/i18n/locales/ar.json:419",
+     "electron/src/renderer/src/i18n/locales/ar.json:2876",
+     "electron/src/renderer/src/i18n/locales/ar.json:3622",
+     "electron/src/renderer/src/i18n/locales/de.json:379",
+     "electron/src/renderer/src/i18n/locales/de.json:411"
+    ],
+    "secret_literal": [
+     "electron/src/shared/test/analyticsFrontend.test.ts:83",
+     "tests/test_dub_translate.py:749",
+     "tests/test_dub_translate.py:760",
+     "tests/test_failure_helper.py:53",
+     "tests/test_failure_helper.py:54",
+     "tests/test_failure_helper.py:55"
+    ]
+   },
+   "hidden_unicode_files": [
+    ".github/scripts/scam_guard.py",
+    "backend/services/dub_pipeline.py",
+    "backend/services/srt_parser.py",
+    "electron/PARITY.md",
+    "electron/src/renderer/src/components/analytics-consent.test.tsx",
+    "electron/src/renderer/src/components/setup-recovery.test.tsx",
+    "electron/src/renderer/src/components/app-shell/repair-agent-dock.tsx",
+    "electron/src/renderer/src/features/clone/lock-voice.test.tsx",
+    "electron/src/renderer/src/features/clone/profile-consent.test.tsx",
+    "electron/src/renderer/src/features/clone/profile-preview.test.tsx",
+    "electron/src/renderer/src/features/clone/profile-usage.test.tsx",
+    "electron/src/renderer/src/features/design/personality-presets.test.tsx",
+    "electron/src/renderer/src/features/settings/system-preflight.test.tsx",
+    "electron/src/renderer/src/i18n/locales/ar.json",
+    "electron/src/renderer/src/i18n/locales/es.json",
+    "electron/src/renderer/src/i18n/locales/fr.json",
+    "electron/src/renderer/src/i18n/locales/hi.json",
+    "electron/src/renderer/src/i18n/locales/nl.json",
+    "electron/src/renderer/src/i18n/locales/pt.json",
+    "electron/src/renderer/src/i18n/locales/sv.json"
+   ],
+   "shipped_binaries_or_weights": [
+    "bin/omnivoice-tts-windows-x86_64.exe",
+    "mobile/android/gradle/wrapper/gradle-wrapper.jar"
+   ],
+   "binary_count": 2,
+   "skill_md_files": 4,
+   "skill_md_sample": [
+    ".agents/skills/fastapi-python/SKILL.md",
+    ".agents/skills/vite/SKILL.md",
+    "skills/voicestudio/SKILL.md",
+    "skills/voicestudio-maintainer/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": true,
+    "cargo": false,
+    "dockerfile": true
+   },
+   "paid_service_mentions": {
+    "elevenlabs": 184,
+    "anthropic": 48,
+    "gemini": 33,
+    "stability": 28,
+    "openai.com": 28,
+    "openrouter": 24,
+    "openai_api_key": 12,
+    "suno": 12,
+    "replicate": 10,
+    "kling": 10
+   },
+   "gpu_mentions": 3592,
+   "top_hosts": {
+    "github.com": 962,
+    "huggingface.co": 436,
+    "voicestudio.sh": 117,
+    "www.apache.org": 72,
+    "hf-mirror.com": 69,
+    "voice.test": 63,
+    "gpu.test": 59,
+    "example.com": 55,
+    "api.cognitive.microsofttranslator.com": 45,
+    "api.deepl.com": 43,
+    "www.unicode.org": 40,
+    "api.github.com": 27,
+    "appapi.voicestudio.sh": 24,
+    "example.trycloudflare.com": 23,
+    "download.pytorch.org": 21
+   }
+  },
+  "shinyobjectz/raea": {
+   "files_scanned": 5977,
+   "files_skipped_large": 0,
+   "tree_files": 6532,
+   "signals": {
+    "download_execute": 49,
+    "telemetry_upload": 192,
+    "permission_bypass": 4,
+    "dynamic_code": 316,
+    "secret_literal": 1,
+    "unsafe_weights": 2
+   },
+   "examples": {
+    "download_execute": [
+     "README.md:75",
+     "README.md:86",
+     ".github/workflows/discord.yml:33",
+     "apps/tools/src/song.rs:59",
+     "apps/tools/src/song.rs:67",
+     "docs/manual/index.md:18"
+    ],
+    "telemetry_upload": [
+     "README.md:167",
+     "README.md:178",
+     "core/sdf/src/node.rs:82",
+     "core/sdf/src/noise.rs:26",
+     "core/sdf/src/parse.rs:118",
+     "docs/manual/reference/sdk/3d.md:2454"
+    ],
+    "permission_bypass": [
+     ".github/workflows/release.yml:110",
+     ".github/workflows/release.yml:111",
+     "sdk/cloud/deploy/sprites/setup.sh:33",
+     "tools/release.sh:88"
+    ],
+    "dynamic_code": [
+     "apps/notes/src/lib.rs:104",
+     "apps/notes/src/tests.rs:10",
+     "engine/native/src/host.rs:9",
+     "engine/native/src/js.rs:196",
+     "engine/native/src/js.rs:198",
+     "engine/native/src/js.rs:206"
+    ],
+    "secret_literal": [
+     "engine/cli/conformance/bug.test.ts:34"
+    ],
+    "unsafe_weights": [
+     "tools/tokensynth/convert.py:49",
+     "tools/tokensynth/convert.py:55"
+    ]
+   },
+   "hidden_unicode_files": [
+    "sdk/godot/src/types/godot4.gen.d.ts",
+    "sdk/godot/src/types/godot7.gen.d.ts",
+    "sdk/ui/src/html/parse.ts",
+    "vendor/parley/src/tests/test_analysis.rs"
+   ],
+   "shipped_binaries_or_weights": [
+    "systems/body/data/soma_hand_prior.bin"
+   ],
+   "binary_count": 1,
+   "skill_md_files": 0,
+   "skill_md_sample": [],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": true,
+    "dockerfile": true
+   },
+   "paid_service_mentions": {
+    "replicate": 152,
+    "openrouter": 108,
+    "gemini": 104,
+    "kling": 39,
+    "stability": 31,
+    "heygen": 16,
+    "elevenlabs": 13,
+    "anthropic": 12,
+    "seedance": 10,
+    "fal_key": 10
+   },
+   "gpu_mentions": 339,
+   "top_hosts": {
+    "drafts.csswg.org": 1262,
+    "docs.godotengine.org": 1123,
+    "github.com": 1052,
+    "www.apache.org": 317,
+    "mozilla.org": 314,
+    "www.w3.org": 169,
+    "en.wikipedia.org": 144,
+    "developer.mozilla.org": 103,
+    "raea.io": 78,
+    "docs.rs": 78,
+    "drafts.fxtf.org": 57,
+    "img.shields.io": 55,
+    "drafts.css-houdini.org": 54,
+    "svgwg.org": 40,
+    "html.spec.whatwg.org": 33
+   }
+  },
+  "nexu-io/openmotion": {
+   "files_scanned": 10116,
+   "files_skipped_large": 1,
+   "tree_files": 13991,
+   "signals": {
+    "telemetry_upload": 897,
+    "dynamic_code": 175,
+    "prompt_injection": 7,
+    "download_execute": 1,
+    "secret_literal": 1
+   },
+   "examples": {
+    "telemetry_upload": [
+     "CONTRIBUTING.md:144",
+     "hyperframes.ts:28",
+     "inline-video.ts:91",
+     "inline-video.ts:109",
+     "inline-video.ts:131",
+     "inline-video.ts:144"
+    ],
+    "dynamic_code": [
+     ".github/scripts/template-runtime-check.mjs:64",
+     ".github/scripts/template-runtime-check.mjs:110",
+     "studio/src/captions/parser.dom.test.ts:113",
+     "studio/src/hooks/gsapRuntimeKeyframes.realGsap.test.ts:12",
+     "studio/src/hooks/gsapTrailingKeyframes.realGsap.test.ts:19",
+     "studio/src/hooks/gsapValueAtPlayhead.browser.test.ts:25"
+    ],
+    "prompt_injection": [
+     "library/design/skills/library-curator/SKILL.md:22",
+     "library/design/templates/huashu-takram-soft-tech/example.html:519",
+     "skills/openmotion-media/SKILL.md:29",
+     "skills/openmotion-production/references/templates.md:48",
+     "tests/legacy-library-aliases.json:3",
+     "tests/legacy-library-aliases.json:7"
+    ],
+    "download_execute": [
+     "library/design/templates/docs-page/example.html:83"
+    ],
+    "secret_literal": [
+     "tests/diagnostics.test.ts:120"
+    ]
+   },
+   "hidden_unicode_files": [
+    "studio/src/components/editor/inlineTextStyleRange.test.ts",
+    "studio/src/i18n/es.json",
+    "studio/src/i18n/fr.json",
+    "studio/src/i18n/it.json",
+    "studio/src/i18n/pt-BR.json",
+    "studio/src/motion/model-hubs/gemini-4/videos.json"
+   ],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 431,
+   "skill_md_sample": [
+    ".agents/skills/add-byok-provider/SKILL.md",
+    ".agents/skills/odui-apply/SKILL.md",
+    ".agents/skills/odui-build/SKILL.md",
+    ".agents/skills/odui-check/SKILL.md",
+    ".agents/skills/odui-dev/SKILL.md",
+    ".codex-plugin/onboarding/SKILL.md",
+    "library/design/skills/8-bit-orbit-video-template/SKILL.md",
+    "library/design/skills/ad-creative/SKILL.md",
+    "library/design/skills/after-hours-editorial-template/SKILL.md",
+    "library/design/skills/agent-browser/SKILL.md",
+    "library/design/skills/ai-music-album/SKILL.md",
+    "library/design/skills/algorithmic-art/SKILL.md",
+    "library/design/skills/animate/SKILL.md",
+    "library/design/skills/apple-hig/SKILL.md",
+    "library/design/skills/article-magazine/SKILL.md"
+   ],
+   "license_files": [
+    "LICENSE"
+   ],
+   "manifests": {
+    "package.json": true,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": true
+   },
+   "paid_service_mentions": {
+    "heygen": 1877,
+    "gemini": 1296,
+    "elevenlabs": 430,
+    "anthropic": 393,
+    "seedance": 336,
+    "higgsfield": 310,
+    "suno": 235,
+    "runway": 173,
+    "atlascloud": 129,
+    "fal.ai": 106
+   },
+   "gpu_mentions": 125,
+   "top_hosts": {
+    "r.open-design.ai": 15439,
+    "x.com": 3542,
+    "github.com": 1693,
+    "static.heygen.ai": 1677,
+    "registry.npmjs.org": 1350,
+    "releases.open-design.ai": 438,
+    "gsap.com": 394,
+    "fonts.googleapis.com": 344,
+    "buck.co": 284,
+    "www.linkedin.com": 249,
+    "raw.githubusercontent.com": 206,
+    "open-design.ai": 169,
+    "pbs.twimg.com": 166,
+    "video.twimg.com": 166,
+    "www.w3.org": 154
+   }
+  },
+  "ys-sites/insta-reels": {
+   "files_scanned": 127,
+   "files_skipped_large": 1,
+   "tree_files": 667,
+   "signals": {
+    "telemetry_upload": 18,
+    "dynamic_code": 1
+   },
+   "examples": {
+    "telemetry_upload": [
+     "apply_scan_20261103.py:195",
+     "apply_scan_20261119.py:151",
+     "apply_scan_20261119.py:169",
+     "apply_scan_20261119.py:172",
+     "apply_scan_20261119.py:175",
+     "001 Main/web_essentials.txt:1058"
+    ],
+    "dynamic_code": [
+     "001 Main/web_essentials.txt:28"
+    ]
+   },
+   "hidden_unicode_files": [
+    "apply_scan_20261106.py",
+    "apply_scan_20261109.py",
+    "website/data/catalog.json"
+   ],
+   "shipped_binaries_or_weights": [],
+   "binary_count": 0,
+   "skill_md_files": 12,
+   "skill_md_sample": [
+    "100644 blob b1ce1e93f912e5e1a171832366da9cad33e6402c   12983\t001 Main/Fable 5 Skill (resource)/scroll-film-studio/SKILL.md",
+    "100644 blob 3d2795c33fbbe09b3d454794800feb9a114cae72   11833\t001 Main/hyliox-pixel-perfect (1)/hyliox-pixel-perfect/SKILL.md",
+    "100644 blob 56ef712e762db5c21ead3e8b33bfd3d739401b9c   18646\t001 Main/taste-skill-main/taste-skill-main/imagegenskills/frontendwebsiteimageskill/SKILL.md",
+    "100644 blob f5375b908340e1376ed391232a31c5d82d5babfb    8456\t001 Main/taste-skill-main/taste-skill-main/skills/brutalist-skill/SKILL.md",
+    "100644 blob 03ed209b8fdc0a3cd6bccf8a5b3bfffe56aa4558    7857\t001 Main/taste-skill-main/taste-skill-main/skills/gpt-tasteskill/SKILL.md",
+    "100644 blob 1669d882798ec7eb3f3422c3bc35ff7fd79ad6f0   36449\t001 Main/taste-skill-main/taste-skill-main/skills/images-taste-skill/SKILL.md",
+    "100644 blob 44ead27ef04ffe79ade0c6df7fd696dbcf7b246b    7901\t001 Main/taste-skill-main/taste-skill-main/skills/minimalist-skill/SKILL.md",
+    "100644 blob d983bbcf040b6f433c624ce2212a2c044ad2da3c    2592\t001 Main/taste-skill-main/taste-skill-main/skills/output-skill/SKILL.md",
+    "100644 blob c8304f0c9301385e3641b052d6b25b8af11cb6c1   15060\t001 Main/taste-skill-main/taste-skill-main/skills/redesign-skill/SKILL.md",
+    "100644 blob 4038f41ec0137ec92e98ed0151fe3b7038b9329e   10561\t001 Main/taste-skill-main/taste-skill-main/skills/soft-skill/SKILL.md",
+    "100644 blob 56e1266f56d1b681c8baaeb09eb4022a89b2e336   11859\t001 Main/taste-skill-main/taste-skill-main/skills/stitch-skill/SKILL.md",
+    "100644 blob ccc3a2f84f529ee7faafcfe0a71678447675056f   21140\t001 Main/taste-skill-main/taste-skill-main/skills/taste-skill/SKILL.md"
+   ],
+   "license_files": [],
+   "manifests": {
+    "package.json": false,
+    "requirements": false,
+    "cargo": false,
+    "dockerfile": false
+   },
+   "paid_service_mentions": {
+    "higgsfield": 193,
+    "gemini": 67,
+    "seedance": 41,
+    "elevenlabs": 34,
+    "anthropic": 31,
+    "kling": 31,
+    "replicate": 14,
+    "heygen": 9,
+    "runway": 8,
+    "openrouter": 4
+   },
+   "gpu_mentions": 60,
+   "top_hosts": {
+    "github.com": 613,
+    "www.instagram.com": 592,
+    "fonts.googleapis.com": 19,
+    "fonts.gstatic.com": 6,
+    "huggingface.co": 5,
+    "img.shields.io": 5,
+    "reactbits.dev": 4,
+    "www.w3.org": 4,
+    "picsum.photos": 4,
+    "www.toolfk.com": 3,
+    "fondpeace.com": 2,
+    "x.com": 2,
+    "ireels.vercel.app": 2,
+    "www.npmjs.com": 2,
+    "bridge.higgsfield.ai": 2
+   }
+  }
+ },
+ "note": "Example code lines removed (file:line kept) so antivirus heuristics do not quarantine the report; re-run tools/security/triage_staged.py to see them."
+}
