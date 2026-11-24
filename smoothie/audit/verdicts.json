@@ -23,7 +23,7 @@
   "installed_at": "-",
   "reason": "ManimGL fork; Manim Community covers it.",
   "commit": "1fb4dd7",
-  "evidence": "triage: download_execute 3, unsafe_weights 1; 1 binaries/weights in tree",
+  "evidence": "triage: download_execute 3, unsafe_weights 1; 1 binaries/weights in tree; SkillSpector 1/1 folders: SAFE",
   "size_kb": null
  },
  "affaan-m/ECC": {
@@ -203,7 +203,7 @@
   "installed_at": "-",
   "reason": "Meta Ad Library scraping via Apify + paid Higgsfield.",
   "commit": "980cd60",
-  "evidence": "triage: no high-risk signals",
+  "evidence": "triage: no high-risk signals; SkillSpector 1/1 folders: CAUTION",
   "size_kb": null
  },
  "charlesdove977/re-walkthrough-pro": {
@@ -212,7 +212,7 @@
   "installed_at": "-",
   "reason": "Zillow scraping via Apify + paid Higgsfield; replaced by agent-supplied photos + local depth parallax.",
   "commit": "537dbf1",
-  "evidence": "triage: no high-risk signals",
+  "evidence": "triage: no high-risk signals; SkillSpector 1/1 folders: CAUTION",
   "size_kb": null
  },
  "charlesdove977/UGC-Factory": {
@@ -446,7 +446,7 @@
   "installed_at": "-",
   "reason": "Line-art draw-on technique merged.",
   "commit": "c43d698",
-  "evidence": "triage: no high-risk signals",
+  "evidence": "triage: no high-risk signals; SkillSpector 1/1 folders: DO_NOT_INSTALL",
   "size_kb": null
  },
  "juliangarnier/anime": {
@@ -518,7 +518,7 @@
   "installed_at": "-",
   "reason": "Launch-video-from-website flow merged.",
   "commit": "0637943",
-  "evidence": "triage: download_execute 2",
+  "evidence": "triage: download_execute 2; SkillSpector 2/2 folders: CAUTION/DO_NOT_INSTALL",
   "size_kb": null
  },
  "lemomo-ai/lemo-opuscar": {
@@ -617,7 +617,7 @@
   "installed_at": "-",
   "reason": "MIT. Frame capture, exploded view, motion-assets cost planning merged.",
   "commit": "53beb89",
-  "evidence": "triage: download_execute 2",
+  "evidence": "triage: download_execute 2; SkillSpector 8/8 folders: CAUTION/SAFE",
   "size_kb": 1715
  },
  "mohamedelaassal/youtubevideogenerator": {

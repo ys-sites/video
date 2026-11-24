@@ -22,13 +22,16 @@ Scanner output is a lead, not a verdict (SECURITY.md). Every high-severity flag 
 
 **Antivirus note (2026-11-24 00:03):** Bitdefender quarantined three report files written by this audit (`engine_review.txt`, `engine-code-review.txt`, a task output) as `Generic.PY.Stealer`. They were grep listings that put `.env`, `base64.b64decode`, `exec(compile(...))` and `os.system` lines side by side, which matches a stealer heuristic; the timeline shows `bash → tee → file` (writing text, no execution). No repository file was flagged. Reports now keep file:line references without the code text.
 
+
+**SkillSpector final (91 skill folders):** 53 SAFE, 15 CAUTION, 16 DO_NOT_INSTALL, 7 incomplete/partial. Every DO_NOT_INSTALL outside the install set (claude-blender-skills, line-art-animation, brag, hyperframes agent skill motion-doctrine, ThreeRT, vox-director, motlab, hypit, eian-riso-broll) is a reference-only item: nothing from it is installed or copied.
+
 ## Repositories
 
 | Name | Repo @ reviewed commit | Verdict | Merged into | Audit evidence (dry-run check) | Lives at when installed | Why |
 |---|---|---|---|---|---|---|
 | 666ghj/MiroFish | https://github.com/666ghj/MiroFish  | **LEFT OUT (out of scope)** | - | metadata + README review | - | Not video (gated via DM). |
 | a2ui-project/a2ui | https://github.com/a2ui-project/a2ui  | **LEFT OUT (out of scope)** | - | metadata + README review | - | Agent UI (infra). |
-| academa-labs/manimgx | https://github.com/academa-labs/manimgx @1fb4dd7 | **REFERENCE (merged, not installed)** | vs-lesson | triage: download_execute 3, unsafe_weights 1; 1 binaries/weights in tree | - | ManimGL fork; Manim Community covers it. |
+| academa-labs/manimgx | https://github.com/academa-labs/manimgx @1fb4dd7 | **REFERENCE (merged, not installed)** | vs-lesson | triage: download_execute 3, unsafe_weights 1; 1 binaries/weights in tree; SkillSpector 1/1 folders: SAFE | - | ManimGL fork; Manim Community covers it. |
 | affaan-m/ECC | https://github.com/affaan-m/ECC  | **ALREADY INSTALLED** | ecc-* (27 skills) | registry/metadata check | .claude/skills/ecc-* | Installed 2026-11-23 (markdown skills only). |
 | affaan-m/everything-claude-code | https://github.com/affaan-m/everything-claude-code  | **DO NOT INSTALL** | - | metadata + README review | - | Duplicate of affaan-m/ECC (same repository). |
 | ag-ui-protocol/ag-ui | https://github.com/ag-ui-protocol/ag-ui  | **LEFT OUT (out of scope)** | - | metadata + README review | - | Agent UI protocol (infra). |
@@ -48,8 +51,8 @@ Scanner output is a lead, not a verdict (SECURITY.md). Every high-severity flag 
 | BudgetAny/Budget3D | https://github.com/BudgetAny/Budget3D @9f78f30 | **NEEDS-KEY / PAID** | - | triage: unsafe_weights 15 | - | Paid cloud compute per model. |
 | calesthio/OpenMontage | https://github.com/calesthio/OpenMontage  | **REFERENCE (merged, not installed)** | all (ideas) | triage: prompt_injection 2, download_execute 1, install_hook 1; hidden Unicode in 3 files | - | AGPL-3.0: ideas only, no text or code copied. 139 skill-index rows point here. |
 | capsoftware/cap | https://github.com/capsoftware/cap  | **LEFT OUT (out of scope)** | - | metadata + README review | - | Screen recorder app (official installer, optional); Playwright capture covers demos. |
-| charlesdove977/advertising-ops | https://github.com/charlesdove977/advertising-ops @980cd60 | **NEEDS-KEY / PAID** | - | triage: no high-risk signals | - | Meta Ad Library scraping via Apify + paid Higgsfield. |
-| charlesdove977/re-walkthrough-pro | https://github.com/charlesdove977/re-walkthrough-pro @537dbf1 | **NEEDS-KEY / PAID** | vs-real-estate (idea) | triage: no high-risk signals | - | Zillow scraping via Apify + paid Higgsfield; replaced by agent-supplied photos + local depth parallax. |
+| charlesdove977/advertising-ops | https://github.com/charlesdove977/advertising-ops @980cd60 | **NEEDS-KEY / PAID** | - | triage: no high-risk signals; SkillSpector 1/1 folders: CAUTION | - | Meta Ad Library scraping via Apify + paid Higgsfield. |
+| charlesdove977/re-walkthrough-pro | https://github.com/charlesdove977/re-walkthrough-pro @537dbf1 | **NEEDS-KEY / PAID** | vs-real-estate (idea) | triage: no high-risk signals; SkillSpector 1/1 folders: CAUTION | - | Zillow scraping via Apify + paid Higgsfield; replaced by agent-supplied photos + local depth parallax. |
 | charlesdove977/UGC-Factory | https://github.com/charlesdove977/UGC-Factory  | **NEEDS-KEY / PAID** | vs-generate (prompt styles) | triage: no high-risk signals | - | Styles call paid Seedance/Higgsfield. |
 | cloudflare/security-audit-skill | https://github.com/cloudflare/security-audit-skill  | **ALREADY INSTALLED** | security (not video) | registry/metadata check | Codex skill + Claude plugin | Partial: MCP needs OAuth. Not part of the smoothie. |
 | comfy-org/comfy-desktop | https://github.com/comfy-org/comfy-desktop  | **DO NOT INSTALL** | - | metadata + README review | - | Duplicate: ComfyUI is already installed at the reviewed commit. |
@@ -75,7 +78,7 @@ Scanner output is a lead, not a verdict (SECURITY.md). Every high-severity flag 
 | imputnet/cobalt | https://github.com/imputnet/cobalt  | **DO NOT INSTALL** | - | metadata + README review | - | Downloads other people's videos (rights risk); the REA MCP covers reference study. |
 | inclusionai/codeworldmodel | https://github.com/inclusionai/codeworldmodel @88fc349 | **DO NOT INSTALL** | - | triage: unsafe_weights 104, download_execute 3, extra_index 16, trust_remote_code 66, install_hook 5; hidden Unicode in 1 files | - | Needs an 8-GPU Linux node; vendored CC BY-NC parts. Not a single-rental job. |
 | jakeschincariol/instagram-agent-skill | https://github.com/jakeschincariol/instagram-agent-skill @d03c56b | **REFERENCE (merged, not installed)** | vs-real-estate | triage: no high-risk signals; SkillSpector 12/13 folders: SAFE | - | MIT. Hook formulas and reel planning merged; drafts only, never auto-posts. |
-| JDhruv14/line-art-animation | https://github.com/JDhruv14/line-art-animation @c43d698 | **REFERENCE (merged, not installed)** | vs-motion | triage: no high-risk signals | - | Line-art draw-on technique merged. |
+| JDhruv14/line-art-animation | https://github.com/JDhruv14/line-art-animation @c43d698 | **REFERENCE (merged, not installed)** | vs-motion | triage: no high-risk signals; SkillSpector 1/1 folders: DO_NOT_INSTALL | - | Line-art draw-on technique merged. |
 | juliangarnier/anime | https://github.com/juliangarnier/anime  | **DO NOT INSTALL** | - | metadata + README review | - | Duplicate brain of motion + GSAP. |
 | JuneYaooo/rea-video | https://github.com/JuneYaooo/rea-video  | **REFERENCE (merged, not installed)** | vs-director (reference analysis) | triage: unsafe_weights 1, download_execute 2 | - | Its ChatCut section tells the agent to curl|sh a paid app with a referral tag: never follow it. |
 | kajisho5/ffmpeg-skill | https://github.com/kajisho5/ffmpeg-skill @bad487c | **INSTALL WITH CONDITIONS** | vs-edit | triage: prompt_injection 2; hidden Unicode in 6 files | C:\Users\Sharafath\AI-Local\engines\ffmpeg-skill@bad487c | Engine of vs-edit: 48 stdlib Python tools, no network. Copy the pinned commit; do not run `npx ffmpeg-skill` (it may install ffmpeg); never open Claude Code at that repo root (its .claude/settings.json enables a third-party plugin marketplace). |
@@ -83,7 +86,7 @@ Scanner output is a lead, not a verdict (SECURITY.md). Every high-severity flag 
 | KDE/kdenlive | https://github.com/KDE/kdenlive  | **LEFT OUT (out of scope)** | - | metadata + README review | - | GUI editor, optional. |
 | klad-app/klad | https://github.com/klad-app/klad @7e6f4bb | **LEFT OUT (out of scope)** | - | triage: no high-risk signals | - | Drawing app, licence unstated. |
 | konvajs/konva | https://github.com/konvajs/konva  | **DO NOT INSTALL** | - | metadata + README review | - | Canvas framework not needed by any job. |
-| latent-spaces/brag | https://github.com/latent-spaces/brag @0637943 | **REFERENCE (merged, not installed)** | vs-motion | triage: download_execute 2 | - | Launch-video-from-website flow merged. |
+| latent-spaces/brag | https://github.com/latent-spaces/brag @0637943 | **REFERENCE (merged, not installed)** | vs-motion | triage: download_execute 2; SkillSpector 2/2 folders: CAUTION/DO_NOT_INSTALL | - | Launch-video-from-website flow merged. |
 | lemomo-ai/lemo-opuscar | https://github.com/lemomo-ai/lemo-opuscar  | **REFERENCE (merged, not installed)** | vs-director, vs-motion | triage: no high-risk signals; 2 binaries/weights in tree | - | Licence NOASSERTION: style ideas only. |
 | leonxlnx/walking-block | https://github.com/leonxlnx/walking-block @54bd15b | **REFERENCE (merged, not installed)** | vs-motion (3D) | triage: no high-risk signals | - | No licence: ideas only. |
 | lunamos/paper2video | https://github.com/lunamos/paper2video @a8c966b | **INSTALL WITH CONDITIONS** | vs-lesson | triage: unsafe_weights 1; hidden Unicode in 1 files; SkillSpector 1/1 folders: DO_NOT_INSTALL | C:\Users\Sharafath\AI-Local\engines\paper2video@a8c966b | Method + Remotion template in the shared JS workspace; skip its `npx -y skills add` step (Remotion skills are already installed). |
@@ -94,7 +97,7 @@ Scanner output is a lead, not a verdict (SECURITY.md). Every high-severity flag 
 | mifi/lossless-cut | https://github.com/mifi/lossless-cut  | **LEFT OUT (out of scope)** | vs-edit (GUI fallback) | metadata + README review | official release, optional | GPL-2.0 GUI; optional manual tool. |
 | mltframework/shotcut | https://github.com/mltframework/shotcut  | **LEFT OUT (out of scope)** | - | metadata + README review | - | GUI editor, optional. |
 | Moh4696/cinematic-skill | https://github.com/Moh4696/cinematic-skill @bf43556 | **INSTALL WITH CONDITIONS** | vs-director, vs-lesson | triage: download_execute 2; SkillSpector 1/1 folders: CAUTION | C:\Users\Sharafath\AI-Local\engines\cinematic-film@bf43556 | Documentary-board engine (skia, CPU). Its font and Wikimedia fetchers use the network: allow per project. |
-| moh4696/open-3d-skills | https://github.com/moh4696/open-3d-skills @53beb89 | **REFERENCE (merged, not installed)** | vs-motion, vs-generate | triage: download_execute 2 | - | MIT. Frame capture, exploded view, motion-assets cost planning merged. |
+| moh4696/open-3d-skills | https://github.com/moh4696/open-3d-skills @53beb89 | **REFERENCE (merged, not installed)** | vs-motion, vs-generate | triage: download_execute 2; SkillSpector 8/8 folders: CAUTION/SAFE | - | MIT. Frame capture, exploded view, motion-assets cost planning merged. |
 | mohamedelaassal/youtubevideogenerator | https://github.com/mohamedelaassal/youtubevideogenerator @fe864be | **NEEDS-KEY / PAID** | - | triage: no high-risk signals | - | Generator app built on hosted AI APIs. |
 | mojs/mojs | https://github.com/mojs/mojs  | **DO NOT INSTALL** | - | metadata + README review | - | Duplicate brain of motion + GSAP. |
 | motiondivision/motion | https://github.com/motiondivision/motion  | **ALREADY INSTALLED** | vs-motion | registry/metadata check | package.json motion@^12 | Already in the Vite app. |
