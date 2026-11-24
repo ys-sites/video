@@ -670,7 +670,7 @@ def shell(page, title, description, body):
 <header class="top"><div class="wrap">
   <a class="logo" href="index.html"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#fafafa"/><rect x="6" y="8.5" width="11" height="3.5" rx="1.75" fill="#09090b"/><rect x="6" y="14.25" width="20" height="3.5" rx="1.75" fill="#09090b"/><rect x="6" y="20" width="8" height="3.5" rx="1.75" fill="#09090b"/><rect x="19.5" y="5.5" width="2.5" height="21" rx="1.25" fill="#09090b"/><rect x="17.25" y="5.5" width="7" height="2.5" rx="1.25" fill="#09090b"/></svg>Master Video Styles</a>
   <nav class="menu" aria-label="Main">{links}</nav>
-  <a class="btn light sm" href="editor/">Open editor</a>
+  <a class="btn light sm" href="studio.html">Open editor</a>
 </div></header>
 <main class="wrap">
 {body}
@@ -1053,6 +1053,19 @@ def captions_page():
     return (ROOT / "studio" / "captions-body.html").read_text(encoding="utf-8")
 
 
+# Masvid Studio (the local OpenMotion + Claude app) listens here; /api/ping answers this site.
+STUDIO_URL = "http://localhost:4180/"
+STUDIO_PING = "http://127.0.0.1:4180/api/ping"
+STUDIO_SHORTCUT = "Masvid Studio"
+
+
+def launch_page():
+    """'Open editor': finds Masvid Studio on this PC (on click) or explains how to start it."""
+    body = (ROOT / "studio" / "launch-body.html").read_text(encoding="utf-8")
+    return (body.replace("__STUDIO_URL__", esc(STUDIO_URL)).replace("__STUDIO_PING__", esc(STUDIO_PING))
+            .replace("__STUDIO_SHORTCUT__", esc_text(STUDIO_SHORTCUT)))
+
+
 def reels_page(reels):
     rows = '\n'.join(reel_row(r) for r in reels)
     fields = ''.join(f'<tr><td>{esc(f)}</td><td>{esc_text(REELS["field_notes"].get(f, ""))}</td></tr>' for f in REELS["fields"])
@@ -1100,6 +1113,9 @@ def main():
         "captions.html": shell("captions", "Caption Studio — Master Video Styles",
                                "Word-timed animated captions in Clean, Pop or Marker, styled and exported in your browser. Built on OpenMotion.",
                                captions_page()),
+        "studio.html": shell("studio", "Open the editor — Master Video Styles",
+                             "Edit your video by chatting with Claude in Masvid Studio on your PC, or use the browser editor.",
+                             launch_page()),
     }
     for name, doc in pages.items():
         (ROOT / name).write_text(doc, encoding="utf-8", newline="\n")

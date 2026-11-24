@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="studio/launch.css">
+<div class="page">
+  <section class="ls-hero">
+    <p class="eyebrow">Open the editor</p>
+    <h1>Edit your video <em>by chatting with Claude</em></h1>
+    <p class="lede">Masvid Studio runs on your PC: Claude edits the video in OpenMotion with every skill on this site, and you watch the preview update.</p>
+  </section>
+
+  <div class="ls-grid">
+    <!-- STUDIO_URL / STUDIO_PING: where the local app listens. -->
+    <div class="ls-card main" id="studio-launch" data-url="__STUDIO_URL__" data-ping="__STUDIO_PING__">
+      <p class="kicker">Recommended · on this PC</p>
+      <h2>Masvid Studio</h2>
+      <ul>
+        <li>Tell Claude what to make or change; the preview updates on its own</li>
+        <li>All your skills: creator, real-estate, lessons, motion and every site style</li>
+        <li>Add your clip: it is transcribed locally so captions land on each word</li>
+        <li>Exports MP4 with OpenMotion; your footage stays on your computer</li>
+      </ul>
+      <button type="button" class="btn brand" id="ls-open">Open Masvid Studio</button>
+      <p class="ls-status" id="ls-status" role="status" aria-live="polite"></p>
+      <div class="ls-help" id="ls-help" hidden>
+        <b>Masvid Studio isn't running yet</b>
+        <ol>
+          <li>Double-click <b>__STUDIO_SHORTCUT__</b> on your desktop. It starts OpenMotion and the studio.</li>
+          <li>Wait for its window to say it's ready, then press <b>Open Masvid Studio</b> again.</li>
+        </ol>
+        <p>If Chrome asks to let this site reach devices on your network, choose <b>Allow</b>: that is how this page finds the studio on your PC. Already started it? <a href="__STUDIO_URL__">Open __STUDIO_URL__ directly</a>.</p>
+      </div>
+    </div>
+
+    <div class="ls-card">
+      <p class="kicker">Works anywhere · no install</p>
+      <h2>Browser editor</h2>
+      <p>Describe your edit and get a cut plan in the browser, on any device.</p>
+      <a class="btn ghost" href="editor/">Open the browser editor</a>
+      <p class="kicker" style="margin-top:26px">Just captions?</p>
+      <p>Time words, pick Clean, Pop or Marker and export an MP4 right in this browser.</p>
+      <a class="btn ghost" href="captions.html">Open Caption Studio</a>
+    </div>
+  </div>
+</div>
+<script src="studio/launch.js" defer></script>
