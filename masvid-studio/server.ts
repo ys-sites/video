@@ -835,7 +835,7 @@ export function bindHost(environment: NodeJS.ProcessEnv = process.env) {
   return value;
 }
 
-export async function startServer(store = sharedStore, port = Number(process.env.PORT || 4173), options: { editor?: boolean; fallbackIfPortBusy?: boolean; editorToken?: string; privateHandler?: (req: IncomingMessage, res: ServerResponse) => Promise<boolean> } = { editor: process.env.MOTION_HEADLESS !== '1' }) {
+export async function startServer(store = sharedStore, port = Number(process.env.PORT || 4180), options: { editor?: boolean; fallbackIfPortBusy?: boolean; editorToken?: string; privateHandler?: (req: IncomingMessage, res: ServerResponse) => Promise<boolean> } = { editor: process.env.MOTION_HEADLESS !== '1' }) {
   // Resolve the address before any child process starts, so an invalid value leaves no editor running.
   const host = bindHost();
   await access(path.join(pluginRoot, 'studio/build/index.html')).catch(() => { throw new Error('编辑器尚未构建，请先运行 npm run build:studio。'); });
@@ -908,7 +908,7 @@ if (isMain(import.meta.url)) {
       console.log(JSON.stringify(await editorRequest(editor, '/editor-api/preview', {}), null, 2));
     } else {
       const running = await startServer();
-      console.log(`Motion + Hyperframes Studio: http://localhost:${process.env.PORT || 4173}`);
+      console.log(`Motion + Hyperframes Studio: http://localhost:${process.env.PORT || 4180}`);
       const stop = async () => { stopCommands(); await running.close(); process.exit(0); };
       process.once('SIGTERM', stop); process.once('SIGINT', stop);
     }

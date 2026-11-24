@@ -57,7 +57,7 @@ async function launch(port: number, directory: string, log: string, background =
 const runtime: PreviewRuntime = { probe, launch, wait: () => new Promise(resolve => setTimeout(resolve, 150)), attempts: 2000 };
 
 function initialPort() {
-  const value = Number(process.env.PORT || 4173);
+  const value = Number(process.env.PORT || 4180); // Masvid Studio default port
   if (!Number.isInteger(value) || value < 1024 || value > 65526) throw new Error('PORT 必须在 1024–65526 之间');
   return value;
 }
@@ -108,7 +108,8 @@ export async function openPreview(store = new WorkspaceStore(), environment: Pre
   const lockPath = path.join(store.directory, 'preview-start.lock');
   return withProcessLock(lockPath, async () => {
     const firstPort = initialPort(), previous = await registeredPort(store);
-    const candidates = [...new Set([...(previous ? [previous] : []), ...Array.from({ length: 10 }, (_, i) => firstPort + i)])];
+    // Masvid Studio: try the configured port range first; a studio still running on an older saved port is found later and reused.
+    const candidates = [...new Set([...Array.from({ length: 10 }, (_, i) => firstPort + i), ...(previous ? [previous] : [])])];
     let available: number | null = null;
     const matches = (result: Probe) => result.kind === 'motion' && result.health.service === 'motion-preview' && result.health.protocol === 2 && result.health.ready
       && (options.mcpTool ? supportsPhase1Tool(result.health, options.mcpTool) : result.health.version === VERSION) && path.resolve(result.health.dataDirectory) === store.directory;

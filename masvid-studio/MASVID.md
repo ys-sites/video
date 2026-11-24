@@ -25,10 +25,15 @@ Open a project; the **Claude** tab is on the right. Type what you want ("add yel
 | Free only | Paid providers removed from every list (OpenDesign Cloud and account, fal.ai, Atlas Cloud, WaveSpeedAI, Codex, paid API presets); local engines kept: ComfyUI, Ollama, LM Studio, LiteLLM, OVMS, OMLX, rapid-mlx, Claude Code | `shared/provider-registry.ts` |
 | Privacy | Telemetry always off | `shared/tracking.ts` |
 | Brand | Masvid Studio name, logo, favicon, title; no sales banner, Pricing, Discord or GitHub buttons | `packages/design-system/{index.js,studio.css,brand/masvid-*}`, `studio/index.html`, `studio/src/motion/{ApplicationChrome,campaignAttribution}.tsx/ts` |
+| Port | Default and preferred port 4180; a studio already running on an older saved port is reused, never duplicated | `preview.ts`, `server.ts` |
 | Your skills | `tools/sync_openmotion_skills.py` copies your skills and site styles into `library/skills/masvid-*` (generated, not committed) | `tools/` in the repo root |
+
+## Switch-over (2026-11-24)
+
+Your projects folder `openmotion-data` now runs in Masvid Studio, and Claude Code's `openmotion` connection (user scope) points at `masvid-studio/mcp.ts`. The old `../openmotion` checkout is no longer used; keep it as a backup or delete it later.
 
 ## Still to do
 
 - Explore/home page: replace OpenMotion's template showcase with your styles, reels and skills.
 - Upload a clip from the chat (the Assets panel import works today).
-- Switch your Claude Code `openmotion` MCP registration and the projects folder from the old `../openmotion` checkout to this studio (needs your OK: it stops the old server).
+
