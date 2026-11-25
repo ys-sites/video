@@ -645,7 +645,7 @@ document.querySelectorAll('button.copy').forEach(function(b){
 });
 """
 
-NAV = [("editor/", "AI Editor", "editor"), ("captions.html", "Captions", "captions"), ("styles.html", "Styles", "styles"), ("index.html#how", "How it works", "how")]
+NAV = [("editor/", "Editor", "editor"), ("index.html#skills", "Skills", "skills-home"), ("index.html#styles", "Styles", "styles-home"), ("captions.html", "Captions", "captions"), ("reels.html", "Reels", "reels")]
 
 
 def shell(page, title, description, body):
@@ -666,9 +666,9 @@ def shell(page, title, description, body):
 <style>{CSS}</style>
 </head>
 <body>
-<a class="announce" href="editor/">New: <span>the AI Editor</span> — edit your video by describing it. Try it free →</a>
+<a class="announce" href="editor/">New: <span>the AI editor</span> cuts, captions and exports in your browser →</a>
 <header class="top"><div class="wrap">
-  <a class="logo" href="index.html"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#fafafa"/><rect x="6" y="8.5" width="11" height="3.5" rx="1.75" fill="#09090b"/><rect x="6" y="14.25" width="20" height="3.5" rx="1.75" fill="#09090b"/><rect x="6" y="20" width="8" height="3.5" rx="1.75" fill="#09090b"/><rect x="19.5" y="5.5" width="2.5" height="21" rx="1.25" fill="#09090b"/><rect x="17.25" y="5.5" width="7" height="2.5" rx="1.25" fill="#09090b"/></svg>Master Video Styles</a>
+  <a class="logo" href="index.html"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#fafafa"/><rect x="6" y="8.5" width="11" height="3.5" rx="1.75" fill="#09090b"/><rect x="6" y="14.25" width="20" height="3.5" rx="1.75" fill="#09090b"/><rect x="6" y="20" width="8" height="3.5" rx="1.75" fill="#09090b"/><rect x="19.5" y="5.5" width="2.5" height="21" rx="1.25" fill="#09090b"/><rect x="17.25" y="5.5" width="7" height="2.5" rx="1.25" fill="#09090b"/></svg>Masvid</a>
   <nav class="menu" aria-label="Main">{links}</nav>
   <a class="btn light sm" href="studio.html">Open editor</a>
 </div></header>
@@ -677,8 +677,8 @@ def shell(page, title, description, body):
 </main>
 <footer class="foot"><div class="wrap">
   <div class="cols">
-    <div><a class="logo" href="index.html"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#fafafa"/><rect x="6" y="8.5" width="11" height="3.5" rx="1.75" fill="#09090b"/><rect x="6" y="14.25" width="20" height="3.5" rx="1.75" fill="#09090b"/><rect x="6" y="20" width="8" height="3.5" rx="1.75" fill="#09090b"/><rect x="19.5" y="5.5" width="2.5" height="21" rx="1.25" fill="#09090b"/><rect x="17.25" y="5.5" width="7" height="2.5" rx="1.25" fill="#09090b"/></svg>Master Video Styles</a><p style="margin-top:12px;max-width:300px">Every video style as a playbook, an AI editor that plans the cut, and a free-first skill stack to render it.</p></div>
-    <div><h4>Studio</h4><a href="editor/">AI Editor</a><a href="captions.html">Caption Studio</a><a href="index.html#how">How it works</a><a href="index.html#faq">FAQ</a></div>
+    <div><a class="logo" href="index.html"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#fafafa"/><rect x="6" y="8.5" width="11" height="3.5" rx="1.75" fill="#09090b"/><rect x="6" y="14.25" width="20" height="3.5" rx="1.75" fill="#09090b"/><rect x="6" y="20" width="8" height="3.5" rx="1.75" fill="#09090b"/><rect x="19.5" y="5.5" width="2.5" height="21" rx="1.25" fill="#09090b"/><rect x="17.25" y="5.5" width="7" height="2.5" rx="1.25" fill="#09090b"/></svg>Masvid</a><p style="margin-top:12px;max-width:300px">Edit any video by talking to it. Free, open-source tools that run on your device.</p></div>
+    <div><h4>Studio</h4><a href="editor/">AI Editor</a><a href="captions.html">Caption Studio</a><a href="index.html#skills">Skills in motion</a><a href="studio.html">Masvid Studio</a></div>
     <div><h4>Library</h4><a href="styles.html">Styles and playbooks</a><a href="styles.html#moves">Motion dictionary</a><a href="styles.html#tools">Tools</a></div>
     <div><h4>Resources</h4><a href="skills.html">Skill stack</a><a href="reels.html">Reel catalog</a><a href="styles.html#details">Copy-paste prompts</a></div>
   </div>
@@ -781,210 +781,106 @@ def ui(title, rows):
     return f'<div class="ui"><div class="t">{title}</div>{body}</div>'
 
 
-def home(n_styles, n_moves, n_skills, n_free):
-    chips = "".join(f'<span style="--c:{c}">{t}</span>' for t, c in [
-        ("Sumit", "#ff5da2"), ("Kelsie listicle", "#ffb020"), ("Fly-through", "#8b7cff"), ("Vision pitch", "#22d3ee"),
-        ("Vox", "#facc15"), ("Realtor reels", "#34d399")])
-    tracks = "".join(
-        f'<div class="tr" style="top:{12 + i * 16}px">' + "".join(
-            f'<b style="left:{l}%;width:{w}%;background:{c}"></b>' for l, w in spans) + '</div>'
-        for i, (c, spans) in enumerate([
-            ("#c5f04a", [(0, 14), (80, 20)]), ("#e4e4e7", [(0, 100)]),
-            ("#71717a", [(0, 18), (20, 16), (38, 22), (62, 16), (80, 20)]), ("#52525b", [(0, 100)])]))
-    groups = [
-        ("speed", BOLT, "Speed", "Edit in minutes with chat, timeline and one-tap fixes", [
-            ("Describe the edit", ui("Edit agent", [("Make it punchy", "chip", True), ("Add captions", "chip", False), ("Open on the strongest moment", "chip", False), ("Add music under my voice", "chip", False)]),
-             "Type the edit in plain words or tap a quick prompt. The plan lands on six tracks, each change with a reason."),
-            ("Fix it by hand", '<div class="ui"><img src="img/editor-hand.jpg" alt="Selected timeline block with rename, move and remove controls" width="1200" height="675" loading="lazy"></div>',
-             "Click any block to rename, move, stretch or remove it. Undo and redo every step."),
-            ("One-tap fixes", ui("Quick fixes", [("Trim fillers and pauses", "ON", True), ("Clean audio to −14 LUFS", "ON", True), ("Punch-in zooms", "ON", False), ("Background", "OFF", False)]),
-             "Each fix joins the next edit and names the free local tool that does the work.")]),
-        ("style", PEN, "Style", "Start from a style that already works", [
-            ("Proven formats", ui("Walk-and-talk · 25 reels", [("Length", "34 s", False), ("Per shot", "2.8 s", True), ("Talking speed", "209 wpm", False), ("First word", "0.0 s", False)]),
-             "Nine reel types measured from 136 real reels: real lengths, shot timing and talking speed."),
-            ("Playbooks", ui(f"{n_styles} playbooks", [("What it looks like", "1", False), ("When to use it", "2", False), ("Step-by-step build", "3", True), ("Copy-paste prompt", "4", False)]),
-             f"{n_styles} styles, each with what it looks like, when to use it, the steps and a prompt for Claude."),
-            ("Motion moves", ui(f"{n_moves} moves", [("Punch-in on the keyword", "move", True), ("Fly-through push-in", "move", False), ("Kinetic keyword", "move", False), ("Before / after wipe", "move", False)]),
-             "Borrow one move at a time without taking on a whole style.")]),
-        ("ai", SPARK, "AI", "AI that runs on your own machine", [
-            ("Captions", '<div class="ui"><div class="t">Word-by-word captions</div><div class="cap-demo"><span>your <b>words</b> here</span></div></div>',
-             "Seven caption styles from word timings, checked on three frames before the full render."),
-            ("Face-tracked effects", ui("45 effects", [("Spotlight", "face", True), ("Orbit", "face", False), ("Glass widgets", "face", False), ("iMessage pop-ups", "face", False)]),
-             "Effects that follow the speaker and can sit behind them."),
-            ("Free voice and music", ui(f"{n_free} of {n_skills} skills free", [("Voice: OmniVoice, Piper", "free", True), ("Transcripts: Whisper", "free", False), ("Music: code synth, MusicGen", "free", False), ("Paid services", "fallback", False)]),
-             "Local voices, transcripts and code-made music. Paid services are fallbacks only.")]),
-    ]
-    ctl = []
-    for key, icon, label, title, items in groups:
-        buttons, panels = [], []
-        for i, (name, visual, cap) in enumerate(items):
-            pid = f"{key}-{i}"
-            on = i == 0
-            buttons.append(f'<button role="tab" id="t-{pid}" aria-controls="p-{pid}" aria-selected="{str(on).lower()}" tabindex="{0 if on else -1}">{name}</button>')
-            panels.append(f'<div class="panel" role="tabpanel" id="p-{pid}" aria-labelledby="t-{pid}"{"" if on else " hidden"}>{visual}<p class="cap">{cap}</p></div>')
-        ctl.append(f'<div class="ctl"><div><span class="label">{icon}{label}</span><h3>{title}</h3>'
-                   f'<div class="tabs" role="tablist" aria-label="{label}">{"".join(buttons)}</div></div><div>{"".join(panels)}</div></div>')
-
-    return f"""
-<section class="hero">
-  <p class="eyebrow">Video editor for real-estate creators</p>
-  <h1>Every video style,<br>mastered</h1>
-  <p class="lede">Upload your video, say what you want, and get a ready-to-post edit plan. Free, and your footage stays on your device.</p>
-  <div class="paths">
-    <a class="path" href="editor/">
-      <div class="mini" aria-hidden="true">{tracks}<div class="ph"></div></div>
-      <span class="kicker">Edit your own footage</span>
-      <h2>Edit like a pro just by chatting</h2>
-      <span class="btn light">Open the AI Editor</span>
-    </a>
-    <a class="path" href="styles.html">
-      <div class="chipwall" aria-hidden="true">{chips}</div>
-      <span class="kicker">Follow a proven style</span>
-      <h2>{n_styles} styles, each with steps and a prompt</h2>
-      <span class="btn light">Browse styles</span>
-    </a>
-  </div>
-  <p class="proof">Built from 136 real creator reels · 17 proven styles · free to use</p>
-  <figure class="showcase">
-    <img src="img/creator-desk.jpg" alt="A creator editing a vertical video on a large monitor with a timeline" width="1600" height="900" fetchpriority="high">
-    <figcaption>AI-generated illustration</figcaption>
-  </figure>
-</section>
-
-<section class="center">
-  <h2 class="big">See it in action</h2>
-  <p class="sub">Type what you want. Watch a raw clip become a finished reel.</p>
-  <div class="stage live" id="stage-demo" role="img"
-       aria-label="Animated demo: a typed request turns a raw clip into an edited reel, cycling through a listing tour, a tips listicle and a cinematic listing film"
-       data-p0="Cut this walkthrough like a Kelsie listing tour — captions, a push-in and a comment-word ask"
-       data-p1="Turn this into a 3-tip listicle with keyword captions and a counter"
-       data-p2="Make a cinematic film from these listing clips — fast cuts on the beat, music only, a title card">
-    <div class="phones">
-      <div class="phone raw">
-        <span class="tagp">Raw clip</span>
-        <div class="ex on" data-i="0"><div class="scene sc-house"></div></div>
-        <div class="ex" data-i="1"><div class="scene sc-room"></div></div>
-        <div class="ex" data-i="2"><div class="scene sc-pod"></div></div>
-      </div>
-      <div class="mid" aria-hidden="true"><div class="dots"><i class="on"></i><i></i><i></i></div><small>AI EDITOR</small></div>
-      <div class="phone cut">
-        <div class="ex on" data-i="0"><span class="tagp">Listing tour · 60 s · 1.3 s shots</span><div class="scene sc-house"></div>
-          <div class="ov title"><small>JUST LISTED</small>4 bed · 3 bath</div><div class="ov cap"><span>Corner lot · <b>big yard</b></span></div><div class="ov ask"><span>Comment “TOUR”</span></div></div>
-        <div class="ex" data-i="1"><span class="tagp">Listicle · 42 s · 220 wpm</span><div class="scene sc-room"></div>
-          <div class="ov title"><small>3 TIPS BEFORE YOU BUY</small>Get pre-approved</div><div class="ov num">01</div><div class="ov cap"><span>Know your <b>budget</b> first</span></div><div class="ov ask"><span>Save this for later</span></div></div>
-        <div class="ex" data-i="2"><span class="tagp">Cinematic film · 64 s · 1.1 s shots</span><div class="scene sc-pod"></div>
-          <div class="ov title"><small>OPEN HOUSE SUNDAY</small>Chef's kitchen</div><div class="ov cap"><span>Quartz <b>island</b> · new oak floors</span></div><div class="ov ask"><span>DM for the private tour</span></div></div>
-      </div>
-    </div>
-    <div class="bubble"><span class="typed2">Cut this walkthrough like a Kelsie listing tour — captions, a push-in and a comment-word ask</span><i>↑</i></div>
-  </div>
-  <p class="demo-note">Illustration of the workflow. Formats and numbers come from the 136-reel creator study; no creator footage is shown.</p>
-
-</section>
-
-<section>
-  <div class="demo">
-    <div>
-      <span class="label">{SPARK}How it works</span>
-      <h2 style="margin-top:12px">Edit just by describing it</h2>
-      <p class="lede">Ask like you'd ask an editor — “cut it like a listing tour” — and every change lands on the timeline while you watch.</p>
-      <a class="btn light" href="editor/">Open the AI Editor</a>
-    </div>
-    <div>
-      <div class="win" id="demo-win" data-caps='["Just <b>listed</b>","4 bed · <b>3 bath</b>","Walk-in <b>pantry</b>","Sunset <b>skyline</b>","Comment <b>TOUR</b>"]' aria-label="Animated demo: a chat request becomes a listing-tour edit on the timeline" role="img">
-        <div class="win-top">
-          <div class="win-ai">
-            <div class="win-tabs"><b>AI</b><span>Transcript</span></div>
-            <ul class="steps-live">
-              <li><code>read_footage</code> <span>· 6 clips · 0:58 · host + rooms</span></li>
-              <li><code>match_format</code> <span>· Hosted listing tour (36 of 136 reels)</span></li>
-              <li>Kelsie-style tour: neighbourhood hook, fly-through push-in, one selling point per room, aerial, seated ask.</li>
-              <li><code>plan</code> <span>· 1.3 s shots → captions → “Comment TOUR”</span></li>
-            </ul>
-            <div class="composer"><span class="typed" data-text="Cut my listing walkthrough like a Kelsie tour, drop the dead air and caption every word"></span><i>↑</i></div>
-          </div>
-          <div class="win-view">
-            <span class="view-tag">9:16 · 59 s</span>
-            <div class="view-title">Just listed</div>
-            <div class="house" aria-hidden="true"></div>
-            <div class="view-cap">Just <b>listed</b></div>
-          </div>
-        </div>
-        <div class="win-tl">
-          <div class="ruler"><span>0:00</span><span>0:15</span><span>0:30</span><span>0:45</span><span>0:59</span></div>
-          <div class="lane"><em>C1</em><div>
-            <span class="clip c" style="left:0;width:24%">Just listed</span><span class="clip c" style="left:25%;width:24%">4 bed · 3 bath</span><span class="clip c" style="left:50%;width:24%">Walk-in pantry</span><span class="clip c" style="left:75%;width:25%">Comment TOUR</span>
-          </div></div>
-          <div class="lane"><em>MG</em><div>
-            <span class="clip m" style="left:0;width:12%">Hook</span><span class="clip m" style="left:30%;width:14%">Push-in</span><span class="clip m" style="left:62%;width:12%">Aerial</span><span class="clip m" style="left:88%;width:12%">Ask</span>
-          </div></div>
-          <div class="lane"><em>V1</em><div>
-            <span class="clip v" style="left:0;width:15%">Street</span><span class="clip v" style="left:16%;width:13%">Front</span><span class="clip v" style="left:30%;width:14%">Kitchen</span><span class="clip v" style="left:45%;width:15%">Living</span><span class="clip v" style="left:61%;width:13%">Aerial</span><span class="clip v" style="left:75%;width:12%">Suite</span><span class="clip v" style="left:88%;width:12%">Seated</span>
-          </div></div>
-          <div class="lane"><em>A1</em><div>
-            <span class="clip a" style="left:0;width:100%"><span style="background:#2e2645;padding:1px 6px;border-radius:4px">Voice + music bed, ducked</span></span>
-          </div></div>
-          <div class="playhead" aria-hidden="true"></div>
-        </div>
-      </div>
-      <p class="demo-note">Illustration of the workflow — the numbers come from the creator study; no creator footage is used.</p>
-    </div>
-  </div>
-</section>
-
-<section class="center">
-  <h2 class="big">Three steps. That's it.</h2>
-  <div class="steps-wrap">
-  <figure class="tall"><img src="img/creator-vertical.jpg" alt="A creator at a desk editing their reel on the timeline" width="900" height="1600" loading="lazy"><figcaption>AI-generated illustration</figcaption></figure>
-  <ol class="three">
-    <li><span>1</span><h3>Add your video</h3><p>It stays on your device.</p></li>
-    <li><span>2</span><h3>Say what you want</h3><p>“Make it punchy”, “add captions”, “cut it like a listing tour”.</p></li>
-    <li><span>3</span><h3>Adjust and export</h3><p>Change anything on the timeline, then export.</p></li>
-  </ol>
-  </div>
-  <a class="btn light" href="editor/" style="margin-top:32px">Start editing — free</a>
-</section>
-<section class="center" id="how">
-  <h2 class="big">Why the edits work</h2>
-  <p class="sub">Every style is measured from real creator reels — watch the 84-second tour.</p>
-  <div class="explainer">
-    <div class="ex-video">
-      <video src="videos/creator-style-explainer.mp4" poster="videos/creator-style-explainer-poster.jpg" controls playsinline preload="metadata">
-        Your browser can't play this video. <a href="videos/creator-style-explainer.mp4">Download it</a>.
-      </video>
-      <div class="ex-meta">84 s · 9:16 · made with Remotion</div>
-    </div>
-    <div>
-      <span class="label">{SPARK}136 reels studied</span>
-      <h3 style="font-size:clamp(22px,2.6vw,30px);margin-top:10px;letter-spacing:-.03em">Every creator-style edit starts from measured reels.</h3>
-      <div class="ex-stats">
-        <div class="ex-stat"><b>136</b><span>reels studied</span></div>
-        <div class="ex-stat"><b>12</b><span>reel types</span></div>
-        <div class="ex-stat"><b>1.4 s</b><span>median shot</span></div>
-        <div class="ex-stat"><b>0.5 s</b><span>to the first word</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="center" id="faq">
-  <h2 class="big">Got questions?</h2>
-  <div class="faq">
-    <details><summary>What is the AI Editor?</summary><p>A video editor you talk to. Describe the edit and it plans the cuts, captions, titles, music and sound on a timeline. You can change anything by hand.</p></details>
-    <details><summary>Does my footage get uploaded?</summary><p>No. The clip plays in your browser only. Nothing is sent to a server.</p></details>
-    <details><summary>Do I need paid tools?</summary><p>No. The editor is free to use.</p></details>
-    <details><summary>Which formats does it support?</summary><p>Vertical 9:16 for Reels, TikTok and Shorts, square 1:1 and widescreen 16:9.</p></details>
-  </div>
-</section>
-
-<section>
-  <div class="final">
-    <h2 class="big">Ready to make your next video?</h2>
-    <a class="btn light" href="editor/">Open the AI Editor</a>
-    <p>No account. No upload. No credit card.</p>
-  </div>
-</section>
+HOME_CSS = """
+.mv-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:56px 0 40px}
+.mv-hero h1{font-size:clamp(40px,6vw,76px);line-height:1.02;letter-spacing:-.03em;margin:0 0 24px}
+.mv-hero h1 em{font-style:normal;color:#c5f04a}
+.mv-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
+.mv-steps{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.mv-steps li{border:1px solid #27272a;border-radius:999px;padding:6px 12px;font-size:13px;color:#a1a1aa;transition:all .25s}
+.mv-steps li.on{border-color:#c5f04a;color:#09090b;background:#c5f04a}
+.mv-hero-demo{position:relative;justify-self:center;width:min(360px,100%)}
+.mv-hero-demo canvas{width:100%;aspect-ratio:9/16;border-radius:22px;display:block;box-shadow:0 40px 120px -30px rgba(197,240,74,.25);border:1px solid #27272a}
+.mv-chat{position:absolute;left:-28%;top:9%;max-width:240px;background:#18181b;border:1px solid #3f3f46;border-radius:16px 16px 16px 4px;padding:12px 14px;box-shadow:0 20px 50px rgba(0,0,0,.5);z-index:2}
+.mv-chat b{display:block;font-size:11px;color:#71717a;margin-bottom:4px;font-weight:600}
+.mv-chat p{margin:0;font-size:15px;color:#fafafa;min-height:22px}
+.mv-h2{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:64px 0 18px}
+.mv-h2 h2{font-size:clamp(26px,3.2vw,38px);letter-spacing:-.02em;margin:0}
+.mv-h2 a{color:#a1a1aa;font-size:14px}
+.mv-studios{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.mv-tile{position:relative;display:block;border-radius:16px;overflow:hidden;background:#111113;border:1px solid #1f1f23;aspect-ratio:9/16;color:#fafafa;text-decoration:none;transition:transform .25s,border-color .25s}
+.mv-tile:hover{transform:translateY(-4px);border-color:#c5f04a}
+.mv-tile[hidden]{display:none}
+.mv-tile canvas,.mv-tile video,.mv-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.mv-tile .mv-name{position:absolute;left:10px;right:10px;bottom:10px;font-weight:600;font-size:14px;text-shadow:0 2px 12px rgba(0,0,0,.8)}
+.mv-tile .mv-go{position:absolute;right:10px;top:10px;font-size:11px;font-weight:700;background:#c5f04a;color:#09090b;border-radius:999px;padding:4px 9px;opacity:0;transform:translateY(-4px);transition:all .2s}
+.mv-tile:hover .mv-go,.mv-tile:focus-visible .mv-go{opacity:1;transform:none}
+.mv-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.mv-filters button{background:transparent;border:1px solid #27272a;color:#a1a1aa;border-radius:999px;padding:6px 14px;font:inherit;font-size:13px;cursor:pointer}
+.mv-filters button.on{background:#fafafa;color:#09090b;border-color:#fafafa}
+.mv-skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.mv-styles{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.mv-style{position:relative;border:1px solid #1f1f23;border-radius:16px;padding:18px 16px 16px;background:linear-gradient(160deg,color-mix(in srgb,var(--accent) 18%,#111113),#0c0c0e 60%);display:flex;flex-direction:column;gap:8px;min-height:170px}
+.mv-style:hover{border-color:var(--accent)}
+.mv-style .mv-dot{width:28px;height:28px;border-radius:9px;background:var(--accent);box-shadow:0 0 24px var(--accent)}
+.mv-style b{font-size:16px;color:#fafafa}
+.mv-style span{font-size:12px;color:#a1a1aa}
+.mv-style .mv-row{margin-top:auto;display:flex;gap:8px}
+.mv-style .mv-row a{font-size:12px;font-weight:600;border-radius:999px;padding:6px 11px;border:1px solid #3f3f46;color:#fafafa;text-decoration:none}
+.mv-style .mv-row a.mv-use{background:#fafafa;color:#09090b;border-color:#fafafa}
+.mv-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:56px 0 24px}
+.mv-stats div{border:1px solid #1f1f23;border-radius:16px;padding:20px;background:#0c0c0e}
+.mv-stats strong{display:block;font-size:clamp(28px,4vw,44px);letter-spacing:-.03em;color:#fafafa}
+.mv-stats span{color:#71717a;font-size:13px}
+@media (max-width:980px){.mv-hero{grid-template-columns:1fr;padding-top:32px}.mv-chat{left:-6%;top:-18px}.mv-studios{grid-template-columns:repeat(3,1fr)}.mv-stats{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.mv-studios{grid-template-columns:repeat(2,1fr)}.mv-chat{left:4%;max-width:78%}}
+@media (prefers-reduced-motion:reduce){.mv-tile,.mv-steps li{transition:none}}
 """
+
+STUDIOS = [
+    ("Real-estate reels", "realestate", '<video data-hover muted loop playsinline preload="metadata" src="videos/sold-title-3d.mp4"></video>'),
+    ("Talking-head captions", "captions-pop", '<canvas data-demo="captions-pop" width="270" height="480"></canvas>'),
+    ("3D floor plans", "dollhouse", '<video data-hover muted loop playsinline preload="metadata" src="videos/dollhouse-3d.mp4"></video>'),
+    ("Lessons & explainers", "lesson", '<video data-hover muted loop playsinline preload="none" poster="videos/creator-style-explainer-poster.jpg" src="videos/creator-style-explainer.mp4"></video>'),
+    ("Hooks & calls to action", "titlecta", '<canvas data-demo="titlecta" width="270" height="480"></canvas>'),
+    ("Edit by chat", "chat", '<canvas data-demo="chat" width="270" height="480"></canvas>'),
+]
+SKILL_TILES = [
+    ("Pop captions", "captions-pop", "captions"), ("Bold captions", "captions-bold", "captions"), ("Karaoke", "captions-karaoke", "captions"),
+    ("Editorial", "captions-editorial", "captions"), ("Minimal", "captions-minimal", "captions"), ("Cut by text", "cut", "edit"),
+    ("Punch-in zoom", "zoom", "edit"), ("9:16 reframe", "reframe", "edit"), ("Looks", "look", "look"), ("Hook + CTA", "titlecta", "edit"),
+    ("Music ducking", "duck", "sound"), ("Chat edits", "chat", "edit"),
+]
+FILTERS = [("all", "All"), ("captions", "Captions"), ("edit", "Edit"), ("look", "Look"), ("sound", "Sound")]
+
+
+def masvid_home(styles, n_reels, n_skills, n_free):
+    steps = "".join('<li data-step>' + s + '</li>' for s in ["Make it punchy", "Pop captions", "Zoom on the price", "Cinematic look", "9:16 for Reels", "Hook + CTA"])
+    studios = "".join(
+        f'<a class="mv-tile" href="editor/?preset={k}" aria-label="{esc(n)}: open in the editor">{media}<span class="mv-go">Try it</span><span class="mv-name">{esc_text(n)}</span></a>'
+        for n, k, media in STUDIOS)
+    filters = "".join(
+        '<button type="button" data-filter="' + k + '"' + (' class="on"' if k == "all" else '') + '>' + label + '</button>' for k, label in FILTERS)
+    skills = "".join(
+        f'<a class="mv-tile" data-kind="{kind}" href="editor/?preset={k}" aria-label="{esc(n)}: open in the editor"><canvas data-demo="{k}" width="240" height="426"></canvas><span class="mv-go">Try it</span><span class="mv-name">{esc_text(n)}</span></a>'
+        for n, k, kind in SKILL_TILES)
+    cards = []
+    for s in styles:
+        who = esc_text(s.get("creator") or s.get("creator_role") or s.get("tag", ""))
+        reel = f'<a href="{esc(s["reference_reel_url"])}" target="_blank" rel="noopener">Watch</a>' if s.get("reference_reel_url") else ""
+        cards.append(f'<article class="mv-style" style="--accent:{esc(s["accent"])}"><div class="mv-dot"></div><b>{esc_text(s["title"])}</b><span>{who}</span>'
+                     f'<div class="mv-row"><a class="mv-use" href="editor/?style={esc(s["slug"])}">Make it like this</a>{reel}</div></article>')
+    return f"""<style>{HOME_CSS}</style>
+<section class="mv-hero">
+  <div>
+    <h1>Edit any video<br>by <em>talking</em> to it.</h1>
+    <div class="mv-cta"><a class="btn light" href="editor/">Open the editor</a><a class="btn" href="studio.html">Use Claude on your PC</a></div>
+    <ul class="mv-steps" aria-label="Things you can ask">{steps}</ul>
+  </div>
+  <div class="mv-hero-demo" data-hero>
+    <div class="mv-chat"><b>You</b><p data-say>Make it punchy</p></div>
+    <canvas width="360" height="640" role="img" aria-label="The edit applying live"></canvas>
+  </div>
+</section>
+<div class="mv-h2"><h2>Studios</h2><a href="editor/">Open the editor →</a></div>
+<div class="mv-studios">{studios}</div>
+<div class="mv-h2" id="skills"><h2>Skills in motion</h2><a href="skills.html">All {n_skills} skills →</a></div>
+<div class="mv-filters">{filters}</div>
+<div class="mv-skills">{skills}</div>
+<div class="mv-h2" id="styles"><h2>Make it like this</h2><a href="styles.html">Playbooks →</a></div>
+<div class="mv-styles">{''.join(cards)}</div>
+<div class="mv-stats"><div><strong>{n_skills}</strong><span>skills</span></div><div><strong>{len(styles)}</strong><span>styles</span></div><div><strong>{n_reels}</strong><span>studied reels</span></div><div><strong>$0</strong><span>{n_free} free tools, runs on your device</span></div></div>
+<script src="js/demos.js" defer></script>"""
 
 
 def styles_page(styles, moves, tools):
@@ -1099,9 +995,9 @@ def main():
     n_skills = sum(len(g["skills"]) for g in SKILLS["groups"])
     n_free = sum(1 for g in SKILLS["groups"] for k in g["skills"] if k["cost"] == "free")
     pages = {
-        "index.html": shell("home", "Master Video Styles — every video style, mastered",
-                            "Edit your footage by describing it, or pick a proven style and follow its playbook.",
-                            home(len(styles), len(moves), n_skills, n_free)),
+        "index.html": shell("home", "Masvid — edit any video by talking to it",
+                            "Drop a video, chat with the AI editor, and make it like any style in the library. Free and on your device.",
+                            masvid_home(styles, len(reels), n_skills, n_free)),
         "styles.html": shell("styles", "Styles and playbooks — Master Video Styles",
                              "Every video style as a playbook: what it looks like, when to use it, the steps and a prompt.",
                              styles_page(styles, moves, tools)),
@@ -1111,7 +1007,7 @@ def main():
         "reels.html": shell("reels", "Reel catalog — Master Video Styles",
                             "Every studied reel, tagged with the styles it demonstrates.", reels_page(reels)),
         "captions.html": shell("captions", "Caption Studio — Master Video Styles",
-                               "Word-timed animated captions in Clean, Pop or Marker, styled and exported in your browser. Built on OpenMotion.",
+                               "Word-timed animated captions in Clean, Pop or Marker, styled and exported in your browser.",
                                captions_page()),
         "studio.html": shell("studio", "Open the editor — Master Video Styles",
                              "Edit your video by chatting with Claude in Masvid Studio on your PC, or use the browser editor.",

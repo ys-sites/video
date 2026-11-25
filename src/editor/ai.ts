@@ -176,16 +176,18 @@ export function builtInPlan(prompt: string, p: Project, hints: { accent?: string
   const t = prompt.toLowerCase();
   const ops: Op[] = [];
   const quoted = /["“](.+?)["”]/.exec(prompt)?.[1];
+  // "Make it like <style>" without Claude: the house edit for social reels, tinted with the style's accent.
+  const like = has(t, ['make it like']);
   if (has(t, ['undo all', 'restore', 'uncut', 'original'])) ops.push({ op: 'restore_all' });
-  if (has(t, ['punchy', 'tight', 'filler', 'um', 'dead air', 'pause', 'silence', 'faster', 'snappy'])) ops.push({ op: 'remove_fillers' }, { op: 'remove_silence', min: has(t, ['punchy', 'snappy', 'faster']) ? 0.4 : 0.6 });
-  if (has(t, ['caption', 'subtitle', 'text on screen', 'words on screen', 'punchy'])) {
+  if (like || has(t, ['punchy', 'tight', 'filler', 'um', 'dead air', 'pause', 'silence', 'faster', 'snappy'])) ops.push({ op: 'remove_fillers' }, { op: 'remove_silence', min: has(t, ['punchy', 'snappy', 'faster']) ? 0.4 : 0.6 });
+  if (like || has(t, ['caption', 'subtitle', 'text on screen', 'words on screen', 'punchy'])) {
     const style: CaptionStyle = has(t, ['karaoke']) ? 'karaoke' : has(t, ['editorial', 'serif', 'elegant']) ? 'editorial' : has(t, ['minimal', 'subtle', 'clean']) ? 'minimal' : has(t, ['bold', 'white']) ? 'bold' : 'pop';
     const colours: Record<string, string> = { yellow: '#ffd400', green: '#c5f04a', red: '#ff4d4d', blue: '#4da3ff', pink: '#ff5fb7', orange: '#ff9a3c', white: '#ffffff' };
     const c = Object.keys(colours).find(k => t.includes(k));
     ops.push({ op: 'captions', on: !has(t, ['no caption', 'remove caption', 'captions off']), style, accent: c ? colours[c] : hints.accent,
       size: has(t, ['bigger', 'larger', 'huge']) ? 1.3 : has(t, ['smaller']) ? 0.8 : undefined, position: has(t, ['top']) ? 'high' : has(t, ['middle', 'center']) ? 'mid' : undefined });
   }
-  if (has(t, ['zoom', 'punch in', 'punch-in', 'key word', 'keyword', 'punchy'])) ops.push({ op: 'zoom_keywords', count: Math.max(3, Math.round(outputDuration(p.keep) / 8)) });
+  if (like || has(t, ['zoom', 'punch in', 'punch-in', 'key word', 'keyword', 'punchy'])) ops.push({ op: 'zoom_keywords', count: Math.max(3, Math.round(outputDuration(p.keep) / 8)) });
   if (has(t, ['strongest moment', 'best part', 'highlight', 'shorter', 'under 30', '30 sec', 'clip'])) {
     const ow = outputWords(p);
     if (ow.length > 20) {
@@ -199,13 +201,14 @@ export function builtInPlan(prompt: string, p: Project, hints: { accent?: string
       ops.push({ op: 'keep_only', from: ow[bestI].i, to: ow[j].i });
     }
   }
-  if (has(t, ['9:16', 'vertical', 'reel', 'tiktok', 'short'])) ops.push({ op: 'aspect', value: '9:16', fit: has(t, ['blur']) ? 'blur' : 'crop' });
+  if (like || has(t, ['9:16', 'vertical', 'reel', 'tiktok', 'short'])) ops.push({ op: 'aspect', value: '9:16', fit: has(t, ['blur']) ? 'blur' : 'crop' });
   else if (has(t, ['16:9', 'horizontal', 'youtube', 'landscape'])) ops.push({ op: 'aspect', value: '16:9', fit: has(t, ['blur']) ? 'blur' : 'crop' });
   else if (has(t, ['1:1', 'square'])) ops.push({ op: 'aspect', value: '1:1', fit: 'crop' });
   const look = (['cinematic', 'warm', 'vivid', 'clean'] as LookPreset[]).find(l => t.includes(l)) ?? (has(t, ['black and white', 'b&w', 'mono']) ? 'bw' : has(t, ['retro', 'vintage']) ? 'warm' : undefined);
   if (look) ops.push({ op: 'look', preset: look });
   if (has(t, ['title', 'hook', 'headline'])) ops.push({ op: 'title', text: quoted ?? (p.words.slice(0, 6).map(w => w.w).join(' ') || p.title) });
   if (has(t, ['ask', 'cta', 'call to action', 'follow', 'end card', 'subscribe', 'dm me', 'contact'])) ops.push({ op: 'cta', text: quoted && !has(t, ['title']) ? quoted : has(t, ['dm']) ? 'DM me for details' : 'Follow for more' });
+  else if (like) ops.push({ op: 'cta', text: 'Follow for more' });
   if (has(t, ['music', 'song'])) ops.push({ op: 'music', volume: has(t, ['louder']) ? 0.45 : has(t, ['quieter', 'lower']) ? 0.12 : 0.25, duck: true });
   if (has(t, ['remove zoom', 'no zoom'])) ops.push({ op: 'clear', what: 'zooms' });
   const reply = ops.length ? "Here's the edit. Everything is on the timeline, so you can undo any step." : 'I can cut pauses and filler words, add captions, zooms, a title or a call to action, change the format or the look. Try "make it punchy with yellow captions".';

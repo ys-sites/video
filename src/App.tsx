@@ -214,13 +214,13 @@ export default function App() {
           <header className="mb-4 flex items-center justify-between gap-3 py-1 text-sm">
             <a href="/" className="flex items-center gap-2 font-semibold text-white no-underline">
               <img src="/img/logo.svg" alt="" width={28} height={28} className="h-7 w-7" />
-              Master Video Styles
+              Masvid
             </a>
             <button onClick={() => setActiveTab('director')} className="rounded-lg px-3 py-1.5 text-xs text-[#a1a1aa] hover:bg-white/5 hover:text-white">Studio tools</button>
           </header>
         ) : (
         <header className="flex flex-wrap items-center justify-between gap-4 py-4 px-6 rounded-2xl bg-[#111113]/80 backdrop-blur-md border border-white/10 shadow-2xl mb-8">
-          <a href="/" className="flex items-center gap-3 no-underline" aria-label="Master Video Styles home">
+          <a href="/" className="flex items-center gap-3 no-underline" aria-label="Masvid home">
             <img src="/img/logo.svg" alt="" width={40} height={40} className="h-10 w-10" />
             <div>
               <div className="flex items-center gap-2">
@@ -229,7 +229,7 @@ export default function App() {
                   Studio Pro
                 </span>
               </div>
-              <p className="text-[11px] text-[#a1a1aa]">← Back to Master Video Styles</p>
+              <p className="text-[11px] text-[#a1a1aa]">← Back to Masvid</p>
             </div>
           </a>
 

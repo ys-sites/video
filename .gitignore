@@ -25,3 +25,6 @@ real-estate-reels-expansion/
 
 # local git worktrees
 .claude/worktrees/
+
+# local graphify code map (rebuild with /graphify)
+graphify-out/

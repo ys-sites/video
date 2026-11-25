@@ -21,6 +21,18 @@ const RECIPES = [
 ];
 const QUICK = ['Add captions', 'Make it punchy', 'Open on the strongest moment', 'Add zooms on key words', 'Yellow karaoke captions, bigger', 'Cinematic look', 'Make it 9:16 with a blurred fill', 'Add a call to action "Follow for more"'];
 type Msg = { role: 'user'; text: string } | { role: 'ai'; text: string; steps: string[]; by: Plan['by'] };
+type SiteStyle = { slug: string; title: string; creator?: string; creator_role?: string; tag?: string; accent: string; look?: string; rules?: string[]; best_for?: string; reference_reel_url?: string };
+// Deep links from the home page tiles (editor/?preset=...).
+const PRESETS: Record<string, { prompt: string; captions?: CaptionStyle }> = {
+  'captions-pop': { prompt: 'Add pop captions', captions: 'pop' }, 'captions-bold': { prompt: 'Add bold captions', captions: 'bold' },
+  'captions-karaoke': { prompt: 'Add karaoke captions', captions: 'karaoke' }, 'captions-editorial': { prompt: 'Add editorial captions', captions: 'editorial' },
+  'captions-minimal': { prompt: 'Add minimal captions', captions: 'minimal' }, cut: { prompt: 'Make it punchy: cut pauses and filler words' },
+  zoom: { prompt: 'Add zooms on key words' }, reframe: { prompt: 'Make it 9:16 with a blurred fill' }, look: { prompt: 'Give it a cinematic look' },
+  titlecta: { prompt: 'Add a hook title and a call to action "Follow for more"' }, duck: { prompt: 'Add music under my voice' },
+  chat: { prompt: 'Make it punchy with pop captions and zooms on key words' }, lesson: { prompt: 'Clean minimal captions, tighten the pauses, clean look' },
+  realestate: { prompt: 'Punchy listing tour: hook title, pop captions, warm look and a call to action "DM me for details"' },
+  dollhouse: { prompt: 'Punchy listing tour: hook title, pop captions and a call to action "Book a visit"' },
+};
 type Tab = 'ai' | 'transcript' | 'style';
 const fmt = (s: number) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
 const btn = 'rounded-lg border border-white/10 px-2.5 py-1 text-xs text-[#d4d4d8] hover:border-white/25 hover:text-white disabled:opacity-40';
@@ -62,6 +74,27 @@ export default function Editor() {
   const musicFileRef = useRef<HTMLInputElement>(null);
   const abortRef = useRef<AbortController | null>(null);
   const tRef = useRef(0);
+  const [siteStyles, setSiteStyles] = useState<SiteStyle[]>([]);
+  const [reference, setReference] = useState<SiteStyle | null>(null);
+  const pendingAsk = useRef<string | null>(null);
+  const askRef = useRef<(text: string) => Promise<void>>(async () => undefined);
+
+  // Site styles ("make it like this") and deep links from the home page.
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const preset = PRESETS[params.get('preset') ?? ''];
+    if (preset) { setPrompt(preset.prompt); pendingAsk.current = preset.prompt; }
+    fetch(new URL('../data/styles.json', location.href)).then(r => (r.ok ? r.json() : null)).then(d => {
+      const list: SiteStyle[] = (d?.styles ?? []).filter((s: SiteStyle) => s && s.slug && s.title).slice(0, 60);
+      setSiteStyles(list);
+      const wanted = list.find(s => s.slug === params.get('style'));
+      if (wanted) {
+        setReference(wanted);
+        const req = `Make it like "${wanted.title}"`;
+        setPrompt(req); pendingAsk.current = req;
+      }
+    }).catch(() => undefined);
+  }, []);
 
   const total = outputDuration(p.keep);
   const words = useMemo(() => outputWords(p), [p]);
@@ -99,6 +132,7 @@ export default function Editor() {
       const found = await transcribe(buf, setStatus);
       setHistory([{ ...fresh, words: found }]); setCursor(0);
       setStatus(found.length ? `Transcript ready: ${found.length} words. Ask for an edit or pick a format.` : 'No speech found. You can still style and export.');
+      if (pendingAsk.current) { const req = pendingAsk.current; pendingAsk.current = null; setTimeout(() => void askRef.current(req), 50); }
     } catch (e) {
       setStatus(`Transcript failed (${(e as Error).message}). Edits that need words are off; styling and export still work.`);
     } finally { setBusy(false); }
@@ -172,7 +206,11 @@ export default function Editor() {
   }, [playing, file, p, total, muted, music]);
 
   // ---------- AI ----------
-  const styleBrief = () => (style ? `${style.name}: ${style.description} Palette: ${style.palette}. Motion: ${style.motion.slice(0, 4).join(' ')}` : null);
+  const styleBrief = () => {
+    if (reference) return [`Make the edit like "${reference.title}"${reference.creator ? ` (${reference.creator})` : ''}.`, reference.look && `Look: ${reference.look}`,
+      reference.best_for && `Best for: ${reference.best_for}`, reference.rules?.length ? `Rules: ${reference.rules.join(' ')}` : '', `Accent colour: ${reference.accent}.`].filter(Boolean).join('\n').slice(0, 1900);
+    return style ? `${style.name}: ${style.description} Palette: ${style.palette}. Motion: ${style.motion.slice(0, 4).join(' ')}` : null;
+  };
   const ask = async (text = prompt) => {
     const request = text.trim();
     if (!request || busy) return;
@@ -185,13 +223,15 @@ export default function Editor() {
       try { plan = await claudePlan(request, p, styleBrief(), model); }
       catch (e) { setStatus(`Claude unavailable (${(e as Error).message}); used the built-in editor.`); }
     }
-    if (!plan) plan = builtInPlan(request, p, { accent: style?.accent });
+    if (!plan) plan = builtInPlan(request, p, { accent: reference?.accent ?? style?.accent });
     const { project, steps } = applyOps(p, plan.ops);
     if (plan.ops.length) commit(project);
     setThread(th => [...th, { role: 'ai', text: plan!.reply, steps, by: plan!.by }]);
     setBusy(false);
     seek(Math.min(tRef.current, outputDuration(project.keep)));
   };
+
+  askRef.current = ask;
 
   // ---------- transcript editing ----------
   const selRange = sel ? [Math.min(sel.a, sel.b), Math.max(sel.a, sel.b)] as const : null;
@@ -300,12 +340,23 @@ export default function Editor() {
                   )}
                 </div>
                 <div>
-                  <p className="mb-2 text-xs font-medium text-[#a1a1aa]">Style</p>
-                  <select aria-label="Creator style" value={p.styleId ?? ''} onChange={e => patch(q => ({ ...q, styleId: e.target.value || null, captions: { ...q.captions, accent: creatorStyles.find(s => s.id === e.target.value)?.accent ?? q.captions.accent } }))}
-                    className="w-full rounded-lg border border-white/10 bg-[#18181b] px-2 py-1.5 text-sm">
-                    <option value="">No style (just my request)</option>
-                    {creatorStyles.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
+                  <p className="mb-2 text-xs font-medium text-[#a1a1aa]">Make it like…</p>
+                  <select aria-label="Make it like a style" value={reference?.slug ?? ''} onChange={e => {
+                    const s = siteStyles.find(x => x.slug === e.target.value) ?? null;
+                    setReference(s);
+                    if (s) patch(q => ({ ...q, styleId: s.slug, captions: { ...q.captions, accent: s.accent } }));
+                  }} className="w-full rounded-lg border border-white/10 bg-[#18181b] px-2 py-1.5 text-sm">
+                    <option value="">My own request</option>
+                    {siteStyles.map(s => <option key={s.slug} value={s.slug}>{s.title}{s.creator ? ` · ${s.creator}` : ''}</option>)}
                   </select>
+                  {reference && (
+                    <div className="mt-2 flex items-center gap-2 rounded-lg border border-white/10 p-2" style={{ borderColor: reference.accent + '66' }}>
+                      <span className="h-6 w-6 shrink-0 rounded-md" style={{ background: reference.accent }} />
+                      <span className="min-w-0 flex-1 truncate text-xs text-[#d4d4d8]">{reference.look ?? reference.best_for ?? reference.title}</span>
+                      {reference.reference_reel_url && <a href={reference.reference_reel_url} target="_blank" rel="noopener noreferrer" className="text-xs text-[#a1a1aa] underline hover:text-white">Reel</a>}
+                      <button className={btn} disabled={busy || !file} onClick={() => void ask(`Make it like "${reference.title}"`)}>Make it like this</button>
+                    </div>
+                  )}
                 </div>
                 {thread.length === 0 ? (<>
                   <div>

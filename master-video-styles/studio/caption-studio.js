@@ -757,7 +757,7 @@
   // Fallback: record the live preview in real time (browsers without WebCodecs).
   function recordRealtime() {
     var mime = pickMime();
-    if (mime === null || !canvas.captureStream) { say('This browser cannot record video. Use a current Chrome, Edge or Firefox, or download the OpenMotion composition below.'); return; }
+    if (mime === null || !canvas.captureStream) { say('This browser cannot record video. Use a current Chrome, Edge or Firefox, or download the HTML composition below.'); return; }
     var stream = canvas.captureStream(FPS);
     try {
       var a = routeAudio();
@@ -1193,7 +1193,7 @@
       ''
     ].join('\n');
     download(new Blob([html], { type: 'text/html' }), 'captions.html');
-    say('Saved captions.html — drop it into an OpenMotion project to render it frame-exact.');
+    say('Saved captions.html — open it in Masvid Studio to render it frame-exact.');
   });
 
   // ---------- Start ----------

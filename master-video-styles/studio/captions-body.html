@@ -2,10 +2,10 @@
 <link rel="stylesheet" href="studio/caption-studio.css">
 <div class="page">
   <section class="cs-hero" style="padding-bottom:0">
-    <p class="eyebrow">Caption Studio · built on OpenMotion</p>
+    <p class="eyebrow">Caption Studio</p>
     <h1>Word-timed captions, <em>styled and exported</em> in your browser</h1>
     <p class="lede">Open a talking clip, time every word, pick Clean, Pop or Marker, and download the finished video. Your footage never leaves your device.</p>
-    <div class="cs-badges"><span>Free</span><span>No upload</span><span>MP4 export</span><span>SRT + OpenMotion composition</span></div>
+    <div class="cs-badges"><span>Free</span><span>No upload</span><span>MP4 export</span><span>SRT + HTML composition</span></div>
   </section>
 
   <div id="caption-studio" tabindex="-1">
@@ -81,7 +81,7 @@
           <button type="button" class="btn ghost" id="cs-cancel" hidden>Cancel</button>
           <button type="button" class="btn ghost" id="cs-srt">SRT</button>
           <button type="button" class="btn ghost" id="cs-json">Word timings</button>
-          <button type="button" class="btn ghost" id="cs-om">OpenMotion composition</button>
+          <button type="button" class="btn ghost" id="cs-om">HTML composition</button>
         </div>
         <progress id="cs-progress" max="1" value="0" hidden></progress>
         <p id="cs-status" role="status" aria-live="polite"></p>
@@ -96,21 +96,21 @@
         Your browser can't play this video. <a href="videos/openmotion-caption-styles.mp4">Download it</a>.
       </video>
       <div>
-        <p class="eyebrow">Rendered with OpenMotion</p>
+        <p class="eyebrow">Rendered on a PC</p>
         <h2>The three looks, frame-exact</h2>
-        <p>This 10-second habits tip was built as an OpenMotion composition and rendered by its HyperFrames engine, with each word placed on its first frame of speech (within 20 ms of the voice).</p>
+        <p>This 10-second habits tip was built as an HTML composition and rendered locally with HyperFrames, with each word placed on its first frame of speech (within 20 ms of the voice).</p>
         <ul>
           <li><b>Clean</b> — sentence case, upcoming words at 30%</li>
           <li><b>Pop</b> — condensed caps, black outline, active word in yellow with a 180 ms overshoot</li>
           <li><b>Marker</b> — two words at a time, key word on a coral box that wipes in</li>
         </ul>
-        <small>Demo voice: Windows' built-in speech voice. Looks follow OpenMotion's caption-styling recipe (nexu-io/openmotion, Apache-2.0).</small>
+        <small>Demo voice: Windows' built-in speech voice. Caption looks adapted from an open-source (Apache-2.0) styling recipe.</small>
       </div>
     </div>
 
     <div class="cs-how">
       <div><b>Quick: export here</b><p>Good for social posts. The browser records the preview exactly as you see it, with the clip's sound.</p></div>
-      <div><b>Frame-exact: OpenMotion</b><p>Download the <code>OpenMotion composition</code>, drop it into a project's <code>compositions/</code> and render it locally at any frame rate.</p></div>
+      <div><b>Frame-exact: Masvid Studio</b><p>Download the <code>HTML composition</code>, drop it into a project's <code>compositions/</code> and render it locally at any frame rate.</p></div>
       <div><b>Better timing: Whisper</b><p>Transcribe with the local Whisper route in the skill stack, then use <code>Import timings</code> with its word JSON.</p></div>
     </div>
   </section>
