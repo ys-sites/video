@@ -21,7 +21,7 @@ Open a project; the **Claude** tab is on the right. Type what you want ("add yel
 | Area | Change | Files |
 |---|---|---|
 | Claude chat | Server bridge (ported from the master-studio prototype) and editor panel | `gateway/claude-chat.ts`, `server.ts`, `studio/src/components/panels/ClaudeChatPanel.tsx`, dock registry/layout files |
-| Website link | `GET /api/ping` with CORS for masvid.vercel.app (private-network preflight) | `server.ts` |
+| Website link | `GET /api/ping` and `POST /api/edit-plan` with CORS for masvid.vercel.app (private-network preflight). The site's AI editor sends a transcript and request; Claude runs with no tools and no MCP and returns a JSON list of edit operations the browser applies | `server.ts`, `gateway/claude-chat.ts` |
 | Free only | Paid providers removed from every list (OpenDesign Cloud and account, fal.ai, Atlas Cloud, WaveSpeedAI, Codex, paid API presets); local engines kept: ComfyUI, Ollama, LM Studio, LiteLLM, OVMS, OMLX, rapid-mlx, Claude Code | `shared/provider-registry.ts` |
 | Privacy | Telemetry always off | `shared/tracking.ts` |
 | Brand | Masvid Studio name, logo, favicon, title; no sales banner, Pricing, Discord or GitHub buttons | `packages/design-system/{index.js,studio.css,brand/masvid-*}`, `studio/index.html`, `studio/src/motion/{ApplicationChrome,campaignAttribution}.tsx/ts` |

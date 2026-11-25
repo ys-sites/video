@@ -17,7 +17,7 @@ import ShinyText from './components/ui/ShinyText';
 import DecryptedText from './components/ui/DecryptedText';
 import Aurora from './components/ui/Aurora';
 import CreatorStyleExplainer from './components/CreatorStyleExplainer';
-import AIEditorStudio from './components/AIEditorStudio';
+import Editor from './editor/Editor';
 
 const STORAGE = 'master-video-editor.v2';
 
@@ -285,7 +285,7 @@ export default function App() {
         </header>
         )}
 
-        {activeTab === 'editor' && <AIEditorStudio />}
+        {activeTab === 'editor' && <Editor />}
 
         {/* Hero Banner */}
         {activeTab !== 'editor' && (<>

@@ -5,7 +5,7 @@ import { transcriptsFor, closeTranscripts } from './gateway/transcription.ts';
 import { projectArchiveHttp } from './gateway/project-archive-http.ts';
 import { modelMetadata } from './gateway/model-metadata.ts';
 import { assetConversations } from './gateway/asset-chat.ts';
-import { claudeChatHttp } from './gateway/claude-chat.ts';
+import { claudeChatHttp, editPlanHttp, SITE_ORIGINS } from './gateway/claude-chat.ts';
 import { assetHttp } from './gateway/asset-http.ts';
 import { getWorkflow } from './shared/workflow.ts';
 import { attachmentDisposition } from './shared/http-header.ts';
@@ -362,13 +362,15 @@ export async function handler(req: IncomingMessage, res: ServerResponse, store =
     // Masvid Studio: masvid.vercel.app asks (after a click) whether the studio runs on this PC. No data is returned.
     if ((req.url || '').split('?')[0] === '/api/ping' && (req.method === 'GET' || req.method === 'OPTIONS')) {
       const origin = req.headers.origin;
-      if (origin && ['https://masvid.vercel.app', 'http://localhost:5173'].includes(origin)) {
+      if (origin && SITE_ORIGINS.includes(origin)) {
         res.setHeader('Access-Control-Allow-Origin', origin); res.setHeader('Vary', 'Origin');
         res.setHeader('Access-Control-Allow-Methods', 'GET'); res.setHeader('Access-Control-Allow-Private-Network', 'true');
       }
       if (req.method === 'OPTIONS') { res.writeHead(204); return res.end(); }
-      return json(res, 200, { ok: true, app: 'masvid-studio', url: `http://localhost:${process.env.PORT || 4180}/` });
+      return json(res, 200, { ok: true, app: 'masvid-studio', editPlan: true, url: `http://localhost:${process.env.PORT || 4180}/` });
     }
+    // Website editor asks Claude (no tools) for an edit plan; CORS-limited to the Masvid site.
+    if (await editPlanHttp(req, res, (store.workspaceStore ?? store).directory, input)) return;
     if (!['GET', 'HEAD'].includes(req.method || '') && (!req.headers.origin || new URL(req.headers.origin).host !== host)) return json(res, 403, { error: '仅允许当前预览页面发起修改' });
     const projectHeader = req.headers['x-opendesign-project-id'];
     if (projectHeader !== undefined) {

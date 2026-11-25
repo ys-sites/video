@@ -296,6 +296,75 @@ function runTurn(req: IncomingMessage, res: ServerResponse, data: string, body: 
   req.on('close', () => undefined);
 }
 
+// ---------- edit plans for the website editor (masvid.vercel.app) ----------
+// The site sends a transcript and a request; Claude answers with a JSON list of edit operations that the
+// browser applies itself. Claude runs with NO tools and NO MCP servers here: it can only return text.
+export const SITE_ORIGINS = ['https://masvid.vercel.app', 'http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:3000', 'http://127.0.0.1:3000', 'http://localhost:3001', 'http://127.0.0.1:3001'];
+let planning = false;
+const EDIT_PLAN_PROMPT = `You are the AI video editor of Masvid, a browser video editor. You plan edits; the browser applies them.
+Reply with ONE JSON object and nothing else: {"reply": "<1-3 short friendly sentences on what you changed and one next step>", "ops": [ ... ]}.
+Allowed ops (word numbers are transcript indices; times are seconds of the edited video):
+{"op":"remove_fillers"} | {"op":"remove_silence","min":0.6} | {"op":"cut","from":W,"to":W} | {"op":"keep_only","from":W,"to":W} | {"op":"restore_all"}
+{"op":"captions","on":true,"style":"pop|bold|karaoke|editorial|minimal","accent":"#rrggbb","size":0.6-1.8,"position":"low|mid|high"}
+{"op":"zoom","word":W,"scale":1.05-1.4,"dur":0.6-3} | {"op":"zoom_keywords","count":N}
+{"op":"title","text":"...","dur":2.5} | {"op":"cta","text":"...","dur":3} | {"op":"text","text":"...","word":W,"dur":2}
+{"op":"aspect","value":"9:16|1:1|16:9","fit":"crop|blur"} | {"op":"look","preset":"none|clean|warm|cinematic|bw|vivid"}
+{"op":"music","volume":0-1,"duck":true} | {"op":"clear","what":"zooms|overlays|captions"}
+Rules: use only words that exist in the transcript (format index:word@time; "cut" means already removed). Never invent facts, prices or quotes for titles; take them from the transcript or the request. Keep titles under 8 words. Prefer few precise ops over many. If the request cannot be done with these ops, say so in "reply" and return the closest useful ops.`;
+
+function corsFor(req: IncomingMessage, res: ServerResponse) {
+  const origin = req.headers.origin;
+  if (!origin || !SITE_ORIGINS.includes(origin)) return false;
+  res.setHeader('Access-Control-Allow-Origin', origin); res.setHeader('Vary', 'Origin');
+  res.setHeader('Access-Control-Allow-Methods', 'POST'); res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Private-Network', 'true');
+  return true;
+}
+
+/** POST/OPTIONS /api/edit-plan from the website. Returns true when handled. */
+export async function editPlanHttp(req: IncomingMessage, res: ServerResponse, data: string, input: Input): Promise<boolean> {
+  if ((req.url || '').split('?')[0] !== '/api/edit-plan') return false;
+  const allowed = corsFor(req, res);
+  if (req.method === 'OPTIONS') { res.writeHead(allowed ? 204 : 403); res.end(); return true; }
+  if (!allowed) { json(res, 403, { error: 'Only the Masvid website may ask for edit plans.' }); return true; }
+  if (req.method !== 'POST') { json(res, 405, { error: 'POST only' }); return true; }
+  if (planning) { json(res, 409, { error: 'Claude is already planning an edit. Try again in a moment.' }); return true; }
+  if (!claudeInfo().installed) { json(res, 500, { error: 'Claude Code is not installed on this PC.' }); return true; }
+  const body = await input(req, 512 * 1024);
+  const prompt = String(body.prompt || '').slice(0, 4000).trim();
+  if (!prompt) { json(res, 400, { error: 'Empty request' }); return true; }
+  const model = MODELS.includes(body.model) ? body.model : 'sonnet';
+  const style = typeof body.style === 'string' ? body.style.slice(0, 2000) : '';
+  const context = JSON.stringify(body.context ?? {}).slice(0, 200_000);
+  const dir = homeFor(data);
+  const empty = path.join(dir, 'no-mcp.json');
+  if (!existsSync(empty)) writeFileSync(empty, JSON.stringify({ mcpServers: {} }));
+  const planDir = path.join(dir, 'plan-work');
+  mkdirSync(planDir, { recursive: true });
+  planning = true;
+  try {
+    const result = await new Promise<{ code: number | null; out: string; err: string }>(resolve => {
+      const child = spawn(CLAUDE, ['-p', '--output-format', 'json', '--model', model, '--tools', '', '--strict-mcp-config', '--mcp-config', empty,
+        '--setting-sources', 'project', '--append-system-prompt', EDIT_PLAN_PROMPT], { cwd: planDir, env: { ...process.env, DO_NOT_TRACK: '1' }, windowsHide: true });
+      let out = '', err = '';
+      const timer = setTimeout(() => child.kill(), 180_000);
+      child.stdout!.on('data', (d: Buffer) => { out += d.toString(); });
+      child.stderr!.on('data', (d: Buffer) => { err = (err + d.toString()).slice(-2000); });
+      child.on('close', code => { clearTimeout(timer); resolve({ code, out, err }); });
+      child.on('error', e => { clearTimeout(timer); resolve({ code: -1, out, err: String(e) }); });
+      child.stdin!.end(`${style ? `Chosen style:\n${style}\n\n` : ''}Project:\n${context}\n\nRequest: ${prompt}`);
+    });
+    let text = '';
+    try { text = String(JSON.parse(result.out).result ?? ''); } catch { text = result.out; }
+    const match = /\{[\s\S]*\}/.exec(text);
+    let plan: any = null;
+    try { plan = match ? JSON.parse(match[0]) : null; } catch { plan = null; }
+    if (!plan) { json(res, 502, { error: result.code === 0 ? 'Claude did not return a plan. Try rephrasing.' : (result.err.split('\n').filter(Boolean).pop() || 'Claude failed') }); return true; }
+    json(res, 200, { reply: String(plan.reply ?? '').slice(0, 800), ops: Array.isArray(plan.ops) ? plan.ops.slice(0, 60) : [], model });
+  } finally { planning = false; }
+  return true;
+}
+
 /** Returns true when the request was a Claude chat route. */
 export async function claudeChatHttp(req: IncomingMessage, res: ServerResponse, url: URL, data: string, input: Input): Promise<boolean> {
   if (!url.pathname.startsWith('/api/claude/')) return false;
