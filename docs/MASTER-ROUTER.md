@@ -10,6 +10,7 @@ One map of every tool, skill, repo and asset in this workspace. For any request 
 |---|---|---|
 | Educational lesson, explainer, study video | `skills/study-video/SKILL.md` → `docs/video-style-routing.md` → `docs/study-animation-resources.md` | Remotion (installed Claude skill) or the motion skill's own renderer |
 | Creator reel, vlog, talking-head, Kelsey/Torsten style; **any "edit in creator style" request** | `skills/creator-video/SKILL.md` → `skills/creator-video/references/real-estate-creator-study.md` (136-reel study: archetypes, numbers, recipes) → `master-video-styles/prompts/mega-video-styles-prompt.md` (18 styles) → `master-video-styles/playbooks/` → `docs/creator-editor-workflow.md` | Remotion; `effects` skill for face-tracked effects |
+| **Chet GTA** (Qin Academy campaign, GTA VI-style reel with a real-life gamer bubble) | `video-projects/chet-gta/brainstorming.md` (living memory: read first, append an iteration last) → `PIPELINE.md` → `story/storyline.md` | Higgsfield for generation; local edit in `05-edit/` |
 | Talking-head reels / voiceover glass reel | `docs/local-first-reel-workflows.md` → `talking-head-reels/`, `voiceover-glass-reel/` | Local tools first; Higgsfield notes are reference only |
 | Captions (pop-sticker) | `captions-skill/SKILL.md` + `docs/caption-skill-setup.md` — show frames at 1.5 s, 4 s, 8 s and wait for approval | Local caption renderer |
 | SaaS / product launch promo | `docs/motionsmith-workflow.md` + `skills/creator-video/SKILL.md` | Remotion or HyperFrames |
@@ -91,7 +92,7 @@ Audit status: `resources/repo-catalog/AUDIT-STATUS.md`. Security tool roles: `do
 | Creator research (Kelsey/kelssie3 — private, not licensed for publication) | `resources/creator-styles/`, `Creator style kelssie3/` |
 | Motion library, 3D assets, director guides | `resources/concordia/` |
 | Presets | `Kenyset preset pack/` + `docs/kenyset-presets.md` |
-| Video projects | `video-projects/` (e.g. `shawarma-moods-christmas-2026`) |
+| Video projects | `video-projects/` (e.g. `shawarma-moods-christmas-2026`, `chet-gta`) |
 | Reference PDFs | `Vox Explainer Guide - justdodani.pdf`, `Motion-Graphics-with-Claude-Code.pdf`, `video-editing-systems-inventory.pdf` |
 | Website research (Opus, ChatCut, Captions, Shorty; 2026-11-19) | `docs/ai-editor-research.md` — patterns taken, capability map, APIs that would close gaps |
 | Website research (ignix.social, 2026-11-19) | Outcome headline, one primary CTA + reassurance, "Sound familiar?" before/after, numbered "start where you need it" cards, short product video, real examples |

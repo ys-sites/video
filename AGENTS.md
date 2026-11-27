@@ -14,6 +14,8 @@ For security review, use the available Cloudflare security-audit skill and its s
 
 Before executing or installing any external reference for this workspace, run `python tools/security_gate.py "<resource-path>"`; a blocked or incomplete result means do not execute or install it. This gate is a workflow check, not an operating-system security control; an independent full review and a deliberately implemented approval mechanism are still needed before it can permit execution.
 
+For the **Chet GTA** campaign (Qin Academy), first read `video-projects/chet-gta/brainstorming.md` (Canon, open questions, last three iterations), then follow `video-projects/chet-gta/AGENTS.md`: after every prompt on this project, append the prompt verbatim and its output as a new iteration so no earlier decision is lost.
+
 For "vlog implementation", creator-style short video, a Torsten-inspired editing workflow, or the Kelsey/kelssie3 reference, read and apply `skills/creator-video/SKILL.md`. Treat newly supplied locations as source material to ingest and use, and preserve existing project files. The Kelsey references are private local research and are not automatically licensed for publication.
 
 For `talking-head-reels`, `talking-head-skill`, `voiceover-glass-reel`, or a full-screen glass motion reel, follow `docs/local-first-reel-workflows.md` through the creator-video route. Prioritize local tools and user-provided or licensed assets; keep Higgsfield material under `resources/higgsfield-reference/` as optional reference only and do not assume or require a Higgsfield connection. The original supplied packages contain provider-specific instructions and unreviewed scripts, not an approved execution pipeline.
