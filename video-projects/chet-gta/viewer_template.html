@@ -1,0 +1,118 @@
+<title>Chet GTA Files</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: sticky file tab strip over one readable column; the header is the one loud moment (mission-title type, sunset rule). */
+:root {
+  --bg: #f7f5fb; --surface: #ffffff; --fg: #1d1626; --muted: #675d74; --line: #e2dbeb;
+  --accent: #c81f66; --accent-2: #0c7f85; --code-bg: #efeaf6;
+  --display: "Anton", "Impact", "Arial Narrow", sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #140f1c; --surface: #1c1527; --fg: #efe9f6; --muted: #a99cba; --line: #2f2641;
+  --accent: #ff5c9f; --accent-2: #45cfd3; --code-bg: #221a2f; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #140f1c; --surface: #1c1527; --fg: #efe9f6; --muted: #a99cba; --line: #2f2641;
+  --accent: #ff5c9f; --accent-2: #45cfd3; --code-bg: #221a2f; color-scheme: dark }
+
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--fg); font: 16px/1.6 var(--body); padding-inline: 16px; padding-block: 0 48px }
+.wrap { max-width: 760px; margin: 0 auto }
+header.top { padding-block: 28px 18px; display: grid; gap: 6px }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }
+h1.brand { font: 400 clamp(44px, 12vw, 72px)/.95 var(--display); letter-spacing: .01em; margin: 0; text-transform: uppercase }
+h1.brand span { color: var(--accent) }
+.sunset { height: 4px; border-radius: 2px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); width: 120px }
+.sub { color: var(--muted); margin: 4px 0 0; max-width: 60ch }
+.sub code { font: 0.88em var(--mono); background: var(--code-bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere }
+
+nav.tabs { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg);
+  margin-inline: -16px; padding: 10px 16px; border-bottom: 1px solid var(--line);
+  display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch }
+nav.tabs::-webkit-scrollbar { display: none }
+nav.tabs button { flex: none; font: 500 14px/1 var(--body); color: var(--fg); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 999px; padding: 10px 14px; cursor: pointer; min-height: 40px }
+nav.tabs button[aria-selected="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg) }
+nav.tabs button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+
+.meta { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; padding-block: 20px 4px; border-bottom: 1px dashed var(--line) }
+.meta code { font: 13px var(--mono); color: var(--accent-2); word-break: break-all }
+.meta .note { color: var(--muted); font-size: 14px }
+
+article { min-width: 0 }
+article h1, article h2, article h3 { text-wrap: balance; line-height: 1.2 }
+article h1 { font: 400 34px/1.05 var(--display); text-transform: uppercase; letter-spacing: .01em; margin: 26px 0 8px }
+article h2 { font-size: 22px; margin: 36px 0 10px; padding-top: 14px; border-top: 1px solid var(--line) }
+article h3 { font-size: 18px; margin: 28px 0 8px; color: var(--accent) }
+article p, article li { max-width: 68ch }
+article a { color: var(--accent-2) }
+article hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0 }
+article blockquote { margin: 12px 0; padding: 12px 16px; background: var(--surface); border: 1px solid var(--line);
+  border-radius: 10px; color: var(--fg); font-size: 15px }
+article blockquote p { margin: 0 0 10px }
+article blockquote p:last-child { margin: 0 }
+article code { font: 0.88em var(--mono); background: var(--code-bg); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere }
+article pre { background: var(--code-bg); padding: 14px; border-radius: 10px; overflow-x: auto; line-height: 1.35 }
+article pre code { background: none; padding: 0; font-size: 13px; overflow-wrap: normal }
+.tw { overflow-x: auto; margin: 14px 0; border: 1px solid var(--line); border-radius: 10px; background: var(--surface) }
+article table { border-collapse: collapse; width: 100%; font-size: 14px; line-height: 1.45; font-variant-numeric: tabular-nums }
+article th, article td { text-align: left; vertical-align: top; padding: 9px 11px; border-bottom: 1px solid var(--line); min-width: 110px }
+article th { font: 600 12px/1.3 var(--body); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); background: var(--bg) }
+article tr:last-child td { border-bottom: 0 }
+article li input[type=checkbox] { margin-right: 6px; accent-color: var(--accent) }
+article del { color: var(--muted) }
+.fallback { white-space: pre-wrap; font: 14px/1.5 var(--mono) }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">Qin Academy · campaign workspace</div>
+    <h1 class="brand">Chet <span>GTA</span></h1>
+    <div class="sunset" aria-hidden="true"></div>
+    <p class="sub">Every file in <code>video-projects/chet-gta/</code> as of the latest iteration. Tap a tab to read it.</p>
+  </header>
+  <nav class="tabs" role="tablist" aria-label="Project files" id="tabs"></nav>
+  <div class="meta" id="meta"></div>
+  <article id="doc" role="tabpanel" aria-live="polite"></article>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script>
+const DOCS = /*DOCS*/[];
+const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const tabs = document.getElementById('tabs'), doc = document.getElementById('doc'), meta = document.getElementById('meta');
+
+function render(i) {
+  const d = DOCS[i];
+  [...tabs.children].forEach((b, j) => b.setAttribute('aria-selected', String(j === i)));
+  meta.innerHTML = '';
+  const code = document.createElement('code'); code.textContent = d.path;
+  const note = document.createElement('span'); note.className = 'note'; note.textContent = d.note;
+  meta.append(code, note);
+  if (window.marked) {
+    doc.innerHTML = marked.parse(d.md, { gfm: true });
+    doc.querySelectorAll('table').forEach(t => { const w = document.createElement('div'); w.className = 'tw'; t.replaceWith(w); w.append(t); });
+  } else {
+    doc.innerHTML = '';
+    const pre = document.createElement('div'); pre.className = 'fallback'; pre.textContent = d.md; doc.append(pre);
+  }
+  try { localStorage.setItem('chet-tab', String(i)); } catch (e) {}
+  try { history.replaceState(null, '', '#' + slug(d.label)); } catch (e) {}
+}
+
+DOCS.forEach((d, i) => {
+  const b = document.createElement('button');
+  b.type = 'button'; b.setAttribute('role', 'tab'); b.id = 'tab-' + slug(d.label); b.textContent = d.label;
+  b.addEventListener('click', () => { render(i); window.scrollTo({ top: 0 }); });
+  tabs.append(b);
+});
+
+let start = 0;
+const fromHash = DOCS.findIndex(d => '#' + slug(d.label) === location.hash);
+if (fromHash >= 0) start = fromHash;
+else { try { const s = parseInt(localStorage.getItem('chet-tab'), 10); if (s >= 0 && s < DOCS.length) start = s; } catch (e) {} }
+render(start);
+</script>

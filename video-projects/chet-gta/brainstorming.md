@@ -1,6 +1,7 @@
 # Chet GTA — brainstorming (living memory)
 
 Campaign: **Chet GTA** · Client: **Qin Academy** · Format: 9:16 reel · Started 2026-11-27
+Read on iPad: **Chet GTA Files** — https://claude.ai/artifact/MPWpMx2mhX1k4e94uEWk2C (rebuild with `python -I build_viewer.py <out.html>` and republish after each iteration)
 
 This file is the memory of the project. Every prompt about Chet GTA, and what came out of it, is logged here in order, so each new iteration builds on everything before it instead of starting from scratch.
 
@@ -132,3 +133,24 @@ This file is the memory of the project. Every prompt about Chet GTA, and what ca
 **Open questions:** Q1–Q10 (§2).
 
 **Next step:** waiting on the user. Suggested: answer Q1–Q4, send Chet and Sobhi reference photos and voice samples, then start Step 01 (character sheets).
+
+### I-002 · 2026-11-27 · Step 00 Plan — view the files on iPad
+
+**Prompt (verbatim):**
+
+> I'm using remote access to Claude from my iPad, show the files created, so I can open and read the file
+> Output to here, where I open and view the file
+
+**How it was read:** the user works from an iPad over remote access and wants to read every project file inside the Claude app.
+
+**Output:**
+- Direct file sending failed: this session has no project thread to put files in.
+- Published a private Artifact page, **Chet GTA Files** (https://claude.ai/artifact/MPWpMx2mhX1k4e94uEWk2C), with one tab per file: brainstorming, storyline, pipeline, project rules, project.json and the step checklists. It is rebuilt from the files on disk each time it is republished.
+- The same files are on GitHub: `ys-sites/video`, `main` branch, `video-projects/chet-gta/`.
+
+**Decisions:** after each iteration, republish the Chet GTA Files page so the iPad view stays current.
+
+**Open questions:** unchanged (Q1–Q10).
+
+**Next step:** waiting on the user (answer Q1–Q4, then start Step 01).
+
