@@ -1,0 +1,11 @@
+{
+  "name": "chet-gta",
+  "client": "Qin Academy",
+  "campaign": "Chet GTA: Final Crash Courses (ENGR 213, MATH 205, CHEM 205, PHYS 205)",
+  "status": "Step 00 plan done (I-001); waiting on user for next step",
+  "memory_file": "brainstorming.md",
+  "target_platform": "Instagram Reels / TikTok / Shorts, 1080x1920 30fps (9:16 assumed; see Q1)",
+  "generator": "Higgsfield (images, video, audio) with local fallbacks",
+  "steps": ["00-plan", "01-assets", "02-voice", "03-manga-storyboard", "04-higgsfield-scenes", "05-edit"],
+  "routes": ["creator-video", "vs-director", "vs-generate", "vs-voice-captions", "vs-edit", "ecc-marketing-campaign"]
+}
