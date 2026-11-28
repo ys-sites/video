@@ -32,32 +32,32 @@ This file is the memory of the project. Every prompt about Chet GTA, and what ca
 |---|---|---|---|---|
 | **Chet** | Game | GTA VI-style version of the **real Qin Academy tutor** Chet (likeness from @qinacademy reels and photos, with consent) | **Clone** of the real tutor (recording with consent) | Main character. Overwhelmed, kind, a beat behind. He features most in Qin's recent videos |
 | **Sobhi** | Real life (bubble) | **Real person, generated photoreal** (not GTA style), from his photos and reels | **Clone** of Sobhi (recording with consent) | The gamer playing Chet; mostly silent facial reactions, two lines plus the call |
-| **Student** | Game | **Invented** original character (suggested: female Concordia engineering student; name TBD) | Designed voice | Did well on midterm 2 thanks to Chet's review; asks about the final crash course |
-| **Cashier** | Game | Invented, Montreal grocery cashier | Designed voice, plus the processed trance version | "Bonjour-hi! Is that all for today?" |
-| **Rush students** | Game | Invented, 2–3 extras | Short shouts | Swarm Chet in the aisle |
+| **Student** | Game | **Invented** original character (suggested: female Concordia engineering student; name TBD) | Designed voice, **also used for the cashier's trance line** (→ I-004) | Did well on midterm 2 thanks to Chet's review; asks about the final crash course |
+| **Cashier** | Game | Invented, Montreal grocery cashier | Designed voice; in the trance her mouth speaks with the student's voice (→ I-004) | "Bonjour-hi! Is that all for today?" · "Cash or card?" · "Sir… are you here?" · "I said, cash or card?" |
+| ~~**Rush students**~~ | — | removed (→ I-004) | — | — |
 | **Texting students** | Phone UI only | — | — | Senders of the texts |
 
 The real people's personalities, catchphrases and running jokes come from the @qinacademy reel study (pending).
 
 ### Format
-- **9:16** vertical reel, 1080×1920, 30 fps, about 55 s (→ I-003, confirmed).
+- **9:16** vertical reel, 1080×1920, 30 fps, ~~about 55 s~~ about 50–55 s after removing the rush (→ I-004).
 - World: **Montreal rendered GTA VI-style**: a downtown grocery (IGA/Metro feel), snow, a Concordia-area street, a parking lot (→ I-003).
 - Language: **English with a little French** (Montreal touches: "Bonjour-hi!", French store signage) (→ I-003).
 - Visual generation: **Higgsfield** on a **small budget**: one take per shot, re-roll only failures, credits approved per step (→ I-003). Edit, HUD, phone UI, bubble and captions are assembled locally.
 
-### Storyline (current version → `story/storyline.md` v2)
-1. KD aisle: Chet picks up a **real KD box** (→ I-003), looks at it, puts it in his basket (~5 s). Sobhi, bubble: "Bro… he's buying KD again."
+### Storyline (current version → `story/storyline.md` v3)
+1. KD aisle: Chet picks up a **real KD box** (→ I-003), looks at it, puts it in his basket (~5 s). Sobhi, bubble: ~~"Bro… he's buying KD again."~~ "**This makes sense in this economy.**" (→ I-004)
 2. Text barrage: ENGR 213 · MATH 205 · CHEM 205 · PHYS 205 messages pile up on his phone. ~~Each text adds a star~~ (→ I-003, parked).
 3. Student encounter: thanks for the midterm 2 review, "Is there a final crash course?" "Yes, we're working on something."
-4. **The rush** (kept, → I-003): more students spot him, "Chet! The crash course!"; he speed-walks to the till.
-5. Cashier: "Bonjour-hi! Is that all for today?" KD scanned.
-6. **Trans-action:** the trance. The cashier's voice becomes "When is the final crash course coming?"
-7. Snap back: "Credit or cash? … Sir, are you listening to me?" He pays.
-8. Car: Chet gets in (Montreal snow) and calls Sobhi.
+4. ~~**The rush**: more students spot him; he speed-walks to the till~~ (→ I-004, removed). Chet simply walks to the checkout.
+5. Cashier: "Bonjour-hi! Is that all for today?" KD scanned. "Cash or card?"
+6. **Trans-action:** the trance. The cashier's voice changes into **the student's voice** (→ I-004): "When will the final crash course be?"
+7. Snap back: ~~"Credit or cash? … Sir, are you listening to me?"~~ "**Sir… are you here?**" then "**I said, cash or card?**" (→ I-004). He pays by card.
+8. Car: Chet gets in (Montreal snow) and calls Sobhi; Sobhi answers.
 9. Fourth wall: Sobhi's real phone rings mid-game; **the bubble grows to half the screen**. Chet: "Sobhi. Can we finalize?" Sobhi: ~~"It's gonna be done soon."~~ "**It will be announced soon.**" (→ I-003)
 10. End card: Final Crash Courses, announced soon, course codes, Qin Academy logo, CTA. ~~KD-again loop~~ (→ I-003, parked).
 
-**Sobhi's lines (→ I-003, fewer lines):** start "Bro… he's buying KD again." and the phone call. Otherwise silent facial reactions.
+**Sobhi's lines (→ I-003, fewer lines):** start ~~"Bro… he's buying KD again."~~ "This makes sense in this economy." (→ I-004) and the phone call. Otherwise silent facial reactions.
 
 ### Parked ideas (future iterations)
 - **Police-chase wanted stars:** stars fit a real chase better than a stress meter. Use them if a later version has students or cops chasing Chet (→ I-003).
@@ -83,7 +83,7 @@ The real people's personalities, catchphrases and running jokes come from the @q
 | Q2 | Who are Chet and Sobhi? | ✅ Chet is the real tutor, GTA-styled; Sobhi is real, generated photoreal (I-003) |
 | Q3 | Sobhi's last line | ✅ "It will be announced soon" (I-003) |
 | Q4 | KD box | ✅ Real KD box (I-003) |
-| Q5 | Retention additions | ✅ Rush and bubble takeover kept; Sobhi down to 2 lines; stars and loop parked (I-003) |
+| Q5 | Retention additions | ✅ ~~Rush kept~~ (→ I-004, rush removed); bubble takeover kept; Sobhi down to 2 lines; stars and loop parked (I-003) |
 | Q6 | Name and brand | ✅ "Qin Academy", @qinacademy; logo and colours taken from Instagram (I-003) |
 | Q7 | Student and world | ✅ Invented student; Montreal, GTA-style (I-003). **Open:** the student's name |
 | Q8 | Language | ✅ English with a little French (I-003) |
@@ -212,4 +212,28 @@ The real people's personalities, catchphrases and running jokes come from the @q
 **Decisions:** see the Canon (each one is marked → I-003). A new step **00b, the @qinacademy reel study**, comes before Step 01, because Chet's and Sobhi's looks, voices and personalities come from their real videos.
 
 **Next step:** the user saves the @qinacademy reels (Chet-heavy recent ones first), plus voice recordings and photos if available. Then: run the reel study (frames, transcripts, character notes) → write the character bibles → Step 01 sheets.
+
+### I-004 · 2026-11-27 · Step 00 Plan — story changes
+
+**Prompt (verbatim):**
+
+> Few things to change
+> When he gets kd
+> Sobhi say, this make sense in this economy,
+> I don't like the idea of rush,
+> When he goes I trance, casier voice change to his student voice, asking, when will be the final crash course, after he snap,the cashier says sirs are you here, then she ask again, I said cash or card, he pays with card, and gets into his car nd calls sobhi, and sobhi answers
+
+**How it was read:**
+- Sobhi's KD reaction becomes "This makes sense in this economy."
+- The rush is removed.
+- In the trance, the cashier's voice turns into **the student's** voice (the student from the aisle) asking "When will the final crash course be?"
+- After the snap: "Sir… are you here?", then "I said, cash or card?" (so she asked "Cash or card?" once before the trance). Chet pays by card, gets in the car and calls Sobhi, who answers.
+
+**Output:** `story/storyline.md` v3 (9 beats, ~55 s, scenes renumbered S01–S09); Canon §1 updated (struck values → I-004); page republished.
+
+**Decisions:** rush removed (not parked). The student's locked voice doubles as the trance voice, so Step 02 must lock the student's voice before the trance is generated. Cashier asks "Cash or card?" once before the trance, so "I said…" pays off.
+
+**Open questions:** unchanged (Q7 student's name, Q9 exact credits, Q10–Q13 pending).
+
+**Next step:** the user saves the @qinacademy reels, voice recordings and photos → reel study → character bibles → Step 01.
 
