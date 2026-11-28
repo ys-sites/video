@@ -22,60 +22,76 @@ This file is the memory of the project. Every prompt about Chet GTA, and what ca
 ## 1. Canon (current state, always up to date)
 
 ### Concept
-- **Logline:** Qin Academy tutor **Chet** lives inside a GTA VI-style open world. Every student text raises his "Finals Level" stars until a grocery checkout turns into a *trans-action* (trance + transaction). He escapes to his car and calls the one person who can finish the final crash course: **Sobhi**, the real-life gamer who has been playing Chet the whole time.
-- **The device:** two layers on one screen. The top is the game (AI-generated, GTA VI-inspired look). The bottom is a facecam **bubble** of Sobhi playing in real life, reacting like a streamer. The payoff breaks the fourth wall: the game character phones the player.
+- **Logline:** Qin Academy tutor **Chet** lives inside a GTA VI-style version of **Montreal**. Student texts about finals pile up ~~and raise his "Finals Level" stars~~ (→ I-003, parked) until a grocery checkout turns into a *trans-action* (trance + transaction). He escapes to his car and calls **Sobhi**, the real-life gamer who has been playing Chet the whole time and is behind the crash course.
+- **The device:** two layers on one screen. The top is the game (AI-generated, GTA VI-inspired). The bottom is a circular facecam **bubble** of Sobhi playing in real life (generated, photoreal). During the call the bubble **grows to fill the bottom half** of the screen (→ I-003). The payoff breaks the fourth wall: the game character phones the player.
 - **Marketing goal:** announce **Final Crash Courses** (ENGR 213 · MATH 205 · CHEM 205 · PHYS 205) and position Qin Academy as the place students already text when finals hit.
-- **CTA (draft):** "Final Crash Courses — dropping soon. Comment your course." + Qin Academy.
+- **CTA (draft):** "Final Crash Courses — ~~dropping soon~~ **announced soon** (→ I-003). Comment your course." + Qin Academy logo (taken from @qinacademy).
 
 ### Characters
-| Character | Layer | Role |
-|---|---|---|
-| **Chet** | Game (GTA VI-style) | Main character, Qin Academy tutor. Overwhelmed, kind, a beat behind |
-| **Sobhi** | Real life (bubble) | The gamer playing Chet; streamer-style reactions; working on the crash course |
-| **Student** (name TBD) | Game | Did well on midterm 2 thanks to Chet's review; asks about the final crash course |
-| **Cashier** | Game | "Is that all for today?" Her voice becomes the student question during the trance |
-| **Texting students** | Phone UI only | Senders of the text barrage |
+| Character | Layer | Look | Voice | Role |
+|---|---|---|---|---|
+| **Chet** | Game | GTA VI-style version of the **real Qin Academy tutor** Chet (likeness from @qinacademy reels and photos, with consent) | **Clone** of the real tutor (recording with consent) | Main character. Overwhelmed, kind, a beat behind. He features most in Qin's recent videos |
+| **Sobhi** | Real life (bubble) | **Real person, generated photoreal** (not GTA style), from his photos and reels | **Clone** of Sobhi (recording with consent) | The gamer playing Chet; mostly silent facial reactions, two lines plus the call |
+| **Student** | Game | **Invented** original character (suggested: female Concordia engineering student; name TBD) | Designed voice | Did well on midterm 2 thanks to Chet's review; asks about the final crash course |
+| **Cashier** | Game | Invented, Montreal grocery cashier | Designed voice, plus the processed trance version | "Bonjour-hi! Is that all for today?" |
+| **Rush students** | Game | Invented, 2–3 extras | Short shouts | Swarm Chet in the aisle |
+| **Texting students** | Phone UI only | — | — | Senders of the texts |
+
+The real people's personalities, catchphrases and running jokes come from the @qinacademy reel study (pending).
 
 ### Format
-- 9:16 vertical reel, 1080×1920, about 55–60 s (cut-down to ~30 s possible later).
-- Visual generation: **Higgsfield** (characters, locations, scenes). Edit, HUD, phone UI, bubble and captions are assembled locally.
+- **9:16** vertical reel, 1080×1920, 30 fps, about 55 s (→ I-003, confirmed).
+- World: **Montreal rendered GTA VI-style**: a downtown grocery (IGA/Metro feel), snow, a Concordia-area street, a parking lot (→ I-003).
+- Language: **English with a little French** (Montreal touches: "Bonjour-hi!", French store signage) (→ I-003).
+- Visual generation: **Higgsfield** on a **small budget**: one take per shot, re-roll only failures, credits approved per step (→ I-003). Edit, HUD, phone UI, bubble and captions are assembled locally.
 
-### Storyline (current version → `story/storyline.md`)
-1. KD aisle: Chet picks up a box of KD, looks at it, puts it in his basket (~5 s).
-2. Text barrage: the courses pile up; each text adds a Finals Level star.
+### Storyline (current version → `story/storyline.md` v2)
+1. KD aisle: Chet picks up a **real KD box** (→ I-003), looks at it, puts it in his basket (~5 s). Sobhi, bubble: "Bro… he's buying KD again."
+2. Text barrage: ENGR 213 · MATH 205 · CHEM 205 · PHYS 205 messages pile up on his phone. ~~Each text adds a star~~ (→ I-003, parked).
 3. Student encounter: thanks for the midterm 2 review, "Is there a final crash course?" "Yes, we're working on something."
-4. *(proposed)* Five-star rush: more students spot him; quick GTA-style escape to the till.
-5. Cashier: "Is that all for today?" KD scanned.
+4. **The rush** (kept, → I-003): more students spot him, "Chet! The crash course!"; he speed-walks to the till.
+5. Cashier: "Bonjour-hi! Is that all for today?" KD scanned.
 6. **Trans-action:** the trance. The cashier's voice becomes "When is the final crash course coming?"
 7. Snap back: "Credit or cash? … Sir, are you listening to me?" He pays.
-8. Car: Chet gets in and calls Sobhi.
-9. Fourth wall: Sobhi's real phone rings mid-game. Chet: "Can we finalize?" Sobhi: "It's gonna be done soon."
-10. End card: Final Crash Courses, course codes, Qin Academy, CTA.
+8. Car: Chet gets in (Montreal snow) and calls Sobhi.
+9. Fourth wall: Sobhi's real phone rings mid-game; **the bubble grows to half the screen**. Chet: "Sobhi. Can we finalize?" Sobhi: ~~"It's gonna be done soon."~~ "**It will be announced soon.**" (→ I-003)
+10. End card: Final Crash Courses, announced soon, course codes, Qin Academy logo, CTA. ~~KD-again loop~~ (→ I-003, parked).
+
+**Sobhi's lines (→ I-003, fewer lines):** start "Bro… he's buying KD again." and the phone call. Otherwise silent facial reactions.
+
+### Parked ideas (future iterations)
+- **Police-chase wanted stars:** stars fit a real chase better than a stress meter. Use them if a later version has students or cops chasing Chet (→ I-003).
+- **"He's buying KD again" loop ending** (→ I-003).
 
 ### Production steps (→ `PIPELINE.md`)
-00 Plan (this file, storyline) → 01 Assets (character, object, location sheets) → 02 Voice foundation (one locked voice per character) → 03 Manga storyboard (one panel per action) → 04 Higgsfield scene-by-scene generation → 05 Edit, sound, captions, delivery.
+00 Plan (this file, storyline) → **00b Reference study of @qinacademy reels** → 01 Assets (character, object, location sheets) → 02 Voice foundation (clones of Chet and Sobhi, designed voices for the rest) → 03 Manga storyboard (one panel per action) → 04 Higgsfield scene-by-scene generation → 05 Edit, sound, captions, delivery.
 
 ### Guardrails
 - "GTA VI-**inspired**" look only: no Rockstar or GTA logos, wordmark, exact HUD, or exact "WASTED / MISSION PASSED" cards. Use original on-screen wording and fonts.
-- Real brands (KD / Kraft Dinner) and real people's faces or voices need the owner's OK. Clone a voice only with the person's consent.
+- **Real KD box:** the user chose it and takes responsibility for Kraft Heinz's permission. Logos may come out garbled from AI generation; plan to fix the label in the edit if needed.
+- Real people (Chet, Sobhi): faces and voices are used only with their consent. Clones are made only from recordings they provide.
+- Instagram is studied only through videos the user saves into `input/qin-instagram/`. No scraping past Instagram's login.
 - Every pulled repository stays reference-only until it passes the workspace security gate (`python tools/security_gate.py <path>`); approved/ready tools are listed per step in `PIPELINE.md`.
 
 ---
 
 ## 2. Open questions (answer any time; each answer becomes Canon)
 
-| # | Question | Default until answered |
+| # | Question | Status |
 |---|---|---|
-| Q1 | "9 x 12 reel": 9:16 (1080×1920, Reels/TikTok) or a true 3:4 / 9:12 (1080×1440, feed post)? | 9:16 |
-| Q2 | Are Chet and Sobhi real people (Qin Academy staff) whose faces and voices we should match? If yes, we need photos and 30–60 s of clean voice from each, with consent | Real people, likeness from photos |
-| Q3 | Sobhi's last line: "It's gonna be **done** soon" (the crash course) or "I'm gonna be **home** soon"? | "It's gonna be done soon" |
-| Q4 | KD: show the real Kraft Dinner box (needs Kraft's OK for an ad) or a look-alike blue "mac & cheese" box? | Look-alike box, no logo |
-| Q5 | Keep the proposed 5-star rush (≈4 s of action) and the streamer reactions from Sobhi? | Keep both |
-| Q6 | Is the academy name spelled "Qin Academy"? Logo, colours and font? | "Qin Academy", brand kit TBD |
-| Q7 | Student's name, and the city (Montreal / Concordia vibe, or a Vice City-like Florida look)? | Unnamed student; Vice City-style neon look with Montreal winter touches TBD |
-| Q8 | Language: English only, or some French (Montreal)? | English |
-| Q9 | Which Higgsfield plan / models are available (image + video + audio), and the credit budget? | Ask before the first batch |
-| Q10 | Release date of the crash courses (for the end card)? | "Dropping soon" |
+| Q1 | Frame size | ✅ 9:16 (I-003) |
+| Q2 | Who are Chet and Sobhi? | ✅ Chet is the real tutor, GTA-styled; Sobhi is real, generated photoreal (I-003) |
+| Q3 | Sobhi's last line | ✅ "It will be announced soon" (I-003) |
+| Q4 | KD box | ✅ Real KD box (I-003) |
+| Q5 | Retention additions | ✅ Rush and bubble takeover kept; Sobhi down to 2 lines; stars and loop parked (I-003) |
+| Q6 | Name and brand | ✅ "Qin Academy", @qinacademy; logo and colours taken from Instagram (I-003) |
+| Q7 | Student and world | ✅ Invented student; Montreal, GTA-style (I-003). **Open:** the student's name |
+| Q8 | Language | ✅ English with a little French (I-003) |
+| Q9 | Higgsfield budget | ✅ Small budget (I-003). **Open:** exact plan and credit number |
+| Q10 | Launch and post dates | ⏳ User will add later; end card says "announced soon" until then |
+| Q11 | @qinacademy reels | ⏳ User saves the reels into `input/qin-instagram/`; then the character study runs |
+| Q12 | Voice recordings | ⏳ 30–60 s clean recordings of Chet and Sobhi, with their consent, into `input/` |
+| Q13 | Photos | ⏳ Clear photos of Chet and Sobhi (front, side, full body) into `input/`, unless the reel frames are enough |
 
 ---
 
@@ -153,4 +169,47 @@ This file is the memory of the project. Every prompt about Chet GTA, and what ca
 **Open questions:** unchanged (Q1–Q10).
 
 **Next step:** waiting on the user (answer Q1–Q4, then start Step 01).
+
+### I-003 · 2026-11-27 · Step 00 Plan — question round 1 (answers so far)
+
+**Prompt (verbatim):** "Ask me all the questions u need one by one / So u can enhance the data". Mid-turn: "Keep in mind".
+
+**Answers (verbatim where typed):**
+| Q | Asked | Answer |
+|---|---|---|
+| Q1 | Frame size | **9:16 Reel** (1080×1920) |
+| Q2 | Who are Chet and Sobhi? | "Sobhi is real, but will be generated still, but will have realism where a Chet is the game character, will have the gta 6 style" |
+| Q2b | Chet's face | **Based on a real tutor** (the real Chet from Qin Academy's videos) |
+| Q2c | Voice samples | **Yes, both**: clean recordings of the tutor (Chet) and Sobhi, with consent |
+| Q3 | Sobhi's last line | "**It will be announced soon**" |
+| Q4 | KD box | **Real KD box** (the user takes responsibility for Kraft Heinz permission) |
+| Add-1 | Finals Level stars + HUD | "nice concept, but … stars would do better if police chase was happening rather than stress level increasing … keep that thought in mind … future iteration" → **parked** |
+| Add-2 | Sobhi streamer reactions | **Fewer lines**: only 2 reactions (start and end), otherwise silent facial reactions |
+| Add-3 | The rush (students swarm, Chet escapes) | "Keep the" → read as **keep** |
+| Add-4 | Bubble takeover + KD loop | "Forget the kd again, but I love the circl, growing into half screen" → **takeover kept, loop dropped**; "Keep in mind" read as **park the loop idea** for later |
+| Q6 | Academy name and brand | "search on instagram, from Qin academy … look at the characters … Chad [Chet] and the other dude is sobhi … scan through every single of their videos … The recent videos is more on chat [Chet]" → research task started |
+
+**Parked ideas (future iterations):** police-chase wanted stars (students or cops chasing Chet, stars filling up); the "he's buying KD again" loop ending.
+
+**Answers, continued:**
+| Q | Asked | Answer |
+|---|---|---|
+| Q6 handle | Exact Instagram handle | https://www.instagram.com/qinacademy/ |
+| Access | How to get the reels | Instagram shows a login wall. Listing the profile with yt-dlp failed (marked broken), and a call to Instagram's internal API was refused by the permission check as unauthorized access, so it was not retried. User chose: **"You save the videos"** into `input/qin-instagram/` |
+| Q7a | The student | **Invented student** |
+| Q7b | The world | **Montreal, GTA-style** |
+| Q8 | Language | **English + a little French** |
+| Q9 | Higgsfield budget | **Small budget** (the exact plan and credits come later) |
+| Q10 | Dates | "I'll add later" |
+| Q6 logo | Logo and colours | **Take it from Instagram** |
+
+**Output:**
+- Canon §1 and the open questions §2 rewritten with every answer; old values struck with → I-003.
+- `story/storyline.md` updated to v2 (stars removed, Sobhi down to two lines, rush kept, bubble takeover, Montreal, French touches, new final line, real KD, no loop).
+- Created `input/qin-instagram/README.md`, the drop folder for the reels.
+- Rebuilt and republished the Chet GTA Files page.
+
+**Decisions:** see the Canon (each one is marked → I-003). A new step **00b, the @qinacademy reel study**, comes before Step 01, because Chet's and Sobhi's looks, voices and personalities come from their real videos.
+
+**Next step:** the user saves the @qinacademy reels (Chet-heavy recent ones first), plus voice recordings and photos if available. Then: run the reel study (frames, transcripts, character notes) → write the character bibles → Step 01 sheets.
 

@@ -25,6 +25,9 @@ chet-gta/
 ## Step 00 — Plan (done in I-001)
 Storyline, beat sheet, scene list, open questions. Tools: `vs-director` skill (beats, six-layer shots, sealed moves; merges AustinZ21/cinematic-skills, Moh4696/cinematic-skill, vincentwei1021/video-shotcraft, saranambiar/hyperframes-video-agent-skills, iamaanahmad/agents-video-editing-skills), `ecc-marketing-campaign`, `ecc-content-engine`, `ecc-taste`, `creator-video` skill and the 136-reel hook study. References: storytold/filmcraft, openfilm/openfilm, alisa0808/vox-director, heydamir/unslop (strip AI-sounding lines from the script).
 
+## Step 00b — @qinacademy reel study (before Step 01)
+The real Chet and Sobhi are studied from the reels the user saves into `input/qin-instagram/` (Instagram needs a login, so nothing is scraped). For every file: a contact sheet and cut and pacing metrics (`vs-edit`, same method as `tools/study_reels.py`), and a Whisper transcript (`vs-voice-captions`). Then per-character notes: look, wardrobe, voice, catchphrases, energy and running jokes, plus the brand logo and colours. Output: `01-assets/characters/<name>/bible.md` and `02-voice/<name>/voice-bible.md`, which feed the lines in `story/storyline.md`. References: JuneYaooo/rea-video (shot-by-shot analysis), `creator-video` study method.
+
 ## Step 01 — Assets: character, object and location sheets
 **Deliverables**
 - Style bible: two looks. (a) Game layer, GTA VI-inspired: sun-bleached neon, high-saturation teal and magenta, glossy real-time-render look, slight satire. (b) Bubble layer: realistic webcam, RGB-lit room.
