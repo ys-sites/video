@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parent
 # (tab label, path relative to the project, short note shown above the file)
 FILES = [
     ("Brainstorming", "brainstorming.md", "Living memory: Canon, open questions, iteration log"),
+    ("Story", "story/story.md", "The story as prose (v3)"),
     ("Storyline", "story/storyline.md", "Beat sheet, screen layout, scenes, draft lines"),
     ("Pipeline", "PIPELINE.md", "Steps 01–05, gates and every tool mapped"),
     ("Project rules", "AGENTS.md", "What every session does on this project"),

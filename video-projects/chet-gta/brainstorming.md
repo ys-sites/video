@@ -237,3 +237,15 @@ The real people's personalities, catchphrases and running jokes come from the @q
 
 **Next step:** the user saves the @qinacademy reels, voice recordings and photos → reel study → character bibles → Step 01.
 
+### I-005 · 2026-11-27 · Step 00 Plan — the story as prose
+
+**Prompt (verbatim):** "Can you give me just the storyline like I want you to give me an output of the story"
+
+**How it was read:** the user wants storyline v3 told as a story (prose with dialogue), without the production tables.
+
+**Output:** the story was written as prose in the chat and saved as `story/story.md` (v3, matching `story/storyline.md`). Added a **Story** tab to the Chet GTA Files page.
+
+**Decisions:** `story/story.md` is the readable version and `story/storyline.md` the production version; both are updated together from now on.
+
+**Next step:** unchanged (reels, voice recordings and photos into `input/`).
+
